@@ -1,0 +1,43 @@
+<div class="wrapper">
+
+    <main class="content">
+
+        <form class="content__login" [formGroup]="loginForm">
+
+            <h1 class="login__container-title">
+                Log in
+            </h1>
+            <span class="error-field" *ngIf="errorResponse">{{errorResponse}}</span>
+                <div class="content__container">
+
+                    <span class="container__name">Enter your e-mail</span>
+                    <div class="container__form">
+                        <input type="email" class="form__input" placeholder="E-mail" formControlName="username">
+                    </div>
+                    <span class="error-field" *ngIf="hasFieldError('username')">This field is required</span>
+                </div>
+
+
+                <div class="content__container">
+                    <span class="container__name">Enter your password</span>
+                    <div class="container__form">
+                        <input type="password" class="form__input" placeholder="Password" formControlName="password">
+                    </div>
+                    <span class="error-field" *ngIf="hasFieldError('password')">This field is required</span>
+                </div>
+                <div class="form__info">
+                    <span class="form__info-text">You password was generated automatically after KYC and sent on your e-mail.</span>
+
+
+                    <a href="javascript:void(0)" class="form__info-link">Forgot password?</a>
+                </div>
+
+                <button (click)="submitForm()" class="form__login-accept">
+                    Log in
+                </button>
+
+            </form>
+
+    </main>
+
+</div>

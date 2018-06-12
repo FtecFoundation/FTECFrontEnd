@@ -1,0 +1,92 @@
+<div class="wrapper">
+
+    <main class="content">
+
+        <form class="content__login" [formGroup]="registrationForm">
+
+            <h1 class="login__container-title">
+                Registration
+            </h1>
+            <div class="content__container">
+                <span class="container__name">Enter your username</span>
+                <div class="container__form">
+                    <input type="text" class="form__input" placeholder="Username" formControlName="username">
+                </div>
+
+                <span *ngIf="username.invalid && (username.dirty || username.touched || submitted)">
+                    <span class="error-field" *ngIf="username.errors.required">Username is required</span>
+                    <span class="error-field" *ngIf="username.errors.taken">This username is already taken</span>
+                </span>
+            </div>
+
+            <div class="content__container">
+                <span class="container__name">Enter your e-mail</span>
+                <div class="container__form">
+                    <input type="email" class="form__input" placeholder="E-mail" formControlName="email">
+                </div>
+
+                <span *ngIf="email.invalid && (email.dirty || email.touched || submitted)">
+                    <span class="error-field" *ngIf="email.errors.required">E-mail is required</span>
+                    <span class="error-field" *ngIf="email.errors.email">Input a valid e-mail</span>
+                    <span class="error-field" *ngIf="email.errors.taken">This e-mail is already taken</span>
+                </span>
+            </div>
+
+            <div formGroupName="passwordGroup">
+                <div class="content__container">
+                    <span class="container__name">Enter your password </span>
+                    <div class="container__form">
+                        <input type="password" class="form__input" placeholder="Password" formControlName="password">
+                    </div>
+
+                    <span *ngIf="password.invalid && (password.dirty || password.touched || submitted)">
+                        <span class="error-field" *ngIf="password.errors.required">Password is required</span>
+                        <span class="error-field" *ngIf="password.errors.pattern">
+                            Password should be at least 8 symbols long and contain at least one capital letter and special symbol
+                        </span>
+                    </span>
+                </div>
+
+                <div class="content__container">
+                    <span class="container__name">Confirm password</span>
+                    <div class="container__form">
+                        <input type="password" class="form__input" placeholder="Password"
+                               formControlName="confirmPassword">
+                    </div>
+
+                    <span *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched || submitted)">
+                        <span class="error-field" *ngIf="confirmPassword.errors.required">Password is required</span>
+                        <span class="error-field" *ngIf="confirmPassword.errors.pattern">
+                            Password should be at least 8 symbols long and contain at least one capital letter, symbol and digit
+                        </span>
+                    </span>
+
+                    <span *ngIf="passwordGroup.errors && (passwordGroup.dirty || passwordGroup.touched || submitted)">
+                        <span class="error-field" *ngIf="passwordGroup.errors.match">Confirmed password doesn't match</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form__info">
+                <label class="form__info-label-container">I agree to a terms of service
+                    <input type="checkbox" formControlName="terms">
+                    <span class="form__info-checkmark"></span>
+                </label>
+
+                <div style="margin-top: 40px; margin-bottom: -20px;" *ngIf="terms.invalid && submitted">
+                        <span class="error-field" *ngIf="terms.errors.required">Please, check this field</span>
+                    </div>
+            </div>
+
+            <div class="form__info form__info--checkbox">
+                <label class="form__info-label-container">Subscribe to email
+                    <input type="checkbox" formControlName="subscribeForEmail">
+                    <span class="form__info-checkmark"></span>
+                </label>
+            </div>
+            <button class="form__login-accept" (click)="submitForm()">Register</button>
+        </form>
+
+
+    </main>
+
+</div>
