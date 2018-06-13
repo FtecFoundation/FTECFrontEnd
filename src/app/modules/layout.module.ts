@@ -21,6 +21,7 @@ import {BehavioralAnalyzerComponent} from './insertions/behavioral-analyzer/beha
 import {TrpComponent} from './insertions/trp/trp.component';
 import {OnlyAuthorizedGuard} from '../core/guards/only-authorized.guard';
 import {DashboardComponent} from './insertions/dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import {DashboardComponent} from './insertions/dashboard/dashboard.component';
         VolumeAnalyzerComponent,
         BehavioralAnalyzerComponent,
         TrpComponent,
-        DashboardComponent
+        DashboardComponent,
+        HeaderComponent
     ]
 })
 

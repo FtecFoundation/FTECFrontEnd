@@ -29,8 +29,8 @@
                     <span class="form__info-text">You password was generated automatically after KYC and sent on your e-mail.</span>
 
 
-                    <a href="javascript:void(0)" class="form__info-link">Forgot password?</a>
-                    <a href="auth/registration" class="form__info-link form__info-link-reg">Registration</a>
+                    <a [routerLink]="'restore'" class="form__info-link">Forgot password?</a>
+                    <a [routerLink]="'registration'" class="form__info-link form__info-link-reg">Registration</a>
                 </div>
 
                 <button (click)="submitForm()" class="form__login-accept">
