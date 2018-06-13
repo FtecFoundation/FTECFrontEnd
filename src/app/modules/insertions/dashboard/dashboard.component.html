@@ -23,7 +23,7 @@
 
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
-              <input type="checkbox" formControlName="terms">
+              <input type="checkbox">
   
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="46px" height="41px" viewBox="0 0 46 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -49,7 +49,7 @@
   
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
-              <input type="checkbox" formControlName="terms">
+              <input type="checkbox">
               
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -79,7 +79,7 @@
   
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
-              <input type="checkbox" formControlName="terms">
+              <input type="checkbox">
               
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -105,7 +105,7 @@
   
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
-              <input type="checkbox" formControlName="terms">
+              <input type="checkbox">
               
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -135,59 +135,15 @@
     <div class="main-info__head-item">
 
       <ul class="head-item__container">
-        <li class="head-item__container-item">
+        <li class="head-item__container-item" *ngFor="let currency of currencies">
           <div class="container-item__line">
-            <span class="container-item__line-crypt">Eth</span>
+            <span class="container-item__line-crypt">{{currency.symbol}}</span>
 
-            <span class="container-item__line-money">Usd</span>
+            <span class="container-item__line-money">USD</span>
           </div>
 
-          <span class="container-item__price">529.78</span>
-          <span class="container-item__price">-5.90%</span>
-        </li>
-
-        <li class="head-item__container-item">
-          <div class="container-item__line">
-            <span class="container-item__line-crypt">Eth</span>
-
-            <span class="container-item__line-money">Usd</span>
-          </div>
-
-          <span class="container-item__price">529.78</span>
-          <span class="container-item__price">-5.90%</span>
-        </li>
-
-        <li class="head-item__container-item">
-          <div class="container-item__line">
-            <span class="container-item__line-crypt">Eth</span>
-
-            <span class="container-item__line-money">Usd</span>
-          </div>
-
-          <span class="container-item__price">529.78</span>
-          <span class="container-item__price">-5.90%</span>
-        </li>
-
-        <li class="head-item__container-item">
-          <div class="container-item__line">
-            <span class="container-item__line-crypt">Eth</span>
-
-            <span class="container-item__line-money">Usd</span>
-          </div>
-
-          <span class="container-item__price">529.78</span>
-          <span class="container-item__price">-5.90%</span>
-        </li>
-
-        <li class="head-item__container-item">
-          <div class="container-item__line">
-            <span class="container-item__line-crypt">Eth</span>
-
-            <span class="container-item__line-money">Usd</span>
-          </div>
-
-          <span class="container-item__price">529.78</span>
-          <span class="container-item__price">-5.90%</span>
+          <span class="container-item__price">{{currency.quotes.USD.price}}</span>
+          <span class="container-item__price">{{currency.quotes.USD.percent_change_24h}}</span>
         </li>
       </ul>
 

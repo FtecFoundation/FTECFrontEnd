@@ -52,7 +52,27 @@ import { HeaderComponent } from './header/header.component';
             }
         ])
     ],
-    exports: [LayoutComponent, ArbitrageComponent, SocialComponent, EmptyComponent],
+    exports: [
+        LayoutComponent,
+        ArbitrageComponent,
+        SocialComponent,
+        EmptyComponent,
+        SmartTradingModuleComponent,
+        NewsBackgroundComponent,
+        OrderManagerComponent,
+        TelegramAssistantComponent,
+        CryptoacademyComponent,
+        GlobalPriceAnalyzerComponent,
+        LocalPriceAnalyzerComponent,
+        PortfolioManagerComponent,
+        DesktopAppComponent,
+        MobileAppComponent,
+        VolumeAnalyzerComponent,
+        BehavioralAnalyzerComponent,
+        TrpComponent,
+        DashboardComponent,
+        HeaderComponent
+    ],
     declarations: [
         LayoutComponent,
         ArbitrageComponent,
