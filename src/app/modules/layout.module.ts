@@ -29,7 +29,7 @@ import {DashboardComponent} from './insertions/dashboard/dashboard.component';
         RouterModule.forChild([
             {
                 path: 'modules', component: LayoutComponent, children: [
-                    {path: '', redirectTo: 'social', pathMatch: 'full'},
+                    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
                     {path: 'social', component: SocialComponent},
                     {path: 'arbitrage', component: ArbitrageComponent},
                     {path: 'cryptoacademy', component: EmptyComponent},
