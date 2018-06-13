@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mobile-app',
-  template: `
-    <p>
-      mobile-app works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './mobileapp.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class MobileAppComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

@@ -748,7 +748,6 @@
   width: 26%;
 }
 
-
 .middle__table-container-item--dashboard {
   padding: .313rem !important;
 
@@ -809,8 +808,6 @@
 }
 
 // Right block dashboard
-
-
 
 .container__wrapper--dashboard {
   margin-top: 0;
@@ -908,4 +905,67 @@
 .button__outline--dashboard {
   width: 45%;
   padding: .625rem;
+}
+
+// Mobile-app
+
+.main-info--mobile {
+
+}
+
+.mobile-block {
+  position: relative;
+  display: inline-block!important;
+ 
+  border: 14px solid #fff;
+  border-radius: 50px;
+}
+
+.mobile-block:before {
+  content: "";
+  display: block;
+  height: 25px;
+  width: 100%;
+  z-index: 9999;
+  max-width: 168px;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  border-bottom-right-radius: 19px;
+  border-bottom-left-radius: 19px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mobile-block video {
+  border-radius: 30px;
+  max-width: 343px;
+  width: 100%;
+  -o-object-fit: inherit;
+  object-fit: inherit;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+  margin-top: 57px;
+}
+
+.store-btn.apstore-btn {
+  background: url(../../../assets/images/btn-apstore.png) 50% no-repeat;
+  background-size: contain;
+}
+
+
+.store-btn {
+  display: inline-block;
+  min-width: 240px;
+  height: 72px;
+  margin: 0 40px;
+  transition: .3s;
+}
+
+.store-btn.gplus-btn {
+  background: url(../../../assets/images/btn-gplus.png) 50% no-repeat;
+  background-size: contain;
 }

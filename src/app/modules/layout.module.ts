@@ -36,7 +36,7 @@ import { HeaderComponent } from './header/header.component';
                     {path: 'cryptoacademy', component: EmptyComponent},
                     {path: 'behavioral-analyzer', component: EmptyComponent},
                     {path: 'desktop-app', component: EmptyComponent},
-                    {path: 'mobile-app', component: EmptyComponent},
+                    {path: 'mobile-app', component: MobileAppComponent},
                     {path: 'portfolio-manager', component: EmptyComponent},
                     {path: 'global-price-analyzer', component: EmptyComponent},
                     {path: 'local-price-analyzer', component: EmptyComponent},
