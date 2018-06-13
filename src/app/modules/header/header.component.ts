@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.html',
-  styleUrls: ['./header.scss']
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _accountService: AccountService) { }
+  constructor(private _accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -34,7 +35,9 @@ export class HeaderComponent implements OnInit {
     }
 
     logout() {
-      this._accountService.logoutUser().subscribe();
+      this._accountService.logoutUser().subscribe(() => {
+          this.router.navigate(['']);
+      });
     }
 
 }
