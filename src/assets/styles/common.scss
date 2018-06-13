@@ -40,6 +40,7 @@ li {
   display: -ms-flexbox;
   display: flex;
 
+  overflow-y: scroll;
   background-image: url(/assets/images/circle.png), $violet-gradient;
   background-position: right top;
   background-repeat: no-repeat;
@@ -47,10 +48,6 @@ li {
 }
 
 .wrapper {
-  height: 100%;
-}
-
-.wrapper--login {
   height: 100vh;
 }
 
