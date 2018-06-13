@@ -9,7 +9,7 @@ import {AccountService} from '../../core/services/account.service';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  submitted: boolean = false;
+  submitted = false;
   data: string;
 
   constructor(private _accountService: AccountService) { }
