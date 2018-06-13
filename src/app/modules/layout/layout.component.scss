@@ -84,6 +84,16 @@
   position: relative;
 }
 
+.header__user-account-image {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  background-image: url("../../../assets/images/bitmap-4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .user-account-block {
   z-index: 2;
   top: 2.500em;
