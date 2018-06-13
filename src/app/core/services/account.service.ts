@@ -8,6 +8,7 @@ import {HttpParams} from '@angular/common/http';
 
 enum AccountApiUrls {
     login = 'login',
+    logout = 'logout',
     register = 'registration',
     checkEmail = 'checkUniqueEmail',
     checkUsername = 'checkUniqueLogin',
@@ -26,6 +27,12 @@ export class AccountService extends RestService {
     loginUser(data: any): Observable<any> {
         return this.post(AccountApiUrls.login, data).pipe(
             tap(resp => this.processLogin(resp.response.token)),
+            catchError(e => this.handleError(e)));
+    }
+
+    logoutUser(): Observable<any> {
+        return this.post(AccountApiUrls.logout, {}).pipe(
+            tap(() => this.processLogout()),
             catchError(e => this.handleError(e)));
     }
 

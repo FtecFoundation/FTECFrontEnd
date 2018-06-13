@@ -12,9 +12,11 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        console.log(token);
         this._cookieService.set('token', token);
-        console.log(this._cookieService.get('token'));
+    }
+
+    protected processLogout() {
+        this._cookieService.delete('token');
     }
 
     protected get headers(): HttpHeaders {
@@ -27,7 +29,7 @@ export abstract class RestService {
     }
 
     protected post(relativeUrl: string, data: any): Observable<any>  {
-        return this._http.post(this.baseUrl + relativeUrl, data);
+        return this._http.post(this.baseUrl + relativeUrl, data, {headers: this.headers});
     }
 
     protected handleError(error: HttpErrorResponse): Observable<any> {

@@ -14,20 +14,6 @@ export class LayoutComponent implements OnInit {
   }
 
 
-  showUser() {
-    const accInfo = document.querySelector('.user-account-block');
-
-    accInfo.classList.toggle('is-active');
-  }
-
-
-  showThemeList() {
-    const themesBlock = document.querySelector('.aside');
-
-    themesBlock.classList.toggle('is-active');
-  }
-
-
   showSidebar() {
     const dropdown = document.querySelector('.dropdown-button'),
       sidebar = document.querySelector('.sidebar');
