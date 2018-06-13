@@ -85,8 +85,8 @@
 }
 
 .header__user-account-image {
-  width: 25px;
-  height: 25px;
+  width: 2.188em;
+  height: 2.188em;
   border-radius: 50%;
 
   background-image: url("../../../assets/images/bitmap-4.png");
@@ -96,7 +96,7 @@
 
 .user-account-block {
   z-index: 2;
-  top: 2.500em;
+  top: 3.125em;
   right: -3.125em;
   display: none;
   position: absolute;
@@ -113,7 +113,7 @@
 .user-account-block-triangle {
   width: 0;
   height: 0;
-  left: 7.875em;
+  left: 7.563em;
   bottom: 0.313em;
   position: relative;
 
