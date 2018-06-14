@@ -13,7 +13,7 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 4200;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -32,7 +32,8 @@ let apiUrl = '';
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--api_url=')) {
-        apiUrl = val.substring(val.indexOf('='));
+        apiUrl = val.substring(val.indexOf('=') + 1);
+        console.log(apiUrl);
     }
 });
 
