@@ -1,0 +1,17 @@
+.button__outline {
+  padding: .313rem;
+  border-radius: 1.750rem;
+  padding-left: .938rem;
+  padding-right: .938rem;
+
+  outline: none;
+  cursor: pointer;
+  color: $accent;
+  background: transparent;
+  border: 0.125rem solid $accent;
+}
+
+.button__outline:hover {
+  color:$white;
+  background: $accent;
+}
