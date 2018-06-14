@@ -53,8 +53,14 @@
   font-size: 1.500em;
 }
 
+.header__info-change-log a {
+  color: $accent;
+  font-weight: 100;
+  text-decoration: underline;
+}
+
 .header__info-user {
-  width: 30%;
+  width: 40%;
 
   display: -webkit-box;
   display: -ms-flexbox;
