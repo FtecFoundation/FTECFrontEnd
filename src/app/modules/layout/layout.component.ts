@@ -8,7 +8,7 @@ import {ShowModalService} from '../not-active/show-modal.service';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(protected _showModalService: ShowModalService) {
+  constructor(public _showModalService: ShowModalService) {
   }
 
   ngOnInit() {
