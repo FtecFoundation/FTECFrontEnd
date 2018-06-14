@@ -25,6 +25,7 @@ import { HeaderComponent } from './header/header.component';
 import { ChangeLogComponent } from './insertions/change-log/change-log.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotActiveComponent } from '../modules/not-active/not-active.component';
+import {ShowModalService} from './not-active/show-modal.service';
 
 
 @NgModule({
@@ -101,7 +102,8 @@ import { NotActiveComponent } from '../modules/not-active/not-active.component';
         ChangeLogComponent,
         FooterComponent,
         NotActiveComponent
-    ]
+    ],
+    providers: [ShowModalService]
 })
 
 export class LayoutModule {
