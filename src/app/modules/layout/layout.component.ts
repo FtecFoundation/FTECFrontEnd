@@ -7,7 +7,7 @@ import {Component, ElementRef, Input, OnInit} from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  showPopup: boolean = true;
+  showPopup = true;
 
   constructor() {
   }
