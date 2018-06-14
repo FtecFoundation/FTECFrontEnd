@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
-import {Router} from '@angular/router';
+import {NavigationStart, Router} from '@angular/router';
 import {TitlesService} from '../../core/services/titles.service';
 
 @Component({
@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
               private _titlesService: TitlesService) { }
 
   ngOnInit() {
-      this.currentTitle = this._titlesService.currentTitle;
   }
 
     showUser() {

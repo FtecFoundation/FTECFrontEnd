@@ -7,7 +7,7 @@ import {TitlesService} from './core/services/titles.service';
     styles: [],
     encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
     constructor(private titleService: TitlesService) {}
 
     ngOnInit(): void {

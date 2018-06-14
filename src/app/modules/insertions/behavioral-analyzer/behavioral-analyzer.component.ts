@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TitlesService} from '../../../core/services/titles.service';
 
 @Component({
   selector: 'app-behavioral-analyzer',
@@ -11,9 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BehavioralAnalyzerComponent implements OnInit {
 
-  constructor() { }
+    constructor(private titleService: TitlesService) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.titleService.init();
+    }
 
 }
