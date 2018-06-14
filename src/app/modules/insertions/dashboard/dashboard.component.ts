@@ -5,7 +5,7 @@ import {Cryptocurrency} from '../../../core/models/cryptocurrency';
 @Component({
   selector: 'app-social',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['../insertions.scss']
+  styleUrls: ['../insertions.scss', './dashboard.scss']
 })
 export class DashboardComponent implements OnInit {
 

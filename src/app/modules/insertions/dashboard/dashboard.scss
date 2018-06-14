@@ -25,3 +25,8 @@
   background-image: -webkit-gradient(linear, right top, left top, from(#3d0957), to(#0d0130));
   background-image: linear-gradient(to left, #3d0957, #0d0130);
 }
+
+.container-item__line-money {
+  opacity: .5;
+  color: $white;
+}
