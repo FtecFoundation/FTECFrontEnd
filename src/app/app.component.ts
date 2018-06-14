@@ -1,4 +1,5 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {TitlesService} from './core/services/titles.service';
 
 @Component({
     selector: 'app-root',
@@ -6,6 +7,10 @@ import {Component, ViewEncapsulation} from '@angular/core';
     styles: [],
     encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+    constructor(private titleService: TitlesService) {}
 
+    ngOnInit(): void {
+        this.titleService.init();
+    }
 }

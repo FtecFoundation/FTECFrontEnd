@@ -12,8 +12,8 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'auth', component: LoginComponent, canActivate: [OnlyNotAuthorizedGuard]},
-            { path: 'registration', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard]},
+            { path: 'auth', component: LoginComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Log in'}},
+            { path: 'registration', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Registration'}},
             { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'confirm', component: ConfirmEmailComponent},
         ])
