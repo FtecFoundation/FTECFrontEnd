@@ -123,7 +123,8 @@
   .middle__table-container-item h4,
   .container-item-balance,
   .button__outline--dashboard,
-  .main-info__head-item  {
+  .main-info__head-item,
+  .aside-right--mobile  {
     width: 100% !important;
   }
 
@@ -239,7 +240,22 @@
     overflow: hidden;
   }
 
+  .middle--mobile {
+    display: none !important;
+  }
+
+  .aside-right--mobile,
+  .btn-block {
+    margin-left: 0 !important;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center !important;
+  }
+
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 425px) {
+
+
 }

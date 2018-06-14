@@ -2,6 +2,7 @@
 
 /* Middle Part (middle) */
 
+
 :host {
   width: 80%;
   display: flex;
@@ -910,7 +911,54 @@
 // Mobile-app
 
 .main-info--mobile {
+  margin-top: 1.875em;
+}
 
+.aside-right--mobile {
+  width: 50%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.middle--mobile {
+  width: 50%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.middle--mobile__container {
+  margin-top: 2.500rem;
+  text-align: center;
+}
+
+.middle--mobile__title {
+  margin-bottom: 1.125rem;
+
+  font-size: 1.500rem;
 }
 
 .mobile-block {
@@ -947,8 +995,21 @@
 
 .btn-block {
   width: 100%;
-  display: block;
-  margin-top: 57px;
+  margin-left: 4.375em;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .store-btn.apstore-btn {
@@ -959,9 +1020,9 @@
 
 .store-btn {
   display: inline-block;
+  margin-top: 1.250rem;
   min-width: 240px;
   height: 72px;
-  margin: 0 40px;
   transition: .3s;
 }
 
@@ -969,3 +1030,4 @@
   background: url(../../../assets/images/btn-gplus.png) 50% no-repeat;
   background-size: contain;
 }
+
