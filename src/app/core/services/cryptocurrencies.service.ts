@@ -5,7 +5,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 @Injectable()
 export class CryptocurrenciesService {
 
-  getCryptocurrenciesUrl: string = 'https://api.coinmarketcap.com/v2/ticker';
+  getCryptocurrenciesUrl = 'https://api.coinmarketcap.com/v2/ticker';
 
   constructor(private _http: HttpClient) {}
 
