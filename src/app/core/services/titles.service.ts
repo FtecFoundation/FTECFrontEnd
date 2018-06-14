@@ -35,7 +35,7 @@ export class TitlesService {
                 } else {
                     return this.router.url.split('/').reduce((acc, frag) => {
                         if ( acc && frag ) { acc += SEPARATOR; }
-                        return acc + TitlesService.ucFirst(frag);
+                        return acc + this.ucFirst(frag);
                     });
                 }
             })
