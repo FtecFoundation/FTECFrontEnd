@@ -10,7 +10,13 @@
       </div>
 
       <div class="head-item__icon">
-        <span class="head-item__icon-item">+</span>
+        <span class="head-item__icon-item">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" width="12px" height="12px">
+            <g>
+              <path d="M465.167,211.614H280.245V26.691c0-8.424-11.439-26.69-34.316-26.69s-34.316,18.267-34.316,26.69v184.924H26.69    C18.267,211.614,0,223.053,0,245.929s18.267,34.316,26.69,34.316h184.924v184.924c0,8.422,11.438,26.69,34.316,26.69    s34.316-18.268,34.316-26.69V280.245H465.17c8.422,0,26.69-11.438,26.69-34.316S473.59,211.614,465.167,211.614z" fill="#FFFFFF"/>
+            </g>
+          </svg>
+        </span>
       </div>
 
     </div>
@@ -24,7 +30,7 @@
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
               <input type="checkbox">
-  
+
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="46px" height="41px" viewBox="0 0 46 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>54657EC0-BB91-42DC-B11E-3E8123A7A2C5</title>
@@ -46,11 +52,11 @@
               </span>
             </label>
           </a>
-  
+
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
               <input type="checkbox">
-              
+
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>2F7A4EE1-925E-4492-AA52-BF75ED4B694B</title>
@@ -76,11 +82,11 @@
               </span>
             </label>
           </a>
-  
+
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
               <input type="checkbox">
-              
+
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>2CDEAC1E-8B04-4633-912A-C385216F4057</title>
@@ -102,11 +108,11 @@
               </span>
             </label>
           </a>
-  
+
           <a href="javascript:void(0)" class="container__link container__link--dashboard">
             <label class="form__info-label-container">
               <input type="checkbox">
-              
+
               <span class="form__info-checkmark form__info-checkmark--dashboard">
                 <svg width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>D43FAC68-EF4D-4E72-B242-F218194FF32E</title>
@@ -142,12 +148,10 @@
             <span class="container-item__line-money">USD</span>
           </div>
 
-          <span class="container-item__price"
-                [ngStyle]="{'color': currency.quotes.USD.percent_change_24h > 0 ? '#66cc33' : '#ff8080'}">
-                {{currency.quotes.USD.price}}</span>
-          <span class="container-item__price"
-                [ngStyle]="{'color': currency.quotes.USD.percent_change_24h > 0 ? '#66cc33' : '#ff8080'}">
-                {{currency.quotes.USD.percent_change_24h}}</span>
+          <span class="container-item__price" [ngStyle]="{'color': currency.quotes.USD.percent_change_24h > 0 ? '#66cc33' : '#ff8080'}">
+            {{currency.quotes.USD.price}}</span>
+          <span class="container-item__price" [ngStyle]="{'color': currency.quotes.USD.percent_change_24h > 0 ? '#66cc33' : '#ff8080'}">
+            {{currency.quotes.USD.percent_change_24h}}%</span>
         </li>
       </ul>
 
@@ -172,7 +176,7 @@
 
           <span class="middle__table-type-name middle__table-type-name--notifications">
             Date
-          </span>   
+          </span>
 
           <span class="middle__table-type-name middle__table-type-name--notifications">
             Update
@@ -185,9 +189,93 @@
               <h4 class="table-container-item--name">Volume analyzer</h4>
 
               <div class="item-inner item-inner--notifications">
+                03 May 2018 22:29
+              </div>
+
+              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Portfolio Manager</h4>
+
+              <div class="item-inner item-inner--notifications">
+                03 May 2018 21:43
+              </div>
+
+              <span class="container-item-update">Your portfolio needs to be rebalanced!</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Price Notificator</h4>
+
+              <div class="item-inner item-inner--notifications">
+                03 May 2018 21:29
+              </div>
+
+              <span class="container-item-update">ETH/USD — $949/1</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Volume analyzer</h4>
+
+              <div class="item-inner item-inner--notifications">
+                03 May 2018 21:10
+              </div>
+
+              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Portfolio Manager</h4>
+
+              <div class="item-inner item-inner--notifications">
+                03 May 2018 18:53
+              </div>
+
+              <span class="container-item-update">Your portfolio needs to be rebalanced!</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Price Notificator</h4>
+
+              <div class="item-inner item-inner--notifications">
                 03 May 2018 17:29
               </div>
-              
+
+              <span class="container-item-update">Your portfolio needs to be rebalanced!</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Portfolio Manager</h4>
+
+              <div class="item-inner item-inner--notifications">
+                02 May 2018 9:31
+              </div>
+
+              <span class="container-item-update">ETH/USD — $949/1</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Volume analyzer</h4>
+
+              <div class="item-inner item-inner--notifications">
+                01 May 2018 19:33
+              </div>
+
               <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
             </div>
           </div>
@@ -197,105 +285,21 @@
               <h4 class="table-container-item--name">Volume analyzer</h4>
 
               <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
+                01 May 2018 18:29
               </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
+
+              <span class="container-item-update">You have done a pretty good work, comment us</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
+              <h4 class="table-container-item--name">Portfolio Manager</h4>
 
               <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
+                01 May 2018 17:29
               </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
-            </div>
-          </div>
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows asdfasdfasdsdafd</span>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
-              <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Volume analyzer</h4>
-
-              <div class="item-inner item-inner--notifications">
-                03 May 2018 17:29
-              </div>
-              
               <span class="container-item-update">Poloniex Volume on Bittrex shows</span>
             </div>
           </div>
@@ -308,7 +312,7 @@
             Last transaction
           </h5>
         </div>
-      
+
         <div class="middle__table-type">
           <span class="middle__table-type-name">
             Date
@@ -320,7 +324,7 @@
             </span>
 
             <span class="middle__table-type-name align-right">
-              
+
             </span>
           </div>
 
@@ -332,125 +336,110 @@
         <div class="middle__table--dashboard">
 
           <div class="middle__table-container middle__table-container--dashboard">
-            
+
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>03 May 2018 12:19</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
                   <span class="item-inner-line--dashboard">Volume Analizer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
-      
+
               </div>
               <span class="container-item-balance align-right">34 443 FTEC</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
-          
+
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>03 May 2018 11:29</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
-                  <span class="item-inner-line__balance">-15 FTEC</span>
+                  <span class="item-inner-line--dashboard">Portfolio Manager</span>
+                  <span class="item-inner-line__balance">-20 FTEC</span>
                 </div>
-      
+
               </div>
-              <span class="container-item-balance align-right">34 443 FTEC</span>
+              <span class="container-item-balance align-right">34 463 FTEC</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
-            
+
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>02 May 2018 17:65</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
+                  <span class="item-inner-line--dashboard">Price Notificator</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
-      
+
               </div>
-              <span class="container-item-balance align-right">34 443 FTEC</span>
+              <span class="container-item-balance align-right">34 478 FTEC</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
-          
+
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>02 May 2018 14:21</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
                   <span class="item-inner-line--dashboard">TRP</span>
                   <span class="item-inner-line__balance item-inner-line__balance--positive">+134 FTEC</span>
                 </div>
-      
+
               </div>
-              <span class="container-item-balance align-right">34 443 FTEC</span>
+              <span class="container-item-balance align-right">34 344 FTEC</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
-            
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
-              <div class="item-inner">
-                <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
-                  <span class="item-inner-line__balance">-15 FTEC</span>
-                </div>
-      
-              </div>
-              <span class="container-item-balance align-right">34 443 FTEC</span>
-            </div>
-          </div>
 
-          <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>02 May 2018 13:41</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
-                  <span class="item-inner-line__balance">-15 FTEC</span>
+                  <span class="item-inner-line--dashboard">TRP</span>
+                  <span class="item-inner-line__balance item-inner-line__balance--positive">+54 FTEC</span>
                 </div>
-      
+
               </div>
-              <span class="container-item-balance align-right">34 443 FTEC</span>
+              <span class="container-item-balance align-right">34 290 FTEC</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>02 May 2018 17:29</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
-                  <span class="item-inner-line__balance">-15 FTEC</span>
+                  <span class="item-inner-line--dashboard">TRP</span>
+                  <span class="item-inner-line__balance item-inner-line__balance--positive">+49 FTEC</span>
                 </div>
-      
+
               </div>
-              <span class="container-item-balance align-right">34 443 FTEC</span>
+              <span class="container-item-balance align-right">34 246 FTEC</span>
             </div>
           </div>
 
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>01 May 2018 17:29</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
                   <span class="item-inner-line--dashboard">Volume Analizer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
-      
+
               </div>
               <span class="container-item-balance align-right">34 443 FTEC</span>
             </div>
@@ -458,14 +447,29 @@
 
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4>03 May 2018 17:29</h4>
-      
+              <h4>01 May 2018 17:29</h4>
+
               <div class="item-inner">
                 <div class="item-inner-line">
                   <span class="item-inner-line--dashboard">Volume Analizer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
-      
+
+              </div>
+              <span class="container-item-balance align-right">34 443 FTEC</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4>01 May 2018 17:29</h4>
+
+              <div class="item-inner">
+                <div class="item-inner-line">
+                  <span class="item-inner-line--dashboard">Volume Analizer</span>
+                  <span class="item-inner-line__balance">-15 FTEC</span>
+                </div>
+
               </div>
               <span class="container-item-balance align-right">34 443 FTEC</span>
             </div>
@@ -490,11 +494,11 @@
 
               <div class="stocs__container">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/binance.png" alt="">
+                  <img src="../../../../assets/images/Bitstamp_Logo_2013.png" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>Binance</span>
+                  <span>Bitstamp</span>
 
                   <span class="stocs__text-connected">connected</span>
                 </div>
@@ -510,11 +514,11 @@
             <div class="middle__table-container-stocs">
               <div class="stocs__container">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/bittrex-logo-mark.png" alt="">
+                  <img src="../../../../assets/images/kraken-logo-7DB471C653-seeklogo.com.png" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>Bittrex</span>
+                  <span>Kraken</span>
                 </div>
               </div>
 
@@ -528,11 +532,11 @@
             <div class="middle__table-container-stocs">
               <div class="stocs__container">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/yo-bit.png" alt="">
+                  <img src="../../../../assets/images/2117a262e1673ec13eb0552c4dc697c7-base.png" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>Yobit</span>
+                  <span>WEX.NZ</span>
                 </div>
               </div>
 
@@ -544,13 +548,31 @@
         <div class="filter__table--filter">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-stocs">
-              <div class="stocs__container"> 
+              <div class="stocs__container">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/poloniex.png" alt="">
+                  <img src="../../../../assets/images/Okcoin.png" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>Poloniex</span>
+                  <span>Okcoin</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/huobi-logo.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>Huobi</span>
                 </div>
               </div>
 
@@ -568,7 +590,7 @@
                 </div>
 
                 <div class="stocs__text">
-                  <span>Binance</span>
+                  <span>Cryptsy</span>
                 </div>
               </div>
 
@@ -582,11 +604,119 @@
             <div class="middle__table-container-stocs">
               <div class="stocs__container">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/poloniex.png" alt="">
+                  <img src="../../../../assets/images/BITFINEX.png" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>Binance</span>
+                  <span>Bitfinex</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/logo-square.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>CEX.IO</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/HitBTC-Cryptocurrency-Exchange-Logo-1.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>HitBTC</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/HitBTC-Cryptocurrency-Exchange-Logo-1.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>HitBTC</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/HitBTC-Cryptocurrency-Exchange-Logo-1.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>HitBTC</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/HitBTC-Cryptocurrency-Exchange-Logo-1.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>HitBTC</span>
+                </div>
+              </div>
+
+              <button class="button__outline button__outline--dashboard">Change API Keys</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__table--filter">
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-stocs">
+              <div class="stocs__container">
+                <div class="stocs__item-image">
+                  <img src="../../../../assets/images/HitBTC-Cryptocurrency-Exchange-Logo-1.png" alt="">
+                </div>
+
+                <div class="stocs__text">
+                  <span>HitBTC</span>
                 </div>
               </div>
 
@@ -598,4 +728,4 @@
       </div>
     </div>
 
-</div>
+  </div>
