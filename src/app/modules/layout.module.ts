@@ -22,6 +22,8 @@ import {TrpComponent} from './insertions/trp/trp.component';
 import {OnlyAuthorizedGuard} from '../core/guards/only-authorized.guard';
 import {DashboardComponent} from './insertions/dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
+import { ChangeLogComponent } from './insertions/change-log/change-log.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import { HeaderComponent } from './header/header.component';
                     {path: 'smart-trading-module', component: EmptyComponent},
                     {path: 'news-background', component: EmptyComponent},
                     {path: 'trp', component: EmptyComponent},
-                    {path: 'dashboard', component: DashboardComponent}
+                    {path: 'dashboard', component: DashboardComponent},
+                    {path: 'change-log', component: ChangeLogComponent}
                 ], canActivate: [OnlyAuthorizedGuard]
             }
         ])
@@ -92,7 +95,9 @@ import { HeaderComponent } from './header/header.component';
         BehavioralAnalyzerComponent,
         TrpComponent,
         DashboardComponent,
-        HeaderComponent
+        HeaderComponent,
+        ChangeLogComponent,
+        FooterComponent
     ]
 })
 

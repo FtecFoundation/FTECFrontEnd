@@ -13,7 +13,9 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 
-const PORT = process.env.PORT || 80;
+// DEBUG=express:* node dist/server --api_url=https://api.ftec.network !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const PORT = process.env.PORT || 4200;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template

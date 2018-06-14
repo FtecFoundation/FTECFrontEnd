@@ -1,0 +1,20 @@
+<div class="change-log_container">
+    <div class="change-log" *ngFor="let log of changeLog">
+        <div class="middle__head middle__head--padding">
+            <div class="middle__table-type">
+                <h5>
+                    {{log.date}}
+                </h5>
+            </div>
+        </div>
+
+        <div class="middle__table">
+            <div class="middle__table-container middle__table-container--layout">
+                <ul>
+                    <li *ngFor="let change of log.changes">{{change}}</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
