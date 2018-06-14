@@ -7,13 +7,13 @@ import { RestService } from './rest.service';
 import {HttpParams} from '@angular/common/http';
 
 enum AccountApiUrls {
-    login = 'login/',
-    logout = 'logout/',
-    register = 'registration/',
-    checkEmail = 'checkUniqueEmail/',
-    checkUsername = 'checkUniqueLogin/',
-    checkIfAuthorized = 'cabinet/tutorial/getCurrentStep/',
-    restorePassword = 'sendRestoreUrl/'
+    login = 'login',
+    logout = 'logout',
+    register = 'registration',
+    checkEmail = 'checkUniqueEmail',
+    checkUsername = 'checkUniqueLogin',
+    checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
+    restorePassword = 'sendRestoreUrl'
 }
 
 @Injectable()
@@ -50,12 +50,16 @@ export class AccountService extends RestService {
 
     checkEmailNotTaken(email: string): Observable<any> {
         const param = new HttpParams().set('email', email);
-        return this.get(AccountApiUrls.checkEmail, param).pipe(tap(resp => console.log(resp)), catchError(e => this.handleError(e)));
+        return this.get(AccountApiUrls.checkEmail, param).pipe(
+            tap(resp => console.log(resp)),
+            catchError(e => this.handleError(e)));
     }
 
     checkUsernameNotTaken(username: string): Observable<any> {
         const param = new HttpParams().set('login', username);
-        return this.get(AccountApiUrls.checkUsername, param).pipe(tap(resp => console.log(resp)), catchError(e => this.handleError(e)));
+        return this.get(AccountApiUrls.checkUsername, param).pipe(
+            tap(resp => console.log(resp)),
+            catchError(e => this.handleError(e)));
     }
 }
 

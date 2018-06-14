@@ -3,7 +3,7 @@ import {CryptocurrenciesService} from '../../../core/services/cryptocurrencies.s
 import {Cryptocurrency} from '../../../core/models/cryptocurrency';
 
 @Component({
-  selector: 'app-social',
+  selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['../insertions.scss', './dashboard.scss']
 })
