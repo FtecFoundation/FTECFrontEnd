@@ -7,13 +7,13 @@ import { RestService } from './rest.service';
 import {HttpParams} from '@angular/common/http';
 
 enum AccountApiUrls {
-    login = 'login/',
-    logout = 'logout/',
-    register = 'registration/',
-    checkEmail = 'checkUniqueEmail/',
-    checkUsername = 'checkUniqueLogin/',
-    checkIfAuthorized = 'cabinet/tutorial/getCurrentStep/',
-    restorePassword = 'sendRestoreUrl/'
+    login = 'login',
+    logout = 'logout',
+    register = 'registration',
+    checkEmail = 'checkUniqueEmail',
+    checkUsername = 'checkUniqueLogin',
+    checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
+    restorePassword = 'sendRestoreUrl'
 }
 
 @Injectable()
