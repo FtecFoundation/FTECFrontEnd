@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
 import {Router} from '@angular/router';
+import {TitlesService} from '../../core/services/titles.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    currentTitle: string;
 
-  constructor(private _accountService: AccountService, private router: Router) { }
+  constructor(private _accountService: AccountService,
+              private router: Router,
+              private _titlesService: TitlesService) { }
 
   ngOnInit() {
+      this.currentTitle = this._titlesService.currentTitle;
   }
 
     showUser() {
