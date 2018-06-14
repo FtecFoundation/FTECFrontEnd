@@ -24,6 +24,7 @@ import {DashboardComponent} from './insertions/dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { ChangeLogComponent } from './insertions/change-log/change-log.component';
 import { FooterComponent } from './footer/footer.component';
+import { NotActiveComponent } from '../modules/not-active/not-active.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { FooterComponent } from './footer/footer.component';
         RouterModule.forChild([
             {
                 path: 'modules', component: LayoutComponent, children: [
+                    {path: 'not-active', component: NotActiveComponent},
                     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
                     {path: 'social', component: SocialComponent},
                     {path: 'arbitrage', component: ArbitrageComponent},
@@ -74,7 +76,8 @@ import { FooterComponent } from './footer/footer.component';
         BehavioralAnalyzerComponent,
         TrpComponent,
         DashboardComponent,
-        HeaderComponent
+        HeaderComponent,
+        NotActiveComponent
     ],
     declarations: [
         LayoutComponent,
@@ -97,7 +100,8 @@ import { FooterComponent } from './footer/footer.component';
         DashboardComponent,
         HeaderComponent,
         ChangeLogComponent,
-        FooterComponent
+        FooterComponent,
+        NotActiveComponent
     ]
 })
 
