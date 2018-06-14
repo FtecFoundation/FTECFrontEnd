@@ -7,6 +7,7 @@ import {ErrorsService} from './services/errors.service';
 import {OnlyAuthorizedGuard} from './guards/only-authorized.guard';
 import {OnlyNotAuthorizedGuard} from './guards/only-not-authorized.guard';
 import {AccountService} from './services/account.service';
+import {CryptocurrenciesService} from './services/cryptocurrencies.service';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import {AccountService} from './services/account.service';
         AccountService,
         ErrorsService,
         OnlyAuthorizedGuard,
-        OnlyNotAuthorizedGuard
+        OnlyNotAuthorizedGuard,
+        CryptocurrenciesService
     ]
 })
 export class CoreModule {

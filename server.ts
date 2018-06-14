@@ -32,7 +32,8 @@ let apiUrl = '';
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--api_url=')) {
-        apiUrl = val.substring(val.indexOf('='));
+        apiUrl = val.substring(val.indexOf('=') + 1);
+        console.log(apiUrl);
     }
 });
 

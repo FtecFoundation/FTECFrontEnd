@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {CryptocurrenciesService} from '../../../core/services/cryptocurrencies.service';
+import {Cryptocurrency} from '../../../core/models/cryptocurrency';
 
 @Component({
   selector: 'app-social',
@@ -7,10 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() {
+  currencies: Cryptocurrency[] = [];
+
+  constructor(private _cryptoService: CryptocurrenciesService) {
   }
 
   ngOnInit() {
+      this._cryptoService.getCryptocurrencies().subscribe(data => {
+          for (const val of Object.values(data['data'])) {
+              this.currencies.push(<Cryptocurrency> val);
+          }
+      });
   }
 
 }
