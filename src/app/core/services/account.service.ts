@@ -11,7 +11,7 @@ enum AccountApiUrls {
     logout = 'logout',
     register = 'registration',
     checkEmail = 'checkUniqueEmail',
-    checkUsername = 'checkUniqueLogin',
+    checkUsername = 'checkUniqueLogin?login=',
     checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
     restorePassword = 'sendRestoreUrl'
 }
@@ -56,8 +56,7 @@ export class AccountService extends RestService {
     }
 
     checkUsernameNotTaken(username: string): Observable<any> {
-        const param = new HttpParams().set('login', username);
-        return this.get(AccountApiUrls.checkUsername, param).pipe(
+        return this.get(AccountApiUrls.checkUsername+username).pipe(
             tap(resp => console.log(resp)),
             catchError(e => this.handleError(e)));
     }
