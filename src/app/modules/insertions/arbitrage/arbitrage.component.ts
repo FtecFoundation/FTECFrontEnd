@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ShowModalService} from '../../not-active/show-modal.service';
 
 @Component({
   selector: 'app-arbitrage',
@@ -8,10 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class ArbitrageComponent implements OnInit {
 
-  constructor() {
+  constructor(private _showModalService: ShowModalService) {
   }
 
   ngOnInit() {
   }
+
+  showModal() {
+    this._showModalService.showModal = true;
+  }
+
 
 }

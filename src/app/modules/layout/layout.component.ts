@@ -1,4 +1,5 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
+import {ShowModalService} from '../not-active/show-modal.service';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,7 @@ import {Component, ElementRef, Input, OnInit} from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  showPopup = true;
-
-  constructor() {
+  constructor(public _showModalService: ShowModalService) {
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {CryptocurrenciesService} from '../../../core/services/cryptocurrencies.service';
 import {Cryptocurrency} from '../../../core/models/cryptocurrency';
+import {ShowModalService} from '../../not-active/show-modal.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,8 @@ export class DashboardComponent implements OnInit {
 
   currencies: Cryptocurrency[] = [];
 
-  constructor(private _cryptoService: CryptocurrenciesService) {
+  constructor(private _cryptoService: CryptocurrenciesService,
+              private _showModalService: ShowModalService) {
   }
 
   ngOnInit() {
@@ -21,5 +23,9 @@ export class DashboardComponent implements OnInit {
           }
       });
   }
+
+    showModal() {
+        this._showModalService.showModal = true;
+    }
 
 }
