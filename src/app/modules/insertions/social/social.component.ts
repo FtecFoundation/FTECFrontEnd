@@ -8,6 +8,9 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 })
 export class SocialComponent implements OnInit {
 
+  dictionary: string[] = ['hardfork', 'partnership', 'airdrop', 'coinburn'];
+  newWord: string = '';
+
   constructor(private _showModalService: ShowModalService) {
   }
 
@@ -16,6 +19,15 @@ export class SocialComponent implements OnInit {
 
     showModal() {
         this._showModalService.showModal = true;
+    }
+
+    deleteWord(word: string) {
+    this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
+    console.log(this.dictionary);
+    }
+
+    addWord() {
+    if(this.dictionary.indexOf(this.newWord) === -1) this.dictionary.push(this.newWord);
     }
 
 }
