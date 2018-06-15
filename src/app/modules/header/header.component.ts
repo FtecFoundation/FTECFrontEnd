@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
 import {NavigationStart, Router} from '@angular/router';
 import {TitlesService} from '../../core/services/titles.service';
@@ -10,6 +10,8 @@ import {ShowModalService} from '../not-active/show-modal.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    @ViewChild('profileImage') image: ElementRef;
+
     currentTitle: string;
 
   constructor(private _accountService: AccountService,
