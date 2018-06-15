@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-telegram-assistant',
-  template: `
-    <p>
-      telegram-assistant works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './telegram-assistant.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class TelegramAssistantComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

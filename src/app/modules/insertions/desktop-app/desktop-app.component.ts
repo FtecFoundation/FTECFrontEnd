@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-desktop-app',
-  template: `
-    <p>
-      desktop-app works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './desktop-app.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class DesktopAppComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

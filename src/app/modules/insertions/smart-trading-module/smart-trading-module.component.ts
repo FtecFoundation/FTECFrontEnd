@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-smart-trading-module',
-  template: `
-    <p>
-      smart-trading-module works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './smart-trading-module.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class SmartTradingModuleComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

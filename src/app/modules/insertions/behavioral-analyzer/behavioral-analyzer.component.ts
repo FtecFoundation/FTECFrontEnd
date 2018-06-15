@@ -1,22 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {TitlesService} from '../../../core/services/titles.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-behavioral-analyzer',
-  template: `
-    <p>
-      behavioral-analyzer works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './behavioral-analyzer.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class BehavioralAnalyzerComponent implements OnInit {
 
-    constructor(private titleService: TitlesService) {
-    }
+  constructor() {
+  }
 
-    ngOnInit() {
-        this.titleService.init();
-    }
+  ngOnInit() {
+  }
 
 }

@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-news-background',
-  template: `
-    <p>
-      news-background works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './news-background.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class NewsBackgroundComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

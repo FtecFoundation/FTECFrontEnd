@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-trp',
-  template: `
-    <p>
-      trp works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './trp.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class TrpComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

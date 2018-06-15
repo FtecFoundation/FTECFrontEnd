@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-order-manager',
-  template: `
-    <p>
-      order-manager works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './order-manager.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class OrderManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
