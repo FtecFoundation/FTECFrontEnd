@@ -16,7 +16,7 @@ const apiProxy = httpProxy.createProxyServer();
 
 // DEBUG=express:* node dist/server --api_url=https://api.ftec.network !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const PORT = process.env.PORT || 4200;
+const PORT = process.env.PORT || 80;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
