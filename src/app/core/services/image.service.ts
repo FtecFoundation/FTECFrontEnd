@@ -5,7 +5,7 @@ import {tap} from 'rxjs/operators/tap';
 import {catchError} from 'rxjs/operators/catchError';
 
 enum ImageApiUrls {
-    getProfileImage = 'cabinet/images'
+    getProfileImage = 'cabinet/image/'
 }
 
 @Injectable()
