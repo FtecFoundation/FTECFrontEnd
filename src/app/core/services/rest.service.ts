@@ -17,7 +17,7 @@ export abstract class RestService {
     }
 
     protected processLogout() {
-        this._cookieService.delete('token');
+        this._cookieService.deleteAll('token');
     }
 
     protected get headers(): HttpHeaders {
