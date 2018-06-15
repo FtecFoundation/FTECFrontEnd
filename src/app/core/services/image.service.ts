@@ -9,7 +9,7 @@ enum ImageApiUrls {
 }
 
 @Injectable()
-export class ImageService extends RestService{
+export class ImageService extends RestService {
 
     public getImage(): Observable<Blob> {
         return this.getBlob(ImageApiUrls.getProfileImage).pipe(
