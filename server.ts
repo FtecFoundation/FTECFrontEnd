@@ -53,6 +53,12 @@ app.set('views', join(DIST_FOLDER, 'browser'));
   app.get('/api/**', (req, res) => { });
 */
 
+app.use('/api', proxy(apiUrl, {
+    proxyReqPathResolver: function(req) {
+        return require('url').parse(req.url).path;
+    }
+}));
+
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
   maxAge: '1y'
@@ -64,11 +70,7 @@ app.get('*', (req, res) => {
 });
 
 // Start up the Node server
-app.use('/api', proxy(apiUrl, {
-    proxyReqPathResolver: function(req) {
-        return require('url').parse(req.url).path;
-    }
-}));
+
 
 if (apiUrl) {
     app.listen(PORT, () => {
