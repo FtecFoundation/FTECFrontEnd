@@ -93,11 +93,9 @@
   width: 2.188em;
   height: 2.188em;
   border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
 
-
-  // background-image: url("../../../assets/images/bot2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .user-account-block {
