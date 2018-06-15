@@ -11,12 +11,11 @@ enableProdMode();
 
 // Express server
 const app = express();
-const httpProxy = require('http-proxy');
-const apiProxy = httpProxy.createProxyServer();
+const proxy = require('express-http-proxy');
 
 // DEBUG=express:* node dist/server --api_url=https://api.ftec.network !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -29,7 +28,6 @@ const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main.
 import {ngExpressEngine} from '@nguniversal/express-engine';
 // Import module map for lazy loading
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
-import {request} from 'http';
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 let apiUrl = '';
@@ -66,24 +64,14 @@ app.get('*', (req, res) => {
 });
 
 // Start up the Node server
-// app.use('/api', proxy(apiUrl, {
-//     proxyReqPathResolver: function(req) {
-//         return require('url').parse(req.url).path;
-//     }
-// }));
+app.use('/api', proxy(apiUrl, {
+    proxyReqPathResolver: function(req) {
+        return require('url').parse(req.url).path;
+    }
+}));
 
-// app.get('/api', function(req, res) {
-//     console.log(req.url);
-//     request(apiUrl + req.url, function (response) {
-//         if (response.statusCode === 200) {
-//             console.log(response);
-//             res.send(response);
-//         }
-//     });
-// });
-
-
+if (apiUrl) {
     app.listen(PORT, () => {
         console.log(`Node Express server listening on http://localhost:${PORT}`);
     });
-
+}
