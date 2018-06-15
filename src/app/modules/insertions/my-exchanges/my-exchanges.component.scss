@@ -1,0 +1,36 @@
+@import "../../../../assets/styles/variables";
+
+.container__middle--my-exchanges {
+  width: 100%;
+}
+
+.middle__head--my-exchanges {
+  padding: 1rem;
+}
+
+.filter__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.filter__container--my-exchanges {
+  width: 50%;
+  padding: .313rem;
+}
+
+.filter__container-link {
+  color: $accent;
+  font-size: .938rem;
+  text-decoration: underline;
+}
+
+select {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;       /* remove default arrow */
+} 
+
+select::-ms-expand { 
+  display: none; /* hide the default arrow in ie10 and ie11 */
+}

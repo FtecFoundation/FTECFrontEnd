@@ -24,8 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
       this._imageService.getImage().subscribe(data => {
-          const image = URL.createObjectURL(data);
-          this.profileImage = image.substring(image.indexOf(':') + 1);
+          this.image.nativeElement.src = URL.createObjectURL(data);
       });
   }
 

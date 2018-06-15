@@ -62,7 +62,8 @@
   color: $white;
 }
 
-.middle__head--arbitrage {
+.middle__head--arbitrage,
+.aside-right__head--arbitrage {
   padding-top: 1.063rem;
   padding-bottom: 1.063rem;
 }
@@ -136,7 +137,6 @@
   width: 50%;
   padding: 0.625rem;
   float: left;
-  display: inline-block;
 }
 
 .middle__table-container-embed:nth-child(3n) {
@@ -547,6 +547,7 @@
 }
 
 .middle__empty-title {
+  text-align: center;
   font-size: 24px;
   font-weight: 500;
 }
@@ -709,6 +710,8 @@
   display: flex;
   -ms-flex-pack: distribute;
     justify-content: space-around;
+
+  overflow: hidden;
 }
 
 .head-item__container-item {
@@ -1054,6 +1057,7 @@
 }
 
 .middle--empty-frame iframe {
+  width: 100%;
   margin-bottom: 2.500rem;
 }
 

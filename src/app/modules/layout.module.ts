@@ -26,6 +26,7 @@ import { ChangeLogComponent } from './insertions/change-log/change-log.component
 import { FooterComponent } from './footer/footer.component';
 import { NotActiveComponent } from '../modules/not-active/not-active.component';
 import {ShowModalService} from './not-active/show-modal.service';
+import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {ShowModalService} from './not-active/show-modal.service';
                     {path: 'news-background', component: NewsBackgroundComponent, data: {title: 'News Background Analyzer'}},
                     {path: 'trp', component: TrpComponent, data: {title: 'Trading Recommendations Platform'}},
                     {path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'}},
-                    {path: 'change-log', component: ChangeLogComponent, data: {title: 'Change Log'}}
+                    {path: 'change-log', component: ChangeLogComponent, data: {title: 'Change Log'}},
+                    {path: 'my-exchanges', component: MyExchangesComponent}
                 ], canActivate: [OnlyAuthorizedGuard]
             }
         ])
@@ -77,7 +79,8 @@ import {ShowModalService} from './not-active/show-modal.service';
         TrpComponent,
         DashboardComponent,
         HeaderComponent,
-        NotActiveComponent
+        NotActiveComponent,
+        MyExchangesComponent
     ],
     declarations: [
         LayoutComponent,
@@ -101,7 +104,8 @@ import {ShowModalService} from './not-active/show-modal.service';
         HeaderComponent,
         ChangeLogComponent,
         FooterComponent,
-        NotActiveComponent
+        NotActiveComponent,
+        MyExchangesComponent
     ],
     providers: [ShowModalService]
 })
