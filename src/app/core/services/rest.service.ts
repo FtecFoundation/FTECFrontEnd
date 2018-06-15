@@ -12,7 +12,7 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        this._cookieService.delete('token');
+        this._cookieService.deleteAll('token');
         this._cookieService.set('token', token);
     }
 

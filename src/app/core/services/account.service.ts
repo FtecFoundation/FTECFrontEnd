@@ -56,7 +56,7 @@ export class AccountService extends RestService {
     }
 
     checkUsernameNotTaken(username: string): Observable<any> {
-        return this.get(AccountApiUrls.checkUsername+username).pipe(
+        return this.get(AccountApiUrls.checkUsername + username).pipe(
             tap(resp => console.log(resp)),
             catchError(e => this.handleError(e)));
     }
