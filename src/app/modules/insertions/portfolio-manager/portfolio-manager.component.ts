@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-portfolio-manager',
-  template: `
-    <p>
-      portfolio-manager works!
-    </p>
-  `,
-  styles: []
+  selector: 'app-social',
+  templateUrl: './portfolio-manager.component.html',
+  styleUrls: ['../insertions.scss']
 })
 export class PortfolioManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
