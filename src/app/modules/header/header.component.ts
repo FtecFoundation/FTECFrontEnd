@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
 import {NavigationStart, Router} from '@angular/router';
 import {TitlesService} from '../../core/services/titles.service';
+import {ShowModalService} from '../not-active/show-modal.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,14 @@ import {TitlesService} from '../../core/services/titles.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    @ViewChild('profileImage') image: ElementRef;
+
     currentTitle: string;
 
   constructor(private _accountService: AccountService,
               private router: Router,
-              public _titlesService: TitlesService) { }
+              public _titlesService: TitlesService,
+              public _showModalService: ShowModalService) { }
 
   ngOnInit() {
   }
@@ -42,6 +46,10 @@ export class HeaderComponent implements OnInit {
       this._accountService.logoutUser().subscribe(() => {
           this.router.navigate(['']);
       });
+    }
+
+    showModal() {
+        this._showModalService.showModal = true;
     }
 
 }

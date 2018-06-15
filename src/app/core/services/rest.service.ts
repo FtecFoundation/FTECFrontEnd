@@ -12,12 +12,12 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        this._cookieService.delete('token');
-        this._cookieService.set('token', token);
+        let sdate = new Date();
+        this._cookieService.set('token', token, sdate.setDate(sdate.getDate() + 1), '/');
     }
 
     protected processLogout() {
-        this._cookieService.delete('token');
+        this._cookieService.deleteAll('/');
     }
 
     protected get headers(): HttpHeaders {
@@ -27,6 +27,10 @@ export abstract class RestService {
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
         return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers, params: queryParam});
+    }
+
+    protected getBlob(relativeUrl: string, queryParam?: HttpParams): Observable<Blob> {
+        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers, params: queryParam, responseType: 'blob'});
     }
 
     protected post(relativeUrl: string, data: any): Observable<any>  {
