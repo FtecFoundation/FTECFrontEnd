@@ -9,6 +9,7 @@ import {OnlyNotAuthorizedGuard} from './guards/only-not-authorized.guard';
 import {AccountService} from './services/account.service';
 import {CryptocurrenciesService} from './services/cryptocurrencies.service';
 import {TitlesService} from './services/titles.service';
+import {ImageService} from './services/image.service';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import {TitlesService} from './services/titles.service';
         OnlyAuthorizedGuard,
         OnlyNotAuthorizedGuard,
         CryptocurrenciesService,
-        TitlesService
+        TitlesService,
+        ImageService
     ]
 })
 export class CoreModule {

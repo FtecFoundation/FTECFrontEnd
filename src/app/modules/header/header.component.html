@@ -32,8 +32,7 @@
             <span (click)="showModal()" class="user-balance">34 443 FTEC +</span>
 
             <div class="header__user-account" (click)="showUser()">
-                <div class="header__user-account-image" #profileImage></div>
-
+                <div class="header__user-account-image" [ngStyle]="{'background-image': 'url(' + profileImage + ')'}" #profileImage></div>
                 <div class="user-account-block">
                     <div class="user-account-block-triangle"></div>
                     <div class="user__block-head">
