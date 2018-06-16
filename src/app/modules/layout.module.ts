@@ -53,8 +53,8 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
                     {path: 'news-background', component: NewsBackgroundComponent, data: {title: 'News Background Analyzer'}},
                     {path: 'trp', component: TrpComponent, data: {title: 'Trading Recommendations Platform'}},
                     {path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'}},
-                    {path: 'change-log', component: ChangeLogComponent, data: {title: 'Change Log'}},
-                    {path: 'my-exchanges', component: MyExchangesComponent}
+                    {path: 'change-log', component: ChangeLogComponent, data: {title: 'Changelog'}},
+                    {path: 'my-exchanges', component: MyExchangesComponent, data: {title: 'My Exchanges'}}
                 ], canActivate: [OnlyAuthorizedGuard]
             }
         ])

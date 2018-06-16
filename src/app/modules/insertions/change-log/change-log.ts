@@ -24,7 +24,7 @@ export const changeLog = [
         'changes': [
             'Logout feature was added',
             'We began working on arbitrage and social assistant launching',
-            'Now you can see actual rates of top 10 cryptocurrancies in dashboard'
+            'Now you can see actual rates of top 10 cryptocurrencies in dashboard'
         ]
     }
 ];
