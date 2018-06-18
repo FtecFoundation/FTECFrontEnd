@@ -60,3 +60,7 @@ h1 + .error-field {
   text-align: center;
   margin-bottom: 0.938em;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

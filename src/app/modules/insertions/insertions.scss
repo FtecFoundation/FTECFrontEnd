@@ -330,8 +330,10 @@
 }
 
 .categories__item-svg {
+  top: 0;
   right: 0;
   padding-right: 0.625rem;
+  margin-top: 5px;
   position: absolute;
   
   display: -webkit-box;
@@ -339,6 +341,7 @@
   display: flex;
   
   margin-left: 0.625rem;
+
 }
 
 .filter__container-block-item--categories {

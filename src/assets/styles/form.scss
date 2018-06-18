@@ -101,6 +101,7 @@
   -moz-border-image: $blue-gradient;
   -webkit-border-image: $blue-gradient;
   border-image: $blue-gradient;
+
   -webkit-border-image-slise: 1;
   border-image-slice: 1;
 }
@@ -108,7 +109,6 @@
 /* On mouse-over, add a grey background color */
 .form__info-label-container:hover  .form__info-checkmark,
 .form__info-label-container input:checked ~ .form__info-checkmark {
-  -webkit-border-image: $blue-gradient;
   background-image: $blue-gradient;
 }
 
@@ -116,7 +116,6 @@
 /* When the checkbox is checked, add a blue background */
 .form__info-label-container.is-active  .form__info-checkmark,
 .form__info-label-container input:checked ~ .form__info-checkmark {
-  -webkit-border-image: $blue-gradient;
   background-image: $blue-gradient;
 }
 
@@ -161,4 +160,20 @@
 .error-field {
   color: $dark-red;
   font-size: 0.875rem;
+}
+
+.form__select {
+  left: 20px;
+  width: 90%;
+  height: 38px;
+  position: relative;
+  border-radius: 28px;
+
+  color: $white;
+  opacity: .35;
+  outline: none;
+  border: none;
+  background: transparent;
+  -webkit-appearance: menulist-button;
+  appearance: menulist-button;
 }
