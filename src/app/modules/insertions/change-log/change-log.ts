@@ -3,7 +3,7 @@ export const changeLog = [
         'date': '18/06/2018',
         'changes': [
             'We began working on API Kraken to make the work with this exchange possible in the ecosystem',
-            'We faced problems of access which make automatic trading on Kraken difficult',
+            'We faced problems of access which make automatic trading on Kraken difficult. ' +
             'That\'s why we involved technical department to find the solution',
             'Integration of Social Assistant with the main module on backend',
             'Unit testing for Social Assistant is done',
