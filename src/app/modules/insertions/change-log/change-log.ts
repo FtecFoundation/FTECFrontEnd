@@ -1,5 +1,27 @@
 export const changeLog = [
     {
+        'date': '18/06/2018',
+        'changes': [
+            'We began working on API Kraken to make the work with this exchange possible in the ecosystem',
+            'We faced problems of access which make automatic trading on Kraken difficult',
+            'That\'s why we involved technical department to find the solution',
+            'Integration of Social Assistant with the main module on backend',
+            'Unit testing for Social Assistant is done',
+            'Unit testing for main features of interface of exchange connection is done',
+            'The error of display and functionality of check boxes in Safari browser is fixed',
+            'My Exchanges page is adapted to different screen sizes',
+            'Custom drop-down design is added and can be seen on My Exchanges page',
+            'Arbitrage Module backend bugs are fixed',
+            'Integration between personal cabinet and Arbitrage Module',
+            'We configured receipt of the last 5 arbitrage windows for user',
+            'All components related to password recovery are made on front-end side',
+            'We created a system of Arbitrage Module versions automatic updates',
+            'We created a system of Social Assistant versions automatic updates',
+            'Test server for Social Assistant is made',
+            'Test server for Arbitrage Module is made'
+        ]
+    },
+    {
         'date': '17/06/2018',
         'changes': [
             'We continue to work on endpoints for password recovery',
