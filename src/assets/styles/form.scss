@@ -76,16 +76,15 @@
 }
 
 /* Hide the browser's default checkbox */
-// .form__info-label-container  {
-//   position: absolute;
-//   opacity: 0;
-//   cursor: pointer;
+.form__info-label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 
-//   border-radius: 3px;
-//   border: 2px solid $accent;
-// }
+  border-radius: 3px;
+  border: 2px solid $accent;
+}
 
-// .form__info-label-container.is-active .
 
 /* Create a custom checkbox */
 .form__info-checkmark {
@@ -107,13 +106,16 @@
 }
 
 /* On mouse-over, add a grey background color */
-.form__info-label-container:hover  .form__info-checkmark {
+.form__info-label-container:hover  .form__info-checkmark,
+.form__info-label-container input:checked ~ .form__info-checkmark {
   -webkit-border-image: $blue-gradient;
   background-image: $blue-gradient;
 }
 
+
 /* When the checkbox is checked, add a blue background */
-.form__info-label-container.is-active  .form__info-checkmark {
+.form__info-label-container.is-active  .form__info-checkmark,
+.form__info-label-container input:checked ~ .form__info-checkmark {
   -webkit-border-image: $blue-gradient;
   background-image: $blue-gradient;
 }
@@ -126,7 +128,8 @@
 }
 
 /* Show the form__info-checkmark when checked */
-.form__info-label-container.is-active .form__info-checkmark:after {
+.form__info-label-container.is-active .form__info-checkmark:after,
+.form__info-label-container input:checked ~ .form__info-checkmark:after {
   display: block;
 }
 

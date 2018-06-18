@@ -53,9 +53,9 @@ export class RegistrationComponent implements OnInit {
         return new RegistrationData().deserialize(this.registrationForm.value);
     }
 
-    toggleCheckbox() {
-        this.terms.value === true ? this.terms.setValue(false) : this.terms.setValue(true);
-        console.log(this.terms.value);
+    toggleCheckbox(field: AbstractControl) {
+        field.value === true ? field.setValue(false) : field.setValue(true);
+        console.log(field.value);
     }
 
     get username() { return this.registrationForm.get('username'); }
@@ -69,5 +69,7 @@ export class RegistrationComponent implements OnInit {
     get passwordGroup() { return this.registrationForm.get('passwordGroup'); }
 
     get confirmPassword() { return this.registrationForm.get('passwordGroup').get('confirmPassword'); }
+
+    get subscribeForEmail() { return this.registrationForm.get('subscribeForEmail'); }
 
 }
