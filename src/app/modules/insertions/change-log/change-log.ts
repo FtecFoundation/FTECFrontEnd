@@ -1,5 +1,13 @@
 export const changeLog = [
     {
+        'date': '17/06/2018',
+        'changes': [
+            'We continue to work on endpoints for password recovery',
+            'Bugs related to following some links are fixed',
+            'Page of password recovery layout and the beginning of writing logic in components'
+        ]
+    },
+    {
         'date': '15/06/2018',
         'changes': [
             'We finished the work on endpoints connected with Arbitrage Module',
