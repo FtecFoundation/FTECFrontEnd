@@ -44,7 +44,7 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
                     {path: 'mobile-app', component: MobileAppComponent, data: {title: 'Mobile App'}},
                     {path: 'portfolio-manager', component: PortfolioManagerComponent, data: {title: 'Portfolio Manager'}},
                     {path: 'global-price-analyzer', component: GlobalPriceAnalyzerComponent, data: {title: 'Global Price Analyzer'}},
-                    {path: 'local-price-analyzer', component: LocalPriceAnalyzerComponent, data: {title: 'Local Price Analyzer'}},
+                    {path: 'price-notification', component: LocalPriceAnalyzerComponent, data: {title: 'Module of Price Notification'}},
                     {path: 'telegram-assistant', component: TelegramAssistantComponent, data: {title: 'Telegram Assistant'}},
                     {path: 'volume-analyzer', component: VolumeAnalyzerComponent, data: {title: 'Volume Analyzer'}},
                     {path: 'behavioral-analyzer', component: BehavioralAnalyzerComponent, data: {title: 'Behavioral Analyzer'}},
