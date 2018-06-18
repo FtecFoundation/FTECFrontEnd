@@ -13,6 +13,7 @@ export abstract class RestService {
 
     protected processLogin(token: any) {
         const sdate = new Date();
+        console.log('login');
         this._cookieService.set('token', token, sdate.setDate(sdate.getDate() + 1), '/');
     }
 

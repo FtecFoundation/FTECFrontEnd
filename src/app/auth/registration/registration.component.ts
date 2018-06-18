@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AccountService} from '../../core/services/account.service';
 import {RegistrationValidators} from './registration.validators';
@@ -40,6 +40,7 @@ export class RegistrationComponent implements OnInit {
     }
 
     submitForm() {
+        console.log(this.terms.value);
         this.submitted = true;
         if (this.registrationForm.valid) {
             this._accountService.registerUser(this.prepareData()).subscribe(() => {
@@ -50,6 +51,11 @@ export class RegistrationComponent implements OnInit {
 
     prepareData(): RegistrationData {
         return new RegistrationData().deserialize(this.registrationForm.value);
+    }
+
+    toggleCheckbox() {
+        this.terms.value === true ? this.terms.setValue(false) : this.terms.setValue(true);
+        console.log(this.terms.value);
     }
 
     get username() { return this.registrationForm.get('username'); }
