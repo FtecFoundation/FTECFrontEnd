@@ -38,8 +38,6 @@ select::-ms-expand {
 .container__form--select {
   position: relative;
   border-radius: 20px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .container__form-select-block {
@@ -58,6 +56,11 @@ select::-ms-expand {
   font-size: .7rem;
   color: rgba(255,255,255, .35);
   background: $dark-blue;
+  display: none;
+
+  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 28px;
+
 }
 
 .container__form--select.is-active,
@@ -65,6 +68,10 @@ select::-ms-expand {
   border-radius: 20px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+.container__form--select.is-active .form__select-list {
+  display: block;
 }
 
 .form__select-list-item {
@@ -80,6 +87,6 @@ select::-ms-expand {
 }
 
 .form__select-list-item:last-child{
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 28px;
 }
