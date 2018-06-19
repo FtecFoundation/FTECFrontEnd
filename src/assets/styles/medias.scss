@@ -183,6 +183,10 @@
     flex-direction: column;
   }
 
+  .content--confirm {
+    flex-direction: initial;
+  }
+
   .middle {
     padding-left: 0 !important;
   }

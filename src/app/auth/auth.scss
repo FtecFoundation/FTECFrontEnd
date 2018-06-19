@@ -17,6 +17,30 @@
   min-height: 100vh;
 }
 
+.content--confirm {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.content__confirm {
+  width: 50%;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .login__container-title {
   text-align: center;
 }
@@ -60,4 +84,10 @@
 
 .wrapper--registration {
   height: inherit;
+}
+
+.button__outline--confirm {
+  padding: .938rem;
+  padding-left: 2.500rem;
+  padding-right: 2.500rem;
 }

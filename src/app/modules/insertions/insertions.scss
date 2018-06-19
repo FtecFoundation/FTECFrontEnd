@@ -664,6 +664,8 @@
   width: 55%;
 
   background: $dark-blue;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .head-item__text {
