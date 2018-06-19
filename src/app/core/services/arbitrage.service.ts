@@ -21,7 +21,7 @@ export class ArbitrageService extends RestService {
 
     getArbitrageWindows(): Observable<ArbitrageWindows> {
       return this.post(ArbitrageApiUrls.getArbitrageWindows,
-          {"minVolume":15.0,"minPercent":1.0,"orderVolume":1.0,"stocks":["Poloniex","BitTrex","Binance"]}).pipe(
+          {'minVolume': 15.0, 'minPercent': 1.0, 'orderVolume': 1.0, 'stocks': ['Poloniex', 'BitTrex', 'Binance']}).pipe(
             map(resp => resp.response),
             catchError(e => this.handleError(e)));
     }

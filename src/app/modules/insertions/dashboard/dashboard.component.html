@@ -143,7 +143,7 @@
     </div>
     <div class="main-info__head-item">
 
-      <div class="content__preloader" *ngIf="preloader">
+      <div class="content__preloader">
 
         <div class="timeline-wrapper">
           <div class="timeline-item">
@@ -201,7 +201,7 @@
         </div>
       </div>
 
-      <ul class="head-item__container" *ngIf="!preloader">
+      <!-- <ul class="head-item__container" *ngIf="!preloader">
         <li class="head-item__container-item" *ngFor="let currency of currencies">
           <div class="container-item__line">
             <span class="container-item__line-crypt">{{currency.symbol}}</span>
@@ -215,7 +215,7 @@
             {{currency.quotes.USD.percent_change_24h}}%</span>
         </li>
 
-      </ul>
+      </ul> -->
 
     </div>
   </div>
