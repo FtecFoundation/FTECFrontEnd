@@ -10,14 +10,11 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 })
 export class DashboardComponent implements OnInit {
 
-    preloader: boolean;
+    preloader: boolean = true;
     currencies: Cryptocurrency[] = [];
 
   constructor(private _cryptoService: CryptocurrenciesService,
-              private _showModalService: ShowModalService) {
-                  this.preloader = true;
-                  console.log(this.preloader)
-  }
+              private _showModalService: ShowModalService) {}
 
   ngOnInit() {
       this._cryptoService.getCryptocurrencies().subscribe(data => {
