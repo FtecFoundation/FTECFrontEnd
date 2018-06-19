@@ -125,3 +125,10 @@
   height: 100%;
   overflow: hidden;
 }
+
+.content__preloader{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  min-height: 76px;
+}

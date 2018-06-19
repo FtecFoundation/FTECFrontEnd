@@ -12,4 +12,4 @@ import {PortfolioManagerComponent} from './portfolio-manager.component';
     ],
     exports: [RouterModule]
 })
-export class PortfolioManagerRoutingModule{ }
+export class PortfolioManagerRoutingModule { }
