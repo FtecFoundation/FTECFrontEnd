@@ -10,10 +10,13 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 })
 export class DashboardComponent implements OnInit {
 
-  currencies: Cryptocurrency[] = [];
+    preloader: boolean;
+    currencies: Cryptocurrency[] = [];
 
   constructor(private _cryptoService: CryptocurrenciesService,
               private _showModalService: ShowModalService) {
+                  this.preloader = true;
+                  console.log(this.preloader)
   }
 
   ngOnInit() {
@@ -21,6 +24,7 @@ export class DashboardComponent implements OnInit {
           for (const val of Object.values(data['data'])) {
               this.currencies.push(<Cryptocurrency> val);
           }
+          this.preloader = false;
       });
   }
 

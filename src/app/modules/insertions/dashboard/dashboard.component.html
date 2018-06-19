@@ -143,63 +143,66 @@
     </div>
     <div class="main-info__head-item">
 
-      <div class="timeline-wrapper">
-        <div class="timeline-item">
-          <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
+      <div class="content__preloader" *ngIf="preloader">
+
+        <div class="timeline-wrapper">
+          <div class="timeline-item">
+            <div class="animated-background">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-right"></div>
+              <div class="background-masker header-bottom"></div>
+            </div>
+            <div class="animated-background--red"></div>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-item">
+            <div class="animated-background">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-right"></div>
+              <div class="background-masker header-bottom"></div>
+            </div>
+            <div class="animated-background--red"></div>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-item">
+            <div class="animated-background">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-right"></div>
+              <div class="background-masker header-bottom"></div>
+            </div>
+            <div class="animated-background--red"></div>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-item">
+            <div class="animated-background">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-right"></div>
+              <div class="background-masker header-bottom"></div>
+            </div>
+            <div class="animated-background--red"></div>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-item">
+            <div class="animated-background">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-right"></div>
+              <div class="background-masker header-bottom"></div>
+            </div>
+            <div class="animated-background--red"></div>
           </div>
         </div>
       </div>
 
-      <div class="timeline-wrapper">
-        <div class="timeline-item">
-          <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-wrapper">
-        <div class="timeline-item">
-          <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-wrapper">
-        <div class="timeline-item">
-          <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-wrapper">
-        <div class="timeline-item">
-          <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
-          </div>
-        </div>
-      </div>
-
-      <ul class="head-item__container">
-        <!-- <li class="head-item__container-item" *ngFor="let currency of currencies">
+      <ul class="head-item__container" *ngIf="!preloader">
+        <li class="head-item__container-item" *ngFor="let currency of currencies">
           <div class="container-item__line">
             <span class="container-item__line-crypt">{{currency.symbol}}</span>
 
@@ -210,7 +213,7 @@
             {{currency.quotes.USD.price}}</span>
           <span class="container-item__price" [ngStyle]="{'color': currency.quotes.USD.percent_change_24h > 0 ? '#66cc33' : '#ff8080'}">
             {{currency.quotes.USD.percent_change_24h}}%</span>
-        </li> -->
+        </li>
 
       </ul>
 

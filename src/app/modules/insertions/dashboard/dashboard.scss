@@ -53,22 +53,35 @@
 }
 
 .animated-background {
+  height: 40%;
+  
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;
-  // background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-  height: 100%;
   position: relative;
   
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.84+0,0+100;White+to+Transparent */
-  background: -moz-linear-gradient(left, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0.84) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(255,255,255,0.84) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+  background: linear-gradient(to right, rgba(225, 225, 225, 1) 0%, rgba(225, 225, 225, 0.7) 50%, rgba(225, 225, 225, 1) 100%);
   background-size: 800px 104px;
+  border-radius: 5px;
 }
+
+.animated-background--red {
+  height: 60%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, rgba(225, 128, 128, 1) 0%, rgba(225, 128, 128, 0.7) 50%, rgba(225, 128, 128, 1) 100%);
+  background-size: 800px 104px;
+
+}
+
 .background-masker {
   background: $dark-blue;
   position: absolute;

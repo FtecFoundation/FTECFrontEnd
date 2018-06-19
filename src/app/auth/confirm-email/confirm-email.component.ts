@@ -10,7 +10,7 @@ import {ErrorsService} from '../../core/services/errors.service';
 })
 export class ConfirmEmailComponent implements OnInit {
 
-    message: string = '';
+    message = '';
 
     constructor(private _accountService: AccountService,
                 private activatedRoute: ActivatedRoute,
