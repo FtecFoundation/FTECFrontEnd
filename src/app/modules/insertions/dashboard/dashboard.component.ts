@@ -11,6 +11,7 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 export class DashboardComponent implements OnInit {
 
     preloader: boolean = true;
+
     currencies: Cryptocurrency[] = [];
 
   constructor(private _cryptoService: CryptocurrenciesService,
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
           for (const val of Object.values(data['data'])) {
               this.currencies.push(<Cryptocurrency> val);
           }
-          this.preloader = false;
+        //   this.preloader = false;
       });
   }
 
