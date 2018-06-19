@@ -1,5 +1,22 @@
 export const changeLog = [
     {
+        'date': '19/06/2018',
+        'changes': [
+            'The configuration of Lazy Loading for all modules at front end. This made loading of the website quicker since a component of the necessary module will be loaded not previously but when you\'ll need them',
+            'Errors of sending the confirmation email are fixed',
+            'Endpoints for email confirmation are added and tested at backend',
+            'We made a page for an email confirmation with a message about success or an error',
+            'Animated preloader for uploading of cryptocurrency rates in the dashboard',
+            'The possibility of the interaction between a user and Social Module according to subscription was added at backend',
+            'Possibility for subscription extension was added at backend',
+            'Unit testing for interaction with Social Module through the main module was done',
+            'The endpoint for getting user model was added',
+            'Now endpoint of getting the user\'s last arbitrage modules also returns the date of the last request for arbitrage window',
+            'Develop API for getting and debugging errors was added',
+            'Arbitrage Module\'s implementation at front end was started'
+        ]
+    },
+    {
         'date': '18/06/2018',
         'changes': [
             'We began working on API Kraken to make the work with this exchange possible in the ecosystem',
