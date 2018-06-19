@@ -10,3 +10,12 @@ export class ArbitrageWindow {
     volumeOnSell: number;
     profitPercent: number;
 }
+
+export class ArbitrageWindows {
+    window: ArbitrageWindow[];
+}
+
+export class ArbitrageWindowsLog {
+    data: Date;
+    log: ArbitrageWindow[];
+}

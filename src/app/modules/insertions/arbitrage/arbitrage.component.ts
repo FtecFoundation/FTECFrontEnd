@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {availableExchanges} from './available-exchanges';
+import {ArbitrageService} from '../../../core/services/arbitrage.service';
 
 @Component({
     selector: 'app-arbitrage',
@@ -10,12 +11,16 @@ import {availableExchanges} from './available-exchanges';
 
 export class ArbitrageComponent implements OnInit {
     exchanges = availableExchanges;
-    allChosen: boolean = false;
+    allChosen = false;
 
-    constructor(private _showModalService: ShowModalService) {
+    constructor(private _showModalService: ShowModalService,
+                private _arbitrageService: ArbitrageService) {
     }
 
     ngOnInit() {
+        this._arbitrageService.getArbitrageWindows().subscribe(data => {
+            console.log(data);
+        });
     }
 
     showModal() {
@@ -23,7 +28,7 @@ export class ArbitrageComponent implements OnInit {
     }
 
     chooseExchange(exhange: any) {
-        if (!this.allChosen) exhange.chosen = !exhange.chosen;
+        if (!this.allChosen) { exhange.chosen = !exhange.chosen; }
     }
 
     chooseAllExchanges() {
