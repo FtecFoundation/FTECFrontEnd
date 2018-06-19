@@ -18,7 +18,7 @@ export class ConfirmEmailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._accountService.confirmEmail(this.activatedRoute.snapshot.params['hash']).subscribe(data => {
+        this._accountService.confirmEmail(this.activatedRoute.snapshot.params['hash']).subscribe(() => {
             this.message = 'Your email was confirmed!';
         }, error1 => {
             this.message = this._errorsService.parseResponseMessage(error1);

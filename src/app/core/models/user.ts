@@ -1,3 +1,15 @@
+export class User {
+    username: string;
+    email: string;
+    currentStep: string;
+    subscribeForEmail: boolean;
+    userRole: string;
+    locale: string;
+    imageName: string;
+    confirmedEmail: boolean;
+    balance: number;
+}
+
 export class RegistrationData {
     username: string;
     email: string;

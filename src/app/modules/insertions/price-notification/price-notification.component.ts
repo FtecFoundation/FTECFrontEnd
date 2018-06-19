@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-social',
-  templateUrl: './local-price-analyzer.component.html',
+  templateUrl: './price-notification.component.html',
   styleUrls: ['../insertions.scss']
 })
-export class LocalPriceAnalyzerComponent implements OnInit {
+export class PriceNotificationComponent implements OnInit {
 
   constructor() {
   }
