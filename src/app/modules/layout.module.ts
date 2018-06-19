@@ -27,6 +27,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NotActiveComponent } from '../modules/not-active/not-active.component';
 import {ShowModalService} from './not-active/show-modal.service';
 import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.component';
+import {ArbitrageModule} from './insertions/arbitrage/arbitrage.module';
+import {SocialModule} from './insertions/social/social.module';
 
 
 @NgModule({
@@ -35,10 +37,10 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
         RouterModule.forChild([
             {
                 path: 'modules', component: LayoutComponent, children: [
-                    {path: 'not-active', component: NotActiveComponent},
                     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-                    {path: 'social', component: SocialComponent, data: {title: 'Social Assistant'}},
-                    {path: 'arbitrage', component: ArbitrageComponent, data: {title: 'Arbitrage Assistant'}},
+                    {path: 'not-active', component: NotActiveComponent},
+                    {path: 'social', loadChildren: './insertions/social/social.module#SocialModule'},
+                    {path: 'arbitrage', loadChildren: './insertions/arbitrage/arbitrage.module#ArbitrageModule'},
                     {path: 'cryptoacademy', component: CryptoacademyComponent, data: {title: 'Cryptoacademy'}},
                     {path: 'desktop-app', component: DesktopAppComponent, data: {title: 'Desktop App'}},
                     {path: 'mobile-app', component: MobileAppComponent, data: {title: 'Mobile App'}},
@@ -52,7 +54,7 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
                     {path: 'smart-trading-module', component: SmartTradingModuleComponent, data: {title: 'Smart Trading Module'}},
                     {path: 'news-background', component: NewsBackgroundComponent, data: {title: 'News Background Analyzer'}},
                     {path: 'trp', component: TrpComponent, data: {title: 'Trading Recommendations Platform'}},
-                    {path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'}},
+                    {path: 'dashboard', loadChildren: './insertions/dashboard/dashboard.module#DashboardModule'},
                     {path: 'change-log', component: ChangeLogComponent, data: {title: 'Changelog'}},
                     {path: 'my-exchanges', component: MyExchangesComponent, data: {title: 'My Exchanges'}}
                 ], canActivate: [OnlyAuthorizedGuard]
@@ -60,9 +62,8 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
         ])
     ],
     exports: [
+        RouterModule,
         LayoutComponent,
-        ArbitrageComponent,
-        SocialComponent,
         EmptyComponent,
         SmartTradingModuleComponent,
         NewsBackgroundComponent,
@@ -77,15 +78,12 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
         VolumeAnalyzerComponent,
         BehavioralAnalyzerComponent,
         TrpComponent,
-        DashboardComponent,
         HeaderComponent,
         NotActiveComponent,
         MyExchangesComponent
     ],
     declarations: [
         LayoutComponent,
-        ArbitrageComponent,
-        SocialComponent,
         EmptyComponent,
         SmartTradingModuleComponent,
         NewsBackgroundComponent,
@@ -100,7 +98,6 @@ import {MyExchangesComponent} from './insertions/my-exchanges/my-exchanges.compo
         VolumeAnalyzerComponent,
         BehavioralAnalyzerComponent,
         TrpComponent,
-        DashboardComponent,
         HeaderComponent,
         ChangeLogComponent,
         FooterComponent,
