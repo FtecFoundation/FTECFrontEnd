@@ -17,7 +17,7 @@ import {SetNewPasswordComponent} from './forgot-password/set-new-password.compon
             { path: 'registration', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Registration'}},
             { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'restore/:hash', component: SetNewPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
-            { path: 'confirm', component: ConfirmEmailComponent},
+            { path: 'confirm-email/:hash', component: ConfirmEmailComponent},
         ])
     ],
     exports: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, SetNewPasswordComponent],

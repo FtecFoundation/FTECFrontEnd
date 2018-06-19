@@ -13,7 +13,8 @@ enum AccountApiUrls {
     checkEmail = 'checkUniqueEmail',
     checkUsername = 'checkUniqueLogin?login=',
     checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
-    restorePassword = 'sendRestoreUrl'
+    restorePassword = 'sendRestoreUrl',
+    confirmEmail = 'confirmEmail/'
 }
 
 @Injectable()
@@ -58,6 +59,11 @@ export class AccountService extends RestService {
     checkUsernameNotTaken(username: string): Observable<any> {
         return this.get(AccountApiUrls.checkUsername + username).pipe(
             tap(resp => console.log(resp)),
+            catchError(e => this.handleError(e)));
+    }
+
+    confirmEmail(hash: string): Observable<any> {
+        return this.post(AccountApiUrls.confirmEmail + hash, {}).pipe(
             catchError(e => this.handleError(e)));
     }
 }
