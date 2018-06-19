@@ -1,5 +1,5 @@
 export const routes = [
-    {path: '', redirectTo: 'modules', pathMatch: 'prefix'},
+    {path: '', redirectTo: 'auth', pathMatch: 'full'},
     {path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
     {path: 'modules', loadChildren: './modules/layout.module#LayoutModule'}
 ];

@@ -10,7 +10,7 @@ import {ErrorsService} from '../../core/services/errors.service';
 })
 export class ConfirmEmailComponent implements OnInit {
 
-    message: string = '';
+    message = '';
 
     constructor(private _accountService: AccountService,
                 private activatedRoute: ActivatedRoute,
@@ -18,7 +18,7 @@ export class ConfirmEmailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._accountService.confirmEmail(this.activatedRoute.snapshot.params['hash']).subscribe(data => {
+        this._accountService.confirmEmail(this.activatedRoute.snapshot.params['hash']).subscribe(() => {
             this.message = 'Your email was confirmed!';
         }, error1 => {
             this.message = this._errorsService.parseResponseMessage(error1);
