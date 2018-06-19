@@ -27,7 +27,8 @@ export const routes = [
             {path: 'trp', loadChildren: './insertions/trp/trp.module#TrpModule'},
             {path: 'dashboard', loadChildren: './insertions/dashboard/dashboard.module#DashboardModule'},
             {path: 'change-log', loadChildren: './insertions/change-log/change-log.module#ChangeLogModule'},
-            {path: 'my-exchanges', loadChildren: './insertions/my-exchanges/my-exchanges.module#MyExchangesModule'}
+            {path: 'my-exchanges', loadChildren: './insertions/my-exchanges/my-exchanges.module#MyExchangesModule'},
+            {path: 'settings', loadChildren: './insertions/settings/settings.module#SettingsModule'}
         ], canActivate: [OnlyAuthorizedGuard]
     }
 ];
