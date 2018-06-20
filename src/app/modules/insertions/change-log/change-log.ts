@@ -12,7 +12,7 @@ export const changeLog = [
             'We added write-off function for a subscription to Social Assistant at the backend',
             'Bugs of work with Social Assistant were fixed',
             'Development of notification features at the backend',
-            'Arbitrage Assistant is fully implemented at backed and is ready to use',
+            'Arbitrage Assistant is fully implemented at frontend and is ready to use',
             'The work with Social Assistant dictionary was implemented at frontend'
         ]
     },
