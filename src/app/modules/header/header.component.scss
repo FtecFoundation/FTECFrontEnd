@@ -82,6 +82,10 @@
   cursor: pointer;
   background-image: $blue-gradient;
   border-radius: 1.250rem;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header__user-account {
