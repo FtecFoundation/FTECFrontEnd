@@ -1,9 +1,18 @@
 
-.container__form--arbitrage{
-  margin-top: 3rem;
+.error-field--arbitrage {
+  margin-top: 0.750em;
 }
 
 .form__info--arbitrage {
   margin-bottom: 1.250rem;
   height: 1.250rem;
+
+}
+
+.item-inner-line-error-block--empty{
+  display: block;
+}
+
+.middle__table-container--empty{
+  position: relative;
 }

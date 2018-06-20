@@ -1,6 +1,6 @@
 export const availableExchanges = [
     {
-        'exchange': 'Bittrex',
+        'exchange': 'BitTrex',
         'chosen': false
     },
     {
