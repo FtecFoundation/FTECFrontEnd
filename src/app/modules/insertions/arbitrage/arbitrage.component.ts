@@ -32,7 +32,7 @@ export class ArbitrageComponent implements OnInit {
     }
 
     createForm() {
-        this.arbitrageForm= this.formBuilder.group({
+        this.arbitrageForm = this.formBuilder.group({
             minVolume: ['', Validators.min(20)],
             minPercent: ['', Validators.min(2)],
             orderVolume: '',
