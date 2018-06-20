@@ -10,7 +10,7 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 })
 export class DashboardComponent implements OnInit {
 
-    preloader = true;
+    preloader: boolean = true;
 
     currencies: Cryptocurrency[] = [];
 
