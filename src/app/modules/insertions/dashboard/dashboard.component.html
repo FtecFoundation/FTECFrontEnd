@@ -143,65 +143,40 @@
     </div>
     <div class="main-info__head-item">
 
-      <div class="content__preloader">
+      <div class="content__preloader" *ngIf="preloader">
 
-        <div class="timeline-wrapper">
-          <div class="timeline-item">
-            <div class="animated-background">
-              <div class="background-masker header-top"></div>
-              <div class="background-masker header-right"></div>
-              <div class="background-masker header-bottom"></div>
-            </div>
-            <div class="animated-background--red"></div>
-          </div>
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
         </div>
 
-        <div class="timeline-wrapper">
-          <div class="timeline-item">
-            <div class="animated-background">
-              <div class="background-masker header-top"></div>
-              <div class="background-masker header-right"></div>
-              <div class="background-masker header-bottom"></div>
-            </div>
-            <div class="animated-background--red"></div>
-          </div>
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
         </div>
 
-        <div class="timeline-wrapper">
-          <div class="timeline-item">
-            <div class="animated-background">
-              <div class="background-masker header-top"></div>
-              <div class="background-masker header-right"></div>
-              <div class="background-masker header-bottom"></div>
-            </div>
-            <div class="animated-background--red"></div>
-          </div>
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
         </div>
 
-        <div class="timeline-wrapper">
-          <div class="timeline-item">
-            <div class="animated-background">
-              <div class="background-masker header-top"></div>
-              <div class="background-masker header-right"></div>
-              <div class="background-masker header-bottom"></div>
-            </div>
-            <div class="animated-background--red"></div>
-          </div>
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price price--positive"></div>
+          <div class="percent percent--positive"></div>
         </div>
 
-        <div class="timeline-wrapper">
-          <div class="timeline-item">
-            <div class="animated-background">
-              <div class="background-masker header-top"></div>
-              <div class="background-masker header-right"></div>
-              <div class="background-masker header-bottom"></div>
-            </div>
-            <div class="animated-background--red"></div>
-          </div>
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
         </div>
       </div>
 
-      <!-- <ul class="head-item__container" *ngIf="!preloader">
+      <ul class="head-item__container" *ngIf="!preloader">
         <li class="head-item__container-item" *ngFor="let currency of currencies">
           <div class="container-item__line">
             <span class="container-item__line-crypt">{{currency.symbol}}</span>
@@ -215,7 +190,7 @@
             {{currency.quotes.USD.percent_change_24h}}%</span>
         </li>
 
-      </ul> -->
+      </ul>
 
     </div>
   </div>
