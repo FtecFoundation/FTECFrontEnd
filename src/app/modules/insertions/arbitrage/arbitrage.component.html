@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div *ngIf="!arbitrageWindows && windowsLogs && windowsLogs.log.length === 0">
+        <div *ngIf="!arbitrageWindows && windowsLogs && windowsLogs.logs">
             <div class="middle__table-container--empty">
                 <div class="item-inner-line-error-block item-inner-line-error-block--empty">
                     <span>There were no arbitrage windows at your request</span>
@@ -86,13 +86,9 @@
                     </span>
                 </div>
 
-                <div class="middle__table-container" *ngIf="arbitrageWindows">
-
-                </div>
-
                 <div class="middle__table-container">
 
-                    <div class="middle__table-container-item" *ngFor="let window of arbitrageWindows.window">
+                    <div class="middle__table-container-item" *ngFor="let window of arbitrageWindows.windows">
                         <div class="item-inner-line--error-icon" *ngIf="window.lockedOnBuy || window.lockedOnSell">
                             <svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>5D074596-E74D-4807-A458-F2A684AC2689</title>
@@ -150,7 +146,7 @@
             </div>
         </div>
 
-        <div class="middle middle--dashboard" *ngIf="windowsLogs && windowsLogs.log">
+        <div class="middle middle--dashboard" *ngIf="windowsLogs && windowsLogs.logs">
             <div class="middle__head middle__head--arbitrage">
                 <h5>
                     Last Results
@@ -182,7 +178,7 @@
             </div>
 
             <div class="middle__table-container">
-                <div class="middle__table-container-item" *ngFor="let log of windowsLogs.log">
+                <div class="middle__table-container-item" *ngFor="let log of windowsLogs.logs">
                     <div class="item-inner-line--error-icon" *ngIf="log.lockedOnBuy || log.lockedOnSell">
                         <svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>5D074596-E74D-4807-A458-F2A684AC2689</title>
