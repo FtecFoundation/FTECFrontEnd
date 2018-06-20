@@ -1,8 +1,17 @@
 <div id="arbitrage" class="main-info">
 
     <div class="container__middle">
-        <div *ngIf="!arbitrageWindows && windowsLogs && !windowsLogs.log">
-            <div class="middle__table-container--empty" *ngIf="arbitrageWindows.windows.length === 0">
+
+        <div class="middle middle--arbitrage">
+            <div class="middle__container">
+
+                
+                
+            </div>
+        </div>
+        
+        <div *ngIf="!arbitrageWindows && windowsLogs && windowsLogs.log.length === 0">
+            <div class="middle__table-container--empty">
                 <div class="item-inner-line-error-block item-inner-line-error-block--empty">
                     <span>There were no arbitrage windows at your request</span>
 
