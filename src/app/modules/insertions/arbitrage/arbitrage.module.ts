@@ -3,11 +3,13 @@ import {CommonModule} from '@angular/common';
 import {ArbitrageComponent} from './arbitrage.component';
 import {Router, RouterModule} from '@angular/router';
 import {ArbitrageRoutingModule} from './arbitrage-routing.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
-        ArbitrageRoutingModule
+        ArbitrageRoutingModule,
+        ReactiveFormsModule
     ],
     declarations: [ArbitrageComponent]
 })
