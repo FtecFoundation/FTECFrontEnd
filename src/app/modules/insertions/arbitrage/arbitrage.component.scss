@@ -1,9 +1,79 @@
 
-.container__form--arbitrage{
-  margin-top: 3rem;
+@import "../../../../assets/styles/variables";
+
+.error-field--arbitrage {
+  margin-top: 0.750em;
 }
 
 .form__info--arbitrage {
   margin-bottom: 1.250rem;
   height: 1.250rem;
+
+}
+
+.item-inner-line-error-block--empty{
+  display: block;
+}
+
+.middle__table-container--empty{
+  position: relative;
+  margin-top: 20px;
+}
+
+.item-inner-line-error-block--empty {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: initial;
+  transform: initial;
+  margin: 0 auto;
+}
+
+.item-inner-line-error-block--empty span {
+  display: block;
+  margin-left: 80px;
+}
+
+.item-inner-line-error-block--empty .item-inner-line--error-icon {
+  top: 25%;
+  left: 21%;
+  right: initial !important;
+}
+
+.middle--arbitrage {
+  width: 100%;
+}
+
+.middle__container {
+  text-align: center;
+  background: $violet-gradient-linear;
+  border-radius: .313rem;
+  font-weight: 100;
+  padding: 50px;
+}
+
+.middle__container h5 {
+  font-size: 1.500rem;
+  font-weight: 100;
+}
+
+.middle__container p {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+.middle__container button {
+  width: 50%;
+  margin-top: 50px;
+}
+
+.middle__container h3 {
+  padding: 2.500rem;
+}
+
+.aside-right__head--arbitrage h5 {
+  font-weight: normal;
+  font-size: 1rem;
 }
