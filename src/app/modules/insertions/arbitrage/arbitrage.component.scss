@@ -1,4 +1,6 @@
 
+@import "../../../../assets/styles/variables";
+
 .error-field--arbitrage {
   margin-top: 0.750em;
 }
@@ -36,4 +38,18 @@
   top: 25%;
   left: 21%;
   right: initial !important;
+}
+
+.middle--arbitrage {
+  width: 100%;
+}
+
+.middle__container {
+  text-align: center;
+  background: $dark-blue;
+  border-radius: .313rem;
+}
+
+.middle__container h3 {
+  padding: 2.500rem;
 }
