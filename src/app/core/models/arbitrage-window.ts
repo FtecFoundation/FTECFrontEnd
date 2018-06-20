@@ -19,3 +19,19 @@ export class ArbitrageWindowsLog {
     date: Date;
     log: ArbitrageWindow[];
 }
+
+export class ArbitrageWindowRequest {
+    minVolume: number;
+    minPercent: number;
+    orderVolume?: number;
+    stocks: string[];
+
+    deserialize(formData: any, stocks: string[]): this {
+        this.stocks = stocks;
+        this.minVolume = formData.minVolume;
+        this.minPercent = formData.minPercent;
+        if (formData.isOrderVolume) this.orderVolume = formData.orderVolume;
+
+        return this;
+    }
+}
