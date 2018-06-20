@@ -30,7 +30,7 @@ export class ArbitrageWindowRequest {
         this.stocks = stocks;
         this.minVolume = formData.minVolume;
         this.minPercent = formData.minPercent;
-        if (formData.isOrderVolume) this.orderVolume = formData.orderVolume;
+        if (formData.isOrderVolume) { this.orderVolume = formData.orderVolume; }
 
         return this;
     }

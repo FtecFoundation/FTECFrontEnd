@@ -50,7 +50,7 @@ export class ArbitrageComponent implements OnInit {
     fillChosenExchanges() {
         this.chosenExchanges = [];
         for (const e of this.exchanges) {
-            if (e.chosen) this.chosenExchanges.push(e.exchange);
+            if (e.chosen) { this.chosenExchanges.push(e.exchange); }
         }
     }
 
