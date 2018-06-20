@@ -10,7 +10,7 @@ import {availableExchanges} from './available-exchanges';
 
 export class ArbitrageComponent implements OnInit {
     exchanges = availableExchanges;
-    allChosen: boolean = false;
+    allChosen = false;
 
     constructor(private _showModalService: ShowModalService) {
     }
@@ -23,7 +23,7 @@ export class ArbitrageComponent implements OnInit {
     }
 
     chooseExchange(exhange: any) {
-        if (!this.allChosen) exhange.chosen = !exhange.chosen;
+        if (!this.allChosen) { exhange.chosen = !exhange.chosen; }
     }
 
     chooseAllExchanges() {
