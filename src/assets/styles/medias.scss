@@ -89,6 +89,10 @@
   .button--empty {
     width: 60% !important;
   }
+
+  .item-inner-line-error-block--empty .item-inner-line--error-icon {
+    left: 15% !important;
+  }
 }
 
 @media only screen and (max-width: 800px) {

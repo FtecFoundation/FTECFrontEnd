@@ -16,3 +16,23 @@
 .middle__table-container--empty{
   position: relative;
 }
+
+.item-inner-line-error-block--empty {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: initial;
+  transform: initial;
+  margin: 0 auto;
+}
+
+.item-inner-line-error-block--empty span {
+  display: block;
+  margin-left: 80px;
+}
+
+.item-inner-line-error-block--empty .item-inner-line--error-icon {
+  top: 25%;
+  left: 21%;
+  right: initial !important;
+}
