@@ -3,10 +3,14 @@
     <div class="container__middle">
 
         <div class="middle middle--arbitrage">
-            <div class="aside-right__head aside-right__head--arbitrage">
+            <div class="aside-right__head--arbitrage">
                 <h5>Result</h5>
             </div>
             <div class="middle__container">
+                <h5>You have no results yet</h5>
+
+                <p>Choose exchange, set parameters and hit Get Result.
+                        Or learn how Arbitrage Assistant works.</p>
 
                 <button class="filter__container-button">How it works?</button>
             </div>
@@ -150,7 +154,7 @@
             </div>
         </div>
 
-        <div class="middle middle--dashboard" *ngIf="windowsLogs && windowsLogs.log">
+        <div class="middle middle--dashboard" *ngIf="windowsLogs && windowsLogs.logs">
             <div class="middle__head middle__head--arbitrage">
                 <h5>
                     Last Results

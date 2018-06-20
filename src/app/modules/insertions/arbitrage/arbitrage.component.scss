@@ -46,8 +46,27 @@
 
 .middle__container {
   text-align: center;
-  background: $dark-blue;
+  background: $violet-gradient-linear;
   border-radius: .313rem;
+  font-weight: 100;
+  padding: 50px;
+}
+
+.middle__container h5 {
+  font-size: 1.500rem;
+  font-weight: 100;
+}
+
+.middle__container p {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+.middle__container button {
+  width: 50%;
+  margin-top: 50px;
 }
 
 .middle__container h3 {
