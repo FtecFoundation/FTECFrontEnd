@@ -7,9 +7,9 @@ import {ImageService} from '../../core/services/image.service';
 import {User} from '../../core/models/user';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
     @ViewChild('profileImage') image: ElementRef;
@@ -19,17 +19,24 @@ export class HeaderComponent implements OnInit {
     user: User;
     imagePrefix = 'http://api.ftec.network/images/';
 
-  constructor(private _accountService: AccountService,
-              private router: Router,
-              public _titlesService: TitlesService,
-              public _showModalService: ShowModalService,
-              private _imageService: ImageService) { }
+    constructor(private _accountService: AccountService,
+                private router: Router,
+                public _titlesService: TitlesService,
+                public _showModalService: ShowModalService,
+                private _imageService: ImageService) {
+    }
 
-  ngOnInit() {
-      this._accountService.getUser().subscribe(data => {
-this.user = data;
-      });
-  }
+    ngOnInit() {
+        this._accountService.getUser().subscribe(data => {
+            this.user = data;
+
+            if (this.user.imageName === null) {
+                this._imageService.getImage().subscribe(img => {
+                    this.image.nativeElement.src = URL.createObjectURL(img);
+                });
+            }
+        });
+    }
 
     showUser() {
         const accInfo = document.querySelector('.user-account-block');
@@ -52,9 +59,9 @@ this.user = data;
     }
 
     logout() {
-      this._accountService.logoutUser().subscribe(() => {
-          this.router.navigate(['']);
-      });
+        this._accountService.logoutUser().subscribe(() => {
+            this.router.navigate(['']);
+        });
     }
 
     showModal() {
