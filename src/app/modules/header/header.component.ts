@@ -4,6 +4,7 @@ import {NavigationStart, Router} from '@angular/router';
 import {TitlesService} from '../../core/services/titles.service';
 import {ShowModalService} from '../not-active/show-modal.service';
 import {ImageService} from '../../core/services/image.service';
+import {User} from '../../core/models/user';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,8 @@ export class HeaderComponent implements OnInit {
 
     currentTitle: string;
     profileImage: string;
+    user: User;
+    imagePrefix = 'http://api.ftec.network/images/';
 
   constructor(private _accountService: AccountService,
               private router: Router,
@@ -23,8 +26,8 @@ export class HeaderComponent implements OnInit {
               private _imageService: ImageService) { }
 
   ngOnInit() {
-      this._imageService.getImage().subscribe(data => {
-          this.image.nativeElement.src = URL.createObjectURL(data);
+      this._accountService.getUser().subscribe(data => {
+this.user = data;
       });
   }
 

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" *ngIf="user">
 
     <div class="header__logo">
         <a href="https://ftec.io">
@@ -29,21 +29,21 @@
                     </g>
                 </svg>
             </div>
-            <span (click)="showModal()" class="user-balance">34 443 FTEC +</span>
+            <span (click)="showModal()" class="user-balance">{{user.balance}} FTEC<sup>*</sup> +</span>
 
 
             <div class="header__user-account" (click)="showUser()">
                 <!-- <div class=""> -->
 
-                    <img class="header__user-account-image" #profileImage src="../../../assets/images/bot2.png" alt="">
+                    <img class="header__user-account-image" #profileImage [src]="imagePrefix + user.imageName" alt="">
 
 
                 <div class="user-account-block">
                     <div class="user-account-block-triangle"></div>
                     <div class="user__block-head">
-                        <span class="user__block-head-username">username@gmail.com</span>
+                        <span class="user__block-head-username">{{user.email}}</span>
                         <span class="user__block-head-balance">Balance:
-              <span class="user__block-head-value">34 443</span> FTEC</span>
+                            <span class="user__block-head-value">{{user.balance}}</span> FTEC<sup>*</sup></span>
                     </div>
 
                     <ul class="user__block-links">
