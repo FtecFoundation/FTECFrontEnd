@@ -12,7 +12,7 @@
 
                     <span class="container__name">Enter your username</span>
                     <div class="container__form">
-                        <input type="email" class="form__input" placeholder="username" formControlName="username">
+                        <input type="email" class="form__input" placeholder="Username" formControlName="username">
                     </div>
                     <span class="error-field" *ngIf="hasFieldError('username')">This field is required</span>
                 </div>
@@ -26,11 +26,11 @@
                     <span class="error-field" *ngIf="hasFieldError('password')">This field is required</span>
                 </div>
                 <div class="form__info">
-                    <span class="form__info-text">You password was generated automatically after KYC and sent on your e-mail.</span>
+                    <!--<span class="form__info-text">You password was generated automatically after KYC and sent on your e-mail.</span>-->
 
 
-                    <a [routerLink]="'restore'" class="form__info-link">Forgot password?</a>
-                    <a [routerLink]="'registration'" class="form__info-link form__info-link-reg">Registration</a>
+                    <!--<a [routerLink]="'restore'" class="form__info-link">Forgot password?</a>-->
+                    <a [routerLink]="'registration'" class="form__info-link">Registration</a>
                 </div>
 
                 <button (click)="submitForm()" class="form__login-accept">

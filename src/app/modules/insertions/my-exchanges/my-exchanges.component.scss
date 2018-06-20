@@ -34,3 +34,59 @@ select {
 select::-ms-expand { 
   display: none; /* hide the default arrow in ie10 and ie11 */
 }
+
+.container__form--select {
+  position: relative;
+  border-radius: 20px;
+}
+
+.container__form-select-block {
+  cursor: pointer;
+  font-size: 0.7rem;
+  color: rgba(255,255,255, .35);
+  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 28px;
+}
+
+.form__select-list {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  
+  font-size: .7rem;
+  color: rgba(255,255,255, .35);
+  background: $dark-blue;
+  display: none;
+
+  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 28px;
+
+}
+
+.container__form--select.is-active,
+.container__form--select.is-active .container__form-select-block {
+  border-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.container__form--select.is-active .form__select-list {
+  display: block;
+}
+
+.form__select-list-item {
+  display: block;
+  padding: .938rem;
+  cursor: pointer;
+
+  transition: background .3s ease;
+}
+
+.form__select-list-item:hover {
+  background-color: $light-blue;
+}
+
+.form__select-list-item:last-child{
+  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 28px;
+}

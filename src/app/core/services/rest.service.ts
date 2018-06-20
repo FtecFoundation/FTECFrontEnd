@@ -12,7 +12,8 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        let sdate = new Date();
+        const sdate = new Date();
+        console.log('login');
         this._cookieService.set('token', token, sdate.setDate(sdate.getDate() + 1), '/');
     }
 

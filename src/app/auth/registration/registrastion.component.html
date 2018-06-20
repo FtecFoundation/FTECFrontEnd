@@ -1,6 +1,6 @@
-<div class="wrapper">
+<div class="wrapper wrapper--registration">
 
-    <main class="content">
+    <main class="content content--registration">
 
         <form class="content__login" [formGroup]="registrationForm">
 
@@ -66,9 +66,11 @@
                     </span>
                 </div>
             </div>
-            <div class="form__info">
-                <label class="form__info-label-container">I agree to a terms of service
-                    <input type="checkbox" formControlName="terms">
+
+            <div class="form__info" (click)="toggleCheckbox(terms)">
+                <label class="form__info-label-container" [ngClass]="{'is-active': terms.value}">I agree to a terms of service
+                    <!--<input type="checkbox">-->
+
                     <span class="form__info-checkmark"></span>
                 </label>
 
@@ -77,9 +79,8 @@
                     </div>
             </div>
 
-            <div class="form__info form__info--checkbox">
-                <label class="form__info-label-container">Subscribe to email
-                    <input type="checkbox" formControlName="subscribeForEmail">
+            <div class="form__info form__info--checkbox" (click)="toggleCheckbox(subscribeForEmail)">
+                <label class="form__info-label-container" [ngClass]="{'is-active': subscribeForEmail.value}">Subscribe to email
                     <span class="form__info-checkmark"></span>
                 </label>
             </div>

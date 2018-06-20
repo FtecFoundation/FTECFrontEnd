@@ -5,11 +5,11 @@ import {tap} from 'rxjs/operators/tap';
 import {catchError} from 'rxjs/operators/catchError';
 
 enum ImageApiUrls {
-    getProfileImage = 'cabinet/images'
+    getProfileImage = 'cabinet/image/'
 }
 
 @Injectable()
-export class ImageService extends RestService{
+export class ImageService extends RestService {
 
     public getImage(): Observable<Blob> {
         return this.getBlob(ImageApiUrls.getProfileImage).pipe(

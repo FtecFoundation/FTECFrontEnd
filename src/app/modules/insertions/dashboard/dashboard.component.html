@@ -11,9 +11,12 @@
 
       <div class="head-item__icon" (click)="showModal()">
         <span class="head-item__icon-item">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" width="12px" height="12px">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+            viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" width="12px"
+            height="12px">
             <g>
-              <path d="M465.167,211.614H280.245V26.691c0-8.424-11.439-26.69-34.316-26.69s-34.316,18.267-34.316,26.69v184.924H26.69    C18.267,211.614,0,223.053,0,245.929s18.267,34.316,26.69,34.316h184.924v184.924c0,8.422,11.438,26.69,34.316,26.69    s34.316-18.268,34.316-26.69V280.245H465.17c8.422,0,26.69-11.438,26.69-34.316S473.59,211.614,465.167,211.614z" fill="#FFFFFF"/>
+              <path d="M465.167,211.614H280.245V26.691c0-8.424-11.439-26.69-34.316-26.69s-34.316,18.267-34.316,26.69v184.924H26.69    C18.267,211.614,0,223.053,0,245.929s18.267,34.316,26.69,34.316h184.924v184.924c0,8.422,11.438,26.69,34.316,26.69    s34.316-18.268,34.316-26.69V280.245H465.17c8.422,0,26.69-11.438,26.69-34.316S473.59,211.614,465.167,211.614z"
+                fill="#FFFFFF" />
             </g>
           </svg>
         </span>
@@ -23,7 +26,7 @@
     <div class="main-info__head-item">
 
       <div class="filter__container filter__container--header">
-        <span class="container__name">Recieves notifications by</span>
+        <span class="container__name">Receive notifications by</span>
 
         <div class="container__wrapper">
 
@@ -140,7 +143,40 @@
     </div>
     <div class="main-info__head-item">
 
-      <ul class="head-item__container">
+      <div class="content__preloader" *ngIf="preloader">
+
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
+        </div>
+
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
+        </div>
+
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
+        </div>
+
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price price--positive"></div>
+          <div class="percent percent--positive"></div>
+        </div>
+
+        <div class="item">
+          <div class="pair"></div>
+          <div class="price"></div>
+          <div class="percent"></div>
+        </div>
+      </div>
+
+      <ul class="head-item__container" *ngIf="!preloader">
         <li class="head-item__container-item" *ngFor="let currency of currencies">
           <div class="container-item__line">
             <span class="container-item__line-crypt">{{currency.symbol}}</span>
@@ -153,6 +189,7 @@
           <span class="container-item__price" [ngStyle]="{'color': currency.quotes.USD.percent_change_24h > 0 ? '#66cc33' : '#ff8080'}">
             {{currency.quotes.USD.percent_change_24h}}%</span>
         </li>
+
       </ul>
 
     </div>
@@ -346,7 +383,7 @@
 
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
+                  <span class="item-inner-line--dashboard">Volume Analyzer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
 
@@ -440,7 +477,7 @@
 
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
+                  <span class="item-inner-line--dashboard">Volume Analyzer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
 
@@ -455,7 +492,7 @@
 
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
+                  <span class="item-inner-line--dashboard">Volume Analyzer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
 
@@ -470,7 +507,7 @@
 
               <div class="item-inner">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard">Volume Analizer</span>
+                  <span class="item-inner-line--dashboard">Volume Analyzer</span>
                   <span class="item-inner-line__balance">-15 FTEC</span>
                 </div>
 
@@ -486,7 +523,7 @@
 
       <div class="middle__table-type">
         <span class="middle__table-type-name--dashboard">
-          Connected Stocs
+          Connected Exchanges
         </span>
       </div>
       <div class="container__wrapper container__wrapper--dashboard">
@@ -544,23 +581,23 @@
             </div>
           </div>
         </div>
-        
+
         <div class="filter__table--filter">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-stocs">
-              
+
               <div class="stocs__container">
                 <div class="stocs__item-image">
                   <img src="../../../../assets/images/Bitstamp_Logo_2013.png" alt="">
                 </div>
-                
+
                 <div class="stocs__text">
                   <span>Bitstamp</span>
-                  
+
                   <span class="stocs__text-connected">connected</span>
                 </div>
               </div>
-              
+
               <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
             </div>
           </div>
@@ -601,7 +638,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="filter__table--filter">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-stocs">

@@ -154,6 +154,7 @@
   }
 
   .error-field {
+    display: block;
     margin-bottom: .938rem;
   }
 
@@ -180,6 +181,10 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+
+  .content--confirm {
+    flex-direction: initial;
   }
 
   .middle {

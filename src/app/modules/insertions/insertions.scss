@@ -330,8 +330,10 @@
 }
 
 .categories__item-svg {
+  top: 0;
   right: 0;
   padding-right: 0.625rem;
+  margin-top: 5px;
   position: absolute;
   
   display: -webkit-box;
@@ -339,6 +341,7 @@
   display: flex;
   
   margin-left: 0.625rem;
+
 }
 
 .filter__container-block-item--categories {
@@ -659,8 +662,11 @@
 
 .main-info__head-item:last-child {
   width: 55%;
+  margin-right: .625rem;
 
   background: $dark-blue;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .head-item__text {
@@ -875,8 +881,8 @@
 
 .filter__container--dashboard {
   width: 40%;  
-  padding: 1.250em;
-  margin-top: 2.563em;
+  padding: .625em;
+  margin-top: 3.188em;
   margin-bottom: 0;
 
   border-radius: .313rem;
