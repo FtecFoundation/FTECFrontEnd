@@ -662,6 +662,7 @@
 
 .main-info__head-item:last-child {
   width: 55%;
+  margin-right: .625rem;
 
   background: $dark-blue;
   -ms-flex-wrap: wrap;
@@ -880,8 +881,8 @@
 
 .filter__container--dashboard {
   width: 40%;  
-  padding: 1.250em;
-  margin-top: 2.563em;
+  padding: .625em;
+  margin-top: 3.188em;
   margin-bottom: 0;
 
   border-radius: .313rem;
