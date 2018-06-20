@@ -35,100 +35,73 @@
   color: $white;
 }
 
-.timeline-item {
-  background: transparent;
-  padding: .313rem;
-
-  margin: 0 auto;
-  height: 100%;
-}
-
-@keyframes placeHolderShimmer{
-  0%{
-      background-position: -468px 0
-  }
-  100%{
-      background-position: 468px 0
-  }
-}
-
-.animated-background {
-  height: 40%;
-  
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeHolderShimmer;
-  animation-timing-function: linear;
-  position: relative;
-  
-  background: linear-gradient(to right, rgba(225, 225, 225, 1) 0%, rgba(225, 225, 225, 0.7) 50%, rgba(225, 225, 225, 1) 100%);
-  background-size: 800px 104px;
-  border-radius: 5px;
-}
-
-.animated-background--red {
-  height: 60%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeHolderShimmer;
-  animation-timing-function: linear;
-  background: linear-gradient(to right, rgba(225, 128, 128, 1) 0%, rgba(225, 128, 128, 0.7) 50%, rgba(225, 128, 128, 1) 100%);
-  background-size: 800px 104px;
-
-}
-
-.background-masker {
-  background: $dark-blue;
-  position: absolute;
-}
-
-/* Every thing below this is just positioning */
-
-.background-masker.header-top,
-.background-masker.header-bottom {
-  left: 0;
-  right: 0;
-}
-
-.background-masker.header-top {
-  top: 43px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-}
-
-.background-masker.header-left,
-.background-masker.header-right {
-  top: 0;
-  left: 25px;
-  height: 26px;
-}
-
-.background-masker.header-bottom {
-  top: 20px;
-  height: 8px;
-}
-
-.background-masker.header-right {
-  width: 8px;
-  left: 46px;
-  right: 0;
-}
-
-.timeline-wrapper {
-  width: 20%;
-  height: 100%;
-  overflow: hidden;
-}
 
 .content__preloader{
   height: 100%;
   width: 100%;
   display: flex;
+  align-items: center;
   min-height: 76px;
+}
+.item {
+  height: 96px;
+  width: 25%;
+  border-radius: 13px;
+  padding: 22px 16px;
+}
+.pair {
+  width: 70px;
+  height: 14px;
+  margin-bottom: 12px;
+   animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-name: pairAnimation;
+      animation-timing-function: linear;
+    background: rgba(255,255,255, .7);
+
+    background: linear-gradient(to right, rgba(225, 225, 225, .8) 0%, rgba(225, 225, 225, 0.6) 50%, rgba(225, 225, 225, .8) 100%);
+
+    background-size: 70px 14px;
+    position: relative;
+    border-radius: 70px;
+
+}
+.price, .percent {
+  width: 60px;
+  height: 9px;
+  margin: 8px 0;
+       animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-name: priceAnimation;
+      animation-timing-function: linear;
+    background: $red;
+
+    background: linear-gradient(to right, rgba(225, 128, 128, .8) 0%, rgba(225, 128, 128, 0.6) 50%, rgba(225, 128, 128, .8) 100%);
+    border-radius: 20px;
+
+} 
+
+.price--positive, .percent--positive {
+  background: linear-gradient(to right, rgba(102, 204, 51, .8).80%, rgba(102, 204, 51, .6) 50%, rgba(102, 204, 51, .8));
+}
+
+
+
+@keyframes pairAnimation {
+  0%{
+      background-position: -70px 0;
+  }
+  100%{
+      background-position: 70px 0;
+    }
+  }
+  @keyframes priceAnimation{
+  0%{
+      background-position: -60px 0;
+    }
+  100%{
+      background-position: 60px 0;
+    }
 }

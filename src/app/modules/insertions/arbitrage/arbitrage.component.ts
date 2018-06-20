@@ -78,6 +78,7 @@ export class ArbitrageComponent implements OnInit {
         if (this.arbitrageForm.valid) {
             this._arbitrageService.getArbitrageWindows(this.prepareData()).subscribe(data => {
                 this.arbitrageWindows = data;
+                console.log(this.arbitrageWindows);
             });
         }
     }

@@ -12,7 +12,7 @@ export class ArbitrageWindow {
 }
 
 export class ArbitrageWindows {
-    window: ArbitrageWindow[];
+    windows: ArbitrageWindow[];
 }
 
 export class ArbitrageWindowsLog {
