@@ -16,6 +16,6 @@ export class ArbitrageWindows {
 }
 
 export class ArbitrageWindowsLog {
-    data: Date;
+    date: Date;
     log: ArbitrageWindow[];
 }
