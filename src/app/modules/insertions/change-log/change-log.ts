@@ -1,5 +1,22 @@
 export const changeLog = [
     {
+        'date': '20/06/2018',
+        'changes': [
+            'We configured the server for work with ETH node',
+            'The logic of saving the ways of notifications is developed',
+            'We added data validation while a request for getting arbitrage windows from the main module',
+            'Interaction bugs between main and arbitrage modules are fixed',
+            'We added new preloader for elements uploaded from the server',
+            'HTML layout of a page of user\'s profile was done',
+            'Messages for a user working with Arbitrage Assistant were added',
+            'We added write-off function for a subscription to Social Assistant at the backend',
+            'Bugs of work with Social Assistant were fixed',
+            'Development of notification features at the backend',
+            'Arbitrage Assistant is fully implemented at backed and is ready to use',
+            'The work with Social Assistant dictionary was implemented at frontend'
+        ]
+    },
+    {
         'date': '19/06/2018',
         'changes': [
             'The configuration of Lazy Loading for all modules at front end. This made loading of ' +
