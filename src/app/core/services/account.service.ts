@@ -5,6 +5,8 @@ import { catchError } from 'rxjs/operators/catchError';
 
 import { RestService } from './rest.service';
 import {HttpParams} from '@angular/common/http';
+import {User} from '../models/user';
+import {map} from 'rxjs/operators/map';
 
 enum AccountApiUrls {
     login = 'login',
@@ -14,7 +16,8 @@ enum AccountApiUrls {
     checkUsername = 'checkUniqueLogin?login=',
     checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
     restorePassword = 'sendRestoreUrl',
-    confirmEmail = 'confirmEmail/'
+    confirmEmail = 'confirmEmail/',
+    getUser = 'cabinet/getUser'
 }
 
 @Injectable()
@@ -64,6 +67,12 @@ export class AccountService extends RestService {
 
     confirmEmail(hash: string): Observable<any> {
         return this.post(AccountApiUrls.confirmEmail + hash, {}).pipe(
+            catchError(e => this.handleError(e)));
+    }
+
+    getUser(): Observable<User> {
+        return this.get(AccountApiUrls.getUser).pipe(
+            map(resp => resp.response.user),
             catchError(e => this.handleError(e)));
     }
 }
