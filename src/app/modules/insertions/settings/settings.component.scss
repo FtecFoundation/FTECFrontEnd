@@ -1,3 +1,7 @@
+.main-info--settings {
+  display: initial;
+}
+
 .middle--settings {
   width: 100%;
 
@@ -8,6 +12,90 @@
 .settings__container {
   width: 33%;
 
-  padding-right: .313rem;
-  padding-left: .313rem;
+  padding: .313rem;
+}
+
+.settings__account {
+  margin-bottom: 1rem;
+
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.settings__container-image {
+  width: 88px;
+  height: 88px;
+
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.settings__account-buttons {
+  width: 50%;
+}
+
+.account__buttons-item {
+  width: 100%;
+  padding: .500rem;
+}
+
+.settings__container-qr {
+  width: 100%;
+  height: 56%;
+
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;  
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.filter__container--settings {
+  height: 23%;
+}
+
+.settings__container-qr img {
+  width: 100px;
+  height: 100px;
+}
+
+.settings__container-qr h5 {
+  margin: .625rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.settings__container-qr span {
+  margin: 1.063rem;
+  font-size: 0.875em;
+  opacity: .8;
+}
+
+.middle__table-container--settings {
+  height: 401px;
+}
+
+.middle__table-container--settings-radio {
+  height: initial;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputs__radio {
+  width: 50%;
+  padding: .313rem;
 }
