@@ -2,6 +2,26 @@ export const changeLog = [
     {
         'date': '20/06/2018',
         'changes': [
+            'The work of Arbitrage Assistant is optimized',
+            'We developed the logic of bot’s actions when IP server is banned on exchange',
+            'We began the development of Telegram Assistant at backend',
+            'We developed the integration of Telegram module and personal cabinet',
+            'Adaptive HTML layout of tweets displayed in Social Assistant',
+            'Users’s configuration page is adapted to different display sizes',
+            'We made a preloader for separate loading elements',
+            'Studying Twitter API to implement Social Assistant',
+            'Twitter API was tested',
+            'We added filters to Twitter API',
+            'Implementation of possibility to change user’s picture at frontend',
+            'Little changes in the work with a dictionary at frontend',
+            'We improved existing algorithms for interaction between modules',
+            'Optimization of automatic testing to provide stability when implementing new ' +
+            'functionality and modification of already existing functions'
+        ]
+    },
+    {
+        'date': '20/06/2018',
+        'changes': [
             'We configured the server for work with ETH node',
             'The logic of saving the ways of notifications is developed',
             'We added data validation while a request for getting arbitrage windows from the main module',
