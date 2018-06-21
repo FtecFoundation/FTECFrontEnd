@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 
 export class PreloaderComponent implements OnInit {
-    
+
 
     constructor() {
     }
@@ -16,5 +16,5 @@ export class PreloaderComponent implements OnInit {
     ngOnInit() {
 
     }
- 
+
 }

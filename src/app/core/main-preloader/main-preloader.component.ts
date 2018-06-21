@@ -8,15 +8,15 @@
 // })
 
 // export class MainPreloaderComponent implements OnInit {
-    
+
 
 //     constructor() {
 //     }
 
 //     ngOnInit() {
 
-        
+
 
 //     }
- 
+
 // }
