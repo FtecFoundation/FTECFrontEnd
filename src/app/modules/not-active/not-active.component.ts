@@ -4,7 +4,7 @@ import {ShowModalService} from './show-modal.service';
 @Component({
   selector: 'app-popup',
   templateUrl: './not-active.component.html',
-  styleUrls: ['./not-active.component.scss', '../insertions/insertions.scss']
+  styleUrls: ['./not-active.component.scss']
 })
 export class NotActiveComponent implements OnInit {
 
