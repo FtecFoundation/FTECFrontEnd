@@ -70,6 +70,7 @@ export class ArbitrageComponent implements OnInit {
 
     toggleCheckbox(field: AbstractControl) {
         field.value === true ? field.setValue(false) : field.setValue(true);
+        if (!field.value) { this.orderVolume.setValue(null); }
     }
 
     submitForm() {
