@@ -47,6 +47,7 @@
 
 .settings__container-qr {
   width: 100%;
+  height: 56%;
 
   display: -ms-flexbox;
   display: flex;
@@ -61,6 +62,10 @@
   justify-content: center;
 
   text-align: center;
+}
+
+.filter__container--settings {
+  height: 23%;
 }
 
 .settings__container-qr img {
@@ -78,4 +83,19 @@
   margin: 1.063rem;
   font-size: 0.875em;
   opacity: .8;
+}
+
+.middle__table-container--settings {
+  height: 401px;
+}
+
+.middle__table-container--settings-radio {
+  height: initial;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputs__radio {
+  width: 50%;
+  padding: .313rem;
 }

@@ -162,7 +162,8 @@
     max-height: 700px;
   }
 
-  .change-log {
+  .change-log,
+  .settings__container {
     width: 50% !important;
   }
 
@@ -304,7 +305,8 @@
 
 @media only screen and (max-width: 425px) {
 
-  .change-log {
+  .change-log,
+  .settings__container {
     width: 100% !important;
   } 
 
