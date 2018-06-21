@@ -128,9 +128,15 @@
 }
 
 .middle__table-container--layout {
-  display: inline-block;
-
   padding: 0.625rem;
+
+  width: 100%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .middle__table-container-embed {
@@ -332,7 +338,7 @@
 .categories__item-svg {
   top: 0;
   right: 0;
-  padding-right: 0.625rem;
+  padding-right: 0.325rem;
   margin-top: 5px;
   position: absolute;
   

@@ -11,6 +11,7 @@ import {CryptocurrenciesService} from './services/cryptocurrencies.service';
 import {TitlesService} from './services/titles.service';
 import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
+import {SocialService} from './services/social.service';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import {ArbitrageService} from './services/arbitrage.service';
         CryptocurrenciesService,
         TitlesService,
         ImageService,
-        ArbitrageService
+        ArbitrageService,
+        SocialService
     ]
 })
 export class CoreModule {
