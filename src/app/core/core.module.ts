@@ -12,14 +12,21 @@ import {TitlesService} from './services/titles.service';
 import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
+// import {MainPreloaderComponent} from './main-preloader/main-preloader.component';
 
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule
     ],
-    declarations: [],
+    declarations: [
+        // MainPreloaderComponent
+    ],
+    exports: [
+        // MainPreloaderComponent
+    ],
     providers: [
+
         CookieService,
         AccountService,
         ErrorsService,

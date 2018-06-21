@@ -10,6 +10,7 @@ import {EmbeddedTweetOptions} from './embedded-tweet-options';
     styleUrls: ['../insertions.scss', './social.component.scss']
 })
 export class SocialComponent implements OnInit {
+    preloader = true;
 
     dictionary: string[];
     socialForm: FormGroup;
