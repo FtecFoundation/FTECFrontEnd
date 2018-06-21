@@ -128,9 +128,15 @@
 }
 
 .middle__table-container--layout {
-  display: inline-block;
-
   padding: 0.625rem;
+
+  width: 100%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .middle__table-container-embed {

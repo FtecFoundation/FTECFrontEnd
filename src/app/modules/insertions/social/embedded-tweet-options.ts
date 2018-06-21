@@ -16,7 +16,7 @@ export class EmbeddedTweetOptions {
         this.align = obj.align ? obj.align : 'center';
         this.lang = obj.lang ? obj.lang : 'en';
         this.width = obj.width ? obj.width : 325;
-        this.dnt = obj.dnt ? obj.dnt : true;
+        this.dnt = obj.dnt ? obj.dnt : false;
     }
 
     themeValid(theme: string) {

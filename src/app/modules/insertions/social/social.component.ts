@@ -16,7 +16,7 @@ export class SocialComponent implements OnInit {
     submitted = false;
     wordExists = true;
     recommendedWords: string[] = ['hardfork', 'list', 'fork', 'partner', 'core', 'update', 'pump', 'burn', 'delist'];
-    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712'];
+    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712', '1009714790476832768', '1009712799537393665'];
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
 
     constructor(private _showModalService: ShowModalService,
