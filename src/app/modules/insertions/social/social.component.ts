@@ -52,7 +52,7 @@ export class SocialComponent implements OnInit {
     deleteWord(word: string) {
         this._socialService.deleteWord({'word': word}).subscribe(() => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
-            if (this.addedRecommendedWords.indexOf(word) !== -1) this.recommendedWords.push(word);
+            if (this.addedRecommendedWords.indexOf(word) !== -1) { this.recommendedWords.push(word); }
         });
     }
 
