@@ -4,7 +4,7 @@ import {LoaderService} from './core/loader/loader.service';
 
 @Component({
     selector: 'app-root',
-    template: 
+    template:
         `<app-loader *ngIf="loaderService.loading"></app-loader>
         <router-outlet></router-outlet>`,
 
