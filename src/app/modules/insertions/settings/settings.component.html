@@ -17,7 +17,7 @@
             <div class="settings__account-buttons">
               <input style="display: none" accept="image/*" type="file" #uploader (change)="uploadFile($event)">
               <button class="account__buttons-item filter__container-button" (click)="uploader.click()">Change photo</button>
-              <button class="account__buttons-item button__outline">Delete</button>
+              <button class="account__buttons-item button__outline" (click)="showModal()">Delete</button>
             </div>
           </div>
 
@@ -39,7 +39,7 @@
             </div>
           </div>
 
-          <button class="filter__container-button filter__container-button--settings">Change</button>
+          <button class="filter__container-button filter__container-button--settings" (click)="showModal()">Change</button>
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@
             </div>
           </div>
 
-          <button class="filter__container-button filter__container-button--settings">Change password</button>
+          <button class="filter__container-button filter__container-button--settings" (click)="showModal()">Change password</button>
         </div>
       </div>
     </div>
@@ -112,7 +112,7 @@
             </div>
           </div>
 
-          <button class="filter__container-button filter__container-button--settings">ok</button>
+          <button class="filter__container-button filter__container-button--settings" (click)="showModal()">ok</button>
         </div>
       </div>
     </div>

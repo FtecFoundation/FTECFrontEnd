@@ -18,7 +18,7 @@
   transform: rotate(45deg);
 }
 
-.categories__item-svg:hover svg {
+.filter__container-block-item--categories:hover svg {
   transform: rotate(135deg);
 }
 
@@ -32,6 +32,13 @@
   padding: .313rem;
 }
 
+.filter__container-block-item--categories.is-active svg {
+  transform: initial;
+}
+
+.filter__container-block-item--categories.is-active:hover svg {
+  transform: rotate(90deg);
+}
 
 
 // Preloader

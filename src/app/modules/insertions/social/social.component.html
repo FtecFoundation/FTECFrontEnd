@@ -22,7 +22,7 @@
         </div>
         
         <div *ngIf="!preloader">
-          
+
           <ngx-tweet *ngFor="let tweetId of tweetIds" [tweetId]="tweetId" [options]="options"></ngx-tweet>
         </div>
       </div>
@@ -34,8 +34,8 @@
       <div class="filter__container">
         <span class="container__name container__name--recommended">Recommended words</span>
         <ul id="filter__container-block2" class="filter__container-block">
-          <li *ngFor="let word of recommendedWords" class="filter__container-block-item--categories">{{word}}
-            <div class="categories__item-svg" (click)="addRecommendedWord(word)">
+          <li *ngFor="let word of recommendedWords" class="filter__container-block-item--categories"  (click)="addRecommendedWord(word)">{{word}}
+            <div class="categories__item-svg">
               <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Group 8</title>
                 <desc>Created with Sketch.</desc>
@@ -62,8 +62,8 @@
       <div class="filter__container">
         <span class="filter__container--empty-dictionary" *ngIf=" dictionary && dictionary.length === 0">Your dictionary is empty</span>
         <ul id="filter__container-block" class="filter__container-block">
-          <li *ngFor="let word of dictionary" class="filter__container-block-item--categories">{{word}}
-            <div class="categories__item-svg" (click)="deleteWord(word)">
+          <li *ngFor="let word of dictionary" class="filter__container-block-item--categories is-active" (click)="deleteWord(word)">{{word}}
+            <div class="categories__item-svg">
               <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Group 8</title>
                 <desc>Created with Sketch.</desc>

@@ -3,6 +3,7 @@ import {RestService} from './rest.service';
 import {map} from 'rxjs/operators/map';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
+import {tap} from 'rxjs/operators/tap';
 
 enum SocialApiUrls {
     getDictionary = 'cabinet/social/getDictionary',
@@ -17,8 +18,11 @@ export class SocialService extends RestService {
 
     getDictionary(): Observable<string[]> {
         return this.get(SocialApiUrls.getDictionary).pipe(
+            tap(resp => console.log(resp)),
             map(resp => resp.response.words),
             catchError(e => this.handleError(e)));
+            
+
     }
 
     getTweets(): Observable<string[]> {

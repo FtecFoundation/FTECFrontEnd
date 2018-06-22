@@ -29,12 +29,14 @@ export class SocialComponent implements OnInit {
     ngOnInit() {
         this._socialService.getDictionary().subscribe(data => {
             this.dictionary = data;
+            console.log(this.dictionary);
             this.getRecommendationsWords();
         });
         this.createForm();
     }
 
     getRecommendationsWords () {
+        if(this.dictionary)
         for (const word of this.dictionary) {
             this.recommendedWords = this.recommendedWords.filter(r => {
                 if (r !== word) {
