@@ -1,6 +1,6 @@
 export const changeLog = [
     {
-        'date': '20/06/2018',
+        'date': '21/06/2018',
         'changes': [
             'The work of Arbitrage Assistant is optimized',
             'We developed the logic of bot’s actions when IP server is banned on exchange',
