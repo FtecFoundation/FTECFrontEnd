@@ -38,8 +38,6 @@
 
 .middle__table-container--layout ngx-tweet {
   width: 50%;
-
-  padding: .313rem;
 }
 
 .filter__container-block-item--categories.is-active svg {
@@ -68,4 +66,25 @@
 
 .vertical-centered-box--tweeter {
   position: initial;
+}
+
+.middle__table-container--tweeter {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.middle__table-container--left,
+.middle__table-container--right {
+  width: 50%;
+}
+
+/deep/ {
+  .middle__table-container--left div:first-child,
+  .middle__table-container--right div:first-child {
+    padding: .313rem;
+
+  margin: 0;
+  }
+
 }

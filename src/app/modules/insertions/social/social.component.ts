@@ -10,7 +10,7 @@ import {EmbeddedTweetOptions} from './embedded-tweet-options';
     styleUrls: ['../insertions.scss', './social.component.scss']
 })
 export class SocialComponent implements OnInit {
-    preloader = true;
+    preloader = false;
 
     dictionary: string[];
     socialForm: FormGroup;
@@ -18,7 +18,10 @@ export class SocialComponent implements OnInit {
     wordExists = true;
     recommendedWords: string[] = ['hardfork', 'list', 'fork', 'partner', 'core', 'update', 'pump', 'burn', 'delist'];
     addedRecommendedWords: string[] = [];
-    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712'];
+
+    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712', '1010152424680706048', '1010143174382309377',
+    '1009722961237069824', '1010069949916876800', '1009921272304885761', '1010150156547784705', '1010148629561081857'];
+
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
 
     constructor(private _showModalService: ShowModalService,
