@@ -13,13 +13,13 @@ import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
 import { LoaderComponent } from './loader/loader.component';
-import {ParticlesModule} from 'angular-particle';
+// import {ParticlesModule} from 'angular-particle';
 
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule,
-        ParticlesModule
+        // ParticlesModule
     ],
     declarations: [LoaderComponent],
     exports: [LoaderComponent],

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>First Trading Ecosystem FTEC</title>
@@ -16,12 +17,24 @@
             -webkit-user-select: none;
             overflow: hidden;
         }
+
         body .vertical-centered-box {
             position: absolute;
             width: 100%;
             height: 100%;
             text-align: center;
+
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
         }
+
         body .vertical-centered-box:after {
             content: '';
             display: inline-block;
@@ -29,6 +42,7 @@
             vertical-align: middle;
             margin-right: -0.25em;
         }
+
         body .vertical-centered-box .content {
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -38,15 +52,18 @@
             text-align: left;
             font-size: 0;
         }
+
         * {
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
             -o-transition: all 0.3s;
             transition: all 0.3s;
         }
+
         body {
             background: #2c2d44;
         }
+
         .loader-circle {
             position: absolute;
             left: 50%;
@@ -58,6 +75,7 @@
             margin-left: -60px;
             margin-top: -60px;
         }
+
         .loader-line-mask {
             position: absolute;
             left: 50%;
@@ -78,19 +96,26 @@
             -o-animation: rotate 1.2s infinite linear;
             animation: rotate 1.2s infinite linear;
         }
+
         .loader-line-mask .loader-line {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
         }
-        .content--loader{
+
+        .content--loader {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
-            align-items: center;
+            -ms-flex-line-pack: center;
+            align-content: center;
+            position: relative;
         }
+
         #particles-background,
         #particles-foreground {
             left: -51%;
@@ -103,44 +128,156 @@
             -o-transform: scale3d(0.5, 0.5, 1);
             transform: scale3d(0.5, 0.5, 1);
         }
+
         #particles-background {
             background: #2c2d44;
             background-image: -moz-linear-gradient(45deg, #2f3871 10%, #301e5a 60%);
             background-image: -webkit-linear-gradient(45deg, #2f3871 10%, #301e5a 60%);
             background-image: linear-gradient(45deg, #2f3871 10%, #301e5a 60%);
         }
+
         lesshat-selector {
-            -lh-property: 0; }
-        @-webkit-keyframes rotate{ 0% { -webkit-transform: rotate(0deg);} 100% { -webkit-transform: rotate(360deg);}}
-        @-moz-keyframes rotate{ 0% { -moz-transform: rotate(0deg);} 100% { -moz-transform: rotate(360deg);}}
-        @-o-keyframes rotate{ 0% { -o-transform: rotate(0deg);} 100% { -o-transform: rotate(360deg);}}
-        @keyframes rotate{ 0% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);} 100% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg);}}
-        [not-existing] {
-            zoom: 1;
+            -lh-property: 0;
         }
-        lesshat-selector {
-            -lh-property: 0; }
-        @-webkit-keyframes fade{ 0% { opacity: 1;} 50% { opacity: 0.25;}}
-        @-moz-keyframes fade{ 0% { opacity: 1;} 50% { opacity: 0.25;}}
-        @-o-keyframes fade{ 0% { opacity: 1;} 50% { opacity: 0.25;}}
-        @keyframes fade{ 0% { opacity: 1;} 50% { opacity: 0.25;}}
-        [not-existing] {
-            zoom: 1;
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
         }
-        lesshat-selector {
-            -lh-property: 0; }
-        @-webkit-keyframes fade-in{ 0% { opacity: 0;} 100% { opacity: 1;}}
-        @-moz-keyframes fade-in{ 0% { opacity: 0;} 100% { opacity: 1;}}
-        @-o-keyframes fade-in{ 0% { opacity: 0;} 100% { opacity: 1;}}
-        @keyframes fade-in{ 0% { opacity: 0;} 100% { opacity: 1;}}
+
+        @-moz-keyframes rotate {
+            0% {
+                -moz-transform: rotate(0deg);
+            }
+            100% {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes rotate {
+            0% {
+                -o-transform: rotate(0deg);
+            }
+            100% {
+                -o-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
         [not-existing] {
             zoom: 1;
         }
 
+        lesshat-selector {
+            -lh-property: 0;
+        }
+
+        @-webkit-keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        @-moz-keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        @-o-keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        [not-existing] {
+            zoom: 1;
+        }
+
+        lesshat-selector {
+            -lh-property: 0;
+        }
+
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        [not-existing] {
+            zoom: 1;
+        }
     </style>
 </head>
+
 <body>
-<app-root>
+    <app-root>
         <div id="particles-background" class="vertical-centered-box"></div>
         <div id="particles-foreground" class="vertical-centered-box"></div>
 
@@ -167,7 +304,8 @@
                             <stop stop-color="#3A81AD" offset="52.24%"></stop>
                             <stop stop-color="#5A2D90" offset="100%"></stop>
                         </linearGradient>
-                        <radialGradient cx="58.1997578%" cy="29.5127319%" fx="58.1997578%" fy="29.5127319%" r="64.5785129%" gradientTransform="translate(0.581998,0.295127),scale(1.000000,0.999308),rotate(23.978778),translate(-0.581998,-0.295127)" id="radialGradient-3">
+                        <radialGradient cx="58.1997578%" cy="29.5127319%" fx="58.1997578%" fy="29.5127319%" r="64.5785129%" gradientTransform="translate(0.581998,0.295127),scale(1.000000,0.999308),rotate(23.978778),translate(-0.581998,-0.295127)"
+                            id="radialGradient-3">
                             <stop stop-color="#1DCEC8" offset="14.2%"></stop>
                             <stop stop-color="#25B9C1" offset="28.77%"></stop>
                             <stop stop-color="#3A81AD" offset="59.02%"></stop>
@@ -177,17 +315,23 @@
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id="ftec" transform="translate(-1.000000, 0.000000)" fill-rule="nonzero">
                             <g id="Group">
-                                <ellipse id="Oval" fill="#5D2875" transform="translate(23.607270, 8.192368) rotate(-86.992424) translate(-23.607270, -8.192368) " cx="23.6072701" cy="8.19236792" rx="3.79991398" ry="11.3997419"></ellipse>
-                                <path d="M60,27.2 C59.7,29.8 53.9,31.3 47.1,30.5 C40.3,29.7 35.1,26.8 35.4,24.2 C36,22.5 41.5,20.1 48.3,20.9 C55.1,21.8 60.4,24.6 60,27.2 Z" id="Shape" fill="url(#linearGradient-1)"></path>
-                                <path d="M51.7,50.1 C51.6,52.2 46.4,53.6 40.1,53.3 C33.8,53 27.7,50.5 29,48.9 C29.9,47.7 34.3,45.4 40.6,45.7 C46.9,46 51.8,48 51.7,50.1 Z" id="Shape" fill="url(#linearGradient-2)"></path>
-                                <ellipse id="Oval" fill="#5D2875" transform="translate(13.963830, 32.094150) rotate(-81.859364) translate(-13.963830, -32.094150) " cx="13.96383" cy="32.09415" rx="4.69988854" ry="12.6996988"></ellipse>
-                                <path d="M48.3,19.9 C51.6,20.7 55.1,20.5 57.6,20.1 C57.9,20.1 58.4,19.9 58.1,18.8 C55.3,12 50,6.2 42.7,2.9 C33.2,-1.3 22.7,-0.1 14.6,5.2 C14.1,5.6 13.1,6.2 12.6,6.7 C14.4,5.6 19.4,6.2 23.7,7.3 C33,9.7 41.9,18.4 48.3,19.9 Z M14.3,39.4 C9.8,37.8 5.8,37.7 3.4,37.8 C2.4,37.9 2.5,38.6 2.6,38.9 C5.1,46.6 10.7,53.3 18.7,56.8 C30,61.8 42.8,59.2 51.2,51.1 C49.3,52.6 40.7,53 33.5,50 C26,46.9 21.5,42 14.3,39.4 Z M59.9,26.3 C59.9,26.9 58.5,27.6 57.4,27.7 C54.5,28.1 50.4,28.2 45.7,26.8 C36.9,24.2 29,15.9 20.3,14 C14.5,12.8 9.6,13.2 7,13.6 C6,13.7 5.5,14.5 5.3,14.9 C4.7,15.9 4.2,16.8 3.8,17.9 C2.3,21.3 1.5,24.7 1.3,28.2 C1.3,28.8 1.2,31.2 1.8,31.8 C1.4,31.1 3.5,28.8 15.8,32 C26.3,34.9 32.5,43.7 42.7,45 C49.8,45.9 53.5,44.8 56,43.7 C57.2,43.1 57.5,42.4 57.7,41.9 C59.7,37.5 60.4,32.9 60.2,28.4 C60.2,28 60.1,26.9 59.9,26.3 Z" id="Shape" fill="url(#radialGradient-3)"></path>
+                                <ellipse id="Oval" fill="#5D2875" transform="translate(23.607270, 8.192368) rotate(-86.992424) translate(-23.607270, -8.192368) "
+                                    cx="23.6072701" cy="8.19236792" rx="3.79991398" ry="11.3997419"></ellipse>
+                                <path d="M60,27.2 C59.7,29.8 53.9,31.3 47.1,30.5 C40.3,29.7 35.1,26.8 35.4,24.2 C36,22.5 41.5,20.1 48.3,20.9 C55.1,21.8 60.4,24.6 60,27.2 Z"
+                                    id="Shape" fill="url(#linearGradient-1)"></path>
+                                <path d="M51.7,50.1 C51.6,52.2 46.4,53.6 40.1,53.3 C33.8,53 27.7,50.5 29,48.9 C29.9,47.7 34.3,45.4 40.6,45.7 C46.9,46 51.8,48 51.7,50.1 Z"
+                                    id="Shape" fill="url(#linearGradient-2)"></path>
+                                <ellipse id="Oval" fill="#5D2875" transform="translate(13.963830, 32.094150) rotate(-81.859364) translate(-13.963830, -32.094150) "
+                                    cx="13.96383" cy="32.09415" rx="4.69988854" ry="12.6996988"></ellipse>
+                                <path d="M48.3,19.9 C51.6,20.7 55.1,20.5 57.6,20.1 C57.9,20.1 58.4,19.9 58.1,18.8 C55.3,12 50,6.2 42.7,2.9 C33.2,-1.3 22.7,-0.1 14.6,5.2 C14.1,5.6 13.1,6.2 12.6,6.7 C14.4,5.6 19.4,6.2 23.7,7.3 C33,9.7 41.9,18.4 48.3,19.9 Z M14.3,39.4 C9.8,37.8 5.8,37.7 3.4,37.8 C2.4,37.9 2.5,38.6 2.6,38.9 C5.1,46.6 10.7,53.3 18.7,56.8 C30,61.8 42.8,59.2 51.2,51.1 C49.3,52.6 40.7,53 33.5,50 C26,46.9 21.5,42 14.3,39.4 Z M59.9,26.3 C59.9,26.9 58.5,27.6 57.4,27.7 C54.5,28.1 50.4,28.2 45.7,26.8 C36.9,24.2 29,15.9 20.3,14 C14.5,12.8 9.6,13.2 7,13.6 C6,13.7 5.5,14.5 5.3,14.9 C4.7,15.9 4.2,16.8 3.8,17.9 C2.3,21.3 1.5,24.7 1.3,28.2 C1.3,28.8 1.2,31.2 1.8,31.8 C1.4,31.1 3.5,28.8 15.8,32 C26.3,34.9 32.5,43.7 42.7,45 C49.8,45.9 53.5,44.8 56,43.7 C57.2,43.1 57.5,42.4 57.7,41.9 C59.7,37.5 60.4,32.9 60.2,28.4 C60.2,28 60.1,26.9 59.9,26.3 Z"
+                                    id="Shape" fill="url(#radialGradient-3)"></path>
                             </g>
                         </g>
                     </g>
                 </svg>
             </div>
         </div>
+<<<<<<< HEAD
 </app-root>
 <script src="assets/scripts/particlegroung.min.js"></script>
 <script>
@@ -237,5 +381,11 @@
     });
 
 </script>
+=======
+    </app-root>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+>>>>>>> cef5835d2a35528f6984dac81d37e9d0375ce4ac
 </body>
+
 </html>
