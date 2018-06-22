@@ -14,6 +14,14 @@
   margin-top: 4px;
 }
 
+.categories__item-svg svg {
+  transform: rotate(45deg);
+}
+
+.categories__item-svg:hover svg {
+  transform: rotate(135deg);
+}
+
 .container__name--recommended {
   margin-bottom: 0.938em;
 }

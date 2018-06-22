@@ -20,8 +20,9 @@
         <div class="vertical-centered-box" *ngIf="preloader">
           <app-preloader></app-preloader>
         </div>
-
+        
         <div *ngIf="!preloader">
+          
           <ngx-tweet *ngFor="let tweetId of tweetIds" [tweetId]="tweetId" [options]="options"></ngx-tweet>
         </div>
       </div>
