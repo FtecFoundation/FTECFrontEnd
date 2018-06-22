@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+        'date': '22/06/2018',
+        'changes': [
+            'Telegram session for user was implemented at backend',
+            'Continuance of data input was implemented trough Telegram bot, too',
+            'Testing and production variants of Telegram bot implementation were separated',
+            'Twitter API was connected to Social Assistant at backend',
+            'We optimized Social Assistant methods at backend',
+            'Subscription function was moved from the main module to social module',
+            'Global loader while loading the app was added',
+            'We added animation to some elements of user interface',
+            'We began the work on implementation of testing in Cryptoacademy module',
+            'We added styles for radio buttons on the user configuration page'
+        ]
+    },
+    {
         'date': '21/06/2018',
         'changes': [
             'The work of Arbitrage Assistant is optimized',
