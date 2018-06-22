@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ImageService} from '../../../core/services/image.service';
+import { ShowModalService } from '../../not-active/show-modal.service';
 
 @Component({
   selector: 'app-social',
@@ -9,11 +10,15 @@ import {ImageService} from '../../../core/services/image.service';
 export class SettingsComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;
 
-  constructor(private _imageService: ImageService) {
+  constructor(private _imageService: ImageService, private _showModal: ShowModalService) {
   }
 
   ngOnInit() {
   }
+
+  showModal() {
+    this._showModal.showModal = true;
+}
 
     uploadFile($event) {
         const reader = new FileReader();

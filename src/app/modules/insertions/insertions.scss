@@ -373,10 +373,13 @@
 }
 
 .filter__container-block-item.is-active svg {
+  top: 0;
   right: 0.625em;
+  margin-top: 3px;
+  margin-left: 0.625em;
   display: block;
   position: absolute;
-  margin-left: 0.625em;
+
 }
 
 .filter__container-block-item.is-active {
