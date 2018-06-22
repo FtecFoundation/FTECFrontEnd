@@ -12,13 +12,17 @@ import {TitlesService} from './services/titles.service';
 import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
+import { LoaderComponent } from './loader/loader.component';
+import {ParticlesModule} from 'angular-particle';
 
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
+        ParticlesModule
     ],
-    declarations: [],
+    declarations: [LoaderComponent],
+    exports: [LoaderComponent],
     providers: [
         CookieService,
         AccountService,

@@ -53,6 +53,10 @@ app.set('views', join(DIST_FOLDER, 'browser'));
   app.get('/api/**', (req, res) => { });
 */
 
+// app.get('/api/session', (req, res) => {
+//     req.session.
+// });
+
 app.use('/api', proxy(apiUrl, {
     proxyReqPathResolver: function(req) {
         return require('url').parse(req.url).path;

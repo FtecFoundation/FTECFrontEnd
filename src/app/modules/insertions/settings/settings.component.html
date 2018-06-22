@@ -15,7 +15,8 @@
             <img src="../../../../assets/images/bitmap-4.png" alt="" class="settings__container-image">
 
             <div class="settings__account-buttons">
-              <button class="account__buttons-item filter__container-button">Change photo</button>
+              <input style="display: none" accept="image/*" type="file" #uploader (change)="uploadFile($event)">
+              <button class="account__buttons-item filter__container-button" (click)="uploader.click()">Change photo</button>
               <button class="account__buttons-item button__outline">Delete</button>
             </div>
           </div>

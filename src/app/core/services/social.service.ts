@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {RestService} from './rest.service';
-import {ArbitrageWindowsLog} from '../models/arbitrage-window';
 import {map} from 'rxjs/operators/map';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
 
 enum SocialApiUrls {
     getDictionary = 'cabinet/social/getDictionary',
+    getTweets= 'cabinet/social/getTweets',
     addWord = 'cabinet/social/addWord',
     deleteWord = 'cabinet/social/deleteWord',
     renewSubscription = 'cabinet/subscribeForSocial'
@@ -18,6 +18,12 @@ export class SocialService extends RestService {
     getDictionary(): Observable<string[]> {
         return this.get(SocialApiUrls.getDictionary).pipe(
             map(resp => resp.response.words),
+            catchError(e => this.handleError(e)));
+    }
+
+    getTweets(): Observable<string[]> {
+        return this.get(SocialApiUrls.getTweets).pipe(
+            map(resp => resp.response.tweets),
             catchError(e => this.handleError(e)));
     }
 

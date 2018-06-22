@@ -5,14 +5,21 @@ import {tap} from 'rxjs/operators/tap';
 import {catchError} from 'rxjs/operators/catchError';
 
 enum ImageApiUrls {
-    getProfileImage = 'cabinet/image/'
+    getProfileImage = 'cabinet/image/',
+    setProfileImage = 'cabinet/image/'
 }
 
 @Injectable()
 export class ImageService extends RestService {
 
-    public getImage(): Observable<Blob> {
+    getImage(): Observable<Blob> {
         return this.getBlob(ImageApiUrls.getProfileImage).pipe(
+            tap(resp => console.log(resp)),
+            catchError(e => this.handleError(e)));
+    }
+
+    setImage(image: any): Observable<any> {
+        return this.put(ImageApiUrls.setProfileImage, image, 'image/*').pipe(
             tap(resp => console.log(resp)),
             catchError(e => this.handleError(e)));
     }

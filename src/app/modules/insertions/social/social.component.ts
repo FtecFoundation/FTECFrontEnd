@@ -35,7 +35,12 @@ export class SocialComponent implements OnInit {
 
     getRecommendationsWords () {
         for (const word of this.dictionary) {
-            this.recommendedWords = this.recommendedWords.filter(r => r !== word);
+            this.recommendedWords = this.recommendedWords.filter(r => {
+                if (r !== word) {
+                    this.addedRecommendedWords.push(r);
+                    return true;
+                } else return false;
+            });
         }
     }
 
