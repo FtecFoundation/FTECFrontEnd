@@ -6,14 +6,20 @@ import * as express from 'express';
 import {join} from 'path';
 import {readFileSync} from 'fs';
 
+const domino = require('domino');
+const win = domino.createWindow('index.html');
+
+global['window'] = win;
+global['document'] = win.document;
+global['navigator'] = win.navigator;
+global['CSS'] = undefined;
+
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
 // Express server
 const app = express();
 const proxy = require('express-http-proxy');
-
-// DEBUG=express:* node dist/server --api_url=https://api.ftec.network !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 const PORT = process.env.PORT || 80;
 const DIST_FOLDER = join(process.cwd(), 'dist');
