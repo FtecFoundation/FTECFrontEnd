@@ -39,7 +39,7 @@ export class SocialComponent implements OnInit {
                 if (r !== word) {
                     this.addedRecommendedWords.push(r);
                     return true;
-                } else return false;
+                } else { return false; }
             });
         }
     }
