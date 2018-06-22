@@ -1,5 +1,42 @@
 export const changeLog = [
     {
+        'date': '21/06/2018',
+        'changes': [
+            'The work of Arbitrage Assistant is optimized',
+            'We developed the logic of bot’s actions when IP server is banned on exchange',
+            'We began the development of Telegram Assistant at backend',
+            'We developed the integration of Telegram module and personal cabinet',
+            'Adaptive HTML layout of tweets displayed in Social Assistant',
+            'Users’s configuration page is adapted to different display sizes',
+            'We made a preloader for separate loading elements',
+            'Studying Twitter API to implement Social Assistant',
+            'Twitter API was tested',
+            'We added filters to Twitter API',
+            'Implementation of possibility to change user’s picture at frontend',
+            'Little changes in the work with a dictionary at frontend',
+            'We improved existing algorithms for interaction between modules',
+            'Optimization of automatic testing to provide stability when implementing new ' +
+            'functionality and modification of already existing functions'
+        ]
+    },
+    {
+        'date': '20/06/2018',
+        'changes': [
+            'We configured the server for work with ETH node',
+            'The logic of saving the ways of notifications is developed',
+            'We added data validation while a request for getting arbitrage windows from the main module',
+            'Interaction bugs between main and arbitrage modules are fixed',
+            'We added new preloader for elements uploaded from the server',
+            'HTML layout of a page of user\'s profile was done',
+            'Messages for a user working with Arbitrage Assistant were added',
+            'We added write-off function for a subscription to Social Assistant at the backend',
+            'Bugs of work with Social Assistant were fixed',
+            'Development of notification features at the backend',
+            'Arbitrage Assistant is fully implemented at frontend and is ready to use',
+            'The work with Social Assistant dictionary was implemented at frontend'
+        ]
+    },
+    {
         'date': '19/06/2018',
         'changes': [
             'The configuration of Lazy Loading for all modules at front end. This made loading of ' +

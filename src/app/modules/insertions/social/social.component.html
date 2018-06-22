@@ -17,7 +17,13 @@
 
     <div class="middle__table">
       <div class="middle__table-container middle__table-container--layout">
-        <ngx-tweet *ngFor="let tweetId of tweetIds" [tweetId]="tweetId" [options]="options"></ngx-tweet>
+        <div class="vertical-centered-box" *ngIf="preloader">
+          <app-preloader></app-preloader>
+        </div>
+
+        <div *ngIf="!preloader">
+          <ngx-tweet *ngFor="let tweetId of tweetIds" [tweetId]="tweetId" [options]="options"></ngx-tweet>
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +46,7 @@
                         <g id="Group-8" transform="translate(90.000000, 2.000000)">
                           <circle id="Oval" fill-opacity="0.7" fill="#FFFFFF" cx="10" cy="10" r="10"></circle>
                           <path d="M10.90625,10.03125 L14.875,14.015625 C15.0000006,14.1302089 15.0625,14.2734366 15.0625,14.4453125 C15.0625,14.6171884 15.0026048,14.7630202 14.8828125,14.8828125 C14.7630202,15.0026048 14.6171884,15.0625 14.4453125,15.0625 C14.2734366,15.0625 14.1302089,15.0000006 14.015625,14.875 L10.03125,10.890625 L6.046875,14.875 C5.93229109,15.0000006 5.78906336,15.0625 5.6171875,15.0625 C5.44531164,15.0625 5.29947977,15.0026048 5.1796875,14.8828125 C5.05989523,14.7630202 5,14.6171884 5,14.4453125 C5,14.2734366 5.06249937,14.1302089 5.1875,14.015625 L9.15625,10.03125 L5.1875,6.046875 C5.06249937,5.93229109 5,5.78906336 5,5.6171875 C5,5.44531164 5.05989523,5.29947977 5.1796875,5.1796875 C5.29947977,5.05989523 5.44531164,5 5.6171875,5 C5.78906336,5 5.93229109,5.06249938 6.046875,5.1875 L10.03125,9.15625 L14.015625,5.1875 C14.1302089,5.06249938 14.2734366,5 14.4453125,5 C14.6171884,5 14.7630202,5.05989523 14.8828125,5.1796875 C15.0026048,5.29947977 15.0625,5.44531164 15.0625,5.6171875 C15.0625,5.78906336 15.0000006,5.93229109 14.875,6.046875 L10.90625,10.03125 Z"
-                                id="" fill="#7A5D8E"></path>
+                            id="" fill="#7A5D8E"></path>
                         </g>
                       </g>
                     </g>
@@ -53,7 +59,7 @@
       </div>
 
       <div class="filter__container">
-          <span class="filter__container--empty-dictionary" *ngIf=" dictionary && dictionary.length === 0">Your dictionary is empty</span>
+        <span class="filter__container--empty-dictionary" *ngIf=" dictionary && dictionary.length === 0">Your dictionary is empty</span>
         <ul id="filter__container-block" class="filter__container-block">
           <li *ngFor="let word of dictionary" class="filter__container-block-item--categories">{{word}}
             <div class="categories__item-svg" (click)="deleteWord(word)">
@@ -89,10 +95,10 @@
             <input type="text" formControlName="word" id="input-categories" min="20" class="form__input" placeholder="Hardfork, roadmap, coinburn..">
           </div>
 
-            <span *ngIf="word.invalid && (word.dirty || word.touched || submitted)">
-                    <span class="error-field" *ngIf="word.errors.required">This field is required</span>
-                    <span class="error-field" *ngIf="word.errors.minlength">Word should be at least 3 characters long</span>
-                </span>
+          <span *ngIf="word.invalid && (word.dirty || word.touched || submitted)">
+            <span class="error-field" *ngIf="word.errors.required">This field is required</span>
+            <span class="error-field" *ngIf="word.errors.minlength">Word should be at least 3 characters long</span>
+          </span>
         </div>
 
         <button type="submit" id="button-categories" class="filter__container-button" (click)="addWord()">Add to dictionary</button>

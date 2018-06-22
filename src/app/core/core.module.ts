@@ -13,17 +13,18 @@ import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
 import { LoaderComponent } from './loader/loader.component';
-// import {ParticlesModule} from 'angular-particle';
+import {LoaderService} from './loader/loader.service';
+
 
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule,
-        // ParticlesModule
+        HttpClientModule
     ],
     declarations: [LoaderComponent],
     exports: [LoaderComponent],
     providers: [
+
         CookieService,
         AccountService,
         ErrorsService,
@@ -33,7 +34,8 @@ import { LoaderComponent } from './loader/loader.component';
         TitlesService,
         ImageService,
         ArbitrageService,
-        SocialService
+        SocialService,
+        LoaderService
     ]
 })
 export class CoreModule {
