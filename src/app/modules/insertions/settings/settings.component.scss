@@ -1,3 +1,6 @@
+@import "../../../../assets/styles/variables";
+
+
 .main-info--settings {
   display: initial;
 }
@@ -65,7 +68,11 @@
 }
 
 .filter__container--settings {
-  height: 23%;
+  height: 22%;
+}
+
+.filter__container-button--settings {
+  margin-top: 0;  
 }
 
 .settings__container-qr img {
@@ -97,5 +104,18 @@
 
 .inputs__radio {
   width: 50%;
-  padding: .313rem;
+  padding: 1.250rem;
+
+  position: relative;
+}
+
+.form__info-checkmark--settings {
+  border-radius: 50%;
+  border-image: none;
+  border-color: $accent;
+}
+
+.form__info-label-container:hover .form__info-checkmark, .form__info-label-container input:checked ~ .form__info-checkmark {
+  background-image: none;
+  background: $accent;
 }

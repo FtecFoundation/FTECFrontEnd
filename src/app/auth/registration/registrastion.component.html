@@ -50,8 +50,7 @@
                 <div class="content__container">
                     <span class="container__name">Confirm password</span>
                     <div class="container__form">
-                        <input type="password" class="form__input" placeholder="Password"
-                               formControlName="confirmPassword">
+                        <input type="password" class="form__input" placeholder="Password" formControlName="confirmPassword">
                     </div>
 
                     <span *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched || submitted)">
@@ -75,8 +74,8 @@
                 </label>
 
                 <div style="margin-top: 40px; margin-bottom: -20px;" *ngIf="terms.invalid && submitted">
-                        <span class="error-field" *ngIf="terms.errors.required">Please, check this field</span>
-                    </div>
+                    <span class="error-field" *ngIf="terms.errors.required">Please, check this field</span>
+                </div>
             </div>
 
             <div class="form__info form__info--checkbox" (click)="toggleCheckbox(subscribeForEmail)">
