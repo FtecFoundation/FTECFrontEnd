@@ -14,7 +14,7 @@ import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
 import { LoaderComponent } from './loader/loader.component';
 import {LoaderService} from './loader/loader.service';
-// import {ParticlesModule} from 'angular-particle';
+
 
 @NgModule({
     imports: [
@@ -24,6 +24,7 @@ import {LoaderService} from './loader/loader.service';
     declarations: [LoaderComponent],
     exports: [LoaderComponent],
     providers: [
+
         CookieService,
         AccountService,
         ErrorsService,

@@ -4,9 +4,10 @@ import {LoaderService} from './core/loader/loader.service';
 
 @Component({
     selector: 'app-root',
-    template: `
-        <app-loader *ngIf="loaderService.loading"></app-loader>
+    template:
+        `<app-loader *ngIf="loaderService.loading"></app-loader>
         <router-outlet></router-outlet>`,
+
     styles: [],
     encapsulation: ViewEncapsulation.None
 })
