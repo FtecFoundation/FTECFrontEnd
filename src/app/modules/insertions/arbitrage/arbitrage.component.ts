@@ -14,6 +14,7 @@ import {RegistrationValidators} from '../../../auth/registration/registration.va
 
 export class ArbitrageComponent implements OnInit {
     exchanges = availableExchanges;
+    preloader = false;
     allChosen = false;
     windowsLogs: ArbitrageWindowsLog;
     arbitrageWindows: ArbitrageWindows;
@@ -77,9 +78,12 @@ export class ArbitrageComponent implements OnInit {
         this.fillChosenExchanges();
         this.submitted = true;
         if (this.arbitrageForm.valid) {
+            this.preloader = true;
             this._arbitrageService.getArbitrageWindows(this.prepareData()).subscribe(data => {
                 this.arbitrageWindows = data;
                 console.log(this.arbitrageWindows);
+
+                this.preloader = false;
             });
         }
     }
