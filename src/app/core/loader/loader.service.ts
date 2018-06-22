@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LoaderService {
-  loading: boolean = true;
+  loading = true;
 
   constructor() { }
 

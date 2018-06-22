@@ -11,7 +11,7 @@ import {LoaderService} from './core/loader/loader.service';
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-    constructor(private titleService: TitlesService, protected loaderService: LoaderService) {}
+    constructor(private titleService: TitlesService, public loaderService: LoaderService) {}
 
     ngOnInit(): void {
         const temp = this.loaderService;
