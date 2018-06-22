@@ -5,7 +5,7 @@
         Subscription days left: &infin;
       </h5>
 
-      <button class="button__outline" (click)="renewSubscription()">Renew subscription</button>
+      <button class="button__outline" (click)="renewSubscription()">Subscribe</button>
     </div>
     <div class="middle__head middle__head--padding">
       <div class="middle__table-type">
@@ -17,7 +17,7 @@
 
     <div class="middle__table">
       <div class="middle__table-container middle__table-container--layout">
-        <div class="vertical-centered-box" *ngIf="preloader">
+        <div class="vertical-centered-box vertical-centered-box--tweeter" *ngIf="preloader">
           <app-preloader></app-preloader>
         </div>
         

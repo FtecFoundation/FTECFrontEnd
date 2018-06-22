@@ -110,6 +110,8 @@
 .form__info-label-container:hover  .form__info-checkmark,
 .form__info-label-container input:checked ~ .form__info-checkmark {
   background-image: $blue-gradient;
+
+  transition: background .3s ease;
 }
 
 

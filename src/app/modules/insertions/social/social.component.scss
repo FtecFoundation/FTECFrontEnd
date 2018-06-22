@@ -15,11 +15,21 @@
 }
 
 .categories__item-svg svg {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
 .filter__container-block-item--categories:hover svg {
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .container__name--recommended {
@@ -37,7 +47,15 @@
 }
 
 .filter__container-block-item--categories.is-active:hover svg {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
 
@@ -46,4 +64,8 @@
 .vertical-centered-box {
   margin: 0 auto;
   padding: 120px;
+}
+
+.vertical-centered-box--tweeter {
+  position: initial;
 }

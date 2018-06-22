@@ -21,7 +21,7 @@ export class SocialService extends RestService {
             tap(resp => console.log(resp)),
             map(resp => resp.response.words),
             catchError(e => this.handleError(e)));
-            
+
 
     }
 

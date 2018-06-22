@@ -36,7 +36,7 @@ export class SocialComponent implements OnInit {
     }
 
     getRecommendationsWords () {
-        if(this.dictionary)
+        if (this.dictionary) {
         for (const word of this.dictionary) {
             this.recommendedWords = this.recommendedWords.filter(r => {
                 if (r !== word) {
@@ -44,6 +44,7 @@ export class SocialComponent implements OnInit {
                     return true;
                 } else { return false; }
             });
+        }
         }
     }
 

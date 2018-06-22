@@ -137,7 +137,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  
+
   position: relative;
 }
 
@@ -387,6 +387,10 @@
 .filter__container-block-item.is-active {
   padding-right: 2.500rem;
   background: $blue-gradient;
+}
+
+.filter__container-block-item {
+  transition: padding-right .3s ease;
 }
 
 .filter__container-block-item:hover {
