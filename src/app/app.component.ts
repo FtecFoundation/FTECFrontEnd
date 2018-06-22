@@ -3,7 +3,9 @@ import {TitlesService} from './core/services/titles.service';
 
 @Component({
     selector: 'app-root',
-    template: `<router-outlet></router-outlet>`,
+    template: `
+        <app-loader></app-loader>
+        <router-outlet></router-outlet>`,
     styles: [],
     encapsulation: ViewEncapsulation.None
 })
