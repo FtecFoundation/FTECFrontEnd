@@ -3,6 +3,7 @@ import {CanActivate, Router} from '@angular/router';
 
 import {AccountService} from '../services/account.service';
 import {ErrorsService} from '../services/errors.service';
+import {LoaderService} from '../loader/loader.service';
 
 
 @Injectable()
