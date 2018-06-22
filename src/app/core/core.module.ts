@@ -12,19 +12,17 @@ import {TitlesService} from './services/titles.service';
 import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
-// import {MainPreloaderComponent} from './main-preloader/main-preloader.component';
+import { LoaderComponent } from './loader/loader.component';
+import {LoaderService} from './loader/loader.service';
+
 
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule
     ],
-    declarations: [
-        // MainPreloaderComponent
-    ],
-    exports: [
-        // MainPreloaderComponent
-    ],
+    declarations: [LoaderComponent],
+    exports: [LoaderComponent],
     providers: [
 
         CookieService,
@@ -36,7 +34,8 @@ import {SocialService} from './services/social.service';
         TitlesService,
         ImageService,
         ArbitrageService,
-        SocialService
+        SocialService,
+        LoaderService
     ]
 })
 export class CoreModule {

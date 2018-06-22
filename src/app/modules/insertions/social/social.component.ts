@@ -17,7 +17,8 @@ export class SocialComponent implements OnInit {
     submitted = false;
     wordExists = true;
     recommendedWords: string[] = ['hardfork', 'list', 'fork', 'partner', 'core', 'update', 'pump', 'burn', 'delist'];
-    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712', '1009714790476832768', '1009712799537393665'];
+    addedRecommendedWords: string[] = [];
+    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712'];
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
 
     constructor(private _showModalService: ShowModalService,
@@ -28,8 +29,20 @@ export class SocialComponent implements OnInit {
     ngOnInit() {
         this._socialService.getDictionary().subscribe(data => {
             this.dictionary = data;
+            this.getRecommendationsWords();
         });
         this.createForm();
+    }
+
+    getRecommendationsWords () {
+        for (const word of this.dictionary) {
+            this.recommendedWords = this.recommendedWords.filter(r => {
+                if (r !== word) {
+                    this.addedRecommendedWords.push(r);
+                    return true;
+                } else { return false; }
+            });
+        }
     }
 
     createForm() {
@@ -45,6 +58,7 @@ export class SocialComponent implements OnInit {
     deleteWord(word: string) {
         this._socialService.deleteWord({'word': word}).subscribe(() => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
+            if (this.addedRecommendedWords.indexOf(word) !== -1) { this.recommendedWords.push(word); }
         });
     }
 
@@ -54,6 +68,7 @@ export class SocialComponent implements OnInit {
         if (this.socialForm.valid && (this.dictionary && this.dictionary.indexOf(this.word.value) === -1)) {
             this._socialService.addWord(this.socialForm.value).subscribe(() => {
                 this.dictionary.push(this.word.value);
+                this.getRecommendationsWords();
             });
         } else if (this.dictionary.indexOf(this.word.value) !== -1) {
             this.wordExists = true;
@@ -65,6 +80,8 @@ export class SocialComponent implements OnInit {
         if (this.dictionary && this.dictionary.indexOf(word) === -1) {
             this._socialService.addWord({'word': word}).subscribe(() => {
                 this.dictionary.push(word);
+                this.addedRecommendedWords.push(word);
+                this.getRecommendationsWords();
             });
         } else {
             this.wordExists = true;

@@ -47,7 +47,9 @@
     "zone.js": "^0.8.14",
     "ngx-cookie-service": "^1.0.10",
     "express-http-proxy": "^1.2.0",
-    "ngx-twitter": "^1.0.1"
+    "ngx-twitter": "^1.0.1",
+    "angular-particle": "^1.0.4",
+    "particleground-light": "^1.0.6"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.0",

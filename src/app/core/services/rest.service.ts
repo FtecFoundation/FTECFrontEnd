@@ -12,30 +12,33 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        const sdate = new Date();
         console.log('login');
-        this._cookieService.set('token', token, sdate.setDate(sdate.getDate() + 1), '/');
+        this._cookieService.set('token', token, new Date(new Date().getTime() + 24 * 60 * 60 * 1000), '/');
     }
 
     protected processLogout() {
         this._cookieService.deleteAll('/');
     }
 
-    protected get headers(): HttpHeaders {
+    protected headers(contentType: string = 'application/json'): HttpHeaders {
         const token: string = this._cookieService.get('token');
-        return new HttpHeaders().set('Content-Type', 'application/json').set('TOKEN-X-AUTH', token);
+        return new HttpHeaders().set('Content-Type', contentType).set('TOKEN-X-AUTH', token);
     }
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
-        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers, params: queryParam});
+        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam});
     }
 
     protected getBlob(relativeUrl: string, queryParam?: HttpParams): Observable<Blob> {
-        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers, params: queryParam, responseType: 'blob'});
+        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam, responseType: 'blob'});
     }
 
     protected post(relativeUrl: string, data: any): Observable<any>  {
-        return this._http.post(this.baseUrl + relativeUrl, data, {headers: this.headers});
+        return this._http.post(this.baseUrl + relativeUrl, data, {headers: this.headers()});
+    }
+
+    protected put(relativeUrl: string, data: any, contentType?: string): Observable<any>  {
+        return this._http.put(this.baseUrl + relativeUrl, data, {headers: this.headers(contentType)});
     }
 
     protected handleError(error: HttpErrorResponse): Observable<any> {
