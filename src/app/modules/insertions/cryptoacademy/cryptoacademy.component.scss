@@ -1,0 +1,199 @@
+@import "../../../../assets/styles/variables";
+
+.not-active {
+  display: none;
+}
+
+.middle--crypto {
+  width: 100%;
+}
+
+.crypto {
+
+}
+
+.crypto__tab {
+
+}
+
+.crypto__tab-controls {
+  display: flex;
+}
+
+.crypto__tab-controls-item {
+  width: 20%;
+  padding: .625rem;
+  padding-left: 1.250rem;
+  padding-right: 1.250rem;
+
+  cursor: pointer;
+  background-color: #0d003b;
+  border-top-left-radius: .625rem;
+  border-top-right-radius: .625rem;
+}
+
+.crypto__tab-controls-item:hover {
+  background-color: transparent;
+
+  transition: background .3s ease;
+}
+
+.crypto__tab-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: radial-gradient(circle at 49% 0%, #400959, #0f0240);
+  border-bottom-left-radius: .313rem;
+  border-bottom-right-radius: .313rem;
+}
+
+.crypto__tab-container {
+  width: 24%;
+  margin: .313rem;
+
+  background-color: $dark-blue;
+  border-radius: .313rem;
+}
+
+.crypto__tab-container img {
+  width: 100%;
+  height: 50%;
+
+  border-radius: .313rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.crypto__tab-info {
+  padding: .313rem;
+}
+
+.crypto__info-title {
+  font-size: 1.125rem;
+}
+
+.crypto__info-subtitle {
+  font-size: .750rem;
+  opacity: .39;
+}
+
+.crypto__info-text {
+  margin-top: .313rem;
+  margin-bottom: .313rem;
+}
+
+.button--crypto {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: .625rem;
+  margin-bottom: 1.250rem;
+  padding: .313rem;
+
+  font-weight: 100;
+  text-transform: initial;
+}
+
+// Test
+
+.middle--test {
+  border-radius: .313rem;
+}
+
+.test {
+  background-image: radial-gradient(circle at 49% 0%, #400959, #0f0240);
+  border-radius: .313rem;
+
+}
+
+.test__image {
+  padding: .625rem;
+}
+
+.test img {
+  width: 100%;
+  
+  border-radius: .313rem;
+}
+
+.test__question {
+  padding: .625rem;
+  text-align: center;
+  font-weight: 100;
+}
+
+.test__wrapper {
+  padding: .625rem;
+}
+
+.test__container {
+  margin-top: .625rem;
+  margin-bottom: .625rem;
+
+  border: 1px solid $light-violete;
+  border-bottom: none;
+  border-radius: .313rem;
+}
+
+.test__container-item {
+  padding: 1rem;
+  position: relative;
+
+  cursor: pointer;
+  border-bottom: 1px solid $light-violete;
+}
+
+.test__item--green {
+  color: $green;
+}
+
+.test__item--red {
+  color: $red;
+}
+
+.test__item-percantage {
+  float: right;
+}
+
+.test__container-item:hover {
+  background-color: $light-violete;
+}
+
+.test__container-item:first-child:hover {
+  border-top-left-radius: 0.250em;
+  border-top-right-radius: 0.250em;
+}
+
+.test__container-item:last-child:hover {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0.250em;
+  border-bottom-right-radius: 0.250em;
+}
+
+.test__container-item:last-child {
+  border-radius: .313rem;
+}
+
+.test__item-answer {
+  display: block;
+  margin-top: .625rem;
+  
+  opacity: .7;
+  font-size: .750rem;
+}
+
+.button--test {
+  width: 30%;
+}
+
+.test__container-answer {
+  font-size: .938rem;
+}
+
+.aside-right--test {
+  margin-left: .625rem;
+  margin-right: .625rem;
+
+  border-radius: .313rem;
+  background-image: linear-gradient(to left, #3d0957, #0d0130);
+}
