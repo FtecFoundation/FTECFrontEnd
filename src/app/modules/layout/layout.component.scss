@@ -1,5 +1,9 @@
 @import "../../../assets/styles/variables";
 
+.content{
+  display: -webkit-box;
+}
+
 .aside, .middle, .aside-right {
   width: 20%;
   height: calc(100% - 10.938rem);

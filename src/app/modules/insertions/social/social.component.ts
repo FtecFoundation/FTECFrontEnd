@@ -1,32 +1,39 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {SocialService} from '../../../core/services/social.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EmbeddedTweetOptions} from './embedded-tweet-options';
+import {TwttrService} from 'ngx-twitter/src/app/twitter/twttr.service';
+import {el} from '@angular/platform-browser/testing/src/browser_util';
 
 @Component({
     selector: 'app-social',
     templateUrl: './social.component.html',
     styleUrls: ['../insertions.scss', './social.component.scss']
 })
-export class SocialComponent implements OnInit {
-    preloader = false;
+export class SocialComponent implements OnInit, AfterViewInit {
 
+    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712', '1010152424680706048', '1010143174382309377',
+        '1009722961237069824', '1010069949916876800', '1009921272304885761', '1010150156547784705', '1010148629561081857'];
+    @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
+    preloader = false;
     dictionary: string[];
     socialForm: FormGroup;
     submitted = false;
     wordExists = true;
     recommendedWords: string[] = ['hardfork', 'list', 'fork', 'partner', 'core', 'update', 'pump', 'burn', 'delist'];
     addedRecommendedWords: string[] = [];
-
-    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712', '1010152424680706048', '1010143174382309377',
-    '1009722961237069824', '1010069949916876800', '1009921272304885761', '1010150156547784705', '1010148629561081857'];
-
-    @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
+    tweetsRight: string[] = [];
+    tweetsLeft: string[] = [];
+    leftHeight = 0;
+    rightHeight = 0;
 
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
                 private formBuilder: FormBuilder) {
+    }
+
+    ngAfterViewInit() {
     }
 
     ngOnInit() {
@@ -36,6 +43,10 @@ export class SocialComponent implements OnInit {
             this.getRecommendationsWords();
         });
         this.createForm();
+    }
+
+    getTweets() {
+
     }
 
     getRecommendationsWords () {

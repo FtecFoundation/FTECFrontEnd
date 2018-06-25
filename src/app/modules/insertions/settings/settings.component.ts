@@ -24,9 +24,8 @@ export class SettingsComponent implements OnInit {
         const reader = new FileReader();
         if ($event.target.files && $event.target.files.length > 0) {
             const file = $event.target.files[0];
-            reader.readAsDataURL(file);
             reader.onload = () => {
-                this._imageService.setImage(reader.result.split(',')[1]).subscribe(data => {
+                this._imageService.setImage(file).subscribe(data => {
                     console.log(data);
                 });
             };

@@ -5,6 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {SocialRoutingModule} from './social-routing.module';
 import {TwitterModule} from 'ngx-twitter';
 import {SharedModule} from '../../../shared/shared.module';
+import {NgxMasonryModule} from 'ngx-masonry';
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import {SharedModule} from '../../../shared/shared.module';
         ReactiveFormsModule,
         SocialRoutingModule,
         TwitterModule,
+        NgxMasonryModule,
         SharedModule
     ],
     declarations: [SocialComponent]

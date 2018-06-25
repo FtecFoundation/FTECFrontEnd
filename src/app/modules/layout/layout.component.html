@@ -1,6 +1,6 @@
 <app-header>
 </app-header>
-<main class="content">
+<main class="content" [@routerAnimations]="prepRouteState(o)">
 
   <div class="aside">
 
@@ -312,7 +312,7 @@
 
 
   <!-- Switched Middle content -->
-  <router-outlet></router-outlet>
+    <router-outlet  #o="outlet"></router-outlet>
 
 
   <aside class="sidebar">

@@ -48,7 +48,8 @@
     "ngx-cookie-service": "^1.0.10",
     "express-http-proxy": "^1.2.0",
     "ngx-twitter": "^1.0.1",
-    "domino": "^2.0.2"
+    "domino": "^2.0.2",
+    "ngx-masonry": "^1.1.2"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.0",
