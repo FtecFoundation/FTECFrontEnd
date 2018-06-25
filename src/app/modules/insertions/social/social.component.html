@@ -22,20 +22,20 @@
         </div> -->
 
         <div class="middle__table-container--tweeter" *ngIf="!preloader">
-          <!--<ngx-masonry>-->
-            <!--<ngxMasonryItem class="masonry-item" *ngFor="let tweetId of tweetIds">-->
-              <!--<ngx-tweet [tweetId]="tweetId" [options]="options"></ngx-tweet>-->
-            <!--</ngxMasonryItem>-->
-          <!--</ngx-masonry>-->
+          <ngx-masonry>
+            <ngxMasonryItem class="masonry-item" *ngFor="let tweetId of tweetIds">
+              <ngx-tweet [tweetId]="tweetId" [options]="options"></ngx-tweet>
+            </ngxMasonryItem>
+          </ngx-masonry>
 
           <div class="middle__table-container--left" id="left">
-            <div *ngFor="let tweetId of tweetsLeft" >
+            <div *ngFor="let tweetId of tweetsLeft">
               <ngx-tweet [tweetId]="tweetId" [options]="options"></ngx-tweet>
             </div>
           </div>
 
           <div class="middle__table-container--right" id="right">
-            <div *ngFor="let tweetId of tweetsRight" >
+            <div *ngFor="let tweetId of tweetsRight">
               <ngx-tweet [tweetId]="tweetId" [options]="options"></ngx-tweet>
             </div>
           </div>
