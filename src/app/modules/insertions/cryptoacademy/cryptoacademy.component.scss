@@ -22,17 +22,19 @@
 
 .crypto__tab-controls-item {
   width: 20%;
-  padding: .625rem;
+  padding: .938rem;
   padding-left: 1.250rem;
   padding-right: 1.250rem;
 
   cursor: pointer;
-  background-color: #0d003b;
+  color: $grey;
+  background-color: $dark-blue;
   border-top-left-radius: .625rem;
   border-top-right-radius: .625rem;
 }
 
 .crypto__tab-controls-item:hover {
+  color: $white;
   background-color: transparent;
 
   transition: background .3s ease;
@@ -47,11 +49,13 @@
 }
 
 .crypto__tab-container {
-  width: 24%;
-  margin: .313rem;
+  width: 25%;
+  padding: .625rem;
 
   background-color: $dark-blue;
   border-radius: .313rem;
+
+  font-size: .813em;
 }
 
 .crypto__tab-container img {
@@ -196,4 +200,8 @@
 
   border-radius: .313rem;
   background-image: linear-gradient(to left, #3d0957, #0d0130);
+}
+
+.test__status {
+
 }
