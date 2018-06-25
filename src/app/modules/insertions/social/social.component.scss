@@ -64,7 +64,6 @@
   padding: 120px;
 }
 
-<<<<<<< HEAD
 .vertical-centered-box--tweeter {
   position: initial;
 }
@@ -88,8 +87,24 @@
   margin: 0;
   }
 
+  .twitter-tweet-rendered{
+    width: 100% !important;
+    padding-right: .625rem !important;
+    padding-left: .625rem !important;
+  }
+
 }
-=======
+
+.vertical-centered-box--tweeter {
+  padding: 10px;
+  display: initial;
+}
+
+ngx-tweet {
+    opacity: 0;
+}
+
+
 
 .tweeter--left {
   float: left;
@@ -98,4 +113,4 @@
 .tweeter--right {
   float: right;
 }
->>>>>>> develop
+

@@ -23,10 +23,6 @@ export class SocialComponent implements OnInit, AfterViewInit {
     wordExists = true;
     recommendedWords: string[] = ['hardfork', 'list', 'fork', 'partner', 'core', 'update', 'pump', 'burn', 'delist'];
     addedRecommendedWords: string[] = [];
-    tweetsRight: string[] = [];
-    tweetsLeft: string[] = [];
-    leftHeight = 0;
-    rightHeight = 0;
 
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
@@ -34,6 +30,25 @@ export class SocialComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
+        window['twttr'].ready(function (twttr) {
+            twttr.events.bind('rendered', function (event) {
+                let leftHeight = 0;
+                let rightHeight = 0;
+
+                const tweets = document.getElementById('tweets').children;
+
+                for (let i = 0; i < tweets.length; i++) {
+                    if (leftHeight <= rightHeight) {
+                        tweets[i].classList.add('tweeter--left');
+                        leftHeight += tweets[i].clientHeight;
+                    } else {
+                        tweets[i].classList.add('tweeter--right');
+                        rightHeight += tweets[i].clientHeight;
+                    }
+                    tweets[i].style.opacity = 1;
+                }
+            });
+        });
     }
 
     ngOnInit() {

@@ -22,7 +22,10 @@
           <!-- <app-preloader></app-preloader> -->
         </div>
 
+        <div class="vertical-centered-box vertical-centered-box--tweeter" id="tweets">
+          <ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>
         </div>
+
       </div>
     </div>
   </div>
