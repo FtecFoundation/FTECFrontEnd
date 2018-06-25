@@ -35,6 +35,7 @@ li {
 }
 
 .content {
+  z-index: -1;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -43,10 +44,17 @@ li {
   display: inline-block;
 
   overflow-y: scroll;
-  background-image: url(/assets/images/circle.png), $violet-gradient;
+  background-image: $violet-gradient;
   background-position: right top;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.content__bg {
+  z-index: -1;
+  top: 0;
+  right: 0;
+  position: absolute;
 }
 
 .wrapper {
