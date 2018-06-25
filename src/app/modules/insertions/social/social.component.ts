@@ -1,10 +1,10 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import {ShowModalService} from '../../not-active/show-modal.service';
-import {SocialService} from '../../../core/services/social.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {EmbeddedTweetOptions} from './embedded-tweet-options';
-import {TwttrService} from 'ngx-twitter/src/app/twitter/twttr.service';
-import {el} from '@angular/platform-browser/testing/src/browser_util';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { ShowModalService } from '../../not-active/show-modal.service';
+import { SocialService } from '../../../core/services/social.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmbeddedTweetOptions } from './embedded-tweet-options';
+import { TwttrService } from 'ngx-twitter/src/app/twitter/twttr.service';
+import { el } from '@angular/platform-browser/testing/src/browser_util';
 
 @Component({
     selector: 'app-social',
@@ -25,8 +25,8 @@ export class SocialComponent implements OnInit, AfterViewInit {
     addedRecommendedWords: string[] = [];
 
     constructor(private _showModalService: ShowModalService,
-                private _socialService: SocialService,
-                private formBuilder: FormBuilder) {
+        private _socialService: SocialService,
+        private formBuilder: FormBuilder) {
     }
 
     ngAfterViewInit() {
@@ -45,7 +45,7 @@ export class SocialComponent implements OnInit, AfterViewInit {
                         tweets[i].classList.add('tweeter--right');
                         rightHeight += tweets[i].clientHeight;
                     }
-                    tweets[i].style.opacity = 1;
+                    tweets[i]['style'].opacity = 1;
                 }
             });
         });
@@ -64,16 +64,16 @@ export class SocialComponent implements OnInit, AfterViewInit {
 
     }
 
-    getRecommendationsWords () {
+    getRecommendationsWords() {
         if (this.dictionary) {
-        for (const word of this.dictionary) {
-            this.recommendedWords = this.recommendedWords.filter(r => {
-                if (r !== word) {
-                    this.addedRecommendedWords.push(r);
-                    return true;
-                } else { return false; }
-            });
-        }
+            for (const word of this.dictionary) {
+                this.recommendedWords = this.recommendedWords.filter(r => {
+                    if (r !== word) {
+                        this.addedRecommendedWords.push(r);
+                        return true;
+                    } else { return false; }
+                });
+            }
         }
     }
 
@@ -88,7 +88,7 @@ export class SocialComponent implements OnInit, AfterViewInit {
     }
 
     deleteWord(word: string) {
-        this._socialService.deleteWord({'word': word}).subscribe(() => {
+        this._socialService.deleteWord({ 'word': word }).subscribe(() => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
             if (this.addedRecommendedWords.indexOf(word) !== -1) { this.recommendedWords.push(word); }
         });
@@ -110,7 +110,7 @@ export class SocialComponent implements OnInit, AfterViewInit {
     addRecommendedWord(word: string) {
         this.wordExists = false;
         if (this.dictionary && this.dictionary.indexOf(word) === -1) {
-            this._socialService.addWord({'word': word}).subscribe(() => {
+            this._socialService.addWord({ 'word': word }).subscribe(() => {
                 this.dictionary.push(word);
                 this.addedRecommendedWords.push(word);
                 this.getRecommendationsWords();

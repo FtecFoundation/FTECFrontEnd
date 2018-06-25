@@ -2,26 +2,25 @@
 </app-header>
 
 <main class="content" [@routerAnimations]="prepRouteState(o)">
-<div class="content__bg">
+  <!-- <div class="content__bg">
     <svg width="1105px" height="775px" viewBox="0 0 1105 775" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <!-- Generator: sketchtool 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
       <title>453D09AB-D147-4CB4-A1DD-9E31F6B886C0</title>
       <desc>Created with sketchtool.</desc>
       <defs></defs>
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="FTEC-Platform_Module-4" transform="translate(-495.000000, 0.000000)" stroke="#FFFFFF">
-              <g id="bg" transform="translate(0.000000, -1041.000000)">
-                  <g id="circle" transform="translate(486.000000, 0.000000)">
-                      <circle id="Oval-4" stroke-opacity="0.25" cx="907" cy="907" r="542"></circle>
-                      <circle id="Oval-4-Copy" stroke-opacity="0.187698143" cx="908" cy="908" r="758"></circle>
-                      <circle id="Oval-4-Copy-2" stroke-opacity="0.1" cx="907.5" cy="907.5" r="907.5"></circle>
-                  </g>
-              </g>
+        <g id="FTEC-Platform_Module-4" transform="translate(-495.000000, 0.000000)" stroke="#FFFFFF">
+          <g id="bg" transform="translate(0.000000, -1041.000000)">
+            <g id="circle" transform="translate(486.000000, 0.000000)">
+              <circle id="Oval-4" stroke-opacity="0.25" cx="907" cy="907" r="542"></circle>
+              <circle id="Oval-4-Copy" stroke-opacity="0.187698143" cx="908" cy="908" r="758"></circle>
+              <circle id="Oval-4-Copy-2" stroke-opacity="0.1" cx="907.5" cy="907.5" r="907.5"></circle>
+            </g>
           </g>
+        </g>
       </g>
-  </svg>
-</div>
-  
+    </svg>
+  </div> -->
+
   <div class="aside">
 
     <ul id="aside__container" class="aside__container">
@@ -333,7 +332,7 @@
 
 
   <!-- Switched Middle content -->
-    <router-outlet  #o="outlet"></router-outlet>
+  <router-outlet #o="outlet"></router-outlet>
 
 
   <aside class="sidebar">

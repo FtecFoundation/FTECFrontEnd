@@ -17,9 +17,18 @@
 
     <div class="middle__table">
 
-      <div class="middle__table-container middle__table-container--layout">
+      <div class="middle__table-container middle__table-container--layout middle__table-container--tweeter">
         <div class="vertical-centered-box" *ngIf="preloader">
           <!-- <app-preloader></app-preloader> -->
+        </div>
+
+        <div class="middle__table-container--left">
+          <ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>
+
+        </div>
+        <div class="middle__table-container--right">
+          <ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>
+
         </div>
 
         <div class="vertical-centered-box vertical-centered-box--tweeter" id="tweets">
