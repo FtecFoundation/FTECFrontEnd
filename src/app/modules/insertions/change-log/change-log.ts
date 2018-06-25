@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+        'date': '25/06/2018',
+        'changes': [
+            'Animations of browsing through pages',
+            'HTML layout for Cryptoacademu page is done',
+            'HTML layout for Cryptoacademy tests is done',
+            'We did the layout for tweets location in Social Assistant',
+            'Configuration of Twitter API filters for Social Assistant',
+            'Unit testing for the main module',
+            'Possibility to work with Arbitrage Assistant on Telegram was added',
+            'Possibility of convenient navigating Telegram Assistant menu was implemented',
+            'We finished optimization of existing business logic, accessing to the database, exceptions handling in the work of web app',
+            'Logic of Cryptoacademy tests, saving the user’s answers and results, and global statistics was designed',
+            'We began the work on the separate server for testing all external modules of the ecosystem'
+        ]
+    },
+    {
         'date': '22/06/2018',
         'changes': [
             'Telegram session for user was implemented at backend',
