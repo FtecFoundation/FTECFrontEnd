@@ -11,4 +11,8 @@ export const availableExchanges = [
         'exchange': 'Poloniex',
         'chosen': false
     },
+    {
+        'exchange': 'YObitNet',
+        'chosen': false
+    },
 ];
