@@ -72,7 +72,7 @@
 
 .crypto__tab-info {
   margin-top: -3px;
-  padding: .313rem;
+  padding: .938rem;
   
   background: rgba(13, 0, 59, 1);
   border-bottom-left-radius: 5px;
@@ -101,7 +101,7 @@
   margin-bottom: .313rem;
   padding: .313rem;
   
-  font-weight: 100;
+  font-weight: 500;
   text-align: center;
   text-transform: initial;
 }
@@ -120,11 +120,14 @@
 
 .test__image {
   padding: .625rem;
+  height: 300px;
 }
 
 .test img {
   width: 100%;
+  height: 100%;
   
+  object-fit: cover;
   border-radius: .313rem;
 }
 
@@ -217,6 +220,7 @@
 }
 
 .test__item-answer {
+  width: 90%;
   display: block;
   margin-top: .625rem;
   
@@ -238,8 +242,10 @@
 }
 
 .aside-right--test {
+  height: fit-content;
   margin-left: .625rem;
   margin-right: .625rem;
+  margin-bottom: 2.500rem;
 
   border-radius: .313rem;
   background-image: linear-gradient(to left, #3d0957, #0d0130);
@@ -248,7 +254,7 @@
 // Status
 
 .test__status {
-
+  padding: .625rem;
 }
 
 .test__status-lines {
@@ -296,4 +302,12 @@
   font-size: .625rem;
   background-image: linear-gradient(to right, #a843fd, #792fe2);
   box-shadow: 5px 0 5px 0 rgba(122, 48, 227, 0.42);
+
+  transition: width .3s ease;
+}
+
+.button--status {
+  width: 50%;
+  float: left;
+  margin-bottom: .625rem;
 }

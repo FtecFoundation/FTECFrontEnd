@@ -38,10 +38,13 @@ export class SocialComponent implements OnInit, AfterViewInit {
                 const tweets = document.getElementById('tweets').children;
 
                 for (let i = 0; i < tweets.length; i++) {
+
                     if (leftHeight <= rightHeight) {
+                        tweets[i].classList.remove('tweeter--right');
                         tweets[i].classList.add('tweeter--left');
                         leftHeight += tweets[i].clientHeight;
                     } else {
+                        tweets[i].classList.remove('tweeter--left');
                         tweets[i].classList.add('tweeter--right');
                         rightHeight += tweets[i].clientHeight;
                     }
