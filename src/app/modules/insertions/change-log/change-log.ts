@@ -1,5 +1,16 @@
 export const changeLog = [
     {
+        'date': '26/06/2018',
+        'changes': [
+            'We continue Unit testing for the main module',
+            'Twitter API filters (Social Assistant) were changed',
+            'Saving global statistics of answering for Cryptoacademy tests was implemented at backend',
+            'Full localization of Telegram Assistant was added',
+            'User interface of Telegram Assistant was changed',
+            'We also implemented possibility to save and change user\'s localization in database'
+        ]
+    },
+    {
         'date': '25/06/2018',
         'changes': [
             'Animations of browsing through pages',
