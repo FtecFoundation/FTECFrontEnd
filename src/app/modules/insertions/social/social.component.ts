@@ -36,7 +36,7 @@ export class SocialComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         this.getTweets();
-        let c = 0;
+        const c = 0;
         window['social'] = this;
         window['twttr'].ready(function (twttr) {
             twttr.events.bind('rendered', function (event) {
@@ -46,8 +46,8 @@ export class SocialComponent implements OnInit, AfterViewInit {
                     service.leftHeight += event.target.clientHeight;
                 } else {
                     service.rightHeight += event.target.clientHeight;
-
                 }
+                document.getElementById(event.target.getAttribute('data-tweet-id')).children[0].classList.add('is-active');
                 window['social'].getTweets();
 
             });
