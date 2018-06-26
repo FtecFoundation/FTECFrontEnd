@@ -22,18 +22,17 @@
           <!-- <app-preloader></app-preloader> -->
         </div>
 
-        <div class="middle__table-container--left">
-          <ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>
+        <div class="middle__table-container--left" id="left">
+          <ngx-tweet *ngFor="let tweetId of leftTweets" [options]="options" [tweetId]="tweetId" id="{{tweetId}}"></ngx-tweet>
 
         </div>
-        <div class="middle__table-container--right">
-          <ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>
-
+        <div class="middle__table-container--right" id="right">
+          <ngx-tweet *ngFor="let tweetId of rightTweets" [options]="options" [tweetId]="tweetId" id="{{tweetId}}"></ngx-tweet>
         </div>
 
-        <div class="vertical-centered-box vertical-centered-box--tweeter" id="tweets">
-          <ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>
-        </div>
+        <!--<div class="vertical-centered-box vertical-centered-box&#45;&#45;tweeter" id="tweets">-->
+          <!--<ngx-tweet *ngFor="let tweetId of tweetIds" [options]="options" [tweetId]="tweetId"></ngx-tweet>-->
+        <!--</div>-->
 
       </div>
     </div>
