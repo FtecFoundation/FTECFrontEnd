@@ -13,8 +13,8 @@ import { el } from '@angular/platform-browser/testing/src/browser_util';
 })
 export class SocialComponent implements OnInit, AfterViewInit {
 
-    @Input() tweetIds: string[] = ['1009714790476832768', '1009714045237235712', '1010152424680706048', '1010143174382309377',
-        '1009722961237069824', '1010069949916876800', '1009921272304885761', '1010150156547784705', '1010148629561081857'];
+    @Input() tweetIds: string[] = ['1011179887426703360', '1011559832841801729', '1011595431439159296',
+     '1011536835544113153', '1009399880006152192', '1011595387080265729'];
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
     preloader = false;
     dictionary: string[];

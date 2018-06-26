@@ -296,6 +296,13 @@
 
 }
 
+@media only screen and (max-width: 580px) {
+  .middle__table-container--left,
+  .middle__table-container--right {
+    width: 100% !important;
+  }
+}
+
 @media only screen and (max-width: 425px) {
 
   .change-log,
