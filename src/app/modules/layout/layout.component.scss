@@ -8,11 +8,15 @@
 }
 
 .aside {
+  width: 20%;
+  float: left;
+  display: inline-block;
   position: relative;
 
   -webkit-transition: left .3s ease;
   -o-transition: left .3s ease;
-  transition: left .3s ease;}
+  transition: left .3s ease;
+}
 
 .aside.is-active {
   z-index: 1;

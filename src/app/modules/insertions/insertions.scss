@@ -726,13 +726,13 @@
 .head-item__container {
   width: 100%;
 
+  overflow: hidden;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
     justify-content: space-around;
-
-  overflow: hidden;
 }
 
 .head-item__container-item {

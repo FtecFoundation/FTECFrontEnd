@@ -37,18 +37,22 @@ li {
 .content {
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  margin-bottom: -4px;
   position: relative;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  overflow-y: scroll;
-  background-image: url(/assets/images/circle.png), $violet-gradient;
+  
+  display: inline-block;
+  
+  overflow: hidden;
+  background-image: $violet-gradient;
   background-position: right top;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.content__bg {
+  top: 0;
+  right: 0;
+  position: absolute;
 }
 
 .wrapper {

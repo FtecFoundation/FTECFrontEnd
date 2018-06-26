@@ -9,6 +9,7 @@ import {AuthModule} from './auth/auth.module';
 import {LayoutModule} from './modules/layout.module';
 
 import {routes} from './routes';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {routes} from './routes';
         TransferHttpCacheModule,
         CoreModule,
         AuthModule,
-        LayoutModule
+        LayoutModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

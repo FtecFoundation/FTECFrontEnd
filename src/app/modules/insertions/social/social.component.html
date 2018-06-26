@@ -16,15 +16,20 @@
     </div>
 
     <div class="middle__table">
-      <div class="middle__table-container middle__table-container--layout">
-        <div class="vertical-centered-box vertical-centered-box--tweeter" *ngIf="preloader">
-          <app-preloader></app-preloader>
-        </div>
-        
-        <div *ngIf="!preloader">
 
-          <ngx-tweet *ngFor="let tweetId of tweetIds" [tweetId]="tweetId" [options]="options"></ngx-tweet>
+      <div class="middle__table-container middle__table-container--layout middle__table-container--tweeter">
+        <div class="vertical-centered-box" *ngIf="preloader">
+          <!-- <app-preloader></app-preloader> -->
         </div>
+
+        <div class="middle__table-container--left" id="left">
+          <ngx-tweet *ngFor="let tweetId of leftTweets" [options]="options" [tweetId]="tweetId" id="{{tweetId}}"></ngx-tweet>
+
+        </div>
+        <div class="middle__table-container--right" id="right">
+          <ngx-tweet *ngFor="let tweetId of rightTweets" [options]="options" [tweetId]="tweetId" id="{{tweetId}}"></ngx-tweet>
+        </div>
+
       </div>
     </div>
   </div>
@@ -34,7 +39,7 @@
       <div class="filter__container">
         <span class="container__name container__name--recommended">Recommended words</span>
         <ul id="filter__container-block2" class="filter__container-block">
-          <li *ngFor="let word of recommendedWords" class="filter__container-block-item--categories"  (click)="addRecommendedWord(word)">{{word}}
+          <li *ngFor="let word of recommendedWords" class="filter__container-block-item--categories" (click)="addRecommendedWord(word)">{{word}}
             <div class="categories__item-svg">
               <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Group 8</title>

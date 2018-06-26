@@ -27,6 +27,13 @@
   align-items: center;
 }
 
+.header__logo-item {
+  width: 60%;
+  height: 60%;
+  position: relative;
+  bottom: .313rem;
+}
+
 .header__left-bar {
   top: 0.125rem;
   display: none;
