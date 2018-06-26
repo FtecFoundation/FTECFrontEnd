@@ -23,6 +23,11 @@ export class SocialComponent implements OnInit, AfterViewInit {
     wordExists = true;
     recommendedWords: string[] = ['hardfork', 'list', 'fork', 'partner', 'core', 'update', 'pump', 'burn', 'delist'];
     addedRecommendedWords: string[] = [];
+    leftHeight = 0;
+    rightHeight = 0;
+    leftTweets = [];
+    rightTweets = [];
+
 
     constructor(private _showModalService: ShowModalService,
         private _socialService: SocialService,
@@ -30,29 +35,34 @@ export class SocialComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
+        this.getTweets();
+        let c = 0;
+        window['social'] = this;
         window['twttr'].ready(function (twttr) {
             twttr.events.bind('rendered', function (event) {
-                let leftHeight = 0;
-                let rightHeight = 0;
 
-                const tweets = document.getElementById('tweets').children;
+                const service = window['social'];
+                if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
+                    service.leftHeight += event.target.clientHeight;
+                } else {
+                    service.rightHeight += event.target.clientHeight;
 
-                for (let i = 0; i < tweets.length; i++) {
-
-                    if (leftHeight <= rightHeight) {
-                        tweets[i].classList.remove('tweeter--right');
-                        tweets[i].classList.add('tweeter--left');
-                        leftHeight += tweets[i].clientHeight;
-                    } else {
-                        tweets[i].classList.remove('tweeter--left');
-                        tweets[i].classList.add('tweeter--right');
-                        rightHeight += tweets[i].clientHeight;
-                    }
-                    tweets[i]['style'].opacity = 1;
                 }
+                window['social'].getTweets();
+
             });
         });
     }
+
+    getTweets() {
+        const id = this.tweetIds.pop();
+        if (this.leftHeight <= this.rightHeight) {
+            this.leftTweets.push(id);
+        } else {
+            this.rightTweets.push(id);
+        }
+    }
+
 
     ngOnInit() {
         this._socialService.getDictionary().subscribe(data => {
@@ -61,10 +71,6 @@ export class SocialComponent implements OnInit, AfterViewInit {
             this.getRecommendationsWords();
         });
         this.createForm();
-    }
-
-    getTweets() {
-
     }
 
     getRecommendationsWords() {
