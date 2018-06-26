@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test-blockchain',
-  templateUrl: './test-blockchain.component.html',
+  templateUrl: './test-question.component.html',
   styleUrls: ['../../../insertions.scss', '../../cryptoacademy.component.scss']
 })
-export class TestBlockchainComponent implements OnInit {
+export class TestQuestionComponent implements OnInit {
 
   constructor() {
   }
