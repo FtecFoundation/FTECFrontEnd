@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-test-layout',
-  templateUrl: './test-layout.component.html',
+  selector: 'app-all-tests',
+  templateUrl: './all-tests.component.html',
   styleUrls: ['../../../insertions.scss', '../../cryptoacademy.component.scss']
 })
-export class TestLayoutComponent implements OnInit {
+export class AllTestsComponent implements OnInit {
 
   constructor() {
   }
