@@ -172,6 +172,7 @@
 
   .filter__container--dashboard {
     padding: 0 !important;
+    margin-bottom: 4.375rem !important;
   }
 
   .content__container {
@@ -234,6 +235,8 @@
   .main-info {
     width: 100% !important;
     padding: 0.938em;
+    padding-top: 0;
+    margin-right: 0 !important;
     
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
