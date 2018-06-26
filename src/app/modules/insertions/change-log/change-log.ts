@@ -3,7 +3,7 @@ export const changeLog = [
         'date': '25/06/2018',
         'changes': [
             'Animations of browsing through pages',
-            'HTML layout for Cryptoacademu page is done',
+            'HTML layout for Cryptoacademy page is done',
             'HTML layout for Cryptoacademy tests is done',
             'We did the layout for tweets location in Social Assistant',
             'Configuration of Twitter API filters for Social Assistant',
