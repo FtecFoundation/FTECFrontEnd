@@ -1,10 +1,21 @@
-[{
-  "question": "1",
-  "type": "content",
-  "body": "",
-  "answer": [{
-    "id": "1",
-    "correct": "A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. Each block typically contains a cryptographic hash of the previous block, a timestamp, and transaction data. "
-  }]
-}]
-
+[
+  {
+    "question": "1",
+    "type": "content",
+    "body": "What is blockchain? 
+    <img src=\"../../../../assets/images/image_2018-06-25_11-24-22.png\" alt=\"\">
+ 
+ It`s a platform where you can create online-services for crypto trading 
+  
+ It`s a crowdfunding tool, that can be described as an entry in data register 
+  
+ It`s an internal currency that can be described as an entry in data register 
+  
+ It`s a chain of blocks that contain data, created according to certain rules",
+  "answer": [
+      {
+        "id": "1",
+      }
+    ]
+  }
+]
