@@ -4,6 +4,7 @@ import {AccountService} from '../../core/services/account.service';
 import {RegistrationValidators} from './registration.validators';
 import {RegistrationData} from '../../core/models/user';
 import {Router} from '@angular/router';
+import {LanguageService} from '../../core/services/language.service';
 
 @Component({
     selector: 'app-registration',
@@ -18,7 +19,8 @@ export class RegistrationComponent implements OnInit {
 
     constructor(private _accountService: AccountService,
                 private formBuilder: FormBuilder,
-                private router: Router) {
+                private router: Router,
+                private _languageService: LanguageService) {
     }
 
     ngOnInit() {
@@ -40,7 +42,6 @@ export class RegistrationComponent implements OnInit {
     }
 
     submitForm() {
-        console.log(this.terms.value);
         this.submitted = true;
         if (this.registrationForm.valid) {
             this._accountService.registerUser(this.prepareData()).subscribe(() => {
@@ -50,7 +51,7 @@ export class RegistrationComponent implements OnInit {
     }
 
     prepareData(): RegistrationData {
-        return new RegistrationData().deserialize(this.registrationForm.value);
+        return new RegistrationData().deserialize(this.registrationForm.value, this._languageService.currentLanguage);
     }
 
     toggleCheckbox(field: AbstractControl) {

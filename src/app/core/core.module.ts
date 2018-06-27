@@ -14,6 +14,7 @@ import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
 import { LoaderComponent } from './loader/loader.component';
 import {LoaderService} from './loader/loader.service';
+import {LanguageService} from './services/language.service';
 
 
 @NgModule({
@@ -24,7 +25,6 @@ import {LoaderService} from './loader/loader.service';
     declarations: [LoaderComponent],
     exports: [LoaderComponent],
     providers: [
-
         CookieService,
         AccountService,
         ErrorsService,
@@ -35,7 +35,8 @@ import {LoaderService} from './loader/loader.service';
         ImageService,
         ArbitrageService,
         SocialService,
-        LoaderService
+        LoaderService,
+        LanguageService
     ]
 })
 export class CoreModule {

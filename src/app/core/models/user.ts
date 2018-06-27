@@ -13,14 +13,16 @@ export class User {
 export class RegistrationData {
     username: string;
     email: string;
+    locale: string;
     password: string;
     subscribeForEmail: boolean;
 
-    deserialize(formData: any): this {
+    deserialize(formData: any, lang: string): this {
         this.username = formData.username;
         this.email = formData.email;
         this.password = formData.passwordGroup.password;
         this.subscribeForEmail = formData.subscribeForEmail;
+        this.locale = lang;
         return this;
     }
 }
