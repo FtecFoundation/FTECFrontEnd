@@ -2,20 +2,573 @@
   {
     "question": "1",
     "type": "content",
-    "body": "What is blockchain? 
-    <img src=\"../../../../assets/images/image_2018-06-25_11-24-22.png\" alt=\"\">
- 
- It`s a platform where you can create online-services for crypto trading 
-  
- It`s a crowdfunding tool, that can be described as an entry in data register 
-  
- It`s an internal currency that can be described as an entry in data register 
-  
- It`s a chain of blocks that contain data, created according to certain rules",
-  "answer": [
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
       {
         "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      },
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      },
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
       }
     ]
-  }
+  },
+  {
+    "question": "2",
+    "type": "content",
+    "body": {
+      "text": "Which word isn`t just a car brand, but also a term from trading?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "Chrysler"
+      },
+      {
+        "id": "2",
+        "text": "Fiat"
+      },
+      {
+        "id": "3",
+        "text": "Datsun"
+      },
+      {
+        "id": "4",
+        "text": "Audi"
+      }
+    ]
+  },
+  {
+    "question": "3",
+    "type": "content",
+    "body": {
+      "text": "Blockchain-based game CryptoKitties became popular last autumn. What is the main objective of the game?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "To wait until the cat meows, which means that it conducted a transaction for some users."
+      },
+      {
+        "id": "2",
+        "text": "Expensive pure-bred cats are used as a bail by their owners to get cryptocurrency Myuuuchain."
+      },
+      {
+        "id": "3",
+        "text": "To record funny cat videos. Some people are ready to pay cryptocurrency in return for the best videos."
+      },
+      {
+        "id": "4",
+        "text": "To grow virtual cats, that can be bought and sold for cryptocurrency."
+      }
+    ]
+  },
+  {
+    "question": "4",
+    "type": "content",
+    "body": {
+      "text": "Where cryptocurrency payments are accepted?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "You will be able to pay with cryptocurrency starting from 2020. For now, it`s just a potential payment method."
+      },
+      {
+        "id": "2",
+        "text": "Everywhere!"
+      },
+      {
+        "id": "3",
+        "text": "Online and in some advanced places."
+      },
+      {
+        "id": "4",
+        "text": "Sadly, only in the darknet."
+      }
+    ]
+  },
+  {
+    "question": "5",
+    "type": "content",
+    "body": {
+      "text": "Cryptocurrency world borrowed one of their terms from agriculture. Which one?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "Compost"
+      },
+      {
+        "id": "2",
+        "text": "Pasture"
+      },
+      {
+        "id": "3",
+        "text": "Plantation"
+      },
+      {
+        "id": "4",
+        "text": "Farm"
+      }
+    ]
+  },
+  {
+    "question": "6",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "7",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "8",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "9",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "10",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "11",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "12",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "13",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "14",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "15",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "16",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "17",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "18",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "19",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "20",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "21",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
+  {
+    "question": "22",
+    "type": "content",
+    "body": {
+      "text": "What is Blockchain?",
+      "image": ""
+    },
+    "answer": [
+      {
+        "id": "1",
+        "text": "It`s a platform where you can create online-services for crypto trading."
+      },
+      {
+        "id": "2",
+        "text": "It`s a crowdfunding tool, that can be described as an entry in data register."
+      }
+      {
+        "id": "3",
+        "text": "It`s an internal currency that can be described as an entry in data register."
+      }
+      {
+        "id": "4",
+        "text": "It`s a chain of blocks that contain data, created according to certain rules."
+      }
+    ]
+  },
 ]

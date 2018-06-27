@@ -4,6 +4,7 @@
   width: 30%;
   margin: auto;
   padding: 2.500rem;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,6 +12,12 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.content__login-first {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .content--registration {
