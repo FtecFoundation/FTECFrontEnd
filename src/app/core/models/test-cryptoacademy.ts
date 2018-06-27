@@ -8,6 +8,7 @@ class Question {
     type: string;
     body: QuestionBody;
     answers: Answer[];
+    description: string;
 }
 
 class QuestionBody {
