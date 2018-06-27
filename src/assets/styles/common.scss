@@ -37,12 +37,13 @@ li {
 .content {
   width: 100%;
   min-height: 100vh;
+  height: fit-content;
   margin-bottom: -4px;
   position: relative;
   
   display: inline-block;
   
-  overflow: hidden;
+  overflow-y: scroll;
   background-image: $violet-gradient;
   background-position: right top;
   background-repeat: no-repeat;
@@ -55,9 +56,9 @@ li {
   position: absolute;
 }
 
-.wrapper {
-  height: 100vh;
-}
+// .wrapper {
+//   height: 100vh;
+// }
 
 .error-field {
   color: $dark-red;
