@@ -12,10 +12,10 @@
         <div class="middle__table-container middle__table-container--settings">
 
           <div class="settings__account">
-            <img src="../../../../assets/images/bitmap-4.png" alt="" class="settings__container-image">
+            <img src="../../../../assets/images/bot2.png" alt="" class="settings__container-image">
 
             <div class="settings__account-buttons">
-              <input style="display: none" accept="image/*" type="file" #uploader (change)="uploadFile($event)">
+              <input style="display: none" accept="image/*" type="file" #uploader (change)="handleInputChange($event)">
               <button class="account__buttons-item filter__container-button" (click)="uploader.click()">Change photo</button>
               <button class="account__buttons-item button__outline" (click)="showModal()">Delete</button>
             </div>

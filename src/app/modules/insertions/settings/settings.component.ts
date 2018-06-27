@@ -9,6 +9,7 @@ import { ShowModalService } from '../../not-active/show-modal.service';
 })
 export class SettingsComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;
+    private imageSrc = '';
 
   constructor(private _imageService: ImageService, private _showModal: ShowModalService) {
   }
@@ -20,15 +21,22 @@ export class SettingsComponent implements OnInit {
     this._showModal.showModal = true;
 }
 
-    uploadFile($event) {
+    handleInputChange(e) {
+        const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        const pattern = /image-*/;
         const reader = new FileReader();
-        if ($event.target.files && $event.target.files.length > 0) {
-            const file = $event.target.files[0];
-            reader.onload = () => {
-                this._imageService.setImage(file).subscribe(data => {
-                    console.log(data);
-                });
-            };
+        if (!file.type.match(pattern)) {
+            alert('invalid format');
+            return;
         }
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    }
+    _handleReaderLoaded(e) {
+        const reader = e.target;
+        this.imageSrc = reader.result;
+        this._imageService.setImage(this.imageSrc).subscribe(data => {
+            console.log(data);
+        });
     }
 }

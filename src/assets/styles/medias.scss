@@ -154,7 +154,8 @@
   .button__outline--dashboard,
   .main-info__head-item,
   .aside-right--mobile,
-  .change-log_container {
+  .change-log_container,
+  .test__status-ng {
     width: 100% !important;
   }
 
@@ -183,7 +184,6 @@
 
   .filter__container--dashboard {
     padding: 0 !important;
-    margin-bottom: 4.375rem !important;
   }
 
   .content__container {
@@ -246,8 +246,6 @@
   .main-info {
     width: 100% !important;
     padding: 0.938em;
-    padding-top: 0;
-    margin-right: 0 !important;
     
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -308,13 +306,40 @@
     width: 100% !important;
   }
 
+  app-test-blockchain {
+    flex-wrap: wrap;
+  }
+
+  .test__status-ng {
+    width: 100% !important;
+  }
+
+  .crypto__tab-wrapper,
+  .crypto__tab-controls {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+
+  .crypto__tab-controls-item,
+  .crypto__tab-container {
+    width: 50% !important;
+  }
+
+  .crypto__tab-controls-item {
+    border-radius: 0 !important;
+  }
+  
 }
 
 @media only screen and (max-width: 580px) {
   .middle__table-container--left,
-  .middle__table-container--right {
+  .middle__table-container--right,
+  .crypto__tab-controls-item,
+  .crypto__tab-container {
     width: 100% !important;
   }
+
+  
 }
 
 @media only screen and (max-width: 425px) {
