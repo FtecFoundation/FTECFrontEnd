@@ -38,20 +38,24 @@ export class SocialComponent implements OnInit, AfterViewInit {
         this.getTweets();
         const c = 0;
         window['social'] = this;
-        window['twttr'].ready(function (twttr) {
-            twttr.events.bind('rendered', function (event) {
+        if (!window['binded_to_twttr']) {
+            window['twttr'].ready(function (twttr) {
+                window['binded_to_twttr'] = true;
+                twttr.events.bind('rendered', function (event) {
+                    console.log(event.target);
 
-                const service = window['social'];
-                if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
-                    service.leftHeight += event.target.clientHeight;
-                } else {
-                    service.rightHeight += event.target.clientHeight;
-                }
-                document.getElementById(event.target.getAttribute('data-tweet-id')).children[0].classList.add('is-active');
-                window['social'].getTweets();
+                    const service = window['social'];
+                    if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
+                        service.leftHeight += event.target.clientHeight;
+                    } else {
+                        service.rightHeight += event.target.clientHeight;
+                    }
+                    document.getElementById(event.target.getAttribute('data-tweet-id')).children[0].classList.add('is-active');
+                    window['social'].getTweets();
 
+                });
             });
-        });
+        }
     }
 
     getTweets() {
