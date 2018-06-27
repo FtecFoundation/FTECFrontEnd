@@ -1,0 +1,15 @@
+:host {
+  width: 100%;
+}
+
+.test__status-ng {
+  width: 40%;
+
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: .625rem;
+  margin-right: .625rem;
+  margin-bottom: 2.500rem;
+  padding: 0 !important;
+}
