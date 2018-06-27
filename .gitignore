@@ -12,7 +12,7 @@ morgan.log
 /dist/
 /dist-server/
 /compiled/
-/proxy.conf.json
+proxy.conf.json
 
 # Node #
 npm-debug.log
