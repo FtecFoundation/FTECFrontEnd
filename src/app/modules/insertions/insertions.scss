@@ -404,61 +404,6 @@
   display: none;
 }
 
-.sidebar {
-  width: 25%;
-  right: -25%;
-  height: 100%;
-  position: absolute;
-  opacity: .95;
-  background-image: $violet-gradient-aside;
-
-  -webkit-transition: right .3s ease;
-  -o-transition: right .3s ease;
-  transition: right .3s ease;
-}
-
-.sidebar.is-active {
-  right: 0;
-}
-
-.sidebar__block {
-  padding: .938em;
-  padding-left: 2.500em;
-  position: relative;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-
-  cursor: pointer;
-}
-
-.sidebar__block:first-child {
-  margin-top: 2.500em;
-}
-
-.sidebar__block:hover::before {
-  content: '';
-  left: 0;
-  top: 0;
-  width: 0.125rem;
-  height: 100%;
-  display: block;
-  position: absolute;
-
-  background-color: $accent;
-}
-
-.sidebar__block-link {
-  display: inline-block;
-  margin-left: .938em;
-
-  color: $white;
-  font-size: 0.625em;
-}
 
 
 .line--error-icon--position {
