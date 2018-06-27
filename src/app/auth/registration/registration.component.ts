@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {AccountService} from '../../core/services/account.service';
 import {RegistrationValidators} from './registration.validators';
 import {RegistrationData} from '../../core/models/user';
@@ -9,7 +9,11 @@ import {LanguageService} from '../../core/services/language.service';
 @Component({
     selector: 'app-registration',
     templateUrl: './registrastion.component.html',
-    styleUrls: ['../auth.scss']
+    styleUrls: ['../auth.scss'],
+    providers: [{
+        provide: 'https://www.google.com/recaptcha/api.js',
+        useValue: 'http://localhost:3000/validate_captcha'
+    }]
 
 })
 export class RegistrationComponent implements OnInit {
@@ -32,7 +36,8 @@ export class RegistrationComponent implements OnInit {
             username: ['', Validators.required, RegistrationValidators.checkUsernameNotTaken(this._accountService)],
             email: ['', [Validators.required, Validators.email], RegistrationValidators.checkEmailNotTaken(this._accountService)],
             passwordGroup: this.formBuilder.group({
-                password: ['', [Validators.required,  Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$')]],
+                password: ['', [Validators.required,
+                    Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|\'<>.^*()%!_\\-]).{8,}$')]],
                 confirmPassword: ['', Validators.required]
             }, {validator: RegistrationValidators.checkConfirmedPassword}),
             terms: [false, Validators.requiredTrue],
@@ -72,5 +77,4 @@ export class RegistrationComponent implements OnInit {
     get confirmPassword() { return this.registrationForm.get('passwordGroup').get('confirmPassword'); }
 
     get subscribeForEmail() { return this.registrationForm.get('subscribeForEmail'); }
-
 }

@@ -30,11 +30,9 @@ export class HeaderComponent implements OnInit {
         this._accountService.getUser().subscribe(data => {
             this.user = data;
 
-            if (this.user.imageName === null) {
                 this._imageService.getImage().subscribe(img => {
                     this.image.nativeElement.src = URL.createObjectURL(img);
                 });
-            }
         });
     }
 

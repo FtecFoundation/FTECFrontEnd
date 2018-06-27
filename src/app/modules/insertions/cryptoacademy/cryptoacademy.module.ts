@@ -5,6 +5,7 @@ import {CryptoacademyComponent} from './cryptoacademy.component';
 import {AllTestsComponent} from './tests/all-tests/all-tests.component';
 import {TestQuestionComponent} from './tests/test-question/test-question.component';
 import {TestStatusComponent} from './tests/test-status/test-status.component';
+import { QuestionComponent } from './tests/test-question/question/question.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {TestStatusComponent} from './tests/test-status/test-status.component';
         CryptoacademyComponent,
         TestQuestionComponent,
         AllTestsComponent,
-        TestStatusComponent]
+        TestStatusComponent,
+        QuestionComponent]
 })
 export class CryptoacademyModule {
 }
