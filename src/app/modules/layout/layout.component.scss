@@ -98,11 +98,11 @@
 }
 
 .sidebar {
-  top: 0;
+  top: 95px;
   width: 25%;
   right: -25%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   opacity: .95;
   background-image: $violet-gradient-aside;
 

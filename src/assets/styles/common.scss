@@ -38,12 +38,14 @@ li {
   width: 100%;
   min-height: 100vh;
   height: fit-content;
+  margin-top: 95px;
   margin-bottom: -4px;
   position: relative;
   
   display: inline-block;
   
   overflow-y: scroll;
+  overflow-x: hidden;
   background-image: $violet-gradient;
   background-position: right top;
   background-repeat: no-repeat;
