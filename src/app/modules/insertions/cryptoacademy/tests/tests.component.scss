@@ -2,14 +2,14 @@
   width: 100%;
 }
 
-.test__status-ng {
-  width: 40%;
-
+.aside-right--test{
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-left: .625rem;
   margin-right: .625rem;
   margin-bottom: 2.500rem;
-  padding: 0 !important;
+  border-radius: .313rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(#3d0957), to(#0d0130));
+  background-image: linear-gradient(to left, #3d0957, #0d0130);
 }

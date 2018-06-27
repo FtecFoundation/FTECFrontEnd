@@ -1,8 +1,10 @@
 @import "../../../../../../assets/styles/variables";
 
-.test__status {
-  width: 100%;
+:host {
+  width: 40%;
+}
 
+.test__status {
   padding: .625rem;
 }
 

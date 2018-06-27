@@ -238,9 +238,11 @@
 }
 
 .aside-right--test {
-  width: 100%;
-  
-  padding-left: 0;
+  height: fit-content;
+  margin-left: .625rem;
+  margin-right: .625rem;
+  margin-bottom: 2.500rem;
+
   border-radius: .313rem;
   background-image: linear-gradient(to left, #3d0957, #0d0130);
 }
