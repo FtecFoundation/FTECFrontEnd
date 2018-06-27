@@ -1,5 +1,46 @@
 export const changeLog = [
     {
+        'date': '26/06/2018',
+        'changes': [
+            'We continue Unit testing for the main module',
+            'Twitter API filters (Social Assistant) were changed',
+            'Saving global statistics of answering for Cryptoacademy tests was implemented at backend',
+            'Full localization of Telegram Assistant was added',
+            'User interface of Telegram Assistant was changed'
+        ]
+    },
+    {
+        'date': '25/06/2018',
+        'changes': [
+            'Animations of browsing through pages',
+            'HTML layout for Cryptoacademy page is done',
+            'HTML layout for Cryptoacademy tests is done',
+            'We did the layout for tweets location in Social Assistant',
+            'Configuration of Twitter API filters for Social Assistant',
+            'Unit testing for the main module',
+            'Possibility to work with Arbitrage Assistant on Telegram was added',
+            'Possibility of convenient navigating Telegram Assistant menu was implemented',
+            'We finished optimization of existing business logic, accessing to the database, exceptions handling in the work of web app',
+            'Logic of Cryptoacademy tests, saving the user’s answers and results, and global statistics was designed',
+            'We began the work on the separate server for testing all external modules of the ecosystem'
+        ]
+    },
+    {
+        'date': '22/06/2018',
+        'changes': [
+            'Telegram session for user was implemented at backend',
+            'Continuance of data input was implemented trough Telegram bot, too',
+            'Testing and production variants of Telegram bot implementation were separated',
+            'Twitter API was connected to Social Assistant at backend',
+            'We optimized Social Assistant methods at backend',
+            'Subscription function was moved from the main module to social module',
+            'Global loader while loading the app was added',
+            'We added animation to some elements of user interface',
+            'We began the work on implementation of testing in Cryptoacademy module',
+            'We added styles for radio buttons on the user configuration page'
+        ]
+    },
+    {
         'date': '21/06/2018',
         'changes': [
             'The work of Arbitrage Assistant is optimized',
