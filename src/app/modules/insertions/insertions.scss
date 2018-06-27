@@ -401,27 +401,6 @@
   display: none;
 }
 
-.filter__container-button {
-  width: 100%;
-  padding: 1.250em;
-  margin-top: .938em;
-  margin-bottom: .938em;
-
-  color: $white;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 1.750rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-image: $blue-gradient;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .sidebar {
   width: 25%;
   right: -25%;

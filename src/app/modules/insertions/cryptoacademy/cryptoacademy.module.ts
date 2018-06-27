@@ -4,15 +4,18 @@ import {CryptoacademyRoutingModule} from './cryptoacademy-routing.module';
 import {CryptoacademyComponent} from './cryptoacademy.component';
 import {AllTestsComponent} from './tests/all-tests/all-tests.component';
 import {TestQuestionComponent} from './tests/test-question/test-question.component';
+import {TestStatusComponent} from './tests/test-status/test-status.component';
 
 @NgModule({
     imports: [
         CommonModule,
         CryptoacademyRoutingModule
     ],
-    declarations: [CryptoacademyComponent,
-         TestQuestionComponent,
-         AllTestsComponent]
+    declarations: [
+        CryptoacademyComponent,
+        TestQuestionComponent,
+        AllTestsComponent,
+        TestStatusComponent]
 })
 export class CryptoacademyModule {
 }
