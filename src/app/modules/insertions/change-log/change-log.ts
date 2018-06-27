@@ -6,7 +6,8 @@ export const changeLog = [
             'Twitter API filters (Social Assistant) were changed',
             'Saving global statistics of answering for Cryptoacademy tests was implemented at backend',
             'Full localization of Telegram Assistant was added',
-            'User interface of Telegram Assistant was changed'
+            'User interface of Telegram Assistant was changed',
+            'We also implemented possibility to save and change user\'s localization in database'
         ]
     },
     {
