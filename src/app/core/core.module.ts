@@ -12,7 +12,7 @@ import {TitlesService} from './services/titles.service';
 import {ImageService} from './services/image.service';
 import {ArbitrageService} from './services/arbitrage.service';
 import {SocialService} from './services/social.service';
-import { LoaderComponent } from './loader/loader.component';
+import {LoaderComponent } from './loader/loader.component';
 import {LoaderService} from './loader/loader.service';
 
 

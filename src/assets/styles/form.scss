@@ -179,3 +179,22 @@
   -webkit-appearance: menulist-button !important;
   appearance: menulist-button !important;
 }
+
+.form__textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 150px;
+  padding: 1.250rem;
+
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.form__input--insert {
+  text-align: center;
+}
+
+.form__input--link {
+  color: $accent;
+  text-decoration: underline;
+}

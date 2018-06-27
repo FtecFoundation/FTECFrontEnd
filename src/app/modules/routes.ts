@@ -28,7 +28,8 @@ export const routes = [
             {path: 'dashboard', loadChildren: './insertions/dashboard/dashboard.module#DashboardModule'},
             {path: 'change-log', loadChildren: './insertions/change-log/change-log.module#ChangeLogModule'},
             {path: 'my-exchanges', loadChildren: './insertions/my-exchanges/my-exchanges.module#MyExchangesModule'},
-            {path: 'settings', loadChildren: './insertions/settings/settings.module#SettingsModule'}
+            {path: 'settings', loadChildren: './insertions/settings/settings.module#SettingsModule'},
+            {path: 'support', loadChildren: './insertions/support/support.module#SupportModule'}
         ], canActivate: [OnlyAuthorizedGuard]
     }
 ];
