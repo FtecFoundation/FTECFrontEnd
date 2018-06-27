@@ -51,17 +51,12 @@
 .settings__container-qr {
   width: 100%;
   height: 56%;
+  margin-bottom: .625rem;
 
-  display: -ms-flexbox;
+
   display: flex;
-  -ms-flex-align: center;
   align-items: center;  
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 
   text-align: center;
@@ -69,6 +64,7 @@
 
 .filter__container--settings {
   height: 22%;
+  margin-bottom: 1.750em;
 }
 
 .filter__container-button--settings {
