@@ -42,6 +42,7 @@ export class SocialComponent implements OnInit, AfterViewInit {
             window['twttr'].ready(function (twttr) {
                 window['binded_to_twttr'] = true;
                 twttr.events.bind('rendered', function (event) {
+                    console.log(event.target);
 
                     const service = window['social'];
                     if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
