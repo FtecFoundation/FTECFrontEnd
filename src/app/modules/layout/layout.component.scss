@@ -98,14 +98,10 @@
 }
 
 .sidebar {
-<<<<<<< HEAD
-  top: 95px;
-=======
->>>>>>> parent of cd6aece... changes to master
   width: 25%;
   right: -25%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   opacity: .95;
   background-image: $violet-gradient-aside;
 
