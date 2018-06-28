@@ -72,3 +72,27 @@ h1 + .error-field {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.tab-controls {
+  display: flex;
+}
+
+.tab-controls-item {
+  width: 20%;
+  padding: .938rem;
+  padding-left: 1.250rem;
+  padding-right: 1.250rem;
+
+  cursor: pointer;
+  color: $grey;
+  background-color: $dark-blue;
+  border-top-left-radius: .625rem;
+  border-top-right-radius: .625rem;
+}
+
+.tab-controls-item:hover {
+  color: $white;
+  background-color: rgba(13, 0, 59, .5);
+
+  transition: background .3s ease;
+}

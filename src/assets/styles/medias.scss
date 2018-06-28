@@ -328,6 +328,12 @@
   .crypto__tab-controls-item {
     border-radius: 0 !important;
   }
+
+  .filter__container-aside--refferals {
+    width: 100%;
+    padding: 0;
+    margin-top: 1.250rem !important;
+  }
   
 }
 
@@ -335,10 +341,27 @@
   .middle__table-container--left,
   .middle__table-container--right,
   .crypto__tab-controls-item,
-  .crypto__tab-container {
+  .crypto__tab-container,
+  .tab-controls-item {
     width: 100% !important;
   }
 
+  .container__form button {
+    display: none;
+  }
+
+  .container__form .form__input {
+    padding-right: .625rem !important;
+  }
+
+  .item-inner-line--support {
+    flex-wrap: wrap;
+  }
+
+  .item-inner-line--support span:last-child {
+    width: 100%;
+    text-align: right !important;
+  }
   
 }
 
