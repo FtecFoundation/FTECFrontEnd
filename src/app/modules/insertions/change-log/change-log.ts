@@ -1,5 +1,19 @@
 export const changeLog = [
     {
+        'date': '28/06/2018',
+        'changes': [
+            'HTML layout of the referral page',
+            'HTML layout of the page for desktop app download',
+            'Cryptoacademy page and referral page are adapted to all screen sizes',
+            'Telegram Assistant internationalization was improved',
+            'We began connecting HitBTC to Arbitrage Module',
+            'The manner of return of tweets in Social Assistant was changed',
+            'We corrected writing off of funds while subscribing to Social Assistant',
+            'While registering in the main module, a free trial month of subscription to Social Assistant is added',
+            'Now user can know the date of the end of subscription to Social Assistant'
+        ]
+    },
+    {
         'date': '27/06/2018',
         'changes': [
             'Statistics saving now returns % of all answers to the question',
