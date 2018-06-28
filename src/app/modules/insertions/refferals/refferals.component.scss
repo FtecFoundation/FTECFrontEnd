@@ -5,16 +5,17 @@
 }
 
 .middle__support-container {
-  display: flex;
   padding: .938rem;
+
+  display: flex;
+  justify-content: space-between;
 
   background-image: $violet-gradient-aside;
   border-radius: .625rem;
 }
 
 .support__container-item {
-  width: 60%;
-  padding: .625rem;
+  width: 57%;
   position: relative;
 }
 
