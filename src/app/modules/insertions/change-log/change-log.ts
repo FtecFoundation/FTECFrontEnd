@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+        'date': '27/06/2018',
+        'changes': [
+            'Statistics saving now returns % of all answers to the question',
+            'We added a function that returns all test which user passed',
+            'HTML layout of the support page',
+            'User\'s authorization on Telegram Assistant was added',
+            'Now we can get balance info, using Telegram Assistant',
+            'Interaction part for Telegram Assistant was added',
+            'We improved the display of error logs to increase debug effectiveness',
+            'We began the work on HTML process of the code and its documentation',
+            'We began the work on test servers of the modules to use them while developing without impact on the users',
+            'Exception template processor was limited to return error statuses set by W3C'
+        ]
+    },
+    {
         'date': '26/06/2018',
         'changes': [
             'We continue Unit testing for the main module',
