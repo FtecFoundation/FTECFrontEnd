@@ -122,7 +122,6 @@ app.use('/api', function (req, res) {
         res.status(500).end(http.STATUS_CODES[500]);
     });
     if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
-        creq.useChunkedEncodingByDefault = true;
         creq.write(JSON.stringify(req.body));
     }
     creq.end();
