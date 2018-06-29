@@ -6,6 +6,7 @@ import {SocialRoutingModule} from './social-routing.module';
 import {TwitterModule} from 'ngx-twitter';
 import {SharedModule} from '../../../shared/shared.module';
 
+
 @NgModule({
     imports: [
         CommonModule,
