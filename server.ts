@@ -109,7 +109,7 @@ app.use('/api', function (req, res) {
 
         cres.on('end', function () {
             console.log('end');
-            console.log(res.body);
+            console.log(cres.body);
             // finished, let's finish client request as well?
             res.end();
         });
