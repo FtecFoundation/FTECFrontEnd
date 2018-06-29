@@ -81,14 +81,6 @@ app.use('/api', function (req, res) {
     for (const param of Object.keys(req.query)) {
         query += param + '=' + req.query[param];
     }
-    console.log(req.headers);
-    const headers = {
-        'Host': 'ftec.network',
-        'User-Agent': req.headers['user-agent'],
-        'Accept': '*/*',
-        'token-x-auth': req.headers['token-x-auth'],
-        'content-type': req.headers['content-type']
-    };
 
     const options = {
         protocol: 'http:',
@@ -96,7 +88,7 @@ app.use('/api', function (req, res) {
         port: 80,
         path: req.path + query,
         method: req.method,
-        headers: headers,
+        headers: req.headers,
     };
 
     console.log(options);
