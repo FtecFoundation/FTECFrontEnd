@@ -21,7 +21,20 @@ enableProdMode();
 const app = express();
 const http = require('http');
 
-const PORT = process.env.PORT || 80;
+let apiUrl = '';
+let port = 4200;
+
+process.argv.forEach(function (val, index, array) {
+    if (val.startsWith('--api_url=')) {
+        apiUrl = val.substring(val.indexOf('=') + 1);
+        console.log(apiUrl);
+    }
+    if (val.startsWith('--port')) {
+        port = Number.parseInt(val.substring(val.indexOf('=') + 1));
+    }
+});
+
+const PORT = process.env.PORT || port;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -36,14 +49,7 @@ import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
-let apiUrl = '';
 
-process.argv.forEach(function (val, index, array) {
-    if (val.startsWith('--api_url=')) {
-        apiUrl = val.substring(val.indexOf('=') + 1);
-        console.log(apiUrl);
-    }
-});
 
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
@@ -110,6 +116,9 @@ app.use('/api', function (req, res) {
         cres.on('end', function () {
             console.log('end');
             console.log(cres);
+            if (!res.headersSent) {
+                res.writeHead(cres.statusCode);
+            }
             // finished, let's finish client request as well?
             res.end();
         });
