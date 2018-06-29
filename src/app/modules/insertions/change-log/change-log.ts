@@ -1,5 +1,15 @@
 export const changeLog = [
     {
+        'date': '29/06/2018',
+        'changes': [
+            'We connected HitBTC to Arbitrage Module',
+            'We connected HitBTC to Telegram Assistant',
+            'We began connecting Quoine to Arbitrage Module',
+            'Bug fixing of Social Module (now tweets are saved only for subscribed users)',
+            'We wrote the documentation for all controllers of the main module'
+        ]
+    },
+    {
         'date': '28/06/2018',
         'changes': [
             'HTML layout of the referral page',

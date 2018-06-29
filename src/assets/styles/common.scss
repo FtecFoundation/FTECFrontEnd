@@ -111,3 +111,27 @@ p {
 .tab-controls-item.is-active {
   background-color: $dark-blue;
 }
+
+.o-accordion {
+  padding: .938em;
+  margin-bottom: .625em;
+
+  display: flex;
+  flex-direction: column;
+  
+  cursor: pointer;
+  border-radius: .313rem;
+  border: 1px solid $light-violete;
+  background-color: $dark-blue;
+
+  transition: all .3s ease;
+}
+
+.o-accordion svg {
+  fill: $white;
+  opacity: .5;
+}
+
+.o-accordion.is-active .accordion__visible-arrow {
+  transform: rotate(180deg);
+}
