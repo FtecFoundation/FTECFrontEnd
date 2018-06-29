@@ -114,6 +114,7 @@ p {
 
 .o-accordion {
   padding: .938em;
+  margin-bottom: .625em;
 
   display: flex;
   flex-direction: column;
@@ -129,10 +130,6 @@ p {
 .o-accordion svg {
   fill: $white;
   opacity: .5;
-}
-
-.o-accordion.is-active .accordion__paragraph {
-  display: block;
 }
 
 .o-accordion.is-active .accordion__visible-arrow {

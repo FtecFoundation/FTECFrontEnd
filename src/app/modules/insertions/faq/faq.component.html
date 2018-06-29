@@ -14,26 +14,56 @@
 
       <div class="middle__table-container">
 
-        <div class="o-accordion is-active">
+        <div class="o-accordion" *ngFor="let faq of faqsLeft" (click)="answer(faq)" [ngClass]="{'is-active': faq.chosen}">
           <div class="accordion__visible">
-            <span class="accordion__visible-question">How can I make sure that the platform development will continue after the Token Sale?</span>
+            <span class="accordion__visible-question">{{faq.question}}</span>
 
-            <svg class="accordion__visible-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <svg class="accordion__visible-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
               <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
               <path fill="none" d="M0,0h24v24H0V0z" />
             </svg>
           </div>
 
-          <p>The most important argument is that we already have the working projects and we are well-reputed. The FTEC team
-            is a group of traders who have been working in this field for more than 5 years. We have long thought about the
-            implementation of such a platform and, first of all, are interested in this.</p>
+          <p>{{faq.answer}}</p>
         </div>
 
       </div>
     </div>
   </div>
 
-  <!-- Second -->
+  <div class="middle middle--faq-half">
+
+    <div class="middle__head middle__head--faq">
+      <div class="middle__table-type">
+        <h5>
+          General Questions
+        </h5>
+      </div>
+    </div>
+
+    <div class="middle__table">
+
+      <div class="middle__table-container">
+
+
+        <div class="o-accordion" *ngFor="let faq of faqsRight" (click)="answer(faq)" [ngClass]="{'is-active': faq.chosen}">
+          <div class="accordion__visible">
+            <span class="accordion__visible-question">{{faq.question}}</span>
+
+            <svg class="accordion__visible-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+              <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
+              <path fill="none" d="M0,0h24v24H0V0z" />
+            </svg>
+          </div>
+
+          <p>{{faq.answer}}</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </div>

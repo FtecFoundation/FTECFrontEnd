@@ -17,6 +17,7 @@
 
 .accordion__visible {
   display: flex;
+  align-items: center;
 }
 
 .accordion__visible-question {
@@ -34,4 +35,8 @@
   margin-top: .938em;
 
   font-size: .815em;
+}
+
+.o-accordion.is-active p {
+  display: block;
 }
