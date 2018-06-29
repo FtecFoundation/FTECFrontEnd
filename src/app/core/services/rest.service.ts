@@ -28,6 +28,7 @@ export abstract class RestService {
             'content-type': contentType
         };
         const retHeaders = new HttpHeaders(headers);
+        console.log(retHeaders.keys());
         return retHeaders;
     }
 
