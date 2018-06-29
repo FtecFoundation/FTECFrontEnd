@@ -81,7 +81,14 @@ export class SocialComponent implements OnInit {
 
     getDaysLeft() {
         this._socialService.getExpirationDate().subscribe(data => {
-             this.daysLeft = 0;
+            const today = new Date().getTime();
+            const expirationDate = new Date(data).getTime();
+            const difference = expirationDate - today;
+            if (difference > 0) {
+                this.daysLeft = Math.round(difference / (24 * 60 * 60 * 1000));
+            } else {
+                this.daysLeft = 0;
+            }
         });
     }
 

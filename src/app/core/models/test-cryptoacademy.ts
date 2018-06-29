@@ -4,8 +4,10 @@ export class Test {
     level: string;
     name: string;
     image: string;
-    lastQuestion: number;
-    questions: Question[];
+    lastQuestion?: number;
+    selectedAnswer?: number;
+    correctAnswer?: number;
+    questions: any;
 }
 
 export class TestHistory {
