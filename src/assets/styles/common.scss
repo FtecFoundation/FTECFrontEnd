@@ -107,3 +107,7 @@ p {
 
   transition: background .3s ease;
 }
+
+.tab-controls-item.is-active {
+  background-color: $dark-blue;
+}
