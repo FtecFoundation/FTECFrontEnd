@@ -21,7 +21,7 @@ enableProdMode();
 const app = express();
 const http = require('http');
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 4200;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -77,6 +77,7 @@ app.use('/api', function (req, res) {
     }
 
     const options = {
+        protocol: 'http:',
         host: apiUrl,
         port: 80,
         path: req.path + query,
@@ -89,9 +90,14 @@ app.use('/api', function (req, res) {
         // set encoding
 
         // wait for data
+        cres.on('response', function(){
+            console.log('response came');
+            console.log(cres.body);
+        });
         cres.on('data', function (chunk) {
             console.log('data came');
             console.log(cres.statusCode);
+            console.log(chunk);
             res.status(cres.statusCode).write(chunk);
         });
 
@@ -101,7 +107,9 @@ app.use('/api', function (req, res) {
             res.end();
         });
 
-        cres.on('end', function () {console.log('end');
+        cres.on('end', function () {
+            console.log('end');
+            console.log(res.body);
             // finished, let's finish client request as well?
             res.end();
         });
