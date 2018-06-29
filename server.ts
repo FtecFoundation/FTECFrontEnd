@@ -19,9 +19,9 @@ enableProdMode();
 
 // Express server
 const app = express();
-const proxy = require('express-http-proxy');
+const http = require('http');
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 4200;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -46,32 +46,81 @@ process.argv.forEach(function (val, index, array) {
 });
 
 app.engine('html', ngExpressEngine({
-  bootstrap: AppServerModuleNgFactory,
-  providers: [
-    provideModuleMap(LAZY_MODULE_MAP)
-  ]
+    bootstrap: AppServerModuleNgFactory,
+    providers: [
+        provideModuleMap(LAZY_MODULE_MAP)
+    ]
 }));
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-app.use('/api', proxy(apiUrl, {
-    proxyReqPathResolver: function(req) {
-        return require('url').parse(req.url).path;
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+
+
+
+app.use('/api', function (req, res) {
+    console.log(req.path);
+    console.log(req.query);
+    let query = '';
+    if(Object.keys(req.query).length > 0) query += '?';
+    for (const param of Object.keys(req.query)) {
+        query += param + '=' + req.query[param];
     }
-}));
 
-// Server static files from /browser
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
-  maxAge: '1y'
-}));
+    const options = {
+        host: apiUrl,
+        port: 80,
+        path: req.path + query,
+        method: req.method,
+        headers: req.headers,
+    };
 
-// ALl regular routes use the Universal engine
-app.get('*', (req, res) => {
-  res.render('index', { req });
+    console.log(options);
+    const creq = http.request(options, function (cres) {
+        // set encoding
+
+        // wait for data
+        cres.on('data', function (chunk) {
+            res.write(chunk);
+        });
+
+        cres.on('close', function () {
+            // closed, let's end client request as well
+            res.writeHead(cres.statusCode);
+            res.end();
+        });
+
+        cres.on('end', function () {console.log('end');
+            // finished, let's finish client request as well?
+            console.log(cres.statusCode);
+            res.end();
+        });
+
+    }).on('error', function (e) {
+        res.writeHead(500);
+        res.end();
+    });
+    if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
+        creq.write(JSON.stringify(req.body));
+    }
+    creq.end();
+
 });
 
-// Start up the Node server
+app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
+    maxAge: '1y'
+}));
+
+app.get('*', (req, res) => {
+    res.render('index', {req});
+});
 
 
 if (apiUrl) {

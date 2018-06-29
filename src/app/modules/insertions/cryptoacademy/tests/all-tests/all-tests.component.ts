@@ -17,11 +17,11 @@ export class AllTestsComponent implements OnInit {
         this._cryptoacademyService.getTests().subscribe(data => {
             this.tests = data;
 
-            this._cryptoacademyService.getTestsHistory().subscribe(() => {
+            this._cryptoacademyService.getTestsHistory().subscribe( data1 => {
                 for (const test of this.tests) {
                     const questions = Object.keys(test.questions);
                     for (const question of questions) {
-                        console.log(test.id + '_' + question);
+                        if (test.questions[test.id + '_' + question]) { console.log(data1); }
                     }
                 }
             });

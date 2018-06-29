@@ -63,7 +63,7 @@
   <div class="aside-right" *ngIf="daysLeft">
     <form class="aside-right__filter" [formGroup]="socialForm">
 
-      <div class="filter__container">
+      <div class="filter__container" *ngIf="recommendedWords.length > 0">
         <span class="container__name container__name--recommended">Recommended words</span>
         <ul id="filter__container-block2" class="filter__container-block">
           <li *ngFor="let word of recommendedWords" class="filter__container-block-item--categories" (click)="addRecommendedWord(word)">{{word}}

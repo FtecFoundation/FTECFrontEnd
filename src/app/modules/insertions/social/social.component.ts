@@ -118,6 +118,7 @@ export class SocialComponent implements OnInit {
     }
 
     deleteWord(word: string) {
+        console.log('delete');
         this._socialService.deleteWord(word).subscribe(() => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
             if (this.addedRecommendedWords.indexOf(word) !== -1) {
@@ -140,6 +141,7 @@ export class SocialComponent implements OnInit {
     }
 
     addRecommendedWord(word: string) {
+        console.log('add');
         this.wordExists = false;
         if (this.dictionary && this.dictionary.indexOf(word) === -1) {
             this._socialService.addWord({'word': word}).subscribe(() => {
