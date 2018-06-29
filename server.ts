@@ -19,7 +19,7 @@ enableProdMode();
 
 // Express server
 const app = express();
-const http = require('http');
+const http = require('follow-redirects').http;
 
 let apiUrl = '';
 let port = 4200;
@@ -84,7 +84,6 @@ app.use('/api', function (req, res) {
     }
 
     const options = {
-        protocol: 'http:',
         host: apiUrl,
         port: 80,
         path: req.path + query,
