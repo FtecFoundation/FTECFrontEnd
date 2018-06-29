@@ -22,6 +22,7 @@ export abstract class RestService {
 
     protected headers(contentType: string = 'application/json'): HttpHeaders {
         const token: string = this._cookieService.get('token');
+        console.log(new HttpHeaders());
         return new HttpHeaders().set('Content-Type', contentType).set('TOKEN-X-AUTH', token);
     }
 

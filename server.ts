@@ -81,6 +81,14 @@ app.use('/api', function (req, res) {
     for (const param of Object.keys(req.query)) {
         query += param + '=' + req.query[param];
     }
+    console.log(req.headers);
+    const headers = {
+        'Host': 'ftec.network',
+        'User-Agent': req.headers['user-agent'],
+        'Accept': '*/*',
+        'token-x-auth': req.headers['token-x-auth'],
+        'content-type': req.headers['content-type']
+    };
 
     const options = {
         protocol: 'http:',
@@ -88,34 +96,28 @@ app.use('/api', function (req, res) {
         port: 80,
         path: req.path + query,
         method: req.method,
-        headers: req.headers,
+        headers: headers,
     };
 
     console.log(options);
     const creq = http.request(options, function (cres) {
         // set encoding
 
-        // wait for data
-        cres.on('response', function() {
-            console.log('response came');
-            console.log(cres.body);
-        });
         cres.on('data', function (chunk) {
             console.log('data came');
             console.log(cres.statusCode);
-            console.log(chunk);
             res.status(cres.statusCode).write(chunk);
         });
 
         cres.on('close', function () {
             // closed, let's end client request as well
-            console.log('ending request');
+            console.log('closed request');
             res.end();
         });
 
         cres.on('end', function () {
             console.log('end');
-            console.log(cres);
+            // console.log(cres);
             if (!res.headersSent) {
                 res.writeHead(cres.statusCode);
             }
