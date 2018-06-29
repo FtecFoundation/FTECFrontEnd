@@ -1,5 +1,34 @@
 export const changeLog = [
     {
+        'date': '28/06/2018',
+        'changes': [
+            'HTML layout of the referral page',
+            'HTML layout of the page for desktop app download',
+            'Cryptoacademy page and referral page are adapted to all screen sizes',
+            'Telegram Assistant internationalization was improved',
+            'We began connecting HitBTC to Arbitrage Module',
+            'The manner of return of tweets in Social Assistant was changed',
+            'We corrected writing off of funds while subscribing to Social Assistant',
+            'While registering in the main module, a free trial month of subscription to Social Assistant is added',
+            'Now user can know the date of the end of subscription to Social Assistant'
+        ]
+    },
+    {
+        'date': '27/06/2018',
+        'changes': [
+            'Statistics saving now returns % of all answers to the question',
+            'We added a function that returns all test which user passed',
+            'HTML layout of the support page',
+            'User\'s authorization on Telegram Assistant was added',
+            'Now we can get balance info, using Telegram Assistant',
+            'Interaction part for Telegram Assistant was added',
+            'We improved the display of error logs to increase debug effectiveness',
+            'We began the work on HTML process of the code and its documentation',
+            'We began the work on test servers of the modules to use them while developing without impact on the users',
+            'Exception template processor was limited to return error statuses set by W3C'
+        ]
+    },
+    {
         'date': '26/06/2018',
         'changes': [
             'We continue Unit testing for the main module',
