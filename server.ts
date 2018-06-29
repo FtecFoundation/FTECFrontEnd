@@ -74,6 +74,7 @@ app.use(bodyParser.json());
 app.use('/api', function (req, res) {
     console.log(req.path);
     console.log(req.query);
+    res.setHeader('content-type', 'application/json');
     let query = '';
     if (Object.keys(req.query).length > 0) {
         query += '?';
