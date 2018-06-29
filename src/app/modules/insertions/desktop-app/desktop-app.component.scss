@@ -1,0 +1,46 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/medias";
+
+.middle--desktop {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.desktop__container {
+  width: 40%;
+  padding: 1.250rem;
+  position: relative;
+}
+
+.desktop__container--last {
+  left: 10%;
+}
+
+.desktop__container--last img:last-child {
+  margin-left: .625rem;
+}
+
+.desktop__container-image {
+  z-index: 2;
+  width: 100%;
+  position: relative;
+}
+
+.desktop__container-image:last-child {
+  z-index: 1;
+  top: 60px;
+  left: 90px;
+  position: absolute;
+}
+
+.desktop__container-text {
+  margin-top: 1.250rem;
+  margin-bottom: 1.250rem;
+}
+
+.desktop__container-images {
+  display: flex;
+}
