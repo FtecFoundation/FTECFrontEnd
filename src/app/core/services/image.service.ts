@@ -18,8 +18,8 @@ export class ImageService extends RestService {
             catchError(e => this.handleError(e)));
     }
 
-    setImage(image: any): Observable<any> {
-        return this.put(ImageApiUrls.setProfileImage, image, 'image/*').pipe(
+    setImage(image: any, type: string): Observable<any> {
+        return this.put(ImageApiUrls.setProfileImage, image, type).pipe(
             tap(resp => console.log(resp)),
             catchError(e => this.handleError(e)));
     }

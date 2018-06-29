@@ -10,6 +10,7 @@ import { ShowModalService } from '../../not-active/show-modal.service';
 export class SettingsComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;
     private imageSrc = '';
+    private imageType: string;
 
   constructor(private _imageService: ImageService, private _showModal: ShowModalService) {
   }
@@ -23,19 +24,8 @@ export class SettingsComponent implements OnInit {
 
     handleInputChange(e) {
         const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-        const pattern = /image-*/;
-        const reader = new FileReader();
-        if (!file.type.match(pattern)) {
-            alert('invalid format');
-            return;
-        }
-        reader.onload = this._handleReaderLoaded.bind(this);
-        reader.readAsDataURL(file);
-    }
-    _handleReaderLoaded(e) {
-        const reader = e.target;
-        this.imageSrc = reader.result;
-        this._imageService.setImage(this.imageSrc).subscribe(data => {
+        this.imageType = file.type;
+        this._imageService.setImage(file, this.imageType).subscribe(data => {
             console.log(data);
         });
     }

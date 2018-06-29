@@ -1008,3 +1008,36 @@
 .middle--empty-bottom {
   padding-top: 0 !important;
 }
+
+.item-inner-line-error-block--empty{
+  display: block;
+}
+
+.middle__table-container--empty{
+  position: relative;
+  margin-top: 20px;
+}
+
+.item-inner-line-error-block--empty {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: initial;
+  transform: initial;
+  margin: 0 auto;
+}
+
+.item-inner-line-error-block--empty span {
+  display: block;
+  margin-left: 80px;
+}
+
+.item-inner-line-error-block--empty .item-inner-line--error-icon {
+  top: 25%;
+  left: 21%;
+  right: initial !important;
+}
+
+.line--error-icon--position {
+  left: initial;
+}

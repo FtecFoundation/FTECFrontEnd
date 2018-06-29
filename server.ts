@@ -55,14 +55,6 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-/* - Example Express Rest API endpoints -
-  app.get('/api/**', (req, res) => { });
-*/
-
-// app.get('/api/session', (req, res) => {
-//     req.session.
-// });
-
 app.use('/api', proxy(apiUrl, {
     proxyReqPathResolver: function(req) {
         return require('url').parse(req.url).path;

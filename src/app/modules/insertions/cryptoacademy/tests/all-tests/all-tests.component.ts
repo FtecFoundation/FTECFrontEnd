@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {CryptoacademyService} from '../../../../../core/services/cryptoacademy.service';
+import {Test} from '../../../../../core/models/test-cryptoacademy';
 
 @Component({
   selector: 'app-all-tests',
@@ -6,11 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['../../../insertions.scss', '../../cryptoacademy.component.scss', '../tests.component.scss']
 })
 export class AllTestsComponent implements OnInit {
+  tests: Test[];
 
-  constructor() {
+  constructor(private _cryptoacademyService: CryptoacademyService) {
   }
 
   ngOnInit() {
+    this._cryptoacademyService.getTests().subscribe(data => {
+        this.tests = data;
+    });
+
+      this._cryptoacademyService.getTestsHistory().subscribe(data => {
+
+      });
   }
 
 }

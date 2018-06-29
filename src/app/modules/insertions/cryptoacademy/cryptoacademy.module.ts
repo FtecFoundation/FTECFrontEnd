@@ -3,8 +3,9 @@ import {CommonModule} from '@angular/common';
 import {CryptoacademyRoutingModule} from './cryptoacademy-routing.module';
 import {CryptoacademyComponent} from './cryptoacademy.component';
 import {AllTestsComponent} from './tests/all-tests/all-tests.component';
-import {TestQuestionComponent} from './tests/test-question/test-question.component';
 import {TestStatusComponent} from './tests/test-status/test-status.component';
+import {QuestionComponent} from './tests/question-layout/question/question.component';
+import {QuestionLayoutComponent} from './tests/question-layout/question-layout.component';
 
 @NgModule({
     imports: [
@@ -13,9 +14,10 @@ import {TestStatusComponent} from './tests/test-status/test-status.component';
     ],
     declarations: [
         CryptoacademyComponent,
-        TestQuestionComponent,
         AllTestsComponent,
-        TestStatusComponent]
+        TestStatusComponent,
+        QuestionComponent,
+        QuestionLayoutComponent]
 })
 export class CryptoacademyModule {
 }

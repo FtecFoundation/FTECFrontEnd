@@ -15,6 +15,7 @@ import {SocialService} from './services/social.service';
 import {LoaderComponent } from './loader/loader.component';
 import {LoaderService} from './loader/loader.service';
 import {LanguageService} from './services/language.service';
+import {CryptoacademyService} from './services/cryptoacademy.service';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {LanguageService} from './services/language.service';
         ArbitrageService,
         SocialService,
         LoaderService,
-        LanguageService
+        LanguageService,
+        CryptoacademyService
     ]
 })
 export class CoreModule {

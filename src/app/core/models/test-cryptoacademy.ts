@@ -1,6 +1,15 @@
 export class Test {
     id: number;
+    description: string;
+    level: string;
+    name: string;
+    image: string;
+    lastQuestion: number;
     questions: Question[];
+}
+
+export class TestHistory {
+    tests: any;
 }
 
 class Question {

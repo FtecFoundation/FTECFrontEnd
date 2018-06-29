@@ -11,62 +11,20 @@
                     <li class="tab-controls-item">Forecasting</li>
                 </ul>
 
-                <div class="crypto__tab-wrapper">
-                    <div class="crypto__tab-container">
-                        <img src="../../../../assets/images/image_2018-06-25_11-24-22.png" alt="">
+                <div class="crypto__tab-wrapper" *ngIf="tests">
+                    <div class="crypto__tab-container" *ngFor="let test of tests">
+                        <img [src]="test.image" alt="">
 
                         <span class="test-progress">13/20</span>
 
                         <div class="crypto__tab-info">
-                            <h5 class="crypto__info-title">Do you know crypto?</h5>
+                            <h5 class="crypto__info-title">{{test.name}}</h5>
 
-                            <span class="crypto__info-subtitle">Begginer</span>
+                            <span class="crypto__info-subtitle">{{test.level}}</span>
 
-                            <p class="crypto__info-text">Check your general knowledge about cryptocurrency, trading and market itself.</p>
+                            <p class="crypto__info-text">{{test.description}}</p>
 
-                            <a [routerLink]="['test', '34343']" class="filter__container-button button--crypto">Begin</a>
-                        </div>
-                    </div>
-
-                    <div class="crypto__tab-container">
-                        <img src="../../../../assets/images/image_2018-06-25_11-24-22.png" alt="">
-
-                        <div class="crypto__tab-info">
-                            <h5 class="crypto__info-title">Do you know crypto?</h5>
-
-                            <span class="crypto__info-subtitle">Begginer</span>
-
-                            <p class="crypto__info-text">Check your general knowledge about cryptocurrency, trading and market itself.</p>
-
-                            <a href="javascript:void(0)" class="filter__container-button button--crypto">Begin</a>
-                        </div>
-                    </div>
-
-                    <div class="crypto__tab-container">
-                        <img src="../../../../assets/images/image_2018-06-25_11-24-22.png" alt="">
-
-                        <div class="crypto__tab-info">
-                            <h5 class="crypto__info-title">Do you know crypto?</h5>
-
-                            <span class="crypto__info-subtitle">Begginer</span>
-
-                            <p class="crypto__info-text">Check your general knowledge about cryptocurrency, trading and market itself.</p>
-
-                            <a href="javascript:void(0)" class="filter__container-button button--crypto">Begin</a>
-                        </div>
-                    </div>
-
-                    <div class="crypto__tab-container">
-                        <img src="../../../../assets/images/image_2018-06-25_11-24-22.png" alt="">
-
-                        <div class="crypto__tab-info">
-                            <h5 class="crypto__info-title">Do you know crypto?</h5>
-
-                            <span class="crypto__info-subtitle">Begginer</span>
-
-                            <p class="crypto__info-text">Check your general knowledge about cryptocurrency, trading and market itself.</p>
-
-                            <a href="javascript:void(0)" class="filter__container-button button--crypto">Begin</a>
+                            <a [routerLink]="['test', {testId: test.id, questionId: test.lastQuestion}]" class="filter__container-button button--crypto">Begin</a>
                         </div>
                     </div>
                 </div>
