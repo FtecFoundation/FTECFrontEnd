@@ -21,7 +21,7 @@ enableProdMode();
 const app = express();
 const http = require('http');
 
-const PORT = process.env.PORT || 4200;
+const PORT = process.env.PORT || 80;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -69,7 +69,9 @@ app.use('/api', function (req, res) {
     console.log(req.path);
     console.log(req.query);
     let query = '';
-    if(Object.keys(req.query).length > 0) query += '?';
+    if (Object.keys(req.query).length > 0){
+        query += '?';
+    }
     for (const param of Object.keys(req.query)) {
         query += param + '=' + req.query[param];
     }
