@@ -30,7 +30,8 @@ export const routes = [
             {path: 'my-exchanges', loadChildren: './insertions/my-exchanges/my-exchanges.module#MyExchangesModule'},
             {path: 'settings', loadChildren: './insertions/settings/settings.module#SettingsModule'},
             {path: 'refferals', loadChildren: './insertions/refferals/refferals.module#RefferalsModule'},
-            {path: 'support', loadChildren: './insertions/support/support.module#SupportModule'}
+            {path: 'support', loadChildren: './insertions/support/support.module#SupportModule'},
+            {path: 'faq', loadChildren: './insertions/faq/faq.module#FaqModule'}
         ], canActivate: [OnlyAuthorizedGuard]
     }
 ];
