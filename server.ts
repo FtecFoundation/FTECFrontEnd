@@ -109,7 +109,7 @@ app.use('/api', function (req, res) {
 
         cres.on('end', function () {
             console.log('end');
-            console.log(cres.body);
+            console.log(cres);
             // finished, let's finish client request as well?
             res.end();
         });
@@ -119,6 +119,7 @@ app.use('/api', function (req, res) {
         res.status(500).end(http.STATUS_CODES[500]);
     });
     if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
+        creq.useChunkedEncodingByDefault = true;
         creq.write(JSON.stringify(req.body));
     }
     creq.end();
