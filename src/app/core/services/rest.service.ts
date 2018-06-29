@@ -41,6 +41,10 @@ export abstract class RestService {
         return this._http.put(this.baseUrl + relativeUrl, data, {headers: this.headers(contentType)});
     }
 
+    protected delete(relativeUrl: string, queryParam: HttpParams, contentType?: string): Observable<any>  {
+        return this._http.delete(this.baseUrl + relativeUrl, {headers: this.headers(contentType), params: queryParam});
+    }
+
     protected handleError(error: HttpErrorResponse): Observable<any> {
         return Observable.throw(error);
     }

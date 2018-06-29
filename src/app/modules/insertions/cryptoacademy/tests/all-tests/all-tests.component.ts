@@ -9,8 +9,6 @@ import {Test} from '../../../../../core/models/test-cryptoacademy';
 })
 export class AllTestsComponent implements OnInit {
   tests: Test[];
-  lastQuestion = 1;
-
 
   constructor(private _cryptoacademyService: CryptoacademyService) {
   }

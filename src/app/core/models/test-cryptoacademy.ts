@@ -4,18 +4,12 @@ export class Test {
     level: string;
     name: string;
     image: string;
+    lastQuestion: number;
     questions: Question[];
 }
 
 export class TestHistory {
-    tests: TestResult[];
-}
-
-class TestResult {
-    testId: number;
-    questionId: number;
-    selectedAnswer: number;
-    correctAnswer: number;
+    tests: any;
 }
 
 class Question {

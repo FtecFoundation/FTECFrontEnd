@@ -3,7 +3,7 @@ import {RestService} from './rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
-import {Test} from '../models/test-cryptoacademy';
+import {Test, TestHistory} from '../models/test-cryptoacademy';
 
 enum CryptoacademyApiUrls {
     processUsersAnswer = 'cabinet/cryptoacademy/saveTest',
@@ -25,8 +25,9 @@ export class CryptoacademyService extends RestService {
             catchError(e => this.handleError(e)));
     }
 
-    getTestsHistory(): Observable<Test[]> {
+    getTestsHistory(): Observable<TestHistory> {
         return this.get(CryptoacademyApiUrls.getHistory).pipe(
+            map(resp => resp.response),
             catchError(e => this.handleError(e)));
     }
 }

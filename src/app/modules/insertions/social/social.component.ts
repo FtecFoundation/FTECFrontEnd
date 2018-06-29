@@ -1,22 +1,19 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { ShowModalService } from '../../not-active/show-modal.service';
-import { SocialService } from '../../../core/services/social.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EmbeddedTweetOptions } from './embedded-tweet-options';
-import { TwttrService } from 'ngx-twitter/src/app/twitter/twttr.service';
-import { el } from '@angular/platform-browser/testing/src/browser_util';
+import {Component, Input, OnInit} from '@angular/core';
+import {ShowModalService} from '../../not-active/show-modal.service';
+import {SocialService} from '../../../core/services/social.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {EmbeddedTweetOptions} from './embedded-tweet-options';
 
 @Component({
     selector: 'app-social',
     templateUrl: './social.component.html',
     styleUrls: ['../insertions.scss', './social.component.scss']
 })
-export class SocialComponent implements OnInit, AfterViewInit {
+export class SocialComponent implements OnInit {
 
-    @Input() tweetIds: string[] = ['1011179887426703360', '1011559832841801729', '1011595431439159296',
-     '1011536835544113153', '1009399880006152192', '1011595387080265729'];
+    @Input() tweetIds: string[] = [];
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
-    preloader = false;
+    preloader = true;
     dictionary: string[];
     socialForm: FormGroup;
     submitted = false;
@@ -27,33 +24,12 @@ export class SocialComponent implements OnInit, AfterViewInit {
     rightHeight = 0;
     leftTweets = [];
     rightTweets = [];
+    daysLeft: any;
 
 
     constructor(private _showModalService: ShowModalService,
-        private _socialService: SocialService,
-        private formBuilder: FormBuilder) {
-    }
-
-    ngAfterViewInit() {
-        this.getTweets();
-        const c = 0;
-        window['social'] = this;
-        if (!window['binded_to_twttr']) {
-            window['twttr'].ready(function (twttr) {
-                window['binded_to_twttr'] = true;
-                twttr.events.bind('rendered', function (event) {
-                    const service = window['social'];
-                    if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
-                        service.leftHeight += event.target.clientHeight;
-                    } else {
-                        service.rightHeight += event.target.clientHeight;
-                    }
-                    document.getElementById(event.target.getAttribute('data-tweet-id')).children[0].classList.add('is-active');
-                    window['social'].getTweets();
-
-                });
-            });
-        }
+                private _socialService: SocialService,
+                private formBuilder: FormBuilder) {
     }
 
     getTweets() {
@@ -69,10 +45,44 @@ export class SocialComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this._socialService.getDictionary().subscribe(data => {
             this.dictionary = data;
-            console.log(this.dictionary);
             this.getRecommendationsWords();
         });
+
+        this._socialService.getTweets().subscribe(data => {
+            this.preloader = false;
+
+            this.tweetIds = data;
+
+            this.getTweets();
+
+            window['social'] = this;
+            if (!window['binded_to_twttr']) {
+                window['twttr'].ready(function (twttr) {
+                    window['binded_to_twttr'] = true;
+                    twttr.events.bind('rendered', function (event) {
+                        const service = window['social'];
+                        if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
+                            service.leftHeight += event.target.clientHeight;
+                        } else {
+                            service.rightHeight += event.target.clientHeight;
+                        }
+                        document.getElementById(event.target.getAttribute('data-tweet-id')).children[0].classList.add('is-active');
+                        window['social'].getTweets();
+
+                    });
+                });
+            }
+        });
+
+        this.getDaysLeft();
+
         this.createForm();
+    }
+
+    getDaysLeft() {
+        this._socialService.getExpirationDate().subscribe(data => {
+             this.daysLeft = 0;
+        });
     }
 
     getRecommendationsWords() {
@@ -82,7 +92,9 @@ export class SocialComponent implements OnInit, AfterViewInit {
                     if (r !== word) {
                         this.addedRecommendedWords.push(r);
                         return true;
-                    } else { return false; }
+                    } else {
+                        return false;
+                    }
                 });
             }
         }
@@ -99,9 +111,11 @@ export class SocialComponent implements OnInit, AfterViewInit {
     }
 
     deleteWord(word: string) {
-        this._socialService.deleteWord({ 'word': word }).subscribe(() => {
+        this._socialService.deleteWord(word).subscribe(() => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
-            if (this.addedRecommendedWords.indexOf(word) !== -1) { this.recommendedWords.push(word); }
+            if (this.addedRecommendedWords.indexOf(word) !== -1) {
+                this.recommendedWords.push(word);
+            }
         });
     }
 
@@ -121,7 +135,7 @@ export class SocialComponent implements OnInit, AfterViewInit {
     addRecommendedWord(word: string) {
         this.wordExists = false;
         if (this.dictionary && this.dictionary.indexOf(word) === -1) {
-            this._socialService.addWord({ 'word': word }).subscribe(() => {
+            this._socialService.addWord({'word': word}).subscribe(() => {
                 this.dictionary.push(word);
                 this.addedRecommendedWords.push(word);
                 this.getRecommendationsWords();
@@ -133,10 +147,12 @@ export class SocialComponent implements OnInit, AfterViewInit {
 
     renewSubscription() {
         this._socialService.renewSubscription().subscribe(() => {
-
+            this.getDaysLeft();
         });
     }
 
-    get word() { return this.socialForm.get('word'); }
+    get word() {
+        return this.socialForm.get('word');
+    }
 
 }

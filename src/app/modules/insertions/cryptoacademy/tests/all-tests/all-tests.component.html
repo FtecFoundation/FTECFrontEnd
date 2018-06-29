@@ -22,7 +22,7 @@
 
                             <p class="crypto__info-text">{{test.description}}</p>
 
-                            <a [routerLink]="['test', test.id]" class="filter__container-button button--crypto">Begin</a>
+                            <a [routerLink]="['test', {testId: test.id, questionId: test.lastQuestion}]" class="filter__container-button button--crypto">Begin</a>
                         </div>
                     </div>
                 </div>
