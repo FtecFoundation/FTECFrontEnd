@@ -19,7 +19,7 @@ enableProdMode();
 
 // Express server
 const app = express();
-const http = require('http');
+const http = require('follow-redirects').http;
 
 let apiUrl = '';
 let port = 4200;
