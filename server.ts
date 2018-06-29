@@ -90,24 +90,25 @@ app.use('/api', function (req, res) {
 
         // wait for data
         cres.on('data', function (chunk) {
-            res.write(chunk);
+            console.log('data came');
+            console.log(cres.statusCode);
+            res.status(cres.statusCode).write(chunk);
         });
 
         cres.on('close', function () {
             // closed, let's end client request as well
-            res.writeHead(cres.statusCode);
+            console.log('ending request');
             res.end();
         });
 
         cres.on('end', function () {console.log('end');
             // finished, let's finish client request as well?
-            console.log(cres.statusCode);
             res.end();
         });
 
     }).on('error', function (e) {
-        res.writeHead(500);
-        res.end();
+        console.log(e);
+        res.status(500).end(http.STATUS_CODES[500]);
     });
     if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
         creq.write(JSON.stringify(req.body));
