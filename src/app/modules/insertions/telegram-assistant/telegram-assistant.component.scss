@@ -1,0 +1,16 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/medias";
+
+.middle--telegram {
+  width: 80%;
+  display: flex;
+}
+
+.middle__table--telegram {
+  width: 50%;
+  padding-right: .625em;
+}
+
+.middle__table--telegram:last-child {
+  padding-right: 0;
+}
