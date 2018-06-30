@@ -165,8 +165,12 @@
     height: 300px !important;
   }
 
-  .container__middle {
+  .container__middle--dashboard {
     max-height: 700px;
+  }
+
+  .wrapper__main {
+    height: initial !important;
   }
 
   .change-log,
