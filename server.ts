@@ -19,7 +19,7 @@ enableProdMode();
 
 // Express server
 const app = express();
-const http = require('follow-redirects').http;
+const http = require('http');
 
 let apiUrl = '';
 let port = 4200;
@@ -84,6 +84,7 @@ app.use('/api', function (req, res) {
     }
 
     const options = {
+        protocol: 'http:',
         host: apiUrl,
         port: 80,
         path: req.path + query,
@@ -94,12 +95,11 @@ app.use('/api', function (req, res) {
     console.log(options);
     const creq = http.request(options, function (cres) {
         // set encoding
-        let resp = '';
 
         cres.on('data', function (chunk) {
             console.log('data came');
             console.log(cres.statusCode);
-            resp += chunk.toString();
+            res.status(cres.statusCode).write(chunk);
         });
 
         cres.on('close', function () {
@@ -109,19 +109,10 @@ app.use('/api', function (req, res) {
         });
 
         cres.on('end', function () {
-                        console.log('end');
+            console.log('end');
             // console.log(cres);
             if (!res.headersSent) {
                 res.writeHead(cres.statusCode);
-            }
-            try {
-                const json = JSON.parse(resp);
-                console.log(json);
-                res.write(resp);
-            } catch (e) {
-                console.log('while trying to parse response');
-                console.log(e);
-                console.log(resp);
             }
             // finished, let's finish client request as well?
             res.end();
