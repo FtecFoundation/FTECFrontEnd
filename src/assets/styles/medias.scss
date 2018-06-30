@@ -355,6 +355,14 @@
   .middle--telegram-enable {
     padding-left: 1.250em !important;
   }
+
+  .tab-controls {
+    flex-wrap: wrap;
+  }
+
+  .crypto__tab-wrapper {
+    margin-right: initial !important;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -391,6 +399,10 @@
 
   .middle--telegram {
     flex-wrap: wrap;
+  }
+
+  .tab-controls-item {
+    border-radius: initial !important;
   }
   
 }
