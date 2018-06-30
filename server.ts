@@ -19,7 +19,7 @@ enableProdMode();
 
 // Express server
 const app = express();
-const http = require('http');
+const proxy = require('express-http-proxy');
 
 let apiUrl = '';
 let port = 4200;
@@ -61,73 +61,69 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({
-    extended: true
+app.use('/api', proxy(apiUrl, {
+    proxyReqPathResolver: function(req) {
+        return require('url').parse(req.url).path;
+    }
 }));
 
-app.use(bodyParser.json());
-
-
-
-app.use('/api', function (req, res) {
-    console.log(req.path);
-    console.log(req.query);
-    res.setHeader('content-type', 'application/json');
-    let query = '';
-    if (Object.keys(req.query).length > 0) {
-        query += '?';
-    }
-    for (const param of Object.keys(req.query)) {
-        query += param + '=' + req.query[param];
-    }
-
-    const options = {
-        protocol: 'http:',
-        host: apiUrl,
-        port: 80,
-        path: req.path + query,
-        method: req.method,
-        headers: req.headers,
-    };
-
-    console.log(options);
-    const creq = http.request(options, function (cres) {
-        // set encoding
-
-        cres.on('data', function (chunk) {
-            console.log('data came');
-            console.log(cres.statusCode);
-            res.status(cres.statusCode).write(chunk);
-        });
-
-        cres.on('close', function () {
-            // closed, let's end client request as well
-            console.log('closed request');
-            res.end();
-        });
-
-        cres.on('end', function () {
-            console.log('end');
-            // console.log(cres);
-            if (!res.headersSent) {
-                res.writeHead(cres.statusCode);
-            }
-            // finished, let's finish client request as well?
-            res.end();
-        });
-
-    }).on('error', function (e) {
-        console.log(e);
-        res.status(500).end(http.STATUS_CODES[500]);
-    });
-    if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
-        creq.write(JSON.stringify(req.body));
-    }
-    creq.end();
-
-});
+// app.use('/api', function (req, res) {
+//     console.log(req.path);
+//     console.log(req.query);
+//     res.setHeader('content-type', 'application/json');
+//     let query = '';
+//     if (Object.keys(req.query).length > 0) {
+//         query += '?';
+//     }
+//     for (const param of Object.keys(req.query)) {
+//         query += param + '=' + req.query[param];
+//     }
+//
+//     const options = {
+//         protocol: 'http:',
+//         host: apiUrl,
+//         port: 80,
+//         path: req.path + query,
+//         method: req.method,
+//         headers: req.headers,
+//     };
+//
+//     console.log(options);
+//     const creq = http.request(options, function (cres) {
+//         // set encoding
+//
+//         cres.on('data', function (chunk) {
+//             console.log('data came');
+//             console.log(cres.statusCode);
+//             res.status(cres.statusCode).write(chunk);
+//         });
+//
+//         cres.on('close', function () {
+//             // closed, let's end client request as well
+//             console.log('closed request');
+//             res.end();
+//         });
+//
+//         cres.on('end', function () {
+//             console.log('end');
+//             // console.log(cres);
+//             if (!res.headersSent) {
+//                 res.writeHead(cres.statusCode);
+//             }
+//             // finished, let's finish client request as well?
+//             res.end();
+//         });
+//
+//     }).on('error', function (e) {
+//         console.log(e);
+//         res.status(500).end(http.STATUS_CODES[500]);
+//     });
+//     if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
+//         creq.write(JSON.stringify(req.body));
+//     }
+//     creq.end();
+//
+// });
 
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
     maxAge: '1y'
