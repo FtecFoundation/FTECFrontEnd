@@ -32,7 +32,7 @@ export const routes = [
             {path: 'refferals', loadChildren: './insertions/refferals/refferals.module#RefferalsModule'},
             {path: 'support', loadChildren: './insertions/support/support.module#SupportModule'},
             {path: 'faq', loadChildren: './insertions/faq/faq.module#FaqModule'},
-            {path: 'telegram-assistant', loadChildren: './insertions/telegram-assistant/telegram-assistant.module#TelegramAssistantModule'},
-        ], canActivate: [OnlyAuthorizedGuard]
+            {path: 'telegram-assistant', loadChildren: './insertions/telegram-assistant/telegram-assistant.module#TelegramAssistantModule'}
+                ], canActivate: [OnlyAuthorizedGuard]
     }
 ];

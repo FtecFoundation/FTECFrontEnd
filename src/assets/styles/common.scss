@@ -20,11 +20,6 @@ body {
   overflow-y: auto;
 }
 
-h1 {
-  font-size: 2em;
-  margin: .67em 0;
-}
-
 a {
   color: $black;
   text-decoration: none;
@@ -73,6 +68,9 @@ h1 + .error-field {
   display: none;
 }
 
+h2 {
+  font-size: 2.250em;
+}
 
 h3 {
   font-size: 1.500rem;
@@ -82,6 +80,14 @@ h3 {
 p {
   opacity: .39;
   font-size: .938rem;
+}
+
+.text-small {
+  display: block;
+  margin-bottom: .313em;
+  
+  opacity: .5;
+  font-size: 0.688rem;
 }
 
 .tab-controls {

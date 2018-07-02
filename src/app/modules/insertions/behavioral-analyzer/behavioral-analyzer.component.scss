@@ -1,0 +1,55 @@
+@import "../../../../assets/styles/variables";
+
+.middle--behavioral {
+  width: 66.66%;
+}
+
+.middle__head--behavioral {
+  padding: 0.75em 0;
+}
+
+.middle__block--behavioral {
+  margin: -1.250em;
+}
+
+.middle__block {
+  width: 50%;
+}
+
+.behavioral__small-container {
+  margin: 1.250em;
+  padding: .938em;
+  border-radius: 0.813rem;
+  background-image: $violet-gradient-aside;
+}
+
+.small-container__line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.behavioral__small-container .small-container__line:last-child {
+  align-items: flex-start;
+}
+
+.small-container__line h2 {
+  font-weight: 300;
+}
+
+.small-container__line-link {
+  font-size: 1.125em;
+  font-weight: 900;
+  color: $ocean;
+}
+
+.small-container__line--button {
+
+}
+
+.filter__container-button--behavioral {
+  padding: .625em;
+  width: initial;
+  padding-left: 1.250em;
+  padding-right: 1.250em;
+}

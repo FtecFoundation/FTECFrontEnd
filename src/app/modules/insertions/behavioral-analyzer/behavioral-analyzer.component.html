@@ -1,30 +1,28 @@
-<div class="main-info main-info__empty">
+<div class="main-info main-info--behavioral">
+  <div class="middle middle--behavioral">
 
-  <div class="middle middle--empty middle--empty-frame">
+    <div class="middle__head middle__head--behavioral">Trading reports</div>
 
-    <div class="middle--empty-frame">
+    <div class="middle__block middle__block--behavioral">
 
-      <iframe width="800" height="450" src="https://www.youtube.com/embed/sJrYENYrBlU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <div class="text-block">
+      <div class="behavioral__small-container" *ngFor="let item of behavioralItems">
+        <div class="small-container__line">
+          <h2>{{item.pair}}</h2>
 
-        <h3 class="title-block">Service of Trader's Behavioral Analysis
-          </h3>
-        <p>
-            The essence of this intellectual system is that it continuously monitors and analyzes the behavioral factor of the trader on the exchange. If you describe its algorithm as simple as possible: the system loads the history of market trading with a certain cryptocurrency and concludes how often a trader closed positions on the wave of Panic Buy or Panic Sell.</p>
+          <a href="javascrip:void(0)" class="small-container__line-link">{{item.type}}</a>
+        </div>
+
+        <div class="small-container__line small-container__line--button">
+          <div class="small-container__subtext">
+            <span class="text-small">{{item.exchange}}</span>
+            <span class="text-small">{{item.date}}</span>
+          </div>
+
+          <button class="filter__container-button filter__container-button--behavioral">Full report</button>
+        </div>
       </div>
 
     </div>
 
   </div>
-
-  <div class="middle middle--empty middle--empty-bottom">
-    <h5 class="middle__empty-title">Page is under construction</h5>
-
-    <div class="middle__empty-buttons">
-      <a href="https://ftec.io/" class="button button--empty">Main page</a>
-
-      <a [routerLink]="'/modules/dashboard'" class="button button--empty">Dashboard</a>
-    </div>
-  </div>
-
 </div>
