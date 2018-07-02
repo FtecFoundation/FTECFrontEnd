@@ -22,7 +22,14 @@ export abstract class RestService {
 
     protected headers(contentType: string = 'application/json'): HttpHeaders {
         const token: string = this._cookieService.get('token');
-        return new HttpHeaders().set('Content-Type', contentType).set('TOKEN-X-AUTH', token);
+        const headers = {
+            'Accept': '*/*',
+            'token-x-auth': token,
+            'content-type': contentType
+        };
+        const retHeaders = new HttpHeaders(headers);
+        console.log(retHeaders.keys());
+        return retHeaders;
     }
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
