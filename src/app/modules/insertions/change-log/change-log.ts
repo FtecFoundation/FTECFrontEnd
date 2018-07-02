@@ -1,5 +1,19 @@
 export const changeLog = [
     {
+        'date': '02/07/2018',
+        'changes': [
+            'We analyzed different exchanges for the feasibility of their connection',
+            'BitStamp was connected to the main and Telegram modules',
+            'HuobiCom was connected to the main and Telegram modules',
+            'HTML layout of Telegram Assistant page',
+            'Adapting Telegram Assistant pages to different screen sizes',
+            'HTML layout of Module of Trader\'s Behavioral Analysis page',
+            'Adapting Module of Trader\'s Behavioral Analysis page to different screen sizes',
+            'We added the possibility to save the list of followers in CVS file',
+            'We began the work on Module of Trader\'s Behavioral Analysis'
+        ]
+    },
+    {
         'date': '29/06/2018',
         'changes': [
             'We connected HitBTC to Arbitrage Module',
