@@ -64,7 +64,8 @@ app.set('views', join(DIST_FOLDER, 'browser'));
 app.use('/api', proxy(apiUrl, {
     proxyReqPathResolver: function(req) {
         return require('url').parse(req.url).path;
-    }
+    },
+    https: true
 }));
 
 // app.use('/api', function (req, res) {

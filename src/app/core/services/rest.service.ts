@@ -12,7 +12,6 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        console.log(token);
         this._cookieService.set('token', token, new Date(new Date().getTime() + 24 * 60 * 60 * 1000), '/');
     }
 
@@ -22,14 +21,7 @@ export abstract class RestService {
 
     protected headers(contentType: string = 'application/json'): HttpHeaders {
         const token: string = this._cookieService.get('token');
-        const headers = {
-            'Accept': '*/*',
-            'token-x-auth': token,
-            'content-type': contentType
-        };
-        const retHeaders = new HttpHeaders(headers);
-        console.log(retHeaders.keys());
-        return retHeaders;
+        return new HttpHeaders().set('Content-Type', contentType).set('TOKEN-X-AUTH', token);
     }
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
