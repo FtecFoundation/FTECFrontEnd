@@ -1,5 +1,13 @@
 export const changeLog = [
     {
+        'date': '03/07/2018',
+        'changes': [
+            'We connected Kraken to the main and Telegram module',
+            'We connected Binance API to Service of Trader\'s Behavioral Analysis',
+            'Testing of connection to Binance API'
+        ]
+    },
+    {
         'date': '02/07/2018',
         'changes': [
             'We analyzed different exchanges for the feasibility of their connection',
