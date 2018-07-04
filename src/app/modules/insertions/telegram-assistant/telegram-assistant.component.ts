@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['../insertions.scss', './telegram-assistant.component.scss']
 })
 export class TelegramAssistantComponent implements OnInit {
+  qrUrl = 'tg://resolve?domain=';
 
   constructor() {
   }

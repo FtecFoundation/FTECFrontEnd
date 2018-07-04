@@ -66,11 +66,15 @@
   opacity: 1;
 }
 
-.middle--telegram-enable img {
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  position: relative;
+/deep/ {
 
-  transform: translateX(-50%);
+  .middle--telegram-enable qr-code img{
+    margin-bottom: 1.250em;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    transform: translateX(-50%);
+  }
 }

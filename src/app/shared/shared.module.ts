@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PreloaderComponent} from './preloader/preloader.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
     imports: [
@@ -13,10 +14,12 @@ import {PreloaderComponent} from './preloader/preloader.component';
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
-        PreloaderComponent
+        PreloaderComponent,
+        DropdownComponent
     ],
     declarations: [
-        PreloaderComponent
+        PreloaderComponent,
+        DropdownComponent
     ]
 })
 export class SharedModule {

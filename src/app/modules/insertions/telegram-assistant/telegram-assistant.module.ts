@@ -6,7 +6,7 @@ import {TelegramAssistantComponent} from './telegram-assistant.component';
 @NgModule({
   imports: [
     CommonModule,
-      TelegramAssistantRoutingModule
+      TelegramAssistantRoutingModule,
   ],
   declarations: [TelegramAssistantComponent]
 })

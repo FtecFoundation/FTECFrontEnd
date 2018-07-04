@@ -367,6 +367,10 @@
   .crypto__tab-wrapper {
     margin-right: initial !important;
   }
+
+  .aside-right--behavioral {
+    padding: 10px !important;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -375,7 +379,8 @@
   .crypto__tab-controls-item,
   .crypto__tab-container,
   .tab-controls-item,
-  .middle__table--telegram {
+  .middle__table--telegram,
+  .behavioral__small-container-inner {
     width: 100% !important;
   }
 
