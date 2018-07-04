@@ -68,14 +68,6 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-app.use(bodyParser.json());
-
 app.post('/api/submitRecatpcha', function (req, res) {
     console.log(req.body['g-recaptcha-response']);
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
