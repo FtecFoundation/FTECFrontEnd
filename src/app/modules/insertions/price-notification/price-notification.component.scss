@@ -1,8 +1,13 @@
 @import "../../../../assets/styles/variables";
 
+.middle__block--price {
+  margin-top: -0.688em;
+}
+
 .price__small-container {
   display: flex;
   flex-wrap: wrap;
+  min-height: 120px;
 }
 
 .small-container__line--price {
@@ -39,4 +44,17 @@
 .filter__container--price {
   margin: 0;
   padding: 0;
+}
+
+.filter__block-container {
+  display: flex;
+}
+
+.filter__container--select {
+  width: 50%;
+  margin-right: .625em;
+}
+
+.filter__container--select:last-child {
+  margin-right: 0;
 }

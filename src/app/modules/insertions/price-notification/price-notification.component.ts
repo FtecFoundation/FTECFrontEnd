@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { priceNotification } from './price-notification';
 
 @Component({
   selector: 'app-social',
@@ -6,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['../insertions.scss', '../behavioral-analyzer/behavioral-analyzer.component.scss', '../social/social.component.scss', './price-notification.component.scss']
 })
 export class PriceNotificationComponent implements OnInit {
+
+  price = priceNotification;
 
   constructor() {
   }
