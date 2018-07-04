@@ -137,27 +137,33 @@
 
       <div class="filter__container">
         <span class="container__name">Currenies Pair</span>
-        <div class="filter__block-container">
+        <div class="filter__container--price">
 
-          <div class="container__form filter__container--select">
-            <label for="number" class="form__label"></label>
-            <input type="number" min="20" class="form__input" placeholder="Minimum value: 20">
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
           </div>
 
-          <div class="container__form filter__container--select">
-            <label for="number" class="form__label"></label>
-            <input type="number" min="20" class="form__input" placeholder="Minimum value: 20">
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
           </div>
 
         </div>
       </div>
 
       <div class="filter__container">
-        <span class="container__name">Exchabges</span>
+        <span class="container__name">Exchages</span>
 
-        <div class="container__form">
-          <label for="" class="form__label"></label>
-          <input type="number" class="form__input" placeholder="Poloniex">
+        <div class="container__form container__form--select is-active">
+          <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+        </div>
+
+      </div>
+
+      <div class="filter__container">
+
+        <div class="container__form container__form--range">
+          <span>50%</span>
+          <input type="range" min-value="-100%" max-value="100%">
         </div>
 
       </div>
