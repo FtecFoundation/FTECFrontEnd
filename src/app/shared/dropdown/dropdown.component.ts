@@ -1,10 +1,19 @@
-import {Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { routerAnimation } from './dropdown.animation';
+import { transition, trigger, useAnimation } from '@angular/animations';
 
 @Component({
-  selector: 'app-dropdown',
-  templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss'],
+    selector: 'app-dropdown',
+    templateUrl: './dropdown.component.html',
+    styleUrls: ['./dropdown.component.scss'],
+    animations: [
+        trigger('routerAnimations', [
+            transition('* <=> *', [
+                useAnimation(routerAnimation)
+            ])
+        ])
+    ],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
@@ -25,7 +34,7 @@ export class DropdownComponent implements OnInit, OnChanges {
 
     opened: boolean;
 
-    propagateChange = (_: any) => {};
+    propagateChange = (_: any) => { };
 
     get active(): string {
         return this._active;
@@ -38,7 +47,7 @@ export class DropdownComponent implements OnInit, OnChanges {
         this.selected.emit(this.active);
     }
 
-    constructor() {}
+    constructor() { }
 
     ngOnInit(): void {
     }

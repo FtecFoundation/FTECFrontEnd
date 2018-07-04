@@ -24,9 +24,6 @@
     "serve:prerender": "cd dist/browser && http-server",
     "serve:ssr": "node dist/server"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
