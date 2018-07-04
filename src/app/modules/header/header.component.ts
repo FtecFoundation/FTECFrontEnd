@@ -5,6 +5,7 @@ import {TitlesService} from '../../core/services/titles.service';
 import {ShowModalService} from '../not-active/show-modal.service';
 import {ImageService} from '../../core/services/image.service';
 import {User} from '../../core/models/user';
+import {CurrentUserService} from '../../core/services/current-user.service';
 
 @Component({
     selector: 'app-header',
@@ -14,16 +15,15 @@ import {User} from '../../core/models/user';
 export class HeaderComponent implements OnInit {
     @ViewChild('profileImage') image: ElementRef;
 
-    currentTitle: string;
     profileImage: string;
     user: User;
-    imagePrefix = 'http://api.ftec.network/images/';
 
     constructor(private _accountService: AccountService,
                 private router: Router,
                 public _titlesService: TitlesService,
                 public _showModalService: ShowModalService,
-                private _imageService: ImageService) {
+                private _imageService: ImageService,
+                public _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {

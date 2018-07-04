@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {TrpComponent} from '../trp/trp.component';
 import {RouterModule} from '@angular/router';
 import {TelegramAssistantComponent} from './telegram-assistant.component';
 

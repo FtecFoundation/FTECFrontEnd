@@ -19,7 +19,8 @@ enableProdMode();
 
 // Express server
 const app = express();
-const http = require('http');
+const proxy = require('express-http-proxy');
+const request = require('request');
 
 const PORT = process.env.PORT || 80;
 const DIST_FOLDER = join(process.cwd(), 'dist');
@@ -37,11 +38,19 @@ import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 let apiUrl = '';
+let prefix = '';
+let port = 4200;
 
 process.argv.forEach(function (val, index, array) {
-    if (val.startsWith('--api_url=')) {
+    if (val.startsWith('--api_url')) {
         apiUrl = val.substring(val.indexOf('=') + 1);
         console.log(apiUrl);
+    }
+    if (val.startsWith('--port')) {
+        port = Number.parseInt(val.substring(val.indexOf('=') + 1));
+    }
+    if (val.startsWith('--prefix')) {
+        prefix = val.substring(val.indexOf('=') + 1);
     }
 });
 
@@ -63,60 +72,42 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-
-
-app.use('/api', function (req, res) {
-    console.log(req.path);
-    console.log(req.query);
-    let query = '';
-    if (Object.keys(req.query).length > 0){
-        query += '?';
+app.post('/api/submitRecatpcha', function (req, res) {
+    console.log(req.body['g-recaptcha-response']);
+    // g-recaptcha-response is the key that browser will generate upon form submit.
+    // if its blank or null means user has not selected the captcha, so return the error.
+    if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+        return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
-    for (const param of Object.keys(req.query)) {
-        query += param + '=' + req.query[param];
-    }
-
-    const options = {
-        host: apiUrl,
-        port: 80,
-        path: req.path + query,
-        method: req.method,
-        headers: req.headers,
-    };
-
-    console.log(options);
-    const creq = http.request(options, function (cres) {
-        // set encoding
-
-        // wait for data
-        cres.on('data', function (chunk) {
-            console.log('data came');
-            console.log(cres.statusCode);
-            res.status(cres.statusCode).write(chunk);
-        });
-
-        cres.on('close', function () {
-            // closed, let's end client request as well
-            console.log('ending request');
-            res.end();
-        });
-
-        cres.on('end', function () {console.log('end');
-            // finished, let's finish client request as well?
-            res.end();
-        });
-
-    }).on('error', function (e) {
-        console.log(e);
-        res.status(500).end(http.STATUS_CODES[500]);
+    // Put your secret key here.
+    const secretKey = '6LfdAWIUAAAAAN8pJtNjShY2H_XrEePsHe-Ci37c';
+    // req.connection.remoteAddress will provide IP address of connected user.
+    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretKey + '&response=' + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
+    // Hitting GET request to the URL, Google will respond with success or error scenario.
+    request(verificationUrl, function (error, response, body) {
+        body = JSON.parse(body);
+        console.log('er');
+        console.log(error);
+        console.log('body');
+        console.log(body);
+        // Success will be true or false depending upon captcha validation.
+        if (body.success !== undefined && !body.success) {
+            return res.json({'responseCode': 1, 'responseDesc': 'Failed captcha verification'});
+        }
+        res.json({'responseCode': 0, 'responseDesc': 'Sucess'});
     });
-    if (req.method.toLowerCase() === 'put' || req.method.toLowerCase()  === 'post' || req.method.toLowerCase()  === 'patch') {
-        creq.write(JSON.stringify(req.body));
-    }
-    creq.end();
-
 });
 
+
+app.use('/api', proxy(apiUrl, {
+    proxyReqPathResolver: function (req) {
+        return prefix + require('url').parse(req.url).path;
+    },
+    proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        proxyReqOpts.headers['FTEC-REMOTE-USER'] = srcReq.connection.remoteAddress;
+        return proxyReqOpts;
+    }
+}));
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
     maxAge: '1y'
 }));
@@ -127,7 +118,7 @@ app.get('*', (req, res) => {
 
 
 if (apiUrl) {
-    app.listen(PORT, () => {
-        console.log(`Node Express server listening on http://localhost:${PORT}`);
+    app.listen(port, () => {
+        console.log(`Node Express server listening on http://localhost:${port}`);
     });
 }

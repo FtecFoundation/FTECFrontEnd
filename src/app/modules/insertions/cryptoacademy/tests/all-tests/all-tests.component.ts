@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CryptoacademyService} from '../../../../../core/services/cryptoacademy.service';
 import {Test} from '../../../../../core/models/test-cryptoacademy';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-all-tests',
@@ -10,7 +11,7 @@ import {Test} from '../../../../../core/models/test-cryptoacademy';
 export class AllTestsComponent implements OnInit {
     tests: Test[];
 
-    constructor(private _cryptoacademyService: CryptoacademyService) {
+    constructor(private _cryptoacademyService: CryptoacademyService, private router: Router) {
     }
 
     ngOnInit() {
@@ -18,13 +19,22 @@ export class AllTestsComponent implements OnInit {
             this.tests = data;
 
             this._cryptoacademyService.getTestsHistory().subscribe( data1 => {
+                console.log(data1);
+                console.log(this.tests);
                 for (const test of this.tests) {
                     const questions = Object.keys(test.questions);
                     for (const question of questions) {
-                        if (test.questions[test.id + '_' + question]) { console.log(data1); }
+                        if (!data1.tests[test.id + '_' + question]) {
+                            test.lastQuestion = Number.parseInt(question);
+                            break;
+                        }
                     }
                 }
             });
         });
+    }
+
+    goToTest(test: Test) {
+        this.router.navigate(['/modules/cryptoacademy/test', test.id, test.lastQuestion ? test.lastQuestion : 1]);
     }
 }

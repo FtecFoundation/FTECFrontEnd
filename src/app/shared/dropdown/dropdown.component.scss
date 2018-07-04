@@ -1,29 +1,29 @@
 @import "../../../assets/styles/variables";
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;       /* remove default arrow */
-}
-
-select::-ms-expand {
-  display: none; /* hide the default arrow in ie10 and ie11 */
-}
-
-
 
 .container__form-select-block {
   display: flex;
   align-items: center;
+  position: relative;
 
   cursor: pointer;
   font-size: 0.7rem;
   color: rgba(255,255,255, .35);
 }
 
+.form__select-item--active{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .form__select-list {
   z-index: 1;
   top: 100%;
   left: 0;
+  margin-top: 10px;
   width: 100%;
   position: absolute;
 

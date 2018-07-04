@@ -41,12 +41,6 @@ export class DropdownComponent implements OnInit, OnChanges {
     constructor() {}
 
     ngOnInit(): void {
-
-        // if(!this.active && this.items){
-        //     this.active = this.items[0];
-        // }
-
-
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -58,7 +52,6 @@ export class DropdownComponent implements OnInit, OnChanges {
     }
 
     writeValue(value: any): void {
-
         this.active = value;
     }
 
@@ -70,10 +63,11 @@ export class DropdownComponent implements OnInit, OnChanges {
     }
 
 
-    select(value: string): void {
+    select(value: any): void {
         this.active = value;
+        console.log(this.opened);
         this.opened = false;
-
+        console.log(this.opened);
     }
 
     @Input()
