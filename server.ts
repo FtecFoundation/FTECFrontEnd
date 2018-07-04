@@ -20,25 +20,9 @@ enableProdMode();
 // Express server
 const app = express();
 const proxy = require('express-http-proxy');
+const request = require('request');
 
-let apiUrl = '';
-let prefix = '';
-let port = 4200;
-
-process.argv.forEach(function (val, index, array) {
-    if (val.startsWith('--api_url')) {
-        apiUrl = val.substring(val.indexOf('=') + 1);
-        console.log(apiUrl);
-    }
-    if (val.startsWith('--port')) {
-        port = Number.parseInt(val.substring(val.indexOf('=') + 1));
-    }
-    if (val.startsWith('--prefix')) {
-        prefix = val.substring(val.indexOf('=') + 1);
-    }
-});
-
-const PORT = process.env.PORT || port;
+const PORT = process.env.PORT || 80;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -53,7 +37,26 @@ import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
+let apiUrl = '';
+let prefix = '';
+let port = 4200;
+let secretCaptcha = '';
 
+process.argv.forEach(function (val, index, array) {
+    if (val.startsWith('--api_url')) {
+        apiUrl = val.substring(val.indexOf('=') + 1);
+        console.log(apiUrl);
+    }
+    if (val.startsWith('--port')) {
+        port = Number.parseInt(val.substring(val.indexOf('=') + 1));
+    }
+    if (val.startsWith('--prefix')) {
+        prefix = val.substring(val.indexOf('=') + 1);
+    }
+    if (val.startsWith('--secret_captcha')) {
+        secretCaptcha = val.substring(val.indexOf('=') + 1);
+    }
+});
 
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
@@ -65,12 +68,39 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-app.use('/api', proxy(apiUrl, {
-    proxyReqPathResolver: function(req) {
-        return prefix + require('url').parse(req.url).path;
-    }
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({
+    extended: true
 }));
 
+app.use(bodyParser.json());
+
+app.post('/api/submitRecatpcha', function (req, res) {
+    console.log(req.body['g-recaptcha-response']);
+    if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+        return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
+    }
+    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
+    request(verificationUrl, function (error, response, body) {
+        body = JSON.parse(body);
+        if (body.success !== undefined && !body.success) {
+            return res.json({'responseCode': 1, 'responseDesc': 'Failed captcha verification'});
+        }
+        res.json({'responseCode': 0, 'responseDesc': 'Sucess'});
+    });
+});
+
+
+app.use('/api', proxy(apiUrl, {
+    proxyReqPathResolver: function (req) {
+        return prefix + require('url').parse(req.url).path;
+    },
+    proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        proxyReqOpts.headers['FTEC-REMOTE-USER'] = srcReq.connection.remoteAddress;
+        return proxyReqOpts;
+    }
+}));
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
     maxAge: '1y'
 }));
@@ -81,7 +111,7 @@ app.get('*', (req, res) => {
 
 
 if (apiUrl) {
-    app.listen(PORT, () => {
-        console.log(`Node Express server listening on http://localhost:${PORT}`);
+    app.listen(port, () => {
+        console.log(`Node Express server listening on http://localhost:${port}`);
     });
 }
