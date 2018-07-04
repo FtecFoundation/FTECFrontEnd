@@ -38,7 +38,8 @@ import {CryptoacademyService} from './services/cryptoacademy.service';
         SocialService,
         LoaderService,
         LanguageService,
-        CryptoacademyService
+        CryptoacademyService,
+        CaptchaService
     ]
 })
 export class CoreModule {
