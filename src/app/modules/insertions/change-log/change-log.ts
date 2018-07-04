@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+        'date': '04/07/2018',
+        'changes': [
+            'HTML layout of Module of Price Notification page',
+            'The size of Module of Price Notification page was adapted to all screen sizes',
+            'HTML layout of custom range slider',
+            'We finished the implementation of Cryptoacademy tests at frontend. The first test will be available for all users just after the end of testing',
+            'The method, which searches tweets in Social Assistant, check if a tweet is relevant now',
+            'We added method which closes Twitter Stream API before closure of the program to Social Assistant (fix of memory leak on the server)',
+            'The connection of Binance and Bittrex to exchange API was set in Service of Trader\'s Behavioral Analysis',
+            'Now it is possible to verify the validity of API keys from Binance and Bittrex in Service of Trader\'s Behavioral Analysis',
+            'We added a possibility to save closed operations from Binance to the database',
+            'Animation of dropdown lists was added',
+            'We added exceptions handling while script execution in Telegram Assistant'
+        ]
+    },
+    {
         'date': '03/07/2018',
         'changes': [
             'We connected Kraken to the main and Telegram module',
