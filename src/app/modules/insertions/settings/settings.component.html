@@ -11,31 +11,35 @@
 
         <div class="middle__table-container middle__table-container--settings">
 
-          <div class="settings__account">
-            <img src="../../../../assets/images/bot2.png" alt="" class="settings__container-image">
+          <div class="filter__container-inner">
+            <div class="settings__account">
+              <img src="../../../../assets/images/bot2.png" alt="" class="settings__container-image">
 
-            <div class="settings__account-buttons">
-              <input style="display: none" accept="image/*" type="file" #uploader (change)="handleInputChange($event)">
-              <button class="account__buttons-item filter__container-button" (click)="uploader.click()">Change photo</button>
-              <button class="account__buttons-item button__outline" (click)="showModal()">Delete</button>
+              <div class="settings__account-buttons">
+                <input style="display: none" accept="image/*" type="file" #uploader (change)="handleInputChange($event)">
+                <button class="account__buttons-item filter__container-button" (click)="uploader.click()">Change photo</button>
+                <button class="account__buttons-item button__outline" (click)="showModal()">Delete</button>
+              </div>
             </div>
-          </div>
 
-          <div class="filter__container">
-            <span class="container__name">First Name</span>
+            <div class="filter__container-inner">
+              <div class="filter__container">
+                <span class="container__name">First Name</span>
 
-            <div class="container__form">
-              <label class="form__label" for="text"></label>
-              <input class="form__input" id="input-first-name" min="20" placeholder="David" type="text">
+                <div class="container__form">
+                  <label class="form__label" for="text"></label>
+                  <input class="form__input" id="input-first-name" min="20" placeholder="David" type="text">
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="filter__container">
-            <span class="container__name">Last Name</span>
+            <div class="filter__container">
+              <span class="container__name">Last Name</span>
 
-            <div class="container__form">
-              <label class="form__label" for="text"></label>
-              <input class="form__input" id="input-last-name" min="20" placeholder="Harleystorf" type="text">
+              <div class="container__form">
+                <label class="form__label" for="text"></label>
+                <input class="form__input" id="input-last-name" min="20" placeholder="Harleystorf" type="text">
+              </div>
             </div>
           </div>
 
@@ -53,21 +57,24 @@
 
         <div class="middle__table-container middle__table-container--settings">
 
-          <div class="filter__container">
-            <span class="container__name">Current password</span>
+          <div class="filter__container-inner">
 
-            <div class="container__form">
-              <label class="form__label" for="text"></label>
-              <input class="form__input" id="input-current-password" type="password">
+            <div class="filter__container">
+              <span class="container__name">Current password</span>
+
+              <div class="container__form">
+                <label class="form__label" for="text"></label>
+                <input class="form__input" id="input-current-password" type="password">
+              </div>
             </div>
-          </div>
 
-          <div class="filter__container">
-            <span class="container__name">Password</span>
+            <div class="filter__container">
+              <span class="container__name">Password</span>
 
-            <div class="container__form">
-              <label class="form__label" for="text"></label>
-              <input class="form__input" id="input-new-password" type="password">
+              <div class="container__form">
+                <label class="form__label" for="text"></label>
+                <input class="form__input" id="input-new-password" type="password">
+              </div>
             </div>
           </div>
 
@@ -94,13 +101,16 @@
 
         <div class="middle__table-container middle__table-container--settings">
 
-          <div class="settings__container-qr">
-            <img src="../../../../assets/images/qrcode.png" alt="">
+          <div class="filter__container-inner">
 
-            <h5>Connect Google authenticator</h5>
+            <div class="settings__container-qr">
+              <img src="../../../../assets/images/qrcode.png" alt="">
 
-            <span>Don't forget to backup your secret key: ZVEB2UOE2VWACK4DTBICTOJ5
-            </span>
+              <h5>Connect Google authenticator</h5>
+
+              <span>Don't forget to backup your secret key: ZVEB2UOE2VWACK4DTBICTOJ5
+              </span>
+            </div>
           </div>
 
           <div class="filter__container filter__container--settings">

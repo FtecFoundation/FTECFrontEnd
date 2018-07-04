@@ -1,10 +1,13 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {AccountService} from '../../core/services/account.service';
 import {RegistrationValidators} from './registration.validators';
 import {RegistrationData} from '../../core/models/user';
 import {Router} from '@angular/router';
 import {LanguageService} from '../../core/services/language.service';
+import {InvisibleReCaptchaComponent} from 'ngx-captcha';
+import {HttpClient} from '@angular/common/http';
+import {CaptchaService} from '../../core/services/captcha.service';
 
 @Component({
     selector: 'app-registration',
@@ -17,14 +20,15 @@ import {LanguageService} from '../../core/services/language.service';
 
 })
 export class RegistrationComponent implements OnInit {
-
     registrationForm: FormGroup;
     submitted = false;
 
     constructor(private _accountService: AccountService,
                 private formBuilder: FormBuilder,
                 private router: Router,
-                private _languageService: LanguageService) {
+                private _languageService: LanguageService,
+                private cdr: ChangeDetectorRef,
+                private _captchaService: CaptchaService) {
     }
 
     ngOnInit() {
@@ -43,16 +47,19 @@ export class RegistrationComponent implements OnInit {
             terms: [false, Validators.requiredTrue],
             subscribeForEmail: [false]
         });
-        this.registrationForm = new FormGroup(this.registrationForm.controls, { updateOn: 'blur' });
+        this.registrationForm = new FormGroup(this.registrationForm.controls, {updateOn: 'blur'});
     }
 
-    submitForm() {
+    submitForm(captchaResponse: string, captcha: any) {
         this.submitted = true;
-        if (this.registrationForm.valid) {
-            this._accountService.registerUser(this.prepareData()).subscribe(() => {
-                this.router.navigate(['/modules']);
-            });
-        }
+        this._captchaService.submitCaptcha({'g-recaptcha-response': captchaResponse}).subscribe(data => {
+            if (this.registrationForm.valid && data.responseCode === 0) {
+                this._accountService.registerUser(this.prepareData()).subscribe(() => {
+                    this.router.navigate(['/modules']);
+                });
+            }
+            captcha.reset();
+        });
     }
 
     prepareData(): RegistrationData {
@@ -64,17 +71,32 @@ export class RegistrationComponent implements OnInit {
         console.log(field.value);
     }
 
-    get username() { return this.registrationForm.get('username'); }
 
-    get email() { return this.registrationForm.get('email'); }
+    get username() {
+        return this.registrationForm.get('username');
+    }
 
-    get terms() { return this.registrationForm.get('terms'); }
+    get email() {
+        return this.registrationForm.get('email');
+    }
 
-    get password() { return this.registrationForm.get('passwordGroup').get('password'); }
+    get terms() {
+        return this.registrationForm.get('terms');
+    }
 
-    get passwordGroup() { return this.registrationForm.get('passwordGroup'); }
+    get password() {
+        return this.registrationForm.get('passwordGroup').get('password');
+    }
 
-    get confirmPassword() { return this.registrationForm.get('passwordGroup').get('confirmPassword'); }
+    get passwordGroup() {
+        return this.registrationForm.get('passwordGroup');
+    }
 
-    get subscribeForEmail() { return this.registrationForm.get('subscribeForEmail'); }
+    get confirmPassword() {
+        return this.registrationForm.get('passwordGroup').get('confirmPassword');
+    }
+
+    get subscribeForEmail() {
+        return this.registrationForm.get('subscribeForEmail');
+    }
 }
