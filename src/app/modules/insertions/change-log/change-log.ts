@@ -4,7 +4,14 @@ export const changeLog = [
         'changes': [
             'We connected Kraken to the main and Telegram module',
             'We connected Binance API to Service of Trader\'s Behavioral Analysis',
-            'Testing of connection to Binance API'
+            'Testing of connection to Binance API',
+            'We added Google ReCaptcha to prevent spam while registration of a new user',
+            'Basic functions to pass test were implemented at frontend',
+            'To prevent a large number of requests from one IP address, we added fixation and sending of IP appliance from which requests are made to backend, where we will add data processing and score of users with suspicious activity',
+            'The speed of arbitrage window search was increased trough cashing',
+            'Telegram Assistant was transferred to a separate module',
+            'We began the integration between Telegram Assistant and other modules',
+            'Animation of dropdown lists was added'
         ]
     },
     {
