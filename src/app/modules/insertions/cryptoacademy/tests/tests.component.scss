@@ -28,3 +28,28 @@
   background-color: #66cc33;
   border-top-left-radius: .313rem;
 }
+
+.middle--complete {
+  padding: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  border-radius: .313rem;
+  background-image: $violet-gradient-aside;
+}
+
+.middle--complete h2 {
+  color: $accent;
+  margin-bottom: .938em;
+}
+
+.middle--complete h4 {
+  font-weight: 100;
+}
+
+.middle--complete svg {
+  margin: 2.5em 0;
+}
