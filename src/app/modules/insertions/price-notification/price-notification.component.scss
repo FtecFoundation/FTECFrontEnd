@@ -1,95 +1,42 @@
 @import "../../../../assets/styles/variables";
 
-.container__middle--my-exchanges {
-  width: 100%;
-}
-
-.middle__head--my-exchanges {
-  padding: 1rem;
-}
-
-.filter__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.price__small-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.filter__container--my-exchanges {
+.small-container__line--price {
   width: 50%;
-  padding: .313rem;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
-.filter__container-link {
-  color: $accent;
-  font-size: .938rem;
-  text-decoration: underline;
-}
-
-select {
-  -webkit-appearance: none; 
-  -moz-appearance: none;
-  appearance: none;       /* remove default arrow */
-} 
-
-select::-ms-expand { 
-  display: none; /* hide the default arrow in ie10 and ie11 */
-}
-
-.container__form--select {
-  position: relative;
-  border-radius: 1.250rem;
-}
-
-.container__form-select-block {
+.price__small-container-value {
+  width: 50%;
   display: flex;
-  align-items: center;
-
-  cursor: pointer;
-  font-size: 0.7rem;
-  color: rgba(255,255,255, .35);
-  border-bottom-right-radius: 28px;
-  border-bottom-left-radius: 28px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-.form__select-list {
-  z-index: 1;
+.price__small-container-connected {
   width: 100%;
-  position: absolute;
-  
-  font-size: .7rem;
-  color: rgba(255,255,255, .35);
-  background: $dark-blue;
-  display: none;
-
-  border-bottom-right-radius: 28px;
-  border-bottom-left-radius: 28px;
-
 }
 
-.container__form--select.is-active,
-.container__form--select.is-active .container__form-select-block {
-  border-radius: 20px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+.container__wrapper--price {
+  margin-top: .625em;
+  margin-bottom: 0;
+  padding: 0;
+  justify-content: flex-start;
 }
 
-.container__form--select.is-active .form__select-list {
-  display: block;
+.container__link--price,
+.form__info-checkmark--price {
+  width: 24px;
+  height: 24px;
+  margin-right: .313em;
 }
 
-.form__select-list-item {
-  display: block;
-  padding: .938rem;
-  cursor: pointer;
-
-  transition: background .3s ease;
-}
-
-.form__select-list-item:hover {
-  background-color: $light-blue;
-}
-
-.form__select-list-item:last-child{
-  border-bottom-right-radius: 28px;
-  border-bottom-left-radius: 28px;
+.filter__container--price {
+  margin: 0;
+  padding: 0;
 }

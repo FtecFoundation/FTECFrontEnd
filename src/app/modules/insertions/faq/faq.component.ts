@@ -18,6 +18,14 @@ export class FaqComponent implements OnInit {
   }
 
   answer(faq: any) {
+    for (const a of this.faqsLeft) {
+      if (a !== faq) { a.chosen = false; }
+    }
+
+    for (const a of this.faqsRight) {
+      if (a !== faq) { a.chosen = false; }
+    }
+
     faq.chosen = !faq.chosen;
   }
 
