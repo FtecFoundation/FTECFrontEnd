@@ -12,7 +12,7 @@
                 </ul>
 
                 <div class="crypto__tab-wrapper" *ngIf="tests">
-                    <div class="crypto__tab-container" *ngFor="let test of tests">
+                    <div class="crypto__tab-container" *ngFor="let test of tests" [routerLink]="['test', {testId: test.id, questionId: test.lastQuestion}]">
                         <img [src]="test.image" alt="">
 
                         <span class="test-progress">13/20</span>
@@ -24,7 +24,7 @@
 
                             <p class="crypto__info-text">{{test.description}}</p>
 
-                            <a [routerLink]="['test', {testId: test.id, questionId: test.lastQuestion}]" class="filter__container-button button--crypto">Begin</a>
+                            <a href="javascript:void(0)" class="filter__container-button button--crypto">Begin</a>
                         </div>
                     </div>
                 </div>

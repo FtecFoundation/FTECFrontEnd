@@ -165,8 +165,12 @@
     height: 300px !important;
   }
 
-  .container__middle {
+  .container__middle--dashboard {
     max-height: 700px;
+  }
+
+  .wrapper__main {
+    height: initial !important;
   }
 
   .change-log,
@@ -317,7 +321,8 @@
   }
 
   .crypto__tab-wrapper,
-  .crypto__tab-controls {
+  .crypto__tab-controls,
+  .middle__table-line {
     display: flex !important;
     flex-wrap: wrap;
   }
@@ -351,7 +356,17 @@
     left: 0 !important;
   }
 
-  
+  .middle--telegram-enable {
+    padding-left: 1.250em !important;
+  }
+
+  .tab-controls {
+    flex-wrap: wrap;
+  }
+
+  .crypto__tab-wrapper {
+    margin-right: initial !important;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -359,7 +374,8 @@
   .middle__table-container--right,
   .crypto__tab-controls-item,
   .crypto__tab-container,
-  .tab-controls-item {
+  .tab-controls-item,
+  .middle__table--telegram {
     width: 100% !important;
   }
 
@@ -378,6 +394,19 @@
   .item-inner-line--support span:last-child {
     width: 100%;
     text-align: right !important;
+  }
+
+  .middle__table--telegram {
+    margin-right: 0 !important;
+    margin-bottom: .625em;
+  }
+
+  .middle--telegram {
+    flex-wrap: wrap;
+  }
+
+  .tab-controls-item {
+    border-radius: initial !important;
   }
   
 }
