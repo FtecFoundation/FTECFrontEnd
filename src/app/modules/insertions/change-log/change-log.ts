@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+        'date': '05/07/2018',
+        'changes': [
+            'We added search of the nearest candle for each deal in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'We added method which takes the best price of all available, depending on operation type in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'In Module of Trader\'s Behavioral Analysis, method, which calculate the percentage of user\'s profit of the best price depending on operation type, was added (for Binance)',
+            'We added controller which returns a list of closed deals of users in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'We added controller which returns a list of recommendations for users, depending on operation type in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'HTML layout of Exchange Order Management Module page',
+            'Exchange Order Management Module was adapted to all screen sizes',
+            'HTML layout of Global Price Analyzer page',
+            'Global Price Analyzer page was adapted to all screen sizes',
+            'We added the possibility to work with Adaptive Social Assistant in Telegram Assistant',
+            'The possibility for user to connect Telegram Assistant was implemented at backend'
+        ]
+    },
+    {
         'date': '04/07/2018',
         'changes': [
             'HTML layout of Module of Price Notification page',
