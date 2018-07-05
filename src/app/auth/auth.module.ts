@@ -8,7 +8,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import {OnlyNotAuthorizedGuard} from '../core/guards/only-not-authorized.guard';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import {SetNewPasswordComponent} from './forgot-password/set-new-password.component';
-import {NgxCaptchaModule} from 'ngx-captcha';
 import {RecaptchaModule} from 'ng-recaptcha';
 
 @NgModule({
