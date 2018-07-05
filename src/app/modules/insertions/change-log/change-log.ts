@@ -1,5 +1,73 @@
 export const changeLog = [
     {
+        'date': '05/07/2018',
+        'changes': [
+            'We added search of the nearest candle for each deal in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'We added method which takes the best price of all available, depending on operation type in Module ' +
+            'of Trader\'s Behavioral Analysis (for Binance)',
+            'In Module of Trader\'s Behavioral Analysis, method, which calculate the percentage of user\'s profit ' +
+            'of the best price depending on operation type, was added (for Binance)',
+            'We added controller which returns a list of closed deals of users in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'We added controller which returns a list of recommendations for users, depending on operation type ' +
+            'in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'HTML layout of Exchange Order Management Module page',
+            'Exchange Order Management Module was adapted to all screen sizes',
+            'HTML layout of Global Price Analyzer page',
+            'Global Price Analyzer page was adapted to all screen sizes',
+            'We added the possibility to work with Adaptive Social Assistant in Telegram Assistant',
+            'The possibility for user to connect Telegram Assistant was implemented at backend'
+        ]
+    },
+    {
+        'date': '04/07/2018',
+        'changes': [
+            'HTML layout of Module of Price Notification page',
+            'The size of Module of Price Notification page was adapted to all screen sizes',
+            'HTML layout of custom range slider',
+            'We finished the implementation of Cryptoacademy tests at frontend. The first tes' +
+            't will be available for all users just after the end of testing',
+            'The method, which searches tweets in Social Assistant, check if a tweet is relevant now',
+            'We added method which closes Twitter Stream API before closure of the program to Social ' +
+            'Assistant (fix of memory leak on the server)',
+            'The connection of Binance and Bittrex to exchange API was set in Service of Trader\'s Behavioral Analysis',
+            'Now it is possible to verify the validity of API keys from Binance and Bittrex in Service of Trader\'s Behavioral Analysis',
+            'We added a possibility to save closed operations from Binance to the database',
+            'Animation of dropdown lists was added',
+            'We added exceptions handling while script execution in Telegram Assistant'
+        ]
+    },
+    {
+        'date': '03/07/2018',
+        'changes': [
+            'We connected Kraken to the main and Telegram module',
+            'We connected Binance API to Service of Trader\'s Behavioral Analysis',
+            'Testing of connection to Binance API',
+            'We added Google ReCaptcha to prevent spam while registration of a new user',
+            'Basic functions to pass test were implemented at frontend',
+            'To prevent a large number of requests from one IP address, we added fixation and sending of ' +
+            'IP appliance from which requests are made to backend, where we will add data processing and score ' +
+            'of users with suspicious activity',
+            'The speed of arbitrage window search was increased through cashing',
+            'Telegram Assistant was transferred to a separate module',
+            'We began the integration between Telegram Assistant and other modules',
+            'Animation of dropdown lists was added'
+        ]
+    },
+    {
+        'date': '02/07/2018',
+        'changes': [
+            'We analyzed different exchanges for the feasibility of their connection',
+            'BitStamp was connected to the main and Telegram modules',
+            'HuobiCom was connected to the main and Telegram modules',
+            'HTML layout of Telegram Assistant page',
+            'Adapting Telegram Assistant pages to different screen sizes',
+            'HTML layout of Module of Trader\'s Behavioral Analysis page',
+            'Adapting Module of Trader\'s Behavioral Analysis page to different screen sizes',
+            'We added the possibility to save the list of followers in CVS file',
+            'We began the work on Module of Trader\'s Behavioral Analysis'
+        ]
+    },
+    {
         'date': '29/06/2018',
         'changes': [
             'We connected HitBTC to Arbitrage Module',

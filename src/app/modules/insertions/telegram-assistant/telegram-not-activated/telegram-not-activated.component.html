@@ -1,0 +1,30 @@
+<div class="main-info main-info--telegram">
+
+  <div class="middle middle--telegram-enable">
+
+    <h3 class="telegram-enable__title">To enable telegram assistant use one of the following methods:</h3>
+
+    <p>1. Go to an application and find a bot. You can use @FTEC_Telegram_bot to find it. In chat window with bot send /start
+      as first message.</p>
+
+    <p>2. Follow the link and press 'Start'. Link: http://t.me/FTEC_Telegram_bot</p>
+
+    <p>3. Scan the following QR code. It will redirect you to the chat with bot where you need to press 'Start'</p>
+
+    <p>4. After the previous steps are completed, press the button 'Enable Assistant' to get your access code.</p>
+
+    <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
+
+    <button class="filter__container-button" (click)="enable()">Enable Assistant</button>
+  </div>
+
+  <div class="aside-right" *ngIf="accessCode">
+    <div class="aside-right__filter">
+      <h5>
+        Your access code
+      </h5>
+      <p>Use it to activate bot in Telegram</p>
+      <div class="telegram__access-code">{{accessCode}}</div>
+    </div>
+  </div>
+</div>
