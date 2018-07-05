@@ -25,7 +25,8 @@
     padding-left: 0.938rem;
   }
 
-  .header__info-user {
+  .header__info-user,
+  .price__small-container-value {
     width: 100% !important;
   }
 
@@ -99,6 +100,7 @@
   .middle--test {
     width: 160% !important;
   }
+
 }
 
 @media only screen and (min-width: 800px) {
