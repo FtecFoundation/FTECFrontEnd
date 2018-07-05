@@ -15,7 +15,6 @@ export class QuestionComponent implements OnInit, OnChanges {
     @Input() history: TestHistory;
 
     question: Question;
-    answered: boolean;
     selected: number;
     response: any;
 
@@ -25,19 +24,20 @@ export class QuestionComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-        this.question = this.test.questions[this.questionId];
-        if (this.checkIfAnswered()) {
-            this.response = this.history.tests[this.test.id + '_' + this.questionId];
-            this.selected = this.response.selectedAnswer;
-            console.log(this.response);
-        } else {
-            this.response = null;
-        }
+        this.initializeQuestion();
     }
 
     ngOnChanges() {
+        this.initializeQuestion();
+    }
+
+    initializeQuestion() {
         this.question = this.test.questions[this.questionId];
-        console.log(this.checkIfAnswered());
+        if (this.checkIfAnswered()) {
+            this.response = this._testStatusService.history.tests[this.test.id + '_' + this.questionId];
+        } else {
+            this.response = null;
+        }
     }
 
     chooseAnswer(answerId: number) {
@@ -51,12 +51,15 @@ export class QuestionComponent implements OnInit, OnChanges {
                 } else {
                     this._testStatusService.mistakes++;
                 }
+
+                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
+                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnswer = this.selected;
             });
         }
     }
 
     checkIfAnswered(): boolean {
-        return this.history.tests[this.test.id + '_' + this.questionId];
+        return !!this.history.tests[this.test.id + '_' + this.questionId];
     }
 
     prepareData() {
@@ -65,6 +68,7 @@ export class QuestionComponent implements OnInit, OnChanges {
 
     goToNext() {
         this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
+        this._testStatusService.passed++;
     }
 
 }

@@ -16,4 +16,20 @@ export const availableExchanges = [
         'exchange': 'YObitNet',
         'chosen': false
     },
+    {
+        'exchange': 'Hitbtc',
+        'chosen': false
+    },
+    {
+        'exchange': 'HuobiCom',
+        'chosen': false
+    },
+    {
+        'exchange': 'Kraken',
+        'chosen': false
+    },
+    {
+        'exchange': 'BitStamp',
+        'chosen': false
+    }
 ];

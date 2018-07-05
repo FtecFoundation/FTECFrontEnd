@@ -5,7 +5,7 @@
         <div class="test__status-lines">
             <span>Questions:</span>
 
-            <span class="test__status-lines-score">{{_testStatusService.passed + 1}}/{{_testStatusService.total}}</span>
+            <span class="test__status-lines-score">{{questionId}}/{{_testStatusService.total}}</span>
         </div>
 
         <div class="test__status-lines">
@@ -25,7 +25,9 @@
             <span>Test progress:</span>
 
             <div class="test__status-progress-item">
-                <span class="status__progress-width" [ngStyle]="{'width': percentPassed + '%'}">{{percentPassed | number:'0.0-1'}}%</span>
+                <span class="status__progress-width" [ngStyle]="{'width': this._testStatusService.passed * 100 / this._testStatusService.total + '%'}">
+                    {{this._testStatusService.passed * 100 / this._testStatusService.total | number:'0.0-1'}}%
+                </span>
             </div>
         </div>
 

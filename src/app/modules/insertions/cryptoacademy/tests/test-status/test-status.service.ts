@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {TestHistory} from '../../../../../core/models/test-cryptoacademy';
 
 @Injectable()
 export class TestStatusService {
@@ -6,6 +7,7 @@ export class TestStatusService {
     total = 0;
     correct = 0;
     mistakes = 0;
+    history: TestHistory;
 
     constructor() {
     }

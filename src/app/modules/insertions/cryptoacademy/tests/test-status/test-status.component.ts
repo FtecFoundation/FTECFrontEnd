@@ -13,24 +13,26 @@ export class TestStatusComponent implements OnInit {
     @Input() history: TestHistory;
     @Input() questionId: string;
 
-    percentPassed: number;
-
     constructor(public _testStatusService: TestStatusService) {
     }
 
     ngOnInit() {
         this._testStatusService.total = Object.keys(this.test.questions).length;
         this._testStatusService.passed = Object.keys(this.history.tests).length;
-        this.percentPassed = this._testStatusService.passed * 100 / this._testStatusService.total;
-
         this.getCorrectAndMistakesAmount();
+    }
+
+    checkIfAnswered(): boolean {
+        return !!this.history.tests[this.test.id + '_' + this.questionId];
     }
 
     getCorrectAndMistakesAmount() {
         for (const answer of Object.keys(this.history.tests)) {
             if (this.history.tests[answer].selectedAnswer === this.history.tests[answer].correctAnswer) {
                 this._testStatusService.correct++;
-            } else { this._testStatusService.mistakes++; }
+            } else {
+                this._testStatusService.mistakes++;
+            }
         }
     }
 
