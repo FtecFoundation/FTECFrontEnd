@@ -3,10 +3,13 @@ export const changeLog = [
         'date': '05/07/2018',
         'changes': [
             'We added search of the nearest candle for each deal in Module of Trader\'s Behavioral Analysis (for Binance)',
-            'We added method which takes the best price of all available, depending on operation type in Module of Trader\'s Behavioral Analysis (for Binance)',
-            'In Module of Trader\'s Behavioral Analysis, method, which calculate the percentage of user\'s profit of the best price depending on operation type, was added (for Binance)',
+            'We added method which takes the best price of all available, depending on operation type in Module ' +
+            'of Trader\'s Behavioral Analysis (for Binance)',
+            'In Module of Trader\'s Behavioral Analysis, method, which calculate the percentage of user\'s profit ' +
+            'of the best price depending on operation type, was added (for Binance)',
             'We added controller which returns a list of closed deals of users in Module of Trader\'s Behavioral Analysis (for Binance)',
-            'We added controller which returns a list of recommendations for users, depending on operation type in Module of Trader\'s Behavioral Analysis (for Binance)',
+            'We added controller which returns a list of recommendations for users, depending on operation type ' +
+            'in Module of Trader\'s Behavioral Analysis (for Binance)',
             'HTML layout of Exchange Order Management Module page',
             'Exchange Order Management Module was adapted to all screen sizes',
             'HTML layout of Global Price Analyzer page',
@@ -21,9 +24,11 @@ export const changeLog = [
             'HTML layout of Module of Price Notification page',
             'The size of Module of Price Notification page was adapted to all screen sizes',
             'HTML layout of custom range slider',
-            'We finished the implementation of Cryptoacademy tests at frontend. The first test will be available for all users just after the end of testing',
+            'We finished the implementation of Cryptoacademy tests at frontend. The first tes' +
+            't will be available for all users just after the end of testing',
             'The method, which searches tweets in Social Assistant, check if a tweet is relevant now',
-            'We added method which closes Twitter Stream API before closure of the program to Social Assistant (fix of memory leak on the server)',
+            'We added method which closes Twitter Stream API before closure of the program to Social ' +
+            'Assistant (fix of memory leak on the server)',
             'The connection of Binance and Bittrex to exchange API was set in Service of Trader\'s Behavioral Analysis',
             'Now it is possible to verify the validity of API keys from Binance and Bittrex in Service of Trader\'s Behavioral Analysis',
             'We added a possibility to save closed operations from Binance to the database',

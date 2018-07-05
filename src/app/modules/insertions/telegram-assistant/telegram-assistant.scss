@@ -66,11 +66,37 @@
   opacity: 1;
 }
 
-.middle--telegram-enable img {
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  position: relative;
+.aside-right__filter p {
+  margin-top: 10px;
+}
 
-  transform: translateX(-50%);
+.aside-right {
+  margin-bottom: 20px;
+}
+
+.telegram__access-code {
+  margin: auto;
+  margin-top: 30px;
+  font-size: 3rem;
+  text-align: center;
+  border: 1px solid #25cbd3;
+  padding: .313rem;
+  padding-left: .938rem;
+  padding-right: .938rem;
+  border-radius: .313rem;
+  max-width: 74%;
+}
+
+/deep/ {
+
+  .middle--telegram-enable qrcode img{
+    margin-bottom: 1.250em;
+    left: 50%;
+    border: 5px solid #fff;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    transform: translateX(-50%);
+  }
 }
