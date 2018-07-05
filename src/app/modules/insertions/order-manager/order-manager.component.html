@@ -1,32 +1,118 @@
-<div class="main-info main-info__empty">
+<div class="main-info main-info--price">
 
-  <div class="middle middle--empty middle--empty-frame">
+  <div class="middle middle--price">
 
-    <div class="middle--empty-frame">
+    <div class="aside-right__head aside-right__head--arbitrage">Active orders</div>
 
-      <iframe width="800" height="450" src="https://www.youtube.com/embed/2OiELJEx-Ww" frameborder="0" allow="autoplay; encrypted-media"
-        allowfullscreen></iframe>
+    <div class="middle__block middle__block--price">
 
-      <div class="text-block">
-        <h3 class="title-block">Exchange Order Management Module</h3>
-        <p>
-          A very widespread and relevant problem of many cryptocurrency exchanges is the absence of the possibility to set Take-Profits
-          and Stop-Losses at the same time. We are developing a module that will help to define the levels of Take-Profits
-          and Stop-Losses, and also maximize profit from long-term trends.</p>
+      <div class="behavioral__small-container-inner" *ngFor="let item of order">
+        <div class="order__small-container">
+          <div class="small-container__line small-container__line--price">
+            <h2>{{item.pair}}</h2>
+
+            <span class="text-small">{{item.exchange}}</span>
+          </div>
+
+          <div class="price__small-container-value order__small-container-value">
+            <span class="small-container__line-link small-container__line-link--order">{{item.type}}</span>
+
+            <span>{{item.profit}}</span>
+          </div>
+
+          <button class="filter__container-button filter__container-button--behavioral">Edit</button>
+        </div>
       </div>
 
     </div>
-
   </div>
 
-  <div class="middle middle--empty middle--empty-bottom">
-    <h5 class="middle__empty-title">Page is under construction</h5>
-
-    <div class="middle__empty-buttons">
-      <a href="https://ftec.io/" class="button button--empty">Main page</a>
-
-      <a [routerLink]="'/modules/dashboard'" class="button button--empty">Dashboard</a>
+  <div class="aside-right">
+    <div class="aside-right__head aside-right__head--arbitrage">
+      <h5>
+        Set new notifications
+      </h5>
     </div>
+
+    <form action="" class="aside-right__filter">
+
+      <div class="filter__container">
+
+        <div class="order__type-container">
+          <span>Stop-loss</span>
+
+          <span>Take-profit</span>
+        </div>
+
+      </div>
+
+      <div class="filter__container">
+        <span class="container__name">Currenies Pair</span>
+        <div class="filter__container--price">
+
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+          </div>
+
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="filter__container">
+        <span class="container__name">Exchages</span>
+
+        <div class="container__form container__form--select is-active">
+          <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+        </div>
+
+      </div>
+
+
+      <div class="filter__container">
+        <span class="container__name">Current price</span>
+
+        <div class="container__form">
+          <span class="form__input form__input-locked">$763.90</span>
+        </div>
+
+      </div>
+
+
+      <div class="filter__container">
+        <span class="container__name">Amount to sell</span>
+
+        <div class="container__form">
+          <label for="" class="form__label"></label>
+          <input type="number" class="form__input" placeholder="13ETH">
+        </div>
+
+      </div>
+
+      <div class="filter__container">
+        <span class="container__name">Price</span>
+
+        <div class="container__form">
+          <label for="" class="form__label"></label>
+          <input type="number" class="form__input" placeholder="$840">
+        </div>
+
+      </div>
+
+      <div class="filter__container">
+
+        <div class="container__form container__form--range">
+          <span>50%</span>
+          <input type="range" min-value="-100%" max-value="100%">
+        </div>
+
+      </div>
+
+      <button class="filter__container-button">Add order</button>
+    </form>
+
   </div>
 
 </div>

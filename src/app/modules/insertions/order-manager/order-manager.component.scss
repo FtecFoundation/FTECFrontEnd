@@ -1,0 +1,36 @@
+@import "../../../../assets/styles/variables";
+
+.order__small-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0px -.625em;
+  padding: .938em;
+  border-radius: 0.813rem;
+  background-image: $violet-gradient-aside;
+}
+
+.order__small-container-value {
+  flex-direction: column;
+}
+
+.small-container__line-link--order {
+  font-size: 0.838em;
+  font-weight: 700;
+}
+
+.form__input-locked {
+  font-size: 0.738em;
+  display: block;
+  background-color: $light-violete;
+  border: 1px solid $light-violete;
+}
+
+.order__type-container {
+  display: flex;
+}
+
+.order__type-container span {
+  width: 50%;
+  display: block;
+}
