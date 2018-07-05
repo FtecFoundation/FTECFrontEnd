@@ -7,7 +7,8 @@ import {map} from 'rxjs/operators/map';
 
 const TelegramUrls = {
     getTelegramData: 'modules/telegram/getTelegramData',
-    getHash: 'modules/telegram/getHash'
+    getHash: 'modules/telegram/getHash',
+    getBotDomain: 'getBotDomain'
 };
 
 @Injectable()
@@ -22,6 +23,12 @@ export class TelegramAssistantService extends RestService {
     getHash(): Observable<string> {
         return this.get(TelegramUrls.getHash).pipe(
             map(resp => resp.response.hash),
+            catchError(e => this.handleError(e)));
+    }
+
+    getBotDomain(): Observable<string> {
+        return this.get(TelegramUrls.getBotDomain).pipe(
+            map(resp => resp.botDomain),
             catchError(e => this.handleError(e)));
     }
 

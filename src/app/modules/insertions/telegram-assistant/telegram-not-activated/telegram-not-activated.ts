@@ -7,13 +7,18 @@ import {TelegramAssistantService} from '../telegram-assistant.service';
     styleUrls: ['../../insertions.scss', '../telegram-assistant.scss']
 })
 export class TelegramNotActivatedComponent implements OnInit {
-    qrUrl = 'tg://resolve?domain=FTEC_Telegram_bot';
+    qrUrl = 'tg://resolve?domain=';
+    botDomain: string = '';
     accessCode: string;
 
     constructor(private _telegramService: TelegramAssistantService) {
     }
 
     ngOnInit() {
+        this._telegramService.getBotDomain().subscribe(data => {
+            this.qrUrl += data;
+            this.botDomain = data;
+        });
     }
 
     enable() {
