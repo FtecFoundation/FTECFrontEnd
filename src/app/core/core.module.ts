@@ -18,7 +18,6 @@ import {LanguageService} from './services/language.service';
 import {CryptoacademyService} from './services/cryptoacademy.service';
 import {CaptchaService} from './services/captcha.service';
 
-
 @NgModule({
     imports: [
         CommonModule,

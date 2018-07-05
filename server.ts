@@ -41,6 +41,7 @@ let apiUrl = '';
 let prefix = '';
 let port = 4200;
 let secretCaptcha = '';
+let botDomain = 'FTEC_test_bot';
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--api_url')) {
@@ -55,6 +56,9 @@ process.argv.forEach(function (val, index, array) {
     }
     if (val.startsWith('--secret_captcha')) {
         secretCaptcha = val.substring(val.indexOf('=') + 1);
+    }
+    if (val.startsWith('--bot_domain')) {
+        botDomain = val.substring(val.indexOf('=') + 1);
     }
 });
 
@@ -75,6 +79,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
+
+app.get('/api/getBotDomain', function (req, res) {
+        res.json({'botDomain': botDomain});
+});
+
 
 app.post('/api/submitRecatpcha', function (req, res) {
     console.log(req.body['g-recaptcha-response']);

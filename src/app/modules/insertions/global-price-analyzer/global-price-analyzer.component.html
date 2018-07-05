@@ -1,31 +1,50 @@
-<div class="main-info main-info__empty">
+<div class="main-info main-info--price">
 
-  <div class="middle middle--empty middle--empty-frame">
+  <div class="middle middle--price">
 
-    <div class="middle--empty-frame">
+    <div class="aside-right__head aside-right__head--arbitrage">Active orders</div>
 
-      <iframe width="800" height="450" src="https://www.youtube.com/embed/mxjKC6DL1Mo" frameborder="0" allow="autoplay; encrypted-media"
-        allowfullscreen></iframe>
-      <div class="text-block">
+    <div class="middle__block middle__block--price">
 
-        <h3 class="title-block">Global Price Analyzer</h3>
-        <p>
-          One of the functions of an ecosystem, available to users, will be the global analyzer of cryptocurrency exchanges aimed to
-          find the most profitable offers for buying or selling.</p>
+      <div class="behavioral__small-container-inner" *ngFor="let item of price">
+        <div class="order__small-container global__small-container">
+
+          <div class="price__small-container-value global__small-container-value">
+            <h3>{{item.exchange}}</h3>
+
+            <span class="small-container__line-link">{{item.value}}</span>
+          </div>
+
+          <button class="filter__container-button filter__container-button--behavioral">Edit</button>
+        </div>
       </div>
 
     </div>
-
   </div>
 
-  <div class="middle middle--empty middle--empty-bottom">
-    <h5 class="middle__empty-title">Page is under construction</h5>
+  <div class="aside-right">
+    <div class="aside-right__head aside-right__head--global">
+      <h5>
 
-    <div class="middle__empty-buttons">
-      <a href="https://ftec.io/" class="button button--empty">Main page</a>
-
-      <a [routerLink]="'/modules/dashboard'" class="button button--empty">Dashboard</a>
+      </h5>
     </div>
+
+    <form action="" class="aside-right__filter">
+
+      <div class="filter__container">
+        <span class="container__name">Pair of cryptocurrencies</span>
+        <div class="filter__container--price filter__container--global">
+
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="filter__container-button">Search</button>
+    </form>
+
   </div>
 
 </div>

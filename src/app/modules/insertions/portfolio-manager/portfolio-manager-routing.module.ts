@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TelegramAssistantComponent} from '../telegram-assistant/telegram-assistant.component';
 import {RouterModule} from '@angular/router';
 import {PortfolioManagerComponent} from './portfolio-manager.component';
 

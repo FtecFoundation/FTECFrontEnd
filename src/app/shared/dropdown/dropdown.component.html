@@ -1,0 +1,9 @@
+<div class="container__form-select-block form__input" (click)="opened = !opened" >
+    <span class="form__select-item">{{ active? active: label }}</span>
+    
+    <div class="form__select-list" *ngIf="opened">
+        <span class="form__select-list-item" *ngFor="let item of items"
+              (click)="select(item)"
+              [hidden]="item===active">{{item.exchange}}</span>
+    </div>
+</div>
