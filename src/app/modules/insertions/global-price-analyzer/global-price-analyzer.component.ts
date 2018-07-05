@@ -10,6 +10,7 @@ import { globalPriceAnalyzer } from './global-price-analyzer';
 export class GlobalPriceAnalyzerComponent implements OnInit {
 
   price = globalPriceAnalyzer;
+  pairs = ['BTC/ETH', 'BTC/XRP', 'BTC/LTC'];
 
   constructor() {
   }
