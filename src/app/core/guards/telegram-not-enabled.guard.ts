@@ -11,11 +11,11 @@ export class TelegramNotEnabledGuard implements CanActivate {
 
     canActivate() {
         this._telegramService.getTelegramData().subscribe(data => {
-            if (data === null) {
+            this.router.navigate(['/modules/telegram-assistant/settings']);
+            return false;
+        }, error1 => {
+            if (error1.status === 401) {
                 return true;
-            } else {
-                this.router.navigate(['/modules/telegram-assistant/settings']);
-                return false;
             }
         });
         return true;

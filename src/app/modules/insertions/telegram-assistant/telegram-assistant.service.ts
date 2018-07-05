@@ -13,7 +13,7 @@ const TelegramUrls = {
 @Injectable()
 export class TelegramAssistantService extends RestService {
 
-    getTelegramData(): Observable<TelegramData> {
+    getTelegramData(): Observable<any> {
         return this.get(TelegramUrls.getTelegramData).pipe(
             map(resp => resp.response.telegram_data),
             catchError(e => this.handleError(e)));
