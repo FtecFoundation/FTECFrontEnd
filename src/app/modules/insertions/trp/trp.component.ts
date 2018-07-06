@@ -11,6 +11,7 @@ import { trpItems } from './trp';
 export class TrpComponent implements OnInit {
 
   trp = trpItems;
+  time = ["All time", "New", "Old", "Rating"]
 
   constructor() {
   }

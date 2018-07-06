@@ -1,7 +1,11 @@
 <div class="main-info main-info--behavioral">
   <div class="middle middle--trp">
 
-    <div class="middle__head middle__head--behavioral">Trading reports</div>
+    <div class="middle__head middle__head--trp">Trading reports</div>
+
+    <div class="container__form container__form--trp container__form--select is-active">
+      <app-dropdown [label]="'All time'" [items]="time"></app-dropdown>
+    </div>
 
     <div class="middle__block middle__block--behavioral">
 
