@@ -53,10 +53,8 @@ export class QuestionComponent implements OnInit, OnChanges {
                     this._testStatusService.mistakes++;
                 }
 
-                if (this._testStatusService.history.tests[this.test.id + '_' + this.questionId]) {
                     this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
                     this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
-                }
             });
         }
     }
@@ -78,9 +76,9 @@ export class QuestionComponent implements OnInit, OnChanges {
             this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
             this._testStatusService.passed++;
             this.updatePercent();
-        } else if (this.response && (this.questionId === this._testStatusService.total)) {
+        } else if (this.response && (this.questionId == this._testStatusService.total)) {
             this.router.navigate(['/modules/cryptoacademy/test/completed']);
-        } else if (!this.response && (this.questionId < this._testStatusService.total)){
+        } else if (!this.response && (this.questionId < this._testStatusService.total)) {
             this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
         } else {
             this._cryptoacademyService.getTestsHistory().subscribe(data => {
