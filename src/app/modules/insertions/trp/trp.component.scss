@@ -1,0 +1,70 @@
+@import "../../../../assets/styles/variables";
+
+.middle--trp {
+  width: 100%;
+}
+
+.trp__small-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.trp__container-block {
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trp__small-container-inner {
+  width: 33.33%;
+}
+
+.trp__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trp__container--button {
+  flex-direction: column;
+  align-items: center;
+}
+
+.trp__container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.trp__container-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.trp__container-profile-name {
+
+}
+
+.trp__container-profile-rank {
+
+}
+
+.filter__container-button--trp {
+  padding: .625em;
+  width: initial;
+  padding-left: 1.250em;
+  padding-right: 1.250em;
+  margin-bottom: 0;
+}
+
+.trp__graph-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.trp__graph-info-text {
+  font-size: .688em;
+  opacity: .5;
+}
