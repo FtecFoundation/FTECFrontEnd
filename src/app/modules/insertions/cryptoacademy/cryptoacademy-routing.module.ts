@@ -13,7 +13,7 @@ import {TestCompletedComponent} from './tests/question-layout/test-completed/tes
                 path: '', component: CryptoacademyComponent, data: {title: 'Cryptoacademy'}, children: [
                     {path: '', component: AllTestsComponent},
                     {path: 'test/:testId/:questionId', component: QuestionLayoutComponent},
-                    {path: 'test/completed', component: TestCompletedComponent}
+                    {path: 'completed/:testId', component: TestCompletedComponent}
                 ]
             },
         ])

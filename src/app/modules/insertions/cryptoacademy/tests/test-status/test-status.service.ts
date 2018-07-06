@@ -13,16 +13,21 @@ export class TestStatusService {
     constructor() {
     }
 
-    getCorrectAndMistakesAmount(history: TestHistory) {
+    getCorrectAndMistakesAmount(history: TestHistory, test: number) {
         this.correct = 0;
         this.mistakes = 0;
 
         for (const answer of Object.keys(history.tests)) {
-            if (history.tests[answer].selectedAnswer === history.tests[answer].correctAnswer) {
+            if (this.fromTest(answer, test) && history.tests[answer].selectedAnswer === history.tests[answer].correctAnswer) {
                 this.correct++;
             } else {
                 this.mistakes++;
             }
         }
+
+    }
+
+    fromTest(history: string, test: number): boolean {
+        return Number.parseInt(history.substring(0, history.indexOf('_'))) === test;
     }
 }
