@@ -106,7 +106,7 @@ app.use('/api', proxy(apiUrl, {
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        proxyReqOpts.headers['FTEC-REMOTE-USER'] = srcReq.connection.remoteAddress;
+        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
         return proxyReqOpts;
     }
 }));
