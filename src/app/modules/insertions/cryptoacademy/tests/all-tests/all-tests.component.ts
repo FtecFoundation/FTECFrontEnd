@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CryptoacademyService} from '../../../../../core/services/cryptoacademy.service';
 import {Test} from '../../../../../core/models/test-cryptoacademy';
 import {Router} from '@angular/router';
+import {TestStatusService} from '../test-status/test-status.service';
 
 @Component({
     selector: 'app-all-tests',
@@ -11,7 +12,8 @@ import {Router} from '@angular/router';
 export class AllTestsComponent implements OnInit {
     tests: Test[];
 
-    constructor(private _cryptoacademyService: CryptoacademyService, private router: Router) {
+    constructor(private _cryptoacademyService: CryptoacademyService, private router: Router,
+                public _testStatusService: TestStatusService) {
     }
 
     ngOnInit() {
@@ -19,15 +21,15 @@ export class AllTestsComponent implements OnInit {
             this.tests = data;
 
             this._cryptoacademyService.getTestsHistory().subscribe( data1 => {
-                console.log(data1);
-                console.log(this.tests);
                 for (const test of this.tests) {
                     const questions = Object.keys(test.questions);
+                    test.total = questions.length;
                     for (const question of questions) {
                         if (!data1.tests[test.id + '_' + question]) {
                             test.lastQuestion = Number.parseInt(question);
                             break;
                         }
+                        test.lastQuestion = Number.parseInt(question);
                     }
                 }
             });
@@ -35,6 +37,8 @@ export class AllTestsComponent implements OnInit {
     }
 
     goToTest(test: Test) {
-        this.router.navigate(['/modules/cryptoacademy/test', test.id, test.lastQuestion ? test.lastQuestion : 1]);
+        if (test.lastQuestion !== test.total)
+            this.router.navigate(['/modules/cryptoacademy/test', test.id, test.lastQuestion ? test.lastQuestion : 1]);
+        else this.router.navigate(['/modules/cryptoacademy/test/completed']);
     }
 }

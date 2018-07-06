@@ -38,6 +38,7 @@ export class QuestionComponent implements OnInit, OnChanges {
         } else {
             this.response = null;
         }
+        this.updatePercent();
     }
 
     chooseAnswer(answerId: number) {
@@ -52,8 +53,10 @@ export class QuestionComponent implements OnInit, OnChanges {
                     this._testStatusService.mistakes++;
                 }
 
-                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
-                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnswer = this.selected;
+                if (this._testStatusService.history.tests[this.test.id + '_' + this.questionId]) {
+                    this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
+                    this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
+                }
             });
         }
     }
@@ -62,13 +65,35 @@ export class QuestionComponent implements OnInit, OnChanges {
         return !!this.history.tests[this.test.id + '_' + this.questionId];
     }
 
+    updatePercent() {
+        this._testStatusService.passedPercent = (this._testStatusService.passed * 100) / this._testStatusService.total;
+    }
+
     prepareData() {
         return {'testId': this.test.id, 'question': this.questionId, 'selectedAnswer': this.selected};
     }
 
     goToNext() {
-        this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
-        this._testStatusService.passed++;
+        if (this.response && (this.questionId < this._testStatusService.total)) {
+            this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
+            this._testStatusService.passed++;
+            this.updatePercent();
+        } else if (this.response && (this.questionId === this._testStatusService.total)) {
+            this.router.navigate(['/modules/cryptoacademy/test/completed']);
+        } else if (!this.response && (this.questionId < this._testStatusService.total)){
+            this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
+        } else {
+            this._cryptoacademyService.getTestsHistory().subscribe(data => {
+                const questions = Object.keys(this.test.questions);
+                for (const question of questions) {
+                    if (!data.tests[this.test.id + '_' + question]) {
+                        this.test.lastQuestion = Number.parseInt(question);
+                        break;
+                    }
+                }
+                this.router.navigate(['/modules/cryptoacademy/test', this.test.id, this.test.lastQuestion]);
+            });
+        }
     }
 
 }

@@ -7,6 +7,7 @@ import {TestStatusComponent} from './tests/test-status/test-status.component';
 import {QuestionComponent} from './tests/question-layout/question/question.component';
 import {QuestionLayoutComponent} from './tests/question-layout/question-layout.component';
 import {TestStatusService} from './tests/test-status/test-status.service';
+import { TestCompletedComponent } from './tests/question-layout/test-completed/test-completed.component';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import {TestStatusService} from './tests/test-status/test-status.service';
         AllTestsComponent,
         TestStatusComponent,
         QuestionComponent,
-        QuestionLayoutComponent],
+        QuestionLayoutComponent,
+        TestCompletedComponent],
     providers: [TestStatusService]
 })
 export class CryptoacademyModule {

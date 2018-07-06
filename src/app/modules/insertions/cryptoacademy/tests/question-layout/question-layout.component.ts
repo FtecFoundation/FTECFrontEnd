@@ -29,9 +29,12 @@ export class QuestionLayoutComponent implements OnInit {
 
             this._cryptoacademyService.getTestsHistory().subscribe(data1 => {
                 this._testStatusService.history = data1;
+                console.log(this._testStatusService.history);
+                this._testStatusService.total = Object.keys(this.test.questions).length;
+                this._testStatusService.passed = Object.keys(this._testStatusService.history.tests).length;
+                this._testStatusService.passedPercent = (this._testStatusService.passed * 100) / this._testStatusService.total;
             });
         });
         this.questionId = this.activatedRoute.snapshot.paramMap.get('questionId');
     }
-
 }

@@ -8,6 +8,7 @@ export class Test {
     selectedAnswer?: number;
     correctAnswer?: number;
     questions: any;
+    total?: number;
 }
 
 export class TestHistory {

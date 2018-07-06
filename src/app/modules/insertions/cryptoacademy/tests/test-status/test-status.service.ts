@@ -7,6 +7,7 @@ export class TestStatusService {
     total = 0;
     correct = 0;
     mistakes = 0;
+    passedPercent = 0;
     history: TestHistory;
 
     constructor() {

@@ -17,13 +17,12 @@ export class TestStatusComponent implements OnInit {
     }
 
     ngOnInit() {
+        this._testStatusService.mistakes = 0;
+        this._testStatusService.correct = 0;
         this._testStatusService.total = Object.keys(this.test.questions).length;
         this._testStatusService.passed = Object.keys(this.history.tests).length;
-        this.getCorrectAndMistakesAmount();
-    }
 
-    checkIfAnswered(): boolean {
-        return !!this.history.tests[this.test.id + '_' + this.questionId];
+        this.getCorrectAndMistakesAmount();
     }
 
     getCorrectAndMistakesAmount() {
