@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+        'date': '06/07/2018',
+        'changes': [
+            'We added a method  which searches and returns all transactions of the user in the Service of Traders ' + 
+            'Behavioral Analysis module (for Bittrex)',
+            'We added a method that searches for the nearest candles for the transaction of the user (for Bittrex)',
+            'HTML-layout of the page of the Exchange of the Trading Recommendations Platform',
+            'The Trading Recommendations Platform page is adapted for all screen sizes',
+            'The HTML layout of the Anomalous Volume Analyzer page is started',
+            'The opportunity of initial adjustment the Telegram Assistant is realized at frontend',
+            'We checked the test modules for the Cryptoacademy',
+            'We improved display of information from modules in the Telegram Assistant',
+            'We configured test server of the Telegram Assistant',
+            'We fixed bugs which were detected during interaction with  the Telegram Assistant'
+        ]
+    },
+    {
         'date': '05/07/2018',
         'changes': [
             'We added search of the nearest candle for each deal in Module of Trader\'s Behavioral Analysis (for Binance)',
