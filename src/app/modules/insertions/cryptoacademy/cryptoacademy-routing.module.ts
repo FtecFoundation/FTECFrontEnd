@@ -4,6 +4,7 @@ import {CryptoacademyComponent} from './cryptoacademy.component';
 import {AllTestsComponent} from './tests/all-tests/all-tests.component';
 import {QuestionComponent} from './tests/question-layout/question/question.component';
 import {QuestionLayoutComponent} from './tests/question-layout/question-layout.component';
+import {TestCompletedComponent} from './tests/question-layout/test-completed/test-completed.component';
 
 @NgModule({
     imports: [
@@ -11,10 +12,8 @@ import {QuestionLayoutComponent} from './tests/question-layout/question-layout.c
             {
                 path: '', component: CryptoacademyComponent, data: {title: 'Cryptoacademy'}, children: [
                     {path: '', component: AllTestsComponent},
-                    {
-                        path: 'test/:testId/:questionId', component: QuestionLayoutComponent, children: [
-                        ]
-                    }
+                    {path: 'test/:testId/:questionId', component: QuestionLayoutComponent},
+                    {path: 'test/completed', component: TestCompletedComponent}
                 ]
             },
         ])

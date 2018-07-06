@@ -8,12 +8,15 @@ import {availableExchanges} from '../arbitrage/available-exchanges';
   styleUrls: ['../insertions.scss', './my-exchanges.component.scss']
 })
 export class MyExchangesComponent implements OnInit {
-  exchanges = availableExchanges;
+  exchanges: string[] = [];
 
   constructor(public _showModalService: ShowModalService) {
   }
 
   ngOnInit() {
+    for (const exchange of availableExchanges) {
+      this.exchanges.push(exchange.exchange);
+    }
   }
 
     showModal() {

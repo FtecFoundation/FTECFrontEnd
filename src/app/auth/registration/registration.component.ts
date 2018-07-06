@@ -5,7 +5,6 @@ import {RegistrationValidators} from './registration.validators';
 import {RegistrationData} from '../../core/models/user';
 import {Router} from '@angular/router';
 import {LanguageService} from '../../core/services/language.service';
-import {HttpClient} from '@angular/common/http';
 import {CaptchaService} from '../../core/services/captcha.service';
 
 @Component({

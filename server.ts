@@ -93,6 +93,7 @@ app.post('/api/submitRecatpcha', function (req, res) {
     const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
     request(verificationUrl, function (error, response, body) {
         body = JSON.parse(body);
+
         if (body.success !== undefined && !body.success) {
             return res.json({'responseCode': 1, 'responseDesc': 'Failed captcha verification'});
         }
