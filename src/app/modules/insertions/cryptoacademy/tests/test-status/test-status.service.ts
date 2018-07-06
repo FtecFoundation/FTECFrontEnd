@@ -12,4 +12,17 @@ export class TestStatusService {
 
     constructor() {
     }
+
+    getCorrectAndMistakesAmount(history: TestHistory) {
+        this.correct = 0;
+        this.mistakes = 0;
+
+        for (const answer of Object.keys(history.tests)) {
+            if (history.tests[answer].selectedAnswer === history.tests[answer].correctAnswer) {
+                this.correct++;
+            } else {
+                this.mistakes++;
+            }
+        }
+    }
 }

@@ -1,8 +1,13 @@
 <div class="middle middle--test middle--complete">
     <h2>Congratulations!</h2>
 
-    <h4>You have completed a test.You have strong knowledge in crypto world</h4>
-    <h4>You have strong knowledge in crypto world</h4>
+    <h4>You have completed a test!</h4>
+    <h4>Your score is {{grade}}.
+        <ng-container *ngIf="grade <= 40">It seems like you are new in crypto world.</ng-container>
+        <ng-container *ngIf="grade > 40 && grade <= 80">You could do better! You should renew your knowledge of crypto
+        </ng-container>
+        <ng-container *ngIf="grade > 80">You are among the best ones!</ng-container>
+    </h4>
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
         width="56px" height="56px" viewBox="0 0 456.814 456.814" style="enable-background:new 0 0 456.814 456.814;" xml:space="preserve">
