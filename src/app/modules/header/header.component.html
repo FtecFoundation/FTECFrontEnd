@@ -1,4 +1,4 @@
-<header class="header" *ngIf="user">
+<header class="header" *ngIf="_currentUserService.user">
 
     <div class="header__logo">
         <a href="https://ftec.io" class="header__logo-item">
@@ -115,7 +115,7 @@
                     </g>
                 </svg>
             </div>
-            <span (click)="showModal()" class="user-balance">{{user.balance}} FTEC
+            <span (click)="showModal()" class="user-balance">{{_currentUserService.user.balance}} FTEC
                 <sup>*</sup> +</span>
 
 
@@ -128,9 +128,9 @@
                 <div class="user-account-block">
                     <div class="user-account-block-triangle"></div>
                     <div class="user__block-head">
-                        <span class="user__block-head-username">{{user.email}}</span>
+                        <span class="user__block-head-username">{{_currentUserService.user.email}}</span>
                         <span class="user__block-head-balance">Balance:
-                            <span class="user__block-head-value">{{user.balance}}</span> FTEC
+                            <span class="user__block-head-value">{{_currentUserService.user.balance}}</span> FTEC
                             <sup>*</sup>
                         </span>
                     </div>

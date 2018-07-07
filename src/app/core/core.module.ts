@@ -17,6 +17,7 @@ import {LoaderService} from './loader/loader.service';
 import {LanguageService} from './services/language.service';
 import {CryptoacademyService} from './services/cryptoacademy.service';
 import {CaptchaService} from './services/captcha.service';
+import {CurrentUserService} from './services/current-user.service';
 
 @NgModule({
     imports: [
@@ -39,6 +40,7 @@ import {CaptchaService} from './services/captcha.service';
         LoaderService,
         LanguageService,
         CryptoacademyService,
+        CurrentUserService,
         CaptchaService
     ]
 })

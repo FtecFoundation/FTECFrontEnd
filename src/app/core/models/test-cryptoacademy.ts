@@ -8,21 +8,22 @@ export class Test {
     selectedAnswer?: number;
     correctAnswer?: number;
     questions: any;
+    total?: number;
 }
 
 export class TestHistory {
     tests: any;
 }
 
-class Question {
+export class Question {
     id: number;
     type: string;
     body: QuestionBody;
-    answers: Answer[];
+    answer: Answer[];
     description: string;
 }
 
-class QuestionBody {
+export class QuestionBody {
     text: string;
     image: string;
 }

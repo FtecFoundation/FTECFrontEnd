@@ -1,38 +1,25 @@
 
-<h3 class="test__question">What is Blockchain?</h3>
+<h3 class="test__question">{{question.body.text}}</h3>
 
 <div class="test__image">
-    <img src="../../../../assets/images/image_2018-06-25_11-24-22.png" alt="">
+    <img [src]="question.body.image" alt="">
 </div>
 <div class="test__wrapper">
 
     <ul class="test__container">
-        <li class="test__container-item is-active--red">
-            <span class="test__container-answer"> It`s a platform where you can create online-services for crypto trading.
-              <span class="test__item-percantage test__item--red">41%</span>
+        <li class="test__container-item"
+            *ngFor="let answer of question.answer" (click)="chooseAnswer(answer.id)"
+            [ngClass]="{'is-active--red': response && (response.correctAnswer !== answer.id) && ((selected === answer.id)  || response.selectedAnswer === answer.id),
+            'is-active--green': response && (response.correctAnswer === answer.id)}">
+            <span class="test__container-answer"> {{answer.text}}
+              <span *ngIf="response && response.questions && response.questions[answer.id]"
+                    class="test__item-percantage test__item--red"
+                    [ngClass]="{'test__item--red': response && (response.correctAnswer !== answer.id),
+            'test__item--green': response && (response.correctAnswer === answer.id)}">{{response.questions[answer.id]}}%</span>
             </span>
-            <span class="test__item-answer">No! A blockchain is a continuously growing list of records, called blocks, which are linked and secured using
-              cryptography. Each block typically contains a cryptographic hash of the previous block, a timestamp, and transaction
-              data.
-            </span>
-        </li>
-        <li class="test__container-item">
-            <span class="test__container-answer">It`s a crowdfunding tool, that can be described as an entry in data register.
-              <span class="test__item-percantage test__item--red">24%</span>
-            </span>
-        </li>
-        <li class="test__container-item is-active--green">
-            <span class="test__container-answer">It`s an internal currency that can be described as an entry in data register.
-              <span class="test__item-percantage test__item--green">15%</span>
-            </span>
-
-        </li>
-        <li class="test__container-item">
-            <span class="test__container-answer">It`s a chain of blocks that contain data, created according to certain rules.
-              <span class="test__item-percantage test__item--red">20%</span>
-            </span>
+            <span *ngIf="response && ((selected === answer.id) || response.selectedAnswer === answer.id)" class="test__item-answer">{{question.description}}</span>
         </li>
     </ul>
 
-    <a href="javascript:void(0)" class="filter__container-button button--crypto button--test">Next</a>
+    <a (click)="goToNext()" class="filter__container-button button--crypto button--test">{{response ? 'Next' : 'Skip'}}</a>
 </div>

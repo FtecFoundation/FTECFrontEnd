@@ -3,6 +3,7 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 import {SocialService} from '../../../core/services/social.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EmbeddedTweetOptions} from './embedded-tweet-options';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-social',
@@ -24,12 +25,13 @@ export class SocialComponent implements OnInit {
     rightHeight = 0;
     leftTweets = [];
     rightTweets = [];
-    daysLeft: any;
+    daysLeft: any = 0;
 
 
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
-                private formBuilder: FormBuilder) {
+                private formBuilder: FormBuilder,
+                private router: Router) {
     }
 
     getTweets() {
@@ -157,6 +159,7 @@ export class SocialComponent implements OnInit {
     renewSubscription() {
         this._socialService.renewSubscription().subscribe(() => {
             this.getDaysLeft();
+            this.router.navigate(['/modules/social']);
         });
     }
 
