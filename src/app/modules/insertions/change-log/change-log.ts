@@ -3,7 +3,7 @@ export const changeLog = [
         'date': '06/07/2018',
         'changes': [
             'We added a method  which searches and returns all transactions of the user in the Service of Traders ' + 
-            'Behavioral Analysis module (for Bittrex)',
+            'Behavioral Analysis module (Bittrex)',
             'We added a method that searches for the nearest candles for the transaction of the user (for Bittrex)',
             'HTML-layout of the page of the Exchange of the Trading Recommendations Platform',
             'The Trading Recommendations Platform page is adapted for all screen sizes',
