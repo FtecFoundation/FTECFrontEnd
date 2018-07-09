@@ -48,7 +48,15 @@ export class BehavioralAnalyzerComponent implements OnInit {
             ]
         }
     ];
+    refLines = [
+        { value: 2140, name: 'Recommended' },
+        { value: 1000, name: 'You' }
+    ];
     lineChartView = config.lineChartView;
+    showRefLines = config.showRefLines;
+    showRefLabels = config.showRefLabels;
+    showGridLines = config.showGridLines;
+    tooltipDisabled = config.tooltipDisabled;
     lineChartShowXAxis = config.lineChartShowXAxis;
     lineChartShowYAxis = config.lineChartShowYAxis;
     lineChartShowLegend = config.lineChartShowLegend;
