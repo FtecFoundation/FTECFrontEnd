@@ -104,6 +104,7 @@
   height: 100%;
   position: absolute;
   opacity: .95;
+  visibility: hidden;
   background-image: $violet-gradient-aside;
 
   -webkit-transition: right .3s ease;
@@ -114,6 +115,7 @@
 .sidebar.is-active {
   z-index: 1 !important;
   right: 0 !important;
+  visibility: initial;
 }
 
 .sidebar__block {

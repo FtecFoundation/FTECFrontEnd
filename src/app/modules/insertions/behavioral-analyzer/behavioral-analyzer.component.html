@@ -79,15 +79,11 @@
     <div class="aside-right__head aside-right__head--behavioral">Your trading behavior
 
       <div class="container__form container__form--select container__form--behavioral">
-        <div class="container__form-select-block form__input">
-          <span class="form__select-item">All time</span>
+
+        <div class="container__form container__form--select is-active container__form--behavioral">
+          <app-dropdown [label]="'All time'" [items]="exchanges"></app-dropdown>
         </div>
 
-        <div class="form__select-list">
-          <span class="form__select-list-item">New</span>
-          <span class="form__select-list-item">Old</span>
-          <span class="form__select-list-item">Last</span>
-        </div>
       </div>
     </div>
 
