@@ -12,7 +12,7 @@
                 </ul>
 
                 <div class="crypto__tab-wrapper" *ngIf="tests">
-                    <div class="crypto__tab-container" *ngFor="let test of tests" [routerLink]="['test', {testId: test.id, questionId: test.lastQuestion}]">
+                    <div class="crypto__tab-container" *ngFor="let test of tests">
                         <img [src]="test.image" alt="">
 
                         <span class="test-progress">13/20</span>
