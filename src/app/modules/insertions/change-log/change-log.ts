@@ -1,5 +1,24 @@
 export const changeLog = [
     {
+        'date': '09/07/2018',
+        'changes': [
+            'We added dictionary limitation to Social Assistant (50 words for a user). Now module controllers ' + 
+            '(add a word, delete a word, delete all words) return the number of free lots (how many words the user' + 
+            'can add)',
+            'In Social Assistant, all controllers are modified. Now they accept user id in headers, not in request params',
+            'In the main module, we modified all controllers which interact with Social Assistant',
+            'Twitter properties for production, staging, and test run were added in Social Assistant',
+            'Method of subscription verification was moved to Social Assistant',
+            'HTML layout of Anomalous Volume Dynamics Analyzer page',
+            'Anomalous Volume Dynamics Analyzer page was adapted to all screen sizes',
+            'News Background Analyzer page was adapted to all screen sizes',
+            'HTML layout of News Background Analyzer page',
+            'The main module and Arbitrage Assistant don\'t accept incorrect data for windows search (negative values, closed exchanges)',
+            'Pop-up dictionary in Telegram Assistant was improved, now it can appear by pressing the button when you attempt to delete a word',
+            'Now user can\'t get access code after connecting Telegram account and his FTEC account'
+        ]
+    },
+    {
         'date': '06/07/2018',
         'changes': [
             'We added a method  which searches and returns all transactions of the user in the Service of Traders ' + 
