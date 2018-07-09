@@ -92,7 +92,7 @@
       </div>
 
       <div class="filter__container">
-        <span class="container__name container__name--recommended">Dictionary</span>
+        <span class="container__name container__name--recommended">Dictionary ({{wordsLeft}} word(s) left)</span>
         <span class="filter__container--empty-dictionary" *ngIf=" dictionary && dictionary.length === 0">Your dictionary is empty</span>
         <ul id="filter__container-block" class="filter__container-block">
           <li *ngFor="let word of dictionary" class="filter__container-block-item--categories is-active" (click)="deleteWord(word)">{{word}}
