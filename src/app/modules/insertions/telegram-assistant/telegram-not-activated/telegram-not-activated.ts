@@ -8,7 +8,7 @@ import {TelegramAssistantService} from '../telegram-assistant.service';
 })
 export class TelegramNotActivatedComponent implements OnInit {
     qrUrl = 'tg://resolve?domain=';
-    botDomain: string = '';
+    botDomain = '';
     accessCode: string;
 
     constructor(private _telegramService: TelegramAssistantService) {

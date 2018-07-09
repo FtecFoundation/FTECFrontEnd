@@ -10,7 +10,7 @@ import {Test} from '../../../../../../core/models/test-cryptoacademy';
   styleUrls: ['../../../../insertions.scss', '../../../cryptoacademy.component.scss', '../../tests.component.scss']
 })
 export class TestCompletedComponent implements OnInit {
-  grade: number = 0;
+  grade = 0;
   test: Test;
 
   constructor(public _testStatusService: TestStatusService,

@@ -5,7 +5,7 @@ import { trpItems } from './trp';
 @Component({
   selector: 'app-social',
   templateUrl: './trp.component.html',
-  styleUrls: ['../insertions.scss', "../behavioral-analyzer/behavioral-analyzer.component.scss", "./trp.component.scss"]
+  styleUrls: ['../insertions.scss', '../behavioral-analyzer/behavioral-analyzer.component.scss', './trp.component.scss']
 })
 export class TrpComponent implements OnInit {
 

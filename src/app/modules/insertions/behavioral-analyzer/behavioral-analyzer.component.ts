@@ -12,7 +12,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
   behavioralItems = behavioralAnalyzerItems;
 
-  exchanges = ["New", "Old"];
+  exchanges = ['New', 'Old'];
 
   constructor() {
   }
