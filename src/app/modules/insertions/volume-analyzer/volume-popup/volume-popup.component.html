@@ -1,0 +1,45 @@
+<div class="content__popup">
+
+  <div class="content__container-popup">
+
+    <div class="not-active__wrapper">
+      <span class="middle__head">Set new volume notification</span>
+
+
+      <div class="filter__container">
+        <span class="container__name">Exchages</span>
+
+        <div class="container__form container__form--select is-active">
+          <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+        </div>
+
+        <div class="filter__container">
+          <span class="container__name">Currenies Pair</span>
+          <div class="filter__container filter__container--popup">
+
+            <div class="container__form container__form--select is-active">
+              <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+            </div>
+
+            <div class="container__form container__form--select is-active">
+              <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="content__popup-checker">
+          <span>Analyze total volume</span>
+
+          <figure class="button__change"></figure>
+        </div>
+
+        <button class="filter__container-button">Add notification</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
