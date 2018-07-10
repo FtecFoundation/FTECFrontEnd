@@ -3,6 +3,7 @@ import { volumeAnalyzerItems } from './volume-analyzer';
 import { ShowModalService } from '../../not-active/show-modal.service';
 
 
+
 @Component({
   selector: 'app-social',
   templateUrl: './volume-analyzer.component.html',
