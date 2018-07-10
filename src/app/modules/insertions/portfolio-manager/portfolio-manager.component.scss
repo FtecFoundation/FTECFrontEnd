@@ -1,0 +1,100 @@
+@import "../../../../assets/styles/variables";
+
+.main-info--portfolio {
+  flex-wrap: wrap;
+}
+
+.portfolio__graph {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio__graph-item {
+  flex: 1;
+}
+
+.graph__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.graph__right-container {
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: .625rem;
+  background: $violet-gradient-aside;
+}
+
+.graph__container-subtitle {
+  opacity: .5;
+  font-size: .938em;
+  margin-bottom: .313em;
+}
+
+.graph__under {
+  width: 100%;
+  margin-top: .625em;
+  padding: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $violet-gradient-aside;
+  border-radius: .625rem;
+}
+
+.graph__under p {
+  width: 40%;
+  color: $red;
+}
+
+.graph__under-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.filter__container-button--portfolio {
+  width: 20%;
+}
+
+.graph__bottom-text {
+  opacity: .5;
+  text-align: center; 
+  font-size: .938em;
+}
+
+.middle__double--portfolio {
+  width: 100%;
+  margin: .625em 0 0 -.625em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.double__container {
+  width: 25%;
+  padding: .625em 0 0 .625em;
+}
+
+.double__container-inner {
+  padding: 1.250em;
+  border-radius: .625em;
+  background: $violet-gradient-aside;
+}
+
+.double__container svg {
+  width: 100%;
+}
+
+.double__container-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.double__container-line span {
+  font-weight: 100;
+}

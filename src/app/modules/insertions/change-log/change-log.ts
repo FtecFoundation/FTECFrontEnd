@@ -55,7 +55,7 @@ export const changeLog = [
         'changes': [
             'We added search of the nearest candle for each deal in Module of Trader\'s Behavioral Analysis (for Binance)',
             'We added method which takes the best price of all available, depending on operation type in Module ' +
-            'of Trader\'s Behavioral Analysis (for Binance)',
+            'of Trader\'s Behavioral Analysis (Binance)',
             'In Module of Trader\'s Behavioral Analysis, method, which calculate the percentage of user\'s profit ' +
             'of the best price depending on operation type, was added (for Binance)',
             'We added controller which returns a list of closed deals of users in Module of Trader\'s Behavioral Analysis (for Binance)',

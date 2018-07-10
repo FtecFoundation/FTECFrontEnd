@@ -2,7 +2,7 @@
     <h2>Congratulations!</h2>
 
     <h4>You have completed a test '{{test.name}}'!</h4>
-    <h4>Your score is {{grade}}.
+    <h4>Your score is {{grade | number: '1.1-2'}}.
         <ng-container *ngIf="grade <= 40">It seems like you are new in crypto world.</ng-container>
         <ng-container *ngIf="grade > 40 && grade <= 80">You could do better! You should renew your knowledge of crypto
         </ng-container>

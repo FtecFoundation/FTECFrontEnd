@@ -53,8 +53,8 @@ export class QuestionComponent implements OnInit, OnChanges {
                     this._testStatusService.mistakes++;
                 }
 
-                    this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
-                    this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
+                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
+                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
             });
         }
     }
