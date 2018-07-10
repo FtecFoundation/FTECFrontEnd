@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+        'date': '10/07/2018',
+        'changes': [
+            'Button emoji were added to Telegram Assistant',
+            'The work of all modules was stabilized with HitBTC, Huobi, and Kraken',
+            'We added the possibility to repass Cryptoacademy tests at backend',
+            'JUnit tests for Social Assistant were fixed in the main module',
+            'If subscription ends while using Social Assistant, errors will be displayed',
+            'If the word, which is being added to the dictionary, doesn\'t pass validation, errors will be displayed in Social Assistant',
+            'HTML layout of pop-up on Anomalous Volume Dynamics Analyzer page',
+            'Pop-up on  Anomalous Volume Dynamics Analyzer page was adapted to all screen sizes',
+            'HTML layout of Module of Cryptocurrency Portfolios Management',
+            'Module of Cryptocurrency Portfolios Management page was adapted to all screen sizes',
+            'We added the possibility to unlink Telegram Assistant from your FTEC account'
+        ]
+    },
+    {
         'date': '09/07/2018',
         'changes': [
             'We added dictionary limitation to Social Assistant (50 words for a user). Now module controllers ' + 
