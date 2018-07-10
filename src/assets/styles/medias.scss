@@ -100,6 +100,9 @@
   .middle--test {
     width: 160% !important;
   }
+  .confirm-mail__container {
+    margin: .625em !important;
+  }
 
 }
 
@@ -377,6 +380,15 @@
 
   .double__container {
     width: 50% !important;
+  }
+  .button__outline--mail,
+  .confirm-mail__title {
+    width: 100% !important;
+  }
+  .confirm-mail__title {
+    margin-bottom: 2em;
+    font-size: .625em;
+    text-align: center;
   }
 }
 
