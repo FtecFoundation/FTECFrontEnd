@@ -16,15 +16,25 @@ export class TestStatusService {
     getCorrectAndMistakesAmount(history: TestHistory, test: number) {
         this.correct = 0;
         this.mistakes = 0;
-
         for (const answer of Object.keys(history.tests)) {
-            if (this.fromTest(answer, test) && history.tests[answer].selectedAnswer === history.tests[answer].correctAnswer) {
-                this.correct++;
-            } else {
-                this.mistakes++;
+            if (this.fromTest(answer, test)) {
+                if (history.tests[answer].selectedAnswer === history.tests[answer].correctAnswer) {
+                    this.correct++;
+                } else {
+                    this.mistakes++;
+                }
             }
         }
 
+    }
+
+    getPassedAmount(history: TestHistory, test: number) {
+        this.passed = 0;
+        for (const answer of Object.keys(history.tests)) {
+            if (this.fromTest(answer, test)) {
+                this.passed++;
+            }
+        }
     }
 
     fromTest(history: string, test: number): boolean {

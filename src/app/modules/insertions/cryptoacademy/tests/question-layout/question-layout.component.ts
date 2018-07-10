@@ -38,7 +38,7 @@ export class QuestionLayoutComponent implements OnInit {
     initTestStatus(data: TestHistory) {
         this._testStatusService.history = data;
         this._testStatusService.total = Object.keys(this.test.questions).length;
-        this._testStatusService.passed = Object.keys(this._testStatusService.history.tests).length;
+        this._testStatusService.getPassedAmount(this._testStatusService.history, this.test.id);
         this._testStatusService.passedPercent = (this._testStatusService.passed * 100) / this._testStatusService.total;
 
         this._testStatusService.getCorrectAndMistakesAmount(this._testStatusService.history, this.test.id);

@@ -20,7 +20,7 @@ export class TestStatusComponent implements OnInit {
         this._testStatusService.mistakes = 0;
         this._testStatusService.correct = 0;
         this._testStatusService.total = Object.keys(this.test.questions).length;
-        this._testStatusService.passed = Object.keys(this.history.tests).length;
+        this._testStatusService.getPassedAmount(this.history, this.test.id);
 
         this._testStatusService.getCorrectAndMistakesAmount(this.history, this.test.id);
     }
