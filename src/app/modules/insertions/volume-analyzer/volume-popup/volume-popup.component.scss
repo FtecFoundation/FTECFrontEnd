@@ -48,8 +48,24 @@
 .content__popup-checker {
   display: flex;
   justify-content: flex-end;
+  margin: 1.250em 0;
 }
 
 .content__popup-checker span {
   margin-right: 1.250em;
+}
+
+.container__name {
+  font-size: .75em;
+  opacity: .5;
+}
+
+.middle__head--volume {
+  margin-bottom: 1.250em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle__head--volume svg {
+  cursor: pointer;
 }
