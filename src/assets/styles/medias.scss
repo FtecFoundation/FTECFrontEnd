@@ -374,6 +374,10 @@
   .aside-right--behavioral {
     padding: 10px !important;
   }
+
+  .double__container {
+    width: 50% !important;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -430,7 +434,8 @@
 @media only screen and (max-width: 425px) {
 
   .change-log,
-  .settings__container {
+  .settings__container,
+  .double__container {
     width: 100% !important;
   } 
 
