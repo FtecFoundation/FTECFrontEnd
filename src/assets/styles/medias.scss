@@ -318,7 +318,8 @@
     flex-wrap: wrap;
   }
 
-  .test__status-ng {
+  .test__status-ng,
+  .content__container-popup {
     width: 100% !important;
   }
 
@@ -373,6 +374,10 @@
   .aside-right--behavioral {
     padding: 10px !important;
   }
+
+  .double__container {
+    width: 50% !important;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -382,12 +387,20 @@
   .crypto__tab-container,
   .tab-controls-item,
   .middle__table--telegram,
-  .behavioral__small-container-inner {
+  .behavioral__small-container-inner,
+  .news__container-main,
+  .news__container-forecast
+   {
     width: 100% !important;
   }
 
-  .container__form button {
-    display: none;
+  .news__container-main {
+    padding-right: 0 !important;
+  }
+
+  .container__form button,
+  .news__container-forecast::before {
+    display: none !important;
   }
 
   .container__form .form__input {
@@ -421,7 +434,8 @@
 @media only screen and (max-width: 425px) {
 
   .change-log,
-  .settings__container {
+  .settings__container,
+  .double__container {
     width: 100% !important;
   } 
 

@@ -77,7 +77,7 @@ export class QuestionComponent implements OnInit, OnChanges {
             this._testStatusService.passed++;
             this.updatePercent();
         } else if (this.response && (this.questionId == this._testStatusService.total)) {
-            this.router.navigate(['/modules/cryptoacademy/test/completed']);
+            this.router.navigate(['/modules/cryptoacademy/completed', this.test.id]);
         } else if (!this.response && (this.questionId < this._testStatusService.total)) {
             this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
         } else {

@@ -37,8 +37,8 @@ export class AllTestsComponent implements OnInit {
     }
 
     goToTest(test: Test) {
-        if (test.lastQuestion !== test.total)
+        if (test.lastQuestion !== test.total) {
             this.router.navigate(['/modules/cryptoacademy/test', test.id, test.lastQuestion ? test.lastQuestion : 1]);
-        else this.router.navigate(['/modules/cryptoacademy/test/completed']);
+        } else { this.router.navigate(['/modules/cryptoacademy/completed', test.id]); }
     }
 }

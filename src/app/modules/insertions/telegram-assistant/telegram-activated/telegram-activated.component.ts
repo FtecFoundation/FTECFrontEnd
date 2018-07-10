@@ -10,7 +10,7 @@ import {ShowModalService} from '../../../not-active/show-modal.service';
 export class TelegramActivatedComponent implements OnInit {
   userId: string;
   userName: string;
-  botDomain: string = '';
+  botDomain = '';
 
   constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService) { }
 

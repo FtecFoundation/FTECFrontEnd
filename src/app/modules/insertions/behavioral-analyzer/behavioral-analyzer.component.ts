@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { behavioralAnalyzerItems } from './behavioral-analyzer';
+// import { availableExchanges } from '../arbitrage/available-exchanges';
+
 
 @Component({
   selector: 'app-social',
@@ -9,6 +11,8 @@ import { behavioralAnalyzerItems } from './behavioral-analyzer';
 export class BehavioralAnalyzerComponent implements OnInit {
 
   behavioralItems = behavioralAnalyzerItems;
+
+  exchanges = ['New', 'Old'];
 
   constructor() {
   }

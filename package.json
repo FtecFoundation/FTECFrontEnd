@@ -24,6 +24,9 @@
     "serve:prerender": "cd dist/browser && http-server",
     "serve:ssr": "node dist/server"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -47,7 +50,8 @@
     "ngx-twitter": "^1.0.1",
     "domino": "^2.0.2",
     "ng-recaptcha": "^3.0.5",
-    "angularx-qrcode": "^1.1.7"
+    "angularx-qrcode": "^1.1.7",
+    "@swimlane/ngx-charts": "~7.0.2"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.0",
@@ -62,6 +66,7 @@
     "tslint": "^5.10.0",
     "codelyzer": "^4.3.0",
     "typescript": "~2.4.2",
-    "body-parser": "^1.18.3"
+    "body-parser": "^1.18.3",
+    "pre-commit": "^1.2.2"
   }
 }
