@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ShowModalService} from '../not-active/show-modal.service';
 
 @Component({
   selector: 'app-confirm-mail',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmMailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _showModalService: ShowModalService) { }
 
   ngOnInit() {
+  }
+
+  showModal() {
+    this._showModalService.showModal = true;
   }
 
 }
