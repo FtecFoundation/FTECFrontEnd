@@ -101,6 +101,17 @@ app.post('/api/submitRecatpcha', function (req, res) {
     });
 });
 
+app.use('/api/cabinet/image', proxy(apiUrl, {
+    proxyReqPathResolver: function (req) {
+        return prefix + 'cabinet/image';
+    },
+    proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
+        return proxyReqOpts;
+    },
+    parseReqBody: false
+}));
+
 
 app.use('/api', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
