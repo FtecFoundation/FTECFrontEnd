@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TelegramAssistantService} from '../telegram-assistant.service';
 import {ShowModalService} from '../../../not-active/show-modal.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-telegram-activated',
@@ -12,7 +13,7 @@ export class TelegramActivatedComponent implements OnInit {
   userName: string;
   botDomain = '';
 
-  constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService) { }
+  constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router) { }
 
   ngOnInit() {
       this._telegramService.getBotDomain().subscribe(data => {
@@ -27,6 +28,12 @@ export class TelegramActivatedComponent implements OnInit {
 
   showModal() {
     this._showModalService.showModal = true;
+  }
+
+  unlink() {
+    this._telegramService.unlinkAccount().subscribe(data => {
+      this.router.navigate(['/modules/telegram-assistant']);
+    });
   }
 
 }
