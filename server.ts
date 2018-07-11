@@ -106,6 +106,8 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + 'cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        console.log('------------------------------------------------------------------------------------------');
+        console.log(srcReq.body);
         proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
         return proxyReqOpts;
     },
