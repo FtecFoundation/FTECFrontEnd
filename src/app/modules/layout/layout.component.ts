@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ShowModalService} from '../not-active/show-modal.service';
 import {routerAnimation} from './layout.animation';
 import {transition, trigger, useAnimation} from '@angular/animations';
+import {CurrentUserService} from '../../core/services/current-user.service';
 
 @Component({
     selector: 'app-layout',
@@ -17,7 +18,7 @@ import {transition, trigger, useAnimation} from '@angular/animations';
 })
 export class LayoutComponent implements OnInit {
 
-    constructor(public _showModalService: ShowModalService) {
+    constructor(public _showModalService: ShowModalService, public _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
