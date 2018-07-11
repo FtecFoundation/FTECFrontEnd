@@ -130,7 +130,6 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 
-
 if (apiUrl) {
     app.listen(port, () => {
         console.log(`Node Express server listening on http://localhost:${port}`);

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { tap } from 'rxjs/operators/tap';
-import { catchError } from 'rxjs/operators/catchError';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import {tap} from 'rxjs/operators/tap';
+import {catchError} from 'rxjs/operators/catchError';
 
-import { RestService } from './rest.service';
+import {RestService} from './rest.service';
 import {HttpParams} from '@angular/common/http';
 import {User} from '../models/user';
 import {map} from 'rxjs/operators/map';
@@ -17,7 +17,8 @@ enum AccountApiUrls {
     checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
     restorePassword = 'sendRestoreUrl',
     confirmEmail = 'confirmEmail/',
-    getUser = 'cabinet/getUser'
+    getUser = 'cabinet/getUser',
+    resendEmail = 'cabinet/resendConfirmation'
 }
 
 @Injectable()
@@ -25,6 +26,11 @@ export class AccountService extends RestService {
 
     isAuthorized(): Observable<any> {
         return this.get(AccountApiUrls.checkIfAuthorized).pipe(
+            catchError(e => this.handleError(e)));
+    }
+
+    resendEmail(): Observable<any> {
+        return this.get(AccountApiUrls.resendEmail).pipe(
             tap(resp => console.log(resp)),
             catchError(e => this.handleError(e)));
     }

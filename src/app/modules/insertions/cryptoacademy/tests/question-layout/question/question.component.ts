@@ -60,7 +60,8 @@ export class QuestionComponent implements OnInit, OnChanges {
     }
 
     checkIfAnswered(): boolean {
-        return !!this.history.tests[this.test.id + '_' + this.questionId];
+        return (this.history.tests[this.test.id + '_' + this.questionId] &&
+            this.history.tests[this.test.id + '_' + this.questionId].selectedAnswer !== -1);
     }
 
     updatePercent() {
