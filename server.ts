@@ -120,7 +120,7 @@ app.use('/api', proxy(apiUrl, {
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
         console.log(srcReq.connection.remoteAddress);
-        console.log(proxyReqOpts.connection.remoteAddress);
+        console.log(proxyReqOpts);
         proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
         return proxyReqOpts;
     }
