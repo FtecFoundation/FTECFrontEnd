@@ -19,7 +19,7 @@ export class CryptoacademyService extends RestService {
 
     resetTest(testId: number): Observable<any> {
         const params = new HttpParams().set('test', '' + testId);
-        return this.delete(CryptoacademyApiUrls.getTests, params).pipe(
+        return this.delete(CryptoacademyApiUrls.resetTest, params).pipe(
             catchError(e => this.handleError(e)));
     }
 
