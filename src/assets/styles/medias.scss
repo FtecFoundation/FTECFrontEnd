@@ -348,7 +348,6 @@
     margin-top: 1.250rem !important;
   }
 
-
   .desktop__container-image {
     left: -30px;
   }
@@ -392,6 +391,19 @@
   }
   .crypto__tab-container img {
     height: 200px !important;
+  }
+  .middle--complete {
+    padding: .938em !important;
+  }
+  .middle--complete h2 {
+    font-size: 2em;
+  }
+  .test__completed-button {
+    flex-wrap: wrap;
+  }
+  .test__completed-button button {
+    width: 100% !important;
+    margin-right: 0 !important;
   }
 }
 

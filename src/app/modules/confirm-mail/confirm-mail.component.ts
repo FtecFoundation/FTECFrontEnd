@@ -16,6 +16,7 @@ export const messages: any = {
 
 export class ConfirmMailComponent implements OnInit {
 
+
   message: string = messages.default;
 
   constructor(private _showModalService: ShowModalService) { }
