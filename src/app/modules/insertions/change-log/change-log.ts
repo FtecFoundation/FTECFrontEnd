@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+        'date': '11/07/2018',
+        'changes': [
+            'We added the possibility to accurately diagnose problems with Arbitrage Module through logging',
+            'Now you can execute other commands while searching for windows in Telegram Assistant, your request will be executed in the background',
+            'We added a limitation on a number of simultaneous requests for searching windows (not more than 1 request before the previous one is executed)',
+            'We began the development of Module of Price Notification',
+            'In the dropdown list in the header, layout adaptation for large emails was done',
+            'We added the possibility to repass the test at frontend',
+            'Errors while trying to change userpic were fixed',
+            'Userpic in the header and personal cabinet now changes in real time (new picture will be seen without page reloading)',
+            'We fixed the bug of calculating the best price from candles which are the nearest to user\'s deal in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the interval of candle building at 12 hours back and 12 hours ahead from user\'s deal was changes (instead of 5 minutes back and 5 minutes ahead) (for Binance and Bittrex)',
+            'We added error displaying in case if the user enters incorrect exchange in Service of Trader\'s Behavioral Analysis'
+        ]
+    },
+    {
         'date': '10/07/2018',
         'changes': [
             'Button emoji were added to Telegram Assistant',
