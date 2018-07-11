@@ -17,7 +17,7 @@ export class ConfirmMailComponent implements OnInit {
     error: "Something went wrong"
   }
 
-message: string = 
+// message: string = 
 
   constructor(private _showModalService: ShowModalService) { }
 

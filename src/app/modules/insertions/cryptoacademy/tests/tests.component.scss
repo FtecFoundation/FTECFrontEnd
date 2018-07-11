@@ -30,6 +30,7 @@
 }
 
 .middle--complete {
+  margin: .625em;
   padding: 5em;
   display: flex;
   flex-direction: column;
@@ -52,4 +53,16 @@
 
 .middle--complete svg {
   margin: 2.5em 0;
+}
+
+.test__completed-button {
+  display: flex;
+}
+
+.test__completed-button button {
+  width: 50%;
+}
+
+.test__completed-button button:first-child {
+  margin-right: .625em;
 }
