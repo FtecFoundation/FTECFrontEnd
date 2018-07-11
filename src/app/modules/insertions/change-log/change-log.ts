@@ -11,7 +11,7 @@ export const changeLog = [
             'Errors while trying to change userpic were fixed',
             'Userpic in the header and personal cabinet now changes in real time (new picture will be seen without page reloading)',
             'We fixed the bug of calculating the best price from candles which are the nearest to user\'s deal in Service of Trader\'s Behavioral Analysis',
-            'In Service of Trader\'s Behavioral Analysis, the interval of candle building at 12 hours back and 12 hours ahead from user\'s deal was changes (instead of 5 minutes back and 5 minutes ahead) (for Binance and Bittrex)',
+            'In Service of Trader\'s Behavioral Analysis, the interval of candle building at 12 hours back and 12 hours ahead from user\'s deal was changed (instead of 5 minutes back and 5 minutes ahead) (for Binance and Bittrex)',
             'We added error displaying in case if the user enters incorrect exchange in Service of Trader\'s Behavioral Analysis'
         ]
     },
