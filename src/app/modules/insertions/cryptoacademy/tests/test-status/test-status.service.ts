@@ -25,7 +25,6 @@ export class TestStatusService {
                 }
             }
         }
-
     }
 
     getPassedAmount(history: TestHistory, test: number) {
