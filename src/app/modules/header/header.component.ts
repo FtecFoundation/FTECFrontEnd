@@ -14,6 +14,7 @@ import {CurrentUserService} from '../../core/services/current-user.service';
 })
 export class HeaderComponent implements OnInit {
     user: User;
+    @ViewChild('image') image: ElementRef;
 
     constructor(private _accountService: AccountService,
                 private router: Router,
