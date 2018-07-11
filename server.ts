@@ -103,7 +103,7 @@ app.post('/api/submitRecatpcha', function (req, res) {
 
 app.use('/api/cabinet/image', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
-        return prefix + 'cabinet/image';
+        return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
         console.log('------------------------------------------------------------------------------------------');
