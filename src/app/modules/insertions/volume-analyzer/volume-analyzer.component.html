@@ -1,4 +1,7 @@
-<!--<app-volume-popup></app-volume-popup>-->
+
+
+<app-volume-popup [showModal]="showModal"></app-volume-popup>
+
 
 <div class="main-info main-info--price">
 
@@ -69,7 +72,7 @@
         Active Notifications
       </h5>
 
-      <button class="filter__container-button filter__container-button--volume" (click)="showModal()">Set notifications</button>
+      <button class="filter__container-button filter__container-button--volume" (click)="showPopup()">Set notifications</button>
     </div>
 
     <form action="" class="aside-right__filter aside-right__filter--volume">
