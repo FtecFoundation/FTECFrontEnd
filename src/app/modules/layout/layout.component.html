@@ -328,8 +328,7 @@
 
     </ul>
   </div>
-
-  <app-confirm-mail></app-confirm-mail>
+  <app-confirm-mail *ngIf="!_currentUserService.currentUser.confirmedEmail"></app-confirm-mail>
 
   <!-- Switched Middle content -->
   <router-outlet #o="outlet"></router-outlet>
