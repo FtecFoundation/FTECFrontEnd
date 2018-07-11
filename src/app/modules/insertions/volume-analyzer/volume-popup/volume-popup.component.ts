@@ -3,7 +3,6 @@ import { availableExchanges } from '../../arbitrage/available-exchanges';
 import { Injectable } from '@angular/core';
 
 
-
 @Component({
   selector: 'app-volume-popup',
   templateUrl: './volume-popup.component.html',
@@ -12,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class VolumePopupComponent implements OnInit {
 
   exchanges = availableExchanges;
-  @Input() showModal;
+  @Input() showPopupModal;
 
   constructor() {
   }
@@ -21,7 +20,7 @@ export class VolumePopupComponent implements OnInit {
   }
 
   closeModal() {
-    this.showModal = false;
+    this.showPopupModal = false;
   }
 
 }

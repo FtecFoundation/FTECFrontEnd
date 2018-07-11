@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { volumeAnalyzerItems } from './volume-analyzer';
-
+import {ShowModalService} from '../../not-active/show-modal.service';
+import {VolumePopupComponent} from './volume-popup/volume-popup.component';
 
 @Component({
   selector: 'app-social',
@@ -10,9 +11,9 @@ import { volumeAnalyzerItems } from './volume-analyzer';
 export class VolumeAnalyzerComponent implements OnInit {
 
   items = volumeAnalyzerItems;
-  showModal = false;
+  showPopupModal = false;
 
-  constructor() {
+  constructor(private _showModalService: ShowModalService) {
   }
 
   ngOnInit() {
@@ -20,8 +21,11 @@ export class VolumeAnalyzerComponent implements OnInit {
   }
 
   showPopup() {
-    this.showModal = true;
+    this.showPopupModal = true;
   }
 
+  showModal() {
+    this._showModalService.showModal = true;
+  }
 
 }
