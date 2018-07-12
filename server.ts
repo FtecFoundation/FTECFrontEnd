@@ -81,7 +81,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get('/api/getBotDomain', function (req, res) {
-        res.json({'botDomain': botDomain});
+    res.json({'botDomain': botDomain});
 });
 
 
@@ -115,12 +115,9 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
 
 app.use('/api', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
-        console.log(req.connection.remoteAddress);
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log(srcReq.connection.remoteAddress);
-        console.log(proxyReqOpts);
         proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
         return proxyReqOpts;
     }
