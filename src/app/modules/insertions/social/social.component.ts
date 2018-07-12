@@ -26,6 +26,8 @@ export class SocialComponent implements OnInit {
     leftTweets = [];
     rightTweets = [];
     daysLeft: any = 0;
+    wordsLeft: number = 50;
+    recWordClicked = false;
 
 
     constructor(private _showModalService: ShowModalService,
@@ -43,10 +45,10 @@ export class SocialComponent implements OnInit {
         }
     }
 
-
     ngOnInit() {
         this._socialService.getDictionary().subscribe(data => {
             this.dictionary = data;
+            this.wordsLeft = 50 - this.dictionary.length;
             this.getRecommendationsWords();
         });
 
@@ -121,8 +123,9 @@ export class SocialComponent implements OnInit {
 
     deleteWord(word: string) {
         console.log('delete');
-        this._socialService.deleteWord(word).subscribe(() => {
+        this._socialService.deleteWord(word).subscribe(data => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
+            this.wordsLeft = data;
             if (this.addedRecommendedWords.indexOf(word) !== -1) {
                 this.recommendedWords.push(word);
             }
@@ -132,9 +135,10 @@ export class SocialComponent implements OnInit {
     addWord() {
         this.submitted = true;
         this.wordExists = false;
-        if (this.socialForm.valid && (this.dictionary && this.dictionary.indexOf(this.word.value) === -1)) {
-            this._socialService.addWord(this.socialForm.value).subscribe(() => {
+        if (this.wordsLeft > 0 && this.socialForm.valid && (this.dictionary && this.dictionary.indexOf(this.word.value) === -1)) {
+            this._socialService.addWord(this.socialForm.value).subscribe(data => {
                 this.dictionary.push(this.word.value);
+                this.wordsLeft = data;
                 this.getRecommendationsWords();
             });
         } else if (this.dictionary.indexOf(this.word.value) !== -1) {
@@ -143,11 +147,12 @@ export class SocialComponent implements OnInit {
     }
 
     addRecommendedWord(word: string) {
-        console.log('add');
+        this.recWordClicked = true;
         this.wordExists = false;
-        if (this.dictionary && this.dictionary.indexOf(word) === -1) {
-            this._socialService.addWord({'word': word}).subscribe(() => {
+        if (this.wordsLeft > 0 && this.dictionary && this.dictionary.indexOf(word) === -1) {
+            this._socialService.addWord({'word': word}).subscribe(data => {
                 this.dictionary.push(word);
+                this.wordsLeft = data;
                 this.addedRecommendedWords.push(word);
                 this.getRecommendationsWords();
             });

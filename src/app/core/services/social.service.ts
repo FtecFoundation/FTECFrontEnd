@@ -40,15 +40,17 @@ export class SocialService extends RestService {
             catchError(e => this.handleError(e)));
     }
 
-    deleteWord(word: any): Observable<any> {
+    deleteWord(word: any): Observable<number> {
         console.log('shiiii');
         const param = new HttpParams().set('word', word);
         return this.delete(SocialApiUrls.dictionary, param).pipe(
+            map(resp => resp.response.available),
             catchError(e => this.handleError(e)));
     }
 
-    addWord(body: any): Observable<any> {
+    addWord(body: any): Observable<number> {
         return this.put(SocialApiUrls.dictionary, body).pipe(
+            map(resp => resp.response.available),
             catchError(e => this.handleError(e)));
     }
 

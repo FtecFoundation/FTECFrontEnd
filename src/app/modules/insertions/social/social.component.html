@@ -89,10 +89,11 @@
             </div>
           </li>
         </ul>
+            <span style="margin-top: 20px" *ngIf="(wordsLeft === 0) && recWordClicked" class="error-field">You ran out of words limit</span>
       </div>
 
       <div class="filter__container">
-        <span class="container__name container__name--recommended">Dictionary</span>
+        <span class="container__name container__name--recommended">Dictionary ({{wordsLeft}} word(s) left)</span>
         <span class="filter__container--empty-dictionary" *ngIf=" dictionary && dictionary.length === 0">Your dictionary is empty</span>
         <ul id="filter__container-block" class="filter__container-block">
           <li *ngFor="let word of dictionary" class="filter__container-block-item--categories is-active" (click)="deleteWord(word)">{{word}}
@@ -132,6 +133,10 @@
           <span *ngIf="word.invalid && (word.dirty || word.touched || submitted)">
             <span class="error-field" *ngIf="word.errors.required">This field is required</span>
             <span class="error-field" *ngIf="word.errors.minlength">Word should be at least 3 characters long</span>
+          </span>
+
+          <span *ngIf="(wordsLeft === 0) && submitted">
+            <span class="error-field">You ran out of words limit</span>
           </span>
         </div>
 
