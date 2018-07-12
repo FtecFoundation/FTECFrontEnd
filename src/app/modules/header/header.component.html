@@ -122,7 +122,7 @@
             <div class="header__user-account" (click)="showUser()">
                 <!-- <div class=""> -->
 
-                <img class="header__user-account-image" #profileImage alt="">
+                <img class="header__user-account-image" [src]="'api/images/' + _currentUserService.user.imageName">
 
 
                 <div class="user-account-block">

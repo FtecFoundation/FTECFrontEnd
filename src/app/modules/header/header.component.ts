@@ -13,26 +13,19 @@ import {CurrentUserService} from '../../core/services/current-user.service';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    @ViewChild('profileImage') image: ElementRef;
-
-    profileImage: string;
     user: User;
+    @ViewChild('image') image: ElementRef;
 
     constructor(private _accountService: AccountService,
                 private router: Router,
                 public _titlesService: TitlesService,
                 public _showModalService: ShowModalService,
-                private _imageService: ImageService,
                 public _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
         this._accountService.getUser().subscribe(data => {
             this.user = data;
-
-                this._imageService.getImage().subscribe(img => {
-                    this.image.nativeElement.src = URL.createObjectURL(img);
-                });
         });
     }
 

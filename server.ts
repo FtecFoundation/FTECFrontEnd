@@ -103,7 +103,7 @@ app.post('/api/submitRecatpcha', function (req, res) {
 
 app.use('/api/cabinet/image', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
-        return prefix + 'cabinet/image';
+        return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
         proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
@@ -115,9 +115,12 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
 
 app.use('/api', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
+        console.log(req.connection.remoteAddress);
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        console.log(srcReq.connection.remoteAddress);
+        console.log(proxyReqOpts);
         proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
         return proxyReqOpts;
     }
