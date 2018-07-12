@@ -40,7 +40,7 @@ export class TelegramActivatedComponent implements OnInit {
   loginNotification() {
     this._telegramService.changeLoginNotification().subscribe(data => {
       this.router.navigate(['/modules/telegram-assistant']);
-      console.log(this.userNotification);
+      console.log(data);
     });
   }
 

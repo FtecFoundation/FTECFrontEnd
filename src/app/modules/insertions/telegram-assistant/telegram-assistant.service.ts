@@ -43,12 +43,7 @@ export class TelegramAssistantService extends RestService {
 
     changeLoginNotification(): Observable<any> {
         return this.get(TelegramUrls.getNotificationSettings).pipe(
-            map(resp => resp.userNotification),
             catchError(e => this.handleError(e)));
     }
 
-    // changeRefferalNotification(): Observable<any> {
-    //     return this.post(TelegramUrls.refferalNotification, {}).pipe(
-    //     catchError(e => this.handleError(e)));
-    // }
 }

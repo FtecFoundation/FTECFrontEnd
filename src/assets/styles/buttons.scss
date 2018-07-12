@@ -55,7 +55,7 @@
 }
 
 .button__change.is-active::after {
-  left: 44%;
+  left: 50%;
 }
 
 .button__change::before {
@@ -75,10 +75,10 @@
 
 .button__change::after {
   content: '';
-  top: 5%;
+  top: 0%;
   left: 0%;
   width: 1.25rem;
-  height: 90%;
+  height: 100%;
   display: block;
   position: absolute;
 
