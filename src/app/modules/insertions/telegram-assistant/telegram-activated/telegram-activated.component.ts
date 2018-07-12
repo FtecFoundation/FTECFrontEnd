@@ -12,6 +12,7 @@ export class TelegramActivatedComponent implements OnInit {
   userId: string;
   userName: string;
   botDomain = '';
+  userNotification = '';
 
   constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router) { }
 
@@ -35,5 +36,13 @@ export class TelegramActivatedComponent implements OnInit {
       this.router.navigate(['/modules/telegram-assistant']);
     });
   }
+
+  loginNotification() {
+    this._telegramService.changeLoginNotification().subscribe(data => {
+      this.router.navigate(['/modules/telegram-assistant']);
+      console.log(this.userNotification);
+    });
+  }
+
 
 }

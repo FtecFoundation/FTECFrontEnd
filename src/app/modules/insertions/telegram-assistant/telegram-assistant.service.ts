@@ -9,7 +9,8 @@ const TelegramUrls = {
     getTelegramData: 'modules/telegram/getTelegramData',
     getHash: 'modules/telegram/getHash',
     getBotDomain: 'getBotDomain',
-    unlink: 'modules/telegram/unlink'
+    unlink: 'modules/telegram/unlink',
+    getNotificationSettings: 'cabinet/notifications/getNotificationSettings'
 };
 
 @Injectable()
@@ -40,4 +41,14 @@ export class TelegramAssistantService extends RestService {
             catchError(e => this.handleError(e)));
     }
 
+    changeLoginNotification(): Observable<any> {
+        return this.get(TelegramUrls.getNotificationSettings).pipe(
+            map(resp => resp.userNotification),
+            catchError(e => this.handleError(e)));
+    }
+
+    // changeRefferalNotification(): Observable<any> {
+    //     return this.post(TelegramUrls.refferalNotification, {}).pipe(
+    //     catchError(e => this.handleError(e)));
+    // }
 }
