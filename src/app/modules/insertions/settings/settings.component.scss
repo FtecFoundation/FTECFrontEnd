@@ -1,5 +1,14 @@
 @import "../../../../assets/styles/variables";
 
+/deep/ {
+  app-preloader{
+    transform: scale(0.7);
+  }
+
+  .content__preloader{
+    margin: 0 !important;
+  }
+}
 
 .main-info--settings {
   display: initial;

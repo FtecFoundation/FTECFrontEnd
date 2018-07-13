@@ -13,8 +13,8 @@
 
           <div class="filter__container-inner">
             <div class="settings__account">
-              <img *ngIf="_currentUserService.user" [src]="'api/images/' + _currentUserService.user.imageName" alt="" class="settings__container-image">
-
+              <img *ngIf="_currentUserService.user && !preloader" [src]="'api/images/' + _currentUserService.user.imageName" alt="" class="settings__container-image">
+              <app-preloader *ngIf="preloader"></app-preloader>
               <div class="settings__account-buttons">
                 <input style="display: none" accept="image/*" type="file" #uploader (change)="handleInputChange($event)">
                 <button class="account__buttons-item filter__container-button" (click)="uploader.click()">Change photo</button>
@@ -67,7 +67,6 @@
                 <input class="form__input" id="input-current-password" type="password">
               </div>
             </div>
-
             <div class="filter__container">
               <span class="container__name">Password</span>
 

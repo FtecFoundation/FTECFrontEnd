@@ -9,7 +9,6 @@ export class LanguageService {
 
     initLanguage() {
         this.currentLanguage = navigator.language;
-        console.log(this.currentLanguage);
     }
 
     set setLanguage(lang: string) {

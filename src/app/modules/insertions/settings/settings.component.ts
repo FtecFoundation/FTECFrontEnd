@@ -13,6 +13,7 @@ export class SettingsComponent implements OnInit {
     @ViewChild('image') image: ElementRef;
     private imageSrc = '';
     private imageType: string;
+    preloader: boolean = false;
 
     constructor(private _imageService: ImageService, private _showModal: ShowModalService, public _currentUserService: CurrentUserService) {
     }
@@ -26,10 +27,14 @@ export class SettingsComponent implements OnInit {
 
     handleInputChange(e) {
         const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-        if (file !== undefined) {
+        if (file.size > 5000000) {
+            alert('File is too big. Please, choose file less than 5MB');
+        } else if (file !== undefined) {
+            this.preloader = true;
             this.imageType = file.type;
-            this._imageService.setImage(file, this.imageType).subscribe(() => {
-                this._currentUserService.getCurrentUser();
+            this._imageService.setImage(file, this.imageType).subscribe(data => {
+                this._currentUserService.user.imageName = data;
+                this.preloader = false;
             });
         }
     }

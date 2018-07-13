@@ -1,3 +1,5 @@
+import {b} from '@angular/core/src/render3';
+
 export class User {
     username: string;
     email: string;
@@ -8,6 +10,13 @@ export class User {
     imageName: string;
     confirmedEmail: boolean;
     balance: number;
+    notificationSettings: NotificationSetting;
+}
+
+class NotificationSetting {
+    notificationType: number;
+    telegram: boolean;
+    email: boolean;
 }
 
 export class RegistrationData {
