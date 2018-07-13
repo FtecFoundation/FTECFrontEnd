@@ -5,12 +5,13 @@ export const changeLog = [
             'In Service of Trader\'s Behavioral Analysis, we added error displaying in case if the user enters incorrect params for interaction with Binance API and Bittrex API (e.g., API key, API secret, Pair)',
             'We added saving of user\'s operations to the database (for Binance and Bittrex) in Service of Trader\'s Behavioral Analysis',
             'In Service of Trader\'s Behavioral Analysis, the method which takes the best price from the nearest candles in dependence on operation type was added (for Bittrex)',
-            'We added the method which calculates the percentage of user\'s price of the best price in dependence on operation type in Service of Trader\'s Behavioral Analysis (for Bittrex)',
-            'HTML layout of banned user page',
-            'Banned user page was adapted to all screen sizes',
+            'We added the method which calculates the percentage of user\'s price of the best rate in dependence on operation type in Service of Trader\'s Behavioral Analysis (for Bittrex)',
+            'HTML layout of the page of banned users',
+            'The page of banned users was adapted to all screen sizes',
             'The method which calculates user\'s statistics on the history of user transactions was added in Service of Trader\'s Behavioral Analysis',
-            'We began working on connecting Service of Trader\'s Behavioral Analysis to the main module',
-            'In Telegram Assistant, we added a possibility to recieve notifications from other modules'
+            'We began the work on connecting Service of Trader\'s Behavioral Analysis to the main module',
+            'In Telegram Assistant, we added a possibility to receive notifications from other modules',
+            'In Service of Trader\'s Behavioral Analysis, we added a method which calculates statistics on the history of user\'s transactions'
         ]
     },
     {
