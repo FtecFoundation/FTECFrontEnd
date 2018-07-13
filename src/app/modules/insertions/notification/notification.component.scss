@@ -203,6 +203,12 @@
 }
 
 .middle__table-line--notification {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.notification__checker {
+  display: flex;
 }

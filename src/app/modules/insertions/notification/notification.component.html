@@ -2,8 +2,25 @@
 
   <div class="notification__head">
     <div class="middle__table-line--notification">
-      <span class="text">Temporarily disable all</span>
-      <figure class="button__change" (click)="disableAll()" [ngClass]="{'is-active' : notification}"></figure>
+      <div class="notification__checker">
+        <span class="text">Disable Telegram</span>
+        <figure class="button__change" (click)="disableAll()" [ngClass]="{'is-active' : notification}"></figure>
+      </div>
+
+      <div class="notification__checker">
+        <span class="text">Disable Email</span>
+        <figure class="button__change" (click)="disableAll()" [ngClass]="{'is-active' : notification}"></figure>
+      </div>
+
+      <div class="notification__checker">
+        <span class="text">Disable SMS</span>
+        <figure class="button__change" (click)="disableAll()" [ngClass]="{'is-active' : notification}"></figure>
+      </div>
+
+      <div class="notification__checker">
+        <span class="text">Disable Mobile</span>
+        <figure class="button__change" (click)="disableAll()" [ngClass]="{'is-active' : notification}"></figure>
+      </div>
     </div>
   </div>
 
