@@ -9,7 +9,13 @@ import {ShowModalService } from '../../not-active/show-modal.service';
 })
 export class NotificationComponent implements OnInit {
 
+  notification: boolean = false;
+
   ngOnInit() {
+  }
+
+  disableAll() {
+    this.notification = !this.notification;
   }
 
 

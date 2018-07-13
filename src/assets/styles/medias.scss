@@ -103,7 +103,9 @@
   .confirm-mail__container {
     margin: .625em !important;
   }
-
+  .notification__head {
+    margin-bottom: 40px !important;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -164,7 +166,8 @@
   .test__status-ng,
   .desktop__container,
   .filter__container-aside,
-  .banned__content {
+  .banned__content,
+  .filter__container--notifications-page {
     width: 100% !important;
   }
 
@@ -407,6 +410,9 @@
     width: 100% !important;
     margin-right: 0 !important;
   }
+  .container__wrapper--notifications {
+    margin: .625em auto 0;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -456,6 +462,11 @@
 
   .tab-controls-item {
     border-radius: initial !important;
+  }
+
+  .filter__container--notifications-page .container__name {
+    width: 100% !important;
+    margin-top: .625em;
   }
   
 }
