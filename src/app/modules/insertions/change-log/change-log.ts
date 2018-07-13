@@ -1,5 +1,22 @@
 export const changeLog = [
     {
+        'date': '13/07/2018',
+        'changes': [
+            'HTML layout of the page with global notification settings of all modules',
+            'The page with global notification settings of all modules was adapted to all screen sizes',
+            'HTML layout of informing pop-up',
+            'Informing pop-up was adapted to all screen sizes',
+            'Module of Trader\'s Behavioral Analyzer was configured and connected to the main module (for developers only)',
+            'We added a few commands to Telegram Assistant',
+            'We began the development of Ethereum node',
+            'We added smoothing of difference between user\'s price and the best price',
+            'We added the possibility to enable and disable notifications at backend',
+            'When you disable a certain way of notification, the configuration of specific types of notifications is saved',
+            'The possibility to do mailing with the helo of the main module was added',
+            'Now you will receive notifications to enabled ways of notification when signing in (now Telegram and mail are available)'
+        ]
+    },
+    {
         'date': '12/07/2018',
         'changes': [
             'In Service of Trader\'s Behavioral Analysis, we added error displaying in case if the user enters incorrect params for interaction with Binance API and Bittrex API (e.g., API key, API secret, Pair)',
