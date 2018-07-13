@@ -14,7 +14,6 @@ export class SocialComponent implements OnInit {
 
     @Input() tweetIds: string[] = [];
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
-    preloader = true;
     dictionary: string[];
     socialForm: FormGroup;
     submitted = false;
@@ -26,7 +25,7 @@ export class SocialComponent implements OnInit {
     leftTweets = [];
     rightTweets = [];
     daysLeft: any = 0;
-    wordsLeft: number = 50;
+    wordsLeft = 50;
     recWordClicked = false;
 
 
@@ -53,8 +52,6 @@ export class SocialComponent implements OnInit {
         });
 
         this._socialService.getTweets().subscribe(data => {
-            this.preloader = false;
-
             this.tweetIds = data;
 
             this.getTweets();
@@ -113,7 +110,7 @@ export class SocialComponent implements OnInit {
 
     createForm() {
         this.socialForm = this.formBuilder.group({
-            word: ['', [Validators.required, Validators.minLength(3)]]
+            word: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]]
         });
     }
 
@@ -122,7 +119,6 @@ export class SocialComponent implements OnInit {
     }
 
     deleteWord(word: string) {
-        console.log('delete');
         this._socialService.deleteWord(word).subscribe(data => {
             this.dictionary = this.dictionary.filter(wordInDict => wordInDict !== word);
             this.wordsLeft = data;
@@ -139,11 +135,19 @@ export class SocialComponent implements OnInit {
             this._socialService.addWord(this.socialForm.value).subscribe(data => {
                 this.dictionary.push(this.word.value);
                 this.wordsLeft = data;
+                this.word.setValue('');
                 this.getRecommendationsWords();
             });
         } else if (this.dictionary.indexOf(this.word.value) !== -1) {
             this.wordExists = true;
         }
+    }
+
+    deleteAllWords() {
+        this._socialService.deleteAllWords().subscribe(data => {
+            this.dictionary = [];
+            this.wordsLeft = data;
+        });
     }
 
     addRecommendedWord(word: string) {

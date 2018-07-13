@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../core/services/account.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ErrorsService } from '../../core/services/errors.service';
+import { ErrorsService } from '../../core/services/errors-handling/errors.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -50,6 +50,4 @@ export class LoginComponent implements OnInit {
     hasFieldError(fieldName: string): boolean {
         return this.loginForm.controls[fieldName].invalid && (this.submitted || this.loginForm.controls[fieldName].touched);
     }
-
-
 }

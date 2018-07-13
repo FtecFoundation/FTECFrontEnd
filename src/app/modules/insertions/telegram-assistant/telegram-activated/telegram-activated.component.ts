@@ -13,8 +13,8 @@ export class TelegramActivatedComponent implements OnInit {
   userName: string;
   botDomain = '';
   userNotification = '';
-  loggingNotification: boolean = false;
-  refferalNotification: boolean = false;
+  loggingNotification = false;
+  refferalNotification = false;
 
   constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router) { }
 

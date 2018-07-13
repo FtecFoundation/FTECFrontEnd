@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 
-import {ErrorsService} from './services/errors.service';
+import {ErrorsService} from './services/errors-handling/errors.service';
 import {OnlyAuthorizedGuard} from './guards/only-authorized.guard';
 import {OnlyNotAuthorizedGuard} from './guards/only-not-authorized.guard';
 import {AccountService} from './services/account.service';
@@ -18,6 +18,7 @@ import {LanguageService} from './services/language.service';
 import {CryptoacademyService} from './services/cryptoacademy.service';
 import {CaptchaService} from './services/captcha.service';
 import {CurrentUserService} from './services/current-user.service';
+import {ServerErrorsInterceptor} from './services/errors-handling/errors.interceptor.service';
 
 @NgModule({
     imports: [
@@ -41,7 +42,12 @@ import {CurrentUserService} from './services/current-user.service';
         LanguageService,
         CryptoacademyService,
         CurrentUserService,
-        CaptchaService
+        CaptchaService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ServerErrorsInterceptor,
+            multi: true,
+        },
     ]
 })
 export class CoreModule {

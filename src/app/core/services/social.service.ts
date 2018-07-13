@@ -11,6 +11,7 @@ enum SocialApiUrls {
     getTweets= 'cabinet/social/getTweets',
     renewSubscription = 'cabinet/social/subscribe',
     getExpirationDate = 'cabinet/social/getExpirationDate',
+    deleteAllWords = 'cabinet/social/deleteWholeDictionary'
 }
 
 @Injectable()
@@ -18,7 +19,6 @@ export class SocialService extends RestService {
 
     getDictionary(): Observable<string[]> {
         return this.get(SocialApiUrls.dictionary).pipe(
-            tap(resp => console.log(resp)),
             map(resp => resp.response.words),
             catchError(e => this.handleError(e)));
 
@@ -27,11 +27,14 @@ export class SocialService extends RestService {
 
     getExpirationDate(): Observable<Date> {
         return this.get(SocialApiUrls.getExpirationDate).pipe(
-            tap(resp => console.log(resp)),
             map(resp => resp.response.expirationDate),
             catchError(e => this.handleError(e)));
+    }
 
-
+    deleteAllWords(): Observable<number> {
+        return this.delete(SocialApiUrls.deleteAllWords).pipe(
+            map(resp => resp.response.available),
+            catchError(e => this.handleError(e)));
     }
 
     getTweets(): Observable<string[]> {
@@ -41,7 +44,6 @@ export class SocialService extends RestService {
     }
 
     deleteWord(word: any): Observable<number> {
-        console.log('shiiii');
         const param = new HttpParams().set('word', word);
         return this.delete(SocialApiUrls.dictionary, param).pipe(
             map(resp => resp.response.available),

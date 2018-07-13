@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {RestService} from './rest.service';
-import {tap} from 'rxjs/operators/tap';
 import {catchError} from 'rxjs/operators/catchError';
+import {map} from 'rxjs/operators/map';
 
 enum ImageApiUrls {
     getProfileImage = 'cabinet/image/',
@@ -14,13 +14,12 @@ export class ImageService extends RestService {
 
     getImage(): Observable<Blob> {
         return this.getBlob(ImageApiUrls.getProfileImage).pipe(
-            tap(resp => console.log(resp)),
             catchError(e => this.handleError(e)));
     }
 
-    setImage(image: any, type: string): Observable<any> {
+    setImage(image: any, type: string): Observable<string> {
         return this.put(ImageApiUrls.setProfileImage, image, type).pipe(
-            tap(resp => console.log(resp)),
+            map(resp => resp.response.imagePath),
             catchError(e => this.handleError(e)));
     }
 

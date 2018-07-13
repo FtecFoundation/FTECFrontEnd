@@ -74,9 +74,7 @@ export class DropdownComponent implements OnInit, OnChanges {
 
     select(value: any): void {
         this.active = value;
-        console.log(this.opened);
         this.opened = false;
-        console.log(this.opened);
     }
 
     @Input()

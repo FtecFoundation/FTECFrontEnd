@@ -3,10 +3,10 @@ import {ImageService} from '../../../core/services/image.service';
 import {ShowModalService } from '../../not-active/show-modal.service';
 
 export const titles = {
-  "0" : "Smart Trading Modules",
-  "1" : "Social Assistant",
-  "2" : "Order Manager"
-}
+  '0' : 'Smart Trading Modules',
+  '1' : 'Social Assistant',
+  '2' : 'Order Manager'
+};
 
 @Component({
   selector: 'app-notification',
@@ -15,7 +15,7 @@ export const titles = {
 })
 export class NotificationComponent implements OnInit {
 
-  notification: boolean = false;
+  notification = false;
 
   ngOnInit() {
   }
