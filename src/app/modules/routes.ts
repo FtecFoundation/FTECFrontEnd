@@ -7,6 +7,7 @@ export const routes = [
         path: 'modules', component: LayoutComponent, children: [
             {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
             {path: 'not-active', component: NotActiveComponent},
+            {path: 'notification', loadChildren: './insertions/notification/notification.module#NotificationModule'},
             {path: 'social', loadChildren: './insertions/social/social.module#SocialModule'},
             {path: 'arbitrage', loadChildren: './insertions/arbitrage/arbitrage.module#ArbitrageModule'},
             {path: 'cryptoacademy', loadChildren: './insertions/cryptoacademy/cryptoacademy.module#CryptoacademyModule'},

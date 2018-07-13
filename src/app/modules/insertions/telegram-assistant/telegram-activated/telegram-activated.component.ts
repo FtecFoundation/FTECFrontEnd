@@ -12,6 +12,9 @@ export class TelegramActivatedComponent implements OnInit {
   userId: string;
   userName: string;
   botDomain = '';
+  userNotification = '';
+  loggingNotification: boolean = false;
+  refferalNotification: boolean = false;
 
   constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router) { }
 
@@ -34,6 +37,26 @@ export class TelegramActivatedComponent implements OnInit {
     this._telegramService.unlinkAccount().subscribe(data => {
       this.router.navigate(['/modules/telegram-assistant']);
     });
+  }
+
+  loginNotification() {
+    // this._telegramService.changeLoginNotification().subscribe(data => {
+    //   this.router.navigate(['/modules/telegram-assistant']);
+    //   console.log(data);
+    //   this.userNotification = data;
+    // });
+
+    this.loggingNotification = !this.loggingNotification;
+  }
+
+  refferalChangeNotification() {
+    // this._telegramService.changeLoginNotification().subscribe(data => {
+    //   this.router.navigate(['/modules/telegram-assistant']);
+    //   console.log(data);
+    //   this.userNotification = data;
+    // });
+
+    this.refferalNotification = !this.refferalNotification;
   }
 
 }
