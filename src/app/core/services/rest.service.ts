@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export abstract class RestService {
 
-    protected baseUrl = 'https://api.ftec.network/';
+    protected baseUrl = '/api/';
 
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
