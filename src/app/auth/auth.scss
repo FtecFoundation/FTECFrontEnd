@@ -1,0 +1,101 @@
+@import "../../assets/styles/variables";
+
+.content__login {
+  width: 30%;
+  margin: auto;
+  padding: 2.500rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.content__login-first {
+  display: flex;
+  justify-content: center;
+}
+
+.content--registration {
+  // min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.content--confirm {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.content__confirm {
+  width: 50%;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.login__container-title {
+  text-align: center;
+  margin-bottom: 1.250em;
+}
+
+.content__container {
+  margin-bottom: 1.250em;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.container__name {
+  width: 100%;
+  display: block;
+  font-size: .938em;
+}
+
+.form__login-accept {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3.750em;
+  padding: .938rem;
+  outline: none;
+  color: $white;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 28px;
+  background: $blue-gradient;
+}
+
+.wrapper--registration {
+  height: inherit;
+}
+
+.button__outline--confirm {
+  padding: .938rem;
+  padding-left: 2.500rem;
+  padding-right: 2.500rem;
+}

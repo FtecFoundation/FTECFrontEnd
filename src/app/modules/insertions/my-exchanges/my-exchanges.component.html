@@ -1,0 +1,212 @@
+<div class="main-info">
+
+  <div class="middle">
+
+    <div class="container__middle container__middle--my-exchanges">
+
+      <div class="middle middle--dashboard">
+        <div class="middle__head middle__head--my-exchanges">
+          <h5>
+            Connected API's
+          </h5>
+        </div>
+
+        <div class="middle__table-type">
+          <span class="middle__table-type-name middle__table-type-name--notifications">
+            Name
+          </span>
+
+          <span class="middle__table-type-name middle__table-type-name--notifications">
+            Exchange
+          </span>
+
+          <span class="middle__table-type-name middle__table-type-name--notifications">
+            Added at
+          </span>
+        </div>
+
+        <div>
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 1</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Poloniex
+              </div>
+
+              <span class="container-item-update">03 May 2018 21:43</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 2</h4>
+
+              <div class="item-inner item-inner--notifications">
+                HitBTC
+              </div>
+
+              <span class="container-item-update"> 03 May 2018 21:43 </span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 3</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Kraken
+              </div>
+
+              <span class="container-item-update">03 May 2018 21:29</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 4</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Okcoin
+              </div>
+
+              <span class="container-item-update">03 May 2018 21:10</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 5</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Bitstamp
+              </div>
+
+              <span class="container-item-update">03 May 2018 18:53</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 6</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Bitfinex
+              </div>
+
+              <span class="container-item-update">03 May 2018 17:29 </span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 7</h4>
+
+              <div class="item-inner item-inner--notifications">
+                HitBTC
+              </div>
+
+              <span class="container-item-update">02 May 2018 9:31</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 8</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Poloniex
+              </div>
+
+              <span class="container-item-update">01 May 2018 19:33</span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 9</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Binance
+              </div>
+
+              <span class="container-item-update">01 May 2018 18:29 </span>
+            </div>
+          </div>
+
+          <div class="middle__table-container middle__table-container--dashboard">
+            <div class="middle__table-container-item middle__table-container-item--dashboard">
+              <h4 class="table-container-item--name">Account 10</h4>
+
+              <div class="item-inner item-inner--notifications">
+                Poloniex
+              </div>
+
+              <span class="container-item-update">01 May 2018 17:29</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="aside-right">
+    <div class="aside-right__head aside-right__head--arbitrage">
+      <h5>
+        Connect to exchange using API
+      </h5>
+    </div>
+
+    <form action="" class="aside-right__filter">
+
+      <div class="filter__wrapper">
+
+        <div class="filter__container filter__container--my-exchanges">
+          <span class="container__name">Name</span>
+
+          <div class="container__form">
+            <label for="text" class="form__label"></label>
+            <input type="text" class="form__input" placeholder="Account 1">
+          </div>
+        </div>
+
+        <div class="filter__container filter__container--my-exchanges">
+          <span class="container__name">Account type</span>
+
+
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <div class="filter__container">
+        <span class="container__name">API Key</span>
+
+        <div class="container__form">
+          <label for="text" class="form__label"></label>
+          <input type="text" class="form__input">
+        </div>
+      </div>
+
+      <div class="filter__container">
+        <span class="container__name">API Secret</span>
+
+        <div class="container__form">
+          <label for="text" class="form__label"></label>
+          <input type="text" class="form__input">
+        </div>
+      </div>
+
+      <button class="filter__container-button" (click)="showModal()">Get results</button>
+
+      <a href="javascript:void(0)" class="filter__container-link">How to create an API key?</a>
+    </form>
+  </div>
+
+</div>

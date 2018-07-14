@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/variables";
+
+.global__small-container {
+  justify-content: space-between;
+}
+
+.aside-right__head--global {
+  padding-top: 1.875em;
+}
+
+.global__small-container-value {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.global__small-container-value span,
+.global__small-container-value h3 {
+  font-weight: 100;
+}
+
+.filter__container--global .container__form--select {
+  width: 100%;
+}

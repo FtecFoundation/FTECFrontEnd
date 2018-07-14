@@ -1,0 +1,469 @@
+
+
+
+@media only screen and (max-width: 1100px) {
+  
+  .aside {
+    z-index: 1;
+    left: -100%;
+    width: 0% !important;
+    height: 100%;
+    padding-left: 0 !important;
+    padding-right: .625rem !important;
+    overflow-y: scroll;
+    position: absolute !important;
+
+    background: var(--violet-gradient);
+  }
+
+  .aside.is-active {
+    padding: .938rem !important;
+  }
+
+  .aside-right {
+    width: 45%;
+    padding-left: 0.938rem;
+  }
+
+  .header__info-user,
+  .price__small-container-value {
+    width: 100% !important;
+  }
+
+  [_nghost-c0],
+  [_nghost-c1],
+  [_nghost-c2],
+  [_nghost-c3],
+  [_nghost-c4],
+  [_nghost-c5],
+  [_nghost-c6],
+  [_nghost-c7],
+  [_nghost-c8],
+  [_nghost-c9],
+  [_nghost-c10],
+  [_nghost-c11],
+  [_nghost-c12],
+  [_nghost-c14],
+  [_nghost-c15],
+  [_nghost-c16],
+  [_nghost-c17],
+  [_nghost-c18],
+  [_nghost-c19],
+  [_nghost-c20] {
+    width: 100% !important;
+    padding-top: .500rem !important;
+  }
+
+  .main-info {
+    width: 100% !important;
+  }
+
+  .main-info__head {
+    margin: 0.938rem;
+  }
+
+  .middle {
+    width: 55%;
+    padding-left: 0.625rem !important;
+  }
+  
+  .header__left-bar {
+    display: block !important;
+  }
+
+  .header__info-title {
+    width: 55%;
+  }
+
+  .header__info-user {
+    width: 45%;
+  }
+
+  .middle__empty-buttons {
+    width: 100% !important;
+  
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center !important;
+  }
+  
+  .button--empty {
+    width: 60% !important;
+  }
+
+  .item-inner-line-error-block--empty .item-inner-line--error-icon {
+    left: 15% !important;
+  }
+
+  .middle--test {
+    width: 160% !important;
+  }
+  .confirm-mail__container {
+    margin: .625em !important;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+  .main-info__empty {
+    margin-right: .938rem;
+    margin-left: .938rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  .header__logo,
+  .header__info-title,
+  .header__info-title h2
+   {
+    display: none !important;
+  }
+
+  .header__info,
+  .header__info-user,
+  .aside,
+  .middle,
+  .aside-right,
+  .container-item-profit,
+  .item-inner,
+  .sidebar,
+  .item-inner-line-error-block,
+  [_nghost-c0],
+  [_nghost-c1],
+  [_nghost-c2],
+  [_nghost-c3],
+  [_nghost-c4],
+  [_nghost-c5],
+  [_nghost-c6],
+  [_nghost-c7],
+  [_nghost-c8],
+  [_nghost-c9],
+  [_nghost-c10],
+  [_nghost-c11],
+  [_nghost-c12],
+  [_nghost-c14],
+  [_nghost-c15],
+  [_nghost-c16],
+  [_nghost-c17],
+  [_nghost-c18],
+  [_nghost-c19],
+  [_nghost-c20],
+  .container__middle,
+  .filter__container--dashboard,
+  .container-item-update,
+  .middle__table-container-item h4,
+  .container-item-balance,
+  .button__outline--dashboard,
+  .main-info__head-item,
+  .aside-right--mobile,
+  .change-log_container,
+  .test__status-ng,
+  .desktop__container,
+  .filter__container-aside {
+    width: 100% !important;
+  }
+
+  .middle--empty-frame iframe {
+    height: 300px !important;
+  }
+
+  .container__middle--dashboard {
+    max-height: 700px;
+  }
+
+  .wrapper__main {
+    height: initial !important;
+  }
+
+  .change-log,
+  .settings__container {
+    width: 50% !important;
+  }
+
+  .error-field {
+    display: block;
+    margin-bottom: .938rem;
+  }
+
+  .middle__table-container--dashboard {
+    padding-top: .625rem !important;
+    padding-bottom: .625rem !important;
+  }
+
+  .filter__container--dashboard {
+    padding: 0 !important;
+  }
+
+  .content__container {
+    margin-bottom: initial !important;
+  }
+
+  .header__info-user {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .content--confirm {
+    flex-direction: initial;
+  }
+
+  .middle {
+    padding-left: 0 !important;
+  }
+
+  .aside-right {
+    order: -1;
+    padding: 0 !important;
+  }
+  
+  .item-inner-line-error-block {
+    top: 5rem !important;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+
+  .sidebar {
+    right: -100% !important;
+  }
+
+  .middle__table-container-item {
+    flex-wrap: wrap
+  }
+
+  .filter__container-block {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  
+  .content__login {
+    width: 100% !important;
+  }
+  
+  .main-info {
+    width: 100% !important;
+    padding: 0.938em;
+    
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .wrapper__main,
+  .middle__table-container-item--dashboard {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .container-item-update {
+    margin-left: 1.875rem !important;
+  }
+  
+  .middle__table-container-stocs {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center !important;
+  }
+
+  .stocs__container {
+    margin-bottom: .625rem;
+  }
+
+  .main-info__head {
+    margin: initial !important;
+    height: auto !important;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .main-info__head-item {
+    margin-bottom: .625rem;
+  }
+
+  .main-info__head-item:last-child {
+    overflow: hidden;
+  }
+
+  .middle--mobile {
+    display: none !important;
+  }
+
+  .aside-right--mobile,
+  .btn-block {
+    margin-left: 0 !important;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center !important;
+  }
+
+  .filter__container-button--arbitrage {
+    width: 100% !important;
+  }
+
+  app-test-blockchain {
+    flex-wrap: wrap;
+  }
+
+  .test__status-ng,
+  .content__container-popup {
+    width: 100% !important;
+  }
+
+  .crypto__tab-wrapper,
+  .crypto__tab-controls,
+  .middle__table-line {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+
+  .crypto__tab-controls-item,
+  .crypto__tab-container {
+    width: 50% !important;
+  }
+
+  .crypto__tab-controls-item {
+    border-radius: 0 !important;
+  }
+
+  .filter__container-aside--refferals {
+    width: 100%;
+    padding: 0;
+    margin-top: 1.250rem !important;
+  }
+
+  .desktop__container-image {
+    left: -30px;
+  }
+
+  .desktop__container-image:last-child {
+    top: 40px !important;
+    left: 0px !important;
+  }
+
+  .desktop__container--last {
+    left: 0 !important;
+  }
+
+  .middle--telegram-enable {
+    padding-left: 1.250em !important;
+  }
+
+  .tab-controls {
+    flex-wrap: wrap;
+  }
+
+  .crypto__tab-wrapper {
+    margin-right: initial !important;
+  }
+
+  .aside-right--behavioral {
+    padding: 10px !important;
+  }
+
+  .double__container {
+    width: 50% !important;
+  }
+  .button__outline--mail,
+  .confirm-mail__title {
+    width: 100% !important;
+  }
+  .confirm-mail__title {
+    margin-bottom: 2em;
+    font-size: .625em;
+    text-align: center;
+  }
+  .crypto__tab-container img {
+    height: 200px !important;
+  }
+  .middle--complete {
+    padding: .938em !important;
+  }
+  .middle--complete h2 {
+    font-size: 2em;
+  }
+  .test__completed-button {
+    flex-wrap: wrap;
+  }
+  .test__completed-button button {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .middle__table-container--left,
+  .middle__table-container--right,
+  .crypto__tab-controls-item,
+  .crypto__tab-container,
+  .tab-controls-item,
+  .middle__table--telegram,
+  .behavioral__small-container-inner,
+  .news__container-main,
+  .news__container-forecast
+   {
+    width: 100% !important;
+  }
+
+  .news__container-main {
+    padding-right: 0 !important;
+  }
+
+  .container__form button,
+  .news__container-forecast::before {
+    display: none !important;
+  }
+
+  .container__form .form__input {
+    padding-right: .625rem !important;
+  }
+
+  .item-inner-line--support {
+    flex-wrap: wrap;
+  }
+
+  .item-inner-line--support span:last-child {
+    width: 100%;
+    text-align: right !important;
+  }
+
+  .middle__table--telegram {
+    margin-right: 0 !important;
+    margin-bottom: .625em;
+  }
+
+  .middle--telegram {
+    flex-wrap: wrap;
+  }
+
+  .tab-controls-item {
+    border-radius: initial !important;
+  }
+  
+}
+
+@media only screen and (max-width: 425px) {
+
+  .change-log,
+  .settings__container,
+  .double__container {
+    width: 100% !important;
+  } 
+
+}

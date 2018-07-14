@@ -1,0 +1,33 @@
+.change-log_container{
+  height: 100vh;
+  overflow-y: scroll;
+  display: inline-block;
+}
+
+.change-log {
+  width: 100%;
+  padding: 0 0.625rem 0 0.625rem;
+  display: inline-block;
+  float: left;
+
+  li {
+    font-weight: 100;
+  }
+
+  li:before{
+    content: "•";
+    color: #25cbd3;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -15px;
+    margin-top: -3px;
+    font-size: 1.3em;
+    margin-right: 10px;
+  }
+
+  .middle__table-container--layout {
+    width: 100%;
+    padding: 1.625rem 1.625rem 2.625rem 2.625rem;
+  }
+
+}

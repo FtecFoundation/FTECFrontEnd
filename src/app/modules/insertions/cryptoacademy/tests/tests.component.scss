@@ -1,0 +1,68 @@
+@import "../../../../../assets/styles/variables";
+
+
+:host {
+  width: 100%;
+}
+
+.test__status-ng {
+  width: 40%;
+
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: .625rem;
+  margin-right: .625rem;
+  margin-bottom: 2.500rem;
+  padding: 0 !important;
+}
+
+.test-progress {
+  top: 0;
+  left: 0;
+  margin-top: .625rem;
+  margin-left: .625rem;
+  padding: .625em;
+  position: absolute;
+
+  background-color: #66cc33;
+  border-top-left-radius: .313rem;
+}
+
+.middle--complete {
+  margin: .625em;
+  padding: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  border-radius: .688rem;
+  background-image: $violet-gradient-aside;
+}
+
+.middle--complete h2 {
+  color: $accent;
+  margin-bottom: .938em;
+}
+
+.middle--complete h4 {
+  font-weight: 100;
+}
+
+.middle--complete svg {
+  margin: 2.5em 0;
+}
+
+.test__completed-button {
+  display: flex;
+}
+
+.test__completed-button button {
+  width: 50%;
+}
+
+.test__completed-button button:first-child {
+  margin-right: .625em;
+}

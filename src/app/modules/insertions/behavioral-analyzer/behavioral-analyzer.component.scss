@@ -1,0 +1,131 @@
+@import "../../../../assets/styles/variables";
+
+.middle--behavioral {
+  width: 66.66%;
+}
+
+.middle__head--behavioral {
+  padding: 0.75em 0;
+  padding-block-end: .625em;
+}
+
+.middle__block {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.behavioral__small-container {
+  width: 100%;
+  margin: 0px -10px;
+  padding: .938em;
+  border-radius: 0.625rem;
+  background-image: $violet-gradient-aside;
+}
+
+.behavioral__small-container-inner {
+  width: 50%;
+  padding: 10px;
+}
+
+.small-container__line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.behavioral__small-container .small-container__line:last-child {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.small-container__line h2 {
+  font-weight: 300;
+}
+
+.small-container__line-link {
+  font-size: 1.125em;
+  font-weight: 900;
+  color: $ocean;
+}
+
+.small-container__line--button {
+
+}
+
+.filter__container-button--behavioral {
+  padding: .625em;
+  width: initial;
+  padding-left: 1.250em;
+  padding-right: 1.250em;
+}
+
+.small-container__graph {
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+.small-container__svg {
+  margin: 30px 0;
+  width: 100%;
+  height: 100%;
+}
+
+.small-container__description {
+  font-size: .688rem;
+}
+
+.small-container__graph-controls {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.graph-controls__item {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.graph-controls__item--red,
+.small-container__line-link--red {
+  color: $crimson;
+}
+
+.graph-controls__item--blue {
+  color: $ocean;
+}
+
+.aside-right__head--behavioral {
+  padding: 0;
+  margin: 0.175em 0 1.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container__form--behavioral {
+  margin: 0;
+}
+
+.aside-right__filter--behavioral {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -.625em 0 -.625em -.625em;
+}
+
+.behavioral__stats {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.behavioral__stats-num {
+  font-size: 1.875em;
+}
+
+.aside-right__filter--bottom {
+  margin-top: 1.250em;
+}

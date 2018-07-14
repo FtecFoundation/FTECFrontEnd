@@ -1,0 +1,90 @@
+.button__outline {
+  padding: .313rem;
+  border-radius: 1.750rem;
+  padding-left: .938rem;
+  padding-right: .938rem;
+
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  color: $accent;
+  background: transparent;
+  border: 0.125rem solid $accent;
+}
+
+.button__outline:hover {
+  color:$white;
+  background: $accent;
+}
+
+.filter__container-button {
+  width: 100%;
+  padding: 1.250em;
+  margin-top: .938em;
+  margin-bottom: .938em;
+
+  color: $white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1.750rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-image: $blue-gradient;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.button__change {
+  width: 3.125em;
+  height: 1.250em;
+  position: relative;
+
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 28px;
+  background-color: $light-blue;
+}
+
+.button__change.is-active::before {
+  left: -10%;
+}
+
+.button__change.is-active::after {
+  left: 44%;
+}
+
+.button__change::before {
+  content: '';
+  top: 0;
+  left: -60%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+
+  border-radius: 50px;
+  background-image: $blue-gradient;
+
+  transition: left .3s ease;
+}
+
+.button__change::after {
+  content: '';
+  top: 5%;
+  left: 0%;
+  width: 1.25rem;
+  height: 90%;
+  display: block;
+  position: absolute;
+
+  border-radius: 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: $white;
+
+  transition: left .3s ease;
+}

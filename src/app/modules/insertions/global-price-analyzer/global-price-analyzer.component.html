@@ -1,0 +1,52 @@
+<div class="main-info main-info--price">
+
+  <div class="middle middle--price">
+
+    <div class="aside-right__head aside-right__head--arbitrage">Active orders</div>
+
+    <div class="middle__block middle__block--price">
+
+      <div class="behavioral__small-container-inner" *ngFor="let item of price">
+        <div class="order__small-container global__small-container">
+
+          <div class="price__small-container-value global__small-container-value">
+            <h3>{{item.exchange}}</h3>
+
+            <span class="small-container__line-link">{{item.value}}</span>
+          </div>
+
+          <button class="filter__container-button filter__container-button--behavioral">Edit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="aside-right">
+    <div class="aside-right__head aside-right__head--global">
+      <h5>
+
+      </h5>
+    </div>
+
+    <form action="" class="aside-right__filter">
+
+      <div class="filter__container">
+        <span class="container__name">Pair of cryptocurrencies</span>
+        <div class="filter__container--price filter__container--global">
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+
+        </div>
+      </div>
+
+      <button class="filter__container-button">Search</button>
+    </form>
+
+  </div>
+
+</div>

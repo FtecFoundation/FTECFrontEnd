@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="408px" height="128px" viewBox="0 0 408 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>FA94B569-74DC-483A-BA2C-8B6779167D74</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="408" height="168" rx="10"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="96.2729814%" id="linearGradient-3">
+            <stop stop-color="#3F8AFD" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#3B0855" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="94.5041463%" id="linearGradient-4">
+            <stop stop-color="#3F8AFD" offset="0%"></stop>
+            <stop stop-color="#9C0D66" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FTEC-Platform_Module-14" transform="translate(-316.000000, -593.000000)">
+            <g id="Group-6" transform="translate(316.000000, 408.000000)">
+                <g id="Group-3" transform="translate(0.000000, 156.000000)">
+                    <g id="Path-4">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="-" opacity="0.15"></g>
+                        <path d="M-20.4306078,80.1078295 C-6.30299732,57.2028551 16.8515725,45.9371625 49.0331015,46.3107516 C122.467139,47.1632331 143.403436,139.369222 188.112794,139.369222 C232.822152,139.369222 242.581727,69.7486294 270.559584,69.7486294 C304.389135,69.7486294 307.610614,98.1489122 333.474005,98.1489122 C381.802982,98.1489122 396.993295,60.4119759 432,60 C455.337804,59.7253494 457.366862,93.5505921 438.087174,161.475728 L-31.1085044,161.475728 L-20.4306078,80.1078295 Z" fill="url(#linearGradient-3)" mask="url(#mask-2)"></path>
+                        <path d="M-20.340176,64.2645317 C-6.17803076,41.1913336 17.03314,29.8429011 49.2933362,30.219234 C122.906882,31.0779765 143.894357,123.961165 188.713006,123.961165 C233.531655,123.961165 243.315088,53.8292493 271.361336,53.8292493 C305.273583,53.8292493 308.502936,82.4381157 334.42955,82.4381157 C382.876666,82.4381157 408.439721,36.4150016 443.531999,36" stroke="url(#linearGradient-4)" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

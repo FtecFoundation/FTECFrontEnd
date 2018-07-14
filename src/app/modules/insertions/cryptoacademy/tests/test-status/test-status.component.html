@@ -1,0 +1,39 @@
+<div class="aside-right aside-right--test">
+
+    <div class="test__status">
+
+        <div class="test__status-lines">
+            <span>Questions:</span>
+
+            <span class="test__status-lines-score">{{questionId}}/{{_testStatusService.total}}</span>
+        </div>
+
+        <div class="test__status-lines">
+            <span>Correct:</span>
+
+            <span class="test__status-lines-score">{{_testStatusService.correct}}</span>
+        </div>
+
+
+        <div class="test__status-lines">
+            <span>Mistakes:</span>
+
+            <span class="test__status-lines-score">{{_testStatusService.mistakes}}</span>
+        </div>
+
+        <div class="test__status-progress">
+            <span>Test progress:</span>
+
+            <div class="test__status-progress-item">
+                <span *ngIf="this._testStatusService.passedPercent < 100" class="status__progress-width" [ngStyle]="{'width': this._testStatusService.passedPercent + '%'}">
+                    {{this._testStatusService.passedPercent | number:'0.0-1'}}%
+                </span>
+                <span *ngIf="this._testStatusService.passedPercent >= 100" class="status__progress-width" [ngStyle]="{'width': '100%'}">100%</span>
+            </div>
+        </div>
+
+        <a [routerLink]="'/modules/cryptoacademy'" class="filter__container-button button--crypto button--status">
+            < &nbsp; &nbsp;Back to academy</a>
+    </div>
+
+</div>
