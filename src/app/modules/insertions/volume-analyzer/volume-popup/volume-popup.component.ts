@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { availableExchanges } from '../../arbitrage/available-exchanges';
-import {ShowModalService} from '../../../not-active/show-modal.service';
-
+import { Injectable } from '@angular/core';
 
 
 @Component({
@@ -12,16 +11,16 @@ import {ShowModalService} from '../../../not-active/show-modal.service';
 export class VolumePopupComponent implements OnInit {
 
   exchanges = availableExchanges;
+  @Input() showPopupModal;
 
-  constructor(private _showModalService: ShowModalService) {
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-
-  showModal() {
-    this._showModalService.showModal = true;
+  closeModal() {
+    this.showPopupModal = false;
   }
 
 }

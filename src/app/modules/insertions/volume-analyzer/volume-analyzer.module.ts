@@ -12,7 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
         VolumeAnalyzerRoutingModule
     ],
     declarations: [VolumeAnalyzerComponent,
-    VolumePopupComponent]
+    VolumePopupComponent],
+    providers: [
+    ]
 })
 
 export class VolumeAnalyzerModule {

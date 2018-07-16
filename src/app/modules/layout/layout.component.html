@@ -328,8 +328,9 @@
 
     </ul>
   </div>
-
-  <app-confirm-mail></app-confirm-mail>
+  <ng-container *ngIf="_currentUserService.currentUser">
+    <app-confirm-mail *ngIf="!_currentUserService.currentUser.confirmedEmail"></app-confirm-mail>
+  </ng-container>
 
   <!-- Switched Middle content -->
   <router-outlet #o="outlet"></router-outlet>

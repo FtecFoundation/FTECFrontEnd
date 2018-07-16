@@ -1,5 +1,53 @@
 export const changeLog = [
     {
+        'date': '13/07/2018',
+        'changes': [
+            'HTML layout of the page with global notification settings of all modules',
+            'The page with global notification settings of all modules was adapted to all screen sizes',
+            'HTML layout of informing pop-up',
+            'Informing pop-up was adapted to all screen sizes',
+            'Module of Trader\'s Behavioral Analyzer was configured and connected to the main module (for developers only)',
+            'We added a few commands to Telegram Assistant',
+            'We began the development of Ethereum node',
+            'We added smoothing of difference between user\'s price and the best price',
+            'We added the possibility to enable and disable notifications at backend',
+            'When you disable a certain way of notification, the configuration of specific types of notifications is saved',
+            'The possibility to do mailing with the helo of the main module was added',
+            'Now you will receive notifications to enabled ways of notification when signing in (now Telegram and mail are available)'
+        ]
+    },
+    {
+        'date': '12/07/2018',
+        'changes': [
+            'In Service of Trader\'s Behavioral Analysis, we added error displaying in case if the user enters incorrect params for interaction with Binance API and Bittrex API (e.g., API key, API secret, Pair)',
+            'We added saving of user\'s operations to the database (for Binance and Bittrex) in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the method which takes the best price from the nearest candles in dependence on operation type was added (for Bittrex)',
+            'We added the method which calculates the percentage of user\'s price of the best rate in dependence on operation type in Service of Trader\'s Behavioral Analysis (for Bittrex)',
+            'HTML layout of the page of banned users',
+            'The page of banned users was adapted to all screen sizes',
+            'The method which calculates user\'s statistics on the history of user transactions was added in Service of Trader\'s Behavioral Analysis',
+            'We began the work on connecting Service of Trader\'s Behavioral Analysis to the main module',
+            'In Telegram Assistant, we added a possibility to receive notifications from other modules',
+            'In Service of Trader\'s Behavioral Analysis, we added a method which calculates statistics on the history of user\'s transactions'
+        ]
+    },
+    {
+        'date': '11/07/2018',
+        'changes': [
+            'We added the possibility to accurately diagnose problems with Arbitrage Module through logging',
+            'Now you can execute other commands while searching for windows in Telegram Assistant, your request will be executed in the background',
+            'We added a limitation on a number of simultaneous requests for searching windows (not more than 1 request before the previous one is executed)',
+            'We began the development of Module of Price Notification',
+            'In the dropdown list in the header, layout adaptation for large emails was done',
+            'We added the possibility to repass the test at frontend',
+            'Errors while trying to change userpic were fixed',
+            'Userpic in the header and personal cabinet now changes in real time (new picture will be seen without page reloading)',
+            'We fixed the bug of calculating the best price from candles which are the nearest to user\'s deal in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the interval of candle building at 12 hours back and 12 hours ahead from user\'s deal was changed (instead of 5 minutes back and 5 minutes ahead) (for Binance and Bittrex)',
+            'We added error displaying in case if the user enters incorrect exchange in Service of Trader\'s Behavioral Analysis'
+        ]
+    },
+    {
         'date': '10/07/2018',
         'changes': [
             'Button emoji were added to Telegram Assistant',

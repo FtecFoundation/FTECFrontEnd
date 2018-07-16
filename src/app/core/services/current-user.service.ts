@@ -13,10 +13,6 @@ export class CurrentUserService {
     getCurrentUser() {
         this._accountService.getUser().subscribe(data => {
             this.currentUser = data;
-
-            this._imageService.getImage().subscribe(img => {
-                this.currentUser.imageName = URL.createObjectURL(img);
-            });
         });
     }
 

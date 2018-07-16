@@ -103,9 +103,11 @@ app.post('/api/submitRecatpcha', function (req, res) {
 
 app.use('/api/cabinet/image', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
-        return prefix + 'cabinet/image';
+        return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        console.log('------------------------------------------------------------------------------------------');
+        console.log(srcReq.body);
         proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
         return proxyReqOpts;
     },
@@ -130,9 +132,9 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 
-
 if (apiUrl) {
     app.listen(port, () => {
         console.log(`Node Express server listening on http://localhost:${port}`);
     });
 }
+

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TestStatusService} from '../../test-status/test-status.service';
 import {CryptoacademyService} from '../../../../../../core/services/cryptoacademy.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Test} from '../../../../../../core/models/test-cryptoacademy';
 
 @Component({
@@ -15,7 +15,8 @@ export class TestCompletedComponent implements OnInit {
 
   constructor(public _testStatusService: TestStatusService,
               private _cryptoacademyService: CryptoacademyService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
       const testId = Number.parseInt(this.activatedRoute.snapshot.paramMap.get('testId'));
@@ -27,6 +28,12 @@ export class TestCompletedComponent implements OnInit {
               this._testStatusService.getCorrectAndMistakesAmount(data1, testId);
               this.grade = (this._testStatusService.correct * 100) / this.test.total;
           });
+      });
+  }
+
+  resetTest() {
+      this._cryptoacademyService.resetTest(this.test.id).subscribe(() => {
+         this.router.navigate(['/modules/cryptoacademy']);
       });
   }
 
