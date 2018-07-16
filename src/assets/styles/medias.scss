@@ -415,6 +415,9 @@
   }
   .middle--notifications {
     margin-right: 0 !important;
+    }
+  .notification__checker {
+    flex-direction: column;
   }
 }
 
