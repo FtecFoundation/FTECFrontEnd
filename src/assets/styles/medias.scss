@@ -413,6 +413,9 @@
   .container__wrapper--notifications {
     margin: .625em auto 0;
   }
+  .middle--notifications {
+    margin-right: 0 !important;
+  }
 }
 
 @media only screen and (max-width: 580px) {
