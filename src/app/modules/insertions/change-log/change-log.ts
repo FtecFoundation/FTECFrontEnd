@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+        'date': '16/07/2018',
+        'changes': [
+            'In Social Assistant, we added the function of sending notifications when the relevant tweet comes',
+            'In Service of Trader\'s Behavioral Analysis, candles are built now only for deals which do not yet exist in the database. This improves the speed of the work of the module (for Binance)',
+            'We fixed a bug which limited a normal program execution in Social Assistant (Twitter API bug)',
+            'In Social Assistant, a bug in a method which sends notifications to the user was fixed',
+            'In Social Assistant, notification now contains a link to tweet which was linked',
+            'We changed buttons in notification settings',
+            'We configured switching of all Telegram notifications at frontend',
+            'We configured switching of all email notifications at frontend',
+            'We added the possibility to get an address in the node to hold tokens and ETH there',
+            'The possibility to withdraw tokens was added'
+        ]
+    },
+    {
         'date': '13/07/2018',
         'changes': [
             'HTML layout of the page with global notification settings of all modules',
