@@ -8,11 +8,11 @@ export const changeLog = [
             'Informing pop-up was adapted to all screen sizes',
             'Module of Trader\'s Behavioral Analyzer was configured and connected to the main module (for developers only)',
             'We added a few commands to Telegram Assistant',
-            'We began the development of Ethereum node',
+            'We began the development of wrapping for work with Ethereum node',
             'We added smoothing of difference between user\'s price and the best price',
             'We added the possibility to enable and disable notifications at backend',
             'When you disable a certain way of notification, the configuration of specific types of notifications is saved',
-            'The possibility to do mailing with the helo of the main module was added',
+            'The possibility to do mailing with the help of the main module was added',
             'Now you will receive notifications to enabled ways of notification when signing in (now Telegram and mail are available)'
         ]
     },
