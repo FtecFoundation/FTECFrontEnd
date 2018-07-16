@@ -4,12 +4,12 @@
     <div class="middle__table-line--notification">
       <div class="notification__checker">
         <span class="text">Disable Telegram</span>
-        <figure class="button__change" (click)="disableTelegram()" [ngClass]="{'is-active' : telegramNotify}"></figure>
+        <figure class="button__change" (click)="disableTelegram()" [ngClass]="{'is-active' : telegramNotifyAll}"></figure>
       </div>
 
       <div class="notification__checker">
         <span class="text">Disable Email</span>
-        <figure class="button__change" [ngClass]="{'is-active' : notification}"></figure>
+        <figure class="button__change" (click)="disableEmail()" [ngClass]="{'is-active' : emailNotifyAll}"></figure>
       </div>
 
       <div class="notification__checker">
@@ -31,7 +31,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications not-active">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -57,7 +57,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -147,7 +147,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -173,7 +173,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -263,7 +263,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -289,7 +289,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -379,7 +379,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -405,7 +405,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -495,7 +495,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -521,7 +521,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -611,7 +611,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -637,7 +637,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -727,7 +727,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -753,7 +753,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -843,7 +843,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -869,7 +869,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : emailNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox">
 

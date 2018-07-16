@@ -18,8 +18,14 @@ export const titles = {
 })
 export class NotificationComponent implements OnInit {
 
-  telegramNotify = false;
+  telegramNotifyAll = false;
+  emailNotifyAll = false;
+
+  emailNotifyItem = false;
+  telegramNotifyItem = false;
+  
   userTelegram = '';
+  userEmail = '';
 
   constructor(private _notificationService: NotificationService, private router: Router) { }
 
@@ -28,14 +34,25 @@ export class NotificationComponent implements OnInit {
   }
 
   disableTelegram() {
-    this._notificationService.changeTelegramNotification().subscribe(data => {
-      console.log(data);
+    this._notificationService.renewNotification().subscribe(data => {
+      
       this.userTelegram = data;
     
-      this.telegramNotify = !this.telegramNotify;
-    
-    });
+      this.telegramNotifyItem = !this.telegramNotifyItem;
 
+      this.telegramNotifyAll = !this.telegramNotifyAll;
+    });
+    
+  }
+
+  disableEmail() {
+    this._notificationService.changeNotification().subscribe(data => {
+      this.userEmail = data;
+    
+      this.emailNotifyItem = !this.emailNotifyItem;
+
+      this.emailNotifyAll = !this.emailNotifyAll;
+    });
   }
 
 }
