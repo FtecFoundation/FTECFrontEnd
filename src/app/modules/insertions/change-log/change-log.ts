@@ -5,7 +5,7 @@ export const changeLog = [
             'In Social Assistant, we added the function of sending notifications when the relevant tweet comes',
             'In Service of Trader\'s Behavioral Analysis, candles are built now only for deals which do not yet exist in the database. This improves the speed of the work of the module (for Binance)',
             'We fixed a bug which limited a normal program execution in Social Assistant (Twitter API bug)',
-            'In Social Assistant, a bug in a method which sends notifications to the user was fixed',
+            'In Social Assistant, a bug in the method which sends notifications to the user was fixed',
             'In Social Assistant, notification now contains a link to tweet which was linked',
             'We changed buttons in notification settings',
             'We configured switching of all Telegram notifications at frontend',
