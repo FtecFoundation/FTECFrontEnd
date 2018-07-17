@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+        'date': '17/07/2018',
+        'changes': [
+            'We added an address pool.',
+            'If you don\'t supplement your address, it will transition into frozen, binding to the user is saved.',
+            'If the user has a frozen address, he will get a new one while request for the address.',
+            'If user replenishes frozen address after 2-7 days, support will be able to help him.',
+            'if user replenishes frozen address after 8 days, support won\'t be able to help him.',
+            'Frozen address transitions to available after 8 days. ',
+            'While using paid services, the cost is credited to the user\'s locked balance',
+            'Visual work on enabling/disabling notifications was done.',
+            'New exchange, HitBTC, was connected in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the logic of getting the history of user trades was changed. (Previously, you should enter a pair manually, now it is entered automatically) (now it\'s for Binance only)'
+        ]
+    },
+    {
         'date': '16/07/2018',
         'changes': [
             'In Social Assistant, we added the function of sending notifications when the relevant tweet comes',
@@ -81,8 +96,8 @@ export const changeLog = [
     {
         'date': '09/07/2018',
         'changes': [
-            'We added dictionary limitation to Social Assistant (50 words for a user). Now module controllers ' + 
-            '(add a word, delete a word, delete all words) return the number of free lots (how many words the user' + 
+            'We added dictionary limitation to Social Assistant (50 words for a user). Now module controllers ' +
+            '(add a word, delete a word, delete all words) return the number of free lots (how many words the user' +
             'can add)',
             'In Social Assistant, all controllers are modified. Now they accept user id in headers, not in request params',
             'In the main module, we modified all controllers which interact with Social Assistant',
@@ -100,7 +115,7 @@ export const changeLog = [
     {
         'date': '06/07/2018',
         'changes': [
-            'We added a method  which searches and returns all transactions of the user in the Service of Traders ' + 
+            'We added a method  which searches and returns all transactions of the user in the Service of Traders ' +
             'Behavioral Analysis module (Bittrex)',
             'We added a method that searches for the nearest candles for the transaction of the user (for Bittrex)',
             'HTML-layout of the page of the Exchange of the Trading Recommendations Platform',
