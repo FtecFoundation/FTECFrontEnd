@@ -3,7 +3,7 @@ export const changeLog = [
         'date': '17/07/2018',
         'changes': [
             'We added an address pool.',
-            'If you don\'t supplement your address, it will transition into frozen, binding to the user is saved.',
+            'If you don\'t replenish your address, it will transition into frozen, binding to the user is saved.',
             'If the user has a frozen address, he will get a new one while request for the address.',
             'If user replenishes frozen address after 2-7 days, support will be able to help him.',
             'if user replenishes frozen address after 8 days, support won\'t be able to help him.',
