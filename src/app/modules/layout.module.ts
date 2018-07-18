@@ -7,8 +7,10 @@ import {HeaderComponent } from './header/header.component';
 import {FooterComponent } from './footer/footer.component';
 import {NotActiveComponent } from './not-active/not-active.component';
 import {ShowModalService} from './not-active/show-modal.service';
+import {ConfirmMailComponent} from './confirm-mail/confirm-mail.component';
 import {routes} from './routes';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NotificationComponent } from './insertions/notification/notification.component';
 
 @NgModule({
     imports: [
@@ -25,9 +27,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         LayoutComponent,
         HeaderComponent,
         FooterComponent,
-        NotActiveComponent
+        NotActiveComponent,
+        ConfirmMailComponent
     ],
-    providers: [ShowModalService]
+    providers: [ShowModalService,
+    NotificationComponent]
 })
 
 export class LayoutModule {

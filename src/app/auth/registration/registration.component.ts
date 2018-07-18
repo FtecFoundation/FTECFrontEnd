@@ -66,7 +66,6 @@ export class RegistrationComponent implements OnInit {
 
     toggleCheckbox(field: AbstractControl) {
         field.value === true ? field.setValue(false) : field.setValue(true);
-        console.log(field.value);
     }
 
 

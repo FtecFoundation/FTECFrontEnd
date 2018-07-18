@@ -100,7 +100,12 @@
   .middle--test {
     width: 160% !important;
   }
-
+  .confirm-mail__container {
+    margin: .625em !important;
+  }
+  .notification__head {
+    margin-bottom: 40px !important;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -141,6 +146,7 @@
   [_nghost-c10],
   [_nghost-c11],
   [_nghost-c12],
+  [_nghost-c13],
   [_nghost-c14],
   [_nghost-c15],
   [_nghost-c16],
@@ -159,7 +165,9 @@
   .change-log_container,
   .test__status-ng,
   .desktop__container,
-  .filter__container-aside {
+  .filter__container-aside,
+  .banned__content,
+  .filter__container--notifications-page {
     width: 100% !important;
   }
 
@@ -345,7 +353,6 @@
     margin-top: 1.250rem !important;
   }
 
-
   .desktop__container-image {
     left: -30px;
   }
@@ -377,6 +384,40 @@
 
   .double__container {
     width: 50% !important;
+  }
+  .button__outline--mail,
+  .confirm-mail__title {
+    width: 100% !important;
+  }
+  .confirm-mail__title {
+    margin-bottom: 2em;
+    font-size: .625em;
+    text-align: center;
+  }
+  .crypto__tab-container img {
+    height: 200px !important;
+  }
+  .middle--complete {
+    padding: .938em !important;
+  }
+  .middle--complete h2 {
+    font-size: 2em;
+  }
+  .test__completed-button {
+    flex-wrap: wrap;
+  }
+  .test__completed-button button {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  .container__wrapper--notifications {
+    margin: .625em auto 0;
+  }
+  .middle--notifications {
+    margin-right: 0 !important;
+    }
+  .notification__checker {
+    flex-direction: column;
   }
 }
 
@@ -427,6 +468,11 @@
 
   .tab-controls-item {
     border-radius: initial !important;
+  }
+
+  .filter__container--notifications-page .container__name {
+    width: 100% !important;
+    margin-top: .625em;
   }
   
 }

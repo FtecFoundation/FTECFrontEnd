@@ -5,20 +5,21 @@ import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
 import {Test, TestHistory} from '../models/test-cryptoacademy';
 import {tap} from 'rxjs/operators/tap';
+import {HttpParams} from '@angular/common/http';
 
 enum CryptoacademyApiUrls {
-    processUsersAnswer = 'cabinet/cryptoacademy/saveTest',
     getTests = 'cabinet/cryptoacademy/getAllTests',
     getHistory = 'cabinet/cryptoacademy/getHistory',
-    saveTest = 'cabinet/cryptoacademy/saveTest'
+    saveTest = 'cabinet/cryptoacademy/saveTest',
+    resetTest = 'cabinet/cryptoacademy/resetTest'
 }
 
 @Injectable()
 export class CryptoacademyService extends RestService {
 
-    processUsersAnswer(): Observable<any> {
-        return this.get(CryptoacademyApiUrls.processUsersAnswer).pipe(
-            map(resp => resp.response),
+    resetTest(testId: number): Observable<any> {
+        const params = new HttpParams().set('test', '' + testId);
+        return this.delete(CryptoacademyApiUrls.resetTest, params).pipe(
             catchError(e => this.handleError(e)));
     }
 

@@ -46,7 +46,6 @@ let botDomain = 'FTEC_test_bot';
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--api_url')) {
         apiUrl = val.substring(val.indexOf('=') + 1);
-        console.log(apiUrl);
     }
     if (val.startsWith('--port')) {
         port = Number.parseInt(val.substring(val.indexOf('=') + 1));
@@ -81,12 +80,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get('/api/getBotDomain', function (req, res) {
-        res.json({'botDomain': botDomain});
+    res.json({'botDomain': botDomain});
 });
 
 
 app.post('/api/submitRecatpcha', function (req, res) {
-    console.log(req.body['g-recaptcha-response']);
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
@@ -100,6 +98,17 @@ app.post('/api/submitRecatpcha', function (req, res) {
         res.json({'responseCode': 0, 'responseDesc': 'Sucess'});
     });
 });
+
+app.use('/api/cabinet/image', proxy(apiUrl, {
+    proxyReqPathResolver: function (req) {
+        return prefix + '/cabinet/image';
+    },
+    proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
+        return proxyReqOpts;
+    },
+    parseReqBody: false
+}));
 
 
 app.use('/api', proxy(apiUrl, {
@@ -118,7 +127,6 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 app.get('*', (req, res) => {
     res.render('index', {req});
 });
-
 
 if (apiUrl) {
     app.listen(port, () => {

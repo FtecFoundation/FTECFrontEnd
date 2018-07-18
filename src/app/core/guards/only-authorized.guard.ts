@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 
 import {AccountService} from '../services/account.service';
-import {ErrorsService} from '../services/errors.service';
-import {LoaderService} from '../loader/loader.service';
+import {ErrorsService} from '../services/errors-handling/errors.service';
 import {CurrentUserService} from '../services/current-user.service';
 
 
@@ -22,7 +21,6 @@ export class OnlyAuthorizedGuard implements CanActivate {
             return true;
         }, error1 => {
             if (error1.status === 403) {
-                console.log(error1);
                 this._errorsService.currentError = 'Log in to see this page';
                 this.router.navigate(['/auth']);
                 return false;
