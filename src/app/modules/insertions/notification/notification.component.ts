@@ -43,8 +43,6 @@ export class NotificationComponent implements OnInit {
   //     this.telegramNotifyItem = !this.telegramNotifyItem;
   //     this.telegramNotifyAll = !this.telegramNotifyAll;
   //   });
-
-  //   this._notificationService.renewNotification();
   // }
 
 
@@ -53,27 +51,5 @@ export class NotificationComponent implements OnInit {
     
       this.authTelegram = !this.authTelegram;
   }
-
-
-  // disableEmail() {
-  //   this._notificationService.changeNotification().subscribe(data => {
-  //     this.userEmail = data;
-    
-  //     this.emailNotifyItem = !this.emailNotifyItem;
-
-  //     this.emailNotifyAll = !this.emailNotifyAll;
-  //   });
-  // }
-
-  // changeAuthorisationTelegram() {
-  //   this._notificationService.renewNotification().subscribe(data => {
-      
-  //     this.userTelegram = data;
-    
-  //     this.telegramNotifyItem = !this.telegramNotifyItem;
-
-  //     this.telegramNotifyAll = !this.telegramNotifyAll;
-  //   });
-  // }
 
 }

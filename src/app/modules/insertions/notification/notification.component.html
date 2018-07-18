@@ -19,7 +19,7 @@
 
       <div class="notification__checker">
         <span class="text">Disable Telegram</span>
-        <figure class="button__change" (click)="disableTelegram()" [ngClass]="{'is-active' : telegramNotifyAll}"></figure>
+        <figure class="button__change" (click)="setAuthNotification()" [ngClass]="{'is-active' : telegramNotifyAll}"></figure>
       </div>
     </div>
   </div>
@@ -1041,7 +1041,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotifyItem}">
           <label class="form__info-label-container">
             <input type="checkbox" (click)="setAuthNotification()">
 
