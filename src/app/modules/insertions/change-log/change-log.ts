@@ -1,5 +1,19 @@
 export const changeLog = [
     {
+        'date': '18/07/2018',
+        'changes': [
+            'We added the possibility to authorize via email and via login name both.',
+            'We began the development of proxy server for access to exchanges to avoid the risk to be banned. Four exchanges were connected.',
+            'In Service of Trader\'s Behavioral Analysis, controller, which returned history of user\'s trades, now returns history and statistics on trades.',
+            'HTML layout of Smart Trading Module.',
+            'Smart Trading Module page was adapted to all screen sizes.',
+            'It\'s not necessary now to enter a pair to get deals in Service of Trader\'s Behavioral Analysis (for Binance and HitBTC).',
+            'In Service of Trader\'s Behavioral Analysis, the method, which returns a list of the user\'s deals, worked for one exchanges only. Now it works for several exchanges.',
+            'Previously, it was necessary for the user to wait a long for request processed if he has never used our service before. Now request is processed faster (in Service of Trader\'s Behavioral Analysis).',
+            'Arbitrage Module was partially integrated with the proxy project.'
+        ]
+    },
+    {
         'date': '17/07/2018',
         'changes': [
             'We added an address pool.',
