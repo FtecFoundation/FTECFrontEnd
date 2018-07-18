@@ -3,12 +3,8 @@ export const changeLog = [
         'date': '17/07/2018',
         'changes': [
             'We added an address pool.',
-            'If you don\'t replenish your address, it will transition into frozen, binding to the user is saved.',
-            'If the user has a frozen address, he will get a new one while request for the address.',
-            'If user replenishes frozen address after 2-7 days, support will be able to help him.',
-            'if user replenishes frozen address after 8 days, support won\'t be able to help him.',
-            'Frozen address transitions to available after 8 days. ',
-            'While using paid services, the cost is credited to the user\'s locked balance',
+            'If you don\'t replenish your address in two days, it will transition into frozen, binding to the user is saved.',
+            'If the user pays during 2 days, funds will be charged within 12 hours. Between second and seventh days, he can give the funds back with the help of the support service. After the eighth day, it won\'t be possible to return funds.',
             'Visual work on enabling/disabling notifications was done.',
             'New exchange, HitBTC, was connected in Service of Trader\'s Behavioral Analysis',
             'In Service of Trader\'s Behavioral Analysis, the logic of getting the history of user trades was changed. (Previously, you should enter a pair manually, now it is entered automatically) (now it\'s for Binance only)'
