@@ -1,1 +1,92 @@
 @import "../../../../assets/styles/variables";
+
+.middle--smart {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.smart__item {
+  width: 33.33%;
+  // margin: -.625em;
+}
+
+.smart__container {
+  padding: .625em;
+  border-radius: .625rem;
+  background-image: $violet-gradient-linear;
+}
+
+.smart__container.is-active {
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+}
+
+.smart__container.is-active .smart__info .smart__line-dark {
+  color: $black;
+}
+
+.smart__item-bot {
+  display: flex;
+}
+
+.smart__item-bot img {
+  width: 130px;
+  height: 130px;
+}
+
+.smart__item-bot-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.smart__bot-title {
+  margin-bottom: .313em;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;  
+}
+
+.smart__bot-subtitle {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.33;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.smart__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.250em;
+}
+
+.smart__info-block {
+  width: 50%;
+  padding: .313em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.smart__info-block-line {
+  margin-bottom: .313rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.smart__info-block-line span {
+  font-size: 12px;
+}
+
+.smart__info-block-line .smart__line-dark {
+  color: $green;
+}
+
+.button--smart-good {
+  background-image: none;
+  background-color: $green;
+  box-shadow: 0 14px 20px 0 rgba(57, 9, 86, 0.2);
+}
