@@ -13,7 +13,7 @@ export class User {
     notificationSettings: NotificationSetting;
 }
 
-export class NotificationSetting {
+class NotificationSetting {
     notificationType: number;
     telegram: boolean;
     email: boolean;

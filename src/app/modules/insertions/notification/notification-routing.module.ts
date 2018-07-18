@@ -3,7 +3,6 @@ import {NotificationComponent} from './notification.component';
 import {RouterModule} from '@angular/router';
 
 
-
 @NgModule({
     imports: [
         RouterModule.forChild([

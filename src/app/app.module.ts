@@ -11,6 +11,7 @@ import {LayoutModule} from './modules/layout.module';
 import {routes} from './routes';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
 @NgModule({
     declarations: [
         AppComponent

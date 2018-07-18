@@ -24,8 +24,12 @@ export class NotificationComponent implements OnInit {
   emailNotifyItem = false;
   telegramNotifyItem = false;
   
+  socialTelegram = false;
+  authTelegram = false;
+
   userTelegram = '';
   userEmail = '';
+  authNotification = '';
 
   constructor(private _notificationService: NotificationService, private router: Router) { }
 
@@ -33,26 +37,43 @@ export class NotificationComponent implements OnInit {
   ngOnInit() {
   }
 
-  disableTelegram() {
-    this._notificationService.renewNotification().subscribe(data => {
+  // disableTelegram() {
+  //   this._notificationService.getNotification().subscribe(data => {
+  //     this.userTelegram = data;
+  //     this.telegramNotifyItem = !this.telegramNotifyItem;
+  //     this.telegramNotifyAll = !this.telegramNotifyAll;
+  //   });
+
+  //   this._notificationService.renewNotification();
+  // }
+
+
+  setAuthNotification() {
+    // this._notificationService.renewNotification(new NotificationSetting(notificationType))
+    
+      this.authTelegram = !this.authTelegram;
+  }
+
+
+  // disableEmail() {
+  //   this._notificationService.changeNotification().subscribe(data => {
+  //     this.userEmail = data;
+    
+  //     this.emailNotifyItem = !this.emailNotifyItem;
+
+  //     this.emailNotifyAll = !this.emailNotifyAll;
+  //   });
+  // }
+
+  // changeAuthorisationTelegram() {
+  //   this._notificationService.renewNotification().subscribe(data => {
       
-      this.userTelegram = data;
+  //     this.userTelegram = data;
     
-      this.telegramNotifyItem = !this.telegramNotifyItem;
+  //     this.telegramNotifyItem = !this.telegramNotifyItem;
 
-      this.telegramNotifyAll = !this.telegramNotifyAll;
-    });
-    
-  }
-
-  disableEmail() {
-    this._notificationService.changeNotification().subscribe(data => {
-      this.userEmail = data;
-    
-      this.emailNotifyItem = !this.emailNotifyItem;
-
-      this.emailNotifyAll = !this.emailNotifyAll;
-    });
-  }
+  //     this.telegramNotifyAll = !this.telegramNotifyAll;
+  //   });
+  // }
 
 }
