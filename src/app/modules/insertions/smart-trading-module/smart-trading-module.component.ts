@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShowModalService } from '../../not-active/show-modal.service';
+
 
 @Component({
   selector: 'app-social',
@@ -7,10 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SmartTradingModuleComponent implements OnInit {
 
-  constructor() {
+  constructor(private _showModal: ShowModalService) {
   }
 
   ngOnInit() {
+  }
+
+  showModal() {
+    this._showModal.showModal = true;
   }
 
 }
