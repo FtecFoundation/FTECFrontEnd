@@ -1,5 +1,9 @@
 @import "../../../../assets/styles/variables";
 
+.main-info--smart {
+  flex-wrap: wrap;
+}
+
 .middle--smart {
   width: 100%;
   display: flex;
@@ -93,4 +97,35 @@
 
 .button--smart-good {
   box-shadow: 0 14px 20px 0 rgba(57, 9, 86, 0.2);
+}
+
+.graph {
+  padding-top: 1.250em;
+  padding-right: .625em;
+}
+
+.graph img {
+  width: 100%;
+  height: 100%;
+}
+
+.filter__container-aside--smart {
+  padding-top: 1.250em;
+  margin-top: 0;
+}
+
+.container__wrapper--smart {
+  margin-top: 0;
+  overflow-y: scroll;
+  max-height: 260px;
+}
+
+.smart__table {
+  margin-top: 1.250em;
+  margin-bottom: 1.25em;
+  padding-right: .625em;
+}
+
+.middle__table-type-name--smart {
+  font-weight: 100%;
 }
