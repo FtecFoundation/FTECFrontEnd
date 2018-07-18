@@ -4,11 +4,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin: -.625em;
 }
 
 .smart__item {
   width: 33.33%;
-  // margin: -.625em;
+  padding: .625em;
 }
 
 .smart__container {
@@ -23,6 +24,11 @@
 
 .smart__container.is-active .smart__info .smart__line-dark {
   color: $black;
+}
+
+.smart__container.is-active .button--smart-good {
+  background-image: none;
+  background-color: $green;
 }
 
 .smart__item-bot {
@@ -86,7 +92,5 @@
 }
 
 .button--smart-good {
-  background-image: none;
-  background-color: $green;
   box-shadow: 0 14px 20px 0 rgba(57, 9, 86, 0.2);
 }
