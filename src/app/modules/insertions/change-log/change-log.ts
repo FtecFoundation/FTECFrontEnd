@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+      'date': '19/07/2018',
+        'changes': [
+        'We made one type of pop-up for the referral page.',
+        'Pop-up was adapted on the referral page.',
+        'We fixed following to the module page by unauthenticated user.',
+        'Service of Trader\'s Behavioral Analysis was connected to the main module.',
+        'In the main module, now it\'s possible to save API key for exchanges.',
+        'Now it is not necessary to enter API keys to send a request to Service of Trader\'s Behavioral Analysis. Only exchange name is needed.',
+        'We added the possibility to send tokens from one user account to another.',
+        'The integration between Arbitrage Module and proxy server is finished.',
+        'We fixed error display while authentification.',
+        'Node was fully tested in the test network with test tokens, we began integration with the real network.'
+      ]
+    },
+    {
         'date': '18/07/2018',
         'changes': [
             'We added the possibility to authorize via email and via login name both.',
