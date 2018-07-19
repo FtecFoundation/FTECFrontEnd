@@ -3,7 +3,8 @@ import {ImageService} from '../../../core/services/image.service';
 import {ShowModalService } from '../../not-active/show-modal.service';
 import {Router} from '@angular/router';
 import {NotificationService} from './notification.service';
-
+import {NotificationSetting} from '../../../core/models/user';
+import {CurrentUserService} from '../../../core/services/current-user.service';
 
 export const titles = {
   '0' : 'Smart Trading Modules',
@@ -18,6 +19,8 @@ export const titles = {
 })
 export class NotificationComponent implements OnInit {
 
+  notification: NotificationSetting;
+
   telegramNotifyAll = false;
   emailNotifyAll = false;
 
@@ -31,10 +34,11 @@ export class NotificationComponent implements OnInit {
   userEmail = '';
   authNotification = '';
 
-  constructor(private _notificationService: NotificationService, private router: Router) { }
+  constructor(private _notificationService: NotificationService, private router: Router, private _currentUser: CurrentUserService) { }
 
 
   ngOnInit() {
+    // this.notification = this._currentUser.currentUser.notificationSettings;
   }
 
   // disableTelegram() {
@@ -47,9 +51,12 @@ export class NotificationComponent implements OnInit {
 
 
   setAuthNotification() {
-    // this._notificationService.renewNotification(new NotificationSetting(notificationType))
+    this._notificationService.renewNotification();
     
-      this.authTelegram = !this.authTelegram;
+    this.authTelegram = !this.authTelegram;
   }
 
 }
+ 
+
+

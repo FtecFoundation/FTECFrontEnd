@@ -11,9 +11,15 @@ export class RefferalsComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;
     private imageSrc = '';
 
+  showPopupModal = false;
+
 
   ngOnInit() {
   }
 
+  showPopup() {
+    this.showPopupModal = true;
+    console.log(this.showPopupModal)
+  }
 
 }

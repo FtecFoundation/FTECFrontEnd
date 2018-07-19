@@ -1,3 +1,6 @@
+<app-refferals-popup [showPopupModal]="showPopupModal"></app-refferals-popup>
+
+
 <div class="main-info main-info--support">
 
   <div class="middle middle--support-half">
@@ -83,7 +86,7 @@
           <span class="support__aside-time">4867 FTEC</span>
         </div>
 
-        <button class="filter__container-button">Withdraw</button>
+        <button class="filter__container-button" (click)="showPopup()">Withdraw</button>
       </div>
 
 
