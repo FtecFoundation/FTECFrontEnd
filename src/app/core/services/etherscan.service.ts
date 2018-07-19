@@ -16,7 +16,7 @@ export class EtherscanService extends ExternalService {
         params = params.append('action', 'tokenbalance');
         params = params.append('tag', 'latest');
         return this.get('https://api.etherscan.io/api', params).pipe(
-            map(result => { return result.result; }),
+            map(result => result.result),
             catchError(reponse => {
                 console.log(reponse);
                 return null;

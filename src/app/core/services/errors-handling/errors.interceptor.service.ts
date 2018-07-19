@@ -32,7 +32,7 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                     } if (err.status === 403) {
                         this.router.navigate(['/auth']);
                     }
-                    
+
                 }
                 return Observable.of(err);
             }) as any;

@@ -19,7 +19,7 @@ export class RefferalsComponent implements OnInit {
 
   showPopup() {
     this.showPopupModal = true;
-    console.log(this.showPopupModal)
+    console.log(this.showPopupModal);
   }
 
 }
