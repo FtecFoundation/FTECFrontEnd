@@ -98,7 +98,19 @@
 
       <div class="middle__table">
 
-        <div class="middle__table-container middle__table-container--settings">
+        <div class="middle__table-container middle__table-container--settings" *ngIf="step1">
+          <h5 class="settings__container-qr settings__container-title">Enable 2FA</h5>
+
+          <button class="filter__container-button filter__container-button--settings" (click)="showNextStep()">Enable</button>
+        </div>
+
+        <div class="middle__table-container middle__table-container--settings" *ngIf="step2">
+          <h5 class="settings__container-qr settings__container-title">We have sent you a code. <br>Please, checkour your email.</h5>
+
+          <button class="filter__container-button filter__container-button--settings" (click)="showLastStep()">Enable</button>
+        </div>
+
+        <div class="middle__table-container middle__table-container--settings" *ngIf="step3">
 
           <div class="filter__container-inner">
 
@@ -113,7 +125,7 @@
           </div>
 
           <div class="filter__container filter__container--settings">
-            <span class="container__name">Last Name</span>
+            <span class="container__name">Code</span>
 
             <div class="container__form">
               <label class="form__label" for="text"></label>

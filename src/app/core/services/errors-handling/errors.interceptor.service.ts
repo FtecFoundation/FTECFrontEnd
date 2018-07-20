@@ -30,7 +30,7 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                     if (err.status === 423) {
                         this.router.navigate(['/banned']);
                     } else if (err.status === 403) {
-                        this.router.navigate(['/auth']);
+                        this.router.navigate(['/auth', '/auth/registration', '/auth/restore']);
                     } 
                 }
                 return Observable.of(err);
