@@ -10,7 +10,7 @@ export class User {
     imageName: string;
     confirmedEmail: boolean;
     balance: number;
-    address: string;
+    walletAddress: string;
     notificationSettings: NotificationSetting;
 }
 

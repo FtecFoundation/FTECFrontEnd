@@ -14,9 +14,10 @@ export class CurrentUserService {
     getCurrentUser() {
         this._accountService.getUser().subscribe(data => {
             this.currentUser = data;
-            this._etherscanService.getBalance('0xbcee1c08a1ee0774bee5ba89d40da324d9a3f9fc').subscribe(balance => {
+            if (!this.currentUser.walletAddress) { this.currentUser.balance = 0; } else { this._etherscanService.getBalance(this.currentUser.walletAddress).subscribe(balance => {
                 this.user.balance = balance;
             });
+            }
         });
     }
 
