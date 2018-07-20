@@ -19,11 +19,10 @@
 
         <div class="container__form container__form--refferals">
           <label for="" class="form__label">
-            <input type="text" class="form__input form__input-button" placeholder="https://ftec.io/?c=tc40073">
+            <input type="text" class="form__input form__input-button" value="https://ftec.io/?c=tc40073">
 
             <button class="filter__container-button">Copy</button>
           </label>
-
         </div>
       </div>
     </div>
@@ -75,15 +74,9 @@
         </div>
 
         <div class="middle__table-container--support">
-          <span class="support__aside-time">30 days:</span>
+          <span class="support__aside-time">Total withdraw</span>
 
           <span class="support__aside-time">495867 FTEC</span>
-        </div>
-
-        <div class="middle__table-container--support">
-          <span class="support__aside-time">Today:</span>
-
-          <span class="support__aside-time">4867 FTEC</span>
         </div>
 
         <button class="filter__container-button" (click)="showPopup()">Withdraw</button>
@@ -100,9 +93,9 @@
 
     <div class="support__tab">
       <ul class="tab-controls">
-        <li class="tab-controls-item is-active">Lvl 1 Referals (240)</li>
-        <li class="tab-controls-item">Lvl 2 Referals (350)</li>
-        <li class="tab-controls-item">Lvl 3 Referals (350)</li>
+        <li class="tab-controls-item" (click)="showTab1()" [ngClass]="{'is-active' : tabLvl1}">Lvl 1 Referals (240)</li>
+        <li class="tab-controls-item" (click)="showTab2()" [ngClass]="{'is-active' : tabLvl2}">Lvl 2 Referals (350)</li>
+        <li class="tab-controls-item" (click)="showTab3()" [ngClass]="{'is-active' : tabLvl3}">Lvl 3 Referals (350)</li>
       </ul>
     </div>
 
@@ -127,7 +120,20 @@
     </div>
 
 
-    <div class="middle__table-container">
+    <div class="middle__table-container" *ngIf="tabLvl1">
+      <div class="middle__table-container-item">
+        <h4>Mabel Lambert</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>chance_bartoletti@hotmail.com</span>
+
+            <span>18 Jul 2018</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">705 FTEC</span>
+      </div>
 
       <div class="middle__table-container-item">
         <h4>Mabel Lambert</h4>
@@ -135,6 +141,80 @@
         <div class="item-inner">
           <div class="item-inner-line item-inner-line--support">
             <span>chance_bartoletti@hotmail.com</span>
+
+            <span>18 Jul 2018</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">705 FTEC</span>
+      </div>
+
+      <div class="middle__table-container-item">
+        <h4>Mabel Lambert</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>chance_bartoletti@hotmail.com</span>
+
+            <span>18 Jul 2018</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">705 FTEC</span>
+      </div>
+    </div>
+
+    <div class="middle__table-container" *ngIf="tabLvl2">
+      <div class="middle__table-container-item">
+        <h4>Mabel Lambert</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>chance_bartoletti@hotmail.com2</span>
+
+            <span>18 Jul 2018</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">705 FTEC</span>
+      </div>
+
+      <div class="middle__table-container-item">
+        <h4>Mabel Lambert</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>chance_bartoletti@hotmail.com</span>
+
+            <span>18 Jul 2018</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">705 FTEC</span>
+      </div>
+
+      <div class="middle__table-container-item">
+        <h4>Mabel Lambert</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>chance_bartoletti@hotmail.com</span>
+
+            <span>18 Jul 2018</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">705 FTEC</span>
+      </div>
+    </div>
+
+    <div class="middle__table-container" *ngIf="tabLvl3">
+      <div class="middle__table-container-item">
+        <h4>Mabel Lambert</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>chance_bartoletti@hotmail.com3</span>
 
             <span>18 Jul 2018</span>
           </div>
