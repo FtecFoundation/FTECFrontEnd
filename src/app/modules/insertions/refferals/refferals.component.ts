@@ -21,21 +21,21 @@ export class RefferalsComponent implements OnInit {
   }
 
   showTab1() {
-    this.tabLvl2= false;
-    this.tabLvl3= false;
-    this.tabLvl1= true;
+    this.tabLvl2 = false;
+    this.tabLvl3 = false;
+    this.tabLvl1 = true;
   }
 
   showTab2() {
-    this.tabLvl1= false;
-    this.tabLvl3= false;
-    this.tabLvl2= true;
+    this.tabLvl1 = false;
+    this.tabLvl3 = false;
+    this.tabLvl2 = true;
   }
 
   showTab3() {
-    this.tabLvl1= false;
-    this.tabLvl2= false;
-    this.tabLvl3= true;
+    this.tabLvl1 = false;
+    this.tabLvl2 = false;
+    this.tabLvl3 = true;
   }
 
 

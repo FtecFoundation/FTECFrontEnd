@@ -36,7 +36,7 @@ export class SetNewPasswordComponent implements OnInit {
 
     createForm() {
         this.restoreForm = this.formBuilder.group({
-            restoreCode: this.formBuilder.control({value: '', disabled: true},[Validators.required]),
+            restoreCode: this.formBuilder.control({value: '', disabled: true}, [Validators.required]),
             passwordGroup: this.formBuilder.group({
                 password: ['', [Validators.required,  Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$')]],
                 confirmPassword: ['', Validators.required]

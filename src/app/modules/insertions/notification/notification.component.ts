@@ -26,7 +26,7 @@ export class NotificationComponent implements OnInit {
 
   emailNotifyItem = false;
   telegramNotifyItem = false;
-  
+
   socialTelegram = false;
   authTelegram = false;
 
@@ -52,11 +52,11 @@ export class NotificationComponent implements OnInit {
 
   setAuthNotification() {
     this._notificationService.renewNotification();
-    
+
     this.authTelegram = !this.authTelegram;
   }
 
 }
- 
+
 
 

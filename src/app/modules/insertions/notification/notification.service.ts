@@ -29,8 +29,8 @@ export class NotificationService extends RestService {
     renewNotification(): Observable<any> {
         console.log(TelegramUrls.changeNotificationSetting);
          this.put(TelegramUrls.changeNotificationSetting, NotificationSetting).subscribe( data => {
-        })
-        return null
+        });
+        return null;
     }
 
 }
