@@ -1,6 +1,5 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ImageService} from '../../../core/services/image.service';
-import {ShowModalService } from '../../not-active/show-modal.service';
 
 @Component({
   selector: 'app-refferals',
@@ -19,7 +18,6 @@ export class RefferalsComponent implements OnInit {
 
   showPopup() {
     this.showPopupModal = true;
-    console.log(this.showPopupModal)
   }
 
 }

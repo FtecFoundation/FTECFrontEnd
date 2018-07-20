@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
             }, error1 => {
                 this._errorsService.currentError = null;
                 this.errorResponse = this._errorsService.parseResponseMessage(error1);
+                console.log('help');
             });
         }
     }

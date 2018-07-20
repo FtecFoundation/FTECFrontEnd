@@ -63,9 +63,35 @@
 .middle__head--volume {
   margin-bottom: 1.250em;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .middle__head--volume svg {
   cursor: pointer;
 }
+
+.refferals-popup-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.refferals-popup-input .container__form,
+.refferals-popup-input .refferals-popup-text {
+  width: 50%;
+  margin-right: .625em;
+}
+
+.refferals-popup-text {
+  margin-right: 0 !important;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+// .refferals-close {
+//   top: .313em;
+//   right: .313em;
+//   position: absolute;
+// }

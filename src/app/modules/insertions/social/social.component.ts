@@ -4,7 +4,6 @@ import {SocialService} from '../../../core/services/social.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EmbeddedTweetOptions} from './embedded-tweet-options';
 import {Router} from '@angular/router';
-import {NotificationComponent} from '../notification/notification.component';
 
 @Component({
     selector: 'app-social',
@@ -33,8 +32,7 @@ export class SocialComponent implements OnInit {
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
                 private formBuilder: FormBuilder,
-                private router: Router,
-                private _notificationComponent: NotificationComponent) {
+                private router: Router) {
     }
 
     getTweets() {
@@ -176,10 +174,6 @@ export class SocialComponent implements OnInit {
 
     get word() {
         return this.socialForm.get('word');
-    }
-
-    socialTelegram() {
-        this._notificationComponent.socialTelegram = true;
     }
 
 }
