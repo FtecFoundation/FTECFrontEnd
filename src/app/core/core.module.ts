@@ -19,6 +19,7 @@ import {CryptoacademyService} from './services/cryptoacademy.service';
 import {CaptchaService} from './services/captcha.service';
 import {CurrentUserService} from './services/current-user.service';
 import {ServerErrorsInterceptor} from './services/errors-handling/errors.interceptor.service';
+import {EtherscanService} from './services/etherscan.service';
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import {ServerErrorsInterceptor} from './services/errors-handling/errors.interce
     providers: [
         CookieService,
         AccountService,
+        EtherscanService,
         ErrorsService,
         OnlyAuthorizedGuard,
         OnlyNotAuthorizedGuard,

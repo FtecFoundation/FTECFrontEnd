@@ -38,4 +38,3 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
             }) as any;
     }
 }
-
