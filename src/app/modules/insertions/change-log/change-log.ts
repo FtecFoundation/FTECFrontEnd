@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+      'date': '20/07/2018',
+        'changes': [
+        'We made both types of the pop-up no refferal page.',
+        'HTML layout and adaptation of the page of password recovery.',
+        'HTML layout and adaptation of the page of setting a new password.',
+        'We added two more steps to 2FA connection.',
+        'API keys of exchanges are encrypted in the database.',
+        'From now, funds are charged for statistics update in Service of Trader\'s Behavioral Analysis.',
+        'We added the possibility to delete API keys for exchanges in the main module.',
+        'Exchange API keys are now decrypted before sending a request.',
+        'If the user doesn\'t have enough funds to pay for statistics update, he will see the relevant error in Service of Trader\'s Behavioral Analysis.',
+        'We fixed a critical error while registration.'
+      ]
+    },
+    {
       'date': '19/07/2018',
         'changes': [
         'We made one type of pop-up for the referral page.',
