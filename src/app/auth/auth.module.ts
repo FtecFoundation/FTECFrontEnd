@@ -4,9 +4,9 @@ import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {LoginComponent} from './login/login.component';
 import {RegistrationComponent} from './registration/registration.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import {OnlyNotAuthorizedGuard} from '../core/guards/only-not-authorized.guard';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import {SetNewPasswordComponent} from './forgot-password/set-new-password.component';
 import {RecaptchaModule} from 'ng-recaptcha';
 import {BannedComponent} from './banned/banned.component';
@@ -18,8 +18,8 @@ import {BannedComponent} from './banned/banned.component';
         RouterModule.forChild([
             { path: 'auth', component: LoginComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Log in'}},
             { path: 'registration', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Registration'}},
-            { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
-            { path: 'restore/:hash', component: SetNewPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
+            // { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
+            // { path: 'restore/:hash', component: SetNewPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'confirm-email/:hash', component: ConfirmEmailComponent},
             { path: 'banned', component: BannedComponent}
         ])
