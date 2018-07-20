@@ -17,11 +17,11 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSubmit(form: NgForm) {
-  //   this.submitted = true;
-  //     if (form.valid) {
-  //       this._accountService.restorePassword(form.value).subscribe(() => {
-  //       });
-  //     }
-  // }
+  onSubmit(form: NgForm) {
+    this.submitted = true;
+      if (form.valid) {
+        this._accountService.restorePassword(form.value).subscribe(() => {
+        });
+      }
+  }
 }
