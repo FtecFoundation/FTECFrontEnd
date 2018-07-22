@@ -1,25 +1,33 @@
 import {Injectable} from '@angular/core';
-import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivate, Router} from '@angular/router';
+import {CurrentUserService} from '../services/current-user.service';
+import {map} from 'rxjs/operators/map';
+import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
-import {LanguageService} from '../services/language.service';
-import {AccountService} from '../services/account.service';
-import {TelegramAssistantService} from '../../modules/insertions/telegram-assistant/telegram-assistant.service';
 
 @Injectable()
 export class TelegramEnabledGuard implements CanActivate {
-    constructor(private _telegramService: TelegramAssistantService,
+    constructor(private _currentUserService: CurrentUserService,
                 private router: Router) {
     }
 
-    canActivate() {
-        this._telegramService.getTelegramData().subscribe(() => {
-            return true;
-        }, error1 => {
-            if (error1.status === 401) {
-                this.router.navigate(['/modules/telegram-assistant']);
-                return false;
-            }
-        });
-        return true;
+    canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
+        const redirectToIfNotEnabled = route.data['redirectToIfNotEnabled'];
+        const redirectToIfEnabled = route.data['redirectToIfEnabled'];
+        return this._currentUserService.getTelegramSettingsObs(true).pipe(
+            map((settings) => {
+                if (!settings.linkedChatId) {
+                    if (redirectToIfNotEnabled) { this.router.navigateByUrl(redirectToIfNotEnabled); }
+                    return redirectToIfNotEnabled == null;
+                }
+                if (redirectToIfEnabled) { this.router.navigateByUrl(redirectToIfEnabled); }
+                return redirectToIfEnabled == null;
+            }),
+            catchError(err => {
+                console.log(err);
+                if (redirectToIfNotEnabled) { this.router.navigateByUrl(redirectToIfNotEnabled); }
+                return Observable.of(redirectToIfNotEnabled == null);
+            })
+        );
     }
 }

@@ -1,6 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {ImageService} from '../../../core/services/image.service';
-import {ShowModalService } from '../../not-active/show-modal.service';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NotificationService} from './notification.service';
 import {NotificationSetting} from '../../../core/models/user';
@@ -15,7 +13,7 @@ export const titles = {
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
-  styleUrls: ['../insertions.scss', './notification.component.scss']
+  styleUrls: ['../../insertions/insertions.scss', './notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
 

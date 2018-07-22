@@ -14,18 +14,21 @@ enum AccountApiUrls {
     register = 'registration',
     checkEmail = 'checkUniqueEmail',
     checkUsername = 'checkUniqueLogin?login=',
-    checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
+    // checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
     restorePassword = 'sendRestoreUrl',
+    setNewPassword = '/restorePassword',
     confirmEmail = 'confirmEmail/',
     getUser = 'cabinet/getUser',
-    resendEmail = 'cabinet/resendConfirmation'
+    resendEmail = 'cabinet/resendConfirmation',
+    tgSettings = 'modules/telegram/getTelegramData',
+    tgHash = 'modules/telegram/getHash'
 }
 
 @Injectable()
 export class AccountService extends RestService {
 
     isAuthorized(): Observable<any> {
-        return this.get(AccountApiUrls.checkIfAuthorized);
+        return this.get(AccountApiUrls.getUser);
     }
 
     resendEmail(): Observable<any> {
@@ -51,6 +54,13 @@ export class AccountService extends RestService {
         return this.post(AccountApiUrls.restorePassword, data);
     }
 
+    setNewPassword(hash: string, password: string): Observable<any> {
+        const data = {};
+        data['hash'] = hash;
+        data['newPath'] = password;
+        return this.post(AccountApiUrls.setNewPassword, data);
+    }
+
     checkEmailNotTaken(email: string): Observable<any> {
         const param = new HttpParams().set('email', email);
         return this.get(AccountApiUrls.checkEmail, param);
@@ -67,6 +77,18 @@ export class AccountService extends RestService {
     getUser(): Observable<User> {
         return this.get(AccountApiUrls.getUser).pipe(
             map(resp => resp.response.user));
+    }
+
+    getTelegramSettings(): Observable<any> {
+        return this.specialGet(AccountApiUrls.tgSettings).pipe(
+            map(resp => resp.response.telegram_data),
+            catchError(e => this.handleError(e)));
+    }
+
+    getTelegramHash(): Observable<string> {
+        return this.get(AccountApiUrls.tgHash).pipe(
+            map(resp => resp.response.hash),
+            catchError(e => this.handleError(e)));
     }
 }
 

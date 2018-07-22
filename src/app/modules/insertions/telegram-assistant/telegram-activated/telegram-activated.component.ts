@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TelegramAssistantService} from '../telegram-assistant.service';
 import {ShowModalService} from '../../../not-active/show-modal.service';
 import {Router} from '@angular/router';
+import {CurrentUserService} from '../../../../core/services/current-user.service';
 
 @Component({
   selector: 'app-telegram-activated',
@@ -14,9 +15,10 @@ export class TelegramActivatedComponent implements OnInit {
   botDomain = '';
   userNotification = '';
   loggingNotification = false;
-  refferalNotification = false;
+  referralNotification = false;
 
-  constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router) { }
+  constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router,
+              private currentUserService: CurrentUserService) { }
 
   ngOnInit() {
       this._telegramService.getBotDomain().subscribe(data => {
@@ -35,14 +37,17 @@ export class TelegramActivatedComponent implements OnInit {
 
   unlink() {
     this._telegramService.unlinkAccount().subscribe(data => {
-      this.router.navigate(['/modules/telegram-assistant']);
+      this.currentUserService.getTelegramSettingsObs(false).subscribe(set => {
+        set.linkedChatId = '';
+        set.linkedUsername = '';
+        this.router.navigateByUrl('/modules/telegram-assistant');
+      });
     });
   }
 
   loginNotification() {
     this._telegramService.changeLoginNotification().subscribe(data => {
       this.router.navigate(['/modules/telegram-assistant']);
-      // console.log(data);
       this.userNotification = data;
     });
 
@@ -56,7 +61,7 @@ export class TelegramActivatedComponent implements OnInit {
     //   this.userNotification = data;
     // });
 
-    this.refferalNotification = !this.refferalNotification;
+    this.referralNotification = !this.referralNotification;
   }
 
 }

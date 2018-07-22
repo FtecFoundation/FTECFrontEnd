@@ -1,4 +1,4 @@
-import {ErrorHandler, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
@@ -20,6 +20,7 @@ import {CaptchaService} from './services/captcha.service';
 import {CurrentUserService} from './services/current-user.service';
 import {ServerErrorsInterceptor} from './services/errors-handling/errors.interceptor.service';
 import {EtherscanService} from './services/etherscan.service';
+import {ConfirmedEmailGuard} from './guards/confirmed-email.guard';
 
 @NgModule({
     imports: [
@@ -35,6 +36,7 @@ import {EtherscanService} from './services/etherscan.service';
         ErrorsService,
         OnlyAuthorizedGuard,
         OnlyNotAuthorizedGuard,
+        ConfirmedEmailGuard,
         CryptocurrenciesService,
         TitlesService,
         ImageService,

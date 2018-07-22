@@ -6,7 +6,7 @@ import {CurrentUserService} from '../../../core/services/current-user.service';
 @Component({
     selector: 'app-social',
     templateUrl: './settings.component.html',
-    styleUrls: ['../insertions.scss', './settings.component.scss']
+    styleUrls: ['../../insertions/insertions.scss', './settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
     @ViewChild('uploader') inputImage: ElementRef;

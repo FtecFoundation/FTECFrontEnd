@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RefferalsComponent} from './refferals.component';
+import {ReferralsComponent} from './referrals.component';
 import {RouterModule} from '@angular/router';
 
 
@@ -7,7 +7,7 @@ import {RouterModule} from '@angular/router';
 @NgModule({
     imports: [
         RouterModule.forChild([
-            {path: '', component: RefferalsComponent, data: {title: 'Refferals'}},
+            {path: '', component: ReferralsComponent, data: {title: 'Refferals'}},
         ])
     ],
     exports: [RouterModule]

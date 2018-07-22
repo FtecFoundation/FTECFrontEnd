@@ -14,13 +14,13 @@ import {CurrentUserService} from './core/services/current-user.service';
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+    oldConsole: any;
     constructor(private titleService: TitlesService, public loaderService: LoaderService) {
     }
 
     ngOnInit(): void {
         const temp = this.loaderService;
         this.titleService.init();
-
         setTimeout(function () {
             temp.hideLoader();
         }, 3000);

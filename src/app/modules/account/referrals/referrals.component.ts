@@ -3,11 +3,11 @@ import {ImageService} from '../../../core/services/image.service';
 import {ShowModalService } from '../../not-active/show-modal.service';
 
 @Component({
-  selector: 'app-refferals',
-  templateUrl: './refferals.component.html',
-  styleUrls: ['../insertions.scss', './refferals.component.scss']
+  selector: 'app-referrals',
+  templateUrl: './referrals.component.html',
+  styleUrls: ['../../insertions/insertions.scss', './referrals.component.scss']
 })
-export class RefferalsComponent implements OnInit {
+export class ReferralsComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;
     private imageSrc = '';
 

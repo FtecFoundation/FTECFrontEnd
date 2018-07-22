@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/c
 import {Injectable} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import 'rxjs/add/observable/throw';
+import {Constants} from '../../constants';
 
 @Injectable()
 export abstract class RestService {
@@ -12,7 +13,7 @@ export abstract class RestService {
     constructor(private _http: HttpClient, private _cookieService: CookieService) { }
 
     protected processLogin(token: any) {
-        this._cookieService.set('token', token, new Date(new Date().getTime() + 24 * 60 * 60 * 1000), '/');
+        this._cookieService.set(Constants.TOKEN_NAME, token, new Date(new Date().getTime() + 24 * 60 * 60 * 1000), '/');
     }
 
     protected processLogout() {
@@ -20,12 +21,25 @@ export abstract class RestService {
     }
 
     protected headers(contentType: string = 'application/json'): HttpHeaders {
-        const token: string = this._cookieService.get('token');
-        return new HttpHeaders().set('Content-Type', contentType).set('TOKEN-X-AUTH', token);
+        const token: string = this._cookieService.get(Constants.TOKEN_NAME);
+        return new HttpHeaders().set('Content-Type', contentType).set(Constants.TOKEN_NAME, token);
+    }
+
+    protected specialGet(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( 'GET', this.baseUrl + relativeUrl, false ); // false for synchronous request
+
+        xmlHttp.setRequestHeader('Content-Type', 'application/json');
+        xmlHttp.setRequestHeader(Constants.TOKEN_NAME, this._cookieService.get(Constants.TOKEN_NAME));
+
+        xmlHttp.send( null );
+        console.log(xmlHttp.responseText);
+        return Observable.of(true);
     }
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
-        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam});
+        const answ = this._http.get(this.baseUrl + relativeUrl, { headers: this.headers(), params: queryParam});
+        return answ;
     }
     protected getBlob(relativeUrl: string, queryParam?: HttpParams): Observable<Blob> {
         return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam, responseType: 'blob'});
