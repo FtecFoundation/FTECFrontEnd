@@ -38,7 +38,8 @@ export const routes = [
             {path: 'referrals', loadChildren: './account/referrals/referrals.module#ReferralsModule'},
             {path: 'support', loadChildren: './account/support/support.module#SupportModule'},
             {path: 'settings', loadChildren: './account/settings/settings.module#SettingsModule'},
-            {path: 'notification', loadChildren: './account/notification/notification.module#NotificationModule'}
+            {path: 'notification', loadChildren: './account/notification/notification.module#NotificationModule'},
+            {path: 'payment', loadChildren: './account/payment/payment.module#PaymentModule'}
         ]
     },
     // TODO remove canActivate and layout component when independent to user layout will be created

@@ -21,7 +21,8 @@ enum AccountApiUrls {
     getUser = 'cabinet/getUser',
     resendEmail = 'cabinet/resendConfirmation',
     tgSettings = 'modules/telegram/getTelegramData',
-    tgHash = 'modules/telegram/getHash'
+    tgHash = 'modules/telegram/getHash',
+    getAddress = 'cabinet/node/getAddress'
 }
 
 @Injectable()
@@ -80,7 +81,7 @@ export class AccountService extends RestService {
     }
 
     getTelegramSettings(): Observable<any> {
-        return this.specialGet(AccountApiUrls.tgSettings).pipe(
+        return this.pureSyncGet(AccountApiUrls.tgSettings).pipe(
             map(resp => resp.response.telegram_data),
             catchError(e => this.handleError(e)));
     }
@@ -89,6 +90,12 @@ export class AccountService extends RestService {
         return this.get(AccountApiUrls.tgHash).pipe(
             map(resp => resp.response.hash),
             catchError(e => this.handleError(e)));
+    }
+
+    getUserAddress(): Observable<string> {
+        return this.get(AccountApiUrls.getAddress).pipe(
+            map(resp => resp.response.address)
+        );
     }
 }
 

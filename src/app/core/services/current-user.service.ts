@@ -13,7 +13,7 @@ import {CustomException} from '../models/exceptions';
 export class CurrentUserService {
     private currentUser: User;
 
-    private telegramSettings: TelegramSettings;
+    telegramSettings: TelegramSettings;
 
     constructor(private _accountService: AccountService,
                 private _etherscanService: EtherscanService,
@@ -43,19 +43,19 @@ export class CurrentUserService {
 
     getTelegramSettingsObs(forceRefresh: boolean): Observable<TelegramSettings> {
         if (!forceRefresh && this.telegramSettings != null) { return Observable.of(this.telegramSettings); }
-        console.log('force refreshing');
         return this._accountService.getTelegramSettings().pipe(
-            map(value => { this.telegramSettings = value; console.log('Got response: ', value); return this.telegramSettings; }),
+            map(value => this.telegramSettings = value),
             catchError(err => {
                 if (err instanceof CustomException) { if (!this.errorService.handleCustomException(err)) { return; } }
                 this.telegramSettings = new TelegramSettings();
-                console.log('Waiting for get hash');
-                this._accountService.getTelegramHash().subscribe(hash => {
-                    console.log('Got hash: ' + hash); return this.telegramSettings.accessCode = hash;
-                });
+                this._accountService.getTelegramHash().subscribe(hash => this.telegramSettings.accessCode = hash);
                 return Observable.of(this.telegramSettings);
             })
         );
+    }
+
+    refreshTelegramSettings() {
+        return this._accountService.getTelegramSettings();
     }
     get tgSettings() {
         return this.telegramSettings;

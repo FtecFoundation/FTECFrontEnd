@@ -19,15 +19,12 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('got in error interceptor: ', req, next);
         return next.handle(req)
             .map(resp => {
-                console.log('in map in error interceptor', resp);
                 if (resp instanceof HttpResponse) {
                     return resp;
                 }
             }).catch(err => {
-                console.log('in catch in error interceptor', err);
                 if (err instanceof HttpErrorResponse) {
                     switch (err.status) {
                         case 423:

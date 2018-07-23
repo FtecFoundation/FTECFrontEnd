@@ -25,7 +25,7 @@ export abstract class RestService {
         return new HttpHeaders().set('Content-Type', contentType).set(Constants.TOKEN_NAME, token);
     }
 
-    protected specialGet(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
+    protected pureSyncGet(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
         const xmlHttp = new XMLHttpRequest();
         xmlHttp.open( 'GET', this.baseUrl + relativeUrl, false ); // false for synchronous request
 
@@ -33,13 +33,11 @@ export abstract class RestService {
         xmlHttp.setRequestHeader(Constants.TOKEN_NAME, this._cookieService.get(Constants.TOKEN_NAME));
 
         xmlHttp.send( null );
-        console.log(xmlHttp.responseText);
-        return Observable.of(true);
+        return Observable.of(xmlHttp.response);
     }
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
-        const answ = this._http.get(this.baseUrl + relativeUrl, { headers: this.headers(), params: queryParam});
-        return answ;
+        return this._http.get(this.baseUrl + relativeUrl, { headers: this.headers(), params: queryParam});
     }
     protected getBlob(relativeUrl: string, queryParam?: HttpParams): Observable<Blob> {
         return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam, responseType: 'blob'});
