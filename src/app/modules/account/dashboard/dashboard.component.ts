@@ -6,7 +6,7 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['../../../../assets/styles/common.scss', './dashboard.scss']
+  styleUrls: ['./dashboard.scss']
 })
 export class DashboardComponent implements OnInit {
 

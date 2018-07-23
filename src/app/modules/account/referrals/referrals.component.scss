@@ -1,6 +1,11 @@
 @import "../../../../assets/styles/variables";
 @import "../../../../assets/styles/medias";
 
+:host {
+  width: 80%;
+  display: flex;
+  padding-top: .5rem
+}
 
 .main-info--support {
   flex-wrap: wrap;

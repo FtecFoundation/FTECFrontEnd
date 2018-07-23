@@ -2,11 +2,12 @@
 
 /* Middle Part (middle) */
 
-:host {
-  width: 80%;
-  display: flex;
-  padding-top: .500rem;
-}
+  :host {
+    width: 80%;
+    display: flex;
+    padding-top: .5rem
+  }
+
 
 .main-info {
   width: 100%;
@@ -195,32 +196,6 @@
   text-align: right;
 }
 
-.item-inner {
-  width: 50%;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.item-inner-line {
-  text-align: left;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.item-inner-line--second {
-  color: $accent;
-}
 
 /* Aside-right Right Part */
 
@@ -252,23 +227,6 @@
 
 .filter__container--notifications {
   margin-top: 1.250rem;
-}
-
-.container__wrapper {
-  margin-top: 1.250rem;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-      justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .container__link.is-active .item__svg-el--dark {

@@ -1,6 +1,12 @@
 @import "../../../../assets/styles/variables";
 @import "../../../../assets/styles/medias";
 
+:host {
+  width: 80%;
+  display: flex;
+  padding-top: .5rem
+}
+
 .main-info--notification {
   flex-wrap: wrap;
 }
@@ -107,7 +113,7 @@
 }
 
 .container__wrapper--notifications {
-  margin: .625 0 0;
+  margin: .625em 0 0;
 }
 
 .middle__table-container--support {
