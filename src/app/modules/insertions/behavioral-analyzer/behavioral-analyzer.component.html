@@ -10,7 +10,7 @@
                     <div class="small-container__line">
                         <h2>{{item.pair}}</h2>
 
-                        <a href="javascrip:void(0)" class="small-container__line-link small-container__line-link--red">{{item.type}}</a>
+                        <a href="javascrip:void(0)" class="small-container__line-link">{{item.type}}</a>
                     </div>
 
                     <div class="small-container__line small-container__line--button">
@@ -19,36 +19,24 @@
                             <span class="text-small">{{item.date}}</span>
                         </div>
 
-                        <div class="small-container__graph">
+                        <div class="small-container__graph is-active" [ngClass]="{'is-active' : fullGraph}">
 
                             <span class="small-container__description">{{item.description}}</span>
 
-                            <ngx-charts-line-chart [scheme]="lineChartColorScheme"
-                                                   [results]="data"
-                                                   [xAxis]="lineChartShowXAxis"
-                                                   [yAxis]="lineChartShowYAxis"
-                                                   [legend]="lineChartShowLegend"
-                                                   [rangeFillOpacity]="0.2"
-                                                   [schemeType]="schemeType"
-                                                   [showXAxisLabel]="lineChartShowXAxisLabel"
-                                                   [showYAxisLabel]="lineChartShowYAxisLabel"
-                                                   [showGridLines]="showGridLines"
-                                                   [autoScale]="lineChartAutoScale" [curve]="lineChartLineInterpolation"
-                                                   [tooltipDisabled]="tooltipDisabled"
-                                                   [showRefLines]="showRefLines"
-                                                   [showRefLabels]="showRefLabels"
-                                                   [referenceLines]="refLines"
-                                                   (select)="onSelect($event)">
+                            <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                                [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2" [schemeType]="schemeType" [showXAxisLabel]="lineChartShowXAxisLabel"
+                                [showYAxisLabel]="lineChartShowYAxisLabel" [showGridLines]="showGridLines" [autoScale]="lineChartAutoScale"
+                                [curve]="lineChartLineInterpolation" [tooltipDisabled]="tooltipDisabled" [showRefLines]="showRefLines"
+                                [showRefLabels]="showRefLabels" [referenceLines]="refLines" (select)="onSelect($event)">
                             </ngx-charts-line-chart>
 
                             <!--<div class="small-container__graph-controls">-->
-                                <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
-                                <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
+                            <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
+                            <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
                             <!--</div>-->
                         </div>
 
-                        <button class="filter__container-button filter__container-button--behavioral is-active">Full
-                            report
+                        <button class="filter__container-button filter__container-button--behavioral is-active" (click)="showFull()">Full report
                         </button>
                     </div>
                 </div>
@@ -63,15 +51,7 @@
         <div class="aside-right__head aside-right__head--behavioral">Your trading behavior
 
             <div class="container__form container__form--select container__form--behavioral">
-                <div class="container__form-select-block form__input">
-                    <span class="form__select-item">All time</span>
-                </div>
-
-                <div class="form__select-list">
-                    <span class="form__select-list-item">New</span>
-                    <span class="form__select-list-item">Old</span>
-                    <span class="form__select-list-item">Last</span>
-                </div>
+                <app-dropdown [label]="'All time'" [items]="time"></app-dropdown>
             </div>
         </div>
 
@@ -109,9 +89,8 @@
         </div>
 
         <div class="aside-right__filter aside-right__filter--behavioral aside-right__filter--bottom">
-            <p class="">You are a very nervous trader. In 85% of cases, you get out of trades too early. Try to set your
-                Take-Profit level
-                2% higher than usual.</p>
+            <p class="">You are a very nervous trader. In 85% of cases, you get out of trades too early. Try to set your Take-Profit
+                level 2% higher than usual.</p>
         </div>
 
 

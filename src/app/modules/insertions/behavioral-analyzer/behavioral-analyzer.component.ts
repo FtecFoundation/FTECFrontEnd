@@ -11,6 +11,8 @@ import {config} from './ngx-chart.config';
 export class BehavioralAnalyzerComponent implements OnInit {
 
     behavioralItems = behavioralAnalyzerItems;
+    time = ["All time", "New", "Old", "Rating"];
+    fullGraph = false;
     data = [
         {
             'name': 'New Zealand',
@@ -77,6 +79,10 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
     onSelect(event) {
         console.log(event);
+    }
+    
+    showFull() {
+        this.fullGraph = !this.fullGraph;
     }
 
 }

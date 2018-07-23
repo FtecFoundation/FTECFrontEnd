@@ -15,8 +15,11 @@
 }
 /deep/ {
   .ngx-charts {
-     transform: scale(1.3);
+    left: -.625em;
     margin-top: 1.250em;
+    margin-bottom: .625em;
+    position: relative;
+    transform: scale(1.3);
   }
 
   .tick{
@@ -35,11 +38,11 @@
     text-transform: uppercase;
     font-weight: 500;
     transform: translateY(-3px);
-    fill: #9C0D66;
-  }
-
-  .ngx-charts text:first-child {
     fill: #3F8AFD;
+  }
+  
+  .ngx-charts:first-child text:first-child {
+    fill: #9C0D66;
   }
 
 
@@ -93,8 +96,13 @@
 
 .small-container__graph {
   width: 100%;
-  display: grid;
+  display: none;
+  flex-direction: column;
   margin: 1.5em 0;
+}
+
+.small-container__graph.is-active {
+  display: flex;
 }
 
 .small-container__svg {
@@ -148,10 +156,11 @@
 
 .behavioral__stats {
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 1em;
+  
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .behavioral__stats-num {
