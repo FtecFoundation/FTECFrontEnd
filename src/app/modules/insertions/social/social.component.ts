@@ -29,6 +29,7 @@ export class SocialComponent implements OnInit {
     recWordClicked = false;
 
 
+
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
                 private formBuilder: FormBuilder,
@@ -49,6 +50,7 @@ export class SocialComponent implements OnInit {
             this.dictionary = data;
             this.wordsLeft = 50 - this.dictionary.length;
             this.getRecommendationsWords();
+            this.wordsLeft = 50 - this.dictionary.length;
         });
 
         this._socialService.getTweets().subscribe(data => {
@@ -78,6 +80,10 @@ export class SocialComponent implements OnInit {
         this.getDaysLeft();
 
         this.createForm();
+    }
+
+    setWordsLeft() {
+        this.wordsLeft = 50 - this.dictionary.length;
     }
 
     getDaysLeft() {
