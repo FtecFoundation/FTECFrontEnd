@@ -5,7 +5,7 @@ import { ShowModalService } from '../../not-active/show-modal.service';
 @Component({
   selector: 'app-support',
   templateUrl: './support.component.html',
-  styleUrls: ['../../insertions/insertions.scss', './support.component.scss']
+  styleUrls: ['../../../../assets/styles/common.scss', './support.component.scss']
 })
 export class SupportComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;

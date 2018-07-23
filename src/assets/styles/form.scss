@@ -129,8 +129,8 @@
 }
 
 /* Show the form__info-checkmark when checked */
-.form__info-label-container.is-active .form__info-checkmark:after,
-.form__info-label-container input:checked ~ .form__info-checkmark:after {
+.form__info-label-container--reg.is-active .form__info-checkmark:after,
+.form__info-label-container--reg input:checked ~ .form__info-checkmark:after {
   display: block;
 }
 

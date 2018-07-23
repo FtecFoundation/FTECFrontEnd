@@ -13,7 +13,7 @@ export const titles = {
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
-  styleUrls: ['../../insertions/insertions.scss', './notification.component.scss']
+  styleUrls: ['../../../../assets/styles/common.scss', './notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
 
