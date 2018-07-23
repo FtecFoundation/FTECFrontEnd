@@ -1,33 +1,46 @@
 export const changeLog = [
     {
-      'date': '20/07/2018',
+        'date': '23/07/2018',
         'changes': [
-        'We made both types of the pop-up no refferal page.',
-        'HTML layout and adaptation of the page of password recovery.',
-        'HTML layout and adaptation of the page of setting a new password.',
-        'We added two more steps to 2FA connection.',
-        'API keys of exchanges are encrypted in the database.',
-        'From now, funds are charged for statistics update in Service of Trader\'s Behavioral Analysis.',
-        'We added the possibility to delete API keys for exchanges in the main module.',
-        'Exchange API keys are now decrypted before sending a request.',
-        'If the user doesn\'t have enough funds to pay for statistics update, he will see the relevant error in Service of Trader\'s Behavioral Analysis.',
-        'We fixed a critical error while registration.'
-      ]
+            'We added the possibility to resend email verifications.',
+            'Spam protection was added.',
+            '2FA was added.',
+            'We fixed a critical error of database migration, which jeopardized further development of the project.',
+            'In Service of Trader’s Behavioral Analysis, we fixed an error in the calculation of lost profit.',
+            'Refactoring of pages for at frontend to improve statistics.',
+            'We added graphs, using the library in Service of Trader’s Behavioral Analysis at frontend.',
+            'Modules are divided into groups now (profile, modules, change modules).'
+        ]
     },
     {
-      'date': '19/07/2018',
+        'date': '20/07/2018',
         'changes': [
-        'We made one type of pop-up for the referral page.',
-        'Pop-up was adapted on the referral page.',
-        'We fixed following to the module page by unauthenticated user.',
-        'Service of Trader\'s Behavioral Analysis was connected to the main module.',
-        'In the main module, now it\'s possible to save API key for exchanges.',
-        'Now it is not necessary to enter API keys to send a request to Service of Trader\'s Behavioral Analysis. Only exchange name is needed.',
-        'We added the possibility to send tokens from one user account to another.',
-        'The integration between Arbitrage Module and proxy server is finished.',
-        'We fixed error display while authentification.',
-        'Node was fully tested in the test network with test tokens, we began integration with the real network.'
-      ]
+            'We made both types of the pop-up no refferal page.',
+            'HTML layout and adaptation of the page of password recovery.',
+            'HTML layout and adaptation of the page of setting a new password.',
+            'We added two more steps to 2FA connection.',
+            'API keys of exchanges are encrypted in the database.',
+            'From now, funds are charged for statistics update in Service of Trader\'s Behavioral Analysis.',
+            'We added the possibility to delete API keys for exchanges in the main module.',
+            'Exchange API keys are now decrypted before sending a request.',
+            'If the user doesn\'t have enough funds to pay for statistics update, he will see the relevant error in Service of Trader\'s Behavioral Analysis.',
+            'We fixed a critical error while registration.'
+        ]
+    },
+    {
+        'date': '19/07/2018',
+        'changes': [
+            'We made one type of pop-up for the referral page.',
+            'Pop-up was adapted on the referral page.',
+            'We fixed following to the module page by unauthenticated user.',
+            'Service of Trader\'s Behavioral Analysis was connected to the main module.',
+            'In the main module, now it\'s possible to save API key for exchanges.',
+            'Now it is not necessary to enter API keys to send a request to Service of Trader\'s Behavioral Analysis. Only exchange name is needed.',
+            'We added the possibility to send tokens from one user account to another.',
+            'The integration between Arbitrage Module and proxy server is finished.',
+            'We fixed error display while authentification.',
+            'Node was fully tested in the test network with test tokens, we began integration with the real network.'
+        ]
     },
     {
         'date': '18/07/2018',
