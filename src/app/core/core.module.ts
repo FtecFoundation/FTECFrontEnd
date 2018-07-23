@@ -46,7 +46,7 @@ import {ServerErrorsInterceptor} from './services/errors-handling/errors.interce
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,
-            multi: true,
+            multi: true
         },
     ]
 })

@@ -11,6 +11,10 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "angularCompilerOptions": {
+      "strictMetadataEmit": true,
+      "genDir": "build"
+    },
     "lib": [
       "es2017",
       "dom"

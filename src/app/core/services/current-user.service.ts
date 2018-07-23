@@ -7,7 +7,7 @@ import {ImageService} from './image.service';
 export class CurrentUserService {
     currentUser: User;
 
-    constructor(private _accountService: AccountService, private _imageService: ImageService) {
+    constructor(private _accountService: AccountService) {
     }
 
     getCurrentUser() {

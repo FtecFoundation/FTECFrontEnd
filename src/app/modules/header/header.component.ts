@@ -13,7 +13,6 @@ import {CurrentUserService} from '../../core/services/current-user.service';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    user: User;
     @ViewChild('image') image: ElementRef;
 
     constructor(private _accountService: AccountService,
@@ -24,9 +23,6 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._accountService.getUser().subscribe(data => {
-            this.user = data;
-        });
     }
 
     showUser() {
