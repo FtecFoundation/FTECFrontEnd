@@ -60,4 +60,10 @@ export class CurrentUserService {
     get tgSettings() {
         return this.telegramSettings;
     }
+
+    checkAddressExistence() {
+        if (!this.user.walletAddress) {
+            this._accountService.getUserAddress().subscribe(value => this.user.walletAddress = value );
+        }
+    }
 }

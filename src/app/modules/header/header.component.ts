@@ -55,9 +55,7 @@ export class HeaderComponent implements OnInit {
     }
 
     goToPaymentPage() {
-        if (!this._currentUserService.user.walletAddress) {
-            this._accountService.getUserAddress().subscribe(value => this._currentUserService.user.walletAddress = value );
-        }
+        this._currentUserService.checkAddressExistence();
         this.router.navigateByUrl('/account/payment');
     }
 

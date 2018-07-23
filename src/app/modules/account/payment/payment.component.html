@@ -13,25 +13,12 @@
   
       <p>4. After the previous steps are completed, press the button 'Enable Assistant' to get your access code.</p>
 
-      <img src="http://via.placeholder.com/200x200" alt="">
-      <!-- <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode> -->
+      <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
   
-      <span class="payment--code">Your personal code:<br><br>
-      ALKShjklhPXhh8123fsdafs
+      <span class="payment--code">Your account wallet address to manual refilling:<br><br>
+          {{_currentUserService.user.walletAddress}}
       </span>
 
       <button class="filter__container-button" (click)="enable()">Enable Assistant</button>
-    </div>
-  
-    <div class="aside-right" *ngIf="showAccessCode && _currentUserService.tgSettings.accessCode">
-      <div class="aside-right__filter">
-        <h5>
-          Your access code
-        </h5>
-        <p>Use it to activate bot in Telegram</p>
-        <div class="telegram__access-code">{{_currentUserService.tgSettings.accessCode}}</div>
-  
-        <button class="filter__container-button" (click)="checkIfConnected()">Check your last transactions</button>
-      </div>
     </div>
   </div>
