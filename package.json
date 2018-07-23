@@ -51,7 +51,7 @@
     "domino": "^2.0.2",
     "ng-recaptcha": "^3.0.5",
     "angularx-qrcode": "^1.1.7",
-    "@swimlane/ngx-charts": "~7.0.2"
+    "@swimlane/ngx-charts": "^9.0.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.0",
