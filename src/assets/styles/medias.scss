@@ -436,6 +436,11 @@
 }
 
 @media only screen and (max-width: 580px) {
+   .ngx-charts {
+      transform: scale(1.2) !important;
+      margin-top: 1.250em;
+  }
+
   .middle__table-container--left,
   .middle__table-container--right,
   .crypto__tab-controls-item,
@@ -492,6 +497,10 @@
 }
 
 @media only screen and (max-width: 425px) {
+  .ngx-charts {
+    transform: scale(1.3) !important;
+    margin-top: 1.250em;
+  }
 
   .change-log,
   .settings__container,

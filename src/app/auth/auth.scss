@@ -103,3 +103,18 @@
   padding-left: 2.500rem;
   padding-right: 2.500rem;
 }
+
+.form__info-text {
+  width: 100%;
+}
+
+.form__info--login {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__restore-accept {
+  margin-top: 0;
+}

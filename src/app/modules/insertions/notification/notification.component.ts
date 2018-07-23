@@ -1,9 +1,8 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 import {NotificationService} from './notification.service';
+import {Router} from '@angular/router';
 import {CurrentUserService} from '../../../core/services/current-user.service';
 import {NotificationSetting} from '../../../core/models/user';
-
 
 export const titles = {
     '1': 'Authorization',
@@ -18,24 +17,17 @@ export const titles = {
 })
 export class NotificationComponent implements OnInit {
     titles = titles;
-
     telegramNotifyAll = false;
     emailNotifyAll = false;
 
     emailNotifyItem = false;
     telegramNotifyItem = false;
-
     socialTelegram = false;
     authTelegram = false;
-
-    userTelegram = '';
-    userEmail = '';
-    authNotification = '';
 
     constructor(private _notificationService: NotificationService, private router: Router,
                 public _currentUserService: CurrentUserService) {
     }
-
 
     ngOnInit() {
     }
@@ -70,5 +62,7 @@ export class NotificationComponent implements OnInit {
         });
     }
 
-
 }
+
+
+

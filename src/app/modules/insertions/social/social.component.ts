@@ -4,7 +4,6 @@ import {SocialService} from '../../../core/services/social.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EmbeddedTweetOptions} from './embedded-tweet-options';
 import {Router} from '@angular/router';
-import {NotificationComponent} from '../notification/notification.component';
 
 @Component({
     selector: 'app-social',
@@ -30,11 +29,11 @@ export class SocialComponent implements OnInit {
     recWordClicked = false;
 
 
+
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
                 private formBuilder: FormBuilder,
-                private router: Router,
-                private _notificationComponent: NotificationComponent) {
+                private router: Router) {
     }
 
     getTweets() {
@@ -51,6 +50,7 @@ export class SocialComponent implements OnInit {
             this.dictionary = data;
             this.wordsLeft = 50 - this.dictionary.length;
             this.getRecommendationsWords();
+            this.wordsLeft = 50 - this.dictionary.length;
         });
 
         this._socialService.getTweets().subscribe(data => {
@@ -80,6 +80,10 @@ export class SocialComponent implements OnInit {
         this.getDaysLeft();
 
         this.createForm();
+    }
+
+    setWordsLeft() {
+        this.wordsLeft = 50 - this.dictionary.length;
     }
 
     getDaysLeft() {
@@ -176,10 +180,6 @@ export class SocialComponent implements OnInit {
 
     get word() {
         return this.socialForm.get('word');
-    }
-
-    socialTelegram() {
-        this._notificationComponent.socialTelegram = true;
     }
 
 }

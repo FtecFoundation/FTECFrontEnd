@@ -27,7 +27,6 @@ export abstract class RestService {
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
         return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam});
     }
-
     protected getBlob(relativeUrl: string, queryParam?: HttpParams): Observable<Blob> {
         return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam, responseType: 'blob'});
     }

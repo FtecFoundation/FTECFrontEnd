@@ -18,11 +18,25 @@ export class SettingsComponent implements OnInit {
     constructor(private _imageService: ImageService, private _showModal: ShowModalService, public _currentUserService: CurrentUserService) {
     }
 
+    step1 = true;
+    step2 = false;
+    step3 = false;
+
     ngOnInit() {
     }
 
     showModal() {
         this._showModal.showModal = true;
+    }
+
+    showNextStep() {
+        this.step1 = false;
+        this.step2 = !this.step2;
+    }
+
+    showLastStep() {
+        this.step2 = false;
+        this.step3 = !this.step2;
     }
 
     handleInputChange(e) {
