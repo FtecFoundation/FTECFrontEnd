@@ -4,6 +4,7 @@ export const changeLog = [
     'changes': [
             'Now all the user\'s records are deleted and Telegram is automatically linked while deleting the account.',
             'Userpics are automatically converted to 100x100 while uploading.',
+            'HTML layout of balance refill',
             'We adapted the page of balance refill.',
             'We fixed the bug which occurred while connecting to Telegram Assistant.',
             'In the main module, we added the feature, which allows the user to see the information about his referrals.',
