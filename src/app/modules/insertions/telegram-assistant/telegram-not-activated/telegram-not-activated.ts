@@ -29,7 +29,7 @@ export class TelegramNotActivatedComponent implements OnInit {
 
     enable() {
         if (!this._currentUserService.tgSettings) {
-            this._currentUserService.getTelegramSettingsObs(false).subscribe(val => {
+            this._currentUserService.getTelegramSettingsObs(true).subscribe(val => {
                 // console.log(val);
                 // this._currentUserService.telegramSettings = new TelegramSettings();
                 // this._currentUserService.telegramSettings.accessCode = 'smth';
@@ -44,11 +44,11 @@ export class TelegramNotActivatedComponent implements OnInit {
     }
 
     checkIfConnected() {
-        this._currentUserService.refreshTelegramSettings().subscribe(
+        this._currentUserService.getTelegramSettingsObs(true).subscribe(val => {
             data => {
                 console.log(data);
                 if (data.linkedChatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
             }
-        );
+        });
     }
 }
