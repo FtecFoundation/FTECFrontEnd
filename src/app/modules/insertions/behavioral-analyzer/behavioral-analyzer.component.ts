@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {behavioralAnalyzerItems} from './behavioral-analyzer';
+import { Component, Input, OnInit } from '@angular/core';
+import { behavioralAnalyzerItems } from './behavioral-analyzer';
 import * as chartsData from './ngx-chart.config';
-import {config} from './ngx-chart.config';
+import { config } from './ngx-chart.config';
 
 @Component({
     selector: 'app-social',
@@ -80,8 +80,8 @@ export class BehavioralAnalyzerComponent implements OnInit {
     onSelect(event) {
         console.log(event);
     }
-    
-    showFull() {
+
+    showFull(graph: any) {
         this.fullGraph = !this.fullGraph;
     }
 
