@@ -82,7 +82,10 @@ export class AccountService extends RestService {
 
     getTelegramSettings(): Observable<any> {
         return this.pureSyncGet(AccountApiUrls.tgSettings).pipe(
-            map(resp => resp.response.telegram_data),
+            map(resp => {
+                resp = JSON.parse(resp);
+                return resp.response.telegram_data;
+            }),
             catchError(e => this.handleError(e)));
     }
 

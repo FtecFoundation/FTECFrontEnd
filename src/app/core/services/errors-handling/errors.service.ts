@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
-import {CustomException} from '../../models/exceptions';
+import {CustomException, UnauthenticatedException} from '../../models/exceptions';
 
 export const errorMessages = {
     '1': 'Invalid username or password',
@@ -49,6 +49,7 @@ export class ErrorsService {
      */
     public handleCustomException(ex: CustomException): boolean {
         console.log('Here will be custom exception handling');
+        if (ex instanceof UnauthenticatedException) { return false; }
         return true;
     }
 }

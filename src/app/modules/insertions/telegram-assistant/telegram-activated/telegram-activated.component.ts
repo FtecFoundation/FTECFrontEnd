@@ -37,11 +37,9 @@ export class TelegramActivatedComponent implements OnInit {
 
   unlink() {
     this._telegramService.unlinkAccount().subscribe(data => {
-      this.currentUserService.getTelegramSettingsObs(false).subscribe(set => {
-        set.linkedChatId = '';
-        set.linkedUsername = '';
-        this.router.navigateByUrl('/modules/telegram-assistant');
-      });
+      this.currentUserService.tgSettings.linkedChatId = '';
+      this.currentUserService.tgSettings.linkedUsername = '';
+      this.router.navigateByUrl('/modules/telegram-assistant');
     });
   }
 

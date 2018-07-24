@@ -12,7 +12,6 @@ import {CustomException} from '../models/exceptions';
 @Injectable()
 export class CurrentUserService {
     private currentUser: User;
-    
     telegramSettings: TelegramSettings;
     constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
 
