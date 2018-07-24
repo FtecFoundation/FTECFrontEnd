@@ -1,5 +1,16 @@
 export const changeLog = [
     {
+    'date': '24/07/2018',
+    'changes': [
+            'Now all the user\'s records are deleted and Telegram is automatically linked while deleting the account.',
+            'Userpics are automatically converted to 100x100 while uploading.',
+            'We adapted the page of balance refill.',
+            'We fixed the bug which occurred while connecting to Telegram Assistant.',
+            'In the main module, we added the feature, which allows the user to see the information about his referrals.',
+            'In the main module, we added the feature, which allows the user to charge funds for his referrals.',
+       ]
+    },
+    {
         'date': '23/07/2018',
         'changes': [
             'We added the possibility to resend email verifications.',
