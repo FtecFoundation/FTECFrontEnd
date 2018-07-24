@@ -5,7 +5,7 @@ import { availableFaqRight } from './available-faq-right';
 @Component({
   selector: 'app-faq',
   templateUrl: './faq.component.html',
-  styleUrls: ['../insertions/insertions.scss', './faq.component.scss']
+  styleUrls: ['../../modules/insertions/insertions.scss', './faq.component.scss']
 })
 export class FaqComponent implements OnInit {
   show = true;
