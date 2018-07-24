@@ -3,7 +3,7 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 @Component({
   selector: 'app-referrals',
   templateUrl: './referrals.component.html',
-  styleUrls: [ '../../../../assets/styles/common.scss', './referrals.component.scss']
+  styleUrls: ['./referrals.component.scss']
 })
 export class ReferralsComponent implements OnInit {
   @ViewChild('uploader') inputImage: ElementRef;
