@@ -1,4 +1,4 @@
-<div class="main-info main-info--telegram">
+<div class="main-info main-info--payment">
 
     <div class="middle middle--telegram-enable">
 
@@ -16,7 +16,7 @@
       <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
 
       <span class="payment--code">Your account wallet address to manual refilling:<br><br>
-         
+        <span>{{_currentUserService.user.walletAddress}}</span>
       </span>
 
       <button class="filter__container-button">Enable Assistant</button>
@@ -49,7 +49,7 @@
     </div>
 
 
-    <div class="middle__table-container">
+    <div class="middle__table-container middle__table-container--payment">
       <div class="middle__table-container-item">
         <h4>Mabel Lambert</h4>
 
@@ -64,121 +64,7 @@
         <span class="container-item-profit align-right">705 FTEC</span>
       </div>
 
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-    </div>
-
-    <div class="middle__table-container">
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com2</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
     </div>
   </div>
 
-    <div class="middle__table-container">
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com3</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-    </div>
 </div>
