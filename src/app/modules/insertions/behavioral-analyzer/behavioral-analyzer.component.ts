@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {behavioralAnalyzerItems} from './behavioral-analyzer';
 import * as chartsData from './ngx-chart.config';
 import {config} from './ngx-chart.config';
+import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 
 @Component({
     selector: 'app-social',
@@ -71,10 +72,13 @@ export class BehavioralAnalyzerComponent implements OnInit {
     lineChartAutoScale = config.lineChartAutoScale;
     lineChartLineInterpolation = config.lineChartLineInterpolation;
 
-    constructor() {
+    constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService) {
     }
 
     ngOnInit() {
+        this._behavioralAnalyzerService.getTrades().subscribe(data => {
+            console.log();
+        })
     }
 
     onSelect(event) {
