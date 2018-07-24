@@ -4,10 +4,10 @@
 
       <h3 class="telegram-enable__title">To enable telegram assistant use one of the following methods:</h3>
 
-      <p>1. Go to an application and find a bot. You can use @{{botDomain}} to find it. In chat window with bot send /start
+      <p>1. Go to an application and find a bot. You can use @ to find it. In chat window with bot send /start
         as first message.</p>
 
-      <p>2. Follow the link and press 'Start'. Link: http://t.me/{{botDomain}}</p>
+      <p>2. Follow the link and press 'Start'. Link: </p>
 
       <p>3. Scan the following QR code. It will redirect you to the chat with bot where you need to press 'Start'</p>
 
@@ -16,7 +16,7 @@
       <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
 
       <span class="payment--code">Your account wallet address to manual refilling:<br><br>
-          {{_currentUserService.user.walletAddress}}
+         
       </span>
 
       <button class="filter__container-button" (click)="enable()">Enable Assistant</button>
