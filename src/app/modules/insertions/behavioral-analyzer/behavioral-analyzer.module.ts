@@ -4,6 +4,7 @@ import {BehavioralAnalyzerRoutingModule} from './behavioral-analyzer-routing.mod
 import {BehavioralAnalyzerComponent} from './behavioral-analyzer.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import { SharedModule } from '../../../shared/shared.module';
+import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from '../../../shared/shared.module';
         BehavioralAnalyzerRoutingModule,
         NgxChartsModule
     ],
-    declarations: [BehavioralAnalyzerComponent]
+    declarations: [BehavioralAnalyzerComponent],
+    providers: [BehavioralAnalyzerService]
 })
 export class BehavioralAnalyzerModule {
 }

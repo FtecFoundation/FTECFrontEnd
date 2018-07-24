@@ -16,11 +16,18 @@
 }
 /deep/ {
   .ngx-charts {
-    left: -.625em;
-    margin-top: 1.250em;
-    margin-bottom: .625em;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 1px;
+    margin-left: -20px;
+    transform: scale(.5);
+  }
+
+  ngx-charts-line-chart ngx-charts-chart .ng-trigger-animationState {
+    width: 100%;
+    height: 200px;
     position: relative;
-    transform: scale(1.3);
   }
 
   .tick{

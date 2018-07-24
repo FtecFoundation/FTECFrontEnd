@@ -1,103 +1,101 @@
 <div class="main-info main-info--behavioral">
-  <div class="middle middle--behavioral">
+    <div class="middle middle--behavioral">
 
-    <div class="middle__head middle__head--behavioral">Trading reports</div>
+        <div class="middle__head middle__head--behavioral">Trading reports</div>
 
-    <div class="middle__block middle__block--behavioral">
+        <div class="middle__block middle__block--behavioral">
 
-      <div class="behavioral__small-container-inner" *ngFor="let item of behavioralItems">
-        <div class="behavioral__small-container">
-          <div class="small-container__line">
-            <h2>{{item.pair}}</h2>
+            <div class="behavioral__small-container-inner" *ngFor="let item of behavioralItems">
+                <div class="behavioral__small-container">
+                    <div class="small-container__line">
+                        <h2>{{item.pair}}</h2>
 
-            <a href="javascrip:void(0)" class="small-container__line-link">{{item.type}}</a>
-          </div>
+                        <a href="javascrip:void(0)" class="small-container__line-link">{{item.type}}</a>
+                    </div>
 
-          <div class="small-container__line small-container__line--button">
-            <div class="small-container__subtext">
-              <span class="text-small">{{item.exchange}}</span>
-              <span class="text-small">{{item.date}}</span>
-            </div>
+                    <div class="small-container__line small-container__line--button">
+                        <div class="small-container__subtext">
+                            <span class="text-small">{{item.exchange}}</span>
+                            <span class="text-small">{{item.date}}</span>
+                        </div>
 
-            <div class="small-container__graph is-active" [ngClass]="{'is-active' : fullGraph}">
+                        <div class="small-container__graph" [ngClass]="{'is-active' : item.chosen}">
 
-              <span class="small-container__description">{{item.description}}</span>
+                            <!-- CHARTS -->
 
-              <!-- CHARTS -->
-
-              <!-- <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                            <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
                                 [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2" [schemeType]="schemeType" [showXAxisLabel]="lineChartShowXAxisLabel"
                                 [showYAxisLabel]="lineChartShowYAxisLabel" [showGridLines]="showGridLines" [autoScale]="lineChartAutoScale"
                                 [curve]="lineChartLineInterpolation" [tooltipDisabled]="tooltipDisabled" [showRefLines]="showRefLines"
                                 [showRefLabels]="showRefLabels" [referenceLines]="refLines" (select)="onSelect($event)">
-                            </ngx-charts-line-chart> -->
+                            </ngx-charts-line-chart>
 
-              <img src="../../../../assets/images/graph.png" alt="">
+                            <!--<div class="small-container__graph-controls">-->
+                            <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
+                            <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
+                            <!--</div>-->
+                        </div>
 
-              <!--<div class="small-container__graph-controls">-->
-              <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
-              <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
-              <!--</div>-->
+                        <button class="filter__container-button filter__container-button--behavioral is-active" (click)="showFull(item)">Full report
+                        </button>
+                    </div>
+                </div>
             </div>
-
-            <button class="filter__container-button filter__container-button--behavioral is-active" (click)="showFull()">Full report
-            </button>
-          </div>
         </div>
-      </div>
-
-
-    </div>
-
-  </div>
-
-  <div class="aside-right aside-right--behavioral">
-    <div class="aside-right__head aside-right__head--behavioral">Your trading behavior
-
-      <div class="container__form container__form--select container__form--behavioral">
-        <app-dropdown [label]="'All time'" [items]="time"></app-dropdown>
-      </div>
-    </div>
-
-    <div class="aside-right__filter aside-right__filter--behavioral">
-      <div class="behavioral__stats">
-        <span class="text-small">Forecasts accuracy</span>
-
-        <span class="behavioral__stats-num">46.79%</span>
-      </div>
-      <div class="behavioral__stats">
-        <span class="text-small">Forecasts accuracy</span>
-
-        <span class="behavioral__stats-num">46.79%</span>
-      </div>
-      <div class="behavioral__stats">
-        <span class="text-small">Forecasts accuracy</span>
-
-        <span class="behavioral__stats-num">46.79%</span>
-      </div>
-      <div class="behavioral__stats">
-        <span class="text-small">Forecasts accuracy</span>
-
-        <span class="behavioral__stats-num">46.79%</span>
-      </div>
-      <div class="behavioral__stats">
-        <span class="text-small">Forecasts accuracy</span>
-
-        <span class="behavioral__stats-num">46.79%</span>
-      </div>
-      <div class="behavioral__stats">
-        <span class="text-small">Forecasts accuracy</span>
-
-        <span class="behavioral__stats-num">46.79%</span>
-      </div>
-    </div>
-
-    <div class="aside-right__filter aside-right__filter--behavioral aside-right__filter--bottom">
-      <p class="">You are a very nervous trader. In 85% of cases, you get out of trades too early. Try to set your Take-Profit level
-        2% higher than usual.</p>
+        <!--<div class="small-container__graph-controls">-->
+        <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
+        <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
+        <!--</div>-->
     </div>
 
 
-  </div>
+    <div class="aside-right aside-right--behavioral">
+        <div class="aside-right__head aside-right__head--behavioral">Your trading behavior
+
+            <div class="container__form container__form--select container__form--behavioral">
+                <app-dropdown [label]="'All time'" [items]="time"></app-dropdown>
+            </div>
+        </div>
+
+        <div class="aside-right__filter aside-right__filter--behavioral">
+            <div class="behavioral__stats">
+                <span class="text-small">Forecasts accuracy</span>
+
+                <span class="behavioral__stats-num">46.79%</span>
+            </div>
+            <div class="behavioral__stats">
+                <span class="text-small">Forecasts accuracy</span>
+
+                <span class="behavioral__stats-num">46.79%</span>
+            </div>
+            <div class="behavioral__stats">
+                <span class="text-small">Forecasts accuracy</span>
+
+                <span class="behavioral__stats-num">46.79%</span>
+            </div>
+            <div class="behavioral__stats">
+                <span class="text-small">Forecasts accuracy</span>
+
+                <span class="behavioral__stats-num">46.79%</span>
+            </div>
+            <div class="behavioral__stats">
+                <span class="text-small">Forecasts accuracy</span>
+
+                <span class="behavioral__stats-num">46.79%</span>
+            </div>
+            <div class="behavioral__stats">
+                <span class="text-small">Forecasts accuracy</span>
+
+                <span class="behavioral__stats-num">46.79%</span>
+            </div>
+        </div>
+
+        <div class="aside-right__filter aside-right__filter--behavioral aside-right__filter--bottom">
+            <p class="">You are a very nervous trader. In 85% of cases, you get out of trades too early. Try to set your Take-Profit
+                level 2% higher than usual.</p>
+        </div>
+
+
+    </div>
 
 </div>
