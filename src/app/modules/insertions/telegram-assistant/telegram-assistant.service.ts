@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {RestService} from '../../../core/services/rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
-import {TelegramData} from '../../../core/models/telegram';
 import {map} from 'rxjs/operators/map';
 
 const TelegramUrls = {

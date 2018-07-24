@@ -1,28 +1,35 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 
-import {AccountService} from '../services/account.service';
 import {LanguageService} from '../services/language.service';
+import {Constants} from '../../constants';
+import {CookieService} from 'ngx-cookie-service';
+import {CurrentUserService} from '../services/current-user.service';
+import {Observable} from 'rxjs/Observable';
+import {map} from 'rxjs/operators/map';
+import {catchError} from 'rxjs/operators/catchError';
 
 
 @Injectable()
 export class OnlyNotAuthorizedGuard implements CanActivate {
 
-    constructor(private _accountService: AccountService,
+    constructor(private currentUserService: CurrentUserService,
                 private router: Router,
-                private _languageService: LanguageService) {
+                private _languageService: LanguageService,
+                private cookies: CookieService) {
     }
 
-    canActivate() {
-        this._accountService.isAuthorized().subscribe(() => {
-            this.router.navigate(['/modules']);
-        }, error1 => {
-            if (error1.status === 403) {
+    canActivate(): Observable<boolean> {
+        if (!this.cookies.check(Constants.TOKEN_NAME)) { return Observable.of(true); }
+        return this.currentUserService.getCurrentUser().pipe(
+            map(value => {
+                this.router.navigate(['/account']);
+                return value == null;
+            }), catchError(() => {
                 this._languageService.initLanguage();
-                return true;
-            }
-        });
-        return true;
+                return Observable.of(true);
+            }));
+
     }
 
 }

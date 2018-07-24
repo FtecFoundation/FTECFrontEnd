@@ -7,7 +7,8 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class EtherscanService extends ExternalService {
-    contractAddress = '0x6bec54e4fea5d541fb14de96993b8e11d81159b2';
+    contractAddress = '0xac1ec31a5d24d2ac84404e19734dd34a288450f3';
+    // contractAddress = '0x6bec54e4fea5d541fb14de96993b8e11d81159b2';
     getBalance(address: string): Observable<number> {
         let params = new HttpParams();
         params = params.append('contractaddress', this.contractAddress);
@@ -15,10 +16,10 @@ export class EtherscanService extends ExternalService {
         params = params.append('module', 'account');
         params = params.append('action', 'tokenbalance');
         params = params.append('tag', 'latest');
-        return this.get('https://api.etherscan.io/api', params).pipe(
+        return this.get('https://api-ropsten.etherscan.io/api', params).pipe(
             map(result => result.result),
-            catchError(reponse => {
-                console.log(reponse);
+            catchError(response => {
+                console.log(response);
                 return null;
             })
         );

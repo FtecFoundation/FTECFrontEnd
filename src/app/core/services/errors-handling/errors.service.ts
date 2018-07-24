@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
+import {CustomException} from '../../models/exceptions';
 
 export const errorMessages = {
     '1': 'Invalid username or password',
@@ -39,5 +40,15 @@ export class ErrorsService {
 
     public getStatusCode(error: HttpErrorResponse): string {
         return error.error.status;
+    }
+
+    /**
+     *  Method handles exception that can occur in any module or request. It should indicate error to user (if needed) in some modal or etc
+     * @param ex - error of type `CustomException` that occurred
+     * @returns isContinue boolean indicates if method should continue execution after handling
+     */
+    public handleCustomException(ex: CustomException): boolean {
+        console.log('Here will be custom exception handling');
+        return true;
     }
 }

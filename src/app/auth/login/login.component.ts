@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
     submitForm() {
         this.submitted = true;
         if (this.loginForm.valid) {
-            this._accountService.loginUser(this.loginForm.value).subscribe(data => {
-                this.router.navigate(['/modules']);
+            this._accountService.loginUser(this.loginForm.value).subscribe(() => {
+                this.router.navigate(['/account']);
                 this._errorsService.currentError = null;
             }, error1 => {
                 this._errorsService.currentError = null;

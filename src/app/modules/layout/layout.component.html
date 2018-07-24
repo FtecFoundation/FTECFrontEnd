@@ -1,7 +1,7 @@
 <app-header>
 </app-header>
 
-<app-notify></app-notify>
+<app-notify *ngIf="false"></app-notify>
 
 <main class="content" [@routerAnimations]="prepRouteState(o)">
   <!-- <div class="content__bg">
@@ -26,23 +26,22 @@
   <div class="aside">
 
     <ul id="aside__container" class="aside__container">
-      <li class="aside__item" [routerLink]="'dashboard'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/account/dashboard'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Dashboard
         </span>
         <div class="aside__item-svg">
           <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
             <g class="item__svg-el" fill="#FFF" fill-rule="nonzero">
-              <path d="M47.594 14.46a2.188 2.188 0 0 0-2.78-.26c-3.272 2.231-19.69 13.45-21.454 15.214a6.57 6.57 0 0 0 0 9.281A6.543 6.543 0 0 0 28 40.614c1.68 0 3.361-.64 4.64-1.919 1.765-1.764 12.983-18.182 15.215-21.455a2.188 2.188 0 0 0-.261-2.78zM29.547 35.602a2.19 2.19 0 0 1-3.094 0 2.19 2.19 0 0 1 0-3.093c.685-.677 5.347-4.002 11.082-7.988-3.987 5.735-7.311 10.396-7.988 11.081z"
-              />
-              <path d="M10.088 44.23l-2.7 1.316a23.51 23.51 0 0 1-1.474-19.879l3.093 1.485a2.188 2.188 0 0 0 1.892-3.945L7.844 21.74c3.797-6.192 10.367-10.51 17.969-11.211v3.29a2.187 2.187 0 1 0 4.375 0v-3.292c2.606.238 5.128.901 7.521 1.982a2.188 2.188 0 0 0 1.8-3.988A27.788 27.788 0 0 0 28 6.055c-7.48 0-14.51 2.912-19.8 8.2-5.287 5.29-8.2 12.32-8.2 19.8 0 5.526 1.64 10.901 4.744 15.543a2.187 2.187 0 0 0 2.778.75l4.484-2.187a2.187 2.187 0 1 0-1.918-3.932zM53.532 22.545a2.187 2.187 0 1 0-3.987 1.8 23.438 23.438 0 0 1 2.08 9.71 23.46 23.46 0 0 1-3.021 11.508l-2.82-1.343a2.188 2.188 0 0 0-1.88 3.95l4.593 2.188a2.187 2.187 0 0 0 2.759-.76C54.36 44.957 56 39.582 56 34.056c0-4.01-.83-7.882-2.468-11.51z"
-              />
+              <path d="M47.594 14.46a2.188 2.188 0 0 0-2.78-.26c-3.272 2.231-19.69 13.45-21.454 15.214a6.57 6.57 0 0 0 0 9.281A6.543 6.543 0 0 0 28 40.614c1.68 0 3.361-.64 4.64-1.919 1.765-1.764 12.983-18.182 15.215-21.455a2.188 2.188 0 0 0-.261-2.78zM29.547 35.602a2.19 2.19 0 0 1-3.094 0 2.19 2.19 0 0 1 0-3.093c.685-.677 5.347-4.002 11.082-7.988-3.987 5.735-7.311 10.396-7.988 11.081z">
+              </path>
+              <path d="M10.088 44.23l-2.7 1.316a23.51 23.51 0 0 1-1.474-19.879l3.093 1.485a2.188 2.188 0 0 0 1.892-3.945L7.844 21.74c3.797-6.192 10.367-10.51 17.969-11.211v3.29a2.187 2.187 0 1 0 4.375 0v-3.292c2.606.238 5.128.901 7.521 1.982a2.188 2.188 0 0 0 1.8-3.988A27.788 27.788 0 0 0 28 6.055c-7.48 0-14.51 2.912-19.8 8.2-5.287 5.29-8.2 12.32-8.2 19.8 0 5.526 1.64 10.901 4.744 15.543a2.187 2.187 0 0 0 2.778.75l4.484-2.187a2.187 2.187 0 1 0-1.918-3.932zM53.532 22.545a2.187 2.187 0 1 0-3.987 1.8 23.438 23.438 0 0 1 2.08 9.71 23.46 23.46 0 0 1-3.021 11.508l-2.82-1.343a2.188 2.188 0 0 0-1.88 3.95l4.593 2.188a2.187 2.187 0 0 0 2.759-.76C54.36 44.957 56 39.582 56 34.056c0-4.01-.83-7.882-2.468-11.51z"></path>
             </g>
           </svg>
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'social'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/social'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Social Assistant
         </span>
@@ -57,7 +56,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'arbitrage'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/arbitrage'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Arbitrage Assistant
         </span>
@@ -77,7 +76,7 @@
       </li>
 
 
-      <li class="aside__item" [routerLink]="'mobile-app'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/mobile-app'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Mobile Application
         </span>
@@ -97,7 +96,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'desktop-app'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/desktop-app'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Desktop Application
         </span>
@@ -119,7 +118,7 @@
       </li>
 
 
-      <li class="aside__item" [routerLink]="'cryptoacademy'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/cryptoacademy'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Cryptoacademy
         </span>
@@ -138,7 +137,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'telegram-assistant'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/telegram-assistant'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Telegram Assistant
         </span>
@@ -153,7 +152,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'behavioral-analyzer'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/behavioral-analyzer'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Behavioral Analyzer
         </span>
@@ -172,7 +171,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'price-notification'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/price-notification'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Price notification
         </span>
@@ -196,7 +195,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'order-manager'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/order-manager'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Order Manager
         </span>
@@ -215,7 +214,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'global-price-analyzer'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/global-price-analyzer'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Global Price Analyzer
         </span>
@@ -230,7 +229,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'trp'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/trp'" routerLinkActive="is-active">
         <span class="aside__item-text">
           TRP
         </span>
@@ -249,7 +248,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'volume-analyzer'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/volume-analyzer'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Volume Analyzer
         </span>
@@ -272,7 +271,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'news-background'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/news-background'" routerLinkActive="is-active">
         <span class="aside__item-text">
           News background
         </span>
@@ -291,7 +290,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'portfolio-manager'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/portfolio-manager'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Portfolio Manager
         </span>
@@ -308,7 +307,7 @@
         </div>
       </li>
 
-      <li class="aside__item" [routerLink]="'smart-trading-module'" routerLinkActive="is-active">
+      <li class="aside__item" [routerLink]="'/modules/smart-trading-module'" routerLinkActive="is-active">
         <span class="aside__item-text">
           Smart Trading Modules
         </span>
@@ -329,7 +328,7 @@
 
     </ul>
   </div>
-  <ng-container *ngIf="_currentUserService.currentUser">
+  <ng-container *ngIf="_currentUserService.user">
     <app-confirm-mail *ngIf="!_currentUserService.currentUser.confirmedEmail"></app-confirm-mail>
   </ng-container>
 

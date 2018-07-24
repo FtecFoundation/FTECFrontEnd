@@ -19,7 +19,6 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.submitted = true;
-    console.log(form.value);
       if (form.valid) {
         this._accountService.restorePassword(form.value).subscribe(() => {
         });

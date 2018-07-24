@@ -14,7 +14,7 @@ import 'rxjs/add/observable/of';
 
 @Injectable()
 export class ServerErrorsInterceptor implements HttpInterceptor {
-
+    protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)');
     constructor(private router: Router) {
     }
 
@@ -25,16 +25,18 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                     return resp;
                 }
             }).catch(err => {
-                console.log(err);
                 if (err instanceof HttpErrorResponse) {
-                    if (err.status === 423) {
-                        this.router.navigate(['/banned']);
+                    switch (err.status) {
+                        case 423:
+                            this.router.navigate(['/banned']);
+                            break;
+                        case 403:
+                            const isProtected = this.protectedAuth.exec(this.router.url);
+                            if (isProtected && isProtected.length > 0) { this.router.navigate(['/auth']); }
+                            break;
                     }
-                    // else if (err.status === 403) {
-                        // this.router.navigate(['/auth']);
-                    // }
                 }
-                return Observable.of(err);
-            }) as any;
+                return Observable.throw(err);
+            });
     }
 }
