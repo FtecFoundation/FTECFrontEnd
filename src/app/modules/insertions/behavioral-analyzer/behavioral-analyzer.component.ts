@@ -81,8 +81,11 @@ export class BehavioralAnalyzerComponent implements OnInit {
         console.log(event);
     }
     
-    showFull() {
-        this.fullGraph = !this.fullGraph;
-    }
+    // showFull() {
+        // }
+        
+        showFull(graph: any) {            
+            graph.chosen = !graph.chosen;
+      }
 
 }

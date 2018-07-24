@@ -19,7 +19,7 @@
                             <span class="text-small">{{item.date}}</span>
                         </div>
 
-                        <div class="small-container__graph is-active" [ngClass]="{'is-active' : fullGraph}">
+                        <div class="small-container__graph" [ngClass]="{'is-active' : item.chosen}">
 
                             <span class="small-container__description">{{item.description}}</span>
 
@@ -36,7 +36,7 @@
                             <!--</div>-->
                         </div>
 
-                        <button class="filter__container-button filter__container-button--behavioral is-active" (click)="showFull()">Full report
+                        <button class="filter__container-button filter__container-button--behavioral is-active" (click)="showFull(item)">Full report
                         </button>
                     </div>
                 </div>
