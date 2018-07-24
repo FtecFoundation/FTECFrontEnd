@@ -6,9 +6,15 @@
   .smart__info-block {
     width: 100% !important;
   }
+  
 }
 
 @media only screen and (max-width: 1100px) {
+  app-referrals app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
+  }
   
   .aside {
     z-index: 1;
@@ -113,6 +119,7 @@
   .notification__head {
     margin-bottom: 40px !important;
   }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -123,6 +130,11 @@
 }
 
 @media only screen and (max-width: 800px) {
+  app-referrals app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
+  }
 
   .header__logo,
   .header__info-title,
@@ -437,9 +449,15 @@
   .smart__item {
     padding: .625em 0 !important;
   }
+
 }
 
 @media only screen and (max-width: 580px) {
+  app-referrals app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
+  }
    .ngx-charts {
       transform: scale(1.2) !important;
       margin-top: 1.250em;
@@ -497,6 +515,7 @@
     width: 100% !important;
     margin-top: .625em;
   }
+
   
 }
 

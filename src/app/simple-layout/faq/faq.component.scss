@@ -1,0 +1,42 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/medias";
+
+
+.middle--faq-half {
+  width: 50%;
+  padding-right: .625em;
+
+  .middle--fat-half:last-child {
+    padding-right: initial;
+  }
+}
+
+.middle__head--faq {
+  padding: 0;
+}
+
+.accordion__visible {
+  display: flex;
+  align-items: center;
+}
+
+.accordion__visible-question {
+  width: 90%;
+}
+
+.accordion__visible-arrow {
+  width: 10%;
+
+  transition: transform .3s ease;
+}
+
+.o-accordion p {
+  display: none;
+  margin-top: .938em;
+
+  font-size: .815em;
+}
+
+.o-accordion.is-active p {
+  display: block;
+}

@@ -8,10 +8,12 @@
 }
 
 app-referrals-popup {
-  width: initial;
-  display: initial;
-  padding-top: initial
+  width: initial !important;
+  display: initial !important;
+  padding-top: initial !important;
 }
+
+
 
 .main-info--support {
   flex-wrap: wrap;
