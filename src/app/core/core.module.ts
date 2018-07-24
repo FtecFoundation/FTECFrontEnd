@@ -48,7 +48,7 @@ import {EtherscanService} from './services/etherscan.service';
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,
-            multi: true,
+            multi: true
         },
     ]
 })

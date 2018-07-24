@@ -1,60 +1,66 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {ImageService} from '../../../core/services/image.service';
-import {ShowModalService } from '../../not-active/show-modal.service';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 import {NotificationService} from './notification.service';
-import {NotificationSetting} from '../../../core/models/user';
+import {Router} from '@angular/router';
 import {CurrentUserService} from '../../../core/services/current-user.service';
+import {NotificationSetting} from '../../../core/models/user';
 
 export const titles = {
-  '0' : 'Smart Trading Modules',
-  '1' : 'Social Assistant',
-  '2' : 'Order Manager'
+    '1': 'Authorization',
+    '2': 'Referral',
+    '3': 'Social Assistant'
 };
 
 @Component({
-  selector: 'app-notification',
-  templateUrl: './notification.component.html',
-  styleUrls: ['../insertions.scss', './notification.component.scss']
+    selector: 'app-notification',
+    templateUrl: './notification.component.html',
+    styleUrls: ['../insertions.scss', './notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
+    titles = titles;
+    telegramNotifyAll = false;
+    emailNotifyAll = false;
 
-  notification: NotificationSetting;
+    emailNotifyItem = false;
+    telegramNotifyItem = false;
+    socialTelegram = false;
+    authTelegram = false;
 
-  telegramNotifyAll = false;
-  emailNotifyAll = false;
+    constructor(private _notificationService: NotificationService, private router: Router,
+                public _currentUserService: CurrentUserService) {
+    }
 
-  emailNotifyItem = false;
-  telegramNotifyItem = false;
+    ngOnInit() {
+    }
 
-  socialTelegram = false;
-  authTelegram = false;
-
-  userTelegram = '';
-  userEmail = '';
-  authNotification = '';
-
-  constructor(private _notificationService: NotificationService, private router: Router, private _currentUser: CurrentUserService) { }
-
-
-  ngOnInit() {
-    // this.notification = this._currentUser.currentUser.notificationSettings;
-  }
-
-  // disableTelegram() {
-  //   this._notificationService.getNotification().subscribe(data => {
-  //     this.userTelegram = data;
-  //     this.telegramNotifyItem = !this.telegramNotifyItem;
-  //     this.telegramNotifyAll = !this.telegramNotifyAll;
-  //   });
-  // }
+    // disableTelegram() {
+    //   this._notificationService.getNotification().subscribe(data => {
+    //     this.userTelegram = data;
+    //     this.telegramNotifyItem = !this.telegramNotifyItem;
+    //     this.telegramNotifyAll = !this.telegramNotifyAll;
+    //   });
+    // }
 
 
-  setAuthNotification() {
-    this._notificationService.renewNotification();
+    setAuthNotification() {
+        // this._notificationService.renewNotification(new NotificationSetting(notificationType))
 
-    this.authTelegram = !this.authTelegram;
-  }
+        this.authTelegram = !this.authTelegram;
+    }
+
+    getNotificationTypes(notificationSettings: NotificationSetting): string[] {
+        const ret = Object.keys(notificationSettings);
+        ret.shift();
+        return ret;
+    }
+
+    enableTelegram(type: any, method: string) {
+        let notification = this._currentUserService.user.notificationSettings[type];
+        notification.telegram = !notification[method];
+        notification.notificationType = Number.parseInt(type);
+        this._notificationService.renewNotification(notification).subscribe(() => {
+            console.log(notification);
+        });
+    }
 
 }
 

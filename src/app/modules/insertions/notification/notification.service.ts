@@ -18,19 +18,13 @@ const TelegramUrls = {
 @Injectable()
 export class NotificationService extends RestService {
 
-    // ДЕЛАЙ ОТЭТА
-
     getNotification(): Observable<any> {
         return this.get(TelegramUrls.getNotificationSettings).pipe(
-            map(resp => resp.response.settings),
-            catchError(e => this.handleError(e)));
+            map(resp => resp.response.settings));
     }
 
-    renewNotification(): Observable<any> {
-        console.log(TelegramUrls.changeNotificationSetting);
-         this.put(TelegramUrls.changeNotificationSetting, NotificationSetting).subscribe( data => {
-        });
-        return null;
+    renewNotification(data: NotificationSetting): Observable<any> {
+        return this.put(TelegramUrls.changeNotificationSetting, data);
     }
 
 }
