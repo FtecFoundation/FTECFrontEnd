@@ -25,7 +25,6 @@ export const routes = [
                 loadChildren: './insertions/smart-trading-module/smart-trading-module.module#SmartTradingModuleModule'},
             {path: 'news-background', loadChildren: './insertions/news-background/news-background.module#NewsBackgroundModule'},
             {path: 'trp', loadChildren: './insertions/trp/trp.module#TrpModule'},
-            {path: 'my-exchanges', loadChildren: './insertions/my-exchanges/my-exchanges.module#MyExchangesModule'},
             {path: 'telegram-assistant', loadChildren: './insertions/telegram-assistant/telegram-assistant.module#TelegramAssistantModule'}
                 ],
         // Do not need OnlyAuthorized - confirmed email will fail if user has no token/unauthenticated
@@ -39,7 +38,8 @@ export const routes = [
             {path: 'support', loadChildren: './account/support/support.module#SupportModule'},
             {path: 'settings', loadChildren: './account/settings/settings.module#SettingsModule'},
             {path: 'notification', loadChildren: './account/notification/notification.module#NotificationModule'},
-            {path: 'payment', loadChildren: './account/payment/payment.module#PaymentModule'}
+            {path: 'payment', loadChildren: './account/payment/payment.module#PaymentModule'},
+            {path: 'my-exchanges', loadChildren: './account/my-exchanges/my-exchanges.module#MyExchangesModule'}
         ]
     },
     // TODO remove canActivate and layout component when independent to user layout will be created

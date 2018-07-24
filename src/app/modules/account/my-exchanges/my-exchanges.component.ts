@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
-import {availableExchanges} from '../arbitrage/available-exchanges';
+import {availableExchanges} from '../../insertions/arbitrage/available-exchanges';
 
 @Component({
   selector: 'app-social',
   templateUrl: './my-exchanges.component.html',
-  styleUrls: ['../insertions.scss', './my-exchanges.component.scss']
+  styleUrls: ['../../insertions/insertions.scss', './my-exchanges.component.scss']
 })
 export class MyExchangesComponent implements OnInit {
   exchanges: string[] = [];

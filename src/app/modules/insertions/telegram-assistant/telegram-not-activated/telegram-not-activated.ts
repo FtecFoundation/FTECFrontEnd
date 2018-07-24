@@ -28,15 +28,15 @@ export class TelegramNotActivatedComponent implements OnInit {
     }
 
     enable() {
-        // if (!this._currentUserService.tgSettings) {
-        //     this._currentUserService.refreshTelegramSettings().subscribe(val => {
+        if (!this._currentUserService.tgSettings) {
+            this._currentUserService.getTelegramSettingsObs(false).subscribe(val => {
                 // console.log(val);
-                this._currentUserService.telegramSettings = new TelegramSettings();
-                this._currentUserService.telegramSettings.accessCode = 'smth';
+                // this._currentUserService.telegramSettings = new TelegramSettings();
+                // this._currentUserService.telegramSettings.accessCode = 'smth';
                 this.showAccessCode = true;
-            // });
-            // return;
-        // }
+            });
+            return;
+        }
         // if (!this._currentUserService.tgSettings.accessCode) {
         //     this._currentUserService.getTelegramSettingsObs(true);
         // }
