@@ -1,5 +1,11 @@
 @import "../../../../assets/styles/variables";
 
+:host {
+  width: 80%;
+  display: flex;
+  padding-top: .5rem
+}
+
 .main-info__head {
 
 }

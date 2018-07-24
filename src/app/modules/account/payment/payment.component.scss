@@ -1,8 +1,20 @@
 @import "../../../../assets/styles/variables";
 
-.middle--telegram {
+:host {
   width: 80%;
   display: flex;
+  padding-top: .5rem
+}
+
+.main-info--payment {
+  flex-wrap: wrap;
+}
+
+.middle--payment {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: .625em;
 }
 
 .middle__table--telegram {
@@ -112,3 +124,5 @@
   margin-bottom: .625em;
   text-align: center;
 }
+
+

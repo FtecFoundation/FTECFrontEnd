@@ -1,5 +1,11 @@
 @import "../../../../assets/styles/variables";
 
+:host {
+  width: 80%;
+  display: flex;
+  padding-top: .5rem
+}
+
 /deep/ {
   app-preloader{
     transform: scale(0.7);
