@@ -1,5 +1,144 @@
 export const changeLog = [
     {
+        'date': '18/07/2018',
+        'changes': [
+            'We added the possibility to authorize via email and via login name both.',
+            'We began the development of proxy server for access to exchanges to avoid the risk to be banned. Four exchanges were connected.',
+            'In Service of Trader\'s Behavioral Analysis, controller, which returned history of user\'s trades, now returns history and statistics on trades.',
+            'HTML layout of Smart Trading Module.',
+            'Smart Trading Module page was adapted to all screen sizes.',
+            'It\'s not necessary now to enter a pair to get deals in Service of Trader\'s Behavioral Analysis (for Binance and HitBTC).',
+            'In Service of Trader\'s Behavioral Analysis, the method, which returns a list of the user\'s deals, worked for one exchanges only. Now it works for several exchanges.',
+            'Previously, it was necessary for the user to wait a long for request processed if he has never used our service before. Now request is processed faster (in Service of Trader\'s Behavioral Analysis).',
+            'Arbitrage Module was partially integrated with the proxy project.'
+        ]
+    },
+    {
+        'date': '17/07/2018',
+        'changes': [
+            'We added an address pool.',
+            'If you don\'t replenish your address in two days, it will transition into frozen, binding to the user is saved.',
+            'If the user pays during 2 days, funds will be charged within 12 hours. Between second and seventh days, he can give the funds back with the help of the support service. After the eighth day, it won\'t be possible to return funds.',
+            'Visual work on enabling/disabling notifications was done.',
+            'New exchange, HitBTC, was connected in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the logic of getting the history of user trades was changed. (Previously, you should enter a pair manually, now it is entered automatically) (now it\'s for Binance only)'
+        ]
+    },
+    {
+        'date': '16/07/2018',
+        'changes': [
+            'In Social Assistant, we added the function of sending notifications when the relevant tweet comes',
+            'In Service of Trader\'s Behavioral Analysis, candles are built now only for deals which do not yet exist in the database. This improves the speed of the work of the module (for Binance)',
+            'We fixed a bug which limited a normal program execution in Social Assistant (Twitter API bug)',
+            'In Social Assistant, a bug in the method which sends notifications to the user was fixed',
+            'In Social Assistant, notification now contains a link to tweet which was linked',
+            'We changed buttons in notification settings',
+            'We configured switching of all Telegram notifications at frontend',
+            'We configured switching of all email notifications at frontend',
+            'We added the possibility to get an address in the node to hold tokens and ETH there',
+            'The possibility to withdraw tokens was added'
+        ]
+    },
+    {
+        'date': '13/07/2018',
+        'changes': [
+            'HTML layout of the page with global notification settings of all modules',
+            'The page with global notification settings of all modules was adapted to all screen sizes',
+            'HTML layout of informing pop-up',
+            'Informing pop-up was adapted to all screen sizes',
+            'Module of Trader\'s Behavioral Analyzer was configured and connected to the main module (for developers only)',
+            'We added a few commands to Telegram Assistant',
+            'We began the development of wrapping for work with Ethereum node',
+            'We added smoothing of difference between user\'s price and the best price',
+            'We added the possibility to enable and disable notifications at backend',
+            'When you disable a certain way of notification, the configuration of specific types of notifications is saved',
+            'The possibility to do mailing with the help of the main module was added',
+            'Now you will receive notifications to enabled ways of notification when signing in (now Telegram and mail are available)'
+        ]
+    },
+    {
+        'date': '12/07/2018',
+        'changes': [
+            'In Service of Trader\'s Behavioral Analysis, we added error displaying in case if the user enters incorrect params for interaction with Binance API and Bittrex API (e.g., API key, API secret, Pair)',
+            'We added saving of user\'s operations to the database (for Binance and Bittrex) in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the method which takes the best price from the nearest candles in dependence on operation type was added (for Bittrex)',
+            'We added the method which calculates the percentage of user\'s price of the best rate in dependence on operation type in Service of Trader\'s Behavioral Analysis (for Bittrex)',
+            'HTML layout of the page of banned users',
+            'The page of banned users was adapted to all screen sizes',
+            'The method which calculates user\'s statistics on the history of user transactions was added in Service of Trader\'s Behavioral Analysis',
+            'We began the work on connecting Service of Trader\'s Behavioral Analysis to the main module',
+            'In Telegram Assistant, we added a possibility to receive notifications from other modules',
+            'In Service of Trader\'s Behavioral Analysis, we added a method which calculates statistics on the history of user\'s transactions'
+        ]
+    },
+    {
+        'date': '11/07/2018',
+        'changes': [
+            'We added the possibility to accurately diagnose problems with Arbitrage Module through logging',
+            'Now you can execute other commands while searching for windows in Telegram Assistant, your request will be executed in the background',
+            'We added a limitation on a number of simultaneous requests for searching windows (not more than 1 request before the previous one is executed)',
+            'We began the development of Module of Price Notification',
+            'In the dropdown list in the header, layout adaptation for large emails was done',
+            'We added the possibility to repass the test at frontend',
+            'Errors while trying to change userpic were fixed',
+            'Userpic in the header and personal cabinet now changes in real time (new picture will be seen without page reloading)',
+            'We fixed the bug of calculating the best price from candles which are the nearest to user\'s deal in Service of Trader\'s Behavioral Analysis',
+            'In Service of Trader\'s Behavioral Analysis, the interval of candle building at 12 hours back and 12 hours ahead from user\'s deal was changed (instead of 5 minutes back and 5 minutes ahead) (for Binance and Bittrex)',
+            'We added error displaying in case if the user enters incorrect exchange in Service of Trader\'s Behavioral Analysis'
+        ]
+    },
+    {
+        'date': '10/07/2018',
+        'changes': [
+            'Button emoji were added to Telegram Assistant',
+            'The work of all modules was stabilized with HitBTC, Huobi, and Kraken',
+            'We added the possibility to repass Cryptoacademy tests at backend',
+            'JUnit tests for Social Assistant were fixed in the main module',
+            'If subscription ends while using Social Assistant, errors will be displayed',
+            'If the word, which is being added to the dictionary, doesn\'t pass validation, errors will be displayed in Social Assistant',
+            'HTML layout of pop-up on Anomalous Volume Dynamics Analyzer page',
+            'Pop-up on  Anomalous Volume Dynamics Analyzer page was adapted to all screen sizes',
+            'HTML layout of Module of Cryptocurrency Portfolios Management',
+            'Module of Cryptocurrency Portfolios Management page was adapted to all screen sizes',
+            'We added the possibility to unlink Telegram Assistant from your FTEC account'
+        ]
+    },
+    {
+        'date': '09/07/2018',
+        'changes': [
+            'We added dictionary limitation to Social Assistant (50 words for a user). Now module controllers ' +
+            '(add a word, delete a word, delete all words) return the number of free lots (how many words the user' +
+            'can add)',
+            'In Social Assistant, all controllers are modified. Now they accept user id in headers, not in request params',
+            'In the main module, we modified all controllers which interact with Social Assistant',
+            'Twitter properties for production, staging, and test run were added in Social Assistant',
+            'Method of subscription verification was moved to Social Assistant',
+            'HTML layout of Anomalous Volume Dynamics Analyzer page',
+            'Anomalous Volume Dynamics Analyzer page was adapted to all screen sizes',
+            'News Background Analyzer page was adapted to all screen sizes',
+            'HTML layout of News Background Analyzer page',
+            'The main module and Arbitrage Assistant don\'t accept incorrect data for windows search (negative values, closed exchanges)',
+            'Pop-up dictionary in Telegram Assistant was improved, now it can appear by pressing the button when you attempt to delete a word',
+            'Now user can\'t get access code after connecting Telegram account and his FTEC account'
+        ]
+    },
+    {
+        'date': '06/07/2018',
+        'changes': [
+            'We added a method  which searches and returns all transactions of the user in the Service of Traders ' +
+            'Behavioral Analysis module (Bittrex)',
+            'We added a method that searches for the nearest candles for the transaction of the user (for Bittrex)',
+            'HTML-layout of the page of the Exchange of the Trading Recommendations Platform',
+            'The Trading Recommendations Platform page is adapted for all screen sizes',
+            'The HTML layout of the Anomalous Volume Analyzer page is started',
+            'The opportunity of initial adjustment the Telegram Assistant is realized at frontend',
+            'We checked the test modules for the Cryptoacademy',
+            'We improved display of information from modules in the Telegram Assistant',
+            'We configured test server of the Telegram Assistant',
+            'We fixed bugs which were detected during interaction with  the Telegram Assistant'
+        ]
+    },
+    {
         'date': '05/07/2018',
         'changes': [
             'We added search of the nearest candle for each deal in Module of Trader\'s Behavioral Analysis (for Binance)',

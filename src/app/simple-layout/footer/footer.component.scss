@@ -1,0 +1,57 @@
+@import "../../../assets/styles/variables";
+
+.footer {
+  height: 5.000rem;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+
+  background-color: $dark-blue;
+}
+
+.footer__info {
+  height: 100%;
+  position: relative;
+  padding-left: 1.250em;
+  padding-right: 1.875em;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  font-size: 0.875em;
+}
+
+.footer__info::after {
+  content: '';
+  top: 25%;
+  right: 1em;
+  width: 0.063em;
+  height: 50%;
+  display: block;
+  position: absolute;
+
+  opacity: .5;
+  background-color: $white;
+}
+
+.footer__info a {
+  margin-left: .313em;
+  margin-right: .313em;
+}
+
+.footer a {
+  font-size: 0.875rem;
+  color: $accent;
+  text-decoration: underline;
+}

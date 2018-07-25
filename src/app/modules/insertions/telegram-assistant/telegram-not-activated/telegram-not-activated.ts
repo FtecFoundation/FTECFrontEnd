@@ -1,9 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TelegramAssistantService} from '../telegram-assistant.service';
 import {CurrentUserService} from '../../../../core/services/current-user.service';
-import {settings} from 'cluster';
 import {Router} from '@angular/router';
-import {TelegramSettings} from '../../../../core/models/telegram';
 
 @Component({
     selector: 'app-social',
@@ -43,10 +41,8 @@ export class TelegramNotActivatedComponent implements OnInit {
     }
 
     checkIfConnected() {
-        this._currentUserService.getTelegramSettingsObs(true).subscribe(
-            data => {
-                if (data.linkedChatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
-            }
-        );
+        this._currentUserService.getTelegramSettingsObs(true).subscribe(data => {
+            if (data.linkedChatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
+        });
     }
 }

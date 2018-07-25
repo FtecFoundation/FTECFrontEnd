@@ -19,7 +19,7 @@ export class NotificationSetting {
     telegram: boolean;
     email: boolean;
 
-    static from(notificationType: number, enabledNotifications: NotificationSetting): NotificationSetting{
+    static from(notificationType: number, enabledNotifications: NotificationSetting): NotificationSetting {
         const setting = new NotificationSetting();
         setting.notificationType = notificationType;
         setting.email = enabledNotifications.email;
