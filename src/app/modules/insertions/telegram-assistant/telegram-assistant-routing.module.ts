@@ -11,14 +11,14 @@ import {TelegramActivatedComponent} from './telegram-activated/telegram-activate
                 path: '',
                 component: TelegramNotActivatedComponent,
                 data: {title: 'Telegram Assistant', 'redirectToIfEnabled': '/modules/telegram-assistant/settings'},
-                // canActivate: [TelegramEnabledGuard],
+                canActivate: [TelegramEnabledGuard],
 
             },
             {
                 path: 'settings',
                 component: TelegramActivatedComponent,
                 data: {title: 'Telegram Assistant Settings', 'redirectToIfNotEnabled': '/modules/telegram-assistant'},
-                // canActivate: [TelegramEnabledGuard]
+                canActivate: [TelegramEnabledGuard]
             },
         ])
     ],

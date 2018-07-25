@@ -1,19 +1,15 @@
 <div class="main-info main-info--telegram">
   <div class="middle middle--telegram">
     <div class="middle__table middle__table--telegram">
-      <div class="middle__table-line">
-        <span class="text">Notification when logging in</span>
-        <figure class="button__change" (click)="loginNotification()" [ngClass]="{'is-active' : loggingNotification}"></figure>
-      </div>
-      <div class="middle__table-line">
-        <span class="text">Notification on new refferal</span>
-        <figure class="button__change" (click)="refferalChangeNotification()" [ngClass]="{'is-active' : referralNotification}"></figure>
+      <div class="middle__table-line" *ngFor="let notification of notifications">
+        <span class="text">{{notificationMapper[notification]}}</span>
+        <figure class="button__change" (click)="changeNotification(notification)" [ngClass]="{'is-active' : currentUserService.notificationSettings[notification].telegram}"></figure>
       </div>
       <button class="filter__container-button" (click)="showModal()">Save Changes</button>
     </div>
     <div class="middle__table middle__table--telegram">
       <div class="middle__table-line">
-        <span class="text">Telegram assistant is enabled and linked to user {{userName}} ({{userId}}).</span>
+        <span class="text">Telegram assistant is enabled and linked to user {{currentUserService.tgSettings.linkedUsername}} ({{currentUserService.tgSettings.linkedChatId}}).</span>
       </div>
       <div class="middle__table-line">
         <span class="text">

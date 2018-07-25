@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AccountService} from './account.service';
-import {User} from '../models/user';
+import {NotificationSetting, User} from '../models/user';
 import {EtherscanService} from './etherscan.service';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
@@ -12,7 +12,8 @@ import {CustomException} from '../models/exceptions';
 @Injectable()
 export class CurrentUserService {
     private currentUser: User;
-    telegramSettings: TelegramSettings;
+    private telegramSettings: TelegramSettings;
+    // private notificationSettings: NotificationSetting;
     constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
 
     }
@@ -39,7 +40,7 @@ export class CurrentUserService {
     }
 
     getTelegramSettingsObs(forceRefresh: boolean): Observable<TelegramSettings> {
-        if (!forceRefresh && this.telegramSettings != null) { return Observable.of(this.telegramSettings); }
+        if (!forceRefresh && !this.telegramSettings) { return Observable.of(this.telegramSettings); }
         return this._accountService.getTelegramSettings().pipe(
             map(value => this.telegramSettings = value),
             catchError(err => {
@@ -51,11 +52,24 @@ export class CurrentUserService {
         );
     }
 
-    refreshTelegramSettings() {
-        return this._accountService.getTelegramSettings();
+    getNotificationSettings(forceRefresh: boolean): Observable<NotificationSetting> {
+        if (!forceRefresh && !this.notificationSettings) { return Observable.of(this.notificationSettings); }
+        this._accountService.getNotificationSettings().pipe(
+            map(value => this.user.notificationSettings = value),
+            catchError(err => {
+                if (err instanceof CustomException) { if (!this.errorService.handleCustomException(err)) { return; } }
+                console.error('Can\'t get notifications settings, got exception:', err);
+                return Observable.throw(err);
+            })
+        );
     }
+
     get tgSettings() {
         return this.telegramSettings;
+    }
+
+    get notificationSettings() {
+        return this.user.notificationSettings;
     }
 
     checkAddressExistence() {

@@ -3,21 +3,16 @@ import {NotificationService} from './notification.service';
 import {Router} from '@angular/router';
 import {CurrentUserService} from '../../../core/services/current-user.service';
 import {NotificationSetting} from '../../../core/models/user';
+import {notificationMapper} from '../../../constants';
 
-export const titles = {
-    '1': 'Authorization',
-    '2': 'Referral',
-    '3': 'Social Assistant'
-};
 
 @Component({
-
   selector: 'app-notification',
   templateUrl: './notification.component.html',
   styleUrls: [ '../../../../assets/styles/common.scss', './notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
-    titles = titles;
+    titles = notificationMapper;
     telegramNotifyAll = false;
     emailNotifyAll = false;
 

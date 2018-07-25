@@ -17,7 +17,6 @@ const TelegramUrls = {
 
 @Injectable()
 export class NotificationService extends RestService {
-
     getNotification(): Observable<any> {
         return this.get(TelegramUrls.getNotificationSettings).pipe(
             map(resp => resp.response.settings));

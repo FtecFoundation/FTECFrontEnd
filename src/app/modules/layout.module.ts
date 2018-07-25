@@ -10,6 +10,7 @@ import {ShowModalService} from './not-active/show-modal.service';
 import {ConfirmMailComponent} from './confirm-mail/confirm-mail.component';
 import {routes} from './routes';
 import {NotificationComponent} from './account/notification/notification.component';
+import {NotificationService} from './account/notification/notification.service';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import {NotificationComponent} from './account/notification/notification.compone
         ConfirmMailComponent
     ],
     providers: [ShowModalService,
-    NotificationComponent]
+    NotificationComponent,
+    NotificationService]
 })
 
 export class LayoutModule {
