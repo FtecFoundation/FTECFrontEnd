@@ -7,7 +7,7 @@ import {RouterModule} from '@angular/router';
 @NgModule({
     imports: [
         RouterModule.forChild([
-            {path: '', component: ReferralsComponent, data: {title: 'Refferals'}},
+            {path: '', component: ReferralsComponent, data: {title: 'Referrals'}},
         ])
     ],
     exports: [RouterModule]
