@@ -11,6 +11,7 @@ import {ConfirmMailComponent} from './confirm-mail/confirm-mail.component';
 import {routes} from './routes';
 import {NotificationComponent} from './account/notification/notification.component';
 import {NotificationService} from './account/notification/notification.service';
+import {StubComponent} from './stub/stub.component';
 
 @NgModule({
     imports: [
@@ -21,14 +22,16 @@ import {NotificationService} from './account/notification/notification.service';
         LayoutComponent,
         HeaderComponent,
         FooterComponent,
-        NotActiveComponent
+        NotActiveComponent,
+        StubComponent
     ],
     declarations: [
         LayoutComponent,
         HeaderComponent,
         FooterComponent,
         NotActiveComponent,
-        ConfirmMailComponent
+        ConfirmMailComponent,
+        StubComponent
     ],
     providers: [ShowModalService,
     NotificationComponent,

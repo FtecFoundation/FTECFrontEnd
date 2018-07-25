@@ -1,0 +1,32 @@
+@import "../../../assets/styles/variables";
+
+
+.stub {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: .625rem;
+  background: $violet-gradient-aside;
+}
+
+.stub__content {
+  width: 50%;
+  text-align: center;
+  margin: 3em;
+}
+
+.stub__conent h2 {
+  font-size: 4em;
+  color: $accent;
+}
+
+.stub__conent p {
+  margin: .938em;
+}
+
+.stub__content-info {
+  font-size: 1.250em;
+}
