@@ -24,12 +24,9 @@ export class NotificationComponent implements OnInit {
 
     ngOnInit() {
     }
-
-
-
+    
     disableTelegramNotification() {
-        // this._notificationService.renewNotification(new NotificationSetting(notificationType))
-
+        this.telegramNotification = !this.telegramNotification;
     }
     
     disableEmailNotification() {
@@ -47,10 +44,7 @@ export class NotificationComponent implements OnInit {
         notification.telegram = !notification[method];
         notification.notificationType = Number.parseInt(type);
         this._notificationService.renewNotification(notification).subscribe(() => {
-            console.log(notification);
         });
-        
-        this.telegramNotification = !this.telegramNotification;
     }
 
 }
