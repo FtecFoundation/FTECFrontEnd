@@ -9,7 +9,9 @@ import {NotActiveComponent } from './not-active/not-active.component';
 import {ShowModalService} from './not-active/show-modal.service';
 import {ConfirmMailComponent} from './confirm-mail/confirm-mail.component';
 import {routes} from './routes';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NotificationComponent} from './account/notification/notification.component';
+import {NotificationService} from './account/notification/notification.service';
+import {StubComponent} from './stub/stub.component';
 
 @NgModule({
     imports: [
@@ -20,16 +22,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         LayoutComponent,
         HeaderComponent,
         FooterComponent,
-        NotActiveComponent
+        NotActiveComponent,
+        StubComponent
     ],
     declarations: [
         LayoutComponent,
         HeaderComponent,
         FooterComponent,
         NotActiveComponent,
-        ConfirmMailComponent
+        ConfirmMailComponent,
+        StubComponent
     ],
-    providers: [ShowModalService]
+    providers: [ShowModalService,
+    NotificationComponent,
+    NotificationService]
 })
 
 export class LayoutModule {

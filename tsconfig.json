@@ -1,5 +1,9 @@
 {
   "compileOnSave": false,
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "genDir": "build"
+  },
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

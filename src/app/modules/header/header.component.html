@@ -100,7 +100,7 @@
 
         <div class="header__info-user">
             <div class="header__info-change-log">
-                <a [routerLink]="'/modules/change-log'">Changelog</a>
+                <a [routerLink]="'/info/change-log'">Changelog</a>
             </div>
             <div class="header__left-bar" (click)="showThemeList()">
                 <svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -115,7 +115,7 @@
                     </g>
                 </svg>
             </div>
-            <span (click)="showModal()" class="user-balance">{{_currentUserService.user.balance}} FTEC
+            <span (click)="goToPaymentPage()" class="user-balance">{{_currentUserService.user.balance}} FTEC
                 <sup>*</sup> +</span>
 
 
@@ -153,7 +153,7 @@
                                 </g>
                             </svg>
                             My Exchanges</li>
-                        <li class="user__block-link-item" [routerLink]="'refferals'">
+                        <li class="user__block-link-item" [routerLink]="'/account/referrals'">
                             <svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>203ABB55-FE7F-44FD-B03D-F67D42FFDB4C</title>
                                 <desc>Created with sketchtool.</desc>
@@ -168,8 +168,29 @@
                                         </g>
                                     </g>
                                 </g>
-                            </svg>Refferals</li>
-                        <li class="user__block-link-item" [routerLink]="'settings'">
+                            </svg>
+                            Refferals
+                        </li>
+
+                        <li class="user__block-link-item" [routerLink]="'notification'">
+                            <svg width="16px" height="16px" viewBox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+                                <title>1FFDD875-F55C-403D-B332-209C80756F54</title>
+                                <desc>Created with sketchtool.</desc>
+                                <defs></defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="FTEC-Platform_Profile_popover" transform="translate(-1298.000000, -200.000000)" fill="#0D003B">
+                                        <g class="item__svg-el" id="bell" transform="translate(1298.000000, 200.000000)">
+                                            <path d="M10.0078125,11.375 C10.1445319,11.375 10.2607417,11.4228511 10.3564453,11.5185547 C10.4521489,11.6142583 10.5,11.7304681 10.5,11.8671875 C10.5,12.0039069 10.4521489,12.1201167 10.3564453,12.2158203 C10.2607417,12.3115239 10.1445319,12.359375 10.0078125,12.359375 L6.234375,12.359375 L6.234375,13.015625 C6.234375,13.2890639 6.13867283,13.5214834 5.94726562,13.7128906 C5.75585842,13.9042978 5.52343887,14 5.25,14 C4.97656113,14 4.74414158,13.9042978 4.55273438,13.7128906 C4.36132717,13.5214834 4.265625,13.2890639 4.265625,13.015625 L4.265625,12.359375 L0.4921875,12.359375 C0.355468066,12.359375 0.239258291,12.3115239 0.143554688,12.2158203 C0.047851084,12.1201167 0,12.0039069 0,11.8671875 C0,11.7304681 0.047851084,11.6142583 0.143554688,11.5185547 C0.239258291,11.4228511 0.355468066,11.375 0.4921875,11.375 L0.875,11.375 L0.875,5.25 C0.875,4.12890064 1.24869418,3.15364998 1.99609375,2.32421875 C2.74349332,1.49478752 3.66405703,1.02083393 4.7578125,0.90234375 L4.7578125,0.4921875 C4.7578125,0.355468066 4.80566358,0.239258291 4.90136719,0.143554688 C4.99707079,0.047851084 5.11328057,0 5.25,0 C5.38671943,0 5.50292921,0.047851084 5.59863281,0.143554688 C5.69433642,0.239258291 5.7421875,0.355468066 5.7421875,0.4921875 L5.7421875,0.90234375 C6.83594297,1.02083393 7.75650668,1.49478752 8.50390625,2.32421875 C9.25130582,3.15364998 9.625,4.12890064 9.625,5.25 L9.625,11.375 L10.0078125,11.375 Z M8.640625,11.375 L8.640625,5.25 C8.640625,4.31119322 8.31022466,3.51139653 7.64941406,2.85058594 C6.98860347,2.18977534 6.18880678,1.859375 5.25,1.859375 C4.31119322,1.859375 3.51139653,2.18977534 2.85058594,2.85058594 C2.18977534,3.51139653 1.859375,4.31119322 1.859375,5.25 L1.859375,11.375 L8.640625,11.375 Z"
+                                                id="bell---anticon"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            Notification settings
+                        </li>
+
+                        <li class="user__block-link-item" [routerLink]="'/account/settings'">
                             <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>229860E0-A013-43FA-B1DC-55795AB83E42</title>
                                 <desc>Created with sketchtool.</desc>
@@ -185,8 +206,9 @@
                                     </g>
                                 </g>
                             </svg>
-                            Setting</li>
-                        <li class="user__block-link-item" [routerLink]="'faq'">
+                            Setting
+                        </li>
+                        <li class="user__block-link-item" [routerLink]="'/info/faq'">
                             <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>B2BC645B-BF40-48CB-B02F-73F039AA6860</title>
                                 <desc>Created with sketchtool.</desc>
@@ -204,7 +226,7 @@
                             </svg>
                             FAQ</li>
 
-                        <li class="user__block-link-item" [routerLink]="'support'">
+                        <li class="user__block-link-item" [routerLink]="'/info/support'">
                             <svg width="16px" height="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 x="0px" y="0px" viewBox="0 0 363 363" style="enable-background:new 0 0 363 363;" xml:space="preserve">
                                 <path d="M277.73,94.123c0,10.997-8.006,17.685-13.852,22.593c-2.214,1.859-6.335,5.251-6.324,6.518

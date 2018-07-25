@@ -1,0 +1,130 @@
+@import "../../../../assets/styles/variables";
+
+:host {
+  width: 80%;
+  display: flex;
+  padding-top: .5rem
+}
+
+.main-info--payment {
+  flex-wrap: wrap;
+}
+
+.middle--payment {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: .625em;
+}
+
+.middle__table--telegram {
+  width: 50%;
+  padding: 1.250em;
+  margin-right: .625em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: .313rem;
+  background-color: $dark-blue;
+}
+
+.middle__table--telegram:last-child {
+  margin-right: 0;
+}
+
+.middle__table-line--telegram {
+  flex-wrap: wrap;
+}
+
+.middle__table-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.250em;
+}
+
+.text {
+  font-size: 1.125rem;
+}
+
+.link__accent {
+  color: $accent;
+  text-decoration: underline;
+}
+
+
+// =============
+// ENABLE STYLES
+// ============= 
+
+.middle--telegram-enable {
+  padding: 1.250em;
+
+  border-radius: .313rem;
+  background-image: $violet-gradient-aside;
+}
+
+.telegram-enable__title {
+  font-size: 1.500em;
+}
+
+.middle--telegram-enable p,
+.middle--telegram-enable h3 {
+  display: block;
+  margin-bottom: 1.250em;
+}
+
+.middle--telegram-enable p {
+  width: 85%;
+  opacity: 1;
+}
+
+.aside-right__filter p {
+  margin-top: 10px;
+}
+
+.aside-right {
+  margin-bottom: 20px;
+}
+
+.telegram__access-code {
+  margin: auto;
+  margin-top: 30px;
+  font-size: 3rem;
+  text-align: center;
+  border: 1px solid #25cbd3;
+  padding: .313rem;
+  padding-left: .938rem;
+  padding-right: .938rem;
+  border-radius: .313rem;
+  max-width: 74%;
+}
+
+/deep/ {
+
+  .middle--telegram-enable qrcode img,
+  .middle--telegram-enable img
+  {
+    margin-bottom: 1.250em;
+    left: 50%;
+    border: 5px solid #fff;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    transform: translateX(-50%);
+  }
+}
+
+.payment--code {
+  display: block;
+  margin-bottom: .625em;
+  text-align: center;
+}
+
+.middle__table-container--payment {
+  width: 100%;
+}

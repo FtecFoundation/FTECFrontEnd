@@ -41,9 +41,6 @@
     <div class="middle__table" *ngIf="daysLeft">
 
       <div class="middle__table-container middle__table-container--layout middle__table-container--tweeter">
-        <div class="vertical-centered-box" *ngIf="preloader">
-           <app-preloader></app-preloader>
-        </div>
 
         <div class="middle__table-container" *ngIf="tweetIds.length === 0">
           <p>There are no new tweets found. Add more words to your dictionary or wait till new tweets with words from dictionary will be posted</p>
@@ -89,10 +86,11 @@
             </div>
           </li>
         </ul>
+            <span style="margin-top: 20px" *ngIf="(wordsLeft === 0) && recWordClicked" class="error-field">You ran out of words limit</span>
       </div>
 
       <div class="filter__container">
-        <span class="container__name container__name--recommended">Dictionary</span>
+        <span class="container__name container__name--recommended">Dictionary ({{wordsLeft}} word(s) left)</span>
         <span class="filter__container--empty-dictionary" *ngIf=" dictionary && dictionary.length === 0">Your dictionary is empty</span>
         <ul id="filter__container-block" class="filter__container-block">
           <li *ngFor="let word of dictionary" class="filter__container-block-item--categories is-active" (click)="deleteWord(word)">{{word}}
@@ -132,10 +130,15 @@
           <span *ngIf="word.invalid && (word.dirty || word.touched || submitted)">
             <span class="error-field" *ngIf="word.errors.required">This field is required</span>
             <span class="error-field" *ngIf="word.errors.minlength">Word should be at least 3 characters long</span>
+            <span class="error-field" *ngIf="word.errors.maxlength">Word should be less than 30 characters long</span>
+          </span>
+
+          <span *ngIf="(wordsLeft === 0) && submitted">
+            <span class="error-field">You ran out of words limit</span>
           </span>
         </div>
-
         <button type="submit" id="button-categories" class="filter__container-button" (click)="addWord()">Add to dictionary</button>
+        <button class="button__outline button__outline--social" (click)="deleteAllWords()">Delete all</button>
       </div>
 
 

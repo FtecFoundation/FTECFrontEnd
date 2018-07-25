@@ -1,0 +1,54 @@
+<div class="content__popup" *ngIf="showPopupModal">
+
+  <div class="content__container-popup">
+
+    <div class="not-active__wrapper">
+      <span class="middle__head middle__head--volume">Withdraw
+
+        <div class="l-order__type-container">
+          <span class="order__type-item" (click)="turnWallet()" [ngClass]="{'is-active' : wallet}">Wallet
+            <div class="order__type-container"></div>
+          </span>
+          <span class="order__type-item" (click)="turnBalance()" [ngClass]="{'is-active' : balance}">Balance
+            <div class="order__type-container"></div>
+          </span>
+        </div>
+
+        <svg class="refferals-close" (click)="closeModal()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+          x="0px" y="0px" viewBox="0 0 31.112 31.112" style="enable-background:new 0 0 31.112 31.112;" xml:space="preserve"
+          width="16px" height="16px">
+          <polygon points="31.112,1.414 29.698,0 15.556,14.142 1.414,0 0,1.414 14.142,15.556 0,29.698 1.414,31.112 15.556,16.97   29.698,31.112 31.112,29.698 16.97,15.556 "
+            fill="#fff" />
+        </svg>
+      </span>
+
+      <div class="filter__container" *ngIf="wallet">
+        <span class="container__name">FTEC wallet adress</span>
+
+        <div class="container__form">
+          <label class="form__label" for="number"></label>
+          <input class="form__input" placeholder="0x12bc6cAd2855959E263bFB8f5b7cFFd903421d10" type="text">
+        </div>
+      </div>
+
+
+      <div class="filter__container">
+        <span class="container__name">Amount FTEC</span>
+
+        <div class="refferals-popup-input">
+          <div class="container__form">
+            <label class="form__label" for="number"></label>
+            <input class="form__input" placeholder="120459" type="text">
+          </div>
+          <span class="refferals-popup-text">Your request will be processed within 48 hours</span>
+        </div>
+
+      </div>
+
+      <button class="filter__container-button">send</button>
+
+    </div>
+
+  </div>
+
+</div>

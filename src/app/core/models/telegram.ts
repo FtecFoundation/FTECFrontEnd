@@ -1,4 +1,4 @@
-export class TelegramData {
+export class TelegramSettings {
     userId: number;
     linkedChatId: string;
     linkedUsername: string;

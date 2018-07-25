@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TelegramAssistantService} from '../telegram-assistant.service';
+import {CurrentUserService} from '../../../../core/services/current-user.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-social',
@@ -9,9 +11,11 @@ import {TelegramAssistantService} from '../telegram-assistant.service';
 export class TelegramNotActivatedComponent implements OnInit {
     qrUrl = 'tg://resolve?domain=';
     botDomain = '';
-    accessCode: string;
+    showAccessCode: boolean;
 
-    constructor(private _telegramService: TelegramAssistantService) {
+    constructor(private _telegramService: TelegramAssistantService,
+                public _currentUserService: CurrentUserService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -22,8 +26,23 @@ export class TelegramNotActivatedComponent implements OnInit {
     }
 
     enable() {
-        this._telegramService.getHash().subscribe(data => {
-            this.accessCode = data;
+        if (!this._currentUserService.tgSettings) {
+            this._currentUserService.getTelegramSettingsObs(true).subscribe(() => {
+                this.showAccessCode = true;
+            });
+        return;
+        }
+        this.showAccessCode = true;
+
+        // if (!this._currentUserService.tgSettings.accessCode) {
+        //     this._currentUserService.getTelegramSettingsObs(true);
+        // }
+        // this.showAccessCode = true;
+    }
+
+    checkIfConnected() {
+        this._currentUserService.getTelegramSettingsObs(true).subscribe(data => {
+            if (data.linkedChatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
         });
     }
 }

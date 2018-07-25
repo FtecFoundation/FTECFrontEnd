@@ -1,9 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
-import {NavigationStart, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {TitlesService} from '../../core/services/titles.service';
 import {ShowModalService} from '../not-active/show-modal.service';
-import {ImageService} from '../../core/services/image.service';
 import {User} from '../../core/models/user';
 import {CurrentUserService} from '../../core/services/current-user.service';
 
@@ -13,7 +12,6 @@ import {CurrentUserService} from '../../core/services/current-user.service';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    user: User;
     @ViewChild('image') image: ElementRef;
 
     constructor(private _accountService: AccountService,
@@ -24,9 +22,6 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._accountService.getUser().subscribe(data => {
-            this.user = data;
-        });
     }
 
     showUser() {
@@ -53,6 +48,11 @@ export class HeaderComponent implements OnInit {
         this._accountService.logoutUser().subscribe(() => {
             this.router.navigate(['']);
         });
+    }
+
+    goToPaymentPage() {
+        this._currentUserService.checkAddressExistence();
+        this.router.navigateByUrl('/account/payment');
     }
 
     showModal() {

@@ -1,0 +1,17 @@
+@import "../../../../assets/styles/variables";
+
+:host {
+  width: 80%;
+  display: flex;
+  padding-top: .5rem
+}
+
+.middle--support {
+  width: 60%;
+}
+
+.container__name--description {
+  font-size: .875rem;
+  font-weight: 100;
+}
+

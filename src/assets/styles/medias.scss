@@ -1,5 +1,13 @@
-
-
+@media only screen and (max-width: 1280px) {
+  .smart__item-bot {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .smart__info-block {
+    width: 100% !important;
+  }
+  
+}
 
 @media only screen and (max-width: 1100px) {
   
@@ -103,6 +111,15 @@
   .confirm-mail__container {
     margin: .625em !important;
   }
+  .notification__head {
+    margin-bottom: 40px !important;
+  }
+
+  app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
+  }
 
 }
 
@@ -114,12 +131,21 @@
 }
 
 @media only screen and (max-width: 800px) {
+  app-referrals app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
+  }
 
   .header__logo,
   .header__info-title,
   .header__info-title h2
    {
     display: none !important;
+  }
+
+  .middle--payment {
+    margin-right: 0;
   }
 
   .header__info,
@@ -144,6 +170,7 @@
   [_nghost-c10],
   [_nghost-c11],
   [_nghost-c12],
+  [_nghost-c13],
   [_nghost-c14],
   [_nghost-c15],
   [_nghost-c16],
@@ -162,7 +189,10 @@
   .change-log_container,
   .test__status-ng,
   .desktop__container,
-  .filter__container-aside {
+  .filter__container-aside,
+  .banned__content,
+  .filter__container--notifications-page,
+  .smart__item {
     width: 100% !important;
   }
 
@@ -405,9 +435,35 @@
     width: 100% !important;
     margin-right: 0 !important;
   }
+  .container__wrapper--notifications {
+    margin: .625em auto 0;
+  }
+  .middle--notifications {
+    margin-right: 0 !important;
+    }
+  .notification__checker {
+    flex-direction: column;
+  }
+  .middle--smart {
+    margin: 0 !important;
+  }
+  .smart__item {
+    padding: .625em 0 !important;
+  }
+
 }
 
 @media only screen and (max-width: 580px) {
+  app-referrals app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
+  }
+   .ngx-charts {
+      transform: scale(1.2) !important;
+      margin-top: 1.250em;
+  }
+
   .middle__table-container--left,
   .middle__table-container--right,
   .crypto__tab-controls-item,
@@ -455,10 +511,25 @@
   .tab-controls-item {
     border-radius: initial !important;
   }
+
+  .filter__container--notifications-page .container__name {
+    width: 100% !important;
+    margin-top: .625em;
+  }
+  .container__wrapper--notifications {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
   
 }
 
 @media only screen and (max-width: 425px) {
+  .ngx-charts {
+    transform: scale(1.3) !important;
+    margin-top: 1.250em;
+  }
 
   .change-log,
   .settings__container,

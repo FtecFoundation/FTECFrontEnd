@@ -30,6 +30,10 @@
   justify-content: center;
 }
 
+.content__confirm--email {
+  display: flex;
+}
+
 .content__confirm {
   width: 50%;
 
@@ -98,4 +102,19 @@
   padding: .938rem;
   padding-left: 2.500rem;
   padding-right: 2.500rem;
+}
+
+.form__info-text {
+  width: 100%;
+}
+
+.form__info--login {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__restore-accept {
+  margin-top: 0;
 }

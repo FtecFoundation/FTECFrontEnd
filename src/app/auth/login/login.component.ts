@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../core/services/account.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ErrorsService } from '../../core/services/errors.service';
+import { ErrorsService } from '../../core/services/errors-handling/errors.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
     submitForm() {
         this.submitted = true;
         if (this.loginForm.valid) {
-            this._accountService.loginUser(this.loginForm.value).subscribe(data => {
-                this.router.navigate(['/modules']);
+            this._accountService.loginUser(this.loginForm.value).subscribe(() => {
+                this.router.navigate(['/account']);
                 this._errorsService.currentError = null;
             }, error1 => {
                 this._errorsService.currentError = null;
@@ -50,6 +50,4 @@ export class LoginComponent implements OnInit {
     hasFieldError(fieldName: string): boolean {
         return this.loginForm.controls[fieldName].invalid && (this.submitted || this.loginForm.controls[fieldName].touched);
     }
-
-
 }

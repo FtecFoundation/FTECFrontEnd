@@ -1,3 +1,5 @@
+import set = Reflect.set;
+
 export class User {
     username: string;
     email: string;
@@ -8,6 +10,22 @@ export class User {
     imageName: string;
     confirmedEmail: boolean;
     balance: number;
+    walletAddress: string;
+    notificationSettings: NotificationSetting;
+}
+
+export class NotificationSetting {
+    notificationType: number;
+    telegram: boolean;
+    email: boolean;
+
+    static from(notificationType: number, enabledNotifications: NotificationSetting): NotificationSetting {
+        const setting = new NotificationSetting();
+        setting.notificationType = notificationType;
+        setting.email = enabledNotifications.email;
+        setting.telegram = enabledNotifications.telegram;
+        return setting;
+    }
 }
 
 export class RegistrationData {

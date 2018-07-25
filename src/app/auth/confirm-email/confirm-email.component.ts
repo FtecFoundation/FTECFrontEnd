@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from '../../core/services/account.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ErrorsService} from '../../core/services/errors.service';
+import {ErrorsService} from '../../core/services/errors-handling/errors.service';
 
 @Component({
     selector: 'app-confirm-email',

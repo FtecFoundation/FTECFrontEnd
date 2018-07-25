@@ -81,8 +81,6 @@ export class ArbitrageComponent implements OnInit {
             this.preloader = true;
             this._arbitrageService.getArbitrageWindows(this.prepareData()).subscribe(data => {
                 this.arbitrageWindows = data;
-                console.log(this.arbitrageWindows);
-
                 this.preloader = false;
             });
         }

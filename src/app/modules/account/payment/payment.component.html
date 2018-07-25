@@ -1,0 +1,70 @@
+<div class="main-info main-info--payment">
+
+    <div class="middle middle--telegram-enable">
+
+      <h3 class="telegram-enable__title">To refill your balance you need:</h3>
+
+      <p> Using any external wallet that supports tokens transfers, send FTEC tokens to your personal address at the bottom.</p>
+      <p> It's your <b>personal</b> address that means you and only you will be able to refill it, withdraw money from it and spend it's tokens for services</p>
+
+      <p>If you have no FTEC tokens, you need to go to the exchange that trades FTEC tokens and trade them.</p>
+
+      <p>Once you'll send an transaction, you'll be able to see your tokensautomatically</p>
+
+      <p><b><i>WARNING!</i></b> If you won't transfer any money to the wallet for at least 2 days it will be suspended and transferred to the frozen pool.</p>
+      <p>QR code below contains only address of your account that allows you to scan it using mobile app or services that works with QR codes</p>
+
+      <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
+
+      <span class="payment--code">Your account wallet address to manual refilling:<br><br>
+        <span>{{_currentUserService.user.walletAddress}}</span>
+      </span>
+
+      <button class="filter__container-button">Refresh statistic</button>
+    </div>
+
+
+  <div class="middle middle--payment">
+    <div class="middle__head">
+      <h5>Your wallet statistics</h5>
+    </div>
+
+    <div class="middle__table-type middle__table-type--support">
+      <span class="middle__table-type-name">
+        TX hash
+      </span>
+
+      <div class="middle__table-type-inner">
+        <span class="middle__table-type-name align-left">
+          Wallet from
+        </span>
+        <span class="middle__table-type-name align-right">
+          Operation date
+        </span>
+      </div>
+
+      <span class="middle__table-type-name align-right">
+        Amount (in FTEC)
+      </span>
+    </div>
+
+
+    <div class="middle__table-container middle__table-container--payment">
+      <div class="middle__table-container-item">
+        <h4>IN DEVELOPMENT</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line item-inner-line--support">
+            <span>IN DEVELOPMENT</span>
+
+            <span>IN DEVELOPMENT</span>
+          </div>
+        </div>
+
+        <span class="container-item-profit align-right">IN DEVELOPMENT</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>

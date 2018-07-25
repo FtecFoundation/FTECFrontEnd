@@ -21,7 +21,6 @@ export class ForgotPasswordComponent implements OnInit {
     this.submitted = true;
       if (form.valid) {
         this._accountService.restorePassword(form.value).subscribe(() => {
-          console.log(form.value);
         });
       }
   }
