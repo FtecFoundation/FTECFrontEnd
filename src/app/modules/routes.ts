@@ -35,7 +35,6 @@ export const routes = [
             {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
             {path: 'dashboard', loadChildren: './account/dashboard/dashboard.module#DashboardModule'},
             {path: 'referrals', loadChildren: './account/referrals/referrals.module#ReferralsModule'},
-            {path: 'support', loadChildren: './account/support/support.module#SupportModule'},
             {path: 'settings', loadChildren: './account/settings/settings.module#SettingsModule'},
             {path: 'notification', loadChildren: './account/notification/notification.module#NotificationModule'},
             {path: 'payment', loadChildren: './account/payment/payment.module#PaymentModule'},
@@ -45,7 +44,8 @@ export const routes = [
     // TODO remove canActivate and layout component when independent to user layout will be created
     {path: 'info', component: LayoutComponent, canActivate: [OnlyAuthorizedGuard], children: [
             {path: 'change-log', loadChildren: './change-log/change-log.module#ChangeLogModule'},
-            {path: 'faq', loadChildren: './faq/faq.module#FaqModule'}
+            {path: 'faq', loadChildren: './faq/faq.module#FaqModule'},
+            {path: 'support', loadChildren: './account/support/support.module#SupportModule'}
         ]
     }
 ];
