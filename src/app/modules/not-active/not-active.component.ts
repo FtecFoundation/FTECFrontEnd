@@ -7,12 +7,12 @@ import {ShowModalService} from './show-modal.service';
   styleUrls: ['./not-active.component.scss']
 })
 export class NotActiveComponent implements OnInit {
-
   @Input() show: boolean;
 
+  
   constructor(private _showModalService: ShowModalService) {
   }
-
+  
   ngOnInit() {
   }
 

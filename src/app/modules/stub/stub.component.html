@@ -1,9 +1,16 @@
-<div class="stub">
-  <div class="stub__content">
-    <h2>You don't access to this page</h2>
+<div class="content--stub" *ngIf="opened">
 
-    <span class="stub__info"></span>
+  <div class="content__stub">
 
-    <p>Follow the link from letter on your email</p>
+    <div class="stub__wrapper">
+
+      <h1>{{modalHeader}}</h1>
+
+      <p>{{modalText}}</p>
+
+      <button class="button__outline button--stub" (click)="closeModal()">Close</button>
+    </div>
+
   </div>
+
 </div>

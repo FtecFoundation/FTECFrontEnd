@@ -7,6 +7,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
 import {CoreModule} from './core/core.module';
 import {AuthModule} from './auth/auth.module';
 import {LayoutModule} from './modules/layout.module';
+import {StubComponent} from './modules/stub/stub.component';
 
 import {routes} from './routes';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -25,7 +26,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         LayoutModule,
         BrowserAnimationsModule
     ],
-    providers: [],
+    providers: [StubComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {

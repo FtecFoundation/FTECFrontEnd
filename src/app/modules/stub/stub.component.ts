@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 
@@ -9,12 +9,27 @@ import {ActivatedRoute} from '@angular/router';
 })
 
 export class StubComponent implements OnInit {
-  timeLeft: string;
+
+  modalHeader: string;
+  modalText: string;
 
   constructor(private route: ActivatedRoute) { }
 
+  opened: boolean;
+
   ngOnInit() {
 
+  }
+
+
+  closeModal() {
+    this.opened = false;
+  }
+
+  showPopup(modalHeader: string ,modalText: string) {
+    this.modalHeader = modalHeader;
+    this.modalText = modalText;
+    this.opened = true;
   }
 
 }
