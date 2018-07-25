@@ -28,7 +28,7 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                 if (err instanceof HttpErrorResponse) {
                     switch (err.status) {
                         case 423:
-                            this.router.navigate(['/banned']);
+                            this.router.navigate(['/banned', err.error.error], {skipLocationChange: true});
                             break;
                         case 403:
                             const isProtected = this.protectedAuth.exec(this.router.url);
