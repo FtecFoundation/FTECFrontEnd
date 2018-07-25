@@ -77,7 +77,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
     ngOnInit() {
         this._behavioralAnalyzerService.getTrades().subscribe(data => {
-            console.log();
+            console.log(data);
         })
     }
 
