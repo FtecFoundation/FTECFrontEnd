@@ -24,4 +24,3 @@ export class BehavioralAnalyzerService extends RestService{
   }
 
 }
-
