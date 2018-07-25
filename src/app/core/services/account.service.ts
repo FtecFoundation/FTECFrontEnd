@@ -5,7 +5,7 @@ import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
 import {HttpParams} from '@angular/common/http';
-import {User} from '../models/user';
+import {NotificationSetting, User} from '../models/user';
 import {map} from 'rxjs/operators/map';
 
 enum AccountApiUrls {
@@ -14,7 +14,6 @@ enum AccountApiUrls {
     register = 'registration',
     checkEmail = 'checkUniqueEmail',
     checkUsername = 'checkUniqueLogin?login=',
-    // checkIfAuthorized = 'cabinet/tutorial/getCurrentStep',
     restorePassword = 'sendRestoreUrl',
     setNewPassword = '/restorePassword',
     confirmEmail = 'confirmEmail/',
@@ -22,7 +21,8 @@ enum AccountApiUrls {
     resendEmail = 'cabinet/resendConfirmation',
     tgSettings = 'modules/telegram/getTelegramData',
     tgHash = 'modules/telegram/getHash',
-    getAddress = 'cabinet/node/getAddress'
+    getAddress = 'cabinet/node/getAddress',
+    getNotificationSettings = 'cabinet/notifications/getNotificationSettings'
 }
 
 @Injectable()
@@ -81,9 +81,8 @@ export class AccountService extends RestService {
     }
 
     getTelegramSettings(): Observable<any> {
-        return this.pureSyncGet(AccountApiUrls.tgSettings).pipe(
+        return this.get(AccountApiUrls.tgSettings).pipe(
             map(resp => {
-                resp = JSON.parse(resp);
                 return resp.response.telegram_data;
             }),
             catchError(e => this.handleError(e)));
@@ -98,6 +97,12 @@ export class AccountService extends RestService {
     getUserAddress(): Observable<string> {
         return this.get(AccountApiUrls.getAddress).pipe(
             map(resp => resp.response.address)
+        );
+    }
+
+    getNotificationSettings(): Observable<NotificationSetting> {
+        return this.get(AccountApiUrls.getNotificationSettings).pipe(
+            map(resp => resp.response.settings)
         );
     }
 }

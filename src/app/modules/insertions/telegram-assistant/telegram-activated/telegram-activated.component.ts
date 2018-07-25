@@ -3,6 +3,9 @@ import {TelegramAssistantService} from '../telegram-assistant.service';
 import {ShowModalService} from '../../../not-active/show-modal.service';
 import {Router} from '@angular/router';
 import {CurrentUserService} from '../../../../core/services/current-user.service';
+import {notificationMapper} from '../../../../constants';
+import {NotificationService} from '../../../account/notification/notification.service';
+import {NotificationSetting} from '../../../../core/models/user';
 
 @Component({
   selector: 'app-telegram-activated',
@@ -10,25 +13,19 @@ import {CurrentUserService} from '../../../../core/services/current-user.service
   styleUrls: ['../../insertions.scss', '../telegram-assistant.scss']
 })
 export class TelegramActivatedComponent implements OnInit {
-  userId: string;
-  userName: string;
   botDomain = '';
-  userNotification = '';
-  loggingNotification = false;
-  referralNotification = false;
+  notificationMapper = notificationMapper;
 
   constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router,
-              private currentUserService: CurrentUserService) { }
+              public currentUserService: CurrentUserService, private notificationService: NotificationService) { }
 
   ngOnInit() {
       this._telegramService.getBotDomain().subscribe(data => {
           this.botDomain = data;
       });
-
-      this._telegramService.getTelegramData().subscribe(data => {
-          this.userId = data.linkedChatId;
-          this.userName = data.linkedUsername;
-      });
+      console.log(this.currentUserService.notificationSettings);
+      // In order to make sure html will use telegram settings but null with getter
+      this.currentUserService.getTelegramSettingsObs(false);
   }
 
   showModal() {
@@ -36,30 +33,23 @@ export class TelegramActivatedComponent implements OnInit {
   }
 
   unlink() {
-    this._telegramService.unlinkAccount().subscribe(data => {
+    this._telegramService.unlinkAccount().subscribe(() => {
       this.currentUserService.tgSettings.linkedChatId = '';
       this.currentUserService.tgSettings.linkedUsername = '';
       this.router.navigateByUrl('/modules/telegram-assistant');
     });
   }
 
-  loginNotification() {
-    this._telegramService.changeLoginNotification().subscribe(data => {
-      this.router.navigate(['/modules/telegram-assistant']);
-      this.userNotification = data;
-    });
-
-    // this.loggingNotification = !this.loggingNotification;
+  get notifications(): string[] {
+    const keys = Object.keys(this.currentUserService.notificationSettings);
+    keys.shift();
+    return keys;
   }
 
-  refferalChangeNotification() {
-    // this._telegramService.changeLoginNotification().subscribe(data => {
-    //   this.router.navigate(['/modules/telegram-assistant']);
-    //   console.log(data);
-    //   this.userNotification = data;
-    // });
-
-    this.referralNotification = !this.referralNotification;
+  changeNotification(notificationType: number) {
+    const currentSettings = this.currentUserService.notificationSettings[notificationType];
+    currentSettings.telegram = !currentSettings.telegram;
+    this.notificationService.renewNotification(NotificationSetting.from(notificationType, currentSettings));
   }
 
 }

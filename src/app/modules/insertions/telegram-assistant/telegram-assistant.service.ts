@@ -15,17 +15,18 @@ const TelegramUrls = {
 @Injectable()
 export class TelegramAssistantService extends RestService {
 
-    getTelegramData(): Observable<any> {
-        return this.get(TelegramUrls.getTelegramData).pipe(
-            map(resp => resp.response.telegram_data),
-            catchError(e => this.handleError(e)));
-    }
+    // getTelegramData(): Observable<any> {
+    //     return this.get(TelegramUrls.getTelegramData).pipe(
+    //         map(resp => resp.response.telegram_data),
+    //         catchError(e => this.handleError(e)));
+    // }
 
-    getHash(): Observable<string> {
-        return this.get(TelegramUrls.getHash).pipe(
-            map(resp => resp.response.hash),
-            catchError(e => this.handleError(e)));
-    }
+    // This is deprecated and not needed
+    // getHash(): Observable<string> {
+    //     return this.get(TelegramUrls.getHash).pipe(
+    //         map(resp => resp.response.hash),
+    //         catchError(e => this.handleError(e)));
+    // }
 
     getBotDomain(): Observable<string> {
         return this.get(TelegramUrls.getBotDomain).pipe(

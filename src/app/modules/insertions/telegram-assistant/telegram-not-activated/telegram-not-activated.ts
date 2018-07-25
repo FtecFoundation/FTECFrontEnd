@@ -1,9 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TelegramAssistantService} from '../telegram-assistant.service';
 import {CurrentUserService} from '../../../../core/services/current-user.service';
-import {settings} from 'cluster';
 import {Router} from '@angular/router';
-import {TelegramSettings} from '../../../../core/models/telegram';
 
 @Component({
     selector: 'app-social',
@@ -29,14 +27,13 @@ export class TelegramNotActivatedComponent implements OnInit {
 
     enable() {
         if (!this._currentUserService.tgSettings) {
-            this._currentUserService.getTelegramSettingsObs(true).subscribe(val => {
-                // console.log(val);
-                // this._currentUserService.telegramSettings = new TelegramSettings();
-                // this._currentUserService.telegramSettings.accessCode = 'smth';
+            this._currentUserService.getTelegramSettingsObs(true).subscribe(() => {
                 this.showAccessCode = true;
             });
-            return;
+        return;
         }
+        this.showAccessCode = true;
+
         // if (!this._currentUserService.tgSettings.accessCode) {
         //     this._currentUserService.getTelegramSettingsObs(true);
         // }
@@ -44,11 +41,8 @@ export class TelegramNotActivatedComponent implements OnInit {
     }
 
     checkIfConnected() {
-        this._currentUserService.getTelegramSettingsObs(true).subscribe(val => {
-            data => {
-                console.log(data);
-                if (data.linkedChatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
-            }
+        this._currentUserService.getTelegramSettingsObs(true).subscribe(data => {
+            if (data.linkedChatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
         });
     }
 }
