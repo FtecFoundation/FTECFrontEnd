@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -8,11 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class BannedComponent implements OnInit {
+  timeLeft: string;
 
-
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.timeLeft = params['timeLeft'];
+    });
   }
 
 }

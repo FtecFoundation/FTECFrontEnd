@@ -21,7 +21,7 @@ import {BannedComponent} from './banned/banned.component';
             { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'restore/:hash', component: SetNewPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'confirm-email/:hash', component: ConfirmEmailComponent},
-            { path: 'banned', component: BannedComponent}
+            { path: 'banned/:timeLeft', component: BannedComponent }
         ])
     ],
     exports: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, SetNewPasswordComponent, BannedComponent],
