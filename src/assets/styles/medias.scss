@@ -10,11 +10,6 @@
 }
 
 @media only screen and (max-width: 1100px) {
-  app-referrals app-referrals-popup {
-    width: initial !important;
-    display: initial !important;
-    padding-top: initial !important;
-  }
   
   .aside {
     z-index: 1;
@@ -118,6 +113,12 @@
   }
   .notification__head {
     margin-bottom: 40px !important;
+  }
+
+  app-referrals-popup {
+    width: initial !important;
+    display: initial !important;
+    padding-top: initial !important;
   }
 
 }
@@ -515,7 +516,12 @@
     width: 100% !important;
     margin-top: .625em;
   }
-
+  .container__wrapper--notifications {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
   
 }
 

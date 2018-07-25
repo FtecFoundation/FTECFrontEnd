@@ -9,7 +9,7 @@
 
       <div class="notification__checker">
         <span class="text">Disable Email</span>
-        <figure class="button__change"></figure>
+        <figure class="button__change" (click)="disableEmailNotification()" [ngClass]="{'is-active' : emailNotification}"></figure>
       </div>
 
       <div class="notification__checker">
@@ -19,19 +19,18 @@
 
       <div class="notification__checker">
         <span class="text">Disable Telegram</span>
-        <figure class="button__change" (click)="setAuthNotification()" [ngClass]="{'is-active' : telegramNotifyAll}"></figure>
+        <figure class="button__change" (click)="disableTelegramNotification()" [ngClass]="{'is-active' : telegramNotification}"></figure>
       </div>
     </div>
   </div>
 
   <div class="middle middle--notifications" *ngIf="_currentUserService.user">
-    <div class="filter__container filter__container--notifications-page"
-    *ngFor="let type of getNotificationTypes(_currentUserService.user.notificationSettings)">
+    <div class="filter__container filter__container--notifications-page" *ngFor="let type of getNotificationTypes(_currentUserService.user.notificationSettings)">
       <span class="container__name">{{titles[type]}}</span>
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a class="container__link container__link--notifications">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -57,13 +56,13 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications"
-           [ngClass]="{'is-active': _currentUserService.user.notificationSettings.email}">
+        <a class="container__link container__link--notifications" [ngClass]="{'not-active': _currentUserService.user.notificationSettings.email}">
           <label class="form__info-label-container">
-            <input type="checkbox">
+            <input type="checkbox" (click)="enableNotification(type, 'email')">
 
             <span class="form__info-checkmark form__info-checkmark--dashboard">
-              <svg (click)="enableTelegram(type, 'email')" width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg  width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>2F7A4EE1-925E-4492-AA52-BF75ED4B694B</title>
                 <desc>Created with sketchtool.</desc>
                 <defs></defs>
@@ -88,7 +87,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications">
+        <a class="container__link container__link--notifications">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -114,13 +113,13 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications"
-           Доделыва>
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotification}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
             <span class="form__info-checkmark form__info-checkmark--dashboard">
-              <svg (click)="enableTelegram(type, 'telegram')" width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg (click)="enableTelegram(type, 'telegram')" width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>D43FAC68-EF4D-4E72-B242-F218194FF32E</title>
                 <desc>Created with sketchtool.</desc>
                 <defs></defs>

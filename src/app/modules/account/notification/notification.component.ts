@@ -13,13 +13,10 @@ import {notificationMapper} from '../../../constants';
 })
 export class NotificationComponent implements OnInit {
     titles = notificationMapper;
-    telegramNotifyAll = false;
-    emailNotifyAll = false;
 
-    emailNotifyItem = false;
-    telegramNotifyItem = false;
-    socialTelegram = false;
-    authTelegram = false;
+    telegramNotification = false;
+    emailNotification = false;
+
 
     constructor(private _notificationService: NotificationService, private router: Router,
                 public _currentUserService: CurrentUserService) {
@@ -28,19 +25,16 @@ export class NotificationComponent implements OnInit {
     ngOnInit() {
     }
 
-    // disableTelegram() {
-    //   this._notificationService.getNotification().subscribe(data => {
-    //     this.userTelegram = data;
-    //     this.telegramNotifyItem = !this.telegramNotifyItem;
-    //     this.telegramNotifyAll = !this.telegramNotifyAll;
-    //   });
-    // }
 
 
-    setAuthNotification() {
+    disableTelegramNotification() {
         // this._notificationService.renewNotification(new NotificationSetting(notificationType))
 
-        this.authTelegram = !this.authTelegram;
+        this.telegramNotification = !this.telegramNotification;
+    }
+
+    disableEmailNotification() {
+        this.emailNotification = !this.emailNotification;
     }
 
     getNotificationTypes(notificationSettings: NotificationSetting): string[] {
@@ -49,7 +43,7 @@ export class NotificationComponent implements OnInit {
         return ret;
     }
 
-    enableTelegram(type: any, method: string) {
+    enableNotification(type: any, method: string) {
         let notification = this._currentUserService.user.notificationSettings[type];
         notification.telegram = !notification[method];
         notification.notificationType = Number.parseInt(type);
