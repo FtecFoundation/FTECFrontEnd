@@ -23,13 +23,11 @@ export class OnlyAuthorizedGuard implements CanActivate {
     }
 
     canActivate(): Observable<boolean> {
-        console.log('Started only auth guard');
         if (!this.cookies.check(Constants.TOKEN_NAME)) {
             return this.formError();
         }
         return this.currentUserService.getCurrentUser().pipe(
             map(value => {
-                console.log('Finished only auth guard');
                 return value != null;
             }),
             catchError(this.formError)
