@@ -24,31 +24,26 @@ export class NotificationComponent implements OnInit {
 
     ngOnInit() {
     }
-
-
-
+    
     disableTelegramNotification() {
-        // this._notificationService.renewNotification(new NotificationSetting(notificationType))
-
         this.telegramNotification = !this.telegramNotification;
     }
-
+    
     disableEmailNotification() {
         this.emailNotification = !this.emailNotification;
     }
-
+    
     getNotificationTypes(notificationSettings: NotificationSetting): string[] {
         const ret = Object.keys(notificationSettings);
         ret.shift();
         return ret;
     }
-
-    enableNotification(type: any, method: string) {
+    
+    enableTelegram(type: any, method: string) {
         let notification = this._currentUserService.user.notificationSettings[type];
         notification.telegram = !notification[method];
         notification.notificationType = Number.parseInt(type);
         this._notificationService.renewNotification(notification).subscribe(() => {
-            console.log(notification);
         });
     }
 

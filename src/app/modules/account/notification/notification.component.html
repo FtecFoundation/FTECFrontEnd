@@ -56,9 +56,9 @@
           </label>
         </a>
 
-        <a class="container__link container__link--notifications" [ngClass]="{'not-active': _currentUserService.user.notificationSettings.email}">
+        <a class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings.email, 'not-active' : emailNotification}">
           <label class="form__info-label-container">
-            <input type="checkbox" (click)="enableNotification(type, 'email')">
+            <input type="checkbox" (click)="enableTelegram(type, 'email')">
 
             <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg  width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'not-active' : telegramNotification}">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings.telegram, 'not-active' : telegramNotification}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
