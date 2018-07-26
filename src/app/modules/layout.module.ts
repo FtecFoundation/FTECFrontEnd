@@ -12,6 +12,7 @@ import {routes} from './routes';
 import {NotificationComponent} from './account/notification/notification.component';
 import {NotificationService} from './account/notification/notification.service';
 import {StubComponent} from './stub/stub.component';
+import {ShowStubService} from './stub/stub-modal.service';
 
 @NgModule({
     imports: [
@@ -35,7 +36,9 @@ import {StubComponent} from './stub/stub.component';
     ],
     providers: [ShowModalService,
     NotificationComponent,
-    NotificationService]
+    NotificationService,
+    StubComponent,
+    ShowStubService]
 })
 
 export class LayoutModule {

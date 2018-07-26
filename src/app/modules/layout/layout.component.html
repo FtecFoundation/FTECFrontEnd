@@ -1,6 +1,5 @@
 <app-header>
 </app-header>
-<app-stub></app-stub>
 
 <app-notify *ngIf="false"></app-notify>
 
@@ -389,4 +388,6 @@
   </aside>
 </main>
 <app-footer></app-footer>
+
+<app-stub [opened]="_showStubService.opened"></app-stub>
 <app-popup [show]="_showModalService.showModal"></app-popup>
