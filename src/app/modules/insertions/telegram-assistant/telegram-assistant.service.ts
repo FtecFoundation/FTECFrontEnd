@@ -3,6 +3,8 @@ import {RestService} from '../../../core/services/rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/operators/map';
+import {HttpClient} from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
 
 const TelegramUrls = {
     getTelegramData: 'modules/telegram/getTelegramData',
@@ -14,7 +16,9 @@ const TelegramUrls = {
 
 @Injectable()
 export class TelegramAssistantService extends RestService {
-
+    constructor(_http: HttpClient, _cookieService: CookieService){
+        super(_http, _cookieService);
+    }
     // getTelegramData(): Observable<any> {
     //     return this.get(TelegramUrls.getTelegramData).pipe(
     //         map(resp => resp.response.telegram_data),

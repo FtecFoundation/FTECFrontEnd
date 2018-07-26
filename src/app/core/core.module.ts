@@ -21,6 +21,7 @@ import {CurrentUserService} from './services/current-user.service';
 import {ServerErrorsInterceptor} from './services/errors-handling/errors.interceptor.service';
 import {EtherscanService} from './services/etherscan.service';
 import {ConfirmedEmailGuard} from './guards/confirmed-email.guard';
+import {PreferencesService} from './services/preferences.service';
 
 @NgModule({
     imports: [
@@ -47,6 +48,7 @@ import {ConfirmedEmailGuard} from './guards/confirmed-email.guard';
         CryptoacademyService,
         CurrentUserService,
         CaptchaService,
+        PreferencesService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

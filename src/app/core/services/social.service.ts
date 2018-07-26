@@ -4,7 +4,8 @@ import {map} from 'rxjs/operators/map';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
 import {tap} from 'rxjs/operators/tap';
-import {HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
 
 enum SocialApiUrls {
     dictionary = 'cabinet/social/dictionary',
@@ -16,7 +17,9 @@ enum SocialApiUrls {
 
 @Injectable()
 export class SocialService extends RestService {
-
+    constructor(_http: HttpClient, _cookieService: CookieService){
+        super(_http, _cookieService);
+    }
     getDictionary(): Observable<string[]> {
         return this.get(SocialApiUrls.dictionary).pipe(
             map(resp => resp.response.words),
