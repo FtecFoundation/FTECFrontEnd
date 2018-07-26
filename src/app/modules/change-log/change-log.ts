@@ -5,11 +5,13 @@ export const changeLog = [
             'We added an automatic conversion of pictures for Cryptoacademy.',
             'We fixed the bug of passing of unauthenticated user to module pages.',
             'Frontend was made on Service of Trader\'s Behavioral Analysis page.',
-            'Charts were made on behavioral page.',
+            'Charts were made on Service of Trader\'s Behavioral Analysis page.',
             'We fixed the bug with which user was able to send a request for referral funds withdrawal many times (even if he didn\'t have these funds).',
             'We fixed display of pictures in 4th and 5th tests.',
             'In the main module, we added logging of login authorization.',
-            'We made and tested changes in the new production version'
+            'We made and tested changes in the new production version',
+            'We begin to take commissions for the services of the social module on a fee basis',
+            'The function of saving the API of user keys for the Bittrex exchange is added.'
        ]
     },
     {
