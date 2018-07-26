@@ -4,9 +4,10 @@ import {tap} from 'rxjs/operators/tap';
 import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
-import {HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {NotificationSetting, User} from '../models/user';
 import {map} from 'rxjs/operators/map';
+import {CookieService} from 'ngx-cookie-service';
 
 enum AccountApiUrls {
     login = 'login',
@@ -27,6 +28,10 @@ enum AccountApiUrls {
 
 @Injectable()
 export class AccountService extends RestService {
+
+    constructor(_http: HttpClient, _cookieService: CookieService){
+        super(_http, _cookieService);
+    }
 
     isAuthorized(): Observable<any> {
         return this.get(AccountApiUrls.getUser);

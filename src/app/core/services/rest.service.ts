@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import 'rxjs/add/observable/throw';
 import {Constants} from '../../constants';
+import {PreferencesService} from './preferences.service';
 
-@Injectable()
 export abstract class RestService {
 
     protected baseUrl = '/api/';
@@ -25,16 +25,16 @@ export abstract class RestService {
         return new HttpHeaders().set('Content-Type', contentType).set(Constants.TOKEN_NAME, token);
     }
 
-    protected pureSyncGet(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
-        const xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( 'GET', this.baseUrl + relativeUrl, false ); // false for synchronous request
-
-        xmlHttp.setRequestHeader('Content-Type', 'application/json');
-        xmlHttp.setRequestHeader(Constants.TOKEN_NAME, this._cookieService.get(Constants.TOKEN_NAME));
-
-        xmlHttp.send( null );
-        return Observable.of(xmlHttp.response);
-    }
+    // protected pureSyncGet(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
+    //     const xmlHttp = new XMLHttpRequest();
+    //     xmlHttp.open( 'GET', this.baseUrl + relativeUrl, false ); // false for synchronous request
+    //
+    //     xmlHttp.setRequestHeader('Content-Type', 'application/json');
+    //     xmlHttp.setRequestHeader(Constants.TOKEN_NAME, this._cookieService.get(Constants.TOKEN_NAME));
+    //
+    //     xmlHttp.send( null );
+    //     return Observable.of(xmlHttp.response);
+    // }
 
     protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
         return this._http.get(this.baseUrl + relativeUrl, { headers: this.headers(), params: queryParam});

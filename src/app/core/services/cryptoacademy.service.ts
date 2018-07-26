@@ -5,7 +5,8 @@ import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
 import {Test, TestHistory} from '../models/test-cryptoacademy';
 import {tap} from 'rxjs/operators/tap';
-import {HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
 
 enum CryptoacademyApiUrls {
     getTests = 'cabinet/cryptoacademy/getAllTests',
@@ -16,7 +17,9 @@ enum CryptoacademyApiUrls {
 
 @Injectable()
 export class CryptoacademyService extends RestService {
-
+    constructor(_http: HttpClient, _cookieService: CookieService){
+        super(_http, _cookieService);
+    }
     resetTest(testId: number): Observable<any> {
         const params = new HttpParams().set('test', '' + testId);
         return this.delete(CryptoacademyApiUrls.resetTest, params).pipe(
