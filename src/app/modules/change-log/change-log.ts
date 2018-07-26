@@ -1,5 +1,21 @@
 export const changeLog = [
     {
+    'date': '26/07/2018',
+    'changes': [
+            'In the main module, we added the feature of displaying all authorization logs for the user.',
+            'In the main module, we added the feature of displaying pages of authorization logs.',
+            'On each page, 5 logs are displayed. Now logs are sorted by date (new first).',
+            'The page of password sending was adapted.',
+            'We did HTML layout and adaptation of the page after successful sending of the letter with password recovery.',
+            'Pop-up of limitation of modules for users without activation letter.',
+            'Pop-up of limitation of modules was adapted.',
+            'We improved the safety of password storage.',
+            'We fixed the bug, with which user was able to get more than 1 address in less than 2 days.',
+            'TWe added support of Cyrillic script in tickets and comments.',
+            'We added an error processing while token withdrawal in case when there are not enough ETH.'
+       ]
+    },
+    {
     'date': '25/07/2018',
     'changes': [
             'We added an automatic conversion of pictures for Cryptoacademy.',
