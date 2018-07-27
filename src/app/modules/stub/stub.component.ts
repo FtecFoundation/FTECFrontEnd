@@ -11,11 +11,11 @@ import {ShowStubService} from './stub-modal.service';
 
 export class StubComponent implements OnInit {
 
-  modalHeader: string = '';
-  modalText: string = '';
+  modalHeader: string;
+  modalText: string;
   @Input() opened: boolean;
 
-  constructor(private _showStubService: ShowStubService) { }
+  constructor(public _showStubService: ShowStubService) { }
 
   
   ngOnInit() {
