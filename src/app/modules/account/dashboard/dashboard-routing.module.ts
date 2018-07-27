@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {ArbitrageComponent} from '../../insertions/arbitrage/arbitrage.component';
 import {DashboardComponent} from './dashboard.component';
 
 @NgModule({

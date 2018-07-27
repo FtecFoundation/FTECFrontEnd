@@ -18,13 +18,8 @@ export class BehavioralAnalyzerService extends RestService {
         super(_http, _cookieService);
     }
   getTrades(): Observable<any> {
-    return this.post(BehavioralApiUrls.getTrades, {'stocks' : ['BitTrex']}).pipe(
-      map(resp => resp.response.operations));
-  }
-
-  saveKeys(): Observable<any> {
-    return this.post(BehavioralApiUrls.saveKeys, {}).pipe(
-      map(resp => resp.response.apiKeys));
+    return this.post(BehavioralApiUrls.getTrades, {'stocks' : ['Binance']}).pipe(
+      map(resp => resp.response));
   }
 
 }

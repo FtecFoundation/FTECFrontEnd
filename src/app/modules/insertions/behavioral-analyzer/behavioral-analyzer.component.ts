@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { behavioralAnalyzerItems } from './behavioral-analyzer';
-import * as chartsData from './ngx-chart.config';
 import {config} from './ngx-chart.config';
 import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
+import {BehavioralDataOperations, BehavioralDataTrades, StockBehavioralData} from '../../../core/models/behavioral';
 
 @Component({
     selector: 'app-social',
@@ -11,7 +10,6 @@ import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 })
 export class BehavioralAnalyzerComponent implements OnInit {
 
-    behavioralItems = behavioralAnalyzerItems;
     time = ['All time', 'New', 'Old', 'Rating'];
     fullGraph = false;
     data = [
@@ -72,17 +70,45 @@ export class BehavioralAnalyzerComponent implements OnInit {
     lineChartAutoScale = config.lineChartAutoScale;
     lineChartLineInterpolation = config.lineChartLineInterpolation;
 
+    public responseData: BehavioralDataTrades;
+    public chosenStatistics = 'All';
+    public availableStocks = [];
+
     constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService) {
     }
 
     ngOnInit() {
         this._behavioralAnalyzerService.getTrades().subscribe(data => {
-            console.log(data);
+            this.responseData = data;
+            const allStats = new StockBehavioralData();
+
+            this.availableStocks = Object.keys(this.responseData.statistics);
+            for (const key of this.availableStocks) {
+                allStats.accuracy += this.responseData.statistics[key].accuracy;
+                allStats.failedOrders += this.responseData.statistics[key].failedOrders;
+                allStats.successfulOrders += this.responseData.statistics[key].successfulOrders;
+                allStats.panicSell += this.responseData.statistics[key].panicSell;
+                allStats.panicBuy += this.responseData.statistics[key].panicBuy;
+                allStats.profitLoss += this.responseData.statistics[key].profitLoss;
+            }
+            allStats.accuracy /= Object.keys(this.responseData.statistics).length;
+            this.responseData.statistics['All'] = allStats;
+
+            const allData = [];
+            for (const key of this.availableStocks) {
+                for (const currentOperation of this.responseData.operations[key]) {
+                    allData.push(currentOperation);
+                }
+            }
+            this.responseData.operations['All'] = allData;
+            this.availableStocks.unshift('All');
+            console.log(this.availableStocks);
         });
     }
 
     onSelect(event) {
-        console.log(event);
+        this.chosenStatistics = event;
+        console.log(this.chosenStatistics);
     }
 
     showFull(graph: any) {
