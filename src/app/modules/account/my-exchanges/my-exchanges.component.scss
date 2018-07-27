@@ -28,3 +28,22 @@
 .filter__container--my-exchanges {
   width: 100%;
 }
+
+.middle__table-type--exchanges {
+  justify-content: flex-start;
+}
+
+.container-item-update--exchanges {
+  width: 25%;
+  height: initial;
+  overflow: visible;
+}
+
+.item-inner--exchanges,
+.middle__table-type-name--exchanges {
+  width: 25%;
+}
+
+.button__outeline--exchanges {
+  width: 20%;
+}
