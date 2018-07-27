@@ -1,5 +1,19 @@
 export const changeLog = [
     {
+    'date': '27/07/2018',
+    'changes': [
+            'We added the function for getting all user\'s closed deals from Service of Trader\'s Behavioral Analysis without making windows for them (for Binance).',
+            'We added the function of saving API keys for exchange HitBTC.',
+            'On the dashboard, a correct number of tokens is shown now.',
+            'The button of balance replenishment has correct navigation now on the dashboard.',
+            'We added and adapted sidebar on the payment page.',
+            'We fixed a bug on the page with test displaying if there are more than 4 of them.',
+            'We increased the functionality of the proxy server for the work with exchanges.',
+            'We updated the interaction between Arbitrage Module and proxy server to increase the speed of requests.',
+            'We began the development of a mechanism of intelligent choice of the most appropriate proxy server.',
+       ]
+    },
+    {
     'date': '26/07/2018',
     'changes': [
             'In the main module, we added the feature of displaying all authorization logs for the user.',
