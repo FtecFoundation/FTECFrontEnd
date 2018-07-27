@@ -26,7 +26,7 @@ export class StubComponent implements OnInit {
     this.opened = false;
   }
 
-  showPopup(modalHeader: string ,modalText: string) {
+  showPopup(modalHeader: string , modalText: string) {
     this.modalHeader = modalHeader;
     this.modalText = modalText;
     this.opened = true;

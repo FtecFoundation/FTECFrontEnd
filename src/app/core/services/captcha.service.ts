@@ -8,7 +8,7 @@ import {CookieService} from 'ngx-cookie-service';
 
 @Injectable()
 export class CaptchaService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     submitCaptcha(data: any): Observable<any> {

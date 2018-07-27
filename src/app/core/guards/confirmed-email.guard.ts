@@ -17,7 +17,7 @@ export class ConfirmedEmailGuard implements CanActivate {
         return this.currentUserService.getCurrentUser().pipe(
             map(user => {
                 if (!user.confirmedEmail) {
-                     this.router.navigateByUrl('/account/dashboard'); 
+                     this.router.navigateByUrl('/account/dashboard');
                      this.stubComponent.showPopup('Confirm email to open this page', 'You can\'t use any modules or payments without confirming email');
                     }
                 return true;

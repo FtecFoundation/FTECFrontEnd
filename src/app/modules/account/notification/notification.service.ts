@@ -19,7 +19,7 @@ const TelegramUrls = {
 
 @Injectable()
 export class NotificationService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     getNotification(): Observable<any> {

@@ -17,7 +17,7 @@ enum SocialApiUrls {
 
 @Injectable()
 export class SocialService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     getDictionary(): Observable<string[]> {

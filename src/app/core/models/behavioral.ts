@@ -4,9 +4,9 @@ export class BehavioralData {
 
 export class BehavioralDataTrades {
     operations: BehavioralDataOperations;
-    
+
 }
 
 class BehavioralDataOperations {
-    
+
 }

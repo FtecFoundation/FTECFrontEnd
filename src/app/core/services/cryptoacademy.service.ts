@@ -17,7 +17,7 @@ enum CryptoacademyApiUrls {
 
 @Injectable()
 export class CryptoacademyService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     resetTest(testId: number): Observable<any> {

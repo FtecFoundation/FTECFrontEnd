@@ -16,7 +16,7 @@ const TelegramUrls = {
 
 @Injectable()
 export class TelegramAssistantService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     // getTelegramData(): Observable<any> {
