@@ -12,6 +12,7 @@ import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 export class BehavioralAnalyzerComponent implements OnInit {
 
     behavioralItems = behavioralAnalyzerItems;
+    time = ["All time", "New", "Old", "Rating"];
     exchangesSimple = ["BTC", "HitBTC", "Binance"];
     fullGraph = false;
     select = false;
