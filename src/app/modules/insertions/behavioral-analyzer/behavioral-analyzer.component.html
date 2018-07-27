@@ -90,9 +90,15 @@
                 <span class="behavioral__stats-num">21</span>
             </div>
 
+            <div class="behavioral__stats">
+                <span class="text-small">All trades</span>
 
-            <div class="container__form container__form--select container__form--behavioral-select" (click)="onSelect()">
-                <app-dropdown [label]="'Choose exchange'" [items]="time"></app-dropdown>
+                <span class="behavioral__stats-num">1204981</span>
+            </div>
+
+
+            <div class="container__form container__form--select container__form--behavioral-select" [ngClass]="{'is-active' : select}">
+                <app-dropdown [label]="'Choose exchange'" [items]="exchangesSimple" (click)="showSelect()"></app-dropdown>
             </div>
 
             <button class="filter__container-button">Get stats</button>

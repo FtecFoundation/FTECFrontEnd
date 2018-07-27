@@ -12,8 +12,9 @@ import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 export class BehavioralAnalyzerComponent implements OnInit {
 
     behavioralItems = behavioralAnalyzerItems;
-    time = ["All time", "New", "Old", "Rating"];
+    exchangesSimple = ["BTC", "HitBTC", "Binance"];
     fullGraph = false;
+    select = false;
     data = [
         {
             'name': 'New Zealand',
@@ -83,6 +84,10 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
     onSelect(event) {
         console.log(event);
+    }
+
+    showSelect() {
+        this.select = !this.select;
     }
 
     showFull(graph: any) {
