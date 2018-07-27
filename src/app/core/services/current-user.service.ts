@@ -23,7 +23,6 @@ export class CurrentUserService {
         return this._accountService.getUser().pipe(
             map(data => {
                 this.currentUser = data;
-                console.log(this.currentUser.walletAddress);
                 if (!this.currentUser.walletAddress) {
                     this.currentUser.balance = 0;
                 } else {

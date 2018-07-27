@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ReferralsComponent} from '../referrals.component';
-import {availableExchanges} from '../../../insertions/arbitrage/available-exchanges';
+import {AvailableExchanges} from '../../../insertions/arbitrage/available-exchanges';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {availableExchanges} from '../../../insertions/arbitrage/available-exchan
 })
 export class ReferralsPopupComponent implements OnInit {
 
-  exchanges = availableExchanges;
+  exchanges = AvailableExchanges;
   wallet = true;
   balance = false;
   @Input() showPopupModal;

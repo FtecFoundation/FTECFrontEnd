@@ -178,7 +178,7 @@
 
 
           <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"  [keyName]="'name'" (selected)="chooseStock($event)"></app-dropdown>
           </div>
           
         </div>
@@ -190,7 +190,7 @@
 
         <div class="container__form">
           <label for="text" class="form__label"></label>
-          <input type="text" class="form__input">
+          <input type="text" class="form__input" [(ngModel)]="publicKey" name="publicKey">
         </div>
       </div>
 
@@ -199,11 +199,11 @@
 
         <div class="container__form">
           <label for="text" class="form__label"></label>
-          <input type="text" class="form__input">
+          <input type="text" class="form__input" [(ngModel)]="privateKey" name="privateKey">
         </div>
       </div>
 
-      <button class="filter__container-button" (click)="showModal()">Get results</button>
+      <button class="filter__container-button" (click)="setKeys()">Get results</button>
 
       <a href="javascript:void(0)" class="filter__container-link">How to create an API key?</a>
     </form>

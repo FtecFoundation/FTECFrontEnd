@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
-import {availableExchanges} from '../../insertions/arbitrage/available-exchanges';
+import {AvailableExchanges, Stock} from '../../insertions/arbitrage/available-exchanges';
+import {MyExchangesService} from './my-exchanges.service';
 
 @Component({
   selector: 'app-social',
@@ -8,19 +9,29 @@ import {availableExchanges} from '../../insertions/arbitrage/available-exchanges
   styleUrls: ['../../insertions/insertions.scss', './my-exchanges.component.scss']
 })
 export class MyExchangesComponent implements OnInit {
-  exchanges: string[] = [];
+  exchanges: Stock[] = [];
 
-  constructor(public _showModalService: ShowModalService) {
+  privateKey: string;
+  publicKey: string;
+  chosenStock: Stock;
+
+  constructor(public _showModalService: ShowModalService, private _myExchangesService: MyExchangesService) {
   }
 
   ngOnInit() {
-    for (const exchange of availableExchanges) {
-      this.exchanges.push(exchange.exchange);
-    }
+    this.exchanges = AvailableExchanges.availibleStocks;
+    this._myExchangesService.getKeys().subscribe();
   }
 
-    showModal() {
-        this._showModalService.showModal = true;
-    }
+  chooseStock(chosen: Stock) {
+    this.chosenStock = chosen;
+  }
+
+  setKeys() {
+      this._myExchangesService.saveKey(this.privateKey, this.publicKey, this.chosenStock)
+          .subscribe(val => {
+
+          });
+  }
 
 }
