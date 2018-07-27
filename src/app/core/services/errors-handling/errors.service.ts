@@ -34,6 +34,8 @@ export class ErrorsService {
 
     constructor() { }
 
+
+
     public parseResponseMessage(error: HttpErrorResponse): string {
         return errorMessages[this.getStatusCode(error)];
     }
@@ -51,5 +53,7 @@ export class ErrorsService {
         console.log('Here will be custom exception handling');
         if (ex instanceof UnauthenticatedException) { return false; }
         return true;
+
+        
     }
 }
