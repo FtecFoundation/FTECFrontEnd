@@ -165,17 +165,7 @@
       <div class="filter__wrapper">
 
         <div class="filter__container filter__container--my-exchanges">
-          <span class="container__name">Name</span>
-
-          <div class="container__form">
-            <label for="text" class="form__label"></label>
-            <input type="text" class="form__input" placeholder="Account 1">
-          </div>
-        </div>
-
-        <div class="filter__container filter__container--my-exchanges">
           <span class="container__name">Account type</span>
-
 
           <div class="container__form container__form--select is-active">
             <app-dropdown [label]="'Exchange'" [items]="exchanges"  [keyName]="'name'" (selected)="chooseStock($event)"></app-dropdown>

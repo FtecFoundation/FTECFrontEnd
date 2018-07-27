@@ -21,8 +21,12 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         const temp = this.loaderService;
         this.titleService.init();
+        var el = document.getElementById("particles-background");
+        var el2 = document.getElementById("particles-foreground");
         setTimeout(function () {
             temp.hideLoader();
+            el.style.display = "none";
+            el2.style.display = "none";
         }, 3000);
     }
 }

@@ -6,10 +6,10 @@
       <div class="head-item__text">
         <span>Your balance</span>
 
-        <h5 class="head-item__text-price">34 443 FTEC</h5>
+        <h5 class="head-item__text-price">{{_currentUserService.user.balance}} FTEC</h5>
       </div>
 
-      <div class="head-item__icon" (click)="showModal()">
+      <div class="head-item__icon" (click)="goToPaymentPage()">
         <span class="head-item__icon-item">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
             viewBox="0 0 491.86 491.86" style="enable-background:new 0 0 491.86 491.86;" xml:space="preserve" width="12px"
@@ -805,3 +805,4 @@
     </div>
 
   </div>
+</div>

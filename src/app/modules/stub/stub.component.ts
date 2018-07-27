@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {ShowStubService} from './stub-modal.service';
 
 
 @Component({
@@ -10,26 +11,25 @@ import {ActivatedRoute} from '@angular/router';
 
 export class StubComponent implements OnInit {
 
-  modalHeader: string;
-  modalText: string;
+  modalHeader: string = '';
+  modalText: string = '';
+  @Input() opened: boolean;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private _showStubService: ShowStubService) { }
 
-  opened: boolean;
-
+  
   ngOnInit() {
 
   }
 
-
   closeModal() {
-    this.opened = false;
+    this._showStubService.opened = false;
   }
 
-  showPopup(modalHeader: string , modalText: string) {
+  showPopup(modalHeader: string, modalText: string) {
+    this._showStubService.opened = true;
     this.modalHeader = modalHeader;
     this.modalText = modalText;
-    this.opened = true;
   }
 
 }
