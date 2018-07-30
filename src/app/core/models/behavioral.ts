@@ -44,4 +44,5 @@ export class StockBehavioralData {
 
 enum OperationTypes {
     Buy, Sell
+
 }

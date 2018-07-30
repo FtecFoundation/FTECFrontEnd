@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive } from '@angular/core';
 import {config} from './ngx-chart.config';
 import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 import {BehavioralDataTrades, StockBehavioralData} from '../../../core/models/behavioral';
@@ -11,10 +11,11 @@ import {RouterPreloader} from '@angular/router';
     templateUrl: './behavioral-analyzer.component.html',
     styleUrls: ['../insertions.scss', './behavioral-analyzer.component.scss']
 })
+
 export class BehavioralAnalyzerComponent implements OnInit {
 
-    time = ['All time', 'New', 'Old', 'Rating'];
     fullGraph = false;
+    select = false;
     data = [
         {
             'name': 'New Zealand',
@@ -142,6 +143,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
     }
     public sendRequest() {
         this.requestPreloader = true;
+
         console.log('sending request for ' + this.stockToSend);
         if (!this.stockToSend) { return; }
         this._behavioralAnalyzerService.getTrades(this.stockToSend).subscribe(data => {

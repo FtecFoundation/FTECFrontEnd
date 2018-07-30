@@ -17,7 +17,7 @@ export class StubComponent implements OnInit {
 
   constructor(public _showStubService: ShowStubService) { }
 
-  
+
   ngOnInit() {
 
   }
@@ -25,6 +25,7 @@ export class StubComponent implements OnInit {
   closeModal() {
     this._showStubService.opened = false;
   }
+
 
   showPopup(modalHeader: string, modalText: string) {
     this._showStubService.opened = true;

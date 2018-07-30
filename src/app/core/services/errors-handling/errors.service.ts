@@ -54,6 +54,6 @@ export class ErrorsService {
         if (ex instanceof UnauthenticatedException) { return false; }
         return true;
 
-        
+
     }
 }

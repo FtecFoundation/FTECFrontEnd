@@ -10,7 +10,8 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import {SetNewPasswordComponent} from './forgot-password/set-new-password.component';
 import {RecaptchaModule} from 'ng-recaptcha';
 import {BannedComponent} from './banned/banned.component';
-import {EmailSentComponent} from './forgot-password/restore-sent.component'
+import {EmailSentComponent} from './forgot-password/restore-sent.component';
+import {PasswordSentComponent} from './forgot-password/set-new-sent.component';
 
 @NgModule({
     imports: [
@@ -20,14 +21,15 @@ import {EmailSentComponent} from './forgot-password/restore-sent.component'
             { path: 'auth', component: LoginComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Log in'}},
             { path: 'registration', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Registration'}},
             { path: 'sent', component: EmailSentComponent, canActivate: [OnlyNotAuthorizedGuard]},
+            { path: 'new-sent', component: PasswordSentComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'restore/:hash', component: SetNewPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'confirm-email/:hash', component: ConfirmEmailComponent},
             { path: 'banned/:timeLeft', component: BannedComponent }
         ])
     ],
-    exports: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent],
-    declarations: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, ConfirmEmailComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent]
+    exports: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent, PasswordSentComponent],
+    declarations: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, ConfirmEmailComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent, PasswordSentComponent]
 })
 export class AuthModule {
 }

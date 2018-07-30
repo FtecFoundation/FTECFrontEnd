@@ -9,9 +9,11 @@ import {CookieService} from 'ngx-cookie-service';
 import {Stock} from '../arbitrage/available-exchanges';
 
 const BehavioralApiUrls = {
+
     getTrades: 'cabinet/behavior/getTrades',
     getHistory: 'cabinet/behavior/getTradesHistory',
     saveKeys: 'apiKeys'
+
 };
 
 @Injectable()
@@ -19,6 +21,7 @@ export class BehavioralAnalyzerService extends RestService {
     constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
+
 
     getHistory(): Observable<BehavioralDataTrades> {
         return this.get('cabinet/behavior/getTradesHistory').pipe(
@@ -30,5 +33,5 @@ export class BehavioralAnalyzerService extends RestService {
         return this.post(BehavioralApiUrls.getTrades, {'stocks' : [stock.nameToSend]}).pipe(
             map(resp => resp.response));
     }
-
+p
 }

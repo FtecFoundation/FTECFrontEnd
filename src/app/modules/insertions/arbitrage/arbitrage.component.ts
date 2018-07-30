@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
-import {AvailableExchanges, Stock} from './available-exchanges';
+import {AvailableExchanges} from './available-exchanges';
 import {ArbitrageService} from '../../../core/services/arbitrage.service';
 import {ArbitrageWindowRequest, ArbitrageWindows, ArbitrageWindowsLog} from '../../../core/models/arbitrage-window';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegistrationValidators} from '../../../auth/registration/registration.validators';
+import {Stock} from './available-exchanges';
 
 @Component({
     selector: 'app-arbitrage',
@@ -19,13 +20,12 @@ export class ArbitrageComponent implements OnInit {
     windowsLogs: ArbitrageWindowsLog;
     arbitrageWindows: ArbitrageWindows;
     arbitrageForm: FormGroup;
-    chosenExchanges: Stock[] = [];
+    chosenExchanges: Stock[];
     submitted = false;
 
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
                 private formBuilder: FormBuilder) {
-        this.exchanges = AvailableExchanges.availableStocks;
     }
 
     ngOnInit() {
@@ -51,12 +51,12 @@ export class ArbitrageComponent implements OnInit {
 
     fillChosenExchanges() {
         this.chosenExchanges = [];
-        for (const e of AvailableExchanges.availableStocks) {
+        for (const e of this.exchanges) {
             if (e.arbitrageChosen) { this.chosenExchanges.push(e); }
         }
     }
 
-    chooseExchange(exhange: Stock) {
+    chooseExchange(exhange: any) {
         if (!this.allChosen) { exhange.arbitrageChosen = !exhange.arbitrageChosen; }
         this.fillChosenExchanges();
     }

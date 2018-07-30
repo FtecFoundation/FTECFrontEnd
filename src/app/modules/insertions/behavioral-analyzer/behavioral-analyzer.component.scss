@@ -161,6 +161,7 @@
 
 .aside-right__filter--behavioral {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin: -.625em 0 -.625em -.625em;
 }
@@ -185,6 +186,13 @@
 .behavioral--text--red {
   color: $red;
 }
-.container__form--behavioral-select {
+
+.container__form--behavioral-select,
+.behavioral__select-button {
   width: 100%;
+}
+
+.behavioral__block {
+  display: flex;
+  flex-wrap: wrap;
 }
