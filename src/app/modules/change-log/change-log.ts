@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '28/07/2018',
+    'changes': [
+            'Keys are synchronized from the page my exchanges now.',
+            'We added sorting of data by chosen exchange or all exchanges.',
+            'Authentication logs are now deleted after 7 days.',
+            'We added the possibility to view API keys which were connected by the user (the first 4 symbols).',
+            'The interval of candle building for Binance API was changed, which will improve the speed of the work of Service of Trader\'s Behavioral Analysis.',
+            'We developed the mechanism of intelligent choice of appropriate proxy for the work with exchange.',
+            'We developed the mechanism of developer email notification for the case when the proxy was banned.',
+            'The architecture of the proxy server was developed.',
+            'We added displaying of the number of remaining ban days.',
+            'Data is fully loaded from various exchanges now on behavioral page.'
+       ]
+    },
+    {
     'date': '27/07/2018',
     'changes': [
             'We added the function for getting all user\'s closed deals from Service of Trader\'s Behavioral Analysis without making windows for them (for Binance).',
