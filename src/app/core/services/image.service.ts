@@ -13,7 +13,7 @@ enum ImageApiUrls {
 
 @Injectable()
 export class ImageService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     // getImage(): Observable<Blob> {

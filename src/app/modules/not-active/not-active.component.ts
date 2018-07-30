@@ -9,10 +9,10 @@ import {ShowModalService} from './show-modal.service';
 export class NotActiveComponent implements OnInit {
   @Input() show: boolean;
 
-  
+
   constructor(private _showModalService: ShowModalService) {
   }
-  
+
   ngOnInit() {
   }
 

@@ -14,7 +14,7 @@ enum ArbitrageApiUrls {
 
 @Injectable()
 export class ArbitrageService extends RestService {
-    constructor(_http: HttpClient, _cookieService: CookieService){
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
     getOldWindows(): Observable<ArbitrageWindowsLog> {

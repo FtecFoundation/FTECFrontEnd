@@ -10,15 +10,15 @@ import {CookieService} from 'ngx-cookie-service';
 const BehavioralApiUrls = {
   getTrades: 'cabinet/behavior/getTrades',
   saveKeys: 'apiKeys'
-}
+};
 
 @Injectable()
-export class BehavioralAnalyzerService extends RestService{
-    constructor(_http: HttpClient, _cookieService: CookieService){
+export class BehavioralAnalyzerService extends RestService {
+    constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
   getTrades(): Observable<any> {
-    return this.post(BehavioralApiUrls.getTrades, {"stocks" : ["BitTrex"]}).pipe(
+    return this.post(BehavioralApiUrls.getTrades, {'stocks' : ['BitTrex']}).pipe(
       map(resp => resp.response.operations));
   }
 

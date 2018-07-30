@@ -12,8 +12,8 @@ import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
 export class BehavioralAnalyzerComponent implements OnInit {
 
     behavioralItems = behavioralAnalyzerItems;
-    time = ["All time", "New", "Old", "Rating"];
-    exchangesSimple = ["BTC", "HitBTC", "Binance"];
+    time = ['All time', 'New', 'Old', 'Rating'];
+    exchangesSimple = ['BTC', 'HitBTC', 'Binance'];
     fullGraph = false;
     select = false;
     data = [
@@ -80,7 +80,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
     ngOnInit() {
         this._behavioralAnalyzerService.getTrades().subscribe(data => {
             console.log(data);
-        })
+        });
     }
 
     onSelect(event) {

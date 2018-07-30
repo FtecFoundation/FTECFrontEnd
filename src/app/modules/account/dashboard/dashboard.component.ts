@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
     constructor(private _cryptoService: CryptocurrenciesService,
         private _showModalService: ShowModalService,
         private router: Router,
-        public _currentUserService:CurrentUserService) {
+        public _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
