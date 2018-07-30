@@ -25,7 +25,7 @@ export class ArbitrageComponent implements OnInit {
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
                 private formBuilder: FormBuilder) {
-        this.exchanges = AvailableExchanges.availibleStocks;
+        this.exchanges = AvailableExchanges.availableStocks;
     }
 
     ngOnInit() {
@@ -51,7 +51,7 @@ export class ArbitrageComponent implements OnInit {
 
     fillChosenExchanges() {
         this.chosenExchanges = [];
-        for (const e of AvailableExchanges.availibleStocks) {
+        for (const e of AvailableExchanges.availableStocks) {
             if (e.arbitrageChosen) { this.chosenExchanges.push(e); }
         }
     }

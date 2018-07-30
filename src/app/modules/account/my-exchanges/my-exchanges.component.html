@@ -13,7 +13,7 @@
 
         <div class="middle__table-type">
           <span class="middle__table-type-name middle__table-type-name--notifications">
-            Name
+            Key
           </span>
 
           <span class="middle__table-type-name middle__table-type-name--notifications">
@@ -25,126 +25,127 @@
           </span>
         </div>
 
-        <div>
+        <div *ngFor="let key of _currentUserService.apiKeys">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 1</h4>
-
+              <h4 class="table-container-item--name">
+                <span>Private: {{key.privateKey}}***</span><br><span>Public: {{key.publicKey}}***</span>
+              </h4>
               <div class="item-inner item-inner--notifications">
-                Poloniex
+                {{key.stock}}
               </div>
 
-              <span class="container-item-update">03 May 2018 21:43</span>
+              <span class="container-item-update">{{key.savingDate | date:'yyyy-MM-dd HH:mm'}}</span>
             </div>
           </div>
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 2</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 2</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                HitBTC
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--HitBTC-->
+              <!--</div>-->
 
-              <span class="container-item-update"> 03 May 2018 21:43 </span>
-            </div>
-          </div>
+              <!--<span class="container-item-update"> 03 May 2018 21:43 </span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 3</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 3</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Kraken
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Kraken-->
+              <!--</div>-->
 
-              <span class="container-item-update">03 May 2018 21:29</span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">03 May 2018 21:29</span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 4</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 4</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Okcoin
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Okcoin-->
+              <!--</div>-->
 
-              <span class="container-item-update">03 May 2018 21:10</span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">03 May 2018 21:10</span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 5</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 5</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Bitstamp
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Bitstamp-->
+              <!--</div>-->
 
-              <span class="container-item-update">03 May 2018 18:53</span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">03 May 2018 18:53</span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 6</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 6</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Bitfinex
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Bitfinex-->
+              <!--</div>-->
 
-              <span class="container-item-update">03 May 2018 17:29 </span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">03 May 2018 17:29 </span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 7</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 7</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                HitBTC
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--HitBTC-->
+              <!--</div>-->
 
-              <span class="container-item-update">02 May 2018 9:31</span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">02 May 2018 9:31</span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 8</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 8</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Poloniex
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Poloniex-->
+              <!--</div>-->
 
-              <span class="container-item-update">01 May 2018 19:33</span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">01 May 2018 19:33</span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 9</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 9</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Binance
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Binance-->
+              <!--</div>-->
 
-              <span class="container-item-update">01 May 2018 18:29 </span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">01 May 2018 18:29 </span>-->
+            <!--</div>-->
+          <!--</div>-->
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 10</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 10</h4>-->
 
-              <div class="item-inner item-inner--notifications">
-                Poloniex
-              </div>
+              <!--<div class="item-inner item-inner&#45;&#45;notifications">-->
+                <!--Poloniex-->
+              <!--</div>-->
 
-              <span class="container-item-update">01 May 2018 17:29</span>
-            </div>
-          </div>
+              <!--<span class="container-item-update">01 May 2018 17:29</span>-->
+            <!--</div>-->
+          <!--</div>-->
         </div>
       </div>
 

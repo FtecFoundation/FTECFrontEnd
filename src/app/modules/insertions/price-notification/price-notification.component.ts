@@ -9,7 +9,7 @@ import { AvailableExchanges } from '../arbitrage/available-exchanges';
 })
 export class PriceNotificationComponent implements OnInit {
 
-  exchanges = AvailableExchanges.availibleStocks;
+  exchanges = AvailableExchanges.availableStocks;
   price = priceNotification;
 
   constructor() {

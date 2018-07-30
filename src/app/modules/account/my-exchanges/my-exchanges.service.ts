@@ -25,10 +25,4 @@ export class MyExchangesService extends RestService {
                 })
             );
     }
-
-    public getKeys() {
-        return this.get('/cabinet/apiKeys').pipe(
-            map(resp => console.log(resp))
-        );
-    }
 }

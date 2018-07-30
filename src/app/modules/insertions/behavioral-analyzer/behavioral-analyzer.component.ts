@@ -1,7 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {config} from './ngx-chart.config';
 import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
-import {BehavioralDataOperations, BehavioralDataTrades, StockBehavioralData} from '../../../core/models/behavioral';
+import {BehavioralDataTrades, StockBehavioralData} from '../../../core/models/behavioral';
+import {CurrentUserService} from '../../../core/services/current-user.service';
+import {AvailableExchanges, Stock} from '../arbitrage/available-exchanges';
+import {RouterPreloader} from '@angular/router';
 
 @Component({
     selector: 'app-social',
@@ -73,46 +76,80 @@ export class BehavioralAnalyzerComponent implements OnInit {
     public responseData: BehavioralDataTrades;
     public chosenStatistics = 'All';
     public availableStocks = [];
+    public installedStocks = [];
+    public globalPreloader = true;
+    public requestPreloader = false;
 
-    constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService) {
+    private stockToSend: Stock;
+
+    constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService,
+                private _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
-        this._behavioralAnalyzerService.getTrades().subscribe(data => {
-            this.responseData = data;
-            const allStats = new StockBehavioralData();
+        this.globalPreloader = true;
 
-            this.availableStocks = Object.keys(this.responseData.statistics);
-            for (const key of this.availableStocks) {
-                allStats.accuracy += this.responseData.statistics[key].accuracy;
-                allStats.failedOrders += this.responseData.statistics[key].failedOrders;
-                allStats.successfulOrders += this.responseData.statistics[key].successfulOrders;
-                allStats.panicSell += this.responseData.statistics[key].panicSell;
-                allStats.panicBuy += this.responseData.statistics[key].panicBuy;
-                allStats.profitLoss += this.responseData.statistics[key].profitLoss;
-            }
-            allStats.accuracy /= Object.keys(this.responseData.statistics).length;
-            this.responseData.statistics['All'] = allStats;
+        this._behavioralAnalyzerService.getHistory().subscribe(value => {
+            this.responseData = value;
+            this.recountGlobalStats();
+            this.globalPreloader = false;
+            console.log(this.responseData);
+        });
 
-            const allData = [];
-            for (const key of this.availableStocks) {
-                for (const currentOperation of this.responseData.operations[key]) {
-                    allData.push(currentOperation);
-                }
+        this._currentUserService.getStockKeys(false).subscribe(keys => {
+            console.log(keys);
+            for (const key of keys) {
+                this.installedStocks.push(AvailableExchanges.ofName(key.stock));
             }
-            this.responseData.operations['All'] = allData;
-            this.availableStocks.unshift('All');
-            console.log(this.availableStocks);
         });
     }
 
     onSelect(event) {
         this.chosenStatistics = event;
-        console.log(this.chosenStatistics);
     }
 
     showFull(graph: any) {
         graph.chosen = !graph.chosen;
     }
 
+    setStockToSend(chosenStock: Stock) {
+        this.stockToSend = chosenStock;
+    }
+
+    private recountGlobalStats() {
+        const allStats = new StockBehavioralData();
+
+        this.availableStocks = Object.keys(this.responseData.statistics);
+        for (const key of this.availableStocks) {
+            allStats.accuracy += this.responseData.statistics[key].accuracy;
+            allStats.failedOrders += this.responseData.statistics[key].failedOrders;
+            allStats.successfulOrders += this.responseData.statistics[key].successfulOrders;
+            allStats.panicSell += this.responseData.statistics[key].panicSell;
+            allStats.panicBuy += this.responseData.statistics[key].panicBuy;
+            allStats.profitLoss += this.responseData.statistics[key].profitLoss;
+        }
+        allStats.accuracy /= this.availableStocks.length;
+        this.responseData.statistics['All'] = allStats;
+
+        const allData = [];
+        for (const key of this.availableStocks) {
+            for (const currentOperation of this.responseData.operations[key]) {
+                allData.push(currentOperation);
+            }
+        }
+        this.responseData.operations['All'] = allData;
+        this.availableStocks.unshift('All');
+    }
+    public sendRequest() {
+        this.requestPreloader = true;
+        console.log('sending request for ' + this.stockToSend);
+        if (!this.stockToSend) { return; }
+        this._behavioralAnalyzerService.getTrades(this.stockToSend).subscribe(data => {
+            this.responseData.operations[this.stockToSend.nameToSend] = data.operations[this.stockToSend.nameToSend];
+            this.responseData.statistics[this.stockToSend.nameToSend] = data.statistics[this.stockToSend.nameToSend];
+            this.recountGlobalStats();
+            this.requestPreloader = false;
+            console.log('finished');
+        });
+    }
 }

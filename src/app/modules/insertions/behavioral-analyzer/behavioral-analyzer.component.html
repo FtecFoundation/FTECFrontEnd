@@ -3,6 +3,10 @@
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
 
+        <div *ngIf="!responseData || !responseData.operations[chosenStatistics]">
+            You have no analyses results yet. Please, use form to start some analise.
+        </div>
+
         <div class="middle__block middle__block--behavioral" *ngIf="responseData && responseData.operations[chosenStatistics]">
 
             <div class="behavioral__small-container-inner" *ngFor="let item of responseData.operations[chosenStatistics]">
@@ -20,7 +24,7 @@
                         </div>
 
                         <div class="small-container__graph" [ngClass]="{'is-active' : item.chosen}">
-
+                            <span>Charts will be available in next update!</span>
                             <!-- CHARTS -->
 
                             <!--<ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"-->
@@ -52,53 +56,58 @@
     <div class="aside-right aside-right--behavioral">
         <div class="aside-right__head aside-right__head--behavioral">Statistics & charts shown for stock:
 
-            <div class="container__form container__form--select container__form--behavioral" *ngIf="responseData">
+            <div class="container__form container__form--select container__form--behavioral">
                 <app-dropdown [label]="'Choose stock'" [active]="'All'" [items]="availableStocks" (selected)="onSelect($event)"></app-dropdown>
             </div>
         </div>
 
-        <div class="aside-right__filter aside-right__filter--behavioral" *ngIf="responseData">
-            <div class="behavioral__stats">
-                <span class="text-small">Forecasts accuracy</span>
+        <div class="aside-right__filter aside-right__filter--behavioral">
+            <span *ngIf="responseData && responseData.statistics">
+                <div class="behavioral__stats">
+                    <span class="text-small">Forecasts accuracy</span>
 
-                <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].accuracy}}</span>
+                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].accuracy}}</span>
+                </div>
+                <div class="behavioral__stats">
+                    <span class="text-small">Potential loss of profit</span>
+
+                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].profitLoss | number:'1.2-4'}}</span>
+                </div>
+                <div class="behavioral__stats">
+                    <span class="text-small">Panic buy</span>
+
+                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].panicBuy}}</span>
+                </div>
+                <div class="behavioral__stats">
+                    <span class="text-small">Panic sell</span>
+
+                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].panicSell}}</span>
+                </div>
+
+                <div class="behavioral__stats">
+                    <span class="text-small">Successful orders</span>
+
+                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].successfulOrders}}</span>
+                </div>
+                <div class="behavioral__stats">
+                    <span class="text-small">Failed orders</span>
+
+                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].failedOrders}}</span>
+                </div>
+            </span>
+
+            <app-preloader *ngIf="requestPreloader"></app-preloader>
+            <div *ngIf="!requestPreloader">
+            <h4 *ngIf="!stockToSend">To request new analise please choose the stock!</h4>
+            <div class="container__form container__form--select container__form--behavioral-select" >
+                <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
             </div>
-            <div class="behavioral__stats">
-                <span class="text-small">Potential loss of profit</span>
 
-                <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].profitLoss | number:'1.2-4'}}</span>
+            <button class="filter__container-button" (click)="sendRequest()">Get stats</button>
             </div>
-            <div class="behavioral__stats">
-                <span class="text-small">Panic buy</span>
-
-                <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].panicBuy}}</span>
-            </div>
-            <div class="behavioral__stats">
-                <span class="text-small">Panic sell</span>
-
-                <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].panicSell}}</span>
-            </div>
-
-            <div class="behavioral__stats">
-                <span class="text-small">Successful orders</span>
-
-                <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].successfulOrders}}</span>
-            </div>
-            <div class="behavioral__stats">
-                <span class="text-small">Failed orders</span>
-
-                <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].failedOrders}}</span>
-            </div>
-
-
-            <div class="container__form container__form--select container__form--behavioral-select" (click)="onSelect()">
-                <app-dropdown [label]="'Choose exchange'" [items]="time"></app-dropdown>
-            </div>
-
-            <button class="filter__container-button">Get stats</button>
         </div>
 
-        <div class="aside-right__filter aside-right__filter--behavioral aside-right__filter--bottom">
+        <div class="aside-right__filter aside-right__filter--behavioral aside-right__filter--bottom" *ngIf="responseData && responseData.statistics">
             <p class="behavioral--text--red">You are a very nervous trader. In 85% of cases, you get out of trades too early. Try to set your Take-Profit
                 level 2% higher than usual.</p>
         </div>

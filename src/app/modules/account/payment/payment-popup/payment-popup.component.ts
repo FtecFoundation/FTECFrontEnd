@@ -11,7 +11,7 @@ import {AvailableExchanges} from '../../../insertions/arbitrage/available-exchan
 })
 export class PaymentPopupComponent implements OnInit {
 
-  exchanges = AvailableExchanges.availibleStocks;
+  exchanges = AvailableExchanges.availableStocks;
 
   @Input() showPopupModal;
 

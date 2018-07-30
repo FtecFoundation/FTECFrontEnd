@@ -4,7 +4,7 @@
 
     <span class="form__select-item">{{ active? (keyName?active[keyName]:active): label }}</span>
 
-    <div class="form__select-list" *ngIf="opened">
+    <div class="form__select-list" style="display: block" *ngIf="opened">
         <span class="form__select-list-item"
               (click)="select(null)">{{label}}</span>
         <ng-container *ngFor="let item of items">
