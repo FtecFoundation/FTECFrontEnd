@@ -19,7 +19,7 @@ export class MyExchangesService extends RestService {
     public saveKey(privateKey: string, publicKey: string, exchange: Stock): Observable<any> {
         return this.post('/cabinet/apiKeys', { 'publicKey': publicKey, 'privateKey': privateKey, 'stock': exchange.nameToSend })
             .pipe(
-                map(value => value.response.response),
+                map(value => value),
                 catchError(err => {
                     this._errorsService.handleCustomException(new StatusCodeError(err.response.status));
                     return Observable.throw(err);
@@ -28,13 +28,11 @@ export class MyExchangesService extends RestService {
     }
 
     deleteKey(exchange: ExchangeKeys): Observable<any> {
-        const params = new HttpParams();
-
-        params.append('stock', exchange.stock)
+        const params = new HttpParams().append('stock', exchange.stock);
 
         return this.delete('/cabinet/apiKeys', params)
             .pipe(
-                map(value => value.response.response),
+                map(value => value),
                 catchError(err => {
                     this._errorsService.handleCustomException(new StatusCodeError(err.response.status));
                     return Observable.throw(err);

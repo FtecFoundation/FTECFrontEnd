@@ -36,7 +36,8 @@ export class MyExchangesComponent implements OnInit {
   setKeys() {
       this._myExchangesService.saveKey(this.privateKey, this.publicKey, this.chosenStock)
           .subscribe(val => {
-            if (val.status === 0) { this._currentUserService
+              console.log(val);
+              if (val.status === 0) { this._currentUserService
                 .addStockKey(this.privateKey.substr(0, 4), this.publicKey.substr(0, 4), this.chosenStock.name); }
           });
   }
@@ -44,6 +45,7 @@ export class MyExchangesComponent implements OnInit {
   deleteKeys(key: ExchangeKeys) {
       this._myExchangesService.deleteKey(key)
           .subscribe(val => {
+            console.log(val);
             if (val.status === 0) { this._currentUserService
                 .removeStockKey(key); }
           });

@@ -97,7 +97,6 @@ export class CurrentUserService {
 
     removeStockKey(stock: ExchangeKeys) {
         if (!this.installedKeys) { this.installedKeys = []; }
-
         this.installedKeys.splice(this.installedKeys.indexOf(stock), 1);
     }
 
