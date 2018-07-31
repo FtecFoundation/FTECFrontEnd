@@ -95,17 +95,17 @@ export class BehavioralAnalyzerComponent implements OnInit {
         this._behavioralAnalyzerService.getHistory().subscribe(value => {
             
             this.responseData = value;
-
+            
             this.recountGlobalStats();
-            console.log(this.responseData);
-            console.log(!this.responseData || !this.responseData.operations[this.chosenStatistics])
-
+            
+            if(this.responseData.operations['All'].length == 0 ) {
+            }
+        
             this.globalPreloader = false;
 
         });
 
         this._currentUserService.getStockKeys(false).subscribe(keys => {
-            console.log(keys);
 
 
             for (const key of keys) {
@@ -140,7 +140,10 @@ export class BehavioralAnalyzerComponent implements OnInit {
             allStats.panicBuy += this.responseData.statistics[key].panicBuy;
             allStats.profitLoss += this.responseData.statistics[key].profitLoss;
         }
-        allStats.accuracy /= this.availableStocks.length;
+
+        if(this.availableStocks.length > 0) {
+            allStats.accuracy /= this.availableStocks.length;
+        }
         this.responseData.statistics['All'] = allStats;
 
         const allData = [];
@@ -155,14 +158,12 @@ export class BehavioralAnalyzerComponent implements OnInit {
     public sendRequest() {
         this.requestPreloader = true;
 
-        console.log('sending request for ' + this.stockToSend);
         if (!this.stockToSend) { return; }
         this._behavioralAnalyzerService.getTrades(this.stockToSend).subscribe(data => {
             this.responseData.operations[this.stockToSend.nameToSend] = data.operations[this.stockToSend.nameToSend];
             this.responseData.statistics[this.stockToSend.nameToSend] = data.statistics[this.stockToSend.nameToSend];
             this.recountGlobalStats();
             this.requestPreloader = false;
-            console.log('finished');
         }
         );
     }

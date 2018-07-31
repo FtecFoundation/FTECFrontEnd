@@ -5,7 +5,7 @@
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
 
-        <div *ngIf="!responseData || !responseData.operations[chosenStatistics]">
+        <div *ngIf="!responseData || this.responseData.operations['All'].length == 0 ">
             You have no analyses results yet. Please, use form to start some analise.
         </div>
 

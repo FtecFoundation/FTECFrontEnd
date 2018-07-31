@@ -38,7 +38,7 @@ export class MyExchangesComponent implements OnInit {
           .subscribe(val => {
               console.log(val);
               if (val.status === 0) { this._currentUserService
-                .addStockKey(this.privateKey.substr(0, 4), this.publicKey.substr(0, 4), this.chosenStock.name); }
+                .addStockKey(this.privateKey.substr(0, 4), this.publicKey.substr(0, 4), this.chosenStock.nameToSend); }
           });
   }
 
