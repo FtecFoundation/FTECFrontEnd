@@ -266,6 +266,10 @@ select::-ms-expand {
   background-color: $light-blue;
 }
 
+.form__select-list-item:only-child {
+  border-radius: 28px !important;
+}
+
 .form__select-list-item:last-child{
   border-bottom-right-radius: 28px;
   border-bottom-left-radius: 28px;

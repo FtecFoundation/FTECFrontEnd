@@ -96,6 +96,11 @@ export class BehavioralAnalyzerComponent implements OnInit {
         this._behavioralAnalyzerService.getHistory().subscribe(value => {
             
             this.responseData = value;
+
+            console.log(!this.responseData);
+            console.log(!this.responseData.operations[this.chosenStatistics]);
+            console.log(!this.responseData || !this.responseData.operations[this.chosenStatistics])
+
             this.recountGlobalStats();
             // this.globalPreloader = false;
             console.log(this.responseData);
