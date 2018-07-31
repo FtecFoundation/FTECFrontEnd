@@ -1,21 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { behavioralAnalyzerItems } from './behavioral-analyzer';
-import * as chartsData from './ngx-chart.config';
-import {config} from './ngx-chart.config';
-import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
+import { Component, OnInit, Directive } from '@angular/core';
+import { config } from './ngx-chart.config';
+import { BehavioralAnalyzerService } from './behavioral-analyzer.service';
+import { BehavioralDataTrades, StockBehavioralData } from '../../../core/models/behavioral';
+import { CurrentUserService } from '../../../core/services/current-user.service';
+import { AvailableExchanges, Stock } from '../arbitrage/available-exchanges';
+import { RouterPreloader } from '@angular/router';
 
 @Component({
     selector: 'app-social',
     templateUrl: './behavioral-analyzer.component.html',
     styleUrls: ['../insertions.scss', './behavioral-analyzer.component.scss']
 })
+
 export class BehavioralAnalyzerComponent implements OnInit {
 
-    behavioralItems = behavioralAnalyzerItems;
-    time = ['All time', 'New', 'Old', 'Rating'];
-    exchangesSimple = ['BTC', 'HitBTC', 'Binance'];
     fullGraph = false;
     select = false;
+    errorText = '';
+    stockSelected = false;
     data = [
         {
             'name': 'New Zealand',
@@ -68,31 +70,109 @@ export class BehavioralAnalyzerComponent implements OnInit {
     lineChartShowXAxisLabel = config.lineChartShowXAxisLabel;
     lineChartShowYAxisLabel = config.lineChartShowYAxisLabel;
     schemeType = config.schemeType;
-    exchanges = ['New', 'Old'];
     lineChartColorScheme = config.lineChartColorScheme;
+    exchanges = ['New', 'Old'];
 
     lineChartAutoScale = config.lineChartAutoScale;
     lineChartLineInterpolation = config.lineChartLineInterpolation;
 
-    constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService) {
+    public responseData: BehavioralDataTrades;
+    public chosenStatistics = 'All';
+    public availableStocks = [];
+    public installedStocks = [];
+    public globalPreloader = true;
+    public requestPreloader = false;
+
+    private stockToSend: Stock;
+
+    constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService,
+        private _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
-        this._behavioralAnalyzerService.getTrades().subscribe(data => {
-            console.log(data);
+        this.globalPreloader = true;
+        // console.log(!this.globalPreloader, '1');
+
+        this._behavioralAnalyzerService.getHistory().subscribe(value => {
+            
+            this.responseData = value;
+
+            console.log(!this.responseData);
+            console.log(!this.responseData.operations[this.chosenStatistics]);
+            console.log(!this.responseData || !this.responseData.operations[this.chosenStatistics])
+
+            this.recountGlobalStats();
+            // this.globalPreloader = false;
+            console.log(this.responseData);
+            this.globalPreloader = false;
+
+            // console.log(!this.globalPreloader, '2');
         });
+
+        this._currentUserService.getStockKeys(false).subscribe(keys => {
+            console.log(keys);
+
+            // console.log(!this.globalPreloader, '3');
+
+
+            for (const key of keys) {
+                this.installedStocks.push(AvailableExchanges.ofName(key.stock));
+
+                // console.log(!this.globalPreloader, '4');
+            }
+        });
+
     }
 
     onSelect(event) {
-        console.log(event);
-    }
-
-    showSelect() {
-        this.select = !this.select;
+        this.chosenStatistics = event;
     }
 
     showFull(graph: any) {
         graph.chosen = !graph.chosen;
     }
 
+    setStockToSend(chosenStock: Stock) {
+        this.stockToSend = chosenStock;
+        this.stockSelected = true;
+    }
+
+    private recountGlobalStats() {
+        const allStats = new StockBehavioralData();
+
+        this.availableStocks = Object.keys(this.responseData.statistics);
+        for (const key of this.availableStocks) {
+            allStats.accuracy += this.responseData.statistics[key].accuracy;
+            allStats.failedOrders += this.responseData.statistics[key].failedOrders;
+            allStats.successfulOrders += this.responseData.statistics[key].successfulOrders;
+            allStats.panicSell += this.responseData.statistics[key].panicSell;
+            allStats.panicBuy += this.responseData.statistics[key].panicBuy;
+            allStats.profitLoss += this.responseData.statistics[key].profitLoss;
+        }
+        allStats.accuracy /= this.availableStocks.length;
+        this.responseData.statistics['All'] = allStats;
+
+        const allData = [];
+        for (const key of this.availableStocks) {
+            for (const currentOperation of this.responseData.operations[key]) {
+                allData.push(currentOperation);
+            }
+        }
+        this.responseData.operations['All'] = allData;
+        this.availableStocks.unshift('All');
+    }
+    public sendRequest() {
+        this.requestPreloader = true;
+
+        console.log('sending request for ' + this.stockToSend);
+        if (!this.stockToSend) { return; }
+        this._behavioralAnalyzerService.getTrades(this.stockToSend).subscribe(data => {
+            this.responseData.operations[this.stockToSend.nameToSend] = data.operations[this.stockToSend.nameToSend];
+            this.responseData.statistics[this.stockToSend.nameToSend] = data.statistics[this.stockToSend.nameToSend];
+            this.recountGlobalStats();
+            this.requestPreloader = false;
+            console.log('finished');
+        }
+        );
+    }
 }

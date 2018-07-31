@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { availableExchanges } from '../arbitrage/available-exchanges';
+import { AvailableExchanges } from '../arbitrage/available-exchanges';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { availableExchanges } from '../arbitrage/available-exchanges';
 })
 export class PortfolioManagerComponent implements OnInit {
 
-  exchanges = availableExchanges;
+  exchanges = AvailableExchanges;
 
   constructor() {
   }

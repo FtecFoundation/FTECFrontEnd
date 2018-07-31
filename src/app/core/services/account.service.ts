@@ -5,9 +5,11 @@ import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {NotificationSetting, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, User} from '../models/user';
 import {map} from 'rxjs/operators/map';
 import {CookieService} from 'ngx-cookie-service';
+import {ErrorsService} from './errors-handling/errors.service';
+import {StatusCodeError} from '../models/exceptions';
 
 enum AccountApiUrls {
     login = 'login',
@@ -23,13 +25,14 @@ enum AccountApiUrls {
     tgSettings = 'modules/telegram/getTelegramData',
     tgHash = 'modules/telegram/getHash',
     getAddress = 'cabinet/node/getAddress',
-    getNotificationSettings = 'cabinet/notifications/getNotificationSettings'
+    getNotificationSettings = 'cabinet/notifications/getNotificationSettings',
+    getKeys = 'cabinet/apiKeys'
 }
 
 @Injectable()
 export class AccountService extends RestService {
 
-    constructor(_http: HttpClient, _cookieService: CookieService) {
+    constructor(_http: HttpClient, _cookieService: CookieService, private _errorsService: ErrorsService) {
         super(_http, _cookieService);
     }
 
@@ -108,6 +111,17 @@ export class AccountService extends RestService {
     getNotificationSettings(): Observable<NotificationSetting> {
         return this.get(AccountApiUrls.getNotificationSettings).pipe(
             map(resp => resp.response.settings)
+        );
+    }
+
+    getInstalledKeys(): Observable<ExchangeKeys[]> {
+        return this.get(AccountApiUrls.getKeys).pipe(
+            map(value => value.response.ApiKeys),
+            catchError(err => {
+                console.log(err);
+                this._errorsService.handleCustomException(new StatusCodeError(err.status));
+                return Observable.throw(err);
+            })
         );
     }
 }

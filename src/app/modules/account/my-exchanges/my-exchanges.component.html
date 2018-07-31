@@ -13,7 +13,7 @@
 
         <div class="middle__table-type middle__table-type--exchanges">
           <span class="middle__table-type-name middle__table-type-name--notifications">
-            Name
+            Key
           </span>
 
           <span class="middle__table-type-name middle__table-type-name--notifications middle__table-type-name--exchanges">
@@ -25,146 +25,27 @@
           </span>
         </div>
 
-        <div>
+        <div *ngFor="let key of _currentUserService.apiKeys">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 1</h4>
-
+              <h4 class="table-container-item--name">
+                <span>Private: {{key.privateKey}}***</span><br><span>Public: {{key.publicKey}}***</span>
+              </h4>
               <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Poloniex
+                {{key.stock}}
               </div>
 
-              <span class="container-item-update container-item-update--exchanges">03 May 2018 21:43</span>
+              <span class="container-item-update item-inner--exchanges">{{key.savingDate | date:'yyyy-MM-dd HH:mm'}}</span>
 
-              <button class="button__outline button__outeline--exchanges">delete</button>              
+              <button class="button__outline button__outeline--exchanges" (click)="deleteKeys(key)">delete</button>              
             </div>
           </div>
 
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 2</h4>
+          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
+            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
+              <!--<h4 class="table-container-item&#45;&#45;name">Account 2</h4>-->
 
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                HitBTC
-              </div>
 
-              <span class="container-item-update container-item-update--exchanges"> 03 May 2018 21:43 </span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 3</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Kraken
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">03 May 2018 21:29</span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 4</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Okcoin
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">03 May 2018 21:10</span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 5</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Bitstamp
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">03 May 2018 18:53</span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 6</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Bitfinex
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">03 May 2018 17:29 </span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 7</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                HitBTC
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">02 May 2018 9:31</span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 8</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Poloniex
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">01 May 2018 19:33</span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 9</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Binance
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">01 May 2018 18:29 </span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
-
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">Account 10</h4>
-
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                Poloniex
-              </div>
-
-              <span class="container-item-update container-item-update--exchanges">01 May 2018 17:29</span>
-
-              <button class="button__outline button__outeline--exchanges">delete</button>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -188,7 +69,7 @@
           <span class="container__name">Account type</span>
 
           <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+            <app-dropdown [label]="'Exchange'" [items]="exchanges"  [keyName]="'name'" (selected)="chooseStock($event)"></app-dropdown>
           </div>
           
         </div>
@@ -200,7 +81,7 @@
 
         <div class="container__form">
           <label for="text" class="form__label"></label>
-          <input type="text" class="form__input">
+          <input type="text" class="form__input" [(ngModel)]="publicKey" name="publicKey">
         </div>
       </div>
 
@@ -209,11 +90,11 @@
 
         <div class="container__form">
           <label for="text" class="form__label"></label>
-          <input type="text" class="form__input">
+          <input type="text" class="form__input" [(ngModel)]="privateKey" name="privateKey">
         </div>
       </div>
 
-      <button class="filter__container-button" (click)="showModal()">Get results</button>
+      <button class="filter__container-button" (click)="setKeys()">Get results</button>
 
       <a href="javascript:void(0)" class="filter__container-link">How to create an API key?</a>
     </form>
