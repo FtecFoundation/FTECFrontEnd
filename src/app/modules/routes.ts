@@ -2,11 +2,13 @@ import {LayoutComponent} from './layout/layout.component';
 import {OnlyAuthorizedGuard} from '../core/guards/only-authorized.guard';
 import {NotActiveComponent} from './not-active/not-active.component';
 import {ConfirmedEmailGuard} from '../core/guards/confirmed-email.guard';
+import {StubComponent} from './stub/stub.component';
 
 export const routes = [
     {
         path: 'modules', component: LayoutComponent, children: [
             {path: 'not-active', component: NotActiveComponent},
+            {path: 'stub', component: StubComponent},
             {path: 'social', loadChildren: './insertions/social/social.module#SocialModule'},
             {path: 'arbitrage', loadChildren: './insertions/arbitrage/arbitrage.module#ArbitrageModule'},
             {path: 'cryptoacademy', loadChildren: './insertions/cryptoacademy/cryptoacademy.module#CryptoacademyModule'},

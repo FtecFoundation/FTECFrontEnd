@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { availableExchanges } from '../../arbitrage/available-exchanges';
+import { AvailableExchanges } from '../../arbitrage/available-exchanges';
 import { Injectable } from '@angular/core';
 
 
@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class VolumePopupComponent implements OnInit {
 
-  exchanges = availableExchanges;
+  exchanges = AvailableExchanges;
   @Input() showPopupModal;
 
   constructor() {

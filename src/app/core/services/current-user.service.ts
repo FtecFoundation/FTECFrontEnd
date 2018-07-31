@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AccountService} from './account.service';
-import {NotificationSetting, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, User} from '../models/user';
 import {EtherscanService} from './etherscan.service';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
@@ -13,6 +13,7 @@ import {CustomException} from '../models/exceptions';
 export class CurrentUserService {
     private currentUser: User;
     private telegramSettings: TelegramSettings;
+    private installedKeys: ExchangeKeys[];
     // private notificationSettings: NotificationSetting;
     constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
 
@@ -77,4 +78,26 @@ export class CurrentUserService {
             this._accountService.getUserAddress().subscribe(value => this.user.walletAddress = value );
         }
     }
+
+    getStockKeys(forceRefresh: boolean): Observable<ExchangeKeys[]> {
+        if (!forceRefresh && this.installedKeys) { return Observable.of(this.installedKeys); }
+        return this._accountService.getInstalledKeys().pipe(
+            map(data => this.installedKeys = data)
+        );
+    }
+
+    get apiKeys(): ExchangeKeys[] {
+        return this.installedKeys;
+    }
+
+    addStockKey(privateKey: string, publicKey: string, stock: string) {
+        if (!this.installedKeys) { this.installedKeys = []; }
+        this.installedKeys.push(ExchangeKeys.of(privateKey, publicKey, stock, new Date()));
+    }
+
+    removeStockKey(stock: ExchangeKeys) {
+        if (!this.installedKeys) { this.installedKeys = []; }
+        this.installedKeys.splice(this.installedKeys.indexOf(stock), 1);
+    }
+
 }

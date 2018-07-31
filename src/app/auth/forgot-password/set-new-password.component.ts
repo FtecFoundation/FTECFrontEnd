@@ -49,6 +49,7 @@ export class SetNewPasswordComponent implements OnInit {
             .subscribe(
                 data => {
                     console.log('received response', data);
+                    this.router.navigate(['/auth/']);
                 },
                 error1 => {
                     this.requestError = this.errorService.parseResponseMessage(error1);

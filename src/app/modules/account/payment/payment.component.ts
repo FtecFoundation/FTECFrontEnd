@@ -1,10 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {CurrentUserService} from '../../../core/services/current-user.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { CurrentUserService } from '../../../core/services/current-user.service';
 
 @Component({
     selector: 'app-payment',
     templateUrl: './payment.component.html',
-    styleUrls: [ './payment.component.scss']
+    styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
     constructor(public _currentUserService: CurrentUserService) { }
@@ -13,7 +13,13 @@ export class PaymentComponent implements OnInit {
 
     public qrUrl: string;
 
+    showPopupModal = false;
+
     ngOnInit(): void {
         this.qrUrl = this._currentUserService.user.walletAddress;
+    }
+
+    showPopup() {
+        this.showPopupModal = true;
     }
 }

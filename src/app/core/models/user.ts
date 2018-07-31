@@ -1,5 +1,3 @@
-import set = Reflect.set;
-
 export class User {
     username: string;
     email: string;
@@ -42,5 +40,21 @@ export class RegistrationData {
         this.subscribeForEmail = formData.subscribeForEmail;
         this.locale = lang;
         return this;
+    }
+}
+
+export class ExchangeKeys {
+    publicKey: string;
+    privateKey: string;
+    stock: string;
+    savingDate: Date;
+
+    public static of(privateKey: string, publicKey: string, stock: string, savingDate: Date): ExchangeKeys{
+        const key = new ExchangeKeys();
+        key.privateKey = privateKey;
+        key.publicKey = publicKey;
+        key.stock = stock;
+        key.savingDate = savingDate;
+        return key;
     }
 }

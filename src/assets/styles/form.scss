@@ -219,6 +219,7 @@ select::-ms-expand {
 }
 
 .container__form-select-block {
+  min-width: 70px;
   display: flex;
   align-items: center;
 
@@ -263,6 +264,10 @@ select::-ms-expand {
 
 .form__select-list-item:hover {
   background-color: $light-blue;
+}
+
+.form__select-list-item:only-child {
+  border-radius: 28px !important;
 }
 
 .form__select-list-item:last-child{

@@ -12,11 +12,15 @@ import {routes} from './routes';
 import {NotificationComponent} from './account/notification/notification.component';
 import {NotificationService} from './account/notification/notification.service';
 import {StubComponent} from './stub/stub.component';
+import {ShowStubService} from './stub/stub-modal.service';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 
 @NgModule({
     imports: [
         SharedModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        NgxChartsModule
     ],
     exports: [
         LayoutComponent,
@@ -35,7 +39,9 @@ import {StubComponent} from './stub/stub.component';
     ],
     providers: [ShowModalService,
     NotificationComponent,
-    NotificationService]
+    NotificationService,
+    StubComponent,
+    ShowStubService]
 })
 
 export class LayoutModule {

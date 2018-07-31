@@ -6,6 +6,12 @@
   padding-top: .5rem
 }
 
+app-payment-popup {
+  width: initial !important;
+  display: initial !important;
+  padding-top: initial !important;
+}
+
 .main-info--payment {
   flex-wrap: wrap;
 }
@@ -126,5 +132,52 @@
 }
 
 .middle__table-container--payment {
+  width: 100%;
+}
+
+
+.container__wrapper--payment {
+  margin-top: 0;
+}
+
+.middle__table-container--payment {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle__table-container--payment .middle__table-container--payment {
+  margin: .625rem 0;
+}
+
+.title {
+  font-size: 1.500em;
+  font-weight: 300;
+}
+
+.title--green {
+  color: $green;
+}
+
+.payment__aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment__aside-time {
+  opacity: .39;
+}
+
+.middle__table-type--payment {
+  border-top-left-radius: 0;
+}
+
+.filter__container-aside--payment {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.middle__table-container-item--payment {
   width: 100%;
 }

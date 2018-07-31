@@ -21,8 +21,9 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
+const PublicIp = require('nodejs-publicip');
 
-const PORT = process.env.PORT || 80;
+
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -39,11 +40,15 @@ import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 let apiUrl = '';
 let prefix = '';
+let prod = false;
 let port = 4200;
 let secretCaptcha = '';
-let botDomain = 'FTEC_test_bot';
 
 process.argv.forEach(function (val, index, array) {
+    if (val.startsWith('--prod_enabled')) {
+        // `!!` casts string to boolean
+        prod = !!val.substring(val.indexOf('=') + 1);
+    }
     if (val.startsWith('--api_url')) {
         apiUrl = val.substring(val.indexOf('=') + 1);
     }
@@ -56,10 +61,10 @@ process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--secret_captcha')) {
         secretCaptcha = val.substring(val.indexOf('=') + 1);
     }
-    if (val.startsWith('--bot_domain')) {
-        botDomain = val.substring(val.indexOf('=') + 1);
-    }
 });
+const botDomain = prod ? 'FTEC_Telegram_bot' : 'FTEC_test_bot';
+const etherscanPrefix = prod ? 'api.' : 'api-ropsten.';
+const contractAddress = prod ? '0x6bec54e4fea5d541fb14de96993b8e11d81159b2' : '0xaC1eC31A5d24d2ac84404E19734Dd34A288450f3';
 
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
@@ -79,16 +84,18 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/api/getBotDomain', function (req, res) {
-    res.json({'botDomain': botDomain});
+app.get('/api/properties/getPreferences', function (req, res) {
+    res.json({botDomain: botDomain, etherscanPrefix: etherscanPrefix, contractAddress: contractAddress});
 });
 
 
 app.post('/api/submitRecatpcha', function (req, res) {
-    if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' ||
+        req.body['g-recaptcha-response'] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
-    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
+    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' +
+        + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
     request(verificationUrl, function (error, response, body) {
         body = JSON.parse(body);
 
@@ -104,12 +111,15 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log('------------------------------------------------------------------------------------------');
-        console.log(srcReq.body);
-        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
+        console.log(proxyReqOpts);
+            proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
+            || srcReq.ip
+            || srcReq._remoteAddress
+            || (srcReq.connection && srcReq.connection.remoteAddress);
         return proxyReqOpts;
     },
     parseReqBody: false
+
 }));
 
 
@@ -118,7 +128,11 @@ app.use('/api', proxy(apiUrl, {
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
+        console.log(proxyReqOpts);
+            proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
+            || srcReq.ip
+            || srcReq._remoteAddress
+            || (srcReq.connection && srcReq.connection.remoteAddress);
         return proxyReqOpts;
     }
 }));
@@ -135,4 +149,3 @@ if (apiUrl) {
         console.log(`Node Express server listening on http://localhost:${port}`);
     });
 }
-

@@ -1,7 +1,15 @@
 @import "../../../../assets/styles/variables";
 
-.middle--behavioral {
+.middle--behavioral,
+.behavioral--preloader-main {
   width: 66.66%;
+}
+
+.behavioral--preloader-main {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .middle__head--behavioral {
@@ -26,7 +34,7 @@
 
   ngx-charts-line-chart ngx-charts-chart .ng-trigger-animationState {
     width: 100%;
-    height: 200px;
+    height: 210px;
     position: relative;
   }
 
@@ -89,10 +97,6 @@
   font-size: 1.125em;
   font-weight: 900;
   color: $ocean;
-}
-
-.small-container__line--button {
-
 }
 
 .filter__container-button--behavioral {
@@ -166,6 +170,7 @@
 .aside-right__filter--behavioral {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: -.625em 0 -.625em -.625em;
 }
 
@@ -188,4 +193,15 @@
 
 .behavioral--text--red {
   color: $red;
+}
+
+.container__form--behavioral-select,
+.behavioral__select-button {
+  width: 100%;
+}
+
+.behavioral__block {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }

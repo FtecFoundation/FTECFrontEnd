@@ -30,7 +30,7 @@ export class OnlyAuthorizedGuard implements CanActivate {
             map(value => {
                 return value != null;
             }),
-            catchError(this.formError)
+            catchError(() => this.formError())
         );
     }
 
