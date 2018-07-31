@@ -111,17 +111,12 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        new PublicIp()
-            .queryPublicIPv4Address((err, ip) => {
-                if (err) {
-                    console.log(`error: ${err}`);
-                    return;
-                }
 
-                proxyReqOpts.headers['user-forward'] = ip;
-                console.log(`ip address: ${ip}`);
-            });
-        return proxyReqOpts;
+            proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
+            || srcReq.ip 
+            || srcReq._remoteAddress 
+            || (srcReq.connection && srcReq.connection.remoteAddress);
+        return proxyReqOpts
     },
     parseReqBody: false
 }));
