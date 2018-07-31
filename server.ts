@@ -21,8 +21,9 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
+const PublicIp = require('nodejs-publicip');
 
-const PORT = process.env.PORT || 80;
+
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -110,9 +111,16 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log('------------------------------------------------------------------------------------------');
-        console.log(srcReq.body);
-        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
+        new PublicIp()
+            .queryPublicIPv4Address((err, ip) => {
+                if (err) {
+                    console.log(`error: ${err}`);
+                    return;
+                }
+
+                proxyReqOpts.headers['user-forward'] = ip;
+                console.log(`ip address: ${ip}`);
+            });
         return proxyReqOpts;
     },
     parseReqBody: false
@@ -124,7 +132,16 @@ app.use('/api', proxy(apiUrl, {
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        proxyReqOpts.headers['user-forward'] = srcReq.connection.remoteAddress;
+        new PublicIp()
+            .queryPublicIPv4Address((err, ip) => {
+                if (err) {
+                    console.log(`error: ${err}`);
+                    return;
+                }
+
+                proxyReqOpts.headers['user-forward'] = ip;
+                console.log(`ip address: ${ip}`);
+            });
         return proxyReqOpts;
     }
 }));
