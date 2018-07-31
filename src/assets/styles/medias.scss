@@ -154,7 +154,6 @@
   .middle,
   .aside-right,
   .container-item-profit,
-  .item-inner,
   .sidebar,
   .item-inner-line-error-block,
   [_nghost-c0],
@@ -196,6 +195,11 @@
     width: 100% !important;
   }
 
+  .container-item-update {
+    display: block;
+    margin-left: 54% !important;
+  }
+
   .middle--empty-frame iframe {
     height: 300px !important;
   }
@@ -211,6 +215,10 @@
   .change-log,
   .settings__container {
     width: 50% !important;
+  }
+
+  .item-inner {
+    margin-left: 26% !important;
   }
 
   .error-field {
@@ -298,9 +306,6 @@
     flex-wrap: wrap;
   }
 
-  .container-item-update {
-    margin-left: 1.875rem !important;
-  }
   
   .middle__table-container-stocs {
     -ms-flex-wrap: wrap;

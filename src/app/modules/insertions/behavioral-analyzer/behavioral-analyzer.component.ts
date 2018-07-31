@@ -91,34 +91,25 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
     ngOnInit() {
         this.globalPreloader = true;
-        // console.log(!this.globalPreloader, '1');
 
         this._behavioralAnalyzerService.getHistory().subscribe(value => {
             
             this.responseData = value;
 
-            console.log(!this.responseData);
-            console.log(!this.responseData.operations[this.chosenStatistics]);
+            this.recountGlobalStats();
+            console.log(this.responseData);
             console.log(!this.responseData || !this.responseData.operations[this.chosenStatistics])
 
-            this.recountGlobalStats();
-            // this.globalPreloader = false;
-            console.log(this.responseData);
             this.globalPreloader = false;
 
-            // console.log(!this.globalPreloader, '2');
         });
 
         this._currentUserService.getStockKeys(false).subscribe(keys => {
             console.log(keys);
 
-            // console.log(!this.globalPreloader, '3');
-
 
             for (const key of keys) {
                 this.installedStocks.push(AvailableExchanges.ofName(key.stock));
-
-                // console.log(!this.globalPreloader, '4');
             }
         });
 
