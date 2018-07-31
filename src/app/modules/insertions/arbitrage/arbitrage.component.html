@@ -248,8 +248,8 @@
                             </g>
                         </svg>
                     </li>
-                    <li class="filter__container-block-item" *ngFor="let exchange of exchanges" [ngClass]="{'is-active': exchange.chosen}" (click)="chooseExchange(exchange)">
-                        {{exchange.exchange}}
+                    <li class="filter__container-block-item" *ngFor="let exchange of exchanges" [ngClass]="{'is-active': exchange.arbitrageChosen}" (click)="chooseExchange(exchange)">
+                        {{exchange.name}}
                         <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g id="check">
                                 <rect id="Rectangle-Copy" fill="#FFFFFF" x="0" y="0" width="24" height="24" rx="12"></rect>

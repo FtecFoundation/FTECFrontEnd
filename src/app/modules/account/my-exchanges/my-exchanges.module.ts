@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MyExchangesRoutingModule} from './my-exchanges-routing.module';
 import {MyExchangesComponent} from './my-exchanges.component';
 import {SharedModule} from '../../../shared/shared.module';
+import {MyExchangesService} from './my-exchanges.service';
 
 @NgModule({
     imports: [
@@ -10,7 +11,8 @@ import {SharedModule} from '../../../shared/shared.module';
         SharedModule,
         MyExchangesRoutingModule
     ],
-    declarations: [MyExchangesComponent]
+    declarations: [MyExchangesComponent],
+    providers: [MyExchangesService]
 })
 export class MyExchangesModule {
 }

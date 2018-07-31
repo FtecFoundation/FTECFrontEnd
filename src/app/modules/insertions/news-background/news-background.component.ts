@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SocialService } from '../../../core/services/social.service';
 import { Router } from '@angular/router';
-import { availableExchanges } from '../arbitrage/available-exchanges';
+import { AvailableExchanges } from '../arbitrage/available-exchanges';
 
 
 
@@ -13,7 +13,7 @@ import { availableExchanges } from '../arbitrage/available-exchanges';
 export class NewsBackgroundComponent implements OnInit {
 
   daysLeft: any = 0;
-  exchanges = availableExchanges;
+  exchanges = AvailableExchanges;
 
 
   constructor(private _socialService: SocialService,

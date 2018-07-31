@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { priceNotification } from './price-notification';
-import { availableExchanges } from '../arbitrage/available-exchanges';
+import { AvailableExchanges } from '../arbitrage/available-exchanges';
 
 @Component({
   selector: 'app-social',
@@ -9,7 +9,7 @@ import { availableExchanges } from '../arbitrage/available-exchanges';
 })
 export class PriceNotificationComponent implements OnInit {
 
-  exchanges = availableExchanges;
+  exchanges = AvailableExchanges.availableStocks;
   price = priceNotification;
 
   constructor() {

@@ -22,26 +22,28 @@ import { transition, trigger, useAnimation } from '@angular/animations';
         }
     ]
 })
-export class DropdownComponent implements OnInit, OnChanges {
-    @Input() items: string[];
+export class DropdownComponent<T> implements OnInit, OnChanges {
+    @Input() items: T[];
 
     @Input() label: string;
 
+    @Input() keyName: string = null;
 
-    @Output() selected: EventEmitter<string> = new EventEmitter<string>();
 
-    _active: string;
+    @Output() selected: EventEmitter<T> = new EventEmitter<T>();
+
+    _active: T;
 
     opened: boolean;
 
     propagateChange = (_: any) => { };
 
-    get active(): string {
+    get active(): T {
         return this._active;
     }
 
     @Input('active')
-    set active(value: string) {
+    set active(value: T) {
         this._active = value;
         this.propagateChange(this.active);
         this.selected.emit(this.active);
@@ -53,7 +55,6 @@ export class DropdownComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-
         if (!this.items || this.items.length === 0) {
             this._active = null;
         }
@@ -72,13 +73,13 @@ export class DropdownComponent implements OnInit, OnChanges {
     }
 
 
-    select(value: any): void {
+    select(value: T): void {
         this.active = value;
         this.opened = false;
     }
 
     @Input()
-    set value(value: string) {
+    set value(value: T) {
         this._active = value;
     }
 

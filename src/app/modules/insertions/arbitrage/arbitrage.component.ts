@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
-import {availableExchanges} from './available-exchanges';
+import {AvailableExchanges} from './available-exchanges';
 import {ArbitrageService} from '../../../core/services/arbitrage.service';
 import {ArbitrageWindowRequest, ArbitrageWindows, ArbitrageWindowsLog} from '../../../core/models/arbitrage-window';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegistrationValidators} from '../../../auth/registration/registration.validators';
+import {Stock} from './available-exchanges';
 
 @Component({
     selector: 'app-arbitrage',
@@ -13,13 +14,13 @@ import {RegistrationValidators} from '../../../auth/registration/registration.va
 })
 
 export class ArbitrageComponent implements OnInit {
-    exchanges = availableExchanges;
+    exchanges: Stock[];
     preloader = false;
     allChosen = false;
     windowsLogs: ArbitrageWindowsLog;
     arbitrageWindows: ArbitrageWindows;
     arbitrageForm: FormGroup;
-    chosenExchanges: string[] = [];
+    chosenExchanges: Stock[];
     submitted = false;
 
     constructor(private _showModalService: ShowModalService,
@@ -51,18 +52,18 @@ export class ArbitrageComponent implements OnInit {
     fillChosenExchanges() {
         this.chosenExchanges = [];
         for (const e of this.exchanges) {
-            if (e.chosen) { this.chosenExchanges.push(e.exchange); }
+            if (e.arbitrageChosen) { this.chosenExchanges.push(e); }
         }
     }
 
     chooseExchange(exhange: any) {
-        if (!this.allChosen) { exhange.chosen = !exhange.chosen; }
+        if (!this.allChosen) { exhange.arbitrageChosen = !exhange.arbitrageChosen; }
         this.fillChosenExchanges();
     }
 
     chooseAllExchanges() {
         for (const exchange of this.exchanges) {
-            exchange.chosen = !this.allChosen;
+            exchange.arbitrageChosen = !this.allChosen;
         }
 
         this.allChosen = !this.allChosen;

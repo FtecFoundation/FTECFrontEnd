@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { orderManager } from './order-manager';
-import { availableExchanges } from '../arbitrage/available-exchanges';
+import { AvailableExchanges } from '../arbitrage/available-exchanges';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { availableExchanges } from '../arbitrage/available-exchanges';
 export class OrderManagerComponent implements OnInit {
 
   order = orderManager;
-  exchanges = availableExchanges;
+  exchanges = AvailableExchanges;
 
   constructor() {
   }
