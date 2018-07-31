@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '31/07/2018',
+    'changes': [
+            'Protection against spam attacks of our mailing service is added.',
+            'Proxy service is fixed.',
+            'AProxy service was integrated with proxy server №1 and tested.',
+            'On behavioral page button disabled if exchange is not selected.',
+            'We added the page which is shown after a successful change of password.',
+            'The page of Service of Trader\'s Behavioral Analysis was launched to main server.',
+            'We added  user\'s real balance in the website header.',
+            'A feature that shows all closed deals of the user from Behavioral Service without starting new windows (for BitTrex).',
+            'Feature that returns all logs of the user is now on administration panel.',
+            'Device used to log in is now saved in authentication logs.'
+       ]
+    },
+    {
     'date': '30/07/2018',
     'changes': [
             'Keys are synchronized from the page my exchanges now.',
