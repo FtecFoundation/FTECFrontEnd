@@ -1,6 +1,6 @@
 export const changeLog = [
     {
-    'date': '28/07/2018',
+    'date': '30/07/2018',
     'changes': [
             'Keys are synchronized from the page my exchanges now.',
             'We added sorting of data by chosen exchange or all exchanges.',
