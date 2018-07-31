@@ -94,4 +94,11 @@ export class CurrentUserService {
         if (!this.installedKeys) { this.installedKeys = []; }
         this.installedKeys.push(ExchangeKeys.of(privateKey, publicKey, stock, new Date()));
     }
+
+    removeStockKey(stock: ExchangeKeys) {
+        if (!this.installedKeys) { this.installedKeys = []; }
+
+        this.installedKeys.splice(this.installedKeys.indexOf(stock), 1);
+    }
+
 }

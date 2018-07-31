@@ -13,11 +13,14 @@ import {NotificationComponent} from './account/notification/notification.compone
 import {NotificationService} from './account/notification/notification.service';
 import {StubComponent} from './stub/stub.component';
 import {ShowStubService} from './stub/stub-modal.service';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 
 @NgModule({
     imports: [
         SharedModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        NgxChartsModule
     ],
     exports: [
         LayoutComponent,
