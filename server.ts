@@ -83,7 +83,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/properties/getPreferences', function (req, res) {
+app.get('/api/properties/getPreferences', function (req, res) {
     res.json({botDomain: botDomain, etherscanPrefix: etherscanPrefix, contractAddress: contractAddress});
 });
 
@@ -141,4 +141,3 @@ if (apiUrl) {
         console.log(`Node Express server listening on http://localhost:${port}`);
     });
 }
-

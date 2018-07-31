@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {RestService} from '../../../core/services/rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
@@ -33,5 +33,5 @@ export class BehavioralAnalyzerService extends RestService {
         return this.post(BehavioralApiUrls.getTrades, {'stocks' : [stock.nameToSend]}).pipe(
             map(resp => resp.response));
     }
-p
+
 }

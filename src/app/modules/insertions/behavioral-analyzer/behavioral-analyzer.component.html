@@ -1,4 +1,6 @@
-<div class="main-info main-info--behavioral">
+<app-preloader class="behavioral--preloader-main" *ngIf="globalPreloader"></app-preloader>
+
+<div class="main-info main-info--behavioral" *ngIf="!globalPreloader">
     <div class="middle middle--behavioral">
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
@@ -27,12 +29,12 @@
                             <span>Charts will be available in next update!</span>
                             <!-- CHARTS -->
 
-                            <!--<ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"-->
-                            <!--[legend]="lineChartShowLegend" [rangeFillOpacity]="0.2" [schemeType]="schemeType" [showXAxisLabel]="lineChartShowXAxisLabel"-->
-                            <!--[showYAxisLabel]="lineChartShowYAxisLabel" [showGridLines]="showGridLines" [autoScale]="lineChartAutoScale"-->
-                            <!--[curve]="lineChartLineInterpolation" [tooltipDisabled]="tooltipDisabled" [showRefLines]="showRefLines"-->
-                            <!--[showRefLabels]="showRefLabels" [referenceLines]="refLines" (select)="onSelect($event)">-->
-                            <!--</ngx-charts-line-chart>-->
+                            <!-- <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                            [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2" [schemeType]="schemeType" [showXAxisLabel]="lineChartShowXAxisLabel"
+                            [showYAxisLabel]="lineChartShowYAxisLabel" [showGridLines]="showGridLines" [autoScale]="lineChartAutoScale"
+                            [curve]="lineChartLineInterpolation" [tooltipDisabled]="tooltipDisabled" [showRefLines]="showRefLines"
+                            [showRefLabels]="showRefLabels" [referenceLines]="refLines" (select)="onSelect($event)">
+                            </ngx-charts-line-chart> -->
 
                             <!--<div class="small-container__graph-controls">-->
                             <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
@@ -98,6 +100,7 @@
             </div>
 
             <app-preloader *ngIf="requestPreloader"></app-preloader>
+            <span>{{errorText}}</span>
 
             <div class="container__form--behavioral-select" *ngIf="!requestPreloader">
                 <h4 *ngIf="!stockToSend">To request new analysis please choose the stock!</h4>
@@ -105,7 +108,7 @@
                     <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
                 </div>
 
-                <button class="filter__container-button" (click)="sendRequest()" [disabled]="chosenStock">Get stats</button>
+                <button class="filter__container-button" (click)="sendRequest()" [disabled]="!stockSelected">Get stats</button>
             </div>
         </div>
 

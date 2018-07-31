@@ -1,10 +1,10 @@
 import { Component, OnInit, Directive } from '@angular/core';
-import {config} from './ngx-chart.config';
-import {BehavioralAnalyzerService} from './behavioral-analyzer.service';
-import {BehavioralDataTrades, StockBehavioralData} from '../../../core/models/behavioral';
-import {CurrentUserService} from '../../../core/services/current-user.service';
-import {AvailableExchanges, Stock} from '../arbitrage/available-exchanges';
-import {RouterPreloader} from '@angular/router';
+import { config } from './ngx-chart.config';
+import { BehavioralAnalyzerService } from './behavioral-analyzer.service';
+import { BehavioralDataTrades, StockBehavioralData } from '../../../core/models/behavioral';
+import { CurrentUserService } from '../../../core/services/current-user.service';
+import { AvailableExchanges, Stock } from '../arbitrage/available-exchanges';
+import { RouterPreloader } from '@angular/router';
 
 @Component({
     selector: 'app-social',
@@ -16,6 +16,8 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
     fullGraph = false;
     select = false;
+    errorText = '';
+    stockSelected = false;
     data = [
         {
             'name': 'New Zealand',
@@ -68,8 +70,8 @@ export class BehavioralAnalyzerComponent implements OnInit {
     lineChartShowXAxisLabel = config.lineChartShowXAxisLabel;
     lineChartShowYAxisLabel = config.lineChartShowYAxisLabel;
     schemeType = config.schemeType;
-    exchanges = ['New', 'Old'];
     lineChartColorScheme = config.lineChartColorScheme;
+    exchanges = ['New', 'Old'];
 
     lineChartAutoScale = config.lineChartAutoScale;
     lineChartLineInterpolation = config.lineChartLineInterpolation;
@@ -84,25 +86,37 @@ export class BehavioralAnalyzerComponent implements OnInit {
     private stockToSend: Stock;
 
     constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService,
-                private _currentUserService: CurrentUserService) {
+        private _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
         this.globalPreloader = true;
+        // console.log(!this.globalPreloader, '1');
 
         this._behavioralAnalyzerService.getHistory().subscribe(value => {
+            
             this.responseData = value;
             this.recountGlobalStats();
-            this.globalPreloader = false;
+            // this.globalPreloader = false;
             console.log(this.responseData);
+            this.globalPreloader = false;
+
+            // console.log(!this.globalPreloader, '2');
         });
 
         this._currentUserService.getStockKeys(false).subscribe(keys => {
             console.log(keys);
+
+            // console.log(!this.globalPreloader, '3');
+
+
             for (const key of keys) {
                 this.installedStocks.push(AvailableExchanges.ofName(key.stock));
+
+                // console.log(!this.globalPreloader, '4');
             }
         });
+
     }
 
     onSelect(event) {
@@ -115,6 +129,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
     setStockToSend(chosenStock: Stock) {
         this.stockToSend = chosenStock;
+        this.stockSelected = true;
     }
 
     private recountGlobalStats() {
@@ -152,6 +167,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
             this.recountGlobalStats();
             this.requestPreloader = false;
             console.log('finished');
-        });
+        }
+        );
     }
 }

@@ -1,7 +1,15 @@
 @import "../../../../assets/styles/variables";
 
-.middle--behavioral {
+.middle--behavioral,
+.behavioral--preloader-main {
   width: 66.66%;
+}
+
+.behavioral--preloader-main {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .middle__head--behavioral {
@@ -161,8 +169,8 @@
 
 .aside-right__filter--behavioral {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   margin: -.625em 0 -.625em -.625em;
 }
 
@@ -193,6 +201,7 @@
 }
 
 .behavioral__block {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
