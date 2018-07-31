@@ -109,9 +109,10 @@ app.post('/api/submitRecatpcha', function (req, res) {
 app.use('/api/cabinet/image', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
         return prefix + '/cabinet/image';
+        console.log(this.proxyReqOpts);
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-
+        console.log(proxyReqOpts)
             proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
             || srcReq.ip 
             || srcReq._remoteAddress 
@@ -119,6 +120,7 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return proxyReqOpts
     },
     parseReqBody: false
+
 }));
 
 
@@ -127,17 +129,12 @@ app.use('/api', proxy(apiUrl, {
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        new PublicIp()
-            .queryPublicIPv4Address((err, ip) => {
-                if (err) {
-                    console.log(`error: ${err}`);
-                    return;
-                }
-
-                proxyReqOpts.headers['user-forward'] = ip;
-                console.log(`ip address: ${ip}`);
-            });
-        return proxyReqOpts;
+        console.log(proxyReqOpts)
+            proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
+            || srcReq.ip 
+            || srcReq._remoteAddress 
+            || (srcReq.connection && srcReq.connection.remoteAddress);
+        return proxyReqOpts
     }
 }));
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
