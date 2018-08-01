@@ -44,7 +44,7 @@ let port = 4200;
 let secretCaptcha = '';
 
 process.argv.forEach(function (val, index, array) {
-    if (val.startsWith('--prod_enabled')) {
+    if(val.startsWith('--prod_enabled')) {
         // `!!` casts string to boolean
         prod = !!val.substring(val.indexOf('=') + 1);
     }
@@ -93,13 +93,10 @@ app.post('/api/submitRecatpcha', function (req, res) {
         req.body['g-recaptcha-response'] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
-    console.log();
     const usersResponse = req.body['g-recaptcha-response'];
-    console.log(usersResponse);
     const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' + usersResponse + '&remoteip=' + req.connection.remoteAddress;
-    console.log(verificationUrl);
+
     request(verificationUrl, function (error, response, body) {
-        console.log(body);
         body = JSON.parse(body);
 
         if (!body.success) {
@@ -114,12 +111,11 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log(proxyReqOpts);
             proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
-            || srcReq.ip
-            || srcReq._remoteAddress
+            || srcReq.ip 
+            || srcReq._remoteAddress 
             || (srcReq.connection && srcReq.connection.remoteAddress);
-        return proxyReqOpts;
+        return proxyReqOpts
     },
     parseReqBody: false
 
@@ -131,12 +127,12 @@ app.use('/api', proxy(apiUrl, {
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log(proxyReqOpts);
+
             proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
-            || srcReq.ip
-            || srcReq._remoteAddress
+            || srcReq.ip 
+            || srcReq._remoteAddress 
             || (srcReq.connection && srcReq.connection.remoteAddress);
-        return proxyReqOpts;
+        return proxyReqOpts
     }
 }));
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {

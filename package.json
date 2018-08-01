@@ -62,7 +62,6 @@
     "ts-loader": "^2.3.7",
     "codelyzer": "^4.3.0",
     "typescript": "~2.4.2",
-    "body-parser": "^1.18.3",
-    "pre-commit": "^1.2.2"
+    "body-parser": "^1.18.3"
   }
 }

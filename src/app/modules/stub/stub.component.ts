@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, AfterViewInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ShowStubService} from './stub-modal.service';
 
@@ -9,17 +9,22 @@ import {ShowStubService} from './stub-modal.service';
   styleUrls: ['./stub.component.scss']
 })
 
-export class StubComponent implements OnInit {
+export class StubComponent implements OnInit, AfterViewInit {
 
-  modalHeader: string;
-  modalText: string;
   @Input() opened: boolean;
+  @Input() title: string;
+  @Input() text: string;
 
-  constructor(public _showStubService: ShowStubService) { }
+
+  constructor(public _showStubService: ShowStubService) {
+
+  }
 
 
   ngOnInit() {
+  }
 
+  ngAfterViewInit() {
   }
 
   closeModal() {
@@ -27,10 +32,5 @@ export class StubComponent implements OnInit {
   }
 
 
-  showPopup(modalHeader: string, modalText: string) {
-    this._showStubService.opened = true;
-    this.modalHeader = modalHeader;
-    this.modalText = modalText;
-  }
 
 }
