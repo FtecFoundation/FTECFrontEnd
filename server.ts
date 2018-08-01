@@ -21,7 +21,6 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
-const PublicIp = require('nodejs-publicip');
 
 
 const DIST_FOLDER = join(process.cwd(), 'dist');
@@ -112,7 +111,6 @@ app.post('/api/submitRecatpcha', function (req, res) {
 app.use('/api/cabinet/image', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
         return prefix + '/cabinet/image';
-        console.log(this.proxyReqOpts);
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
         console.log(proxyReqOpts)

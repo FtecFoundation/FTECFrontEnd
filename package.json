@@ -66,8 +66,6 @@
     "tslint": "^5.10.0",
     "codelyzer": "^4.3.0",
     "typescript": "~2.4.2",
-    "body-parser": "^1.18.3",
-    "pre-commit": "^1.2.2",
-    "nodejs-publicip": "^2.1.2"
-  }
+    "body-parser": "^1.18.3"
+    }
 }
