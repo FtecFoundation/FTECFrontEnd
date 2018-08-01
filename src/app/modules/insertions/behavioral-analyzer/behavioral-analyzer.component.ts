@@ -93,14 +93,14 @@ export class BehavioralAnalyzerComponent implements OnInit {
         this.globalPreloader = true;
 
         this._behavioralAnalyzerService.getHistory().subscribe(value => {
-            
+
             this.responseData = value;
-            
+
             this.recountGlobalStats();
-            
-            if(this.responseData.operations['All'].length == 0 ) {
+
+            if (this.responseData.operations['All'].length == 0 ) {
             }
-        
+
             this.globalPreloader = false;
 
         });
@@ -141,7 +141,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
             allStats.profitLoss += this.responseData.statistics[key].profitLoss;
         }
 
-        if(this.availableStocks.length > 0) {
+        if (this.availableStocks.length > 0) {
             allStats.accuracy /= this.availableStocks.length;
         }
         this.responseData.statistics['All'] = allStats;
