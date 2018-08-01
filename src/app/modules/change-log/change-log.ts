@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '01/08/2018',
+    'changes': [
+            'Library optimization in main module is upgraded to increase the speed of its work.',
+            'Feature that allows users to receive their closed deals was added from Behavior Service without creating new windows (for HitBTC)',
+            'Recommendations are added to Behavior Service statistics.',
+            'Login captcha is fixed',
+            'Pop-up for users without verified email address was fixed.',
+            'User`s real balance is added on dashboard and header.',
+            'Android app is upgraded.',
+            'iOS app is upgraded.',
+            'Integration of the behavioural analyzer with a proxy server was started',
+            'On Behavioral Analyser page preloader was added to statistics block during the request.'
+       ]
+    },
+    {
     'date': '31/07/2018',
     'changes': [
             'Protection against spam attacks of our mailing service is added.',
