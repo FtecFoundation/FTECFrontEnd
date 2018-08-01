@@ -10,7 +10,7 @@ export const changeLog = [
             'User`s real balance is added on dashboard and header.',
             'Android app is upgraded.',
             'iOS app is upgraded.',
-            'Integration of the behavioural analyzer with a proxy server was started',
+            'Integration of Behavior Analyzer with proxy server has begun.',
             'On Behavioral Analyser page preloader was added to statistics block during the request.'
        ]
     },
