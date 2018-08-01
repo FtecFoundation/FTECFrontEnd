@@ -97,12 +97,13 @@ app.post('/api/submitRecatpcha', function (req, res) {
     const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' +
         + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
     request(verificationUrl, function (error, response, body) {
+        console.log(body);
         body = JSON.parse(body);
 
-        if (body.success !== undefined && !body.success) {
-            return res.json({'responseCode': 1, 'responseDesc': 'Failed captcha verification'});
+        if (!body.success) {
+            return res.json(body);
         }
-        res.json({'responseCode': 0, 'responseDesc': 'Sucess'});
+        res.json({'responseCode': 0, 'responseDesc': 'success'});
     });
 });
 
