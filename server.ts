@@ -21,7 +21,6 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
-const PublicIp = require('nodejs-publicip');
 
 
 const DIST_FOLDER = join(process.cwd(), 'dist');
@@ -94,8 +93,11 @@ app.post('/api/submitRecatpcha', function (req, res) {
         req.body['g-recaptcha-response'] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
-    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' +
-        + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
+    console.log();
+    const usersResponse = req.body['g-recaptcha-response'];
+    console.log(usersResponse);
+    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' + usersResponse + '&remoteip=' + req.connection.remoteAddress;
+    console.log(verificationUrl);
     request(verificationUrl, function (error, response, body) {
         console.log(body);
         body = JSON.parse(body);
