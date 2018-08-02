@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AccountService} from './account.service';
-import {ExchangeKeys, NotificationSetting, NotificationSettings, RegistrationData, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, RegistrationData, User} from '../models/user';
 import {EtherscanService} from './etherscan.service';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';

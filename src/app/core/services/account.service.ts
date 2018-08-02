@@ -5,7 +5,7 @@ import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {ExchangeKeys, NotificationSettings, DashboardAuthLogs, User} from '../models/user';
+import {ExchangeKeys, DashboardAuthLogs, NotificationSettings, User} from '../models/user';
 import {map} from 'rxjs/operators/map';
 import {CookieService} from 'ngx-cookie-service';
 import {ErrorsService} from './errors-handling/errors.service';
