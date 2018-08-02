@@ -374,16 +374,19 @@
           </span>
         </div>
 
+
         <div class="middle__table--dashboard" *ngFor="let log of logs">
 
           <div class="middle__table-container middle__table-container--dashboard">
 
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
+            <app-preloader *ngIf="!authLogsContent"></app-preloader>
+
+            <div *ngIf="authLogsContent" class="middle__table-container-item middle__table-container-item--dashboard">
               <h4>{{log.remoteIp}}</h4>
 
               <div class="item-inner item-inner--dashboard">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard middle__table-text-small">{{log.date}}</span>
+                  <span class="item-inner-line--dashboard middle__table-text-small">{{log.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
                   <span class=""></span>
                 </div>
 

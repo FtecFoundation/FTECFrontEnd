@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
 
     preloader = true;
 
+    public authLogsContent = false;
+
     currencies: Cryptocurrency[] = [];
     logs: DashboardAuthLogs[] = [];
 
@@ -36,8 +38,9 @@ export class DashboardComponent implements OnInit {
         });
 
         this._authLogs.getAuthLogs().subscribe(data => {
-            console.log(this._authLogs)
             this.logs = data;
+            
+            this.authLogsContent = true;
         });
         
     }
