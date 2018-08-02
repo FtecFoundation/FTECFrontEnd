@@ -26,6 +26,12 @@ export class NotificationSetting {
     }
 }
 
+export class DashboardAuthLogs {
+    date: string;
+    device: string;
+    remoteIp: string;
+}
+
 export class RegistrationData {
     username: string;
     email: string;
