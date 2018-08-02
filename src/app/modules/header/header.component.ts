@@ -48,6 +48,8 @@ export class HeaderComponent implements OnInit {
         this._accountService.logoutUser().subscribe(() => {
             this.router.navigate(['']);
         });
+
+        this._currentUserService.clearCache()
     }
 
     goToPaymentPage() {

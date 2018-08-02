@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AccountService} from './account.service';
-import {ExchangeKeys, NotificationSetting, NotificationSettings, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, NotificationSettings, RegistrationData, User} from '../models/user';
 import {EtherscanService} from './etherscan.service';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
@@ -8,14 +8,35 @@ import {TelegramSettings} from '../models/telegram';
 import {catchError} from 'rxjs/operators/catchError';
 import {ErrorsService} from './errors-handling/errors.service';
 import {CustomException} from '../models/exceptions';
+import { TestHistory } from '../models/test-cryptoacademy';
+import { BehavioralDataTrades } from '../models/behavioral';
+import { ArbitrageWindow } from '../models/arbitrage-window';
 
 @Injectable()
 export class CurrentUserService {
     private currentUser: User;
     private telegramSettings: TelegramSettings;
     private installedKeys: ExchangeKeys[];
+
+    private registrationData: RegistrationData;
+    private notificationsData: NotificationSetting;
+    private testsData: TestHistory;
+    private behavioralData: BehavioralDataTrades;
+    private arbitrageData: ArbitrageWindow;
+
     constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
 
+    }
+
+    clearCache() {
+        this.currentUser = null;
+        this.installedKeys = null;
+        this.telegramSettings = null;
+        this.registrationData = null;
+        this.notificationsData = null;
+        this.testsData = null;
+        this.behavioralData = null;
+        this.arbitrageData = null;
     }
 
     getCurrentUser(): Observable<User> {

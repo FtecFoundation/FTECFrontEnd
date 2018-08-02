@@ -2,8 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CryptocurrenciesService } from '../../../core/services/cryptocurrencies.service';
 import { Cryptocurrency } from '../../../core/models/cryptocurrency';
 import { ShowModalService } from '../../not-active/show-modal.service';
-import {CurrentUserService} from '../../../core/services/current-user.service';
-import {Router} from '@angular/router';
+import { CurrentUserService } from '../../../core/services/current-user.service';
+import { Router } from '@angular/router';
+import { AccountService } from '../../../core/services/account.service';
+import { DashboardAuthLogs } from '../../../core/models/user';
 
 
 @Component({
@@ -16,11 +18,13 @@ export class DashboardComponent implements OnInit {
     preloader = true;
 
     currencies: Cryptocurrency[] = [];
+    logs: DashboardAuthLogs[] = [];
 
     constructor(private _cryptoService: CryptocurrenciesService,
         private _showModalService: ShowModalService,
         private router: Router,
-        public _currentUserService: CurrentUserService) {
+        public _currentUserService: CurrentUserService,
+        private _authLogs: AccountService) {
     }
 
     ngOnInit() {
@@ -30,6 +34,12 @@ export class DashboardComponent implements OnInit {
             }
             this.preloader = false;
         });
+
+        this._authLogs.getAuthLogs().subscribe(data => {
+            console.log(this._authLogs)
+            this.logs = data;
+        });
+        
     }
 
     showModal() {
