@@ -2,7 +2,7 @@
 
     <main class="content content--registration">
 
-        <form class="content__login" [formGroup]="registrationForm" (submit)="submitForm($event, captchaRef)">
+        <form class="content__login" [formGroup]="registrationForm">
 
             <h1 class="login__container-title">
                 Registration
@@ -89,11 +89,12 @@
             </div>
             <re-captcha
                     #captchaRef="reCaptcha"
+                    (resolved)="submitForm($event, captchaRef);"
                     siteKey="6LfdAWIUAAAAAF4_BJ3CJYRU8g32oAeeybz9cdbI"
                     size="invisible"
             ></re-captcha>
 
-            <button class="form__login-accept">Register</button>
+            <button class="form__login-accept" (click)="captchaRef.execute()">Register</button>
         </form>
 
     </main>
