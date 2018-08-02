@@ -103,7 +103,7 @@
             <span>{{errorText}}</span>
 
             <div class="container__form--behavioral-select" *ngIf="!requestPreloader">
-                <h4 *ngIf="!stockToSend">To request new analysis please choose the stock!</h4>
+                <h4 *ngIf="!stockToSend" class="container__form-warning">To request new analysis please choose the stock!</h4>
                 <div class="container__form container__form--select container__form--behavioral-select">
                     <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
                 </div>

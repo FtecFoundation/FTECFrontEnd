@@ -51,10 +51,13 @@ export class RegistrationComponent implements OnInit {
     submitForm(captchaResponse: string, captcha: any) {
         this.submitted = true;
         this._captchaService.submitCaptcha({'g-recaptcha-response': captchaResponse}).subscribe(data => {
+
             if (this.registrationForm.valid && data.responseCode === 0) {
+
                 this._accountService.registerUser(this.prepareData()).subscribe(() => {
                     this.router.navigate(['/modules']);
                 });
+
             }
             captcha.reset();
         });
@@ -67,7 +70,6 @@ export class RegistrationComponent implements OnInit {
     toggleCheckbox(field: AbstractControl) {
         field.value === true ? field.setValue(false) : field.setValue(true);
     }
-
 
     get username() {
         return this.registrationForm.get('username');

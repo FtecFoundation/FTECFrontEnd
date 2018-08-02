@@ -55,7 +55,7 @@ export class ExchangeKeys {
     stock: string;
     savingDate: Date;
 
-    public static of(privateKey: string, publicKey: string, stock: string, savingDate: Date): ExchangeKeys{
+    public static of(privateKey: string, publicKey: string, stock: string, savingDate: Date): ExchangeKeys {
         const key = new ExchangeKeys();
         key.privateKey = privateKey;
         key.publicKey = publicKey;
