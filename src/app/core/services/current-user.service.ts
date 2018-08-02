@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AccountService} from './account.service';
-import {ExchangeKeys, NotificationSetting, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, NotificationSettings, User} from '../models/user';
 import {EtherscanService} from './etherscan.service';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
@@ -14,7 +14,6 @@ export class CurrentUserService {
     private currentUser: User;
     private telegramSettings: TelegramSettings;
     private installedKeys: ExchangeKeys[];
-    // private notificationSettings: NotificationSetting;
     constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
 
     }
@@ -53,8 +52,8 @@ export class CurrentUserService {
         );
     }
 
-    getNotificationSettings(forceRefresh: boolean): Observable<NotificationSetting> {
-        if (!forceRefresh && !this.notificationSettings) { return Observable.of(this.notificationSettings); }
+    getNotificationSettings(forceRefresh: boolean): Observable<NotificationSettings> {
+        if (!forceRefresh && !this.currentUser && !this.currentUser.notificationSettings) { return Observable.of(this.currentUser.notificationSettings); }
         this._accountService.getNotificationSettings().pipe(
             map(value => this.user.notificationSettings = value),
             catchError(err => {

@@ -9,13 +9,19 @@ export class User {
     confirmedEmail: boolean;
     balance: number;
     walletAddress: string;
-    notificationSettings: NotificationSetting;
+    notificationSettings: NotificationSettings;
+}
+
+export class NotificationSettings{
+    [type: number]: NotificationSetting;
 }
 
 export class NotificationSetting {
     notificationType: number;
     telegram: boolean;
     email: boolean;
+    mobileApplication: boolean;
+    sms: boolean;
 
     static from(notificationType: number, enabledNotifications: NotificationSetting): NotificationSetting {
         const setting = new NotificationSetting();

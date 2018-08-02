@@ -5,7 +5,7 @@ import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {ExchangeKeys, NotificationSetting, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, NotificationSettings, User} from '../models/user';
 import {map} from 'rxjs/operators/map';
 import {CookieService} from 'ngx-cookie-service';
 import {ErrorsService} from './errors-handling/errors.service';
@@ -108,7 +108,7 @@ export class AccountService extends RestService {
         );
     }
 
-    getNotificationSettings(): Observable<NotificationSetting> {
+    getNotificationSettings(): Observable<NotificationSettings> {
         return this.get(AccountApiUrls.getNotificationSettings).pipe(
             map(resp => resp.response.settings)
         );

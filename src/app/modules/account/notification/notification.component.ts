@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NotificationService} from './notification.service';
 import {Router} from '@angular/router';
 import {CurrentUserService} from '../../../core/services/current-user.service';
-import {NotificationSetting} from '../../../core/models/user';
+import {NotificationSetting, NotificationSettings} from '../../../core/models/user';
 import {notificationMapper} from '../../../constants';
 
 
@@ -14,38 +14,37 @@ import {notificationMapper} from '../../../constants';
 export class NotificationComponent implements OnInit {
     titles = notificationMapper;
 
-    telegramNotification = false;
-    emailNotification = false;
-
-
-    constructor(private _notificationService: NotificationService, private router: Router,
+    constructor(private _notificationService: NotificationService,
                 public _currentUserService: CurrentUserService) {
     }
 
     ngOnInit() {
     }
 
-    disableTelegramNotification() {
-        this.telegramNotification = !this.telegramNotification;
+    changeMode(method: string) {
+        const notification = this._currentUserService.user.notificationSettings[0];
+        notification[method] = !notification[method];
+        notification.notificationType = 0;
+        this._notificationService.updateNotification(notification).subscribe(() => {
+        });
     }
 
-    disableEmailNotification() {
-        this.emailNotification = !this.emailNotification;
-    }
-
-    getNotificationTypes(notificationSettings: NotificationSetting): string[] {
+    getNotificationTypes(notificationSettings: NotificationSettings): string[] {
         const ret = Object.keys(notificationSettings);
         ret.shift();
         return ret;
     }
 
-    enableTelegram(type: any, method: string) {
+    changeNotificationStatus(type: string, method: string) {
         const notification = this._currentUserService.user.notificationSettings[type];
-        notification.telegram = !notification[method];
+        notification[method] = !notification[method];
         notification.notificationType = Number.parseInt(type);
-        this._notificationService.renewNotification(notification).subscribe(() => {
+        this._notificationService.updateNotification(notification).subscribe(() => {
+            console.log(this._currentUserService.user.notificationSettings[type]);
+            this._currentUserService.user.notificationSettings[type] = notification;
         });
     }
+
 
 }
 
