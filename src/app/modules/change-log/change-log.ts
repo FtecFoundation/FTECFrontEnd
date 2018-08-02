@@ -1,5 +1,150 @@
 export const changeLog = [
     {
+    'date': '01/08/2018',
+    'changes': [
+            'Library optimization in main module is upgraded to increase the speed of its work.',
+            'Feature that allows users to receive their closed deals was added from Behavior Service without creating new windows (for HitBTC)',
+            'Recommendations are added to Behavior Service statistics.',
+            'Login captcha is fixed',
+            'Pop-up for users without verified email address was fixed.',
+            'User`s real balance is added on dashboard and header.',
+            'Android app is upgraded.',
+            'iOS app is upgraded.',
+            'Integration of Behavior Analyzer with proxy server has begun.',
+            'On Behavioral Analyser page preloader was added to statistics block during the request.'
+       ]
+    },
+    {
+    'date': '31/07/2018',
+    'changes': [
+            'Protection against spam attacks of our mailing service is added.',
+            'Proxy service is fixed.',
+            'AProxy service was integrated with proxy server №1 and tested.',
+            'On behavioral page button disabled if exchange is not selected.',
+            'We added the page which is shown after a successful change of password.',
+            'The page of Service of Trader\'s Behavioral Analysis was launched to main server.',
+            'We added  user\'s real balance in the website header.',
+            'A feature that shows all closed deals of the user from Behavioral Service without starting new windows (for BitTrex).',
+            'Feature that returns all logs of the user is now on administration panel.',
+            'Device used to log in is now saved in authentication logs.'
+       ]
+    },
+    {
+    'date': '30/07/2018',
+    'changes': [
+            'Keys are synchronized from the page my exchanges now.',
+            'We added sorting of data by chosen exchange or all exchanges.',
+            'Authentication logs are now deleted after 7 days.',
+            'We added the possibility to view API keys which were connected by the user (the first 4 symbols).',
+            'The interval of candle building for Binance API was changed, which will improve the speed of the work of Service of Trader\'s Behavioral Analysis.',
+            'We developed the mechanism of intelligent choice of appropriate proxy for the work with exchange.',
+            'We developed the mechanism of developer email notification for the case when the proxy was banned.',
+            'The architecture of the proxy server was developed.',
+            'We added displaying of the number of remaining ban days.',
+            'Data is fully loaded from various exchanges now on behavioral page.'
+       ]
+    },
+    {
+    'date': '27/07/2018',
+    'changes': [
+            'We added the function for getting all user\'s closed deals from Service of Trader\'s Behavioral Analysis without making windows for them (for Binance).',
+            'We added the function of saving API keys for exchange HitBTC.',
+            'On the dashboard, a correct number of tokens is shown now.',
+            'The button of balance replenishment has correct navigation now on the dashboard.',
+            'We added and adapted sidebar on the payment page.',
+            'We fixed a bug on the page with test displaying if there are more than 4 of them.',
+            'We increased the functionality of the proxy server for the work with exchanges.',
+            'We updated the interaction between Arbitrage Module and proxy server to increase the speed of requests.',
+            'We began the development of a mechanism of intelligent choice of the most appropriate proxy server.',
+       ]
+    },
+    {
+    'date': '26/07/2018',
+    'changes': [
+            'In the main module, we added the feature of displaying all authorization logs for the user.',
+            'In the main module, we added the feature of displaying pages of authorization logs.',
+            'On each page, 5 logs are displayed. Now logs are sorted by date (new first).',
+            'The page of password sending was adapted.',
+            'We did HTML layout and adaptation of the page after successful sending of the letter with password recovery.',
+            'Pop-up of limitation of modules for users without activation letter.',
+            'Pop-up of limitation of modules was adapted.',
+            'We improved the safety of password storage.',
+            'We fixed the bug, with which user was able to get more than 1 address in less than 2 days.',
+            'TWe added support of Cyrillic script in tickets and comments.',
+            'We added an error processing while token withdrawal in case when there are not enough ETH.'
+       ]
+    },
+    {
+    'date': '25/07/2018',
+    'changes': [
+            'We added an automatic conversion of pictures for Cryptoacademy.',
+            'We fixed the bug of passing of unauthenticated user to module pages.',
+            'Frontend was made on Service of Trader\'s Behavioral Analysis page.',
+            'Charts were made on Service of Trader\'s Behavioral Analysis page.',
+            'We fixed the bug with which user was able to send a request for referral funds withdrawal many times (even if he didn\'t have these funds).',
+            'We fixed display of pictures in 4th and 5th tests.',
+            'In the main module, we added logging of login authorization.',
+            'We made and tested changes in the new production version',
+            'We begin to take commissions for the services of the social module on a fee basis',
+            'The function of saving the API of user keys for the Bittrex exchange is added.'
+       ]
+    },
+    {
+    'date': '24/07/2018',
+    'changes': [
+            'Now all the user\'s records are deleted and Telegram is automatically linked while deleting the account.',
+            'Userpics are automatically converted to 100x100 while uploading.',
+            'HTML layout of balance refill',
+            'We adapted the page of balance refill.',
+            'We fixed the bug which occurred while connecting to Telegram Assistant.',
+            'In the main module, we added the feature, which allows the user to see the information about his referrals.',
+            'In the main module, we added the feature, which allows the user to charge funds for his referrals.',
+       ]
+    },
+    {
+        'date': '23/07/2018',
+        'changes': [
+            'We added the possibility to resend email verifications.',
+            'Spam protection was added.',
+            '2FA was added.',
+            'We fixed a critical error of database migration, which jeopardized further development of the project.',
+            'In Service of Trader’s Behavioral Analysis, we fixed an error in the calculation of lost profit.',
+            'Refactoring of pages for at frontend to improve statistics.',
+            'We added graphs, using the library in Service of Trader’s Behavioral Analysis at frontend.',
+            'Modules are divided into groups now (profile, modules, change modules).'
+        ]
+    },
+    {
+        'date': '20/07/2018',
+        'changes': [
+            'We made both types of the pop-up no refferal page.',
+            'HTML layout and adaptation of the page of password recovery.',
+            'HTML layout and adaptation of the page of setting a new password.',
+            'We added two more steps to 2FA connection.',
+            'API keys of exchanges are encrypted in the database.',
+            'From now, funds are charged for statistics update in Service of Trader\'s Behavioral Analysis.',
+            'We added the possibility to delete API keys for exchanges in the main module.',
+            'Exchange API keys are now decrypted before sending a request.',
+            'If the user doesn\'t have enough funds to pay for statistics update, he will see the relevant error in Service of Trader\'s Behavioral Analysis.',
+            'We fixed a critical error while registration.'
+        ]
+    },
+    {
+        'date': '19/07/2018',
+        'changes': [
+            'We made one type of pop-up for the referral page.',
+            'Pop-up was adapted on the referral page.',
+            'We fixed following to the module page by unauthenticated user.',
+            'Service of Trader\'s Behavioral Analysis was connected to the main module.',
+            'In the main module, now it\'s possible to save API key for exchanges.',
+            'Now it is not necessary to enter API keys to send a request to Service of Trader\'s Behavioral Analysis. Only exchange name is needed.',
+            'We added the possibility to send tokens from one user account to another.',
+            'The integration between Arbitrage Module and proxy server is finished.',
+            'We fixed error display while authentification.',
+            'Node was fully tested in the test network with test tokens, we began integration with the real network.'
+        ]
+    },
+    {
         'date': '18/07/2018',
         'changes': [
             'We added the possibility to authorize via email and via login name both.',

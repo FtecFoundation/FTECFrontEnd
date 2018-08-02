@@ -63,5 +63,5 @@
     "codelyzer": "^4.3.0",
     "typescript": "~2.4.2",
     "body-parser": "^1.18.3"
-    }
+  }
 }

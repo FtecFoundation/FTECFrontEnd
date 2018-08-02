@@ -93,18 +93,16 @@ app.post('/api/submitRecatpcha', function (req, res) {
         req.body['g-recaptcha-response'] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
-    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' +
-        + req.body['g-recaptcha-response'] + '&remoteip=' + req.connection.remoteAddress;
+    const usersResponse = req.body['g-recaptcha-response'];
+    const verificationUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secretCaptcha + '&response=' + usersResponse + '&remoteip=' + req.connection.remoteAddress;
 
-    console.log(req.body['g-recaptcha-response']);
-    
     request(verificationUrl, function (error, response, body) {
         body = JSON.parse(body);
 
-        if (body.success !== undefined && !body.success) {
-            return res.json({'responseCode': 1, 'responseDesc': 'Failed captcha verification'});
+        if (!body.success) {
+            return res.json(body);
         }
-        res.json({'responseCode': 0, 'responseDesc': 'Sucess'});
+        res.json({'responseCode': 0, 'responseDesc': 'success'});
     });
 });
 
@@ -113,7 +111,6 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log(proxyReqOpts)
             proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
             || srcReq.ip 
             || srcReq._remoteAddress 
@@ -130,7 +127,7 @@ app.use('/api', proxy(apiUrl, {
         return prefix + require('url').parse(req.url).path;
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log(proxyReqOpts)
+
             proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
             || srcReq.ip 
             || srcReq._remoteAddress 

@@ -13,9 +13,11 @@
 }
 
 .crypto__tab-wrapper {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-inline-box;
+  display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   background-image: radial-gradient(circle at 49% 0%, #400959, #0f0240);
