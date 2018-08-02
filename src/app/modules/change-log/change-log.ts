@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '02/08/2018',
+    'changes': [
+            'When the request for withdrawal is sent, the amount of gas needed is calculated automatically and the user receives a notification if there`s no enough credits.',
+            'Proxy server was set up to work with private requests with HitBTC,Binance, and BitTrex.',
+            'A table with last logins from devices is added to a dashboard page.',
+            'Caching is added for increasing effectiveness of work with exchanges.',
+            'A feature that allows users to remove all notifications of a certain type on the page with all notifications is enabled.',
+            'Preloader added to the table when request is being sent.',
+            'Bug, that banned users connected to one system (router) was fixed.',
+            'Connection with proxy module in Traders behavior was integrated, that will improve the security of cooperation with third-party APIs (only for Binance).',
+            'Twitter API filtering was changed that will speed up the work of social module.',
+            'Cache clearing after logout was added.'
+       ]
+    },
+    {
     'date': '01/08/2018',
     'changes': [
             'Library optimization in main module is upgraded to increase the speed of its work.',
