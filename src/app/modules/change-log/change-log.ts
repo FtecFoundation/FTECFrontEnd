@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '03/08/2018',
+    'changes': [
+            'Key deleting feature is added on My Exchanges page.',
+            'In Traders Behaviors connection with proxy module is integrated to improve safety while using third party APIs (for HitBTC).',
+            'Development of Price Notification module has started.',
+            'In Price Notification module function of saving circumstances when to notify user is added (only for Binance).',
+            'On dashboard page possibility to connect API keys is added.',
+            'API keys that are already connected are now displayed on the dashboard.',
+            'On payment page, a choice of which currency to pay with for services is added.',
+            'Integration works between database and general project structure were conducted for cooperation with BTC node.',
+            'Ability of connecting Ether, BTC, FTEC was added.',
+            'A new test mechanism of payment with Ether, BTC, FTEC was developed.'
+       ]
+    },
+    {
     'date': '02/08/2018',
     'changes': [
             'When the request for withdrawal is sent, the amount of gas needed is calculated automatically and the user receives a notification if there`s no enough credits.',
