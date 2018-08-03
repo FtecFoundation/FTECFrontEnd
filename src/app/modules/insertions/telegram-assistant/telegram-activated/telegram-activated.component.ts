@@ -49,7 +49,7 @@ export class TelegramActivatedComponent implements OnInit {
   changeNotification(notificationType: number) {
     const currentSettings = this.currentUserService.notificationSettings[notificationType];
     currentSettings.telegram = !currentSettings.telegram;
-    this.notificationService.renewNotification(NotificationSetting.from(notificationType, currentSettings))
+    this.notificationService.updateNotification(NotificationSetting.from(notificationType, currentSettings))
         .subscribe();
   }
 

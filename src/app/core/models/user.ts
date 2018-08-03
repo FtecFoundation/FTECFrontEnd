@@ -1,3 +1,5 @@
+import { Stock, AvailableExchanges } from "../../modules/insertions/arbitrage/available-exchanges";
+
 export class User {
     username: string;
     email: string;
@@ -9,13 +11,19 @@ export class User {
     confirmedEmail: boolean;
     balance: number;
     walletAddress: string;
-    notificationSettings: NotificationSetting;
+    notificationSettings: NotificationSettings;
+}
+
+export class NotificationSettings{
+    [type: number]: NotificationSetting;
 }
 
 export class NotificationSetting {
     notificationType: number;
     telegram: boolean;
     email: boolean;
+    mobileApplication: boolean;
+    sms: boolean;
 
     static from(notificationType: number, enabledNotifications: NotificationSetting): NotificationSetting {
         const setting = new NotificationSetting();
@@ -24,6 +32,12 @@ export class NotificationSetting {
         setting.telegram = enabledNotifications.telegram;
         return setting;
     }
+}
+
+export class DashboardAuthLogs {
+    date: string;
+    device: string;
+    remoteIp: string;
 }
 
 export class RegistrationData {
@@ -46,14 +60,14 @@ export class RegistrationData {
 export class ExchangeKeys {
     publicKey: string;
     privateKey: string;
-    stock: string;
+    stock: Stock;
     savingDate: Date;
 
     public static of(privateKey: string, publicKey: string, stock: string, savingDate: Date): ExchangeKeys {
         const key = new ExchangeKeys();
         key.privateKey = privateKey;
         key.publicKey = publicKey;
-        key.stock = stock;
+        key.stock = AvailableExchanges.ofName(stock);
         key.savingDate = savingDate;
         return key;
     }

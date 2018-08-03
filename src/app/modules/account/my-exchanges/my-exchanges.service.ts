@@ -28,7 +28,7 @@ export class MyExchangesService extends RestService {
     }
 
     deleteKey(exchange: ExchangeKeys): Observable<any> {
-        const params = new HttpParams().append('stock', exchange.stock);
+        const params = new HttpParams().append('stock', exchange.stock.nameToSend);
 
         return this.delete('/cabinet/apiKeys', params)
             .pipe(

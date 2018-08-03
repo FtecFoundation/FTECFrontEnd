@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MobileAppComponent} from '../mobile-app/mobile-app.component';
 import {RouterModule} from '@angular/router';
 import {BehavioralAnalyzerComponent} from './behavioral-analyzer.component';

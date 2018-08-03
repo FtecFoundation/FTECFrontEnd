@@ -5,7 +5,7 @@ import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {ExchangeKeys, NotificationSetting, User} from '../models/user';
+import {ExchangeKeys, DashboardAuthLogs, NotificationSettings, User} from '../models/user';
 import {map} from 'rxjs/operators/map';
 import {CookieService} from 'ngx-cookie-service';
 import {ErrorsService} from './errors-handling/errors.service';
@@ -26,7 +26,8 @@ enum AccountApiUrls {
     tgHash = 'modules/telegram/getHash',
     getAddress = 'cabinet/node/getAddress',
     getNotificationSettings = 'cabinet/notifications/getNotificationSettings',
-    getKeys = 'cabinet/apiKeys'
+    getKeys = 'cabinet/apiKeys',
+    getAuthLogs = 'cabinet/getLogs'
 }
 
 @Injectable()
@@ -108,13 +109,13 @@ export class AccountService extends RestService {
         );
     }
 
-    getNotificationSettings(): Observable<NotificationSetting> {
+    getNotificationSettings(): Observable<NotificationSettings> {
         return this.get(AccountApiUrls.getNotificationSettings).pipe(
             map(resp => resp.response.settings)
         );
     }
 
-    getInstalledKeys(): Observable<ExchangeKeys[]> {
+    getInstalledKeys(): Observable<any> {
         return this.get(AccountApiUrls.getKeys).pipe(
             map(value => value.response.ApiKeys),
             catchError(err => {
@@ -124,5 +125,12 @@ export class AccountService extends RestService {
             })
         );
     }
+
+    getAuthLogs(): Observable<DashboardAuthLogs[]> {
+        return this.get(AccountApiUrls.getAuthLogs).pipe(
+            map(resp => resp.response.Logs)
+        );
+    }
+
 }
 

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AccountService} from './account.service';
-import {ExchangeKeys, NotificationSetting, User} from '../models/user';
+import {ExchangeKeys, NotificationSetting, NotificationSettings, RegistrationData, User} from '../models/user';
 import {EtherscanService} from './etherscan.service';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
@@ -8,15 +8,35 @@ import {TelegramSettings} from '../models/telegram';
 import {catchError} from 'rxjs/operators/catchError';
 import {ErrorsService} from './errors-handling/errors.service';
 import {CustomException} from '../models/exceptions';
+import { TestHistory } from '../models/test-cryptoacademy';
+import { BehavioralDataTrades } from '../models/behavioral';
+import { ArbitrageWindow } from '../models/arbitrage-window';
 
 @Injectable()
 export class CurrentUserService {
     private currentUser: User;
     private telegramSettings: TelegramSettings;
     private installedKeys: ExchangeKeys[];
-    // private notificationSettings: NotificationSetting;
+
+    private registrationData: RegistrationData;
+    private notificationsData: NotificationSetting;
+    private testsData: TestHistory;
+    private behavioralData: BehavioralDataTrades;
+    private arbitrageData: ArbitrageWindow;
+
     constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
 
+    }
+
+    clearCache() {
+        this.currentUser = null;
+        this.installedKeys = null;
+        this.telegramSettings = null;
+        this.registrationData = null;
+        this.notificationsData = null;
+        this.testsData = null;
+        this.behavioralData = null;
+        this.arbitrageData = null;
     }
 
     getCurrentUser(): Observable<User> {
@@ -53,8 +73,8 @@ export class CurrentUserService {
         );
     }
 
-    getNotificationSettings(forceRefresh: boolean): Observable<NotificationSetting> {
-        if (!forceRefresh && !this.notificationSettings) { return Observable.of(this.notificationSettings); }
+    getNotificationSettings(forceRefresh: boolean): Observable<NotificationSettings> {
+        if (!forceRefresh && !this.currentUser && !this.currentUser.notificationSettings) { return Observable.of(this.currentUser.notificationSettings); }
         this._accountService.getNotificationSettings().pipe(
             map(value => this.user.notificationSettings = value),
             catchError(err => {
@@ -82,7 +102,12 @@ export class CurrentUserService {
     getStockKeys(forceRefresh: boolean): Observable<ExchangeKeys[]> {
         if (!forceRefresh && this.installedKeys) { return Observable.of(this.installedKeys); }
         return this._accountService.getInstalledKeys().pipe(
-            map(data => this.installedKeys = data)
+            map(data => {
+                this.installedKeys = [];
+                for(const key of data) {
+                    this.installedKeys.push(ExchangeKeys.of(key.privateKey, key.publicKey, key.stock, key.savingDate));
+                }
+                return this.installedKeys})
         );
     }
 

@@ -16,5 +16,4 @@ export class CaptchaService extends RestService {
             catchError(e => this.handleError(e)));
     }
 
-
 }

@@ -5,7 +5,7 @@
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
 
-        <div *ngIf="!responseData || this.responseData.operations['All'].length == 0 ">
+        <div *ngIf="!responseData || this.responseData.operations['All'].length == 0">
             You have no analyses results yet. Please, use form to start some analise.
         </div>
 
@@ -103,7 +103,7 @@
             <span>{{errorText}}</span>
 
             <div class="container__form--behavioral-select" *ngIf="!requestPreloader">
-                <h4 *ngIf="!stockToSend">To request new analysis please choose the stock!</h4>
+                <h4 *ngIf="!stockToSend" class="container__form-warning">To request new analysis please choose the stock!</h4>
                 <div class="container__form container__form--select container__form--behavioral-select">
                     <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
                 </div>
@@ -117,7 +117,10 @@
                 level 2% higher than usual.</p>
         </div> -->
 
+        <div class="filter__container filter__container--notifications filter__container--behavioral" *ngIf="!responseData || this.responseData.operations['All'].length == 0">
+            <p>To get started you need to connect the API keys on the 'my-exchanges' page</p>
+        </div>
 
-    </div>
+</div>
 
 </div>

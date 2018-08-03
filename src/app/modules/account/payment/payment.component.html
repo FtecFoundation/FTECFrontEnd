@@ -3,7 +3,7 @@
 
 <div class="main-info main-info--payment">
 
-  <div class="middle middle--telegram-enable">
+  <div class="middle middle--payment-enable">
 
     <h3 class="telegram-enable__title">To refill your balance you need:</h3>
 
@@ -20,7 +20,8 @@
       <b>
         <i>WARNING!</i>
       </b> If you won't transfer any money to the wallet for at least 2 days it will be suspended and transferred to the frozen
-      pool.</p>
+      pool.
+    </p>
     <p>QR code below contains only address of your account that allows you to scan it using mobile app or services that works
       with QR codes</p>
 
@@ -65,6 +66,19 @@
         </div>
 
         <button class="filter__container-button" (click)="showPopup()">Withdraw</button>
+      </div>
+
+      <div class="filter__container filter__container--payment">
+        <div class="filter__container">
+          <span class="container__name">Currens currency is:</span>
+
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
+          </div>
+
+        </div>
+
+        <button class="filter__container-button">Change</button>
       </div>
 
     </div>

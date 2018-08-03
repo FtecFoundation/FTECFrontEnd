@@ -3,23 +3,23 @@
   <div class="notification__head">
     <div class="middle__table-line--notification">
       <div class="notification__checker">
-        <span class="text">Disable SMS</span>
-        <figure class="button__change"></figure>
+        <span class="text">SMS Enabled</span>
+        <figure class="button__change" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].sms}"></figure>
       </div>
 
       <div class="notification__checker">
-        <span class="text">Disable Email</span>
-        <figure class="button__change" (click)="disableEmailNotification()" [ngClass]="{'is-active' : emailNotification}"></figure>
+        <span class="text">Email Enabled</span>
+        <figure class="button__change" (click)="changeMode('email')" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].email}"></figure>
       </div>
 
       <div class="notification__checker">
-        <span class="text">Disable Mobile</span>
-        <figure class="button__change"></figure>
+        <span class="text">Mobile app Enabled</span>
+        <figure class="button__change" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].mobileApplication}"></figure>
       </div>
 
       <div class="notification__checker">
-        <span class="text">Disable Telegram</span>
-        <figure class="button__change" (click)="disableTelegramNotification()" [ngClass]="{'is-active' : telegramNotification}"></figure>
+        <span class="text">Telegram Enabled</span>
+        <figure class="button__change" (click)="changeMode('telegram')" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].telegram}"></figure>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
 
       <div class="container__wrapper container__wrapper--notifications">
 
-        <a class="container__link container__link--notifications">
+        <a class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings[type].sms, 'not-active' : !_currentUserService.user.notificationSettings[0].sms}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -56,12 +56,12 @@
           </label>
         </a>
 
-        <a class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings.email, 'not-active' : emailNotification}">
+        <a class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings[type].email, 'not-active' : !_currentUserService.user.notificationSettings[0].email}">
           <label class="form__info-label-container">
-            <input type="checkbox" (click)="enableTelegram(type, 'email')">
+            <input type="checkbox">
 
             <span class="form__info-checkmark form__info-checkmark--dashboard">
-              <svg  width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              <svg (click)="changeNotificationStatus(type, 'email')" width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>2F7A4EE1-925E-4492-AA52-BF75ED4B694B</title>
                 <desc>Created with sketchtool.</desc>
@@ -87,7 +87,7 @@
           </label>
         </a>
 
-        <a class="container__link container__link--notifications">
+        <a class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings[type].mobileApplication, 'not-active' : !_currentUserService.user.notificationSettings[0].mobileApplication}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
@@ -113,12 +113,12 @@
           </label>
         </a>
 
-        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings.telegram, 'not-active' : telegramNotification}">
+        <a href="javascript:void(0)" class="container__link container__link--notifications" [ngClass]="{'is-active': _currentUserService.user.notificationSettings[type].telegram, 'not-active' : !_currentUserService.user.notificationSettings[0].telegram}">
           <label class="form__info-label-container">
             <input type="checkbox">
 
             <span class="form__info-checkmark form__info-checkmark--dashboard">
-              <svg (click)="enableTelegram(type, 'telegram')" width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              <svg (click)="changeNotificationStatus(type, 'telegram')" width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>D43FAC68-EF4D-4E72-B242-F218194FF32E</title>
                 <desc>Created with sketchtool.</desc>

@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ShowModalService} from '../../not-active/show-modal.service';
-import {AvailableExchanges, Stock} from '../../insertions/arbitrage/available-exchanges';
-import {MyExchangesService} from './my-exchanges.service';
-import {CurrentUserService} from '../../../core/services/current-user.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ShowModalService } from '../../not-active/show-modal.service';
+import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-exchanges';
+import { MyExchangesService } from './my-exchanges.service';
+import { CurrentUserService } from '../../../core/services/current-user.service';
 import { ExchangeKeys } from '../../../core/models/user';
 
 @Component({
@@ -34,19 +34,23 @@ export class MyExchangesComponent implements OnInit {
   }
 
   setKeys() {
-      this._myExchangesService.saveKey(this.privateKey, this.publicKey, this.chosenStock)
-          .subscribe(val => {
-              if (val.status === 0) { this._currentUserService
-                .addStockKey(this.privateKey.substr(0, 4), this.publicKey.substr(0, 4), this.chosenStock.nameToSend); }
-          });
+    this._myExchangesService.saveKey(this.privateKey, this.publicKey, this.chosenStock)
+      .subscribe(val => {
+        if (val.status === 0) {
+          this._currentUserService
+          .addStockKey(this.privateKey.substr(0, 4), this.publicKey.substr(0, 4), this.chosenStock.nameToSend);
+        }
+      });
   }
 
   deleteKeys(key: ExchangeKeys) {
-      this._myExchangesService.deleteKey(key)
-          .subscribe(val => {
-            if (val.status === 0) { this._currentUserService
-                .removeStockKey(key); }
-          });
+    this._myExchangesService.deleteKey(key)
+      .subscribe(val => {
+        if (val.status === 0) {
+          this._currentUserService
+          .removeStockKey(key);
+        }
+      });
   }
 
 }

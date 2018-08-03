@@ -12,7 +12,6 @@ const TelegramUrls = {
     getHash: 'modules/telegram/getHash',
     getBotDomain: 'getBotDomain',
     unlink: 'modules/telegram/unlink',
-    getNotificationSettings: 'cabinet/notifications/getNotificationSettings',
     changeModeSetting: '/cabinet/notifications/changeModeSetting',
     changeNotificationSetting: 'cabinet/notifications/changeNotificationSetting'
 };
@@ -22,12 +21,8 @@ export class NotificationService extends RestService {
     constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
-    getNotification(): Observable<any> {
-        return this.get(TelegramUrls.getNotificationSettings).pipe(
-            map(resp => resp.response.settings));
-    }
 
-    renewNotification(data: NotificationSetting): Observable<any> {
+    updateNotification(data: NotificationSetting): Observable<any> {
         return this.put(TelegramUrls.changeNotificationSetting, data);
     }
 
