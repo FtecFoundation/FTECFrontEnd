@@ -11,7 +11,7 @@ export const changeLog = [
             'On payment page, a choice of which currency to pay with for services is added.',
             'Integration works between database and general project structure were conducted for cooperation with BTC node.',
             'Ability of connecting Ether, BTC, FTEC was added.',
-            'A new test mechanism of payment with Ether, BTC, FTEC was developed.'
+            'A new test mechanism of payment with ETH, BTC, FTEC was developed.'
        ]
     },
     {
