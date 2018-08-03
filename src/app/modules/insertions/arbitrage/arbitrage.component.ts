@@ -14,7 +14,7 @@ import {Stock} from './available-exchanges';
 })
 
 export class ArbitrageComponent implements OnInit {
-    exchanges: Stock[];
+    exchanges: Stock[] = [];
     preloader = false;
     allChosen = false;
     windowsLogs: ArbitrageWindowsLog;
@@ -29,6 +29,8 @@ export class ArbitrageComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.exchanges = AvailableExchanges.availableStocks;
+
         this._arbitrageService.getOldWindows().subscribe(data => {
             this.windowsLogs = data;
         });

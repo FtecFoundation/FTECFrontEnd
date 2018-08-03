@@ -115,7 +115,7 @@ export class AccountService extends RestService {
         );
     }
 
-    getInstalledKeys(): Observable<ExchangeKeys[]> {
+    getInstalledKeys(): Observable<any> {
         return this.get(AccountApiUrls.getKeys).pipe(
             map(value => value.response.ApiKeys),
             catchError(err => {

@@ -102,7 +102,12 @@ export class CurrentUserService {
     getStockKeys(forceRefresh: boolean): Observable<ExchangeKeys[]> {
         if (!forceRefresh && this.installedKeys) { return Observable.of(this.installedKeys); }
         return this._accountService.getInstalledKeys().pipe(
-            map(data => this.installedKeys = data)
+            map(data => {
+                this.installedKeys = [];
+                for(const key of data) {
+                    this.installedKeys.push(ExchangeKeys.of(key.privateKey, key.publicKey, key.stock, key.savingDate));
+                }
+                return this.installedKeys})
         );
     }
 

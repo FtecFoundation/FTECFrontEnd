@@ -66,8 +66,9 @@ app-payment-popup {
 // ENABLE STYLES
 // ============= 
 
-.middle--telegram-enable {
+.middle--payment-enable {
   padding: 1.250em;
+  margin-left: .625em;
 
   border-radius: .313rem;
   background-image: $violet-gradient-aside;
@@ -77,13 +78,13 @@ app-payment-popup {
   font-size: 1.500em;
 }
 
-.middle--telegram-enable p,
-.middle--telegram-enable h3 {
+.middle--payment-enable p,
+.middle--payment-enable h3 {
   display: block;
   margin-bottom: 1.250em;
 }
 
-.middle--telegram-enable p {
+.middle--payment-enable p {
   width: 85%;
   opacity: 1;
 }
@@ -111,8 +112,8 @@ app-payment-popup {
 
 /deep/ {
 
-  .middle--telegram-enable qrcode img,
-  .middle--telegram-enable img
+  .middle--payment-enable qrcode img,
+  .middle--payment-enable img
   {
     margin-bottom: 1.250em;
     left: 50%;
@@ -180,4 +181,12 @@ app-payment-popup {
 
 .middle__table-container-item--payment {
   width: 100%;
+}
+
+.filter__container--payment {
+  width: 100%;
+  padding: 1.250em;
+  margin-top: 1.250rem;
+  border-radius: .625rem;
+  background-image: $violet-gradient-aside;
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CurrentUserService } from '../../../core/services/current-user.service';
+import { AvailableExchanges } from '../../insertions/arbitrage/available-exchanges';
 
 @Component({
     selector: 'app-payment',
@@ -14,6 +15,7 @@ export class PaymentComponent implements OnInit {
     public qrUrl: string;
 
     showPopupModal = false;
+    exchanges = AvailableExchanges.availableStocks;
 
     ngOnInit(): void {
         this.qrUrl = this._currentUserService.user.walletAddress;

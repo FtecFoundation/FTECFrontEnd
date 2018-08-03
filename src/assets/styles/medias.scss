@@ -50,14 +50,21 @@
   [_nghost-c9],
   [_nghost-c10],
   [_nghost-c11],
-  [_nghost-c12],
+  [_nghost-c12],  
+  [_nghost-c13],
   [_nghost-c14],
   [_nghost-c15],
   [_nghost-c16],
   [_nghost-c17],
   [_nghost-c18],
   [_nghost-c19],
-  [_nghost-c20] {
+  [_nghost-c20],
+  [_nghost-c21],
+  [_nghost-c22],
+  [_nghost-c23],
+  [_nghost-c24],
+  [_nghost-c25],
+  [_nghost-c26] {
     width: 100% !important;
     padding-top: .500rem !important;
   }
@@ -73,6 +80,10 @@
   .middle {
     width: 55%;
     padding-left: 0.625rem !important;
+  }
+
+  .middle--payment-enable {
+    width: 58%;
   }
   
   .header__left-bar {
@@ -177,6 +188,12 @@
   [_nghost-c18],
   [_nghost-c19],
   [_nghost-c20],
+  [_nghost-c21],
+  [_nghost-c22],
+  [_nghost-c23],
+  [_nghost-c24],
+  [_nghost-c25],
+  [_nghost-c26],
   .container__middle,
   .filter__container--dashboard,
   .container-item-update,
@@ -257,6 +274,16 @@
 
   .middle {
     padding-left: 0 !important;
+  }
+
+  .middle--payment-enable {
+    padding-left: 1.125em !important;
+    margin-left: 0;
+    margin-bottom: 1.250em;
+  }
+
+  .filter__container-aside--payment {
+    padding: 0;
   }
 
   .aside-right {

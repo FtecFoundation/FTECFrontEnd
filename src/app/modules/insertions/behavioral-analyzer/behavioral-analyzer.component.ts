@@ -18,6 +18,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
     select = false;
     errorText = '';
     stockSelected = false;
+    connectedKeys = false;
     data = [
         {
             'name': 'New Zealand',
@@ -107,10 +108,10 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
         this._currentUserService.getStockKeys(false).subscribe(keys => {
 
-
             for (const key of keys) {
-                this.installedStocks.push(AvailableExchanges.ofName(key.stock));
+                this.installedStocks.push(AvailableExchanges.ofName(key.stock.nameToSend));
             }
+            this.connectedKeys = true;
         });
 
     }
