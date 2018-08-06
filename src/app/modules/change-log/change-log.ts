@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '06/08/2018',
+    'changes': [
+            'Tweets amount limit is added in social module.',
+            'Emailing feature is added on Forgot Password page.',
+            'We reviewed database architecture to avoid illogical data storage with the help of implementation of limitations.',
+            'The function of displaying the pop-up was added.',
+            'We changed the interval of candle building for HitBTC, which will improve the speed of the work of Service of Trader\'s Behavioral Analysis.',
+            'In Module of Price Notification, we added the function of maintaining conditions when it\'s necessary to notify the user (for Bittrex only).',
+            'In Module of Price Notification, we added the function of saving current price for the pair (for Binance only).',
+            'We began the work on getting candles from Binance for Service of Trader\'s Behavioral Analysis.',
+            'Interface and models for the work with various exchanges were specified at frontend.',
+            'Module of Price Notification now uses proxy servers for additional security.'
+       ]
+    },
+    {
     'date': '03/08/2018',
     'changes': [
             'Key deleting feature is added on My Exchanges page.',
