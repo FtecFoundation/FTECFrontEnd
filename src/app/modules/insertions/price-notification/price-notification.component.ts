@@ -18,4 +18,16 @@ export class PriceNotificationComponent implements OnInit {
   ngOnInit() {
   }
 
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 10) {
+      return Math.round(value / 10) + '%';
+    }
+
+    return value;
+  }
+
 }

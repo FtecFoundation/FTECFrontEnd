@@ -143,6 +143,7 @@ p {
 
 .container__form--range {
   position: relative;
+  background-color: transparent !important;
 }
 
 .container__form--range::before,
@@ -158,12 +159,12 @@ p {
 }
 
 .container__form--range::before {
-  content: "-100%";
+  content: "5%";
   left: 0;
 }
 
 .container__form--range::after {
-  content: "+100%";
+  content: "+95%";
   right: 1.75em;
 }
 
@@ -664,6 +665,8 @@ input[type=range]:focus::-ms-fill-upper {
 .middle__table-container--dashboard {
   padding-top: .625rem;
   padding-bottom: .625rem;
+  overflow-y: scroll;
+  max-height: 275px;
 }
 
 .item-inner-line__balance {
@@ -818,6 +821,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .item-inner-line {
+  font-size: .938em;
   text-align: left;
 
   display: -webkit-box;

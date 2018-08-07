@@ -352,6 +352,8 @@
   left: 50%;
   cursor: pointer;
   position: absolute;
+
+  transform: translateX(-50%);
 }
 
 .item-inner-line--error-icon:hover + .item-inner-line-error-block {

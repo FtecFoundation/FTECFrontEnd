@@ -1,0 +1,9 @@
+<div class="filter__container">
+
+  <div class="container__form container__form--range">
+    <span [style.left.%]="value">{{value}}%</span>
+
+    <input type="range" name="range" min="5" max="95" [(ngModel)]="value">
+  </div>
+
+</div>

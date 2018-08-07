@@ -3,7 +3,7 @@
 .notify {
   z-index: 997;
   right: -100%;
-  bottom: 0;
+  bottom: .938em;
   max-width: 400px;
   margin-left: .938em;
   padding: 2em;
@@ -15,7 +15,7 @@
   border-radius: .625rem;
   background-color: $dark-blue;
 
-  display: none;
+
 }
 
 .notify.is-active {
