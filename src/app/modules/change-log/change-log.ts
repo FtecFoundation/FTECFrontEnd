@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+    'date': '07/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function of deleting the condition when it\'s necessary to notify the user.',
+            'We began the connection of new exchange (Poloniex) in Service of Trader\'s Behavioral Analysis.',
+            'Validation of API keys is moved from Service of Trader\'s Behavioral Analysis to Proxy module.',
+            'We made a slider for Module of Price Notification and Exchange Order Management Module.'
+       ]
+    },
+    {
     'date': '06/08/2018',
     'changes': [
             'Tweets amount limit is added in social module.',
