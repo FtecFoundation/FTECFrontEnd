@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+    'date': '08/08/2018',
+    'changes': [
+            'In Service of Trader\'s Behavioral Analysis, we added the function that make it possible to see the last user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the  function that make it possible to see candles for user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function of calculating statistics for user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function of generating the recommendations for statistics of user's deals from Poloniex API.'
+       ]
+    },
+    {
     'date': '07/08/2018',
     'changes': [
             'In Module of Price Notification, we added the function of deleting the condition when it\'s necessary to notify the user.',
