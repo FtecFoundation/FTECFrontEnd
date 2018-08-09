@@ -1,5 +1,18 @@
 export const changeLog = [
     {
+    'date': '09/08/2018',
+    'changes': [
+            'We added the function of saving the conditions when it\'s necessary to notify the user in Module of Price Notification (for HitBTC).',
+            'We added the function of saving the current currency price in Module of Price Notification (for BitTrex).',
+            'In Service of Trader\'s Behavioral Analysis, the possibility to work with Poloniex was added and tested.',
+            'We improved the effectiveness of Telegram Assistant, using new framework.',
+            'We developed and tested the integration of three methods of payment in the main module.',
+            'Binance, BitTrex, and HitBTC now work correctly with API at frontend.',
+            'We implemented the request for getting all available pairs from Binance, BitTrex, and HitBTC at frontend.',
+            'The proxy server for sending the requests from frontend to API exchanges was configured.'
+       ]
+    },
+    {
     'date': '08/08/2018',
     'changes': [
             'In Service of Trader\'s Behavioral Analysis, we added the function that make it possible to see the last user\'s deals from Poloniex API.',
