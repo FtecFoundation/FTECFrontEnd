@@ -9,7 +9,7 @@ import {ShowStubService} from './stub-modal.service';
   styleUrls: ['./stub.component.scss']
 })
 
-export class StubComponent implements OnInit, AfterViewInit {
+export class StubComponent implements OnInit{
 
   @Input() opened: boolean;
   @Input() title: string;
@@ -22,9 +22,6 @@ export class StubComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit() {
   }
 
   closeModal() {

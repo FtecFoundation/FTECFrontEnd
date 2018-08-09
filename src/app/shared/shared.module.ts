@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PreloaderComponent} from './preloader/preloader.component';
 import {DropdownComponent } from './dropdown/dropdown.component';
 import {NotifyComponent} from './notify/notify.component';
+import {SliderComponent} from "../modules/slider/slider.component";
 
 @NgModule({
     imports: [
@@ -17,12 +18,14 @@ import {NotifyComponent} from './notify/notify.component';
         FormsModule,
         PreloaderComponent,
         DropdownComponent,
-        NotifyComponent
+        NotifyComponent,
+        SliderComponent
     ],
     declarations: [
         PreloaderComponent,
         DropdownComponent,
-        NotifyComponent
+        NotifyComponent,
+        SliderComponent
     ]
 })
 export class SharedModule {

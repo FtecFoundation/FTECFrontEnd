@@ -12,8 +12,7 @@ import { SliderComponent } from '../../slider/slider.component';
         SharedModule,
         PriceNotificationRoutingModule
     ],
-    declarations: [PriceNotificationComponent,
-        SliderComponent]
+    declarations: [PriceNotificationComponent]
 })
 export class PriceNotificationModule {
 }

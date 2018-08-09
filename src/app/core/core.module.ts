@@ -22,6 +22,7 @@ import {ServerErrorsInterceptor} from './services/errors-handling/errors.interce
 import {EtherscanService} from './services/etherscan.service';
 import {ConfirmedEmailGuard} from './guards/confirmed-email.guard';
 import {PreferencesService} from './services/preferences.service';
+import {BinanceService} from "./services/exchanges/binance.service";
 
 @NgModule({
     imports: [
@@ -49,6 +50,7 @@ import {PreferencesService} from './services/preferences.service';
         CurrentUserService,
         CaptchaService,
         PreferencesService,
+        BinanceService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

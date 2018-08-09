@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { priceNotification } from './price-notification';
 import { AvailableExchanges } from '../arbitrage/available-exchanges';
+import {BinanceService} from "../../../core/services/exchanges/binance.service";
 
 @Component({
   selector: 'app-social',
@@ -12,10 +13,11 @@ export class PriceNotificationComponent implements OnInit {
   exchanges = AvailableExchanges.availableStocks;
   price = priceNotification;
 
-  constructor() {
+  constructor(private bS: BinanceService) {
   }
 
   ngOnInit() {
+    this.bS.getPairs().subscribe(data => console.log(data));
   }
 
   formatLabel(value: number | null) {

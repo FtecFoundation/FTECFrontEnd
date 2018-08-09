@@ -12,8 +12,7 @@ import { SliderComponent } from '../../slider/slider.component';
         SharedModule,
         OrderManagerRoutingModule
     ],
-    declarations: [OrderManagerComponent,
-        SliderComponent]
+    declarations: [OrderManagerComponent]
 })
 export class OrderManagerModule {
 }
