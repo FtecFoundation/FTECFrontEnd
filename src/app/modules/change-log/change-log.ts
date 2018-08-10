@@ -1,5 +1,16 @@
 export const changeLog = [
     {
+    'date': '10/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function which makes it possible to see all notifications when it\'s necessary to notify the user (for Binance).',
+            'Service of Trader\'s Behavioral Analysis was fully transferred to the proxy server at backend.',
+            'Notification Module was fully integrated to Module of Price Notification, which enables working with this module on the page of all notification configurations.',
+            'We also added the possibility to work with Module of Price Notification on the page of all notification configurations at frontend.',
+            'At frontend, we implemented loading of the information about candlesticks from HitBTC for displaying the chart in Service of Trader\'s Behavioral Analysis.',
+            'In Service of Trader\'s Behavioral Analysis, outdated recommendations are highlighted now.'
+       ]
+    },
+    {
     'date': '09/08/2018',
     'changes': [
             'We added the function of saving the conditions when it\'s necessary to notify the user in Module of Price Notification (for HitBTC).',
@@ -15,8 +26,8 @@ export const changeLog = [
     {
     'date': '08/08/2018',
     'changes': [
-            'In Service of Trader\'s Behavioral Analysis, we added the function that make it possible to see the last user\'s deals from Poloniex API.',
-            'In Service of Trader\'s Behavioral Analysis, we added the function that make it possible to see candles for user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function that makes it possible to see the last user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function that makes it possible to see candles for user\'s deals from Poloniex API.',
             'In Service of Trader\'s Behavioral Analysis, we added the function of calculating statistics for user\'s deals from Poloniex API.',
             'In Service of Trader\'s Behavioral Analysis, we added the function of generating the recommendations for statistics of user\'s deals from Poloniex API.'
        ]
