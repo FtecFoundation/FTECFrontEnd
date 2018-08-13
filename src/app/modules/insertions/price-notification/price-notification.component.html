@@ -165,7 +165,7 @@
 
       </div> -->
 
-      <app-slider></app-slider>
+      <app-slider (valueToSend)="getProfitPercent($event)"></app-slider>
 
       <div class="filter__container">
         <span class="container__name">Price</span>
@@ -177,7 +177,7 @@
 
       </div>
 
-      <button class="filter__container-button">Add notification</button>
+      <button class="filter__container-button" (click)="submitForm()">Add notification</button>
     </form>
 
     <div class="filter__container filter__container--notifications">

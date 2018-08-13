@@ -19,6 +19,7 @@ export class PriceNotificationComponent implements OnInit {
     price = priceNotification;
     allPairs: Pair[] = [];
     pairs: Pair[] = [];
+    profitPercent: number = 0;
 
     constructor(private currentUser: CurrentUserService, private hitbtcService: HitBTCService,
                 private bittrexService: BittrexService, private binanceService: BinanceService) {
@@ -40,6 +41,11 @@ export class PriceNotificationComponent implements OnInit {
 
     onPairTyping(pair: string) {
         this.filterPairs(pair);
+    }
+
+    getProfitPercent(value: number) {
+        this.profitPercent = value;
+        console.log(this.profitPercent);
     }
 
     filterPairs(key: string) {
