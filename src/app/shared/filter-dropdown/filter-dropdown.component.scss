@@ -47,10 +47,12 @@
   }
 }
 
-.form__select-item{
-  background: transparent;
+.form__select-item {
+  width: 100%;
   outline: none;
   color: white;
+  border: none;
+  background: transparent;
 }
 
 .form__select-list-item {
@@ -71,4 +73,10 @@
 
 .form__select-list-item:first-child {
   border-radius: 20px 20px 0 0;
+}
+
+.form__select--pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
