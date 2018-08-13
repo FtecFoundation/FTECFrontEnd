@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '13/08/2018',
+    'changes': [
+            'We added the function of saving the condition when it\'s necessary to notify the user (for Poloniex) in Module of Price Notification.',
+            'The function of calculating the difference between the current price for the pair and the price saved by the user was added in Module of Price Notification (for Binance).',
+            'In Module of Price Notification, we added the function, which sends a notification to the user when the condition is fulfilled.',
+            'We implemented the visual display of all available pairs and exchanges in a component of filtering dropdown.',
+            'The function which saves condition as a file (logging) when the condition is fulfilled was added in Module of Price Notification.',
+            'The functionality for full-fledged work with BTC node for payment was implemented.',
+            'We developed the functionality for automatic adding tests to Cryptoacademy.',
+        'On Module of Price Notification page, loading the relevant price for the pair from Binance, Bittrex, HitBTC was added.',
+        'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.',
+        'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.'
+       ]
+    },
+    {
     'date': '10/08/2018',
     'changes': [
             'In Module of Price Notification, we added the function which makes it possible to see all notifications when it\'s necessary to notify the user (for Binance).',
