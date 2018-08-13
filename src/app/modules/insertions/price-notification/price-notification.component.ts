@@ -7,6 +7,8 @@ import {CurrentUserService} from "../../../core/services/current-user.service";
 import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
 import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {Pair} from "../../../core/models/pair";
+import {ExchangeService} from "../../../core/services/exchanges/exchange.service";
+import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
 
 @Component({
     selector: 'app-social',
@@ -20,32 +22,41 @@ export class PriceNotificationComponent implements OnInit {
     allPairs: Pair[] = [];
     pairs: Pair[] = [];
     profitPercent: number = 0;
+    selectedPair: Pair;
+    pairPrice: number;
+    pairExchange: string = '';
 
-    constructor(private currentUser: CurrentUserService, private hitbtcService: HitBTCService,
-                private bittrexService: BittrexService, private binanceService: BinanceService) {
+    constructor(private currentUser: CurrentUserService, private exchangesService: ExchangesService) {
     }
 
     ngOnInit() {
-        this.binanceService.getPairs().subscribe(data => {
-            for (const pair of data) this.allPairs.push(pair);
-        });
-
-        this.bittrexService.getPairs().subscribe(data => {
-            for (const pair of data) this.allPairs.push(pair);
-        });
-
-        this.hitbtcService.getPairs().subscribe(data => {
-            for (const pair of data) this.allPairs.push(pair);
-        });
+        for (const exchange of Object.keys(this.exchangesService.exchanges)) {
+            this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
+                for (const pair of data) this.allPairs.push(pair);
+            });
+        }
     }
 
     onPairTyping(pair: string) {
         this.filterPairs(pair);
     }
 
+    onPairSelected(pair: Pair) {
+        this.selectedPair = pair;
+        this.exchangesService.exchanges[pair.exchange.name].getPrice(pair).subscribe(data => {
+            this.pairPrice = data;
+        });
+        this.pairExchange = pair.exchange.name;
+    }
+
+    toPercent(): number {
+        const res =  ((this.pairPrice * 2) - (this.pairPrice / 2)) / 200;
+        if (this.profitPercent > 0) return this.pairPrice + res;
+        else return this.pairPrice - res;
+    }
+
     getProfitPercent(value: number) {
         this.profitPercent = value;
-        console.log(this.profitPercent);
     }
 
     filterPairs(key: string) {

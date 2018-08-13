@@ -2,6 +2,7 @@ import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, 
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { routerAnimation } from '../dropdown/dropdown.animation';
 import { transition, trigger, useAnimation } from '@angular/animations';
+import {Pair} from "../../core/models/pair";
 
 @Component({
     selector: 'app-filter-dropdown',
@@ -31,6 +32,9 @@ export class FilterDropdownComponent<T> implements OnInit, OnChanges {
 
 
     @Output() selected: EventEmitter<string> = new EventEmitter<string>();
+    @Output() selectedPair: EventEmitter<Pair> = new EventEmitter<Pair>();
+
+    currentPair: Pair;
 
     _active: T;
 
@@ -79,6 +83,12 @@ export class FilterDropdownComponent<T> implements OnInit, OnChanges {
 
     select(value: T): void {
         this.active = value;
+        this.opened = false;
+    }
+
+    selectPair(value: Pair): void {
+        this.currentPair = value;
+        this.selectedPair.emit(value);
         this.opened = false;
     }
 

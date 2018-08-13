@@ -140,7 +140,7 @@
         <div class="filter__container--price">
 
           <div class="container__form container__form--select is-active">
-            <app-filter-dropdown [label]="'Pair'" (selected)="onPairTyping($event)" [items]="pairs" [keyName]="'pair'"></app-filter-dropdown>
+            <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)" (selected)="onPairTyping($event)" [items]="pairs" [keyName]="'pair'"></app-filter-dropdown>
           </div>
 
         </div>
@@ -149,9 +149,10 @@
       <div class="filter__container">
         <span class="container__name">Exchanges</span>
 
-        <div class="container__form container__form--select is-active">
-          <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
-        </div>
+          <div class="container__form">
+            <input class="form__input" placeholder="Exchange" [value]="pairExchange" readonly>
+          </div>
+
 
       </div>
 
@@ -172,12 +173,12 @@
 
         <div class="container__form">
           <label for="" class="form__label"></label>
-          <input type="number" class="form__input" placeholder="$840">
+          <input type="number" class="form__input" placeholder="Price" [value]="toPercent()" readonly>
         </div>
 
       </div>
 
-      <button class="filter__container-button" (click)="submitForm()">Add notification</button>
+      <button class="filter__container-button">Add notification</button>
     </form>
 
     <div class="filter__container filter__container--notifications">

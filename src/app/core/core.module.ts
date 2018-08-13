@@ -25,6 +25,7 @@ import {PreferencesService} from './services/preferences.service';
 import {BinanceService} from "./services/exchanges/binance.service";
 import {HitBTCService} from "./services/exchanges/hitbtc.service";
 import {BittrexService} from "./services/exchanges/bittrex.service";
+import {ExchangesService} from "./services/exchanges/exchanges.service";
 
 @NgModule({
     imports: [
@@ -55,6 +56,7 @@ import {BittrexService} from "./services/exchanges/bittrex.service";
         BinanceService,
         HitBTCService,
         BittrexService,
+        ExchangesService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,
