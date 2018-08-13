@@ -4,33 +4,34 @@ import {ExchangeService} from "./exchange.service";
 import {Observable} from "rxjs/Observable";
 import {Pair} from "../../models/pair";
 import {tap} from 'rxjs/operators/tap';
+import {map} from "rxjs/operators";
+import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
 
 @Injectable()
 export class BinanceService implements ExchangeService{
-  baseUrl: string = 'https://bittrex.com/api/v1.1/public/';
+  baseUrl: string = '/binance/';
   apiUrls = {
-    getPairs: 'getmarkets'
+    getPairs: 'ticker/allPrices'
   };
 
   constructor(private _http: HttpClient) { }
 
-  getPairs(): Observable<any> {
-    return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(tap(resp => {
-      let pairs = [];
-      for (const pair of resp){
-        this.getBaseCurrency(pair.symbol);
-        this.getCurrency(pair.symbol);
-        }
-    }));
-  }
+    getPairs(): Observable<Pair[]> {
+        return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(map(resp => {
+            let pairs = [];
+            for (const pair of Object.keys(resp)) {
+                if (resp[pair].symbol.indexOf('USD') === -1)
+                pairs.push(new Pair().of(this.getMarketCurrency(resp[pair].symbol), this.getBaseCurrency(resp[pair].symbol), AvailableExchanges.Binance))
+            }
+            return pairs;
+        }));
+    }
 
-  getBaseCurrency(symbol: string) {
-    console.log(symbol.substring(symbol.length - 4, symbol.length - 1));
-    return symbol.substring(symbol.length - 4, symbol.length - 1);
-  }
+    getBaseCurrency(symbol: string): string {
+        return symbol.substring(symbol.length - 3);
+    }
 
-    getCurrency(symbol: string) {
-        console.log(symbol.substring(symbol.length - 4));
-        return symbol.substring(symbol.length - 4);
+    getMarketCurrency(symbol: string): string {
+        return symbol.substring(0, symbol.length - 3);
     }
 }

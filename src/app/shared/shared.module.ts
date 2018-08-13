@@ -5,6 +5,7 @@ import {PreloaderComponent} from './preloader/preloader.component';
 import {DropdownComponent } from './dropdown/dropdown.component';
 import {NotifyComponent} from './notify/notify.component';
 import {SliderComponent} from "../modules/slider/slider.component";
+import {FilterDropdownComponent} from "./filter-dropdown/filter-dropdown.component";
 
 @NgModule({
     imports: [
@@ -19,13 +20,15 @@ import {SliderComponent} from "../modules/slider/slider.component";
         PreloaderComponent,
         DropdownComponent,
         NotifyComponent,
-        SliderComponent
+        SliderComponent,
+        FilterDropdownComponent
     ],
     declarations: [
         PreloaderComponent,
         DropdownComponent,
         NotifyComponent,
-        SliderComponent
+        SliderComponent,
+        FilterDropdownComponent
     ]
 })
 export class SharedModule {

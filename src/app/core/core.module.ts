@@ -23,6 +23,8 @@ import {EtherscanService} from './services/etherscan.service';
 import {ConfirmedEmailGuard} from './guards/confirmed-email.guard';
 import {PreferencesService} from './services/preferences.service';
 import {BinanceService} from "./services/exchanges/binance.service";
+import {HitBTCService} from "./services/exchanges/hitbtc.service";
+import {BittrexService} from "./services/exchanges/bittrex.service";
 
 @NgModule({
     imports: [
@@ -51,6 +53,8 @@ import {BinanceService} from "./services/exchanges/binance.service";
         CaptchaService,
         PreferencesService,
         BinanceService,
+        HitBTCService,
+        BittrexService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

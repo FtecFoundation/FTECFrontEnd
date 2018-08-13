@@ -140,11 +140,7 @@
         <div class="filter__container--price">
 
           <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
-          </div>
-
-          <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
+            <app-filter-dropdown [label]="'Pair'" (selected)="onPairTyping($event)" [items]="pairs" [keyName]="'pair'"></app-filter-dropdown>
           </div>
 
         </div>

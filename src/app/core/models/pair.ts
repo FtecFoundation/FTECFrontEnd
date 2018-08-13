@@ -7,7 +7,7 @@ export class Pair {
 
     of(symbol: string, base: string, exchange: Stock): Pair {
         let pair = new Pair();
-        pair.exchange = exchange;
+        pair.symbol = symbol;
         pair.base = base;
         pair.exchange = exchange;
         return pair;

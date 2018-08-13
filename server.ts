@@ -44,7 +44,7 @@ let port = 4200;
 let secretCaptcha = '';
 
 process.argv.forEach(function (val, index, array) {
-    if(val.startsWith('--prod_enabled')) {
+    if (val.startsWith('--prod_enabled')) {
         // `!!` casts string to boolean
         prod = !!val.substring(val.indexOf('=') + 1);
     }
@@ -83,6 +83,24 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.use('/hitbtc', proxy('https://api.hitbtc.com', {
+    proxyReqPathResolver: function (req) {
+        return '/api/2/public' + require('url').parse(req.url).path;
+    }
+}));
+
+app.use('/bittrex', proxy('https://bittrex.com', {
+    proxyReqPathResolver: function (req) {
+        return '/api/v1.1/public' + require('url').parse(req.url).path;
+    }
+}));
+
+app.use('/binance', proxy('https://api.binance.com', {
+    proxyReqPathResolver: function (req) {
+        return '/api/v1' + require('url').parse(req.url).path;
+    }
+}));
+
 app.get('/api/properties/getPreferences', function (req, res) {
     res.json({botDomain: botDomain, etherscanPrefix: etherscanPrefix, contractAddress: contractAddress});
 });
@@ -111,9 +129,9 @@ app.use('/api/cabinet/image', proxy(apiUrl, {
         return prefix + '/cabinet/image';
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-            proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
-            || srcReq.ip 
-            || srcReq._remoteAddress 
+        proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
+            || srcReq.ip
+            || srcReq._remoteAddress
             || (srcReq.connection && srcReq.connection.remoteAddress);
         return proxyReqOpts
     },
@@ -128,9 +146,9 @@ app.use('/api', proxy(apiUrl, {
     },
     proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
 
-            proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
-            || srcReq.ip 
-            || srcReq._remoteAddress 
+        proxyReqOpts.headers['user-forward'] = (srcReq.headers && srcReq.headers['x-forwarded-for'])
+            || srcReq.ip
+            || srcReq._remoteAddress
             || (srcReq.connection && srcReq.connection.remoteAddress);
         return proxyReqOpts
     }

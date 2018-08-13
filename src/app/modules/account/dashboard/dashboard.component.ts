@@ -9,6 +9,9 @@ import { DashboardAuthLogs, ExchangeKeys } from '../../../core/models/user';
 import { MyExchangesComponent } from '../my-exchanges/my-exchanges.component';
 import { MyExchangesService } from '../my-exchanges/my-exchanges.service';
 import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-exchanges';
+import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
+import {BinanceService} from "../../../core/services/exchanges/binance.service";
+import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 
 
 @Component({
