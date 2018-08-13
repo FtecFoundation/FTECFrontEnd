@@ -9,7 +9,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 export class SliderComponent implements OnInit {
     @Output() valueToSend: EventEmitter<number> = new EventEmitter<number>();
-    value: number = 0;
+    value: string = ''+0;
 
     constructor() {
     }
@@ -20,7 +20,7 @@ export class SliderComponent implements OnInit {
     }
 
     emitValue(){
-        this.valueToSend.emit(this.value);
+        this.valueToSend.emit(Number.parseInt(this.value));
     }
 
     ngOnInit() {
