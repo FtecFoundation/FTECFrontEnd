@@ -7,10 +7,9 @@
         <!--<span class="form__select-list-item"-->
               <!--(click)="select(null)">{{label}}</span>-->
         <ng-container *ngFor="let item of items">
-            <span class="form__select-list-item"
-                  (click)="select(item)" *ngIf="item !== active && keyName === 'pair'">{{item['symbol']}}/{{item['base']}}</span>
-            <span class="form__select-list-item"
-                  (click)="select(item)" *ngIf="item !== active && keyName === 'pair'">{{item['exchange'].name}}</span>
+            <span class="form__select-list-item form__select--pair"
+                  (click)="select(item)" *ngIf="item !== active && keyName === 'pair'">{{item['symbol']}}/{{item['base']}}
+            <span>smth</span></span>
             <span class="form__select-list-item"
                   (click)="select(item)" *ngIf="item !== active && keyName !== 'pair'">{{keyName?item[keyName]:item}}</span>
         </ng-container>
