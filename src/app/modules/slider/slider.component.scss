@@ -1,7 +1,164 @@
 @import "../../../assets/styles/variables";
 
+.container__form--range {
+  position: relative;
+  background-color: transparent !important;
+}
+
+.container__form--range::before,
+.container__form--range::after {
+  bottom: -.638em;
+  width: 5%;
+  height: 5%;
+  display: block;
+  position: absolute;
+  opacity: .7;
+
+  font-size: 14px;
+}
+
+.container__form--range::before {
+  content: "-100%";
+  left: 0;
+}
+
+.container__form--range::after {
+  content: "+100%";
+  right: 1.75em;
+}
 
 .container__form--range {
   margin: 50px 0;
   background-color: transparent;
 }
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+
+
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: $white;
+  cursor: pointer;
+  margin-top: -8px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: $white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: $white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+  position: relative;
+}
+
+.container__form--range span {
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  position: absolute;
+  padding: .625em;
+  border-radius: .313rem;
+
+  color: $green;
+  background-color: $dark-blue;
+  border: 1px solid $light-violete;
+}
+
+
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  width: 100%;
+  height: 9px;
+  border-radius: 28px;
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+
+input[type=range]::-moz-range-track {
+  cursor: pointer;
+  width: 100%;
+  height: 9px;
+  border-radius: 28px;
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 9px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  border-radius: 28px;
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+input[type=range]::-ms-fill-upper {
+  border-radius: 28px;
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+input[type=range]:focus::-ms-fill-upper {
+  border-radius: 28px;
+  background-image: linear-gradient(to right, #12a7f6, #25cbd3);
+  box-shadow: 0 11px 20px 0 rgba(31, 7, 72, 0.6), 0 0 4px 1px #25cbd3;
+}
+
