@@ -58,6 +58,13 @@ export class PriceNotificationComponent implements OnInit {
         else return price - res;
     }
 
+    deleteNotification(id: number) {
+        this.pNotificationService.deleteNotification(id).subscribe(data => {
+            this.available = data;
+            this.priceNotifications = this.priceNotifications.filter(notif => notif.id !== id);
+        })
+    }
+
     getProfitPercent(value: number) {
         this.profitPercent = value;
     }
