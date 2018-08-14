@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '14/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function which deletes a condition from the database when condition is fulfilled.',
+            'We added the error handling when the user enters a nonexistence pair in Module of Price Notification (for Binance).',
+            'The function of saving the current price of the pair was added in Module of Price Notification (for HitBTC).',
+            'Module of Price Notification was integrated to the main module.',
+            'For all dropdown lists, at frontend we added the possibility to close them by clicking outside this list.',
+            'We began the work on implementing the functionality for the work with his referral partners at frontend.',
+            'We added the possibility to register, using the referral link at frontend.',
+            'Module of Price Notification was integrated with notification service.',
+            'At backend, the possibility to add and change Cryptoacademy tests through API was added.',
+            'We implemented the possibility to get information about all relevant notification about reaching a specific level at frontend.'
+       ]
+    },
+    {
     'date': '13/08/2018',
     'changes': [
             'We added the function of saving the condition when it\'s necessary to notify the user (for Poloniex) in Module of Price Notification.',
@@ -9,9 +24,9 @@ export const changeLog = [
             'The function which saves condition as a file (logging) when the condition is fulfilled was added in Module of Price Notification.',
             'The functionality for full-fledged work with BTC node for payment was implemented.',
             'We developed the functionality for automatic adding tests to Cryptoacademy.',
-        'On Module of Price Notification page, loading the relevant price for the pair from Binance, Bittrex, HitBTC was added.',
-        'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.',
-        'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.'
+            'On Module of Price Notification page, loading the relevant price for the pair from Binance, Bittrex, HitBTC was added.',
+            'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.',
+            'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.'
        ]
     },
     {
