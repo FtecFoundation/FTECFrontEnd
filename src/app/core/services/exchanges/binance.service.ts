@@ -40,8 +40,7 @@ export class BinanceService implements ExchangeService {
     getPrice(pair: Pair): Observable<number> {
         const param = new HttpParams().set('symbol', pair.symbol + pair.base);
         return this._http.get(this.baseUrl + this.apiUrls.getPrice, {params: param}).pipe(map(resp => {
-            console.log(resp);
-            return resp['price'];
+            return Number.parseFloat(resp['price']);
         }));
     }
 }

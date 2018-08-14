@@ -83,21 +83,21 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use('/hitbtc', proxy('https://api.hitbtc.com', {
+app.use('/hitbtc', proxy('http://188.166.22.122', {
     proxyReqPathResolver: function (req) {
-        return '/api/2/public' + require('url').parse(req.url).path;
+        return 'hitbtc/api/2/public' + require('url').parse(req.url).path;
     }
 }));
 
-app.use('/bittrex', proxy('https://bittrex.com', {
+app.use('/bittrex', proxy('http://188.166.22.122', {
     proxyReqPathResolver: function (req) {
-        return '/api/v1.1/public' + require('url').parse(req.url).path;
+        return 'bittrex/api/v1.1/public' + require('url').parse(req.url).path;
     }
 }));
 
-app.use('/binance', proxy('https://api.binance.com', {
+app.use('/binance', proxy('http://188.166.22.122', {
     proxyReqPathResolver: function (req) {
-        return '/api/v1' + require('url').parse(req.url).path;
+        return 'binance/api/v1' + require('url').parse(req.url).path;
     }
 }));
 

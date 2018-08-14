@@ -4,6 +4,7 @@ import { PriceNotificationRoutingModule } from './price-notification-routing.mod
 import { PriceNotificationComponent } from './price-notification.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { SliderComponent } from '../../slider/slider.component';
+import {PriceNotificationService} from "./price-notification.service";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SliderComponent } from '../../slider/slider.component';
         SharedModule,
         PriceNotificationRoutingModule
     ],
-    declarations: [PriceNotificationComponent]
+    declarations: [PriceNotificationComponent],
+    providers: [PriceNotificationService]
 })
 export class PriceNotificationModule {
 }

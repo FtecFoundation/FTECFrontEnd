@@ -92,6 +92,10 @@ export class FilterDropdownComponent<T> implements OnInit, OnChanges {
         this.opened = false;
     }
 
+    closeDropdown() {
+        this.opened = false;
+    }
+
     @Input()
     set value(value: T) {
         this._active = value;

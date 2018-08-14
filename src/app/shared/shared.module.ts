@@ -6,6 +6,7 @@ import {DropdownComponent } from './dropdown/dropdown.component';
 import {NotifyComponent} from './notify/notify.component';
 import {SliderComponent} from "../modules/slider/slider.component";
 import {FilterDropdownComponent} from "./filter-dropdown/filter-dropdown.component";
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import {FilterDropdownComponent} from "./filter-dropdown/filter-dropdown.compone
         DropdownComponent,
         NotifyComponent,
         SliderComponent,
-        FilterDropdownComponent
+        FilterDropdownComponent,
+        ClickOutsideDirective
     ]
 })
 export class SharedModule {

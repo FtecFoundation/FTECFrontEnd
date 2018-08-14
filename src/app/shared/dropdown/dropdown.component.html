@@ -1,5 +1,5 @@
 
-<div class="container__form-select-block form__input">
+<div class="container__form-select-block form__input" clickOutside (clickOutside)="closeDropdown()">
     <span class="form__select-item form__select-item--active" (click)="opened = !opened"></span>
 
     <span class="form__select-item">{{ active? (keyName?active[keyName]:active): label }}</span>

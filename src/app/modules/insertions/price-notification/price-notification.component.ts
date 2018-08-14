@@ -1,14 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {priceNotification} from './price-notification';
-import {AvailableExchanges} from '../arbitrage/available-exchanges';
-import {BinanceService} from "../../../core/services/exchanges/binance.service";
-import {EtherscanService} from "../../../core/services/etherscan.service";
+import {AvailableExchanges, Stock} from '../arbitrage/available-exchanges';
 import {CurrentUserService} from "../../../core/services/current-user.service";
-import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
-import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {Pair} from "../../../core/models/pair";
-import {ExchangeService} from "../../../core/services/exchanges/exchange.service";
 import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
+import {PriceNotificationService} from "./price-notification.service";
+import {PriceNotification} from "../../../core/models/price-notification";
 
 @Component({
     selector: 'app-social',
@@ -18,18 +14,25 @@ import {ExchangesService} from "../../../core/services/exchanges/exchanges.servi
 export class PriceNotificationComponent implements OnInit {
 
     exchanges = AvailableExchanges.availableStocks;
-    price = priceNotification;
+    priceNotifications: PriceNotification[];
     allPairs: Pair[] = [];
     pairs: Pair[] = [];
     profitPercent: number = 0;
     selectedPair: Pair;
     pairPrice: number;
-    pairExchange: string = '';
+    pairExchange: Stock;
+    available: number = 100;
 
-    constructor(private currentUser: CurrentUserService, private exchangesService: ExchangesService) {
+    constructor(private currentUser: CurrentUserService, private exchangesService: ExchangesService,
+                private pNotificationService: PriceNotificationService) {
     }
 
     ngOnInit() {
+        this.pNotificationService.getActiveNotifications().subscribe(data => {
+            this.priceNotifications = data;
+            this.available -= this.priceNotifications.length;
+        });
+
         for (const exchange of Object.keys(this.exchangesService.exchanges)) {
             this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
                 for (const pair of data) this.allPairs.push(pair);
@@ -46,13 +49,13 @@ export class PriceNotificationComponent implements OnInit {
         this.exchangesService.exchanges[pair.exchange.name].getPrice(pair).subscribe(data => {
             this.pairPrice = data;
         });
-        this.pairExchange = pair.exchange.name;
+        this.pairExchange = pair.exchange;
     }
 
-    toPercent(): number {
-        const res =  ((this.pairPrice * 2) - (this.pairPrice / 2)) / 200;
-        if (this.profitPercent > 0) return this.pairPrice + res;
-        else return this.pairPrice - res;
+    toPercent(price: number, percent: number): number {
+        const res: number =  (price * Math.abs(percent)) / 100;
+        if (percent > 0) return price + res;
+        else return price - res;
     }
 
     getProfitPercent(value: number) {
@@ -61,6 +64,20 @@ export class PriceNotificationComponent implements OnInit {
 
     filterPairs(key: string) {
         this.pairs = this.allPairs.filter(pair => (pair.symbol + '/' + pair.base).includes(key.toUpperCase()));
+    }
+
+    prepareData() {
+        const data = {'stock': this.pairExchange.nameToSend, 'pairParam1': this.selectedPair.symbol,
+            'pairParam2': this.selectedPair.base, 'divergence': this.profitPercent};
+        return data;
+    }
+
+    addNotification() {
+        this.pNotificationService.addNotification(this.prepareData()).subscribe(data => {
+            this.available = data.available;
+            this.priceNotifications.push(new PriceNotification(data.notifId, this.pairExchange.name,
+                this.selectedPair.symbol + '-' + this.selectedPair.base, this.profitPercent, this.pairPrice));
+        });
     }
 
     formatLabel(value: number | null) {

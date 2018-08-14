@@ -33,7 +33,7 @@ export class BittrexService implements ExchangeService {
     getPrice(pair: Pair): Observable<number> {
         const param = new HttpParams().set('market', pair.base + '-' + pair.symbol);
         return this._http.get(this.baseUrl + this.apiUrls.getPrice, {params: param}).pipe(map(resp => {
-            return resp['result']['Last'];
+            return Number.parseFloat(resp['result']['Last']);
         }));
     }
 }

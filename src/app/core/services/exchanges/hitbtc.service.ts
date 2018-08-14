@@ -50,7 +50,7 @@ export class HitBTCService implements ExchangeService {
 
     getPrice(pair: Pair): Observable<number> {
         return this._http.get(this.baseUrl + this.apiUrls.getPairs + '/' + pair.symbol + pair.base).pipe(map(resp => {
-            return resp['last'];
+            return Number.parseFloat(resp['last']);
         }));
     }
 }

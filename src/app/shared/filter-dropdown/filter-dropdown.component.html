@@ -1,5 +1,5 @@
 
-<div class="container__form-select-block form__input">
+<div class="container__form-select-block form__input" clickOutside (clickOutside)="closeDropdown()">
 
     <input class="form__select-item" #input placeholder="{{label}}"
            value="{{currentPair ? (currentPair.symbol + '/' + currentPair.base) : ''}}" (keyup)="refreshResults(input.value)"/>
