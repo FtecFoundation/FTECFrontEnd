@@ -4,9 +4,13 @@
   display: inline-block;
 }
 
+.middle__head--padding:first-child {
+  padding-top: 0;
+}
+
 .change-log {
   width: 100%;
-  padding: 0 0.625rem 0 0.625rem;
+  padding: 0 0.625rem 0 0;
   display: inline-block;
   float: left;
 

@@ -25,7 +25,7 @@
 }
 
 .price__small-container-connected {
-  width: 100%;
+  width: 70%;
 }
 
 .container__wrapper--price {
@@ -68,4 +68,18 @@
 .container__form--range {
   margin: 50px 0;
   background-color: transparent;
+}
+
+.price__small-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button__outline--price {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
