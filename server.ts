@@ -85,6 +85,7 @@ app.use(bodyParser.json());
 
 app.use('/hitbtc', proxy('http://188.166.22.122', {
     proxyReqPathResolver: function (req) {
+        console.log('hitbtc/api/2/public' + require('url').parse(req.url).path);
         return 'hitbtc/api/2/public' + require('url').parse(req.url).path;
     }
 }));
@@ -108,7 +109,7 @@ app.get('/api/properties/getPreferences', function (req, res) {
 
 app.post('/api/submitRecatpcha', function (req, res) {
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' ||
-        req.body['g-recaptcha-response'] === null) {
+        req.body['g-recaptcha-response' ] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
     const usersResponse = req.body['g-recaptcha-response'];
