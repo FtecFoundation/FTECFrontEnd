@@ -11,7 +11,7 @@
           <div class="small-container__line small-container__line--price">
             <h2>{{item.pair}}</h2>
 
-            <span class="text-small">{{item.stock}}</span>
+            <span class="text-small text-small--exchange">{{item.stock}}</span>
           </div>
 
           <span class="price__small-container-value">{{toPercent(item.currentPrice, item.divergence) | number:'1.2-8'}}<br>{{item.divergence}}%</span>
