@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '15/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the opportunity to specify types of notification when it\'s necessary to notify the user when saving the condition (conditions can vary).',
+            'In Module of Price Notification, we added the processing of error when the user enters non-existing cryptocurrency (for Bittrex).',
+            'The new test was added to the Cryptoacademy.',
+            'We added the support of web and SMS notifications at the server.',
+            'Questions of Cryptoacademy tests were divided into separated files to improve the efficiency of their reading.',
+            'There was a common optimization of database, fields which are not necessary anymore were deleted.',
+            'At backend, we added the possibility to add picture and questions to Cryptoacademy through API.',
+            'The endpoint that returned information about all tests and questions now returns only main data about tests to optimize volumes of data obtained.',
+            'At frontend, we implemented the possibility for the user to delete notifications about reaching a specific level.',
+            'We implemented the possibility for the user to add a new notification when the price reaches a specific level at frontend.'
+       ]
+    },
+    {
     'date': '14/08/2018',
     'changes': [
             'In Module of Price Notification, we added the function which deletes a condition from the database when condition is fulfilled.',
