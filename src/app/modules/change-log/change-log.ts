@@ -1,5 +1,17 @@
 export const changeLog = [
     {
+    'date': '16/08/2018',
+    'changes': [
+            'In the main module, we changed the model of referral display in the function of getting all referrals (previously, you could get referral id and balance only, now referrals are divided into levels).',
+            'In Module of Price Notification, we added the processing of error when the user enters non-existing pair (for Poloniex).',
+            'The function of saving the current price of the pair was added in Module of Price Notification (for Poloniex).',
+            'We configured automatic deleting of irrelevant data in the database.',
+            'We optimized the system work with BTC node to carry out difficult payments.',
+            'We added the support of Poloniex in Module of Price Notification at frontend (the possibility to set notifications for pairs from this exchange).',
+            'We implemented the method of loading the pair price from Poloniex at frontend.'
+       ]
+    },
+    {
     'date': '15/08/2018',
     'changes': [
             'In Module of Price Notification, we added the opportunity to specify types of notification when it\'s necessary to notify the user when saving the condition (conditions can vary).',
