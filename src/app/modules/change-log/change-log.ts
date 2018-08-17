@@ -1,5 +1,17 @@
 export const changeLog = [
     {
+    'date': '17/08/2018',
+    'changes': [
+            'We implemented the possibility to enable 2FA to provide more security at frontend.',
+            'In Module of Price Notification, we added the possibility to chose exchange among those where the pair is presented in a separate list.',
+            'At frontend in Module of Price Notification, the possibility to choose types of user\'s notifications individually for each stop loss/take profit was added.',
+            'We finished the implementation of the page with user\'s referral partners at frontend.',
+            'The sender name was changed in emails from the system.',
+            'In Module of Price Notification, the way of notification when the price reaches a certain level is shown for each stop loss and take profit at frontend.',
+            'We fixed the error of sending proxy requests to exchanges for the app, launched via server-side rendering.'
+       ]
+    },
+    {
     'date': '16/08/2018',
     'changes': [
             'In the main module, we changed the model of referral display in the function of getting all referrals (previously, you could get referral id and balance only, now referrals are divided into levels).',
