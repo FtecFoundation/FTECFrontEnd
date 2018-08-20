@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '20/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the processing of error when the user enters non-existing pair (for Binance).',
+            'In Module of Price Notification, we implemented the function which makes it possible to see all conditions when it\'s necessary to notify the user (for Bittrex).',
+            'In Module of Price Notification, we added the function which deletes log when 7 days pass.',
+            'In Exchange Order Management Module, we added the function which saves the condition when it\'s necessary to set an order(for Binance).',
+            'We developed the architecture of the long-polling system of getting notifications at frontend.',
+            'At frontend, the possibility to disable 2FA was added.',
+            'We implemented the functionality for checking the code of 2FA when logging in the account at frontend.',
+            'At frontend, we added the possibility to delete userpic.',
+            'We began the implementation of the platform localization and necessary architecture.',
+            'We fixed 403 error when sending requests to Binance.'
+       ]
+    },
+    {
     'date': '17/08/2018',
     'changes': [
             'We implemented the possibility to enable 2FA to provide more security at frontend.',
