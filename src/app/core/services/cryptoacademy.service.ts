@@ -9,7 +9,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 
 enum CryptoacademyApiUrls {
-    getTests = 'cabinet/cryptoacademy/getAllTests',
+    getTests = 'cabinet/crypto/main.json',
     getHistory = 'cabinet/cryptoacademy/getHistory',
     saveTest = 'cabinet/cryptoacademy/saveTest',
     resetTest = 'cabinet/cryptoacademy/resetTest'

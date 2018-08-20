@@ -19,7 +19,7 @@ export class BinanceService implements ExchangeService {
     }
 
     getPairs(): Observable<Pair[]> {
-        return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(map(resp => {
+        return this._http.get(this.baseUrl + this.apiUrls.getPrice).pipe(map(resp => {
             let pairs = [];
             for (const pair of Object.keys(resp)) {
                 if (resp[pair].symbol.indexOf('USD') === -1)

@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ImageService} from '../../../core/services/image.service';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {CurrentUserService} from '../../../core/services/current-user.service';
+import {AccountService} from "../../../core/services/account.service";
 
 @Component({
     selector: 'app-social',
@@ -15,28 +16,34 @@ export class SettingsComponent implements OnInit {
     private imageType: string;
     preloader = false;
 
-    constructor(private _imageService: ImageService, private _showModal: ShowModalService, public _currentUserService: CurrentUserService) {
+    constructor(private _imageService: ImageService, private _showModal: ShowModalService, public _currentUserService: CurrentUserService,
+                private _accountService: AccountService) {
     }
 
-    step1 = true;
-    step2 = false;
-    step3 = false;
+    enabled: boolean = false;
+    qrUrl: string = '';
 
     ngOnInit() {
+        if (this._currentUserService.user.twoStepVerification) this.enable2FA();
     }
 
     showModal() {
         this._showModal.showModal = true;
     }
 
-    showNextStep() {
-        this.step1 = false;
-        this.step2 = !this.step2;
+    enable2FA() {
+        this._accountService.enable2FA().subscribe(data => {
+            this.qrUrl = data;
+            this.enabled = true;
+        });
     }
 
-    showLastStep() {
-        this.step2 = false;
-        this.step3 = !this.step2;
+    disable2FA() {
+        this._accountService.disable2FA().subscribe(() => this.enabled = false);
+    }
+
+    deleteImage() {
+        this._imageService.deleteImage().subscribe(() => this._currentUserService.user.imageName = '0.jpg');
     }
 
     handleInputChange(e) {

@@ -96,6 +96,9 @@
 }
 
 .middle__table-container--settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 401px;
 }
 

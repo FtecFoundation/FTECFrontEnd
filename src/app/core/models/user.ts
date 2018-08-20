@@ -5,6 +5,7 @@ export class User {
     username: string;
     email: string;
     currentStep: string;
+    twoStepVerification: boolean;
     subscribeForEmail: boolean;
     userRole: string;
     locale: string;
@@ -48,6 +49,7 @@ export class RegistrationData {
     password: string;
     subscribeForEmail: boolean;
     referrerId: number;
+    code: string;
 
     deserialize(formData: any, lang: string, referrerId: number): this {
         this.username = formData.username;
@@ -56,6 +58,7 @@ export class RegistrationData {
         this.subscribeForEmail = formData.subscribeForEmail;
         this.locale = lang;
         this.referrerId = referrerId;
+        this.code = formData.code;
         return this;
     }
 }

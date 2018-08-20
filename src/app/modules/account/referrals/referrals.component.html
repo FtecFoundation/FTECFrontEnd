@@ -9,7 +9,7 @@
         <span class="support__container-item-text">Total referrals</span>
 
         <div class="support__counter">
-          <span class="support__counter-text">965</span>
+          <span class="support__counter-text">{{totalReferrals}}</span>
         </div>
       </div>
 
@@ -69,7 +69,7 @@
         <div class="middle__table-container--support">
           <span class="support__aside-time">All time:</span>
 
-          <span class="support__aside-time">76854867 FTEC</span>
+          <span class="support__aside-time">{{allTime}} FTEC</span>
         </div>
 
         <div class="middle__table-container--support">
@@ -84,16 +84,16 @@
     </div>
   </div>
 
-  <div class="middle middle--support">
+  <div class="middle middle--support" *ngIf="referrals">
     <div class="middle__head">
       <h5>Referred users</h5>
     </div>
 
     <div class="support__tab">
       <ul class="tab-controls">
-        <li class="tab-controls-item" (click)="showTab1()" [ngClass]="{'is-active' : tabLvl1}">Lvl 1 Referals (240)</li>
-        <li class="tab-controls-item" (click)="showTab2()" [ngClass]="{'is-active' : tabLvl2}">Lvl 2 Referals (294)</li>
-        <li class="tab-controls-item" (click)="showTab3()" [ngClass]="{'is-active' : tabLvl3}">Lvl 3 Referals (350)</li>
+        <li class="tab-controls-item" (click)="showTab1()" [ngClass]="{'is-active' : tabLvl1}">Lvl 1 Referrals ({{referrals.levelOne.length}})</li>
+        <li class="tab-controls-item" (click)="showTab2()" [ngClass]="{'is-active' : tabLvl2}">Lvl 2 Referrals ({{referrals.levelTwo.length}})</li>
+        <li class="tab-controls-item" (click)="showTab3()" [ngClass]="{'is-active' : tabLvl3}">Lvl 3 Referrals ({{referrals.levelThree.length}})</li>
       </ul>
     </div>
 
@@ -119,122 +119,54 @@
 
 
     <div class="middle__table-container" *ngIf="tabLvl1">
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
+      <div class="middle__table-container-item" *ngFor="let ref1 of referrals.levelOne">
+        <h4>{{ref1.username}}</h4>
 
         <div class="item-inner">
           <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com</span>
+            <span>{{ref1.email}}</span>
 
-            <span>18 Jul 2018</span>
+            <span>{{ref1.creationDate | date: 'dd MMM yyyy'}}</span>
           </div>
         </div>
 
-        <span class="container-item-profit align-right">705 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Orlando Bloom</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>orlandi@gmail.com</span>
-
-            <span>13 Jun 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">228 FTEC</span>
+        <span class="container-item-profit align-right">{{ref1.balance}} FTEC</span>
       </div>
 
     </div>
 
     <div class="middle__table-container" *ngIf="tabLvl2">
-      <div class="middle__table-container-item">
-        <h4>Samar Ostacha</h4>
+      <div class="middle__table-container-item" *ngFor="let ref2 of referrals.levelTwo">
+        <h4>{{ref2.username}}</h4>
 
         <div class="item-inner">
           <div class="item-inner-line item-inner-line--support">
-            <span>barometre@mail.ru</span>
+            <span>{{ref2.email}}</span>
 
-            <span>17 Jul 2018</span>
+            <span>{{ref2.creationDate | date: 'dd MMM yyyy'}}</span>
           </div>
         </div>
 
-        <span class="container-item-profit align-right">29 FTEC</span>
+        <span class="container-item-profit align-right">{{ref2.balance}} FTEC</span>
       </div>
 
-      <div class="middle__table-container-item">
-        <h4>Korona Avona</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>devial@hotmail.com</span>
-
-            <span>12 Jun 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">113 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Sorbona Vagona</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>tutter_valina@urk.net</span>
-
-            <span>18 Jul 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">812 FTEC</span>
-      </div>
     </div>
 
     <div class="middle__table-container" *ngIf="tabLvl3">
-      <div class="middle__table-container-item">
-        <h4>Mabel Lambert</h4>
+      <div class="middle__table-container-item" *ngFor="let ref3 of referrals.levelThree">
+        <h4>{{ref3.username}}</h4>
 
         <div class="item-inner">
           <div class="item-inner-line item-inner-line--support">
-            <span>chance_bartoletti@hotmail.com3</span>
+            <span>{{ref3.email}}</span>
 
-            <span>18 Jul 2018</span>
+            <span>{{ref3.creationDate | date: 'dd MMM yyyy'}}</span>
           </div>
         </div>
 
-        <span class="container-item-profit align-right">731 FTEC</span>
+        <span class="container-item-profit align-right">{{ref3.balance}} FTEC</span>
       </div>
 
-      <div class="middle__table-container-item">
-        <h4>Helen Verlini</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>verlini@hotmail.com</span>
-
-            <span>18 Aug 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">991 FTEC</span>
-      </div>
-
-      <div class="middle__table-container-item">
-        <h4>Katya Osadcha</h4>
-
-        <div class="item-inner">
-          <div class="item-inner-line item-inner-line--support">
-            <span>katyusha@hotmail.com</span>
-
-            <span>19 Aug 2018</span>
-          </div>
-        </div>
-
-        <span class="container-item-profit align-right">31 FTEC</span>
-      </div>
     </div>
 
   </div>

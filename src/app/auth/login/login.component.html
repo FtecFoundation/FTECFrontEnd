@@ -25,6 +25,13 @@
                     </div>
                     <span class="error-field" *ngIf="hasFieldError('password')">This field is required</span>
                 </div>
+
+            <div class="content__container" *ngIf="enabled2FA">
+                <span class="container__name">Enter 2FA</span>
+                <div class="container__form">
+                    <input class="form__input" placeholder="2FA code" formControlName="code">
+                </div>
+            </div>
                 <div class="form__info form__info--login">
                     <!-- <span class="form__info-text">You password was generated automatically after KYC and sent on your e-mail.</span> -->
 

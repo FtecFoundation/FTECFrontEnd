@@ -16,6 +16,10 @@
   flex-direction: column;
 }
 
+.small-container__line h2 {
+  font-size: 1.5em;
+}
+
 .price__small-container-value {
   width: 50%;
   display: flex;
@@ -46,6 +50,14 @@
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+.container__link--dashboard {
+  margin-bottom: 10px;
+}
+
+.container__wrapper {
+  margin-bottom: 20px;
 }
 
 .filter__container--price .container__form--select {
@@ -82,4 +94,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text-small--exchange {
+  color: $white;
+  opacity: 1;
 }
