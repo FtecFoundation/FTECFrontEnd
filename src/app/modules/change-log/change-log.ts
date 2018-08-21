@@ -1,5 +1,17 @@
 export const changeLog = [
     {
+    'date': '21/08/2018',
+    'changes': [
+            'In the proxy module, the function of buying currency (for Binance) was added.',
+            'In the proxy module, the function of selling currency (for Binance) was added.',
+            'In Module of Price Notification, we added the function of checking the condition when it\'s necessary to notify the user (for BitTrex).',
+            'Tests and questions for Cryptoacademy were split into different JSON files.',
+            'The model of tests and questions was optimized, we solved the problem of data redundancy.',
+            'The code of the page with all available tests was changed for correct work with the new structure of tests and questions.',
+            'We added the method of getting all questions of a separate test to Cryptoacademy service.'
+       ]
+    },
+    {
     'date': '20/08/2018',
     'changes': [
             'In Module of Price Notification, we added the processing of error when the user enters non-existing pair (for Binance).',
