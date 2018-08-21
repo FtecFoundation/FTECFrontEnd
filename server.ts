@@ -95,11 +95,11 @@ app.use('/bittrex', proxy('https://bittrex.com', {
     }
 }));
 
-app.use('/binance', proxy('http://api.binance.com', {
-    proxyReqPathResolver: function (req) {
-        return '/api/v3' + require('url').parse(req.url).path;
-    }
-}));
+// app.use('/binance', proxy('http://api.binance.com', {
+//     proxyReqPathResolver: function (req) {
+//         return '/api/v3' + require('url').parse(req.url).path;
+//     }
+// }));
 
 app.get('/api/properties/getPreferences', function (req, res) {
     res.json({botDomain: botDomain, etherscanPrefix: etherscanPrefix, contractAddress: contractAddress});

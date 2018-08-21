@@ -9,7 +9,7 @@ import {AvailableExchanges} from "../../../modules/insertions/arbitrage/availabl
 
 @Injectable()
 export class BinanceService implements ExchangeService {
-    baseUrl: string = '/binance/';
+    baseUrl: string = 'https://api.binance.com/api/v3/';
     apiUrls = {
         getPairs: 'ticker/allPrices',
         getPrice: 'ticker/price'

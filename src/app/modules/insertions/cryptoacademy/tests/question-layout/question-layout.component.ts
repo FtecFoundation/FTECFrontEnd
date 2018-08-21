@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Test, TestHistory} from '../../../../../core/models/test-cryptoacademy';
+import {QuestionsContainer, Test, TestHistory} from '../../../../../core/models/test-cryptoacademy';
 import {CryptoacademyService} from '../../../../../core/services/cryptoacademy.service';
 import {TestStatusService} from '../test-status/test-status.service';
 
@@ -11,6 +11,7 @@ import {TestStatusService} from '../test-status/test-status.service';
 })
 export class QuestionLayoutComponent implements OnInit {
     test: Test;
+    questions: QuestionsContainer;
     questionId: string;
 
     constructor(private activatedRoute: ActivatedRoute,
@@ -24,8 +25,8 @@ export class QuestionLayoutComponent implements OnInit {
 
     ngOnInit() {
         const testId = Number.parseInt(this.activatedRoute.snapshot.paramMap.get('testId'));
-        this._cryptoacademyService.getTests().subscribe(data => {
-            this.test = data.filter(test => test.id === testId)[0];
+        this._cryptoacademyService.getQuestions(testId).subscribe(data => {
+            this.questions = data;
 
             this._cryptoacademyService.getTestsHistory().subscribe(data1 => {
                 this.initTestStatus(data1);

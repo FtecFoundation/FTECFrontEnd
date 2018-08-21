@@ -13,7 +13,7 @@
     "start:heroku": "node dist/server",
     "postinstall": "npm run build:ssr",
     "ng": "ng",
-    "start": "ng serve --port 8080 --proxy=proxy.conf.json",
+    "start": "ng serve --proxy=proxy.conf.json",
     "build": "ng build",
     "lint": "ng lint --fix",
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
