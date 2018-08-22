@@ -1,5 +1,18 @@
 export const changeLog = [
     {
+    'date': '22/08/2018',
+    'changes': [
+            'At frontend, we added the support of new format of generating addresses for payment but currently, the work with FTEC wallets is only available.',
+            'Images for tests and questions in Cryptoacademy were transferred to their own server.',
+            'The code of the page of passing tests was adapted to the work with new structure of files with tests and questions.',
+            'In the proxy module, new function of buying currency (for BitTrex) was added.',
+            'In the proxy module, new function of selling currency (for BitTrex) was added.',
+            'We added the possibility to confirm the request to withdraw referral funds in the admin panel.',
+            'We fixed the error of unsustainable types when adding new questions to test.',
+            'Logic in the component of passing the test was optimized and consume fewer system resources.'
+       ]
+    },
+    {
     'date': '21/08/2018',
     'changes': [
             'In the proxy module, the function of buying currency (for Binance) was added.',
