@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {RestService} from './rest.service';
+import {RestService} from '../../../core/services/rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
-import {Question, QuestionsContainer, Test, TestHistory} from '../models/test-cryptoacademy';
+import {Question, QuestionsContainer, Test, TestHistory} from '../../../core/models/test-cryptoacademy';
 import {tap} from 'rxjs/operators/tap';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';

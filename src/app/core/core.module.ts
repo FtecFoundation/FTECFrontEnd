@@ -15,7 +15,6 @@ import {SocialService} from './services/social.service';
 import {LoaderComponent } from './loader/loader.component';
 import {LoaderService} from './loader/loader.service';
 import {LanguageService} from './services/language.service';
-import {CryptoacademyService} from './services/cryptoacademy.service';
 import {CaptchaService} from './services/captcha.service';
 import {CurrentUserService} from './services/current-user.service';
 import {ServerErrorsInterceptor} from './services/errors-handling/errors.interceptor.service';
@@ -49,7 +48,6 @@ import {ExchangesService} from "./services/exchanges/exchanges.service";
         SocialService,
         LoaderService,
         LanguageService,
-        CryptoacademyService,
         CurrentUserService,
         CaptchaService,
         PreferencesService,
