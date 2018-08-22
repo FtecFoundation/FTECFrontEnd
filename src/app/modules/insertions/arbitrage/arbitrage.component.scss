@@ -1,4 +1,3 @@
-
 @import "../../../../assets/styles/variables";
 
 .error-field--arbitrage {
@@ -12,6 +11,11 @@
 
 .item-inner-line-error-block--empty{
   display: block;
+}
+
+.middle__table-container--arbitrage {
+  overflow-y: scroll;
+  max-height: 285px;
 }
 
 .middle__table-container--empty{

@@ -375,10 +375,10 @@
         </div>
 
 
-        <div class="middle__table--dashboard" *ngFor="let log of logs">
-
-          <div class="middle__table-container middle__table-container--dashboard">
-
+        
+        <div class="middle__table-container middle__table-container--dashboard">
+          
+          <div class="middle__table--dashboard" *ngFor="let log of logs">
             <app-preloader *ngIf="!authLogsContent"></app-preloader>
 
             <div *ngIf="authLogsContent" class="middle__table-container-item middle__table-container-item--dashboard">

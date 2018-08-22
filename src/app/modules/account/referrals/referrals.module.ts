@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReferralsComponent} from './referrals.component';
 import { RefferalsComponentRoutingModule } from './referrals-routing.module';
 import { ReferralsPopupComponent } from './referrals-popup/referrals-popup.component';
+import {ReferralService} from "./referral.service";
 
 @NgModule({
     imports: [
@@ -10,6 +11,7 @@ import { ReferralsPopupComponent } from './referrals-popup/referrals-popup.compo
         RefferalsComponentRoutingModule
     ],
     declarations: [ReferralsComponent,
-        ReferralsPopupComponent]
+        ReferralsPopupComponent],
+    providers: [ReferralService]
 })
 export class ReferralsModule { }

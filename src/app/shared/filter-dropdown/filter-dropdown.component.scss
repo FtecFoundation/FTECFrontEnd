@@ -1,0 +1,82 @@
+@import "../../../assets/styles/variables";
+
+.container__form-select-block {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  cursor: pointer;
+  font-size: 0.7rem;
+  color: rgba(255,255,255, .35);
+}
+
+.form__select-item--active{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form__select-list {
+  z-index: 1;
+  top: 100%;
+  left: -2px;
+  width: calc(100% + 4px);
+  position: absolute;
+
+  max-height: 250px;
+  overflow-y: scroll;
+
+  font-size: .7rem;
+  color: rgba(255,255,255, .35);
+  background: $dark-blue;
+  border-radius: 1.250rem;
+  border: 1px solid #594498;
+
+  animation: showContent .3s both ease;
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form__select-item {
+  width: 100%;
+  outline: none;
+  color: white;
+  border: none;
+  background: transparent;
+}
+
+.form__select-list-item {
+  display: block;
+  padding: .938rem;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.form__select-list-item:hover {
+  background-color: $light-blue;
+}
+
+.form__select-list-item:last-child{
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.form__select-list-item:first-child {
+  border-radius: 20px 20px 0 0;
+}
+
+.form__select--pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

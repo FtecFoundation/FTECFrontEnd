@@ -8,6 +8,7 @@ import {QuestionComponent} from './tests/question-layout/question/question.compo
 import {QuestionLayoutComponent} from './tests/question-layout/question-layout.component';
 import {TestStatusService} from './tests/test-status/test-status.service';
 import { TestCompletedComponent } from './tests/question-layout/test-completed/test-completed.component';
+import {CryptoacademyService} from "./cryptoacademy.service";
 
 @NgModule({
     imports: [
@@ -21,7 +22,7 @@ import { TestCompletedComponent } from './tests/question-layout/test-completed/t
         QuestionComponent,
         QuestionLayoutComponent,
         TestCompletedComponent],
-    providers: [TestStatusService]
+    providers: [TestStatusService, CryptoacademyService]
 })
 export class CryptoacademyModule {
 }

@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {Question, Test, TestHistory} from '../../../../../../core/models/test-cryptoacademy';
-import {CryptoacademyService} from '../../../../../../core/services/cryptoacademy.service';
+import {Question, QuestionsContainer, Test, TestHistory} from '../../../../../../core/models/test-cryptoacademy';
+import {CryptoacademyService} from '../../../cryptoacademy.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TestStatusService} from '../../test-status/test-status.service';
 
@@ -10,6 +10,7 @@ import {TestStatusService} from '../../test-status/test-status.service';
     styleUrls: ['../../../cryptoacademy.component.scss']
 })
 export class QuestionComponent implements OnInit, OnChanges {
+    @Input() questions: QuestionsContainer;
     @Input() test: Test;
     @Input() questionId: number;
     @Input() history: TestHistory;
@@ -32,7 +33,7 @@ export class QuestionComponent implements OnInit, OnChanges {
     }
 
     initializeQuestion() {
-        this.question = this.test.questions[this.questionId];
+        this.question = this.questions[this.questionId];
         if (this.checkIfAnswered()) {
             this.response = this._testStatusService.history.tests[this.test.id + '_' + this.questionId];
         } else {
@@ -83,10 +84,9 @@ export class QuestionComponent implements OnInit, OnChanges {
             this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
         } else {
             this._cryptoacademyService.getTestsHistory().subscribe(data => {
-                const questions = Object.keys(this.test.questions);
-                for (const question of questions) {
-                    if (!data.tests[this.test.id + '_' + question]) {
-                        this.test.lastQuestion = Number.parseInt(question);
+                for (let i = 1; i < this.test.totalQuestions; i++) {
+                    if (!data.tests[this.test.id + '_' + i]) {
+                        this.test.lastQuestion = i;
                         break;
                     }
                 }

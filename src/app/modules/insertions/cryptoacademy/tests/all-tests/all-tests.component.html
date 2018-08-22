@@ -13,10 +13,10 @@
 
                 <div class="crypto__tab-wrapper" *ngIf="tests">
                     <div class="crypto__tab-container" *ngFor="let test of tests">
-                        <img [src]="test.image" alt="">
+                        <img [src]="'/api/crypto/images/' + test.id + '/0.png'" alt="">
 
-                        <span *ngIf="test.lastQuestion > 1 && test.lastQuestion !== test.total" class="test-progress">{{test.lastQuestion - 1}}/{{test.total}}</span>
-                        <span *ngIf="test.lastQuestion === test.total" class="test-progress">Completed</span>
+                        <span *ngIf="test.lastQuestion > 1 && test.lastQuestion !== test.totalQuestions" class="test-progress">{{test.lastQuestion - 1}}/{{test.totalQuestions}}</span>
+                        <span *ngIf="test.lastQuestion === test.totalQuestions" class="test-progress">Completed</span>
 
                         <div class="crypto__tab-info">
                             <h5 class="crypto__info-title">{{test.name}}</h5>
@@ -24,7 +24,6 @@
                             <span class="crypto__info-subtitle">{{test.level}}</span>
 
                             <p class="crypto__info-text">{{test.description}}</p>
-
 
                             <a (click)="goToTest(test)" class="filter__container-button button--crypto">{{(test.lastQuestion > 1) ? 'Continue' : 'Begin'}}</a>
                         </div>

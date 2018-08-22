@@ -33,8 +33,7 @@
     padding-left: 0.938rem;
   }
 
-  .header__info-user,
-  .price__small-container-value {
+  .header__info-user {
     width: 100% !important;
   }
 
@@ -83,6 +82,7 @@
   }
 
   .middle--payment-enable {
+    margin-left: .625em;
     width: 58%;
   }
   
@@ -153,6 +153,14 @@
   .header__info-title h2
    {
     display: none !important;
+  }
+
+  .middle__table-type-inner--dashboard {
+    margin-left: 53% !important;
+  }
+
+  .table-container-item--dashboard {
+    margin-left: 1.250em;
   }
 
   .middle--payment {
@@ -229,7 +237,6 @@
     height: initial !important;
   }
 
-  .change-log,
   .settings__container {
     width: 50% !important;
   }
@@ -335,10 +342,7 @@
 
   
   .middle__table-container-stocs {
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center !important;
   }
 
@@ -561,6 +565,10 @@
   .ngx-charts {
     transform: scale(.54) !important;
     margin-top: 1.250em;
+  }
+
+  .item-inner-line {
+    font-size: .625em;
   }
 
   .change-log,

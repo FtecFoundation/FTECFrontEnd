@@ -20,6 +20,7 @@ import {PasswordSentComponent} from './forgot-password/set-new-sent.component';
         RouterModule.forChild([
             { path: 'auth', component: LoginComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Log in'}},
             { path: 'registration', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Registration'}},
+            { path: 'registration/:refId', component: RegistrationComponent, canActivate: [OnlyNotAuthorizedGuard], data: {title: 'Registration'}},
             { path: 'sent', component: EmailSentComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'new-sent', component: PasswordSentComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},

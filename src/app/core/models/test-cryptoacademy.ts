@@ -8,15 +8,18 @@ export class Test {
     selectedAnswer?: number;
     correctAnswer?: number;
     questions: any;
-    total?: number;
+    totalQuestions: number;
 }
 
 export class TestHistory {
     tests: any;
 }
 
+export class QuestionsContainer {
+    [id: string]: Question;
+}
+
 export class Question {
-    id: number;
     type: string;
     body: QuestionBody;
     answer: Answer[];
