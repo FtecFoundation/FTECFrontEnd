@@ -24,7 +24,7 @@ enum AccountApiUrls {
     resendEmail = 'cabinet/resendConfirmation',
     tgSettings = 'modules/telegram/getTelegramData',
     tgHash = 'modules/telegram/getHash',
-    getAddress = 'cabinet/node/getAddress',
+    getAddress = 'cabinet/payment/getAddress/FTEC',
     getNotificationSettings = 'cabinet/notifications/getNotificationSettings',
     getKeys = 'cabinet/apiKeys',
     getAuthLogs = 'cabinet/getLogs',
