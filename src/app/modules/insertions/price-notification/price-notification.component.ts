@@ -5,6 +5,7 @@ import {Pair} from "../../../core/models/pair";
 import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
 import {PriceNotificationService} from "./price-notification.service";
 import {PriceNotification} from "../../../core/models/price-notification";
+import {PairsFilterService} from "../../../core/services/pairs-filter/pairs-filter.service";
 
 @Component({
     selector: 'app-social',
@@ -13,16 +14,11 @@ import {PriceNotification} from "../../../core/models/price-notification";
 })
 export class PriceNotificationComponent implements OnInit {
 
-    exchanges = AvailableExchanges.availableStocks;
     priceNotifications: PriceNotification[];
-    allPairs: Pair[] = [];
-    pairs: Pair[] = [];
     profitPercent: number = 0;
-    selectedPair: Pair;
     pairPrice: number;
     pairExchange: Stock;
     available: number = 100;
-    exchangesList: Stock[] = [];
 
     smsNot: boolean = false;
     telegramNot: boolean = false;
@@ -31,8 +27,8 @@ export class PriceNotificationComponent implements OnInit {
 
     typeNotChosen: boolean = false;
 
-    constructor(private currentUser: CurrentUserService, private exchangesService: ExchangesService,
-                private pNotificationService: PriceNotificationService) {
+    constructor(private currentUser: CurrentUserService, public pairsFilterService: PairsFilterService,
+                private pNotificationService: PriceNotificationService, private exchangesService: ExchangesService) {
     }
 
     ngOnInit() {
@@ -41,31 +37,20 @@ export class PriceNotificationComponent implements OnInit {
             this.available -= this.priceNotifications.length;
         });
 
-        for (const exchange of Object.keys(this.exchangesService.exchanges)) {
-            this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
-                for (const pair of data) this.allPairs.push(pair);
-            });
-        }
-    }
-
-    onPairTyping(pair: string) {
-        this.filterPairs(pair);
-    }
-
-    chooseStock(stock: Stock) {
-        this.pairExchange = stock;
+        if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
     }
 
     onPairSelected(pair: Pair) {
-        this.selectedPair = pair;
-        this.exchangesList = [];
-        for (const p of this.pairs) {
-            if (this.selectedPair.base === p.base && this.selectedPair.symbol === p.symbol) this.exchangesList.push(p.exchange);
-        }
+        this.pairsFilterService.selectPair(pair);
+
         this.exchangesService.exchanges[pair.exchange.name].getPrice(pair).subscribe(data => {
             this.pairPrice = data;
         });
         this.pairExchange = pair.exchange;
+    }
+
+    chooseStock(stock: Stock) {
+        this.pairExchange = stock;
     }
 
     toPercent(price: number, percent: number): number {
@@ -85,20 +70,16 @@ export class PriceNotificationComponent implements OnInit {
         this.profitPercent = value;
     }
 
-    filterPairs(key: string) {
-        this.pairs = this.allPairs.filter(pair => (pair.symbol + '/' + pair.base).includes(key.toUpperCase()));
-    }
-
     prepareData() {
         return {
             'stock': this.pairExchange.nameToSend,
-            'pairParam1': this.selectedPair.base,
-            'pairParam2': this.selectedPair.symbol,
+            'baseAsset': this.pairsFilterService.selectedPair.base,
+            'secondaryAsset': this.pairsFilterService.selectedPair.symbol,
             'divergence': this.profitPercent,
-            'isSmsNotification': this.smsNot,
-            'isTelegramNotification': this.telegramNot,
-            'isEmailNotification': this.emailNot,
-            'isWebNotification': this.webNot
+            'smsNotification': this.smsNot,
+            'telegramNotification': this.telegramNot,
+            'emailNotification': this.emailNot,
+            'webNotification': this.webNot
         };
     }
 
@@ -107,7 +88,7 @@ export class PriceNotificationComponent implements OnInit {
             this.pNotificationService.addNotification(this.prepareData()).subscribe(data => {
                 this.available = data.available;
                 this.priceNotifications.push(new PriceNotification(data.notifId, this.pairExchange.name,
-                    this.selectedPair.symbol + '-' + this.selectedPair.base, this.profitPercent, this.pairPrice,
+                    this.pairsFilterService.selectedPair.symbol + '-' + this.pairsFilterService.selectedPair.base, this.profitPercent, this.pairPrice,
                     this.smsNot, this.telegramNot, this.emailNot, this.webNot));
             });
         } else {

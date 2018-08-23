@@ -4,6 +4,7 @@ import { OrderManagerRoutingModule } from './order-manager-routing.module';
 import { OrderManagerComponent } from './order-manager.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { SliderComponent } from '../../slider/slider.component';
+import {OrderManagerService} from "./order-manager.service";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SliderComponent } from '../../slider/slider.component';
         SharedModule,
         OrderManagerRoutingModule
     ],
-    declarations: [OrderManagerComponent]
+    declarations: [OrderManagerComponent],
+    providers: [OrderManagerService]
 })
 export class OrderManagerModule {
 }
