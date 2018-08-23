@@ -1,113 +1,121 @@
 <div class="main-info main-info--price">
 
-  <div class="middle middle--price">
+    <div class="middle middle--price">
 
-    <div class="aside-right__head aside-right__head--arbitrage">Active orders</div>
+        <div class="aside-right__head aside-right__head--arbitrage">Active orders</div>
 
-    <div class="middle__block middle__block--price">
+        <div class="middle__block middle__block--price">
 
-      <div class="behavioral__small-container-inner" *ngFor="let item of order">
-        <div class="order__small-container">
-          <div class="small-container__line small-container__line--price">
-            <h2>{{item.pair}}</h2>
+            <div class="behavioral__small-container-inner" *ngFor="let order of orders">
+                <div class="order__small-container">
+                    <div class="small-container__line small-container__line--price">
+                        <h2>{{order.pair}}</h2>
 
-            <span class="text-small">{{item.exchange}}</span>
-          </div>
+                        <span class="text-small">{{order.stock}}</span>
+                    </div>
 
-          <div class="price__small-container-value order__small-container-value">
-            <span class="small-container__line-link small-container__line-link--order">{{item.type}}</span>
+                    <div class="price__small-container-value order__small-container-value">
+            <span class="small-container__line-link small-container__line-link--order"
+                  [ngClass]="{'small-container__line-link--order--sell': order.type === 'Sell'}"
+                  [ngClass]="{'small-container__line-link--order--buy': order.type === 'Buy'}">{{order.type}}</span>
 
-            <span>{{item.profit}}</span>
-          </div>
+                        <span>{{order.divergence}}</span>
+                    </div>
 
-          <button class="filter__container-button filter__container-button--behavioral">Edit</button>
+                    <button class="filter__container-button filter__container-button--behavioral">Edit</button>
+                </div>
+            </div>
+
         </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="aside-right">
-    <div class="aside-right__head aside-right__head--arbitrage">
-      <h5>
-        Set new notifications
-      </h5>
     </div>
 
-    <form action="" class="aside-right__filter">
+    <div class="aside-right">
+        <div class="aside-right__head aside-right__head--arbitrage">
+            <h5>
+                Set new notifications
+            </h5>
+        </div>
 
-      <div class="filter__container">
+        <form action="" class="aside-right__filter">
 
-        <div class="l-order__type-container">
-          <span class="order__type-item is-active">Stop-loss
+            <div class="filter__container">
+
+                <div class="l-order__type-container">
+          <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Buy'}" (click)="orderType = 'Buy'">Buy
             <div class="order__type-container"></div>
           </span>
-          <span class="order__type-item">Take-profit
+                    <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Sell'}"
+                          (click)="orderType = 'Sell'">Sell
             <div class="order__type-container"></div>
           </span>
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <div class="filter__container">
-        <span class="container__name">Currency Pair</span>
-        <div class="filter__container--price">
+            <div class="filter__container">
+                <span class="container__name">Currency Pair</span>
+                <div class="filter__container--price">
 
-          <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
-          </div>
+                    <div class="container__form container__form--select is-active">
+                        <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)"
+                                             (selected)="pairsFilterService.onPairTyping($event)"
+                                             [items]="pairsFilterService.resultPairs"
+                                             [keyName]="'pair'"></app-filter-dropdown>
+                    </div>
 
-          <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
-          </div>
+                </div>
+            </div>
 
-        </div>
-      </div>
+            <div class="filter__container">
+                <span class="container__name">Exchanges</span>
 
-      <div class="filter__container">
-        <span class="container__name">Exchanges</span>
+                <div class="container__form">
+                    <app-dropdown [label]="'Exchange'" [value]="pairExchange" [keyName]="'name'"
+                                  [items]="pairsFilterService.exchangesList"
+                                  (selected)="chooseStock($event)"></app-dropdown>
+                </div>
 
-        <div class="container__form container__form--select is-active">
-          <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
-        </div>
-
-      </div>
-
-
-      <div class="filter__container">
-        <span class="container__name">Current price</span>
-
-        <div class="container__form">
-          <span class="form__input form__input-locked">$763.90</span>
-        </div>
-
-      </div>
+            </div>
 
 
-      <div class="filter__container">
-        <span class="container__name">Amount to sell</span>
+            <div class="filter__container">
+                <span class="container__name">Current price</span>
 
-        <div class="container__form">
-          <label for="" class="form__label"></label>
-          <input type="number" class="form__input" placeholder="13ETH">
-        </div>
+                <div class="container__form">
+                    <span class="form__input form__input-locked"> {{pairPrice ? pairPrice : 0 | number:'1.2-8'}}</span>
+                </div>
 
-      </div>
+            </div>
 
-      <div class="filter__container">
-        <span class="container__name">Price</span>
 
-        <div class="container__form">
-          <label for="" class="form__label"></label>
-          <input type="number" class="form__input" placeholder="$840">
-        </div>
+            <div class="filter__container">
+                <span class="container__name">Amount to {{orderType.toLowerCase()}}</span>
 
-      </div>
+                <div class="container__form">
+                    <label for="" class="form__label"></label>
+                    <input type="number" class="form__input" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}"
+                           placeholder="Amount to {{orderType.toLowerCase()}}">
+                    <span class="form__label form__label--currency" *ngIf="pairsFilterService.selectedPair">{{pairsFilterService.selectedPair.symbol}}</span>
+                    <span class="error-field" *ngIf="amountNotSet">Set the amount to {{orderType.toLowerCase()}}</span>
+                </div>
 
-      <app-slider></app-slider>
+            </div>
 
-      <button class="filter__container-button">Add order</button>
-    </form>
+            <div class="filter__container">
+                <span class="container__name">Price</span>
 
-  </div>
+                <div class="container__form">
+                    <label for="" class="form__label"></label>
+                    <input type="number" class="form__input" placeholder="Price"
+                           value="{{toPercent(pairPrice, profitPercent) | number:'1.2-8'}}" readonly>
+                </div>
+
+            </div>
+
+            <app-slider (valueToSend)="getProfitPercent($event)"></app-slider>
+
+            <button class="filter__container-button" (click)="addOrder()">Add order</button>
+        </form>
+
+    </div>
 
 </div>

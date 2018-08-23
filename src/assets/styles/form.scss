@@ -1,6 +1,7 @@
 @import "variables";
 
 .container__form {
+  position: relative;
   border-radius: 28px;
   background-color: $dark-blue;
   margin-top: 0.938em;
@@ -273,4 +274,10 @@ select::-ms-expand {
 .form__select-list-item:last-child{
   border-bottom-right-radius: 28px;
   border-bottom-left-radius: 28px;
+}
+
+.form__label--currency {
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
 }

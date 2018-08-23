@@ -141,7 +141,7 @@
         <div class="filter__container--price">
 
           <div class="container__form container__form--select is-active">
-            <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)" (selected)="onPairTyping($event)" [items]="pairs" [keyName]="'pair'"></app-filter-dropdown>
+            <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)" (selected)="pairsFilterService.onPairTyping($event)" [items]="pairsFilterService.resultPairs" [keyName]="'pair'"></app-filter-dropdown>
           </div>
 
         </div>
@@ -151,19 +151,9 @@
         <span class="container__name">Exchanges</span>
 
           <div class="container__form">
-            <app-dropdown [label]="'Exchange'" [value]="pairExchange" [keyName]="'name'" [items]="exchangesList" (selected)="chooseStock($event)"></app-dropdown>
+            <app-dropdown [label]="'Exchange'" [value]="pairExchange" [keyName]="'name'" [items]="pairsFilterService.exchangesList" (selected)="chooseStock($event)"></app-dropdown>
           </div>
       </div>
-
-      <!-- <div class="filter__container">
-
-        <div class="container__form container__form--range">
-          <span>50%</span>
-
-          <input type="range" name="range" min-value="-100%" max-value="100%" ngmodel="value">
-        </div>
-
-      </div> -->
 
       <app-slider (valueToSend)="getProfitPercent($event)"></app-slider>
 
