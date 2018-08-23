@@ -1,5 +1,18 @@
 export const changeLog = [
     {
+    'date': '23/08/2018',
+    'changes': [
+            'In the proxy module, the function of buying currency was added (for HitBTC).',
+            'In the proxy module, the function of selling currency was added (for HitBTC).',
+            'In Module of Price Notification, we added the function of checking the condition when it\'s necessary to notify the user (for HitBTC).',
+            'At frontend, the logic of filtering pop-up list was moved to a separate service to improve the app architecture and an increase in productivity when using in several modules.',
+            'At frontend in Exchange Order Management Module, we implemented the method which allows to set new orders ( for Binance, Bittrex, HitBTC).',
+            'The module of Price Notification was tested and now is available for use.',
+            'At frontend in Exhcnage Order Management Module, we implemented the method which allows to delete orders.',
+            'At frontend in Exhcnage Order Management Module, we added the possibility to look through old done orders.'
+       ]
+    },
+    {
     'date': '22/08/2018',
     'changes': [
             'At frontend, we added the support of new format of generating addresses for payment but currently, the work with FTEC wallets is only available.',
