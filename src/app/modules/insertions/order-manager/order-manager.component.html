@@ -2,9 +2,9 @@
 
     <div class="middle middle--price">
 
-        <div class="aside-right__head aside-right__head--arbitrage">Active orders</div>
+        <div class="aside-right__head aside-right__head--arbitrage">Active orders ({{available}} left)</div>
 
-        <div class="middle__block middle__block--price">
+        <div class="middle__block middle__block--price" *ngIf="orders">
 
             <div class="behavioral__small-container-inner" *ngFor="let order of orders">
                 <div class="order__small-container">
@@ -22,7 +22,7 @@
                         <span>{{order.divergence}}</span>
                     </div>
 
-                    <button class="filter__container-button filter__container-button--behavioral">Edit</button>
+                    <button class="filter__container-button filter__container-button--behavioral" (click)="deleteOrder(order.id)">Delete</button>
                 </div>
             </div>
 

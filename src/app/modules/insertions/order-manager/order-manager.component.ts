@@ -33,10 +33,9 @@ export class OrderManagerComponent implements OnInit {
         this.pairsFilterService.selectedPair = null;
         if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
 
-        this.available -= this.orders.length;
-
         this.orderManagerService.getActiveOrders().subscribe(data => {
             this.orders = data;
+            this.available -= this.orders.length;
         });
     }
 
@@ -85,6 +84,13 @@ export class OrderManagerComponent implements OnInit {
         } else {
             this.amountNotSet = true;
         }
+    }
+
+    deleteOrder(id: number) {
+        this.orderManagerService.deleteOrder(id).subscribe(data => {
+            this.available = data;
+            this.orders =this.orders.filter(order => order.id !== id);
+        })
     }
 
 }
