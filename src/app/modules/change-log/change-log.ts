@@ -1,5 +1,17 @@
 export const changeLog = [
     {
+    'date': '24/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function of checking conditions when it\'s necessary to notify the user.',
+            'In Module of Price Notification, we added the function which makes it possible to see all conditions when it\'s necessary to notify the user.',
+            'In the proxy module, we added the function of getting all active pairs (for Binance).',
+            'In Module of Price Notification, we added the function which makes it possible to see old messages.',
+            'We optimized the load on the client application net, using caching of frequently used data.',
+            'In Exchange Order Management Module, we added the possibility to see done orders.',
+            'Exchange Order Management Module is in beta testing phase.'
+       ]
+    },
+    {
     'date': '23/08/2018',
     'changes': [
             'In the proxy module, the function of buying currency was added (for HitBTC).',
