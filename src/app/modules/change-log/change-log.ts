@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '27/08/2018',
+    'changes': [
+            'We fixed the problem with CORS on requests to API of Binance.',
+            'In Exchange Order Management Module and Module of Price Notification, the price field changes in synchrony with movement of the slider.',
+            'It\'s now impossible to choose inactive ways of notification (SMS and push-notifications) in Module of Price Notification.',
+            'In Module of Price Notification, the error of absence of a chosen way of notification now vanishes when rechoosing one of the ways.',
+            'Dropdown list (which appears when you click on the userpic in header) now is closed when you click beyond it.',
+            'We changed the table on My Exchanges page and corrected display of exchanges\' names there.',
+            'In the proxy module, we added the function of buying currency (for Poloniex).',
+            'In the proxy module, we added the function of selling currency (for Poloniex).',
+            'In Module of Price Notification, we added the function which makes it possible to see all conditions when it\'s necessary to notify the user (for Poloniex).',
+            'In Module of Price Notification, we added the function which makes it possible to check all conditions when it\'s necessary to notify the user (for Poloniex).'
+       ]
+    },
+    {
     'date': '24/08/2018',
     'changes': [
             'In Module of Price Notification, we added the function of checking conditions when it\'s necessary to notify the user.',
