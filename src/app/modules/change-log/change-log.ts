@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '28/08/2018',
+    'changes': [
+            'We fixed the bag of saving conditions for Module of Price Notification for Bittrex (since baseAsset is left there).',
+            'In Exchange Order Management Module, we added the function of saving condition when it\'s necessary to set an order (for Bittrex).',
+            'In Exchange Order Management Module, we added the function of checking condition when it\'s necessary to set an order (for Binance).',
+            'In Exchange Order Management Module, we added the function of checking condition when it\'s necessary to set an order (for Bittrex).',
+            'We changed the position of preloader on Arbitrage Assistant page.',
+            'We fixed the bag appeared when passing Cryptoacademy tests (incorrect shut-down when missing questions).',
+            'On Telegram Assistant page, we fixed the display of link to the bot and link in QR code.',
+            'We began the work on transferring Mobile App to IOS on FTEC API.',
+            'We implemented the possibility to authorize to the user\'s account in Mobile App.',
+            'In Exchange Order Management Module, we added the function of saving all conditions when it\'s necessary to set an order (for Binance).'
+       ]
+    },
+    {
     'date': '27/08/2018',
     'changes': [
             'We fixed the problem with CORS on requests to API of Binance.',
