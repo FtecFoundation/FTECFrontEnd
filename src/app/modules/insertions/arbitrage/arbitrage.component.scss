@@ -92,3 +92,17 @@
   margin: 0 auto;
   margin-top: 2.5rem;
 }
+
+
+.middle__container--preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle__container--preloader app-preloader {
+  width: initial !important;
+  padding-top: initial !important;
+  margin: 50px 0;
+  transform: scale(1) !important;
+}

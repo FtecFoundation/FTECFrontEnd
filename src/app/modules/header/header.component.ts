@@ -13,6 +13,7 @@ import {CurrentUserService} from '../../core/services/current-user.service';
 })
 export class HeaderComponent implements OnInit {
     @ViewChild('image') image: ElementRef;
+    showDropdown: boolean = false;
 
     constructor(private _accountService: AccountService,
                 private router: Router,
@@ -24,10 +25,8 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
     }
 
-    showUser() {
-        const accInfo = document.querySelector('.user-account-block');
-
-        accInfo.classList.toggle('is-active');
+    closeDropdown() {
+        if (this.showDropdown) this.showDropdown = false
     }
 
     showThemeList() {
