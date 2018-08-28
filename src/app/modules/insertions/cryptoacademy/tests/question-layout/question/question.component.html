@@ -21,5 +21,6 @@
         </li>
     </ul>
 
-    <a (click)="goToNext()" class="filter__container-button button--crypto button--test">{{response ? 'Next' : 'Skip'}}</a>
+    <a (click)="goToNext()" *ngIf="response" class="filter__container-button button--crypto button--test">Next</a>
+    <a (click)="skip()" *ngIf="!response" class="filter__container-button button--crypto button--test">Skip</a>
 </div>

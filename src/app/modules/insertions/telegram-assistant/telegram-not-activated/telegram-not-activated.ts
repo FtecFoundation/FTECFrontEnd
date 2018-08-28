@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {TelegramAssistantService} from '../telegram-assistant.service';
 import {CurrentUserService} from '../../../../core/services/current-user.service';
 import {Router} from '@angular/router';
+import {PreferencesService} from "../../../../core/services/preferences.service";
 
 @Component({
     selector: 'app-social',
@@ -14,15 +15,14 @@ export class TelegramNotActivatedComponent implements OnInit {
     showAccessCode: boolean;
 
     constructor(private _telegramService: TelegramAssistantService,
+                private _preferencesService: PreferencesService,
                 public _currentUserService: CurrentUserService,
                 private router: Router) {
     }
 
     ngOnInit() {
-        this._telegramService.getBotDomain().subscribe(data => {
-            this.qrUrl += data;
-            this.botDomain = data;
-        });
+        this.botDomain = this._preferencesService.preferences.botDomain;
+        this.qrUrl += this.botDomain;
     }
 
     enable() {
@@ -34,10 +34,6 @@ export class TelegramNotActivatedComponent implements OnInit {
         }
         this.showAccessCode = true;
 
-        // if (!this._currentUserService.tgSettings.accessCode) {
-        //     this._currentUserService.getTelegramSettingsObs(true);
-        // }
-        // this.showAccessCode = true;
     }
 
     checkIfConnected() {
