@@ -16,7 +16,9 @@
             </div>
         </div>
 
-        <app-preloader *ngIf="preloader"></app-preloader>
+        <div class="middle__container--preloader">
+            <app-preloader *ngIf="preloader"></app-preloader>
+        </div>
 
         <div *ngIf="arbitrageWindows && !preloader">
             <div class="middle__table-container--empty" *ngIf="arbitrageWindows.windows.length === 0">

@@ -124,6 +124,21 @@ app.post('/api/submitRecatpcha', function (req, res) {
     });
 });
 
+app.get('/binance/ticker/allPrices', function (req, res) {
+    const url = 'https://www.binance.com/api/v1/ticker/allPrices';
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
+
+app.get('/binance/ticker/price', function (req, res) {
+    const url = 'https://www.binance.com/api/v1/ticker/price';
+    const param = req.query.symbol;
+    request(url + '?symbol=' + param, function (error, response, body) {
+        res.send(body);
+    });
+});
+
 app.use('/api/cabinet/image', proxy(apiUrl, {
     proxyReqPathResolver: function (req) {
         return prefix + '/cabinet/image';

@@ -19,10 +19,10 @@
                   [ngClass]="{'small-container__line-link--order--sell': order.type === 'Sell'}"
                   [ngClass]="{'small-container__line-link--order--buy': order.type === 'Buy'}">{{order.type}}</span>
 
-                        <span>{{order.divergence}}</span>
+                        <span>{{order.divergence}}%</span>
                     </div>
 
-                    <button class="filter__container-button filter__container-button--behavioral" (click)="deleteOrder(order.id)">Delete</button>
+                    <button class="filter__container-button filter__container-button--behavioral" (click)="deleteOrder(order.id)">Cancel</button>
                 </div>
             </div>
 

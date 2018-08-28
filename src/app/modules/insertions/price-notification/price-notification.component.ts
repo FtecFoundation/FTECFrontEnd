@@ -51,6 +51,9 @@ export class PriceNotificationComponent implements OnInit {
 
     chooseStock(stock: Stock) {
         this.pairExchange = stock;
+        this.exchangesService.exchanges[stock.name].getPrice(this.pairsFilterService.selectedPair).subscribe(data => {
+            this.pairPrice = data;
+        })
     }
 
     toPercent(price: number, percent: number): number {

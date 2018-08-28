@@ -31,6 +31,7 @@ export class PairsFilterService {
 
     selectPair(pair: Pair) {
         this.selectedPair = pair;
+        this.exchangesList = [];
         for (const p of this.resultPairs) {
             if (this.selectedPair.base === p.base && this.selectedPair.symbol === p.symbol) this.exchangesList.push(p.exchange);
         }

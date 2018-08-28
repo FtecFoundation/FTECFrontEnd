@@ -22,7 +22,8 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
         DropdownComponent,
         NotifyComponent,
         SliderComponent,
-        FilterDropdownComponent
+        FilterDropdownComponent,
+        ClickOutsideDirective
     ],
     declarations: [
         PreloaderComponent,

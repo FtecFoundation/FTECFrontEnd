@@ -619,6 +619,29 @@ p {
   height: 2.813rem;
 }
 
+.container__link--notifications.not-active::after, .container__link--dashboard.not-active::after {
+  content: '';
+  z-index: 2;
+  top: -6px;
+  left: -2px;
+  width: 111%;
+  height: 104%;
+  display: block;
+  position: absolute;
+
+  cursor: initial;
+  opacity: .7;
+  border-radius: .625em;
+}
+
+.container__link--notifications.not-active {
+  opacity: .6;
+}
+
+.container__link--dashboard.not-active {
+  opacity: .3;
+}
+
 .button__outline--dashboard {
   width: 45%;
   padding: .625rem;

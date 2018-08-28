@@ -39,9 +39,9 @@ export class ArbitrageComponent implements OnInit {
 
     createForm() {
         this.arbitrageForm = this.formBuilder.group({
-            minVolume: ['', [Validators.required, Validators.min(20)]],
-            minPercent: ['', [Validators.required, Validators.min(2)]],
-            orderVolume: ['', Validators.min(0.01)],
+            minVolume: ['20', [Validators.required, Validators.min(20)]],
+            minPercent: ['2', [Validators.required, Validators.min(2)]],
+            orderVolume: ['0.01', Validators.min(0.01)],
             isOrderVolume: false
         });
         this.arbitrageForm = new FormGroup(this.arbitrageForm.controls, { updateOn: 'blur' });
