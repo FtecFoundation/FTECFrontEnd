@@ -47,6 +47,7 @@ export class QuestionComponent implements OnInit, OnChanges {
             this.selected = answerId;
             this._cryptoacademyService.answer(this.prepareData()).subscribe(data => {
                 this.response = data;
+                this._testStatusService.passed++;
 
                 if (this.response.correctAnswer === this.selected) {
                     this._testStatusService.correct++;
@@ -75,34 +76,40 @@ export class QuestionComponent implements OnInit, OnChanges {
 
     skip() {
         if (!this.response) {
-            if (this._testStatusService.passed < this._testStatusService.total) {
+            if (this.questionId < this._testStatusService.total) {
                 this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
             }
-            if (this._testStatusService.passed == this._testStatusService.total) {
-                this._cryptoacademyService.getTestsHistory().subscribe(data => {
-                    for (let i = 1; i < this.test.totalQuestions; i++) {
-                        if (!data.tests[this.test.id + '_' + i]) {
-                            this.test.lastQuestion = i;
-                            break;
-                        }
-                    }
-                    this.router.navigate(['/modules/cryptoacademy/test', this.test.id, this.test.lastQuestion]);
-                });
+            else if (this.questionId == this._testStatusService.total) {
+                this.goToLastUnanswered();
             }
         }
     }
 
     goToNext() {
         if (this.response) {
-            this._testStatusService.passed++;
             if (this._testStatusService.passed < this._testStatusService.total) {
+                if (this.questionId == this._testStatusService.total) this.goToLastUnanswered();
+
                 this.router.navigate(['/modules/cryptoacademy/test', this.test.id, (++this.questionId)]);
                 this.updatePercent();
             }
-            if (this._testStatusService.passed == this._testStatusService.total) {
+            if (this._testStatusService.passed === this._testStatusService.total) {
                 this.router.navigate(['/modules/cryptoacademy/completed', this.test.id]);
             }
         }
+    }
+
+    goToLastUnanswered(){
+        this._cryptoacademyService.getTestsHistory().subscribe(data => {
+            console.log(data);
+            for (let i = 1; i < this.test.totalQuestions; i++) {
+                if (!data.tests[this.test.id + '_' + i] || data.tests[this.test.id + '_' + i].selectedAnswer === -1) {
+                    this.test.lastQuestion = i;
+                    break;
+                }
+            }
+            this.router.navigate(['/modules/cryptoacademy/test', this.test.id, this.test.lastQuestion]);
+        });
     }
 
 }

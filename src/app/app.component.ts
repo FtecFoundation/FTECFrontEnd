@@ -14,19 +14,14 @@ import {CurrentUserService} from './core/services/current-user.service';
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-    oldConsole: any;
     constructor(private titleService: TitlesService, public loaderService: LoaderService) {
     }
 
     ngOnInit(): void {
         const temp = this.loaderService;
         this.titleService.init();
-        const el = document.getElementById('particles-background');
-        const el2 = document.getElementById('particles-foreground');
         setTimeout(function () {
             temp.hideLoader();
-            el.style.display = 'none';
-            el2.style.display = 'none';
         }, 3000);
     }
 }
