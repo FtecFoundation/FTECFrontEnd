@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '29/08/2018',
+    'changes': [
+            'In the proxy module, we fixed bugs of setting buy orders on Binance.',
+            'In the proxy module, we fixed bugs of setting sell orders on Binance.',
+            'In Exchange Order Management Module, we added the function of saving conditions when it\'s necessary to set an order (for Bittrex).',
+            'Social Assistant is now on new Twitter API (v 1.1).',
+            'We fixed the bug of impossibility to finish a test, answering to one of the missed questions in Cryptoacademy tests.',
+            'In Cryptoacademy, we fixed the bug of calculating passed tests on the page with all tests available.',
+            'In Cryptoacademy, we fixed the bug of calculating passed tests if users repass test.',
+            'We fixed the bug of the white screen if the page loads for a long time.',
+            'We began the development of sending notifications from modules to Mobile App.',
+            'On Telegram Assistant page, the bug of displaying the checkboxes was fixed.'
+       ]
+    },
+    {
     'date': '28/08/2018',
     'changes': [
             'We fixed the bag of saving conditions for Module of Price Notification for Bittrex (since baseAsset is left there).',
