@@ -26,14 +26,16 @@ import {HitBTCService} from "./services/exchanges/hitbtc.service";
 import {BittrexService} from "./services/exchanges/bittrex.service";
 import {ExchangesService} from "./services/exchanges/exchanges.service";
 import {PairsFilterService} from "./services/pairs-filter/pairs-filter.service";
+import {NotifyService} from "./notify/notify.service";
+import {NotifyComponent} from "./notify/notify.component";
 
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule
     ],
-    declarations: [LoaderComponent],
-    exports: [LoaderComponent],
+    declarations: [LoaderComponent, NotifyComponent],
+    exports: [LoaderComponent, NotifyComponent],
     providers: [
         CookieService,
         AccountService,
@@ -57,6 +59,7 @@ import {PairsFilterService} from "./services/pairs-filter/pairs-filter.service";
         BittrexService,
         ExchangesService,
         PairsFilterService,
+        NotifyService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

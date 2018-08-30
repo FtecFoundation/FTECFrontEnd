@@ -9,6 +9,7 @@ export class Test {
     correctAnswer?: number;
     questions: any;
     totalQuestions: number;
+    passed?: number;
 }
 
 export class TestHistory {

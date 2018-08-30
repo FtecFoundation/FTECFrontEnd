@@ -17,7 +17,7 @@ export const errorMessages = {
     '12': 'User doesn\'t exist',
     '13': 'Invalid file extension',
     '14': 'Uploaded file is empty',
-    '15': 'Token is invalid or expired',
+    '15': 'Session was expired. Please, log in to continue',
     '16': 'Not enough credits',
     '17': 'Subscription expired',
     '18': 'Error while processing ticket',
@@ -43,14 +43,7 @@ export class ErrorsService {
     public getStatusCode(error: HttpErrorResponse): string {
         return error.error.status;
     }
-
-    /**
-     *  Method handles exception that can occur in any module or request. It should indicate error to user (if needed) in some modal or etc
-     * @param ex - error of type `CustomException` that occurred
-     * @returns isContinue boolean indicates if method should continue execution after handling
-     */
     public handleCustomException(ex: CustomException): boolean {
-        console.log('Here will be custom exception handling');
         if (ex instanceof UnauthenticatedException) { return false; }
         return true;
 
