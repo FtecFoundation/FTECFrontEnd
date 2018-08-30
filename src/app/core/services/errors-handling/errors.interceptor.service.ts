@@ -15,16 +15,15 @@ import {NotifyService} from "../../notify/notify.service";
 import {Notify, notifyTypes} from "../../notify/notifications";
 import {ErrorsService} from "./errors.service";
 import {PreferencesService} from "../preferences.service";
+import {Preferences} from "../../models/preferences";
 
 @Injectable()
 export class ServerErrorsInterceptor implements HttpInterceptor {
     protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)');
-    constructor(private router: Router, private _notifyService: NotifyService, private _errorService: ErrorsService,
-                private inj: Injector) {
+    constructor(private router: Router, private _notifyService: NotifyService, private _errorService: ErrorsService) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const preferences = this.inj.get(PreferencesService);
         return next.handle(req)
             .map(resp => {
                 if (resp instanceof HttpResponse) {
@@ -42,7 +41,8 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                             break;
                     }
 
-                    if (preferences.preferences.prod) {
+                    console.log(Preferences.prototype.prod);
+                    if (Preferences.prototype.prod) {
                         this._notifyService.addNotification(new Notify('Error!',
                             this._errorService.parseResponseMessage(err), notifyTypes.error));
                     } else this._notifyService.addNotification(new Notify(err.error.status, err.error.error, notifyTypes.error))
