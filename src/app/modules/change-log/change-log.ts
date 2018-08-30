@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '30/08/2018',
+    'changes': [
+            'In Exchange Order Management Module, we added the function of notifying the user when order is set successfully (for Binance).',
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set an order but the aren’t enough funds on the balance (for Binance).',
+            'In Exchange Order Management Module, we added the function of saving logs when order is set.',
+            'In Exchange Order Management Module, we added the function of deleting logs after 7 days.',
+            'In the proxy module, we added the function of getting an active order under orderld (for Binance).',
+            'At frontend, we updated the processing of errors. Now all errors founded are shown in the user interface.',
+            'We fixed the error of cyclical implementation of dependencies while interception of errors.',
+            'We added the animation of appearance and disappearance of the notice of error window.',
+            'We added the “Hide all” button for immediate closing of all notices of error.',
+            'The text in the notice of error was changed for production app (simplified reason of error without status code is shown).'
+       ]
+    },
+    {
     'date': '29/08/2018',
     'changes': [
             'In the proxy module, we fixed bugs of setting buy orders on Binance.',
