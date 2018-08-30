@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Injector} from '@angular/core';
 import {
     HttpRequest,
     HttpHandler,
@@ -20,10 +20,11 @@ import {PreferencesService} from "../preferences.service";
 export class ServerErrorsInterceptor implements HttpInterceptor {
     protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)');
     constructor(private router: Router, private _notifyService: NotifyService, private _errorService: ErrorsService,
-                private _preferencesService: PreferencesService) {
+                private inj: Injector) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        const preferences = this.inj.get(PreferencesService);
         return next.handle(req)
             .map(resp => {
                 if (resp instanceof HttpResponse) {
@@ -41,7 +42,7 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                             break;
                     }
 
-                    if (this._preferencesService.preferences.prod) {
+                    if (preferences.preferences.prod) {
                         this._notifyService.addNotification(new Notify('Error!',
                             this._errorService.parseResponseMessage(err), notifyTypes.error));
                     } else this._notifyService.addNotification(new Notify(err.error.status, err.error.error, notifyTypes.error))
