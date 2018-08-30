@@ -8,8 +8,10 @@ export class PreferencesService {
 
     constructor(private _http: HttpClient) {
         this._http.get('/api/properties/getPreferences').subscribe(
-            value => this.preferencesObj = value as Preferences,
-            () => this.preferencesObj = new Preferences()
+            value => {
+                this.preferencesObj = value as Preferences;
+                if (this.preferencesObj.botDomain === 'FTEC_test_bot') this.preferencesObj.prod = true;
+            }, () => this.preferencesObj = new Preferences()
         );
     }
 

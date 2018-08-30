@@ -8,6 +8,7 @@ import {CurrentUserService} from './core/services/current-user.service';
     template:
             `
         <app-loader *ngIf="loaderService.loading"></app-loader>
+        <app-notify></app-notify>
         <router-outlet></router-outlet>`,
 
     styles: [],

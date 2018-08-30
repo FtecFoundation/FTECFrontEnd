@@ -11,11 +11,16 @@ import 'rxjs/add/operator/retry';
 import 'rxjs/add/operator/catch';
 import {Router} from '@angular/router';
 import 'rxjs/add/observable/of';
+import {NotifyService} from "../../notify/notify.service";
+import {Notify, notifyTypes} from "../../notify/notifications";
+import {ErrorsService} from "./errors.service";
+import {PreferencesService} from "../preferences.service";
 
 @Injectable()
 export class ServerErrorsInterceptor implements HttpInterceptor {
     protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)');
-    constructor(private router: Router) {
+    constructor(private router: Router, private _notifyService: NotifyService, private _errorService: ErrorsService,
+                private _preferencesService: PreferencesService) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -35,6 +40,11 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                             if (isProtected && isProtected.length > 0) { this.router.navigate(['/auth']); }
                             break;
                     }
+
+                    if (this._preferencesService.preferences.prod) {
+                        this._notifyService.addNotification(new Notify('Error!',
+                            this._errorService.parseResponseMessage(err), notifyTypes.error));
+                    } else this._notifyService.addNotification(new Notify(err.error.status, err.error.error, notifyTypes.error))
                 }
                 return Observable.throw(err);
             });
