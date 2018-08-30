@@ -5,23 +5,7 @@ import {animate, animateChild, query, state, style, transition, trigger} from "@
 @Component({
     selector: 'app-notify',
     templateUrl: './notify.component.html',
-    styleUrls: ['./notify.component.scss'],
-    animations: [
-        trigger('notification', [
-            transition('void => *', [
-                style({transform: 'translateX(100%)', opacity: 0}),
-                animate('500ms ease-out')
-            ]),
-            transition('* => void', [
-                animate('500ms ease-out', style({transform: 'translateX(100%)', opacity: 0}))
-            ])
-        ]),
-        trigger('container', [
-            transition(':enter, :leave', [
-                query('@*', animateChild())
-            ])
-        ])
-    ]
+    styleUrls: ['./notify.component.scss']
 })
 export class NotifyComponent implements OnInit {
 
