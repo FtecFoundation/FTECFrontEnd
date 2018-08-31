@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '31/08/2018',
+    'changes': [
+            'We added the possibility to save correct answers in a file for Cryptoacademy.',
+            'File with answers was divided into several files (one for each test), which will increase productivity when passing tests.',
+            'In the proxy module, we added the function of getting all active pairs (for Bittrex).',
+            'In the proxy module, we added the function of buying currency (for Yobit).',
+            'In the proxy module, we added the function of selling currency (for Yobit).',
+            'We worked on the structure of new tests for forecasting in Cryptoacademy.',
+            'We implemented the component inheritance to provide different processing of answers in different types of tests in Cryptoacademy.',
+            'We implemented the processing of answers to tests for forecasting in Cryptoacademy.',
+            'In Mobile App for IOS, we added the processing of some errors from the server.',
+            'We added the button, which helps to close each error notification immediately.'
+       ]
+    },
+    {
     'date': '30/08/2018',
     'changes': [
             'In Exchange Order Management Module, we added the function of notifying the user when order is set successfully (for Binance).',
