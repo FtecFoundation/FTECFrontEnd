@@ -1,5 +1,20 @@
 export const changeLog = [
     {
+    'date': '03/09/2018',
+    'changes': [
+            'We fixed the bug with changing the test information in the admin panel.',
+            'We added the function of generating addresses for replenishment (for ETH).',
+            'We added the function of getting the current balance for the address (for ETH).',
+            'We added the function which checks addresses for successful replenishment every minute (for ETH).',
+            'When filling the balance, the user gets a notification about successful replenishment (for ETH).',
+            'At frontend, we added cascade animation when disappearing of notification after pushing the button "hide all".',
+            'On the Cryptoacademy main page, we added navigation through tabs.',
+            'On the Cryptoacademy main page, we added content for the "Forecasting" page with training tests on forecasting.',
+            'We changed the logic of getting test questions at frontend due to optimization and division of a file with tests.',
+            'At frontend, we completed the list of local messages about errors for users.'
+       ]
+    },
+    {
     'date': '31/08/2018',
     'changes': [
             'We added the possibility to save correct answers in a file for Cryptoacademy.',
