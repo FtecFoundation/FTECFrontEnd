@@ -1,4 +1,19 @@
 export const changeLog = [
+     {
+    'date': '04/09/2018',
+    'changes': [
+            'In Exchange Order Management Module, we added the function of saving condition when it\'s necessary to set an order (for HitBTC).',
+            'In the proxy module, we added the function of getting all active pairs (for HitBTC).',
+            'In Exchange Order Management Module, we added the function of notifying the user when an order is set successfully (for Bittrex).',
+            'n Exchange Order Management Module, we added the function of notifying the user when it\'s necessary to set an order but there aren\'t enough funds on the balance (for Bittrex).',
+            'We added the function of filling the balance to the main module (for BTC).',
+            'In Cryptoacademy, we fixed the display of correct and chosen answers.',
+            'We deleted the function of cashing Cryptoacademy statistical files at frontend.',
+            'At frontend, we added the possibility to close notifications prematurely by clicking on the relevant button.',
+            'At frontend, we implemented the logic of forecasting test answers and display of the correct answer.',
+            'We optimized the structure of code files.'
+       ]
+    },
     {
     'date': '03/09/2018',
     'changes': [
