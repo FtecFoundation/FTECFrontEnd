@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AvailableExchanges, Stock} from '../arbitrage/available-exchanges';
 import {CurrentUserService} from "../../../core/services/current-user.service";
 import {Pair} from "../../../core/models/pair";
 import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
 import {PriceNotificationService} from "./price-notification.service";
 import {PriceNotification} from "../../../core/models/price-notification";
+import {PairsFilterService} from "../../../core/services/pairs-filter/pairs-filter.service";
 
 @Component({
     selector: 'app-social',
@@ -13,18 +14,21 @@ import {PriceNotification} from "../../../core/models/price-notification";
 })
 export class PriceNotificationComponent implements OnInit {
 
-    exchanges = AvailableExchanges.availableStocks;
     priceNotifications: PriceNotification[];
-    allPairs: Pair[] = [];
-    pairs: Pair[] = [];
     profitPercent: number = 0;
-    selectedPair: Pair;
     pairPrice: number;
     pairExchange: Stock;
     available: number = 100;
 
-    constructor(private currentUser: CurrentUserService, private exchangesService: ExchangesService,
-                private pNotificationService: PriceNotificationService) {
+    smsNot: boolean = false;
+    telegramNot: boolean = false;
+    emailNot: boolean = false;
+    webNot: boolean = false;
+
+    typeNotChosen: boolean = false;
+
+    constructor(private currentUser: CurrentUserService, public pairsFilterService: PairsFilterService,
+                private pNotificationService: PriceNotificationService, private exchangesService: ExchangesService) {
     }
 
     ngOnInit() {
@@ -33,23 +37,23 @@ export class PriceNotificationComponent implements OnInit {
             this.available -= this.priceNotifications.length;
         });
 
-        for (const exchange of Object.keys(this.exchangesService.exchanges)) {
-            this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
-                for (const pair of data) this.allPairs.push(pair);
-            });
-        }
-    }
-
-    onPairTyping(pair: string) {
-        this.filterPairs(pair);
+        if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
     }
 
     onPairSelected(pair: Pair) {
-        this.selectedPair = pair;
+        this.pairsFilterService.selectPair(pair);
+
         this.exchangesService.exchanges[pair.exchange.name].getPrice(pair).subscribe(data => {
             this.pairPrice = data;
         });
         this.pairExchange = pair.exchange;
+    }
+
+    chooseStock(stock: Stock) {
+        this.pairExchange = stock;
+        this.exchangesService.exchanges[stock.name].getPrice(this.pairsFilterService.selectedPair).subscribe(data => {
+            this.pairPrice = data;
+        })
     }
 
     toPercent(price: number, percent: number): number {
@@ -69,34 +73,30 @@ export class PriceNotificationComponent implements OnInit {
         this.profitPercent = value;
     }
 
-    filterPairs(key: string) {
-        this.pairs = this.allPairs.filter(pair => (pair.symbol + '/' + pair.base).includes(key.toUpperCase()));
-    }
-
     prepareData() {
-        const data = {'stock': this.pairExchange.nameToSend, 'pairParam1': this.selectedPair.symbol,
-            'pairParam2': this.selectedPair.base, 'divergence': this.profitPercent};
-        return data;
+        return {
+            'stock': this.pairExchange.nameToSend,
+            'baseAsset': this.pairsFilterService.selectedPair.base,
+            'secondaryAsset': this.pairsFilterService.selectedPair.symbol,
+            'divergence': this.profitPercent,
+            'smsNotification': this.smsNot,
+            'telegramNotification': this.telegramNot,
+            'emailNotification': this.emailNot,
+            'webNotification': this.webNot
+        };
     }
 
     addNotification() {
-        this.pNotificationService.addNotification(this.prepareData()).subscribe(data => {
-            this.available = data.available;
-            this.priceNotifications.push(new PriceNotification(data.notifId, this.pairExchange.name,
-                this.selectedPair.symbol + '-' + this.selectedPair.base, this.profitPercent, this.pairPrice));
-        });
-    }
-
-    formatLabel(value: number | null) {
-        if (!value) {
-            return 0;
+        if (this.smsNot || this.emailNot || this.telegramNot || this.webNot) {
+            this.pNotificationService.addNotification(this.prepareData()).subscribe(data => {
+                this.available = data.available;
+                this.priceNotifications.push(new PriceNotification(data.notifId, this.pairExchange.name,
+                    this.pairsFilterService.selectedPair.symbol + '-' + this.pairsFilterService.selectedPair.base, this.profitPercent, this.pairPrice,
+                    this.smsNot, this.telegramNot, this.emailNot, this.webNot));
+            });
+        } else {
+            this.typeNotChosen = true;
         }
-
-        if (value >= 10) {
-            return Math.round(value / 10) + '%';
-        }
-
-        return value;
     }
 
 }

@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PreloaderComponent} from './preloader/preloader.component';
 import {DropdownComponent } from './dropdown/dropdown.component';
-import {NotifyComponent} from './notify/notify.component';
 import {SliderComponent} from "../modules/slider/slider.component";
 import {FilterDropdownComponent} from "./filter-dropdown/filter-dropdown.component";
 import { ClickOutsideDirective } from './directives/click-outside.directive';
@@ -20,14 +19,13 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
         FormsModule,
         PreloaderComponent,
         DropdownComponent,
-        NotifyComponent,
         SliderComponent,
-        FilterDropdownComponent
+        FilterDropdownComponent,
+        ClickOutsideDirective
     ],
     declarations: [
         PreloaderComponent,
         DropdownComponent,
-        NotifyComponent,
         SliderComponent,
         FilterDropdownComponent,
         ClickOutsideDirective

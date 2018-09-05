@@ -1,9 +1,11 @@
 import { Stock, AvailableExchanges } from "../../modules/insertions/arbitrage/available-exchanges";
 
 export class User {
+    id: number;
     username: string;
     email: string;
     currentStep: string;
+    twoStepVerification: boolean;
     subscribeForEmail: boolean;
     userRole: string;
     locale: string;
@@ -46,13 +48,17 @@ export class RegistrationData {
     locale: string;
     password: string;
     subscribeForEmail: boolean;
+    referrerId: number;
+    code: string;
 
-    deserialize(formData: any, lang: string): this {
+    deserialize(formData: any, lang: string, referrerId: number): this {
         this.username = formData.username;
         this.email = formData.email;
         this.password = formData.passwordGroup.password;
         this.subscribeForEmail = formData.subscribeForEmail;
         this.locale = lang;
+        this.referrerId = referrerId;
+        this.code = formData.code;
         return this;
     }
 }

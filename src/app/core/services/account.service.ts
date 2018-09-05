@@ -24,10 +24,12 @@ enum AccountApiUrls {
     resendEmail = 'cabinet/resendConfirmation',
     tgSettings = 'modules/telegram/getTelegramData',
     tgHash = 'modules/telegram/getHash',
-    getAddress = 'cabinet/node/getAddress',
+    getAddress = 'cabinet/payment/getAddress/FTEC',
     getNotificationSettings = 'cabinet/notifications/getNotificationSettings',
     getKeys = 'cabinet/apiKeys',
-    getAuthLogs = 'cabinet/getLogs'
+    getAuthLogs = 'cabinet/getLogs',
+    disable2FA = 'cabinet/disable2FA',
+    enable2FA = 'cabinet/enable2FA'
 }
 
 @Injectable()
@@ -39,6 +41,14 @@ export class AccountService extends RestService {
 
     isAuthorized(): Observable<any> {
         return this.get(AccountApiUrls.getUser);
+    }
+
+    enable2FA(): Observable<string> {
+        return this.patch(AccountApiUrls.enable2FA, {}).pipe(map(resp => resp.response.qr));
+    }
+
+    disable2FA(): Observable<boolean> {
+        return this.patch(AccountApiUrls.disable2FA, {}).pipe(map(resp => resp.response.disabled));
     }
 
     resendEmail(): Observable<any> {

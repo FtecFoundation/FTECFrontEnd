@@ -14,7 +14,7 @@ import { NotificationService } from './account/notification/notification.service
 import { StubComponent } from './stub/stub.component';
 import { ShowStubService } from './stub/stub-modal.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { ShowNotifyService } from '../shared/notify/notify.service';
+import {NotifyService} from "../core/notify/notify.service";
 
 
 @NgModule({
@@ -42,8 +42,7 @@ import { ShowNotifyService } from '../shared/notify/notify.service';
         NotificationComponent,
         NotificationService,
         StubComponent,
-        ShowStubService,
-        ShowNotifyService]
+        ShowStubService]
 })
 
 export class LayoutModule {

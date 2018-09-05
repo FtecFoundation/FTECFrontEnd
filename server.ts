@@ -83,23 +83,23 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use('/hitbtc', proxy('http://188.166.22.122', {
+app.use('/hitbtc', proxy('https://api.hitbtc.com', {
     proxyReqPathResolver: function (req) {
-        return 'hitbtc/api/2/public' + require('url').parse(req.url).path;
+        return '/api/2/public' + require('url').parse(req.url).path;
     }
 }));
 
-app.use('/bittrex', proxy('http://188.166.22.122', {
+app.use('/bittrex', proxy('https://bittrex.com', {
     proxyReqPathResolver: function (req) {
-        return 'bittrex/api/v1.1/public' + require('url').parse(req.url).path;
+        return '/api/v1.1/public' + require('url').parse(req.url).path;
     }
 }));
 
-app.use('/binance', proxy('http://188.166.22.122', {
-    proxyReqPathResolver: function (req) {
-        return 'binance/api/v1' + require('url').parse(req.url).path;
-    }
-}));
+// app.use('/binance', proxy('http://api.binance.com', {
+//     proxyReqPathResolver: function (req) {
+//         return '/api/v3' + require('url').parse(req.url).path;
+//     }
+// }));
 
 app.get('/api/properties/getPreferences', function (req, res) {
     res.json({botDomain: botDomain, etherscanPrefix: etherscanPrefix, contractAddress: contractAddress});
@@ -108,7 +108,7 @@ app.get('/api/properties/getPreferences', function (req, res) {
 
 app.post('/api/submitRecatpcha', function (req, res) {
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' ||
-        req.body['g-recaptcha-response'] === null) {
+        req.body['g-recaptcha-response' ] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
     const usersResponse = req.body['g-recaptcha-response'];
@@ -121,6 +121,21 @@ app.post('/api/submitRecatpcha', function (req, res) {
             return res.json(body);
         }
         res.json({'responseCode': 0, 'responseDesc': 'success'});
+    });
+});
+
+app.get('/binance/ticker/allPrices', function (req, res) {
+    const url = 'https://www.binance.com/api/v1/ticker/allPrices';
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
+
+app.get('/binance/ticker/price', function (req, res) {
+    const url = 'https://www.binance.com/api/v1/ticker/price';
+    const param = req.query.symbol;
+    request(url + '?symbol=' + param, function (error, response, body) {
+        res.send(body);
     });
 });
 

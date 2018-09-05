@@ -3,7 +3,7 @@ import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators} f
 import {AccountService} from '../../core/services/account.service';
 import {RegistrationValidators} from './registration.validators';
 import {RegistrationData} from '../../core/models/user';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {LanguageService} from '../../core/services/language.service';
 import {CaptchaService} from '../../core/services/captcha.service';
 
@@ -20,16 +20,21 @@ import {CaptchaService} from '../../core/services/captcha.service';
 export class RegistrationComponent implements OnInit {
     registrationForm: FormGroup;
     submitted = false;
+    refId: number = 0;
 
     constructor(private _accountService: AccountService,
                 private formBuilder: FormBuilder,
                 private router: Router,
+                private activatedRoute: ActivatedRoute,
                 private _languageService: LanguageService,
                 private cdr: ChangeDetectorRef,
                 private _captchaService: CaptchaService) {
     }
 
     ngOnInit() {
+        const referrer = this.activatedRoute.snapshot.paramMap.get('refId');
+        referrer ? this.refId = Number.parseInt(referrer) : 0;
+
         this.createForm();
     }
 
@@ -64,7 +69,7 @@ export class RegistrationComponent implements OnInit {
     }
 
     prepareData(): RegistrationData {
-        return new RegistrationData().deserialize(this.registrationForm.value, this._languageService.currentLanguage);
+        return new RegistrationData().deserialize(this.registrationForm.value, this._languageService.currentLanguage, this.refId);
     }
 
     toggleCheckbox(field: AbstractControl) {

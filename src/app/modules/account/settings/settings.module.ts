@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { SettingsComponent} from './settings.component';
 import { SettingsComponentRoutingModule } from './settings-routing.module';
 import {SharedModule} from '../../../shared/shared.module';
+import {QRCodeModule} from "angularx-qrcode";
 
 @NgModule({
     imports: [
         SharedModule,
         CommonModule,
-        SettingsComponentRoutingModule
+        SettingsComponentRoutingModule,
+        QRCodeModule
     ],
     declarations: [SettingsComponent]
 })

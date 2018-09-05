@@ -1,6 +1,12 @@
 <div class="middle middle--test">
     <div class="test">
-        <app-question *ngIf="test && _testStatusService.history" [test]="test" [questionId]="questionId" [history]="_testStatusService.history"></app-question>
+        <app-question *ngIf="test && questions && _testStatusService.history" [test]="test"
+                      [questions]="questions" [questionId]="questionId"
+                      [history]="_testStatusService.history">
+        </app-question>
     </div>
 </div>
-<app-test-status *ngIf="test && _testStatusService.history" [test]="test" [history]="_testStatusService.history" [questionId]="questionId" class="test__status-ng"></app-test-status>
+<app-test-status *ngIf="test && _testStatusService.history" [test]="test"
+                 [history]="_testStatusService.history" [questionId]="questionId"
+                 class="test__status-ng">
+</app-test-status>

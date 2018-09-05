@@ -119,13 +119,13 @@
                 <sup>*</sup> +</span>
 
 
-            <div class="header__user-account" (click)="showUser()">
+            <div class="header__user-account" (click)="showDropdown = !showDropdown" clickOutside (clickOutside)="closeDropdown()">
                 <!-- <div class=""> -->
 
                 <img class="header__user-account-image" [src]="'api/images/' + _currentUserService.user.imageName">
 
 
-                <div class="user-account-block">
+                <div class="user-account-block is-active" *ngIf="showDropdown">
                     <div class="user-account-block-triangle"></div>
                     <div class="user__block-head">
                         <span class="user__block-head-username">{{_currentUserService.user.email}}</span>

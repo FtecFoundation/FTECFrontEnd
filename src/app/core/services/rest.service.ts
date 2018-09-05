@@ -47,6 +47,10 @@ export abstract class RestService {
         return this._http.post(this.baseUrl + relativeUrl, data, {headers: this.headers()});
     }
 
+    protected patch(relativeUrl: string, data: any): Observable<any>  {
+        return this._http.patch(this.baseUrl + relativeUrl, data, {headers: this.headers()});
+    }
+
     protected put(relativeUrl: string, data: any, contentType?: string): Observable<any>  {
         return this._http.put(this.baseUrl + relativeUrl, data, {headers: this.headers(contentType)});
     }

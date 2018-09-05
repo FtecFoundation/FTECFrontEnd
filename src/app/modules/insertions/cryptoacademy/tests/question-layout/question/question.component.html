@@ -2,7 +2,7 @@
 <h3 class="test__question">{{question.body.text}}</h3>
 
 <div class="test__image">
-    <img [src]="question.body.image" alt="">
+    <img [src]="'/api/crypto/images/' + test.id + '/' + questionId + '.png'" alt="">
 </div>
 <div class="test__wrapper">
 
@@ -21,5 +21,6 @@
         </li>
     </ul>
 
-    <a (click)="goToNext()" class="filter__container-button button--crypto button--test">{{response ? 'Next' : 'Skip'}}</a>
+    <a (click)="goToNext()" *ngIf="response" class="filter__container-button button--crypto button--test">Next</a>
+    <a (click)="skip()" *ngIf="!response" class="filter__container-button button--crypto button--test">Skip</a>
 </div>

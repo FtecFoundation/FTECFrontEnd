@@ -143,6 +143,7 @@ export class SocialComponent implements OnInit {
                 this.wordsLeft = data;
                 this.word.setValue('');
                 this.getRecommendationsWords();
+                this.submitted = false;
             });
         } else if (this.dictionary.indexOf(this.word.value) !== -1) {
             this.wordExists = true;

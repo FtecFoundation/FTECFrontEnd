@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import {RestService} from './rest.service';
+import {RestService} from '../../../core/services/rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {map} from 'rxjs/operators/map';
 import {Observable} from 'rxjs/Observable';
-import {Test, TestHistory} from '../models/test-cryptoacademy';
+import {Question, QuestionsContainer, Test, TestHistory} from '../../../core/models/test-cryptoacademy';
 import {tap} from 'rxjs/operators/tap';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 
 enum CryptoacademyApiUrls {
-    getTests = 'cabinet/cryptoacademy/getAllTests',
+    getTests = 'crypto/main.json',
+    getQuestions = 'crypto/questions/',
     getHistory = 'cabinet/cryptoacademy/getHistory',
     saveTest = 'cabinet/cryptoacademy/saveTest',
     resetTest = 'cabinet/cryptoacademy/resetTest'
@@ -28,6 +29,11 @@ export class CryptoacademyService extends RestService {
 
     getTests(): Observable<Test[]> {
         return this.get(CryptoacademyApiUrls.getTests).pipe(
+            catchError(e => this.handleError(e)));
+    }
+
+    getQuestions(test: number): Observable<QuestionsContainer> {
+        return this.get(CryptoacademyApiUrls.getQuestions + test + '.json').pipe(
             catchError(e => this.handleError(e)));
     }
 
