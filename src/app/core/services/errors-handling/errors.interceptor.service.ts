@@ -41,11 +41,13 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                             break;
                     }
 
-                    console.log(Preferences.prototype.prod);
                     if (Preferences.prototype.prod) {
-                        this._notifyService.addNotification(new Notify('Error!',
+                        this._notifyService.addNotification(new Notify(this._notifyService.lastId, 'Error!',
                             this._errorService.parseResponseMessage(err), notifyTypes.error));
-                    } else this._notifyService.addNotification(new Notify(err.error.status, err.error.error, notifyTypes.error))
+                    } else {
+                        this._notifyService.addNotification(new Notify(this._notifyService.lastId,
+                            err.error.status, err.error.error, notifyTypes.error));
+                    }
                 }
                 return Observable.throw(err);
             });

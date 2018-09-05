@@ -247,4 +247,11 @@
   background-image: linear-gradient(to left, #3d0957, #0d0130);
 }
 
+.item-inner-line-error-block--empty .item-inner-line--error-icon{
+  top: initial;
+}
+
+.item-inner-line-error-block--empty span {
+  margin-left: 0;
+}
 // Status

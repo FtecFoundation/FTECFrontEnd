@@ -4,12 +4,7 @@ import {CryptoacademyService} from '../../../cryptoacademy.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TestStatusService} from '../../test-status/test-status.service';
 
-@Component({
-    selector: 'app-question',
-    templateUrl: './question.component.html',
-    styleUrls: ['../../../cryptoacademy.component.scss']
-})
-export class QuestionComponent implements OnInit, OnChanges {
+export abstract class QuestionComponent implements OnInit, OnChanges {
     @Input() questions: QuestionsContainer;
     @Input() test: Test;
     @Input() questionId: number;
@@ -19,9 +14,9 @@ export class QuestionComponent implements OnInit, OnChanges {
     selected: number;
     response: any;
 
-    constructor(private _cryptoacademyService: CryptoacademyService,
-                private router: Router,
-                private _testStatusService: TestStatusService) {
+    constructor(protected _cryptoacademyService: CryptoacademyService,
+                protected router: Router,
+                protected _testStatusService: TestStatusService) {
     }
 
     ngOnInit() {
@@ -42,28 +37,11 @@ export class QuestionComponent implements OnInit, OnChanges {
         this.updatePercent();
     }
 
-    chooseAnswer(answerId: number) {
-        if (!this.response) {
-            this.selected = answerId;
-            this._cryptoacademyService.answer(this.prepareData()).subscribe(data => {
-                this.response = data;
-                this._testStatusService.passed++;
-
-                if (this.response.correctAnswer === this.selected) {
-                    this._testStatusService.correct++;
-                } else {
-                    this._testStatusService.mistakes++;
-                }
-
-                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer = this.response.correctAnswer;
-                this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
-            });
-        }
-    }
+    abstract chooseAnswer(answerId: number);
 
     checkIfAnswered(): boolean {
         return (this.history.tests[this.test.id + '_' + this.questionId] &&
-            this.history.tests[this.test.id + '_' + this.questionId].selectedAnswer !== -1);
+            this.history.tests[this.test.id + '_' + this.questionId].selectedAnswer != -1);
     }
 
     updatePercent() {
@@ -103,7 +81,7 @@ export class QuestionComponent implements OnInit, OnChanges {
         this._cryptoacademyService.getTestsHistory().subscribe(data => {
             console.log(data);
             for (let i = 1; i < this.test.totalQuestions; i++) {
-                if (!data.tests[this.test.id + '_' + i] || data.tests[this.test.id + '_' + i].selectedAnswer === -1) {
+                if (!data.tests[this.test.id + '_' + i] || data.tests[this.test.id + '_' + i].selectedAnswer == -1) {
                     this.test.lastQuestion = i;
                     break;
                 }
