@@ -1,11 +1,25 @@
 export const changeLog = [
      {
+    'date': '05/09/2018',
+    'changes': [
+            'We added the button on Module of Trader\'s Behavioral Analyzer page to quickly go to My Exchanges page. ',
+            'We fixed the bug with white line on some buttons.',
+            'We fixed the function of filling the balance to the main module (for BTC).',
+            'In the main module, we added the function of getting the current balance for the address (for BTC).',
+            'In the main module, we added the function of generating addresses for replenishment (for BTC).',
+            'We added the function of getting the balance for a specific pair (for Binance).',
+            'We fixed the display of configurations of module notifications on Telegram Assistant page.',
+            'We added messages informing about the absence of active notifications, orders, and disabled Telegram Assistant to the Module of Price Notification and Exchange Order Management Module.',
+            'We fixed the display of currencies on News Background Analyzer page.'
+       ]
+    },
+     {
     'date': '04/09/2018',
     'changes': [
             'In Exchange Order Management Module, we added the function of saving condition when it\'s necessary to set an order (for HitBTC).',
             'In the proxy module, we added the function of getting all active pairs (for HitBTC).',
             'In Exchange Order Management Module, we added the function of notifying the user when an order is set successfully (for Bittrex).',
-            'n Exchange Order Management Module, we added the function of notifying the user when it\'s necessary to set an order but there aren\'t enough funds on the balance (for Bittrex).',
+            'In Exchange Order Management Module, we added the function of notifying the user when it\'s necessary to set an order but there aren\'t enough funds on the balance (for Bittrex).',
             'We added the function of filling the balance to the main module (for BTC).',
             'In Cryptoacademy, we fixed the display of correct and chosen answers.',
             'We deleted the function of cashing Cryptoacademy statistical files at frontend.',
