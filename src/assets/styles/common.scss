@@ -694,8 +694,24 @@ p {
   justify-content: space-between;
 }
 
+.title--green {
+  color: $green;
+}
 
+.title--blue {
+  color: #25cbd3;
+}
 
 .item-inner-line--second {
   color: $accent;
+}
+
+.filter__container-double {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter__container--analyzer {
+  width: 50%;
+  padding: .313em;
 }
