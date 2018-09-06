@@ -1,5 +1,19 @@
 export const changeLog = [
      {
+    'date': '06/09/2018',
+    'changes': [
+            'In Exchange Order Management Module. we added the function of saving the condition when it\'s necessary to set an order (for Poloniex).',
+            'In the proxy module, bugs of setting buy orders were fixed (for Bittrex).',
+            'In the main module, we optimized the referral system which will speed up the work of the main module.',
+            'In the proxy module, we added the function of getting all active pairs (for Poloniex).',
+            'We redid HTML layout of Global Price Analyzer page.',
+            'We fixed the adaptation of Global Price Analyzer page to all screen sizes.',
+            'To Arbitrage Module, we added buttons to display the user\'s last window search.',
+            'We fixed the display of pages in Cryptoacademy tests so the chart is shown entirely.',
+            'We prepared and added new test about divergence to Cryptoacademy.'
+       ]
+    },
+     {
     'date': '05/09/2018',
     'changes': [
             'We added the button on Module of Trader\'s Behavioral Analyzer page to quickly go to My Exchanges page. ',
