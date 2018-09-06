@@ -25,6 +25,8 @@ export class PriceNotificationComponent implements OnInit {
     emailNot: boolean = false;
     webNot: boolean = false;
 
+    telegramDisabled: boolean;
+
     typeNotChosen: boolean = false;
 
     constructor(private currentUser: CurrentUserService, public pairsFilterService: PairsFilterService,
@@ -36,6 +38,9 @@ export class PriceNotificationComponent implements OnInit {
             this.priceNotifications = data;
             this.available -= this.priceNotifications.length;
         });
+
+        this.telegramDisabled = !this.currentUser.notificationSettings['4']['telegram'];
+        console.log(this.currentUser.notificationSettings['4']['telegram']);
 
         if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
     }

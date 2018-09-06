@@ -2,6 +2,7 @@
 <h3 class="test__question">{{question.body.text}}</h3>
 
 <div class="test__image">
+    <!--<img *ngIf="response" @image #image src="../../../../../../../assets/images/deskop-screen-first.png" alt="">-->
     <img [src]="'/api/crypto/images/' + test.id + '/' + questionId + '.png'" alt="">
 </div>
 <div class="test__wrapper">
@@ -9,15 +10,15 @@
     <ul class="test__container">
         <li class="test__container-item"
             *ngFor="let answer of question.answer" (click)="chooseAnswer(answer.id)"
-            [ngClass]="{'is-active--red': response && (response.correctAnswer !== answer.id) && ((selected === answer.id)  || response.selectedAnswer === answer.id),
-            'is-active--green': response && (response.correctAnswer === answer.id)}">
+            [ngClass]="{'is-active--red': response && (response.correctAnswer.correct != answer.id) && ((selected === answer.id)  || response.selectedAnswer == answer.id),
+            'is-active--green': response && (response.correctAnswer.correct  == answer.id)}">
             <span class="test__container-answer"> {{answer.text}}
-              <span *ngIf="response && response.questions && response.questions[answer.id]"
+              <span *ngIf="response && response.questions"
                     class="test__item-percantage test__item--red"
-                    [ngClass]="{'test__item--red': response && (response.correctAnswer !== answer.id),
-            'test__item--green': response && (response.correctAnswer === answer.id)}">{{response.questions[answer.id]}}%</span>
+                    [ngClass]="{'test__item--red': response && (response.correctAnswer.correct  != answer.id),
+            'test__item--green': response && (response.correctAnswer.correct  == answer.id)}">{{response.questions[answer.id] ? response.questions[answer.id] : 0}}%</span>
             </span>
-            <span *ngIf="response && ((selected === answer.id) || response.selectedAnswer === answer.id)" class="test__item-answer">{{question.description}}</span>
+            <span *ngIf="response && ((selected === answer.id) || response.selectedAnswer == answer.id)" class="test__item-answer">{{question.description}}</span>
         </li>
     </ul>
 

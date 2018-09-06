@@ -36,6 +36,10 @@
   display: none;
 }
 
+.notify__inner {
+  position: relative;
+}
+
 .notify__inner span {
   font-size: 1.125em;
 }
@@ -51,4 +55,20 @@
 
 .notify.notify--good .good {
   display: block;
+}
+.filter__container-button--notify {
+  margin-right: .938em;
+  width: 150px;
+  padding: .938em;
+}
+
+.notify .close {
+  width: 15px;
+  opacity: .3;
+  background-image: url("../../../assets/images/close.svg");
+  background-size: contain;
+  height: 15px;
+  right: .938em;
+  top: .938em;
+  position: absolute;
 }

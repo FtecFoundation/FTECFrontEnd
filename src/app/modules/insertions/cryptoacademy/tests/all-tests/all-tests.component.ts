@@ -11,6 +11,7 @@ import {TestStatusService} from '../test-status/test-status.service';
 })
 export class AllTestsComponent implements OnInit {
     tests: Test[];
+    activeTab: string = 'tests';
 
     constructor(private _cryptoacademyService: CryptoacademyService, private router: Router,
                 public _testStatusService: TestStatusService) {
@@ -39,7 +40,7 @@ export class AllTestsComponent implements OnInit {
         for (const test of this.tests) {
             test.passed = 0;
             for (let i = 1; i <= test.totalQuestions; i++) {
-                if (history.tests[test.id + '_' + i] && (history.tests[test.id + '_' + i].selectedAnswer !== -1)) {
+                if (history.tests[test.id + '_' + i] && (history.tests[test.id + '_' + i].selectedAnswer != -1)) {
                     test.passed++;
                 }
             }
@@ -49,7 +50,7 @@ export class AllTestsComponent implements OnInit {
     fillLastQuestion(history: TestHistory) {
         for (const test of this.tests) {
             for (let i = 1; i <= test.totalQuestions; i++) {
-                if (!history.tests[test.id + '_' + i] || (history.tests[test.id + '_' + i].selectedAnswer === -1)) {
+                if (!history.tests[test.id + '_' + i] || (history.tests[test.id + '_' + i].selectedAnswer == -1)) {
                     test.lastQuestion = i;
                     break;
                 }

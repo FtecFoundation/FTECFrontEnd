@@ -26,7 +26,7 @@ export class ConfirmMailComponent implements OnInit {
 
   resendEmail() {
       this._accountService.resendEmail().subscribe(() => {
-          this._notifyService.addNotification(new Notify('Success!', 'Your confirmation has been resent', notifyTypes.success));
+          this._notifyService.addNotification(new Notify(this._notifyService.lastId,'Success!', 'Your confirmation has been resent', notifyTypes.success));
       });
   }
 

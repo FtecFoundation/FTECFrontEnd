@@ -5,18 +5,63 @@
         <div class="crypto">
             <div class="crypto__tab">
                 <ul class="tab-controls">
-                    <li class="tab-controls-item">Fundamental Analysis</li>
-                    <li class="tab-controls-item">Technical Analysis</li>
-                    <li class="tab-controls-item is-active">Tests</li>
-                    <li class="tab-controls-item">Forecasting</li>
+                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'fundamental'}"
+                        (click)="activeTab = 'fundamental'">Fundamental Analysis
+                    </li>
+                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'technical'}"
+                        (click)="activeTab = 'technical'">Technical Analysis
+                    </li>
+                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'tests'}"
+                        (click)="activeTab = 'tests'">Tests
+                    </li>
+                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'forecasting'}"
+                        (click)="activeTab = 'forecasting'">Forecasting
+                    </li>
                 </ul>
 
-                <div class="crypto__tab-wrapper" *ngIf="tests">
-                    <div class="crypto__tab-container" *ngFor="let test of tests">
+                <div class="crypto__tab-wrapper" *ngIf="activeTab === 'fundamental'">
+                    <div class="item-inner-line-error-block item-inner-line-error-block--empty">
+                        <span>This category is empty</span>
+                    </div>
+                </div>
+
+                <div class="crypto__tab-wrapper" *ngIf="activeTab === 'technical'">
+                    <div class="item-inner-line-error-block item-inner-line-error-block--empty">
+                        <span>This category is empty</span>
+                    </div>
+                </div>
+
+                <div class="crypto__tab-wrapper" *ngIf="tests && activeTab === 'tests'">
+                    <ng-container class="crypto__tab-container" *ngFor="let test of tests">
+                        <div class="crypto__tab-container" *ngIf="test.type !== 'forecasting'">
+                            <img [src]="'/api/crypto/images/' + test.id + '/0.png'" alt="">
+
+                            <span *ngIf="test.lastQuestion > 1 && test.lastQuestion !== test.totalQuestions"
+                                  class="test-progress">{{test.passed}}/{{test.totalQuestions}}</span>
+                            <span *ngIf="test.lastQuestion === test.totalQuestions"
+                                  class="test-progress">Completed</span>
+
+                            <div class="crypto__tab-info">
+                                <h5 class="crypto__info-title">{{test.name}}</h5>
+
+                                <span class="crypto__info-subtitle">{{test.level}}</span>
+
+                                <p class="crypto__info-text">{{test.description}}</p>
+
+                                <a (click)="goToTest(test)" class="filter__container-button button--crypto">{{(test.lastQuestion
+                                    > 1) ? 'Continue' : 'Begin'}}</a>
+                            </div>
+                        </div>
+                </ng-container>
+            </div>
+            <div class="crypto__tab-wrapper" *ngIf="tests && activeTab === 'forecasting'">
+                <ng-container *ngFor="let test of tests">
+                    <div class="crypto__tab-container" *ngIf="test.type === 'forecasting'">
                         <img [src]="'/api/crypto/images/' + test.id + '/0.png'" alt="">
 
-                        <span *ngIf="test.lastQuestion > 1 && test.lastQuestion !== test.totalQuestions" class="test-progress">{{test.passed}}/{{test.totalQuestions}}</span>
-                        <span *ngIf="test.lastQuestion === test.totalQuestions" class="test-progress">Completed</span>
+                        <span *ngIf="test.lastQuestion > 1 && test.lastQuestion !== test.totalQuestions"
+                              class="test-progress">{{test.passed}}/{{test.totalQuestions}}</span>
+                        <span *ngIf="test.passed === test.totalQuestions" class="test-progress">Completed</span>
 
                         <div class="crypto__tab-info">
                             <h5 class="crypto__info-title">{{test.name}}</h5>
@@ -25,11 +70,13 @@
 
                             <p class="crypto__info-text">{{test.description}}</p>
 
-                            <a (click)="goToTest(test)" class="filter__container-button button--crypto">{{(test.lastQuestion > 1) ? 'Continue' : 'Begin'}}</a>
+                            <a (click)="goToTest(test)" class="filter__container-button button--crypto">{{(test.lastQuestion
+                                > 1) ? 'Continue' : 'Begin'}}</a>
                         </div>
                     </div>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>
+</div>
 </div>

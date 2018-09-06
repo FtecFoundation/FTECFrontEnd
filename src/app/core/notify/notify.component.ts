@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import {NotifyService} from "./notify.service";
 import {animate, animateChild, query, state, style, transition, trigger} from "@angular/animations";
+import set = Reflect.set;
+import {Notify} from "./notifications";
 
 @Component({
     selector: 'app-notify',
@@ -18,7 +20,7 @@ import {animate, animateChild, query, state, style, transition, trigger} from "@
         ]),
         trigger('container', [
             transition(':enter, :leave', [
-                query('@*', animateChild())
+                query('@*', animateChild(), { optional: true })
             ])
         ])
     ]
@@ -30,6 +32,15 @@ export class NotifyComponent implements OnInit {
     ngOnInit() {
     }
 
+    hideAll() {
+        const not = this._notifyService.notifications;
+        for (let i = 0; i <= this._notifyService.notifications.length; i++) {
+            setTimeout(function(x) { return function() { not.shift() }; }(i), 200*i);
+            // 1 2 3 4 5
+        }
+    }
 
-
+    hideNotif(id: number) {
+        delete this._notifyService.notifications[id];
+    }
 }
