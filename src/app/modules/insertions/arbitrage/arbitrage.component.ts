@@ -4,7 +4,6 @@ import {AvailableExchanges} from './available-exchanges';
 import {ArbitrageService} from '../../../core/services/arbitrage.service';
 import {ArbitrageWindowRequest, ArbitrageWindows, ArbitrageWindowsLog} from '../../../core/models/arbitrage-window';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RegistrationValidators} from '../../../auth/registration/registration.validators';
 import {Stock} from './available-exchanges';
 
 @Component({
@@ -32,7 +31,7 @@ export class ArbitrageComponent implements OnInit {
         this.exchanges = AvailableExchanges.availableStocks;
 
         this._arbitrageService.getOldWindows().subscribe(data => {
-            this.windowsLogs = data;
+            console.log(data)
         });
         this.createForm();
     }
@@ -44,7 +43,7 @@ export class ArbitrageComponent implements OnInit {
             orderVolume: ['0.01', Validators.min(0.01)],
             isOrderVolume: false
         });
-        this.arbitrageForm = new FormGroup(this.arbitrageForm.controls, { updateOn: 'blur' });
+        this.arbitrageForm = new FormGroup(this.arbitrageForm.controls, {updateOn: 'blur'});
     }
 
     showModal() {
@@ -54,12 +53,16 @@ export class ArbitrageComponent implements OnInit {
     fillChosenExchanges() {
         this.chosenExchanges = [];
         for (const e of this.exchanges) {
-            if (e.arbitrageChosen) { this.chosenExchanges.push(e); }
+            if (e.arbitrageChosen) {
+                this.chosenExchanges.push(e);
+            }
         }
     }
 
     chooseExchange(exhange: any) {
-        if (!this.allChosen) { exhange.arbitrageChosen = !exhange.arbitrageChosen; }
+        if (!this.allChosen) {
+            exhange.arbitrageChosen = !exhange.arbitrageChosen;
+        }
         this.fillChosenExchanges();
     }
 
@@ -74,7 +77,9 @@ export class ArbitrageComponent implements OnInit {
 
     toggleCheckbox(field: AbstractControl) {
         field.value === true ? field.setValue(false) : field.setValue(true);
-        if (!field.value) { this.orderVolume.setValue(null); }
+        if (!field.value) {
+            this.orderVolume.setValue(null);
+        }
     }
 
     submitForm() {
@@ -93,11 +98,19 @@ export class ArbitrageComponent implements OnInit {
         return new ArbitrageWindowRequest().deserialize(this.arbitrageForm.value, this.chosenExchanges);
     }
 
-    get isOrderVolume() { return this.arbitrageForm.get('isOrderVolume'); }
+    get isOrderVolume() {
+        return this.arbitrageForm.get('isOrderVolume');
+    }
 
-    get minVolume() { return this.arbitrageForm.get('minVolume'); }
+    get minVolume() {
+        return this.arbitrageForm.get('minVolume');
+    }
 
-    get minPercent() { return this.arbitrageForm.get('minPercent'); }
+    get minPercent() {
+        return this.arbitrageForm.get('minPercent');
+    }
 
-    get orderVolume() { return this.arbitrageForm.get('orderVolume'); }
+    get orderVolume() {
+        return this.arbitrageForm.get('orderVolume');
+    }
 }
