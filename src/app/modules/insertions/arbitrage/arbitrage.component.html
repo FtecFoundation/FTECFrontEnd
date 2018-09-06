@@ -135,9 +135,12 @@
 
         <div class="middle middle--dashboard" *ngIf="windowsLogs && windowsLogs.logs.length !== 0">
             <div class="middle__head middle__head--arbitrage">
-                <h5>
-                    Last Results
-                </h5>
+                <ul class="tab-controls">
+                    <li class="tab-controls-item">Fundamental Analysis</li>
+                    <li class="tab-controls-item">Technical Analysis</li>
+                    <li class="tab-controls-item is-active">Tests</li>
+                    <li class="tab-controls-item">Forecasting</li>
+                </ul>
 
                 <span>Last Update:
                     <span id="middle__head-date">{{windowsLogs.date | date: 'd MMM HH:mm'}}</span>
