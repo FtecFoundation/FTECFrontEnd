@@ -2,7 +2,7 @@
 <h3 class="test__question">{{question.body.text}}</h3>
 
 <div class="test__image">
-    <img *ngIf="response" @image #image src="../../../../../../../assets/images/deskop-screen-first.png" alt="">
+    <!--<img *ngIf="response" @image #image src="../../../../../../../assets/images/deskop-screen-first.png" alt="">-->
     <img [src]="'/api/crypto/images/' + test.id + '/' + questionId + '.png'" alt="">
 </div>
 <div class="test__wrapper">
