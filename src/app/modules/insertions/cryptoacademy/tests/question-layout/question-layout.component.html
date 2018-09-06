@@ -1,9 +1,14 @@
 <div class="middle middle--test">
     <div class="test">
-        <app-question *ngIf="test && questions && _testStatusService.history" [test]="test"
+        <app-ordinary-question *ngIf="test && !test.type && questions && _testStatusService.history" [test]="test"
                       [questions]="questions" [questionId]="questionId"
                       [history]="_testStatusService.history">
-        </app-question>
+        </app-ordinary-question>
+
+        <app-forecasting-question *ngIf="test && (test.type === 'forecasting') && questions && _testStatusService.history" [test]="test"
+                               [questions]="questions" [questionId]="questionId"
+                               [history]="_testStatusService.history">
+        </app-forecasting-question>
     </div>
 </div>
 <app-test-status *ngIf="test && _testStatusService.history" [test]="test"

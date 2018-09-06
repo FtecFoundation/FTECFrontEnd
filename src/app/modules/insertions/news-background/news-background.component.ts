@@ -14,6 +14,7 @@ export class NewsBackgroundComponent implements OnInit {
 
   daysLeft: any = 0;
   exchanges = AvailableExchanges;
+  currencies: string[] = ['BTC', 'LTC', 'EOS'];
 
 
   constructor(private _socialService: SocialService,

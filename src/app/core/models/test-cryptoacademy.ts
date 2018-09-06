@@ -1,3 +1,8 @@
+class Correct {
+    correct: number;
+    image: string;
+}
+
 export class Test {
     id: number;
     description: string;
@@ -6,10 +11,11 @@ export class Test {
     image: string;
     lastQuestion?: number;
     selectedAnswer?: number;
-    correctAnswer?: number;
+    correctAnswer?: Correct;
     questions: any;
     totalQuestions: number;
     passed?: number;
+    type?: string;
 }
 
 export class TestHistory {

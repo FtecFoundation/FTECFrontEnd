@@ -5,6 +5,9 @@
         <div class="aside-right__head aside-right__head--arbitrage">Active orders ({{available}} left)</div>
 
         <div class="middle__block middle__block--price" *ngIf="orders">
+            <div *ngIf="orders.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
+                <span>There are no active orders</span>
+            </div>
 
             <div class="behavioral__small-container-inner" *ngFor="let order of orders">
                 <div class="order__small-container">

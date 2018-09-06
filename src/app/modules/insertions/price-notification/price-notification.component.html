@@ -3,8 +3,14 @@
   <div class="middle middle--price">
 
     <div class="aside-right__head aside-right__head--arbitrage">Active Notifications ({{available}} left)</div>
-
+    <div *ngIf="telegramDisabled" class="item-inner-line-error-block item-inner-line-error-block--empty">
+      <span>Telegram Assistant is disabled for this module. Enable it to receive price notifications</span>
+    </div>
     <div class="middle__block middle__block--price" *ngIf="priceNotifications">
+
+      <div *ngIf="priceNotifications.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
+        <span>There are no active price notifications</span>
+      </div>
 
       <div class="behavioral__small-container-inner" *ngFor="let item of priceNotifications">
         <div class="behavioral__small-container price__small-container">

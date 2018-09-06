@@ -6,6 +6,7 @@ import {CurrentUserService} from '../../../../core/services/current-user.service
 import {notificationMapper} from '../../../../constants';
 import {NotificationService} from '../../../account/notification/notification.service';
 import {NotificationSetting} from '../../../../core/models/user';
+import {PreferencesService} from "../../../../core/services/preferences.service";
 
 @Component({
   selector: 'app-telegram-activated',
@@ -17,14 +18,11 @@ export class TelegramActivatedComponent implements OnInit {
   notificationMapper = notificationMapper;
 
   constructor(private _telegramService: TelegramAssistantService, public _showModalService: ShowModalService, private router: Router,
-              public currentUserService: CurrentUserService, private notificationService: NotificationService) { }
+              public currentUserService: CurrentUserService, private notificationService: NotificationService,
+              private _preferencesService: PreferencesService) { }
 
   ngOnInit() {
-      this._telegramService.getBotDomain().subscribe(data => {
-          this.botDomain = data;
-      });
-      console.log(this.currentUserService.notificationSettings);
-      // In order to make sure html will use telegram settings but null with getter
+      this.botDomain = this._preferencesService.preferences.botDomain;
       this.currentUserService.getTelegramSettingsObs(false);
   }
 

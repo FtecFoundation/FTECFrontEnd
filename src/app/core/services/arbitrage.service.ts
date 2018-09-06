@@ -17,8 +17,14 @@ export class ArbitrageService extends RestService {
     constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
     }
-    getOldWindows(): Observable<ArbitrageWindowsLog> {
+    getOldWindows(): Observable<number[]> {
         return this.get(ArbitrageApiUrls.getOldWindows).pipe(
+            map(resp => resp.response.logs),
+            catchError(e => this.handleError(e)));
+    }
+
+    getOldWindowsByTime(timestamp: number): Observable<ArbitrageWindowsLog> {
+        return this.get(ArbitrageApiUrls.getOldWindows + '/' + timestamp).pipe(
             map(resp => resp.response),
             catchError(e => this.handleError(e)));
     }
