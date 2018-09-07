@@ -172,3 +172,14 @@
   align-items: center;
   flex-direction: column;
 }
+
+.person__opened-img {
+  width: 66.66%;
+  padding: .313em;
+}
+
+.table__account-img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+}
