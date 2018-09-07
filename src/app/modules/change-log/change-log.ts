@@ -1,5 +1,19 @@
 export const changeLog = [
      {
+    'date': '07/09/2018',
+    'changes': [
+            'We fixed the bug with logout.',
+            'We redesigned the payment function. From now the address will go through the admin panel before it is in available mode.',
+            'We fixed the bug of Social Assistant. Tweets won\'t be linked twice anymore.',
+            'We improved the code readability, the processing of user\'s answers in Telegram Assistant was speeded up as well.',
+            'We fixed the bug of placing the image of answers to Cryptoacademy forecasting tets.',
+            'We added the possibility to see desired arbitrage windows by days.',
+            'At frontend, we implemented getting the data for user\'s form on Anomalous Volume Dynamics Analyzer page.',
+            'We redid HTML layout of Anomalous Volume Dynamics Analyzer page.',
+            'We fixed the adaptation of Anomalous Volume Dynamics Analyzer page to all screen sizes.'
+       ]
+    },
+     {
     'date': '06/09/2018',
     'changes': [
             'In Exchange Order Management Module. we added the function of saving the condition when it\'s necessary to set an order (for Poloniex).',
