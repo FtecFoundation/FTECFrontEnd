@@ -21,6 +21,8 @@ export class ArbitrageComponent implements OnInit {
     arbitrageForm: FormGroup;
     chosenExchanges: Stock[];
     submitted = false;
+    timeLogs: number[] = [];
+    activeLog: number = 0;
 
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
@@ -31,9 +33,16 @@ export class ArbitrageComponent implements OnInit {
         this.exchanges = AvailableExchanges.availableStocks;
 
         this._arbitrageService.getOldWindows().subscribe(data => {
-            console.log(data)
+            this.timeLogs = data;
         });
         this.createForm();
+    }
+
+    activaleLog(timestamp: number) {
+        this._arbitrageService.getOldWindowsByTime(timestamp).subscribe(data => {
+            this.activeLog = timestamp;
+            console.log(data);
+        })
     }
 
     createForm() {
