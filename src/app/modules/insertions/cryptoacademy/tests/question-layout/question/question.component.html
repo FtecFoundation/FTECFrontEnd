@@ -2,7 +2,7 @@
 <h3 class="test__question">{{question.body.text}}</h3>
 
 <div class="test__image">
-    <img class="test__image--answer" [style.display]="response && response.correctAnswer.image ? 'block' : 'none'" @image #image src="" alt="">
+    <img class="test__image--answer" *ngIf="response && response.correctAnswer.image" @image [src]="answerImg" alt="">
     <img [src]="'/api/crypto/images/' + test.id + '/' + questionId + '.png'" alt="">
 </div>
 <div class="test__wrapper">

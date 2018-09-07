@@ -94,19 +94,19 @@
         </div>
 
         <span class="container__name">Daily Volume</span>
-        <app-slider (valueToSend)="getProfitPercent($event)" postfix=" BTC" [max]="300" [min]="1" [value]="20"></app-slider>
+        <app-slider (valueToSend)="getProfitPercent($event)" postfix=" BTC" [max]="300" [min]="1" [value]="dailyVolume"></app-slider>
 
         <div class="filter__container">
-          <input class="form__input" placeholder="Daily Volume">
+          <input class="form__input" type="number" [(ngModel)]="dailyVolume" [ngModelOptions]="{standalone: true}" placeholder="Daily Volume">
         </div>
 
         <div class="filter__container filter__container--volume-double">
 
           <div class="l-order__type-container l-volume__type-container">
-              <span class="order__type-item is-active">Buy
+              <span class="order__type-item is-active">BTC
                   <div class="order__type-container"></div>
               </span>
-            <span class="order__type-item">Sell
+            <span class="order__type-item">ETH
                     <div class="order__type-container"></div>
               </span>
           </div>
