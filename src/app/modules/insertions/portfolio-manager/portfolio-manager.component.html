@@ -2,43 +2,110 @@
 
   <div class="middle middle--portfolio">
 
-    <div class="portfolio__graph">
-      <div class="portfolio__graph-item">
-        <img src="../../../../assets/images/group-4.png" alt="">
+    <div class="middle__head middle__head--portfolio">
+      <ul class="tab-controls tab-controls--portfolio">
+        <li class="tab-controls-item tab-controls-item--arbitrage">My portfolio</li>
+        <li class="tab-controls-item tab-controls-item--arbitrage is-active">3 days</li>
+        <li class="tab-controls-item tab-controls-item--arbitrage">7 days</li>
+        <li class="tab-controls-item tab-controls-item--arbitrage">30 days</li>
+        <li class="tab-controls-item tab-controls-item--arbitrage">90 days</li>
+      </ul>
+    </div>
+
+    <!--<div class="portfolio__graph">
+      <img class="portfolio__graph-img" src="../../../../assets/images/group-4.png" alt="">
+
+      <div class="portfolio__graph-info">
+        <div class="graph__stats">
+
+          <div class="middle__table-type">
+            <span class="">
+              Connected Exchanges
+            </span>
+          </div>
+
+          <div class="graph__stats-line-container">
+            <div class="graph__stats-line">
+              <span>Timeframe:</span>
+
+              <span>1 minute</span>
+            </div>
+
+            <div class="graph__stats-line">
+              <span>Size of the port:</span>
+
+              <span>0,000002</span>
+            </div>
+
+            <div class="graph__stats-line">
+              <span>Number of coins:</span>
+
+              <span>10</span>
+            </div>
+
+            <div class="graph__stats-line">
+              <span>Portfolio type:</span>
+
+              <span>Agressive</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <form action="" class="graph__stats">
+
+          <div class="graph__stats-line-container">
+
+            <span>Your last generated portfolio</span>
+
+            <h3>15.05.18</h3>
+
+            <button class="filter__container-button">Rebalance</button>
+
+            <button class="button__outline button__outline&#45;&#45;portfolio">Automatic Buy</button>
+          </div>
+
+        </form>
+      </div>
+    </div>-->
+
+    <div class="middle__table-type">
+        <span class="middle__table-type-name">
+            Currency
+        </span>
+
+      <div class="middle__table-type-inner">
+        <span class="middle__table-type-name">
+            Price
+        </span>
+
+        <span class="middle__table-type-name align-right">
+            Capitalization
+        </span>
       </div>
 
-      <div class="graph__right">
-        <div class="graph__right-container">
-          <span class="graph__container-subtitle">Term Remaining</span>
+      <span class="middle__table-type-name align-right">
+          Increase, %
+      </span>
+    </div>
 
-          <span class="graph__container-title">13 months 3 days</span>
+    <div class="middle__table-container middle__table-container--arbitrage">
+      <div class="middle__table-container-item">
+
+        <h4>ETH</h4>
+
+        <div class="item-inner">
+          <div class="item-inner-line">
+            <span>1</span>
+            <span>2</span>
+          </div>
         </div>
 
-        <div class="graph__right-container">
-          <span class="graph__container-subtitle">Term Remaining</span>
-
-          <span class="graph__container-title">13 months 3 days</span>
-        </div>
-
-        <div class="graph__right-container">
-          <span class="graph__container-subtitle">Term Remaining</span>
-
-          <span class="graph__container-title">13 months 3 days</span>
-        </div>
-      </div>
-
-      <div class="graph__under">
-        <div class="graph__under-container">
-          <span class="graph__container-subtitle">Term Remaining</span>
-
-          <span class="graph__container-title">13 months 3 days</span>
-        </div>
-
-        <p>Looks like your portfolio needs to be rebalanced!</p>
-
-        <button class="filter__container-button filter__container-button--portfolio">rebalance</button>
+        <span class="container-item-profit align-right title--green">1234412%</span>
       </div>
     </div>
+
   </div>
 
   <div class="aside-right">
@@ -83,22 +150,25 @@
         <input type="number" class="form__input" placeholder="0.000001">
       </div>
 
-      <div class="filter__container">
-        <span class="container__name">Portfolio type</span>
+      <span class="container__name">Portfolio type</span>
 
-        <label for="" class="form__label-container">
+      <div class="filter__container filter__container--portfolio">
+        <label for="" class="form__info-label-container">
           Agressive
-          <input type="checkbox" class="form__checkbox">
+          <!--<input type="checkbox" class="form__checkbox">-->
+          <span class="form__info-checkmark"></span>
         </label>
 
-        <label for="" class="form__label-container">
+        <label for="" class="form__info-label-container">
           Conversative
-          <input type="checkbox" class="form__checkbox">
+          <!--<input type="checkbox" class="form__checkbox">-->
+          <span class="form__info-checkmark"></span>
         </label>
 
-        <label for="" class="form__label-container">
+        <label for="" class="form__info-label-container">
           Progressive
-          <input type="checkbox" class="form__checkbox">
+          <!--<input type="checkbox" class="form__checkbox">-->
+          <span class="form__info-checkmark"></span>
         </label>
       </div>
 
