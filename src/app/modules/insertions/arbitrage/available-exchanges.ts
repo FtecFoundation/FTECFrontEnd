@@ -12,6 +12,10 @@ export class AvailableExchanges {
         AvailableExchanges.Hitbtc, AvailableExchanges.HuobiCom, AvailableExchanges.Kraken, AvailableExchanges.Poloniex,
         AvailableExchanges.YObitNet];
 
+    public static availableTimeframes: Timeframe[] = [{symbol: '1m', name: '1 minute'}, {symbol: '5m', name: '5 minutes'},
+        {symbol: '10m', name: '10 minutes'}, {symbol: '30m', name: '30 minutes'}, {symbol: '1h', name: '1 hour'},
+        {symbol: '4h', name: '4 hours'}, {symbol: '1d', name: '1 day'}];
+
     static ofName(name: string): Stock {
         for (const stock of AvailableExchanges.availableStocks) {
             if (name === stock.nameToSend) { return stock; }
@@ -25,4 +29,9 @@ export interface Stock {
     nameToSend: string;
     arbitrageChosen: boolean;
     imageURL: string;
+}
+
+export class Timeframe {
+    symbol: string;
+    name: string;
 }

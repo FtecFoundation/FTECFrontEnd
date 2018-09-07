@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { volumeAnalyzerItems } from './volume-analyzer';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {Pair} from "../../../core/models/pair";
+import {AvailableExchanges, Stock, Timeframe} from "../arbitrage/available-exchanges";
 
 
 @Component({
@@ -11,6 +12,8 @@ import {Pair} from "../../../core/models/pair";
 })
 export class VolumeAnalyzerComponent implements OnInit {
 
+  exchanges: Stock[] = AvailableExchanges.availableStocks;
+  timeframes: Timeframe[] = AvailableExchanges.availableTimeframes;
   items = volumeAnalyzerItems;
   pairs: Pair[];
   showPopupModal = false;

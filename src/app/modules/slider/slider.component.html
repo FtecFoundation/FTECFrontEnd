@@ -1,9 +1,10 @@
 <div class="filter__container">
 
-  <div class="container__form container__form--range">
-    <span [style.left.%]="normalizeValue(value)">{{value}}%</span>
+  <div class="container__form container__form--range" [attr.data-before-content]="min + postfix"
+       [attr.data-after-content]="max + postfix">
+    <span [style.left.%]="normalizeValue(value)">{{value}}{{postfix}}</span>
 
-    <input type="range" name="range" min="-100" max="100" [(ngModel)]="value" (ngModelChange)="emitValue()">
+    <input type="range" name="range" [min]="min" [max]="max" [(ngModel)]="value" (ngModelChange)="emitValue()">
   </div>
 
 </div>
