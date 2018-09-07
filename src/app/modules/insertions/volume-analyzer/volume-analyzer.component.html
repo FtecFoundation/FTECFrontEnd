@@ -76,7 +76,7 @@
 
             <div class="container__form container__form--select is-active">
 
-              <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+              <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
 
             </div>
 
@@ -87,13 +87,14 @@
 
             <div class="container__form container__form--select is-active">
 
-              <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+              <app-dropdown [label]="'Exchange'" [items]="timeframes" [keyName]="'name'"></app-dropdown>
 
             </div>
           </div>
         </div>
 
-        <app-slider (valueToSend)="getProfitPercent($event)"></app-slider>
+        <span class="container__name">Daily Volume</span>
+        <app-slider (valueToSend)="getProfitPercent($event)" postfix=" BTC" [max]="300" [min]="1" [value]="20"></app-slider>
 
         <div class="filter__container">
           <input class="form__input" placeholder="Minimum value: 20">

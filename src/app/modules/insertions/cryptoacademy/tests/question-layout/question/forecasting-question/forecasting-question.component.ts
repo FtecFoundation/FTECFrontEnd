@@ -43,7 +43,8 @@ export class ForecastingQuestionComponent extends QuestionComponent{
                 this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer.correct = this.response.correctAnswer.correct;
                 this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
 
-                this.image.nativeElement.src = '/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image;
+                console.log('/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image);
+                if (this.image.nativeElement) this.image.nativeElement.src = '/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image;
             });
         }
     }

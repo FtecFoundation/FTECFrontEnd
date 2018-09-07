@@ -18,12 +18,12 @@
 }
 
 .container__form--range::before {
-  content: "-100%";
+  content: attr(data-before-content);
   left: 0;
 }
 
 .container__form--range::after {
-  content: "+100%";
+  content: attr(data-after-content);
   right: 1.75em;
 }
 
