@@ -13,6 +13,7 @@ export abstract class QuestionComponent implements OnInit, OnChanges {
     question: Question;
     selected: number;
     response: any;
+    answerImg: string;
 
     constructor(protected _cryptoacademyService: CryptoacademyService,
                 protected router: Router,
