@@ -94,7 +94,7 @@
         </div>
 
         <span class="container__name">Daily Volume</span>
-        <app-slider (valueToSend)="getProfitPercent($event)" postfix=" BTC" [max]="300" [min]="1" ></app-slider>
+        <app-slider (valueToSend)="getProfitPercent($event)" postfix=" BTC" [max]="300" [min]="1" [value]="20"></app-slider>
 
         <div class="filter__container">
           <input class="form__input" placeholder="Minimum value: 20">
