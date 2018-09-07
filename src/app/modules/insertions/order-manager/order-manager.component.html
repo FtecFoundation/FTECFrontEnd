@@ -18,9 +18,9 @@
                     </div>
 
                     <div class="price__small-container-value order__small-container-value">
-            <span class="small-container__line-link small-container__line-link--order"
-                  [ngClass]="{'small-container__line-link--order--sell': order.type === 'Sell'}"
-                  [ngClass]="{'small-container__line-link--order--buy': order.type === 'Buy'}">{{order.type}}</span>
+                        <span class="small-container__line-link small-container__line-link--order"
+                          [ngClass]="{'small-container__line-link--order--sell': order.type === 'Sell'}"
+                          [ngClass]="{'small-container__line-link--order--buy': order.type === 'Buy'}">{{order.type}}</span>
 
                         <span>{{order.divergence}}%</span>
                     </div>
@@ -44,13 +44,13 @@
             <div class="filter__container">
 
                 <div class="l-order__type-container">
-          <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Buy'}" (click)="orderType = 'Buy'">Buy
-            <div class="order__type-container"></div>
-          </span>
+                    <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Buy'}" (click)="orderType = 'Buy'">Buy
+                        <div class="order__type-container"></div>
+                    </span>
                     <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Sell'}"
                           (click)="orderType = 'Sell'">Sell
-            <div class="order__type-container"></div>
-          </span>
+                          <div class="order__type-container"></div>
+                    </span>
                 </div>
             </div>
 

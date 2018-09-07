@@ -91,3 +91,16 @@
 .item-inner-line-error-block.item-inner-line-error-block--empty span {
   margin-left: 20px;
 }
+
+.l-volume__type-container {
+  width: 100%;
+  text-align: center;
+}
+
+.l-volume__type-container .order__type-item {
+  width: 50%;
+}
+
+.filter__container--volume-double {
+  padding: .625em;
+}

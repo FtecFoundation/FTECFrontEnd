@@ -5,7 +5,7 @@
 
     <div class="middle__block middle__block--behavioral">
 
-      <div class="behavioral__small-container-inner trp__small-container-inner" *ngFor="let item of trp">
+      <div class="behavioral__small-container-inner trp__small-container-inner">
         <div class="behavioral__small-container trp__small-container">
           <div class="trp__container-block">
             <div class="trp__container">
@@ -79,5 +79,111 @@
     </div>
 
   </div>
+
+  <div class="aside-right">
+    <div class="aside-right__head aside-right__head--volume">
+      <h5>
+        Find windows
+      </h5>
+
+    </div>
+
+
+    <form action="" class="aside-right__filter">
+
+      <div class="filter__container-double">
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Exchange</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Timeframe</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Exchange</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Timeframe</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Exchange</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Timeframe</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Exchange</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+          <span class="container__name">Timeframe</span>
+
+          <div class="container__form container__form--select is-active">
+
+            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <button class="filter__container-button">Search</button>
+    </form>
+
+
+  </div>
+
 
 </div>
