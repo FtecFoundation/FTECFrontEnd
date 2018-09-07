@@ -23,6 +23,7 @@ export class ArbitrageComponent implements OnInit {
     submitted = false;
     timeLogs: number[] = [];
     activeLog: number = 0;
+    currentLogs: ArbitrageWindowsLog;
 
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
@@ -41,7 +42,7 @@ export class ArbitrageComponent implements OnInit {
     activaleLog(timestamp: number) {
         this._arbitrageService.getOldWindowsByTime(timestamp).subscribe(data => {
             this.activeLog = timestamp;
-            console.log(data);
+            this.currentLogs = data;
         })
     }
 

@@ -93,7 +93,6 @@
   margin-top: 2.5rem;
 }
 
-
 .middle__container--preloader {
   display: flex;
   align-items: center;
@@ -107,9 +106,12 @@
   transform: scale(1) !important;
 }
 
-
 .middle__head--arbitrage-tabs {
   overflow: hidden;
   padding-bottom: 0;
   border-radius: 10px;
+}
+
+.tab-controls--arbitrage {
+  width: 100%;
 }
