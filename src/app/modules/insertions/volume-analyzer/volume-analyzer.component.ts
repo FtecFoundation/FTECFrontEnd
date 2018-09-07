@@ -17,7 +17,7 @@ export class VolumeAnalyzerComponent implements OnInit {
   items = volumeAnalyzerItems;
   pairs: Pair[];
   showPopupModal = false;
-  profitPercent: number = 0;
+  dailyVolume: number;
 
   constructor(private _showModalService: ShowModalService) {
   }
@@ -31,7 +31,7 @@ export class VolumeAnalyzerComponent implements OnInit {
   }
 
     getProfitPercent(value: number) {
-        this.profitPercent = value;
+        this.dailyVolume = value;
     }
 
   showModal() {
