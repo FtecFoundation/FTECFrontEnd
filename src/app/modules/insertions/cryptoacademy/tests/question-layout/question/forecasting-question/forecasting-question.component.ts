@@ -19,7 +19,6 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
         ])]
 })
 export class ForecastingQuestionComponent extends QuestionComponent{
-    @ViewChild('image') image: ElementRef;
 
     constructor(_cryptoacademyService: CryptoacademyService,
                 router: Router,
@@ -43,7 +42,7 @@ export class ForecastingQuestionComponent extends QuestionComponent{
                 this._testStatusService.history.tests[this.test.id + '_' + this.questionId].correctAnswer.correct = this.response.correctAnswer.correct;
                 this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
 
-                this.image.nativeElement.src = '/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image;
+                this.answerImg = '/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image;
             });
         }
     }

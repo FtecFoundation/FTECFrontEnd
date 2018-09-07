@@ -124,8 +124,8 @@
 .test__image img {
   width: 100%;
   height: 100%;
-  
-  object-fit: fill;
+  -o-object-fit: fill;
+  object-fit: contain;
   border-radius: .313rem;
 }
 

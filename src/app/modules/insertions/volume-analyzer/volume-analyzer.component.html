@@ -76,7 +76,7 @@
 
             <div class="container__form container__form--select is-active">
 
-              <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+              <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
 
             </div>
 
@@ -87,25 +87,26 @@
 
             <div class="container__form container__form--select is-active">
 
-              <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+              <app-dropdown [label]="'Timeframe'" [items]="timeframes" [keyName]="'name'"></app-dropdown>
 
             </div>
           </div>
         </div>
 
-        <app-slider (valueToSend)="getProfitPercent($event)"></app-slider>
+        <span class="container__name">Daily Volume</span>
+        <app-slider (valueToSend)="getProfitPercent($event)" postfix=" BTC" [max]="300" [min]="1" [value]="dailyVolume"></app-slider>
 
         <div class="filter__container">
-          <input class="form__input" placeholder="Minimum value: 20">
+          <input class="form__input" type="number" [(ngModel)]="dailyVolume" [ngModelOptions]="{standalone: true}" placeholder="Daily Volume">
         </div>
 
         <div class="filter__container filter__container--volume-double">
 
           <div class="l-order__type-container l-volume__type-container">
-              <span class="order__type-item is-active">Buy
+              <span class="order__type-item is-active">BTC
                   <div class="order__type-container"></div>
               </span>
-            <span class="order__type-item">Sell
+            <span class="order__type-item">ETH
                     <div class="order__type-container"></div>
               </span>
           </div>
