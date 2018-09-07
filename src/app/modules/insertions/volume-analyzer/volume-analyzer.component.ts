@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { volumeAnalyzerItems } from './volume-analyzer';
 import {ShowModalService} from '../../not-active/show-modal.service';
+import {Pair} from "../../../core/models/pair";
 
 
 @Component({
@@ -11,7 +12,9 @@ import {ShowModalService} from '../../not-active/show-modal.service';
 export class VolumeAnalyzerComponent implements OnInit {
 
   items = volumeAnalyzerItems;
+  pairs: Pair[];
   showPopupModal = false;
+  profitPercent: number = 0;
 
   constructor(private _showModalService: ShowModalService) {
   }
@@ -23,6 +26,10 @@ export class VolumeAnalyzerComponent implements OnInit {
   showPopup() {
     this.showPopupModal = true;
   }
+
+    getProfitPercent(value: number) {
+        this.profitPercent = value;
+    }
 
   showModal() {
     this._showModalService.showModal = true;

@@ -133,18 +133,19 @@
             </div>
         </div>
 
-        <div class="middle middle--dashboard" *ngIf="windowsLogs && windowsLogs.logs.length !== 0">
+        <div class="middle middle--dashboard" *ngIf="timeLogs && timeLogs.length !== 0">
             <div class="middle__head middle__head--arbitrage middle__head--arbitrage-tabs">
+
                 <ul class="tab-controls tab-controls--arbitrage">
-                    <li class="tab-controls-item tab-controls-item--arbitrage">4 Jul 14:42</li>
-                    <li class="tab-controls-item tab-controls-item--arbitrage">4 Jul 14:42</li>
-                    <li class="tab-controls-item tab-controls-item--arbitrage is-active">4 Jul 14:42</li>
-                    <li class="tab-controls-item tab-controls-item--arbitrage">4 Jul 14:42</li>
-                    <li class="tab-controls-item tab-controls-item--arbitrage">4 Jul 14:42</li>
+                    <li [ngClass]="{'is-active': time == activeLog}"
+                        (click)="activaleLog(time)"
+                        class="tab-controls-item tab-controls-item--arbitrage"
+                        *ngFor="let time of timeLogs">{{time | date: 'dd MMM HH:mm'}}</li>
+
                 </ul>
             </div>
 
-            <div class="middle__table-type">
+            <div class="middle__table-type" *ngIf="currentLogs">
                 <span class="middle__table-type-name">
                     Pair
                 </span>
@@ -164,8 +165,8 @@
                 </span>
             </div>
 
-            <div class="middle__table-container middle__table-container--arbitrage">
-                <div class="middle__table-container-item" *ngFor="let log of windowsLogs.logs">
+            <div class="middle__table-container middle__table-container--arbitrage" *ngIf="currentLogs">
+                <div class="middle__table-container-item" *ngFor="let log of currentLogs.logs">
                     <div class="item-inner-line--error-icon" *ngIf="log.lockedOnBuy || log.lockedOnSell">
                         <svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>5D074596-E74D-4807-A458-F2A684AC2689</title>
