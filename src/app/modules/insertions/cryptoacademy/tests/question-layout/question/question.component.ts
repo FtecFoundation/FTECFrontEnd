@@ -32,6 +32,8 @@ export abstract class QuestionComponent implements OnInit, OnChanges {
         this.question = this.questions[this.questionId];
         if (this.checkIfAnswered()) {
             this.response = this._testStatusService.history.tests[this.test.id + '_' + this.questionId];
+            if (this.response.correctAnswer.image)
+                this.answerImg = '/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image;
         } else {
             this.response = null;
         }
