@@ -1,5 +1,18 @@
 export const changeLog = [
      {
+    'date': '10/09/2018',
+    'changes': [
+            'We changed the way of choosing exchange for analysis so the user can now choose several exchanges at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added the possibility to save the settings of the analyzer at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We implemented the method of saving and getting the last settings of the analyzer at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We implemented a check of the analyzer condition at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added the possibility to launch and to stop the work of the analyzer at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added a check of all setting fields for validity while attempt to save new analyzer settings at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added new messages about errors for users.',
+            'We added the method which returns a specific parameter for each exchange with the relevant timeframe.'
+       ]
+    },
+     {
     'date': '07/09/2018',
     'changes': [
             'We fixed the bug with logout.',
