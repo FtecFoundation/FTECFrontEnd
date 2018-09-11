@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '11/09/2018',
+    'changes': [
+            'We fixed the key of the answer to requests in Anomalous Volume Dynamics Analyzer in the method of getting and setting up the configurations for the analyzer.',
+            'In Anomalous Volume Dynamics Analyzer, we changed SettingsDTO (fields botld, userId, isActive were deleted). We also relatively changed methods of implementation.',
+            'We added the field of the condition of Anomalous Volume Dynamics Analyzer, which returns after a request for user\'s model.',
+            'At frontend, we implemented the possibility to generate addresses for payments in BTC, ETH, FTEC.',
+            'At frontend, we added withdrawal of user\'s currently favorable currency and generated an address to fill the balance in this currency.',
+            'We created and configured Angular project of the service for the administrator.',
+            'In the admin panel, we implemented the display of all existing Cryptoacademy tests.',
+            'In the admin panel, we implemented a modal window with a form for creating a new test.',
+            'We made the file for changing field timeframe in the table with settings of  Anomalous Volume Dynamics Analyzer.',
+            'We added the support of proxy requests (to get currencies and candlesticks) for Kraken and Huobi.'
+       ]
+    },
+     {
     'date': '10/09/2018',
     'changes': [
             'We changed the way of choosing exchange for analysis so the user can now choose several exchanges at frontend in Anomalous Volume Dynamics Analyzer.',
