@@ -29,7 +29,7 @@
                     </g>
                 </svg>
             </div>
-            <div (click)="goToPaymentPage()" *ngIf="_currentUserService.user.balances" class="user-balance">
+            <div (click)="goToPaymentPage()" *ngIf="_currentUserService.user.balances && _currentUserService.user.currentPaymentScope" class="user-balance">
                 {{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}+
                 <ul class="user-balance--dropdown">
                     <li class="user-balance--dropdown-item" *ngFor="let cur of otherCurrencies()">
@@ -37,6 +37,10 @@
                         <span class="user-balance--dropdown-currency">{{cur}}</span>
                     </li>
                 </ul>
+            </div>
+
+            <div (click)="goToPaymentPage()" *ngIf="!_currentUserService.user.currentPaymentScope" class="user-balance">
+                0 FTEC
             </div>
 
 

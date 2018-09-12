@@ -39,13 +39,15 @@ export class PaymentComponent implements OnInit {
     }
 
     refresh(paymentId: number) {
-        this._paymentService.refreshPaymentStatus(paymentId).subscribe(data => console.log(data));
+        this._paymentService.refreshPaymentStatus(paymentId).subscribe(data => {
+            if (data !== 'RESERVED') this._paymentService.getBalances().subscribe(data1 => this._currentUserService.user.balances = data1);
+        });
     }
 
     generateWalletAddress() {
         if (this.currentCurrency)
             this._paymentService.generateAddress(this.currentCurrency).subscribe(data => {
-                this.addresses[this.currentCurrency] = {'address': data};
+                this.addresses[this.currentCurrency] = {'address': data.address, 'id': data.id};
             });
         else this.errorWalletAsset = true;
     }

@@ -3,10 +3,16 @@
   <div class="main-info__head">
     <div class="main-info__head-item">
 
-      <div class="head-item__text">
+      <div class="head-item__text" *ngIf="_currentUserService.user.currentPaymentScope && _currentUserService.user.balances">
         <span>Your balance</span>
 
         <h5 class="head-item__text-price">{{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}</h5>
+      </div>
+
+      <div class="head-item__text" *ngIf="!_currentUserService.user.currentPaymentScope">
+        <span>Your balance</span>
+
+        <h5 class="head-item__text-price">0 FTEC</h5>
       </div>
 
       <div class="head-item__icon" (click)="goToPaymentPage()">

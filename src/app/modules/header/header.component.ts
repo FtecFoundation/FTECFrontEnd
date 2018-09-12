@@ -62,7 +62,6 @@ export class HeaderComponent implements OnInit {
     }
 
     goToPaymentPage() {
-        this._currentUserService.checkAddressExistence();
         this.router.navigateByUrl('/account/payment');
     }
 
