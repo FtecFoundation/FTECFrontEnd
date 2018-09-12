@@ -77,7 +77,8 @@
 
 
         <form action="" class="aside-right__filter" [formGroup]="analyzerForm">
-
+            <div [ngClass]="{'active': analyzerActivated}">
+                <div class="stub"></div>
             <div class="filter__container-double">
                 <div class="filter__container">
                     <span class="container__name">Exchanges</span>
@@ -218,6 +219,7 @@
 
 
             <button class="filter__container-button" (click)="submitForm()">Save preferences</button>
+            </div>
             <button class="filter__container-button" *ngIf="analyzerActivated" (click)="stopAnalyzing()">Stop
                 analyzing
             </button>

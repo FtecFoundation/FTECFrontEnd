@@ -96,7 +96,7 @@ export class VolumeAnalyzerComponent implements OnInit {
         this.submitted = true;
         if (this.analyzerForm.valid) {
             this._volumeAnalyzerService.setPreferences(this.prepareData()).subscribe(data => {
-
+                this._currentUserService.user.settingsStatus = 'ACTIVATED';
             });
         }
     }
@@ -127,7 +127,7 @@ export class VolumeAnalyzerComponent implements OnInit {
     }
 
     startAnalyzing(){
-        this._volumeAnalyzerService.startBot().subscribe(data => console.log(data));
+        this._volumeAnalyzerService.startBot().subscribe(() =>this.analyzerActivated = true);
     }
 
     stopAnalyzing(){
