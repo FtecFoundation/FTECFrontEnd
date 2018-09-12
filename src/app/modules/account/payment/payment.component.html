@@ -69,19 +69,19 @@
         <div class="middle__table-container--payment">
           <h3 class="title">FTEC Available now:</h3>
 
-          <h3 class="title title--green">234087 FTEC</h3>
+          <h3 *ngIf="_currentUserService.user.balances" class="title title--green">{{_currentUserService.user.balances.ftecBalance}} FTEC</h3>
         </div>
 
         <div class="middle__table-container--payment">
           <span class="payment__aside-time">FTEC on wallet:</span>
 
-          <span class="payment__aside-time">76854867 FTEC</span>
+          <span *ngIf="_currentUserService.user.balances" class="payment__aside-time">{{_currentUserService.user.balances.ftecBalance}}  FTEC</span>
         </div>
 
         <div class="middle__table-container--payment">
           <span class="payment__aside-time">Frozen by operations:</span>
 
-          <span class="payment__aside-time">495867 FTEC</span>
+          <span class="payment__aside-time">0 FTEC</span>
         </div>
 
         <button class="filter__container-button" (click)="showPopup()">Withdraw</button>
