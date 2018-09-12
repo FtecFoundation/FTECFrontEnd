@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '12/09/2018',
+    'changes': [
+            'We changed the logic of saving users\' balances, using non-integer types.',
+            'We fixed the error of linking Telegram with the user.',
+            'We fixed the error of getting FTEC balance using user\'s address.',
+            'We added the possibility of generating addresses for filling balance.',
+            'We implemented verifications of filling balance in some intervals dependent on the address type.',
+            'We implemented the possibility of forced verification of address balance.',
+            'We changed the template of answers to commands on creating and editing Cryptoacademy tests.',
+            'At frontend in Anomalous Volume Dynamics Analyzer, we made a display of anomalous volume behavior found by the analyzer.',
+            'At frontend in Anomalous Volume Dynamics Analyzer, we made a display of message when there are no found anomalies.',
+            'We continue working with Telegram Assistant updates, global functions for distribution of commands and processing of incorrect capture/non-existing commands were implemented.'
+       ]
+    },
+     {
     'date': '11/09/2018',
     'changes': [
             'We fixed the key of the answer to requests in Anomalous Volume Dynamics Analyzer in the method of getting and setting up the configurations for the analyzer.',
