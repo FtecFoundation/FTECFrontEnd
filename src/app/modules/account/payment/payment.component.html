@@ -52,7 +52,7 @@
     </ng-container>
 
     <button *ngIf="addresses && addresses[currentCurrency]" class="filter__container-button"
-            (click)="refresh(addresses[_currentUserService.user.currentPaymentScope].id)">Refresh payment status</button>
+            (click)="refresh(addresses[currentCurrency].id)">Refresh payment status</button>
   </div>
 
   <div class="filter__container-aside filter__container-aside--payment">
