@@ -20,7 +20,7 @@
 }
 
 .form__select-list {
-  z-index: 1;
+  z-index: 99;
   top: 100%;
   left: -2px;
   width: calc(100% + 4px);

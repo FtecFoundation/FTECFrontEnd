@@ -25,15 +25,34 @@
     <p>QR code below contains only address of your account that allows you to scan it using mobile app or services that works
       with QR codes</p>
 
-    <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
+    <ng-container *ngIf="addresses">
+      <div *ngIf="!addresses[currentCurrency]" class="payment--code">
+        You have no account wallet addresses for manual refilling. Use the form bellow to generate new addresses
+        <div class="payment--new-address">
+          <a class="filter__container-button" (click)="generateWalletAddress()">Generate Address</a>
+        </div>
+        <br>
+        <div class="error-field" *ngIf="errorWalletAsset">Set current wallet asset in the right menu</div>
+        <br>
+      </div>
 
-    <span class="payment--code">Your account wallet address to manual refilling:
-      <br>
-      <br>
-      <span>{{_currentUserService.user.walletAddress}}</span>
-    </span>
+      <div *ngIf="addresses[currentCurrency]" class="payment--code">Your account wallet addresses for manual refilling:
+        <br>
+        <br>
+        <div>{{addresses[currentCurrency].address}}
+          <span class="payment__aside-time"> ({{currentCurrency}} address)</span>
+          <br>
+          <br>
+          <a (click)="showQR = !showQR" class="button__outline">{{showQR ? 'Hide' : 'Show'}} QR code</a>
+          <br>
+          <br>
+          <qrcode *ngIf="showQR" colordark="#250643" [qrdata]="addresses[currentCurrency].address" [size]="150" [level]="'L'"></qrcode>
+        </div>
+      </div>
+    </ng-container>
 
-    <button class="filter__container-button">Refresh statistic</button>
+    <button *ngIf="addresses && addresses[currentCurrency]" class="filter__container-button"
+            (click)="refresh(addresses[_currentUserService.user.currentPaymentScope].id)">Refresh payment status</button>
   </div>
 
   <div class="filter__container-aside filter__container-aside--payment">
@@ -70,15 +89,15 @@
 
       <div class="filter__container filter__container--payment">
         <div class="filter__container">
-          <span class="container__name">Currens currency is:</span>
+          <span class="container__name">Current currency is:</span>
 
           <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges" [keyName]="'name'"></app-dropdown>
+            <app-dropdown [label]="'Currency'" [items]="currencies" [value]="currentCurrency" (selected)="chooseCurrentCurrency($event)"></app-dropdown>
           </div>
 
         </div>
 
-        <button class="filter__container-button">Change</button>
+        <button class="filter__container-button" (click)="submitCurrentCurrency()">Change currency</button>
       </div>
 
     </div>

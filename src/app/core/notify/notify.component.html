@@ -1,6 +1,6 @@
 <div @container class="container__notify" *ngIf="_notifyService.notifications.length">
     <ng-container *ngFor="let notification of _notifyService.notifications; let i = index">
-    <div @notification *ngIf="notification.id" class="notify is-active notify--bad">
+    <div @notification class="notify is-active notify--bad">
             <svg *ngIf="notification.type === 'error'" class="bad" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                  viewBox="0 0 294.951 294.951"

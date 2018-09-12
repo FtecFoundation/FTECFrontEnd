@@ -14,6 +14,7 @@ import {CurrentUserService} from '../../core/services/current-user.service';
 export class HeaderComponent implements OnInit {
     @ViewChild('image') image: ElementRef;
     showDropdown: boolean = false;
+    currencies: string[] = ['ETH', 'BTC', 'FTEC'];
 
     constructor(private _accountService: AccountService,
                 private router: Router,
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    otherCurrencies(): string[] {
+        return this.currencies.filter(c => c !== this._currentUserService.user.currentPaymentScope);
     }
 
     closeDropdown() {
@@ -42,6 +47,11 @@ export class HeaderComponent implements OnInit {
         dropdown.classList.toggle('is-active');
         sidebar.classList.toggle('is-active');
     }
+
+    getAssetBalance(asset: string): number {
+        return this._currentUserService.user.balances[asset.toLowerCase() + 'Balance'];
+    }
+
 
     logout() {
         this._accountService.logoutUser().subscribe(() => {

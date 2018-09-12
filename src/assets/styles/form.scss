@@ -232,7 +232,7 @@ select::-ms-expand {
 }
 
 .form__select-list {
-  z-index: 1;
+  z-index: 99;
   width: 100%;
   position: absolute;
   
