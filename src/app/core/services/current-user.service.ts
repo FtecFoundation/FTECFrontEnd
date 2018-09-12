@@ -11,6 +11,7 @@ import {CustomException} from '../models/exceptions';
 import { TestHistory } from '../models/test-cryptoacademy';
 import { BehavioralDataTrades } from '../models/behavioral';
 import { ArbitrageWindow } from '../models/arbitrage-window';
+import {PaymentService} from "./payment.service";
 
 @Injectable()
 export class CurrentUserService {
@@ -24,7 +25,7 @@ export class CurrentUserService {
     private behavioralData: BehavioralDataTrades;
     private arbitrageData: ArbitrageWindow;
 
-    constructor(private _accountService: AccountService, private _etherscanService: EtherscanService, private errorService: ErrorsService) {
+    constructor(private _accountService: AccountService, private _paymentService: PaymentService, private errorService: ErrorsService) {
 
     }
 
@@ -44,13 +45,7 @@ export class CurrentUserService {
         return this._accountService.getUser().pipe(
             map(data => {
                 this.currentUser = data;
-                if (!this.currentUser.walletAddress) {
-                    this.currentUser.balance = 0;
-                } else {
-                    this._etherscanService.getBalance(this.currentUser.walletAddress).subscribe(balance => {
-                        this.currentUser.balance = balance;
-                    });
-                }
+                this._paymentService.getBalances().subscribe(bal => this.currentUser.balances = bal);
                 return this.currentUser;
             })
         );

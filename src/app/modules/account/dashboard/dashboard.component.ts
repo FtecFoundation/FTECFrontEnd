@@ -68,7 +68,9 @@ export class DashboardComponent implements OnInit {
     showModal() {
         this._showModalService.showModal = true;
     }
-
+    getAssetBalance(asset: string): number {
+        return this._currentUserService.user.balances[asset.toLowerCase() + 'Balance'];
+    }
     route() {
         this.router.navigate(['/account/my-exchanges']);
     }

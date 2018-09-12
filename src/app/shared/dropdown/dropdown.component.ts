@@ -80,6 +80,7 @@ export class DropdownComponent<T> implements OnInit, OnChanges {
     select(value: T): void {
         this.active = value;
         this.opened = false;
+        this.selected.emit(value);
     }
 
     @Input()

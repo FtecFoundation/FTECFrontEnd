@@ -335,3 +335,40 @@
   -o-transform: scaleX(0);
   transform: scaleX(0);
 }
+
+.user-balance {
+  position: relative;
+}
+
+.user-balance--dropdown {
+  z-index: 1;
+  width: 100%;
+  min-width: 150px;
+  color: #b6b2c4;
+  position: absolute;
+  background: white;
+  border-radius: 0.313rem;
+  padding: .638em;
+  top: 130%;
+  right: 0;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.user-balance:hover .user-balance--dropdown {
+  opacity: 1;
+}
+
+.user-balance--dropdown-item {
+  width: 100%;
+  display: flex;
+  padding: .313em;
+}
+
+.user-balance--dropdown-balance{
+  width: 70%;
+}
+.user-balance--dropdown-currency{
+  width: 30%;
+  float: right;
+}

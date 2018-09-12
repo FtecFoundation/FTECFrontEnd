@@ -36,11 +36,11 @@ export class NotifyComponent implements OnInit {
         const not = this._notifyService.notifications;
         for (let i = 0; i <= this._notifyService.notifications.length; i++) {
             setTimeout(function(x) { return function() { not.shift() }; }(i), 200*i);
-            // 1 2 3 4 5
         }
     }
 
     hideNotif(id: number) {
         delete this._notifyService.notifications[id];
+        this._notifyService.notifications = this._notifyService.notifications.filter(n => n && n.title);
     }
 }

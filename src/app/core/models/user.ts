@@ -11,9 +11,11 @@ export class User {
     locale: string;
     imageName: string;
     confirmedEmail: boolean;
-    balance: number;
+    balances: any;
     walletAddress: string;
     notificationSettings: NotificationSettings;
+    settingsStatus: string;
+    currentPaymentScope: string;
 }
 
 export class NotificationSettings{
