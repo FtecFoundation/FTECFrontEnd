@@ -342,7 +342,7 @@
 
 .user-balance--dropdown {
   z-index: 1;
-  width: 100%;
+  width: auto;
   min-width: 150px;
   color: #b6b2c4;
   position: absolute;
@@ -360,13 +360,12 @@
 }
 
 .user-balance--dropdown-item {
-  width: 100%;
+  width: auto;
   display: flex;
   padding: .313em;
 }
 
 .user-balance--dropdown-balance{
-  width: 70%;
 }
 .user-balance--dropdown-currency{
   width: 30%;

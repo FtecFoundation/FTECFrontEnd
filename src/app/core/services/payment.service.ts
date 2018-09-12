@@ -23,7 +23,7 @@ export class PaymentService extends RestService{
       return this.get(PaymentApiUrls.address).pipe(map(resp => resp.response.addresses));
     }
 
-    generateAddress(asset: string): Observable<string> {
+    generateAddress(asset: string): Observable<any> {
         return this.post(PaymentApiUrls.address, {'paymentScope': asset}).pipe(map(resp => resp.response.address));
     }
 
@@ -36,9 +36,9 @@ export class PaymentService extends RestService{
         return this.get(PaymentApiUrls.balance).pipe(map(resp => resp.response.balances));
     }
 
-    refreshPaymentStatus(paymentId: number): Observable<any> {
+    refreshPaymentStatus(paymentId: number): Observable<string> {
         const params = new HttpParams().set('paymentId', '' + paymentId);
-        return this.get(PaymentApiUrls.refresh, params);
+        return this.get(PaymentApiUrls.refresh, params).pipe(map(resp => resp.response.status));
     }
 
 }
