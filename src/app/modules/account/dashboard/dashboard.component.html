@@ -6,7 +6,7 @@
       <div class="head-item__text">
         <span>Your balance</span>
 
-        <h5 class="head-item__text-price">{{_currentUserService.user.balance}} FTEC</h5>
+        <h5 class="head-item__text-price">{{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}</h5>
       </div>
 
       <div class="head-item__icon" (click)="goToPaymentPage()">
