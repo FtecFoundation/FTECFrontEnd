@@ -46,13 +46,13 @@ export class SocialComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._socialService.getDictionary().subscribe(data => {
-            this.dictionary = data;
-            this.wordsLeft = 50 - this.dictionary.length;
-            this.getRecommendationsWords();
-            this.wordsLeft = 50 - this.dictionary.length;
-        });
 
+        this.getDaysLeft();
+
+        this.createForm();
+    }
+
+    renderTweets() {
         this._socialService.getTweets().subscribe(data => {
             this.tweetIds = data;
 
@@ -76,10 +76,6 @@ export class SocialComponent implements OnInit {
                 });
             }
         });
-
-        this.getDaysLeft();
-
-        this.createForm();
     }
 
     setWordsLeft() {
@@ -96,6 +92,15 @@ export class SocialComponent implements OnInit {
             } else {
                 this.daysLeft = 0;
             }
+
+            this._socialService.getDictionary().subscribe(data => {
+                this.dictionary = data;
+                this.wordsLeft = 50 - this.dictionary.length;
+                this.getRecommendationsWords();
+                this.wordsLeft = 50 - this.dictionary.length;
+
+                this.getTweets();
+            });
         });
     }
 
