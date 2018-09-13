@@ -163,3 +163,10 @@
   }
 }
 
+.filter__container--switcher {
+  flex-direction: row;
+
+  figure {
+    margin-right: .938em;
+  }
+}
