@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '13/09/2018',
+    'changes': [
+            'At NodeJS server, we implemented the protection against a large number of requests per second.',
+            'We changed the field that returned a list of used exchanges, now it is an exchange for which anomalous volume is found.',
+            'When anomalous dynamics is found, methods are called (credit white-offs, notification, disconnection of Analyzer if there are not enough funds).',
+            'In methods of getting available pairs, we added the possibility to get them by minimum volume (for Poloniex, Bittrex, Binance).',
+            'In Anomalous Volume Dynamics Analyzer, we added the method for checking timeframe availability for chosen exchange.',
+            'We tested and fixed the work of Anomalous Volume Dynamics Analyzer for exchanges (Poloniex, Binance, Kraken, Huobi).',
+            'We added functions to automate the work with Cryptoacademy.',
+            'We implemented checking of the admin role for using relevant functions. ',
+            'We changed the work of logic of filling the balance and generating an address for it.',
+            'We fixed error in sums which were credited while filling. '
+       ]
+    },
+     {
     'date': '12/09/2018',
     'changes': [
             'We changed the logic of saving users\' balances, using non-integer types.',
