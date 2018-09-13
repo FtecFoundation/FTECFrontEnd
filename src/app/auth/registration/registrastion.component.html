@@ -42,7 +42,7 @@
                     <span *ngIf="password.invalid && (password.dirty || password.touched || submitted)">
                         <span class="error-field" *ngIf="password.errors.required">Password is required</span>
                         <span class="error-field" *ngIf="password.errors.pattern">
-                            Password should be at least 8 symbols long and contain at least one capital letter and special symbol
+                            Password should be at least 8 symbols long and contain at least one capital letter, one small letter, digit and special symbol
                         </span>
                     </span>
                 </div>

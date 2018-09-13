@@ -21,17 +21,28 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
+const rateLimit = require("express-rate-limit");
+let bannedIPs = [];
 
+app.enable("trust proxy");
+
+const limiter = rateLimit({
+    windowMs: 1000,
+    max: 5,
+    handler: function (req, res) {
+        if (bannedIPs.indexOf(req.connection.remoteAddress) === -1) bannedIPs.push(req.connection.remoteAddress);
+    }
+});
+
+app.use("/api/", limiter);
 
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
 const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
 
-// * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main.bundle');
 
-// Express Engine
 import {ngExpressEngine} from '@nguniversal/express-engine';
 // Import module map for lazy loading
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
@@ -82,6 +93,14 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
+
+app.use('/api', (req, res, next) => {
+    if (bannedIPs.indexOf(req.connection.remoteAddress) !== -1) {
+        res.status(429);
+        res.json({status: 429, error: 'Too many requests'});
+    }
+    next();
+});
 
 app.use('/hitbtc', proxy('https://api.hitbtc.com', {
     proxyReqPathResolver: function (req) {
@@ -168,6 +187,7 @@ app.use('/api', proxy(apiUrl, {
         return proxyReqOpts
     }
 }));
+
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
     maxAge: '1y'
 }));
