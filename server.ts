@@ -21,7 +21,16 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
+const rateLimit = require("express-rate-limit");
 
+app.enable("trust proxy");
+
+const limiter = rateLimit({
+    windowMs: 1000,
+    max: 5
+});
+
+app.use(limiter);
 
 const DIST_FOLDER = join(process.cwd(), 'dist');
 

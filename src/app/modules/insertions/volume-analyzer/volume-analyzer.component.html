@@ -44,9 +44,7 @@
                         ({{getTimeframeName(data.timeframe)}})
                     </h4>
                     <div class="item-inner item-inner--notifications item-inner--exchanges">
-                        <span *ngFor="let s of data.stocks">
-                            {{ s }}
-                        </span>
+                        <span>{{ data.stock }}</span>
                     </div>
                     <div class="item-inner item-inner--notifications item-inner--exchanges">
                         {{data.price | number: '1.0-8'}}
