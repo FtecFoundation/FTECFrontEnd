@@ -14,7 +14,7 @@
 
     <p>If you have no FTEC tokens, you need to go to the exchange that trades FTEC tokens and trade them.</p>
 
-    <p>Once you'll send an transaction, you'll be able to see your tokensautomatically</p>
+    <p>Once you'll send an transaction, you'll be able to see your tokens automatically</p>
 
     <p>
       <b>
@@ -24,6 +24,8 @@
     </p>
     <p>QR code below contains only address of your account that allows you to scan it using mobile app or services that works
       with QR codes</p>
+
+    <div *ngIf="!_currentUserService.user.confirmedEmail">Confirm your email to generate an address for manual refilling!</div>
 
     <ng-container *ngIf="addresses">
       <div *ngIf="!addresses[currentCurrency]" class="payment--code">

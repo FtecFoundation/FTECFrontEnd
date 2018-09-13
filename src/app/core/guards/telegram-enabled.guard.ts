@@ -16,7 +16,8 @@ export class TelegramEnabledGuard implements CanActivate {
         const redirectToIfEnabled = route.data['redirectToIfEnabled'];
         return this._currentUserService.getTelegramSettingsObs(true).pipe(
             map((settings) => {
-                if (!settings.linkedChatId) {
+                console.log(settings);
+                if (!settings.chatId) {
                     if (redirectToIfNotEnabled) { this.router.navigateByUrl(redirectToIfNotEnabled); }
                     return redirectToIfNotEnabled == null;
                 }

@@ -8,5 +8,6 @@ export const notificationMapper = {
     '3': 'Social Assistant',
     '4': 'Price Notification',
     '5': 'Order Manager',
-    '6': 'Refilling Balance'
+    '6': 'Refilling Balance',
+    '7': 'Volume Analyzer'
 };
