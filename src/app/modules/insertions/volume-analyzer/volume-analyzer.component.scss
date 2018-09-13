@@ -163,9 +163,19 @@
   }
 }
 
+<<<<<<< HEAD
 .filter__container{
   flex-direction: row;
   span{
     margin-left: 20px;
   }
 }
+=======
+.filter__container--switcher {
+  flex-direction: row;
+
+  figure {
+    margin-right: .938em;
+  }
+}
+>>>>>>> c558a28e95cb9ff3020b4011d6763c75b8383d82
