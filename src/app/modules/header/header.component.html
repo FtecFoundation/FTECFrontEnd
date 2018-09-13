@@ -33,7 +33,7 @@
                 {{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}+
                 <ul class="user-balance--dropdown">
                     <li class="user-balance--dropdown-item" *ngFor="let cur of otherCurrencies()">
-                        <span class="user-balance--dropdown-balance">{{getAssetBalance(cur)}}</span>
+                        <span class="user-balance--dropdown-balance">{{getAssetBalance(cur) | number: '1.1-8'}}</span>
                         <span class="user-balance--dropdown-currency">{{cur}}</span>
                     </li>
                 </ul>

@@ -1,6 +1,7 @@
 export class TelegramSettings {
     userId: number;
-    linkedChatId: string;
-    linkedUsername: string;
+    linkingDate: Date;
+    chatId: string;
+    username: string;
     accessCode: string;
 }

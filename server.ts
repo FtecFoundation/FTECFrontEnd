@@ -28,7 +28,7 @@ app.enable("trust proxy");
 
 const limiter = rateLimit({
     windowMs: 1000,
-    max: 5,
+    max: 15,
     handler: function (req, res) {
         if (bannedIPs.indexOf(req.connection.remoteAddress) === -1) bannedIPs.push(req.connection.remoteAddress);
     }

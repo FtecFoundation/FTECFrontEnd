@@ -80,16 +80,13 @@
 }
 
 .telegram__access-code {
-  margin: auto;
-  margin-top: 30px;
-  font-size: 3rem;
+  font-size: 1.2rem;
   text-align: center;
   border: 1px solid #25cbd3;
-  padding: .313rem;
-  padding-left: .938rem;
-  padding-right: .938rem;
+  margin: 30px auto .938em;
+  padding: .313rem .938rem;
   border-radius: .313rem;
-  max-width: 74%;
+  width: 100%;
 }
 
 /deep/ {
