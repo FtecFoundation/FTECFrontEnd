@@ -4,12 +4,14 @@ import {CookieService} from "ngx-cookie-service";
 import {RestService} from "./rest.service";
 import {Observable} from "rxjs";
 import {map, tap} from "rxjs/operators";
+import {PaymentHistory} from "../../modules/account/payment/address-info";
 
 enum PaymentApiUrls {
     address = 'cabinet/payment/address',
     changeCurrentCurrency = 'account/currentPaymentAsset',
     balance = 'cabinet/balances',
-    refresh = 'cabinet/payment/refresh'
+    refresh = 'cabinet/payment/refresh',
+    history = 'cabinet/payment/getHistory'
 }
 
 @Injectable()
@@ -39,6 +41,10 @@ export class PaymentService extends RestService{
     refreshPaymentStatus(paymentId: number): Observable<string> {
         const params = new HttpParams().set('paymentId', '' + paymentId);
         return this.get(PaymentApiUrls.refresh, params).pipe(map(resp => resp.response.status));
+    }
+
+    getPaymentHistory(): Observable<PaymentHistory[]> {
+        return this.get(PaymentApiUrls.history).pipe(map(resp => resp.response.history));
     }
 
 }

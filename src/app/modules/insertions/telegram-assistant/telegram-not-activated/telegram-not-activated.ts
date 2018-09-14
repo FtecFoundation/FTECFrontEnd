@@ -10,30 +10,23 @@ import {PreferencesService} from "../../../../core/services/preferences.service"
     styleUrls: ['../../insertions.scss', '../telegram-assistant.scss']
 })
 export class TelegramNotActivatedComponent implements OnInit {
-    qrUrl = 'tg://resolve?domain=';
     botDomain = '';
     showAccessCode: boolean;
 
     constructor(private _telegramService: TelegramAssistantService,
-                private _preferencesService: PreferencesService,
+                public _preferencesService: PreferencesService,
                 public _currentUserService: CurrentUserService,
                 private router: Router) {
     }
 
     ngOnInit() {
-        this.botDomain = this._preferencesService.preferences.botDomain;
-        this.qrUrl += this.botDomain;
+        if (!this._currentUserService.tgSettings) {
+            this._currentUserService.getTelegramSettingsObs(true).subscribe();
+        }
     }
 
     enable() {
-        if (!this._currentUserService.tgSettings) {
-            this._currentUserService.getTelegramSettingsObs(true).subscribe(() => {
-                this.showAccessCode = true;
-            });
-        return;
-        }
         this.showAccessCode = true;
-
     }
 
     checkIfConnected() {

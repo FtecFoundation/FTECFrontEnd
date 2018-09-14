@@ -105,44 +105,39 @@
     </div>
   </div>
 
-  <div class="middle middle--payment">
+  <div class="middle middle--payment" *ngIf="history.length">
     <div class="middle__head">
       <h5>Your wallet statistics</h5>
     </div>
 
     <div class="middle__table-type middle__table-type--payment">
       <span class="middle__table-type-name">
-        TX hash
+        Date
       </span>
 
       <div class="middle__table-type-inner">
         <span class="middle__table-type-name align-left">
-          Wallet from
+          Amount
         </span>
         <span class="middle__table-type-name align-right">
-          Operation date
+          Description
         </span>
       </div>
-
-      <span class="middle__table-type-name align-right">
-        Amount (in FTEC)
-      </span>
     </div>
 
 
     <div class="middle__table-container middle__table-container--payment">
-      <div class="middle__table-container-item middle__table-container-item--payment">
-        <h4>IN DEVELOPMENT</h4>
+      <div class="middle__table-container-item middle__table-container-item--payment" *ngFor="let h of history">
+        <h4>{{h.date | date: 'dd MMM yyyy HH:mm'}}</h4>
 
         <div class="item-inner">
           <div class="item-inner-line item-inner-line--payment">
-            <span>IN DEVELOPMENT</span>
+            <span>{{h.amount}} {{h.asset}}</span>
 
-            <span>IN DEVELOPMENT</span>
           </div>
         </div>
 
-        <span class="container-item-profit align-right">IN DEVELOPMENT</span>
+        <span class="container-item-profit align-right">{{h.reason}}</span>
       </div>
 
     </div>
