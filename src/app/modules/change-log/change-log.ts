@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '14/09/2018',
+    'changes': [
+            'We fixed critical error in Telegram Assistant, which didn\'t allow the work with it.',
+            'We switched to Clouflare to protect the web service.',
+            'We made rules for getting access to the server and filtration of possible DDOS attacks.',
+            'We began the work on Global Price Analyzer.',
+            'We added the command "/unlink" to Telegram for account to unlink from Telegram.',
+            'We fixed the error with generating BTC address for filling on test blockchain network.',
+            'We fixed the error with double crediting of payments.',
+            'We added the automatic verification of payments.',
+            'We fixed the error with rounding of payment results.',
+            'We added commands for Social and Arbitrage Assistants to Telegram. '
+       ]
+    },
+     {
     'date': '13/09/2018',
     'changes': [
             'At NodeJS server, we implemented the protection against a large number of requests per second.',
