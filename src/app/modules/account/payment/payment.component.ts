@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CurrentUserService} from '../../../core/services/current-user.service';
 import {AvailableExchanges} from '../../insertions/arbitrage/available-exchanges';
 import {PaymentService} from "../../../core/services/payment.service";
-import {AddressInfo} from "./address-info";
+import {AddressInfo, PaymentHistory} from "./address-info";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 
@@ -21,6 +21,7 @@ export class PaymentComponent implements OnInit {
     currentCurrency: string;
     errorWalletAsset: boolean = false;
     showQR: boolean = false;
+    history: PaymentHistory[];
 
     public qrUrl: string;
 
@@ -32,6 +33,9 @@ export class PaymentComponent implements OnInit {
             this.addresses = data;
         });
         this.currentCurrency = this._currentUserService.user.currentPaymentScope;
+        this._paymentService.getPaymentHistory().subscribe(data => {
+            this.history = data;
+        });
     }
 
     showPopup() {

@@ -8,3 +8,10 @@ export class AddressInfo {
         this.address = address;
     }
 }
+
+export class PaymentHistory {
+    asset: string;
+    date: Date;
+    amount: number;
+    reason: string;
+}
