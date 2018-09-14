@@ -7,7 +7,7 @@
     <p>1. Go to an application and find a bot. You can use @{{botDomain}} to find it. In chat window with bot send /start
       as first message.</p>
 
-    <p>2. Follow the link and press 'Start'.<br> Link: <a class="link__accent" [href]="'http://t.me/' + _preferencesService.preferences.botDomain + '?start=-' + _currentUserService.tgSettings.accessCode">
+    <p>2. Follow the link and press 'Start'.<br> Link: <a target="_blank" class="link__accent" [href]="'http://t.me/' + _preferencesService.preferences.botDomain + '?start=-' + _currentUserService.tgSettings.accessCode">
       http://t.me/{{_preferencesService.preferences.botDomain}}?start=-{{_currentUserService.tgSettings.accessCode}}</a></p>
 
     <p>3. Scan the following QR code. It will redirect you to the chat with bot where you need to press 'Start'</p>
