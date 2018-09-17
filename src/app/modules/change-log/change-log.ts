@@ -7,11 +7,11 @@ export const changeLog = [
             'We made rules for getting access to the server and filtration of possible DDOS attacks.',
             'We began the work on Global Price Analyzer.',
             'We added the command "/unlink" to Telegram for account to unlink from Telegram.',
-            'We fixed the error with generating BTC address for filling on test blockchain network.',
-            'We fixed the error with double crediting of payments.',
             'We added the automatic verification of payments.',
             'We fixed the error with rounding of payment results.',
-            'We added commands for Social and Arbitrage Assistants to Telegram. '
+            'We added commands for Social and Arbitrage Assistants to Telegram. ',
+            'Method of getting an order book now returns objects to String, not JSON. We tested this for Bitrex, Poloniex, Kraken, Binance, Bitstamp, HitBtc.',
+            'We created the base for Global Price Analyzer.'
        ]
     },
      {
