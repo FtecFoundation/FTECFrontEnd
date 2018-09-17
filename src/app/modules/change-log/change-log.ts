@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '17/09/2018',
+    'changes': [
+            'We fixed the error of crediting an incorrect number of credits for filling with BTC.',
+            'We added saving account balance history while filling.',
+            'We configured and established Telegram and email notifications.We configured and established Telegram and email notifications.',
+            'We fixed the vulnerability which allowed to enable currently inaccessible ways of notifications.',
+            'We changed the answer to requests in Social Assistant, errors are returned in JSON format now.',
+            'We processed the error while using an unsupported pair in Anomalous Volume Dynamics Analyzer.',
+            'In Anomalous Volume Dynamics Analyzer, the logic of work with pairs was improved.',
+            'The method of getting an order book now accepts a parameter, on which a number of returning objects depends. This works for Poloniex, Kraken, Binance, HitBtc.',
+            'We changed the model of client-server communication, which allows using more convenient ways of data transferring.',
+            'We added the processing of previously unclassified errors.'
+       ]
+    },
+     {
     'date': '14/09/2018',
     'changes': [
             'We fixed critical error in Telegram Assistant, which didn\'t allow the work with it.',
