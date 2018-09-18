@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '18/09/2018',
+    'changes': [
+            'We fixed the method of getting pairs into one type for BitStamp and Huobi.',
+            'We added a limitation on creating trade configurations for exchanges having API keys connected.',
+            'We added the possibility to change trade configurations of the user.',
+            'We added controllers for getting statistics on trade configurations os users for admin.',
+            'We added a limitation on the validity of data while change in trade configurations of the user.',
+            'We added trade history model for the user.',
+            'At frontend, we implemented the possibility to get Smart Trading Module configurations.',
+            'At frontend, we implemented the possibility to change an active exchange in Smart Trading Module configurations.',
+            'We wrote and tested service and controller for Global Price Analyzer on BitTrex, Poloniex, Binance, HitBtc, BitStamp, Huobi.',
+            'We wrote documentation for Global Price Analyzer controller.'
+       ]
+    },
+     {
     'date': '17/09/2018',
     'changes': [
             'We added the possibility to create trade configurations for the user.',
