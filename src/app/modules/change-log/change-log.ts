@@ -2,7 +2,7 @@ export const changeLog = [
      {
     'date': '17/09/2018',
     'changes': [
-            'We fixed the error of crediting an incorrect number of credits for filling with BTC.',
+            'We added the possibility to create trade configurations for the user.',
             'We added saving account balance history while filling.',
             'We configured and established Telegram and email notifications.We configured and established Telegram and email notifications.',
             'We fixed the vulnerability which allowed to enable currently inaccessible ways of notifications.',
