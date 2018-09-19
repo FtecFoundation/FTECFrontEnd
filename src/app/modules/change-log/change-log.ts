@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '19/09/2018',
+    'changes': [
+            'We added HitBTC to Anomalous Volume Dynamics Analyzer.',
+            'We fixed the method of returning candlesticks for Huobi in Anomalous Dynamics Colume Analyzer (preciously, it returned them in reverse order).',
+            'For Anomalous Volume Dynamics Analyzer, we fixed the method of returning candles for HitBTC (it returned them with old indicators).',
+            'We fixed the method of getting all available currencies in stocks module for HitBTC (it returned for volume for quote pair).',
+            'We fixed the method of getting all available currencies in stocks module for Poloniex (it returned incomplete result due to catch block behind for block).',
+            'At frontend in Smart Trading Module, we added the possibility to choose the maximum amount of trades for bots.',
+            'At frontend in Smart Trading Module, we added the possibility to change an active bot and disable trades.',
+            'At frontend, we implemented the possibility to change an active exchange in Smart Trading Module configurations.',
+            'At frontend in admin panel, we changed the way of sending image for test.',
+            'At frontend in admin panel, we implemented the possibility to delete tests.'
+       ]
+    },
+     {
     'date': '18/09/2018',
     'changes': [
             'We fixed the method of getting pairs into one type for BitStamp and Huobi.',
