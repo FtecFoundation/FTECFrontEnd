@@ -1,5 +1,17 @@
 export const changeLog = [
      {
+    'date': '20/09/2018',
+    'changes': [
+            'We fixed the method of getting an order book for Huobi.',
+            'In Global Price Analyzer, we processed the case when there are not enough funds on exchange on requested BTC volume.',
+            'We fixed the error in generating documentation.',
+            'We added the logic of currency conversion to the commission system.',
+            'We implemented the possibility of using trading bots by the administration.',
+            'At frontend, we processed form of sending a request on the search for prices in Global Price Analyzer. ',
+            'At frontend, we implemented the display of results of the search for prices in Global Price Analyzer.'
+       ]
+    },
+     {
     'date': '19/09/2018',
     'changes': [
             'We added HitBTC to Anomalous Volume Dynamics Analyzer.',
