@@ -8,7 +8,10 @@ export const changeLog = [
             'We added the logic of currency conversion to the commission system.',
             'We implemented the possibility of using trading bots by the administration.',
             'At frontend, we processed form of sending a request on the search for prices in Global Price Analyzer. ',
-            'At frontend, we implemented the display of results of the search for prices in Global Price Analyzer.'
+            'At frontend, we implemented the display of results of the search for prices in Global Price Analyzer.',
+            'For News Background Analyzer, we created the basic structure and basic class which calculates a number of words repeated. ',
+            'We created the class which keeps the interaction between files and correlation coefficient. ',
+            'For the class which keeps the interaction between files and the correlation coefficient, we implemented and tested custom serialization/deserialization.'
        ]
     },
      {
