@@ -29,6 +29,7 @@ export interface Stock {
     nameToSend: string;
     arbitrageChosen: boolean;
     volumeAnalyzerChosen?: boolean;
+    globalPriceChosen?: boolean;
     imageURL: string;
 }
 
