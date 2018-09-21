@@ -9,7 +9,7 @@
 
         <ng-container *ngIf="results && !preloader">
         <ng-container *ngFor="let pair of getKeys(results)">
-            <div class="item-inner-line-error-block item-inner-line-error-block--empty" *ngIf="!results[pair].opened"
+            <div class="item-inner-line-error-block item-inner-line-error-block--empty item-inner-line-error-block--empty--pair" *ngIf="!results[pair].opened"
             (click)="results[pair].opened = true">{{pair}}</div>
             <div class="middle__block middle__block--price" *ngIf="results[pair].opened">
 
@@ -32,8 +32,9 @@
                 </div>
 
                 <div class="middle__table-container middle__table-container--dashboard middle__table-container--global">
+                    <ng-container *ngFor="let item of results[pair].array">
                     <div class="middle__table-container-item middle__table-container-item--dashboard"
-                         *ngFor="let item of results[pair].array">
+                         *ngIf="item.price">
                         <h4 class="table-container-item--name">
                             <span>{{pair}}</span>
                         </h4>
@@ -43,9 +44,9 @@
                         <div class="item-inner item-inner--notifications item-inner--exchanges">
                             {{item.price | number: '1.0-8'}}
                         </div>
-
                         <span class="container-item-update item-inner--exchanges title--green">{{item.percentOfSaving | number: '1.0-2'}}</span>
                     </div>
+                    </ng-container>
                 </div>
             </div>
         </ng-container>
