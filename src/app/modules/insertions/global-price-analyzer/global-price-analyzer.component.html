@@ -1,103 +1,186 @@
 <div class="main-info main-info--price">
 
-  <div class="middle middle--global">
+    <div class="middle middle--global">
+        <div class="aside-right__head aside-right__head--arbitrage">Results</div>
+        <div *ngIf="!preloader && !results" class="item-inner-line-error-block item-inner-line-error-block--empty">
+            <span>Here the results of your search will be displayed</span>
+        </div>
+        <app-preloader *ngIf="preloader"></app-preloader>
 
-    <div class="middle__block middle__block--price">
+        <ng-container *ngIf="results && !preloader">
+        <ng-container *ngFor="let pair of getKeys(results)">
+            <div class="item-inner-line-error-block item-inner-line-error-block--empty" *ngIf="!results[pair].opened"
+            (click)="results[pair].opened = true">{{pair}}</div>
+            <div class="middle__block middle__block--price" *ngIf="results[pair].opened">
 
-      <div class="middle__table-type middle__table-type--exchanges">
-          <span class="middle__table-type-name">
-            Pair
-          </span>
+                <div class="middle__table-type middle__table-type--exchanges">
+                    <span class="middle__table-type-name">
+                     Pair
+                    </span>
 
-        <span class="middle__table-type-name">
-            Stocks
-          </span>
+                    <span class="middle__table-type-name">
+                      Stock
+                    </span>
 
-        <span class="middle__table-type-name">
-            Price
-          </span>
+                    <span class="middle__table-type-name">
+                     Price
+                    </span>
 
-        <span class="middle__table-type-name">
-            % of savings
-          </span>
-      </div>
+                    <span class="middle__table-type-name">
+                    % of savings
+                    </span>
+                </div>
 
-        <div class="middle__table-container middle__table-container--dashboard middle__table-container--global">
-          <div class="middle__table-container-item middle__table-container-item--dashboard">
-            <h4 class="table-container-item--name">
-              <span>ffas</span>
-            </h4>
-            <h4 class="table-container-item--name title--blue">
-              <span>asdfas</span>
-            </h4>
-            <div class="item-inner item-inner--notifications item-inner--exchanges">
-              afsd
+                <div class="middle__table-container middle__table-container--dashboard middle__table-container--global">
+                    <div class="middle__table-container-item middle__table-container-item--dashboard"
+                         *ngFor="let item of results[pair].array">
+                        <h4 class="table-container-item--name">
+                            <span>{{pair}}</span>
+                        </h4>
+                        <h4 class="table-container-item--name title--blue">
+                            <span>{{item.stock}}</span>
+                        </h4>
+                        <div class="item-inner item-inner--notifications item-inner--exchanges">
+                            {{item.price | number: '1.0-8'}}
+                        </div>
+
+                        <span class="container-item-update item-inner--exchanges title--green">{{item.percentOfSaving | number: '1.0-2'}}</span>
+                    </div>
+                </div>
             </div>
-
-            <span class="container-item-update item-inner--exchanges title--green">data</span>
-          </div>
-
-        <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
-        <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
-        <!--<h4 class="table-container-item&#45;&#45;name">Account 2</h4>-->
-
-
-      </div>
-
+        </ng-container>
+        </ng-container>
     </div>
-  </div>
 
-  <div class="aside-right">
+
+<div class="aside-right">
 
     <form action="" class="aside-right__filter">
 
-      <div class="filter__container">
+        <div class="filter__container">
+            <div class="filter__container">
+                <span class="container__name">Exchanges</span>
 
-        <div class="filter__container-double">
-          <div class="filter__container filter__container--analyzer">
-            <span class="container__name">Exchange</span>
+                <ul class="filter__container-block">
+                    <li class="filter__container-block-item" [ngClass]="{'is-active': allChosen}"
+                        (click)="chooseAllExchanges()">
+                        All
 
-            <div class="container__form container__form--select is-active">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>6482F5ED-83DF-46ED-8B70-6ED1E6FC004C</title>
+                            <desc>Created with sketchtool.</desc>
 
-              <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+                            <g id="check">
+                                <rect id="Rectangle-Copy" fill="#FFFFFF" x="0" y="0" width="24" height="24"
+                                      rx="12"></rect>
+                                <path d="M10.6128594,18.9999092 C10.2087451,18.9999092 9.8265451,18.8108521 9.5808451,18.4865949 L6.26250224,14.1042949 C5.83090224,13.5343378 5.94325938,12.7227664 6.51321653,12.2909807 C7.08410224,11.8590092 7.89511653,11.9721092 8.32690224,12.5416949 L10.5094165,15.4236092 L15.9985737,6.60998066 C16.3765022,6.00362352 17.1745165,5.81809495 17.7821737,6.19546637 C18.389088,6.57320923 18.5744308,7.37178066 18.1963165,7.97869495 L11.7119165,18.3898378 C11.4866451,18.7517949 11.0977594,18.9794807 10.6719165,18.9987949 C10.6520451,18.9995378 10.6325451,18.9999092 10.6128594,18.9999092 Z"
+                                      id="Shape" fill="#25CBD3" fill-rule="nonzero"></path>
+
+                            </g>
+                        </svg>
+                    </li>
+                    <li class="filter__container-block-item" *ngFor="let exchange of exchanges"
+                        [ngClass]="{'is-active': exchange.globalPriceChosen}" (click)="chooseExchange(exchange)">
+                        {{exchange.name}}
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="check">
+                                <rect id="Rectangle-Copy" fill="#FFFFFF" x="0" y="0" width="24" height="24"
+                                      rx="12"></rect>
+                                <path d="M10.6128594,18.9999092 C10.2087451,18.9999092 9.8265451,18.8108521 9.5808451,18.4865949 L6.26250224,14.1042949 C5.83090224,13.5343378 5.94325938,12.7227664 6.51321653,12.2909807 C7.08410224,11.8590092 7.89511653,11.9721092 8.32690224,12.5416949 L10.5094165,15.4236092 L15.9985737,6.60998066 C16.3765022,6.00362352 17.1745165,5.81809495 17.7821737,6.19546637 C18.389088,6.57320923 18.5744308,7.37178066 18.1963165,7.97869495 L11.7119165,18.3898378 C11.4866451,18.7517949 11.0977594,18.9794807 10.6719165,18.9987949 C10.6520451,18.9995378 10.6325451,18.9999092 10.6128594,18.9999092 Z"
+                                      id="Shape" fill="#25CBD3" fill-rule="nonzero"></path>
+                            </g>
+                        </svg>
+                    </li>
+                </ul>
+                <span class="error-field error-field--arbitrage" *ngIf="submitted && chosenExchanges.length < 1">Choose at least 1 exchange</span>
 
             </div>
 
-          </div>
+            <div class="filter__container" *ngIf="selectedPairs.length">
+                <span class="container__name">Chosen pairs</span>
+                <ul id="filter__container-block" class="filter__container-block">
+                    <li *ngFor="let pair of selectedPairs" class="filter__container-block-item--categories is-active"
+                        (click)="deletePair(pair)">{{pair}}
+                        <div class="categories__item-svg">
+                            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>Group 8</title>
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="FTEC-Platform_Module-2" transform="translate(-1286.000000, -130.000000)">
+                                        <g id="Group-5" transform="translate(1180.000000, 104.000000)">
+                                            <g id="Group" transform="translate(16.000000, 24.000000)">
+                                                <g id="Group-8" transform="translate(90.000000, 2.000000)">
+                                                    <circle id="Oval" fill-opacity="0.7" fill="#FFFFFF" cx="10" cy="10"
+                                                            r="10"></circle>
+                                                    <path d="M10.90625,10.03125 L14.875,14.015625 C15.0000006,14.1302089 15.0625,14.2734366 15.0625,14.4453125 C15.0625,14.6171884 15.0026048,14.7630202 14.8828125,14.8828125 C14.7630202,15.0026048 14.6171884,15.0625 14.4453125,15.0625 C14.2734366,15.0625 14.1302089,15.0000006 14.015625,14.875 L10.03125,10.890625 L6.046875,14.875 C5.93229109,15.0000006 5.78906336,15.0625 5.6171875,15.0625 C5.44531164,15.0625 5.29947977,15.0026048 5.1796875,14.8828125 C5.05989523,14.7630202 5,14.6171884 5,14.4453125 C5,14.2734366 5.06249937,14.1302089 5.1875,14.015625 L9.15625,10.03125 L5.1875,6.046875 C5.06249937,5.93229109 5,5.78906336 5,5.6171875 C5,5.44531164 5.05989523,5.29947977 5.1796875,5.1796875 C5.29947977,5.05989523 5.44531164,5 5.6171875,5 C5.78906336,5 5.93229109,5.06249938 6.046875,5.1875 L10.03125,9.15625 L14.015625,5.1875 C14.1302089,5.06249938 14.2734366,5 14.4453125,5 C14.6171884,5 14.7630202,5.05989523 14.8828125,5.1796875 C15.0026048,5.29947977 15.0625,5.44531164 15.0625,5.6171875 C15.0625,5.78906336 15.0000006,5.93229109 14.875,6.046875 L10.90625,10.03125 Z"
+                                                          id="" fill="#7A5D8E"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
 
-          <div class="filter__container filter__container--analyzer">
-            <span class="container__name">Coin</span>
-
-            <div class="container__form container__form--select is-active">
-
-              <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
+                <span class="error-field error-field--arbitrage" *ngIf="submitted && selectedPairs.length < 1">Choose at least 1 pair</span>
+                <span class="error-field error-field--arbitrage" *ngIf="submitted && selectedPairs.length > 10">You can't choose more than 10 pairs</span>
 
             </div>
-          </div>
-        </div>
 
-        <div class="filter__container">
-          <span class="container__name">Volume</span>
+            <div class="filter__container">
+                <span class="container__name">Pair</span>
 
-          <div class="l-order__type-container l-global__type-container">
-              <span class="order__type-item global__type-item is-active">Buy
+                <div class="container__form container__form--select is-active">
+
+                    <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)"
+                                         (selected)="pairsFilterService.onPairTyping($event)"
+                                         [items]="pairsFilterService.resultPairs"
+                                         [keyName]="'pair'"></app-filter-dropdown>
+                </div>
+                <span class="error-field"
+                      *ngIf="submitted && !pairsFilterService.selectedPair">Select pair</span>
+
+
+            </div>
+
+            <div class="filter__container">
+                <span class="container__name">Volume to buy</span>
+
+                <div class="l-order__type-container l-global__type-container">
+              <span class="order__type-item global__type-item" [ngClass]="{'is-active': type}"
+                    (click)="type = true">BTC
                   <div class="order__type-container"></div>
               </span>
-              <span class="order__type-item global__type-item">Sell
+                    <span class="order__type-item global__type-item" [ngClass]="{'is-active': !type}"
+                          (click)="type = false">Coin
                   <div class="order__type-container"></div>
               </span>
-          </div>
+                </div>
+            </div>
+
+            <div class="filter__container">
+                <input type="number" min="0" class="form__input" placeholder="Volume to buy"
+                       [(ngModel)]="volume"
+                       [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <span class="error-field"
+                  *ngIf="submitted && !volume">Volume to buy is required</span>
+            <span class="error-field"
+                  *ngIf="submitted && volume < 0.05">Volume to buy should be 0.05 or more</span>
+            <span class="error-field"
+                  *ngIf="submitted && volume > 50">Volume to buy should be less than 50</span>
+
         </div>
 
-        <div class="filter__container">
-          <input type="number" min="0" class="form__input" placeholder="Minimum value: 20">
-        </div>
-
-      </div>
-
-      <button class="filter__container-button">Search</button>
+        <button class="filter__container-button" (click)="submitForm()">Search</button>
     </form>
 
-  </div>
-
+</div>
 </div>
