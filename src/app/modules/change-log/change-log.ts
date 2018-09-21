@@ -1,5 +1,20 @@
 export const changeLog = [
      {
+    'date': '21/09/2018',
+    'changes': [
+            'At frontend in the admin panel, we implemented the possibility to add and delete test questions. ',
+            'At frontend in the admin panel, we implemented the possibility to mark and change the correct answer to the question.',
+            'At frontend in the admin panel, we implemented the possibility to edit questions in tests.',
+            'In the Order Manager module, the user notification function was added, when the order was successfully placed (HitBtc).',
+            'In the Order Manager module, the user notification function is added, in the event that you need to place an order, but it does not have enough funds on the account (HitBtc).',
+            'The main module added the function of changing the old password to a new one.',
+            'In the Order Manager module error display was added when the user exceeded the limit of order storage.',
+            'In the Price Notification module we added an error display when the user has exceeded the limit of saving conditions',
+            'We added a feature that every 19 minutes will check the add-on for successful replenishment (for BTC). ',
+            'When replenishing the balance, the user will receive a notification that the balance has been successfully replenished (for BTC).'
+       ]
+    },
+     {
     'date': '20/09/2018',
     'changes': [
             'We fixed the method of getting an order book for Huobi.',
