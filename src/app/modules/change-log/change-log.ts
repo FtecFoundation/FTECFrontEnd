@@ -1,17 +1,30 @@
 export const changeLog = [
      {
+    'date': '24/09/2018',
+    'changes': [
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (Poloniex).',
+            'In the proxy module, we added the function of getting an active order by ID for Poloniex.',
+            'In the proxy module, we added the function of getting the balance for a certain pair (Binance).',
+            'In the proxy module, we added the function of closing order for Binance.',
+            'In Module of Price Notification and Exchange Order Management Module, we fixed the bug on checking the current price for Bittrex.',
+            'In the proxy module, we added the function of getting all active pairs for Yobit.',
+            'In the proxy module, we fixed bugs of setting buy orders for Bittrex.',
+            'In Exchange Order Management Module, we added the function of saving onsite on when it’s necessary to set an order (Yobit).'
+            ]
+    },
+     {
     'date': '21/09/2018',
     'changes': [
             'At frontend in the admin panel, we implemented the possibility to add and delete test questions. ',
             'At frontend in the admin panel, we implemented the possibility to mark and change the correct answer to the question.',
             'At frontend in the admin panel, we implemented the possibility to edit questions in tests.',
-            'In the Order Manager module, the user notification function was added, when the order was successfully placed (HitBtc).',
-            'In the Order Manager module, the user notification function is added, in the event that you need to place an order, but it does not have enough funds on the account (HitBtc).',
-            'The main module added the function of changing the old password to a new one.',
-            'In the Order Manager module error display was added when the user exceeded the limit of order storage.',
-            'In the Price Notification module we added an error display when the user has exceeded the limit of saving conditions',
-            'We added a feature that every 19 minutes will check the add-on for successful replenishment (for BTC). ',
-            'When replenishing the balance, the user will receive a notification that the balance has been successfully replenished (for BTC).'
+            'The user will receive notification about successful balance replenishment every time user replenish it (for BTC).',
+            'We added the function which checks addresses for successful replenishments every 19 minutes (for BTC).',
+            'In Module of Price Notification, we added the display of error when user exceeds the limit of saving conditions.',
+            'In the main module, we added the function of changing old password to a new one.',
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (HitBTC).',
+            'In the proxy module, we added the function of getting an active order by ID for HitBTC.',
+            'In the proxy module, we added the function of getting the balance for a certain pair (Bittrex).'
        ]
     },
      {
