@@ -57,8 +57,8 @@ let port = 4200;
 let secretCaptcha = '';
 
 
-var privateKey = fs.readFileSync( 'privatekey.pem' );
-var certificate = fs.readFileSync( 'certificate.pem' );
+var privateKey = fs.readFileSync( '/SSL/pk.pem' );
+var certificate = fs.readFileSync( '/SSL/cert.pem' );
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
