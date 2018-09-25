@@ -13,6 +13,8 @@ import {CurrentUserService} from '../../core/services/current-user.service';
 })
 export class HeaderComponent implements OnInit {
     @ViewChild('image') image: ElementRef;
+    showDropdown: boolean = false;
+    currencies: string[] = ['ETH', 'BTC', 'FTEC'];
 
     constructor(private _accountService: AccountService,
                 private router: Router,
@@ -24,10 +26,12 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
     }
 
-    showUser() {
-        const accInfo = document.querySelector('.user-account-block');
+    otherCurrencies(): string[] {
+        return this.currencies.filter(c => c !== this._currentUserService.user.currentPaymentScope);
+    }
 
-        accInfo.classList.toggle('is-active');
+    closeDropdown() {
+        if (this.showDropdown) this.showDropdown = false
     }
 
     showThemeList() {
@@ -44,6 +48,11 @@ export class HeaderComponent implements OnInit {
         sidebar.classList.toggle('is-active');
     }
 
+    getAssetBalance(asset: string): number {
+        return this._currentUserService.user.balances[asset.toLowerCase() + 'Balance'];
+    }
+
+
     logout() {
         this._accountService.logoutUser().subscribe(() => {
             this.router.navigate(['']);
@@ -53,7 +62,6 @@ export class HeaderComponent implements OnInit {
     }
 
     goToPaymentPage() {
-        this._currentUserService.checkAddressExistence();
         this.router.navigateByUrl('/account/payment');
     }
 

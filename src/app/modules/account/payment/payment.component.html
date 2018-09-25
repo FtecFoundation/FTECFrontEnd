@@ -3,7 +3,7 @@
 
 <div class="main-info main-info--payment">
 
-  <div class="middle middle--telegram-enable">
+  <div class="middle middle--payment-enable">
 
     <h3 class="telegram-enable__title">To refill your balance you need:</h3>
 
@@ -14,25 +14,47 @@
 
     <p>If you have no FTEC tokens, you need to go to the exchange that trades FTEC tokens and trade them.</p>
 
-    <p>Once you'll send an transaction, you'll be able to see your tokensautomatically</p>
+    <p>Once you'll send an transaction, you'll be able to see your tokens automatically</p>
 
     <p>
       <b>
         <i>WARNING!</i>
       </b> If you won't transfer any money to the wallet for at least 2 days it will be suspended and transferred to the frozen
-      pool.</p>
+      pool.
+    </p>
     <p>QR code below contains only address of your account that allows you to scan it using mobile app or services that works
       with QR codes</p>
 
-    <qrcode colordark="#250643" [qrdata]="qrUrl" [size]="200" [level]="'L'"></qrcode>
+    <div *ngIf="!_currentUserService.user.confirmedEmail">Confirm your email to generate an address for manual refilling!</div>
 
-    <span class="payment--code">Your account wallet address to manual refilling:
-      <br>
-      <br>
-      <span>{{_currentUserService.user.walletAddress}}</span>
-    </span>
+    <ng-container *ngIf="addresses">
+      <div *ngIf="!addresses[currentCurrency]" class="payment--code">
+        You have no account wallet addresses for manual refilling. Use the form bellow to generate new addresses
+        <div class="payment--new-address">
+          <a class="filter__container-button" (click)="generateWalletAddress()">Generate Address</a>
+        </div>
+        <br>
+        <div class="error-field" *ngIf="errorWalletAsset">Set current wallet asset in the right menu</div>
+        <br>
+      </div>
 
-    <button class="filter__container-button">Refresh statistic</button>
+      <div *ngIf="addresses[currentCurrency]" class="payment--code">Your account wallet addresses for manual refilling:
+        <br>
+        <br>
+        <div>{{addresses[currentCurrency].address}}
+          <span class="payment__aside-time"> ({{currentCurrency}} address)</span>
+          <br>
+          <br>
+          <a (click)="showQR = !showQR" class="button__outline">{{showQR ? 'Hide' : 'Show'}} QR code</a>
+          <br>
+          <br>
+          <qrcode *ngIf="showQR" colordark="#250643" [qrdata]="addresses[currentCurrency].address" [size]="150" [level]="'L'"></qrcode>
+        </div>
+      </div>
+    </ng-container>
+
+    <button *ngIf="addresses && addresses[currentCurrency]" class="filter__container-button"
+            (click)="refresh(addresses[currentCurrency].id)">Refresh payment status</button>
   </div>
 
   <div class="filter__container-aside filter__container-aside--payment">
@@ -49,65 +71,73 @@
         <div class="middle__table-container--payment">
           <h3 class="title">FTEC Available now:</h3>
 
-          <h3 class="title title--green">234087 FTEC</h3>
+          <h3 *ngIf="_currentUserService.user.balances" class="title title--green">{{_currentUserService.user.balances.ftecBalance}} FTEC</h3>
         </div>
 
         <div class="middle__table-container--payment">
           <span class="payment__aside-time">FTEC on wallet:</span>
 
-          <span class="payment__aside-time">76854867 FTEC</span>
+          <span *ngIf="_currentUserService.user.balances" class="payment__aside-time">{{_currentUserService.user.balances.ftecBalance}}  FTEC</span>
         </div>
 
         <div class="middle__table-container--payment">
           <span class="payment__aside-time">Frozen by operations:</span>
 
-          <span class="payment__aside-time">495867 FTEC</span>
+          <span class="payment__aside-time">0 FTEC</span>
         </div>
 
         <button class="filter__container-button" (click)="showPopup()">Withdraw</button>
       </div>
 
+      <div class="filter__container filter__container--payment">
+        <div class="filter__container">
+          <span class="container__name">Current currency is:</span>
+
+          <div class="container__form container__form--select is-active">
+            <app-dropdown [label]="'Currency'" [items]="currencies" [value]="currentCurrency" (selected)="chooseCurrentCurrency($event)"></app-dropdown>
+          </div>
+
+        </div>
+
+        <button class="filter__container-button" (click)="submitCurrentCurrency()">Change currency</button>
+      </div>
+
     </div>
   </div>
 
-  <div class="middle middle--payment">
+  <div class="middle middle--payment" *ngIf="history && history.length">
     <div class="middle__head">
       <h5>Your wallet statistics</h5>
     </div>
 
     <div class="middle__table-type middle__table-type--payment">
       <span class="middle__table-type-name">
-        TX hash
+        Date
       </span>
 
       <div class="middle__table-type-inner">
         <span class="middle__table-type-name align-left">
-          Wallet from
+          Amount
         </span>
         <span class="middle__table-type-name align-right">
-          Operation date
+          Description
         </span>
       </div>
-
-      <span class="middle__table-type-name align-right">
-        Amount (in FTEC)
-      </span>
     </div>
 
 
     <div class="middle__table-container middle__table-container--payment">
-      <div class="middle__table-container-item middle__table-container-item--payment">
-        <h4>IN DEVELOPMENT</h4>
+      <div class="middle__table-container-item middle__table-container-item--payment" *ngFor="let h of history">
+        <h4>{{h.date | date: 'dd MMM yyyy HH:mm'}}</h4>
 
         <div class="item-inner">
           <div class="item-inner-line item-inner-line--payment">
-            <span>IN DEVELOPMENT</span>
+            <span>{{h.amount}} {{h.asset}}</span>
 
-            <span>IN DEVELOPMENT</span>
           </div>
         </div>
 
-        <span class="container-item-profit align-right">IN DEVELOPMENT</span>
+        <span class="container-item-profit align-right">{{h.reason}}</span>
       </div>
 
     </div>

@@ -5,7 +5,13 @@ import { ShowModalService } from '../../not-active/show-modal.service';
 import { CurrentUserService } from '../../../core/services/current-user.service';
 import { Router } from '@angular/router';
 import { AccountService } from '../../../core/services/account.service';
-import { DashboardAuthLogs } from '../../../core/models/user';
+import { DashboardAuthLogs, ExchangeKeys } from '../../../core/models/user';
+import { MyExchangesComponent } from '../my-exchanges/my-exchanges.component';
+import { MyExchangesService } from '../my-exchanges/my-exchanges.service';
+import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-exchanges';
+import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
+import {BinanceService} from "../../../core/services/exchanges/binance.service";
+import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 
 
 @Component({
@@ -16,6 +22,10 @@ import { DashboardAuthLogs } from '../../../core/models/user';
 export class DashboardComponent implements OnInit {
 
     preloader = true;
+    keys: ExchangeKeys[] = [];
+    unusedExchanges: Stock[] = [];
+
+    public authLogsContent = false;
 
     currencies: Cryptocurrency[] = [];
     logs: DashboardAuthLogs[] = [];
@@ -24,10 +34,21 @@ export class DashboardComponent implements OnInit {
         private _showModalService: ShowModalService,
         private router: Router,
         public _currentUserService: CurrentUserService,
-        private _authLogs: AccountService) {
+        private _authLogs: AccountService,
+        private _exchangesKeys: ExchangeKeys) {
     }
 
     ngOnInit() {
+        this._currentUserService.getStockKeys(false).subscribe(data => {
+            this.keys = data;
+            main: for(const stock of AvailableExchanges.availableStocks) {
+                for(const key of this.keys) {
+                    if(key.stock == stock) continue main;
+                }
+                this.unusedExchanges.push(stock)
+            }
+        });
+
         this._cryptoService.getCryptocurrencies().subscribe(data => {
             for (const val of Object.values(data['data'])) {
                 this.currencies.push(<Cryptocurrency>val);
@@ -36,19 +57,30 @@ export class DashboardComponent implements OnInit {
         });
 
         this._authLogs.getAuthLogs().subscribe(data => {
-            console.log(this._authLogs)
             this.logs = data;
+
+            this.authLogsContent = true;
         });
-        
+
     }
+
 
     showModal() {
         this._showModalService.showModal = true;
+    }
+    getAssetBalance(asset: string): number {
+        return this._currentUserService.user.balances[asset.toLowerCase() + 'Balance'];
+    }
+    route() {
+        this.router.navigate(['/account/my-exchanges']);
     }
 
     goToPaymentPage() {
         this._currentUserService.checkAddressExistence();
         this.router.navigateByUrl('/account/payment');
     }
+
+
+
 
 }

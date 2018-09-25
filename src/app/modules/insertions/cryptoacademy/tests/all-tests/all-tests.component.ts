@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CryptoacademyService} from '../../../../../core/services/cryptoacademy.service';
+import {CryptoacademyService} from '../../cryptoacademy.service';
 import {Test, TestHistory} from '../../../../../core/models/test-cryptoacademy';
 import {Router} from '@angular/router';
 import {TestStatusService} from '../test-status/test-status.service';
@@ -11,6 +11,7 @@ import {TestStatusService} from '../test-status/test-status.service';
 })
 export class AllTestsComponent implements OnInit {
     tests: Test[];
+    activeTab: string = 'tests';
 
     constructor(private _cryptoacademyService: CryptoacademyService, private router: Router,
                 public _testStatusService: TestStatusService) {
@@ -22,28 +23,38 @@ export class AllTestsComponent implements OnInit {
 
             this._cryptoacademyService.getTestsHistory().subscribe(data1 => {
                 this.fillLastQuestion(data1);
+                this.fillPassed(data1);
             });
         });
     }
 
     goToTest(test: Test) {
-        if (test.lastQuestion !== test.total) {
+        if (test.lastQuestion !== test.totalQuestions) {
             this.router.navigate(['/modules/cryptoacademy/test', test.id, test.lastQuestion ? test.lastQuestion : 1]);
         } else {
             this.router.navigate(['/modules/cryptoacademy/completed', test.id]);
         }
     }
 
+    fillPassed(history: TestHistory) {
+        for (const test of this.tests) {
+            test.passed = 0;
+            for (let i = 1; i <= test.totalQuestions; i++) {
+                if (history.tests[test.id + '_' + i] && (history.tests[test.id + '_' + i].selectedAnswer != -1)) {
+                    test.passed++;
+                }
+            }
+        }
+    }
+
     fillLastQuestion(history: TestHistory) {
         for (const test of this.tests) {
-            const questions = Object.keys(test.questions);
-            test.total = questions.length;
-            for (const question of questions) {
-                if (!history.tests[test.id + '_' + question] || (history.tests[test.id + '_' + question].selectedAnswer === -1)) {
-                    test.lastQuestion = Number.parseInt(question);
+            for (let i = 1; i <= test.totalQuestions; i++) {
+                if (!history.tests[test.id + '_' + i] || (history.tests[test.id + '_' + i].selectedAnswer == -1)) {
+                    test.lastQuestion = i;
                     break;
                 }
-                test.lastQuestion = Number.parseInt(question);
+                test.lastQuestion = i;
             }
         }
     }

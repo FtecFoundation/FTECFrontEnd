@@ -1,0 +1,18 @@
+
+<div class="container__form-select-block form__input" clickOutside (clickOutside)="closeDropdown()">
+
+    <input class="form__select-item" #input placeholder="{{label}}"
+           value="{{currentPair ? (currentPair.symbol + '/' + currentPair.base) : ''}}" (keyup)="refreshResults(input.value)"/>
+
+    <div class="form__select-list" style="display: block" *ngIf="opened && items.length !== 0">
+        <!--<span class="form__select-list-item"-->
+              <!--(click)="select(null)">{{label}}</span>-->
+        <ng-container *ngFor="let item of items">
+            <span class="form__select-list-item form__select--pair"
+                  (click)="selectPair(item)" *ngIf="item !== active && keyName === 'pair'">{{item['symbol']}}/{{item['base']}}
+            <span>{{item['exchange'].name}}</span></span>
+            <span class="form__select-list-item"
+                  (click)="select(item)" *ngIf="item !== active && keyName !== 'pair'">{{keyName?item[keyName]:item}}</span>
+        </ng-container>
+    </div>
+</div>

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     submitted = false;
     errorResponse: string = null;
+    enabled2FA: boolean = false;
 
     constructor(private _accountService: AccountService,
                 private formBuilder: FormBuilder,
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
     createForm() {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
-            password: ['', Validators.required]
+            password: ['', Validators.required],
+            code: ['']
         });
     }
 
@@ -41,8 +43,11 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['/account']);
                 this._errorsService.currentError = null;
             }, error1 => {
-                this._errorsService.currentError = null;
-                this.errorResponse = this._errorsService.parseResponseMessage(error1);
+                if (error1.error.status === 2 && !this.enabled2FA) this.enabled2FA = true;
+                else {
+                    this._errorsService.currentError = null;
+                    this.errorResponse = this._errorsService.parseResponseMessage(error1);
+                }
             });
         }
     }

@@ -124,8 +124,8 @@
 .test__image img {
   width: 100%;
   height: 100%;
-  
-  object-fit: cover;
+  -o-object-fit: fill;
+  object-fit: contain;
   border-radius: .313rem;
 }
 
@@ -245,6 +245,24 @@
   padding-left: 0;
   border-radius: .313rem;
   background-image: linear-gradient(to left, #3d0957, #0d0130);
+}
+
+.item-inner-line-error-block--empty .item-inner-line--error-icon{
+  top: initial;
+}
+
+.item-inner-line-error-block--empty span {
+  margin-left: 0;
+}
+
+.test__image {
+  position: relative;
+}
+
+.test__image--answer {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 // Status

@@ -74,3 +74,33 @@
 .order__type-item.is-active {
   color: $white;
 }
+
+.small-container__line-link--order--sell {
+  color: #9C0D66;
+}
+
+.small-container__line-link--order--buy {
+  color: #3f8afd;
+}
+
+.item-inner-line-error-block.item-inner-line-error-block--empty {
+  text-align: center;
+  margin-top: 1.538em;
+}
+
+.item-inner-line-error-block.item-inner-line-error-block--empty span {
+  margin-left: 20px;
+}
+
+.l-volume__type-container {
+  width: 100%;
+  text-align: center;
+}
+
+.l-volume__type-container .order__type-item {
+  width: 50%;
+}
+
+.filter__container--volume-double {
+  padding: .625em;
+}

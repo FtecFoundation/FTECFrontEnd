@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trpItems } from './trp';
+import {Pair} from "../../../core/models/pair";
 
 
 @Component({
@@ -10,6 +11,7 @@ import { trpItems } from './trp';
 export class TrpComponent implements OnInit {
 
   trp = trpItems;
+    pairs: Pair[];
 
   constructor() {
   }

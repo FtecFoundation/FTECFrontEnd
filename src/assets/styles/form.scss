@@ -1,6 +1,7 @@
 @import "variables";
 
 .container__form {
+  position: relative;
   border-radius: 28px;
   background-color: $dark-blue;
   margin-top: 0.938em;
@@ -26,7 +27,7 @@
   color: $white;
   border-radius: 28px;
   border: solid 1px #594498;
-  background-color: transparent;
+  background-color: #0d003b;
 
   -moz-appearance: textfield;
 }
@@ -231,7 +232,7 @@ select::-ms-expand {
 }
 
 .form__select-list {
-  z-index: 1;
+  z-index: 99;
   width: 100%;
   position: absolute;
   
@@ -273,4 +274,10 @@ select::-ms-expand {
 .form__select-list-item:last-child{
   border-bottom-right-radius: 28px;
   border-bottom-left-radius: 28px;
+}
+
+.form__label--currency {
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
 }

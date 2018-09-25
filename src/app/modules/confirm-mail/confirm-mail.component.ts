@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ShowModalService} from '../not-active/show-modal.service';
 import {AccountService} from '../../core/services/account.service';
+import {NotifyService} from "../../core/notify/notify.service";
+import {Notify, notifyTypes} from "../../core/notify/notifications";
 
 export const messages: any = {
     default: 'Your email has not been confirmed yet. Please confirm email or your account will be deleted ' +
@@ -17,19 +19,14 @@ export const messages: any = {
 
 export class ConfirmMailComponent implements OnInit {
 
-
-  message: string = messages.default;
-
-  constructor(private _accountService: AccountService) { }
+  constructor(private _accountService: AccountService, private _notifyService: NotifyService) { }
 
   ngOnInit() {
   }
 
   resendEmail() {
       this._accountService.resendEmail().subscribe(() => {
-          this.message = messages.successful;
-      }, error1 => {
-          this.message = messages.error;
+          this._notifyService.addNotification(new Notify(this._notifyService.lastId,'Success!', 'Your confirmation has been resent', notifyTypes.success));
       });
   }
 

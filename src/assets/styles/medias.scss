@@ -33,8 +33,7 @@
     padding-left: 0.938rem;
   }
 
-  .header__info-user,
-  .price__small-container-value {
+  .header__info-user {
     width: 100% !important;
   }
 
@@ -50,14 +49,21 @@
   [_nghost-c9],
   [_nghost-c10],
   [_nghost-c11],
-  [_nghost-c12],
+  [_nghost-c12],  
+  [_nghost-c13],
   [_nghost-c14],
   [_nghost-c15],
   [_nghost-c16],
   [_nghost-c17],
   [_nghost-c18],
   [_nghost-c19],
-  [_nghost-c20] {
+  [_nghost-c20],
+  [_nghost-c21],
+  [_nghost-c22],
+  [_nghost-c23],
+  [_nghost-c24],
+  [_nghost-c25],
+  [_nghost-c26] {
     width: 100% !important;
     padding-top: .500rem !important;
   }
@@ -73,6 +79,11 @@
   .middle {
     width: 55%;
     padding-left: 0.625rem !important;
+  }
+
+  .middle--payment-enable {
+    margin-left: .625em;
+    width: 58%;
   }
   
   .header__left-bar {
@@ -144,6 +155,14 @@
     display: none !important;
   }
 
+  .middle__table-type-inner--dashboard {
+    margin-left: 53% !important;
+  }
+
+  .table-container-item--dashboard {
+    margin-left: 1.250em;
+  }
+
   .middle--payment {
     margin-right: 0;
   }
@@ -177,6 +196,12 @@
   [_nghost-c18],
   [_nghost-c19],
   [_nghost-c20],
+  [_nghost-c21],
+  [_nghost-c22],
+  [_nghost-c23],
+  [_nghost-c24],
+  [_nghost-c25],
+  [_nghost-c26],
   .container__middle,
   .filter__container--dashboard,
   .container-item-update,
@@ -212,7 +237,6 @@
     height: initial !important;
   }
 
-  .change-log,
   .settings__container {
     width: 50% !important;
   }
@@ -257,6 +281,16 @@
 
   .middle {
     padding-left: 0 !important;
+  }
+
+  .middle--payment-enable {
+    padding-left: 1.125em !important;
+    margin-left: 0;
+    margin-bottom: 1.250em;
+  }
+
+  .filter__container-aside--payment {
+    padding: 0;
   }
 
   .aside-right {
@@ -308,10 +342,7 @@
 
   
   .middle__table-container-stocs {
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center !important;
   }
 
@@ -455,6 +486,9 @@
   .smart__item {
     padding: .625em 0 !important;
   }
+  .middle--telegram-enable {
+    margin-left: 0 !important;
+  }
 
 }
 
@@ -534,6 +568,10 @@
   .ngx-charts {
     transform: scale(.54) !important;
     margin-top: 1.250em;
+  }
+
+  .item-inner-line {
+    font-size: .625em;
   }
 
   .change-log,

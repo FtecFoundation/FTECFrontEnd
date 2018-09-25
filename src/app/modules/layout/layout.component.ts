@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ShowModalService} from '../not-active/show-modal.service';
-import {ShowStubService} from '../stub/stub-modal.service';
-import {routerAnimation} from './layout.animation';
-import {transition, trigger, useAnimation} from '@angular/animations';
-import {CurrentUserService} from '../../core/services/current-user.service';
+import { Component, OnInit } from '@angular/core';
+import { ShowModalService } from '../not-active/show-modal.service';
+import { ShowStubService } from '../stub/stub-modal.service';
+import { routerAnimation } from './layout.animation';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { CurrentUserService } from '../../core/services/current-user.service';
+import {NotifyService} from "../../core/notify/notify.service";
 
 @Component({
     selector: 'app-layout',
@@ -19,12 +20,16 @@ import {CurrentUserService} from '../../core/services/current-user.service';
 })
 export class LayoutComponent implements OnInit {
 
-    constructor(public _showModalService: ShowModalService, public _currentUserService: CurrentUserService, public _showStubService: ShowStubService) {
+    constructor(public _showModalService: ShowModalService,
+        public _currentUserService: CurrentUserService, 
+        public _showStubService: ShowStubService,
+        private _notifyService: NotifyService) {
     }
 
     ngOnInit() {
-    }
 
+    }
+    
     prepRouteState(outlet: any) {
         return outlet.activatedRouteData['title'] || null;
     }

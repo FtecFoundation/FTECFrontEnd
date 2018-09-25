@@ -208,4 +208,14 @@
 
 .container__form-warning {
   color: $red;
+  font-weight: 100;
+}
+
+.filter__container--behavioral {
+  margin-left: -.625em;
+}
+
+.item-inner-line-error-block.item-inner-line-error-block--empty {
+  width: 95%;
+  margin-top: 1.538em;
 }

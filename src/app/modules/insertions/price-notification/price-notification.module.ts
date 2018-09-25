@@ -1,8 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {PriceNotificationRoutingModule} from './price-notification-routing.module';
-import {PriceNotificationComponent} from './price-notification.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PriceNotificationRoutingModule } from './price-notification-routing.module';
+import { PriceNotificationComponent } from './price-notification.component';
 import { SharedModule } from '../../../shared/shared.module';
+import {PriceNotificationService} from "./price-notification.service";
 
 @NgModule({
     imports: [
@@ -10,7 +11,8 @@ import { SharedModule } from '../../../shared/shared.module';
         SharedModule,
         PriceNotificationRoutingModule
     ],
-    declarations: [PriceNotificationComponent]
+    declarations: [PriceNotificationComponent],
+    providers: [PriceNotificationService]
 })
 export class PriceNotificationModule {
 }

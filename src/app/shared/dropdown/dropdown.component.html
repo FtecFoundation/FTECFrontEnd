@@ -1,10 +1,10 @@
 
-<div class="container__form-select-block form__input">
+<div class="container__form-select-block form__input" clickOutside (clickOutside)="closeDropdown()">
     <span class="form__select-item form__select-item--active" (click)="opened = !opened"></span>
 
     <span class="form__select-item">{{ active? (keyName?active[keyName]:active): label }}</span>
 
-    <div class="form__select-list" style="display: block" *ngIf="opened">
+    <div class="form__select-list" style="display: block" *ngIf="opened && items && ((items.length > 1 && active) || (items.length > 0 && !active))">
         <!--<span class="form__select-list-item"-->
               <!--(click)="select(null)">{{label}}</span>-->
         <ng-container *ngFor="let item of items">

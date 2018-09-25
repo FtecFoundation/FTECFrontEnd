@@ -61,6 +61,10 @@ export class DropdownComponent<T> implements OnInit, OnChanges {
 
     }
 
+    closeDropdown() {
+        this.opened = false;
+    }
+
     writeValue(value: any): void {
         this.active = value;
     }
@@ -76,6 +80,7 @@ export class DropdownComponent<T> implements OnInit, OnChanges {
     select(value: T): void {
         this.active = value;
         this.opened = false;
+        this.selected.emit(value);
     }
 
     @Input()

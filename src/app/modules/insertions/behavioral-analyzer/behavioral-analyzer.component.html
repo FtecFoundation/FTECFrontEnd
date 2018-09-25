@@ -5,7 +5,7 @@
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
 
-        <div *ngIf="!responseData || this.responseData.operations['All'].length == 0 ">
+        <div *ngIf="!responseData || this.responseData.operations['All'].length == 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
             You have no analyses results yet. Please, use form to start some analise.
         </div>
 
@@ -117,7 +117,10 @@
                 level 2% higher than usual.</p>
         </div> -->
 
+        <div class="filter__container filter__container--notifications filter__container--behavioral" *ngIf="!responseData || this.responseData.operations['All'].length == 0">
+            <p>To get started you need to connect the API keys on the 'my-exchanges' page. You can proceed </p><a href="/account/my-exchanges"> here</a>
+        </div>
 
-    </div>
+</div>
 
 </div>

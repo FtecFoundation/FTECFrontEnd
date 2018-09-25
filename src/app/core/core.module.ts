@@ -15,21 +15,28 @@ import {SocialService} from './services/social.service';
 import {LoaderComponent } from './loader/loader.component';
 import {LoaderService} from './loader/loader.service';
 import {LanguageService} from './services/language.service';
-import {CryptoacademyService} from './services/cryptoacademy.service';
 import {CaptchaService} from './services/captcha.service';
 import {CurrentUserService} from './services/current-user.service';
 import {ServerErrorsInterceptor} from './services/errors-handling/errors.interceptor.service';
 import {EtherscanService} from './services/etherscan.service';
 import {ConfirmedEmailGuard} from './guards/confirmed-email.guard';
 import {PreferencesService} from './services/preferences.service';
+import {BinanceService} from "./services/exchanges/binance.service";
+import {HitBTCService} from "./services/exchanges/hitbtc.service";
+import {BittrexService} from "./services/exchanges/bittrex.service";
+import {ExchangesService} from "./services/exchanges/exchanges.service";
+import {PairsFilterService} from "./services/pairs-filter/pairs-filter.service";
+import {NotifyService} from "./notify/notify.service";
+import {NotifyComponent} from "./notify/notify.component";
+import {PaymentService} from "./services/payment.service";
 
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule
     ],
-    declarations: [LoaderComponent],
-    exports: [LoaderComponent],
+    declarations: [LoaderComponent, NotifyComponent],
+    exports: [LoaderComponent, NotifyComponent],
     providers: [
         CookieService,
         AccountService,
@@ -45,10 +52,16 @@ import {PreferencesService} from './services/preferences.service';
         SocialService,
         LoaderService,
         LanguageService,
-        CryptoacademyService,
         CurrentUserService,
         CaptchaService,
         PreferencesService,
+        BinanceService,
+        HitBTCService,
+        BittrexService,
+        ExchangesService,
+        PairsFilterService,
+        NotifyService,
+        PaymentService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

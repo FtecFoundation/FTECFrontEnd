@@ -16,6 +16,10 @@
   flex-direction: column;
 }
 
+.small-container__line h2 {
+  font-size: 1.5em;
+}
+
 .price__small-container-value {
   width: 50%;
   display: flex;
@@ -25,7 +29,7 @@
 }
 
 .price__small-container-connected {
-  width: 100%;
+  width: 70%;
 }
 
 .container__wrapper--price {
@@ -48,6 +52,14 @@
   display: flex;
 }
 
+.container__link--dashboard {
+  margin-bottom: 10px;
+}
+
+.container__wrapper {
+  margin-bottom: 20px;
+}
+
 .filter__container--price .container__form--select {
   margin-right: .625em;
 }
@@ -62,10 +74,38 @@
 }
 
 .filter__container--price .container__form--select {
-  width: 50%;
+  width: 100%;
 }
 
 .container__form--range {
   margin: 50px 0;
   background-color: transparent;
+}
+
+.price__small-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button__outline--price {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-small--exchange {
+  color: $white;
+  opacity: 1;
+}
+
+.item-inner-line-error-block.item-inner-line-error-block--empty {
+  text-align: center;
+  margin-top: 1.538em;
+}
+
+.item-inner-line-error-block.item-inner-line-error-block--empty span {
+  margin-left: 20px;
 }

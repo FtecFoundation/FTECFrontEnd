@@ -3,10 +3,16 @@
   <div class="main-info__head">
     <div class="main-info__head-item">
 
-      <div class="head-item__text">
+      <div class="head-item__text" *ngIf="_currentUserService.user.currentPaymentScope && _currentUserService.user.balances">
         <span>Your balance</span>
 
-        <h5 class="head-item__text-price">{{_currentUserService.user.balance}} FTEC</h5>
+        <h5 class="head-item__text-price">{{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}</h5>
+      </div>
+
+      <div class="head-item__text" *ngIf="!_currentUserService.user.currentPaymentScope">
+        <span>Your balance</span>
+
+        <h5 class="head-item__text-price">0 FTEC</h5>
       </div>
 
       <div class="head-item__icon" (click)="goToPaymentPage()">
@@ -365,7 +371,7 @@
             </span>
 
             <span class="middle__table-type-name align-right">
-              
+
             </span>
           </div>
 
@@ -374,16 +380,19 @@
           </span>
         </div>
 
-        <div class="middle__table--dashboard" *ngFor="let log of logs">
 
-          <div class="middle__table-container middle__table-container--dashboard">
+        
+        <div class="middle__table-container middle__table-container--dashboard">
+          
+          <div class="middle__table--dashboard" *ngFor="let log of logs">
+            <app-preloader *ngIf="!authLogsContent"></app-preloader>
 
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
+            <div *ngIf="authLogsContent" class="middle__table-container-item middle__table-container-item--dashboard">
               <h4>{{log.remoteIp}}</h4>
 
               <div class="item-inner item-inner--dashboard">
                 <div class="item-inner-line">
-                  <span class="item-inner-line--dashboard middle__table-text-small">{{log.date}}</span>
+                  <span class="item-inner-line--dashboard middle__table-text-small">{{log.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
                   <span class=""></span>
                 </div>
 
@@ -405,278 +414,51 @@
       </div>
       <div class="container__wrapper container__wrapper--dashboard">
 
-        <div class="filter__table--filter">
+
+
+        <div class="filter__table--filter" *ngFor="let key of keys">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-stocs">
-              <div class="stocs__container">
+              <div class="stocs__container is-active">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/binance.png" alt="">
+                  <img [src]="'../../../../assets/images/' + key.stock.imageURL" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>Binance</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/bittrex-logo-mark.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Bittrex</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/BITFINEX.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Bitfinex</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/Bitstamp_Logo_2013.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Bitstamp</span>
+                  <span>{{key.stock.name}}</span>
 
                   <span class="stocs__text-connected">connected</span>
                 </div>
               </div>
+              <h4 class="table-container-item--name table-container-item--dashboard">
+                <span>Private: {{key.privateKey}}***</span>
 
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
+                <span>Public: {{key.publicKey}}***</span>
+              </h4>
+
+              <!-- <button class="button__outline button__outline--dashboard" (click)="route()">Install API keys</button> -->
             </div>
           </div>
         </div>
 
-        <div class="filter__table--filter">
+        <div class="filter__table--filter" *ngFor="let exchange of unusedExchanges">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-stocs">
               <div class="stocs__container">
                 <div class="stocs__item-image">
-                  <img src="../../../../assets/images/HitBTC-Cryptocurrency-Exchange-Logo-1.png" alt="">
+                  <img [src]="'../../../../assets/images/' + exchange.imageURL" alt="">
                 </div>
 
                 <div class="stocs__text">
-                  <span>HitBTC</span>
+                  <span>{{exchange.name}}</span>
                 </div>
               </div>
 
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
+              <button class="button__outline button__outline--dashboard" (click)="route()">Install API keys</button>
             </div>
           </div>
         </div>
 
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/poloniex.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Poloniex</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/KuCoin-Shares-icon.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>KuCoin</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/logo-square.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>CEX.IO</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/kraken-logo-7DB471C653-seeklogo.com.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Kraken</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/2117a262e1673ec13eb0552c4dc697c7-base.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>WEX.NZ</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/Okcoin.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Okcoin</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/huobi-logo.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Huobi</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/SLIFyTa.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Cryptsy</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/cropped-okexlogowhite1.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Okex</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter__table--filter">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-stocs">
-              <div class="stocs__container">
-                <div class="stocs__item-image">
-                  <img src="../../../../assets/images/coinbase-a673b0735e63d6ea6513e464a83c41165fca9b99b2216b5de70e5187356dd47d.png" alt="">
-                </div>
-
-                <div class="stocs__text">
-                  <span>Coinbase</span>
-                </div>
-              </div>
-
-              <button class="button__outline button__outline--dashboard" (click)="showModal()">Change API Keys</button>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>

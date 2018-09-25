@@ -1,0 +1,74 @@
+@import "../../../assets/styles/variables";
+
+.container__notify {
+  width: fit-content;
+  height: fit-content;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: .938em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.notify {
+  max-width: 400px;
+  margin-bottom: .938em;
+  margin-left: .938em;
+  padding: 2em;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  border: 1px solid $light-violete;
+  border-radius: .625rem;
+  background-color: $dark-blue;
+}
+
+.notify.is-active {
+  right: .938em;
+}
+
+.notify svg {
+  margin-right: 1.250em;
+  display: none;
+}
+
+.notify__inner {
+  position: relative;
+}
+
+.notify__inner span {
+  font-size: 1.125em;
+}
+
+.notify__inner p {
+  font: .938em;
+  opacity: .5;
+}
+
+.notify.notify--bad .bad {
+  display: block;
+}
+
+.notify.notify--good .good {
+  display: block;
+}
+.filter__container-button--notify {
+  margin-right: .938em;
+  width: 150px;
+  padding: .938em;
+}
+
+.notify .close {
+  width: 15px;
+  opacity: .3;
+  background-image: url("../../../assets/images/close.svg");
+  background-size: contain;
+  height: 15px;
+  right: .938em;
+  top: .938em;
+  position: absolute;
+}

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Test, TestHistory} from '../../../../../core/models/test-cryptoacademy';
+import {QuestionsContainer, Test, TestHistory} from '../../../../../core/models/test-cryptoacademy';
 import {el} from '@angular/platform-browser/testing/src/browser_util';
 import {TestStatusService} from './test-status.service';
 
@@ -19,7 +19,7 @@ export class TestStatusComponent implements OnInit {
     ngOnInit() {
         this._testStatusService.mistakes = 0;
         this._testStatusService.correct = 0;
-        this._testStatusService.total = Object.keys(this.test.questions).length;
+        this._testStatusService.total = this.test.totalQuestions;
         this._testStatusService.getPassedAmount(this.history, this.test.id);
 
         this._testStatusService.getCorrectAndMistakesAmount(this.history, this.test.id);

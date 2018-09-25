@@ -5,9 +5,10 @@
 }
 
 .portfolio__graph {
-  margin-top: 50px;
+  padding: .625em;
   display: flex;
   flex-wrap: wrap;
+  background-color: rgba(13, 0, 59, 0.5);
 }
 
 .portfolio__graph-item {
@@ -97,4 +98,78 @@
 
 .double__container-line span {
   font-weight: 100;
+}
+
+.l-portfolio__type-container {
+  width: 100% !important;
+  text-align: center;
+}
+
+.l-portfolio__type-container .order__type-item {
+  width: 50%;
+}
+
+.filter__container--portfolio {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: .938em;
+  position: relative;
+}
+
+.filter__container--portfolio .form__info-label-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tab-controls--portfolio,
+.button__outline--portfolio{
+  width: 100%;
+}
+
+.button__outline--portfolio {
+  padding: 1.250em;
+}
+
+.middle__head--portfolio {
+  padding-bottom: 0;
+}
+
+.portfolio__graph-info {
+  width: 35%;
+}
+
+.graph__stats {
+  margin-bottom: .625em;
+}
+
+.graph__stats:last-child {
+  border-radius: .625rem;
+  overflow: hidden;
+}
+
+.graph__stats-line-container {
+  padding: .625em;
+  background: linear-gradient(to left, #3d0957, #0d0130);
+}
+
+.graph__stats-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: .938em;
+  font-weight: 100;
+}
+
+.graph__stats:first-child {
+  overflow: hidden;
+  border-bottom-left-radius: .625rem;
+  border-bottom-right-radius: .625rem;
+}
+
+.graph__stats-line span:first-child {
+  opacity: .39;
+}
+
+.portfolio__graph-img {
+  width: 65%;
+  object-fit: none;
 }

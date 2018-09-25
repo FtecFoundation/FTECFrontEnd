@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {VolumeAnalyzerRoutingModule} from './volume-analyzer-routing.module';
 import {VolumeAnalyzerComponent} from './volume-analyzer.component';
-import {VolumePopupComponent} from './volume-popup/volume-popup.component';
 import { SharedModule } from '../../../shared/shared.module';
+import {VolumeAnalyzerService} from "./volume-analyzer.service";
 
 @NgModule({
     imports: [
@@ -11,10 +11,8 @@ import { SharedModule } from '../../../shared/shared.module';
         SharedModule,
         VolumeAnalyzerRoutingModule
     ],
-    declarations: [VolumeAnalyzerComponent,
-    VolumePopupComponent],
-    providers: [
-    ]
+    declarations: [VolumeAnalyzerComponent],
+    providers: [VolumeAnalyzerService]
 })
 
 export class VolumeAnalyzerModule {
