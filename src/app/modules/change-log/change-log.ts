@@ -1,5 +1,32 @@
 export const changeLog = [
      {
+    'date': '26/09/2018',
+    'changes': [
+            'In the proxy module, we added the function of getting the balance for a certain pair (HitBTC).',
+            'In the proxy module, we added the function of closing order for HitBTC.',
+            'In the graph class, we implemented the method for getting names of surrounding peaks.',
+            'We implemented the method for getting a K value of correlation between two vocabularies.',
+            'We wrote the method which gets articles and finds correlation on graph at a given time (not tested).',
+            'We fixed the work of encode and decode methods of pairs for Kraken in Global Price Analyzer.',
+            'The service of work with news sources was tested and debugged with Mosk implementation.',
+            'For ccn.com, we froze the method of extracting a page content.'
+            ]
+    },
+     {
+    'date': '25/09/2018',
+    'changes': [
+            'In the proxy module, we added the function of getting the balance for a certain pair (Poloniex).',
+            'In the proxy module, we added the function of getting an active order by ID for Yobit.',
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (Yobit).',
+            'In the proxy module, we fixed bugs of setting buy orders for HitBTC.',
+            'In Module of Price Notification and Exchange Order Management Module, we fixed the bug on checking the current price for Poloniex.',
+            'In the proxy module, we added the function of closing order for Bittrex.',
+            'In the service for working with dictionary, we added methods for serialization/deserializarion is vocabulary. ',
+            'In the graph class, we implemented the method for getting a name of the root.',
+            'We fixed encode and decode methods of pairs for Kraken. '
+            ]
+    },
+     {
     'date': '24/09/2018',
     'changes': [
             'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (Poloniex).',
