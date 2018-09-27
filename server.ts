@@ -195,7 +195,7 @@ app.use('/api', proxy(apiUrl, {
 }));
 
 app.get('', (req, res) => {
-    res.sendfile('./src/landing.html');
+    res.sendfile('/FTECFrontEnd/src/landing.html');
 });
 
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
