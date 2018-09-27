@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="1-1-1-Сryptoguys-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-919.000000, -1385.000000)">
+        <g id="About" transform="translate(317.000000, 903.000000)">
+            <g id="video" transform="translate(122.000000, 254.000000)">
+                <g id="play" transform="translate(481.000000, 229.000000)">
+                    <path d="M45.6517704,27.544017 L59.2975166,50.5710841 C59.8606311,51.5213345 59.5467955,52.7481592 58.5965451,53.3112737 C58.2878902,53.4941814 57.9357161,53.5906932 57.5769361,53.5906932 L30.2854436,53.5906932 C29.1808741,53.5906932 28.2854436,52.6952627 28.2854436,51.5906932 C28.2854436,51.2319132 28.3819554,50.8797391 28.5648631,50.5710841 L42.2106093,27.544017 C42.7737238,26.5937666 44.0005485,26.2799309 44.9507989,26.8430454 C45.2395787,27.0141752 45.4806407,27.2552372 45.6517704,27.544017 Z" id="Triangle-2" fill="#25CBD3" transform="translate(43.931346, 40.077003) rotate(90.000000) translate(-43.931346, -40.077003) "></path>
+                    <circle id="Oval-8" stroke="#25CBD3" cx="41" cy="41" r="41"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

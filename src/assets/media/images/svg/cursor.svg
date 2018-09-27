@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-38.9%" y="-38.9%" width="177.8%" height="177.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.145098039   0 0 0 0 0.796078431   0 0 0 0 0.82745098  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="-1.11022302e-14%" y1="50%" x2="96.8797851%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#12A7F6" offset="0%"></stop>
+            <stop stop-color="#25CBD3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="1-1-1-Сryptoguys-Landing-PRE-ICO-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-427.000000, -34.000000)">
+        <g id="Welcome-Screen" transform="translate(0.000000, -1023.000000)">
+            <g id="header" transform="translate(163.000000, 1053.000000)">
+                <g id="hover" filter="url(#filter-1)" transform="translate(269.000000, 9.000000)">
+                    <circle id="Oval-2" stroke="url(#linearGradient-2)" cx="9" cy="9" r="9"></circle>
+                    <circle id="Oval-2" fill="url(#linearGradient-2)" cx="9" cy="9" r="5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

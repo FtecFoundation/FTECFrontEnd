@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="753px" viewBox="0 0 1280 753" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="51.6686967%" cy="31.3095835%" fx="51.6686967%" fy="31.3095835%" r="78.8957978%" gradientTransform="translate(0.516687,0.313096),scale(0.484694,1.000000),translate(-0.516687,-0.313096)" id="radialGradient-1">
+            <stop stop-color="#27C9D3" offset="0%"></stop>
+            <stop stop-color="#27C9D3" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="1-1-1-Сryptoguys-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-304.000000, -5430.000000)">
+        <g id="roadmap" transform="translate(50.000000, 5173.000000)">
+            <g id="Group-2" transform="translate(250.000000, 254.000000)">
+                <g id="line" transform="translate(73.000000, 96.000000)" fill="url(#radialGradient-1)" fill-rule="nonzero">
+                    <path d="M1161.81924,570 L81.3602923,570 C36.5261876,570 0,533.534872 0,488.775715 L0,351.924235 C0,307.165078 36.5261876,270.69995 81.3602923,270.69995 L1094.63971,270.69995 C1123.71742,270.69995 1147.35201,247.104867 1147.35201,218.075765 L1147.35201,81.224285 C1147.35201,52.1951831 1123.71742,28.6001004 1094.63971,28.6001004 L14.1807552,28.6001004 L14.1807552,0 L1094.63971,0 C1139.47381,0 1176,36.4651279 1176,81.224285 L1176,218.075765 C1176,262.834922 1139.47381,299.30005 1094.63971,299.30005 L81.3602923,299.30005 C52.2825822,299.30005 28.6479903,322.895133 28.6479903,351.924235 L28.6479903,488.775715 C28.6479903,517.804817 52.2825822,541.3999 81.3602923,541.3999 L1161.81924,541.3999 L1161.81924,570 Z" id="Shape"></path>
+                </g>
+                <g id="info" fill="#FFFFFF" font-weight="normal">
+                    <g id="1" transform="translate(0.000000, 22.000000)">
+                        <text id="July-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.20703125" y="23">July 2017</tspan>
+                        </text>
+                        <text id="The-idea,-teambuildi" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="55" y="148">The idea, </tspan>
+                            <tspan x="55" y="163">teambuilding, the </tspan>
+                            <tspan x="55" y="178">formation of a </tspan>
+                            <tspan x="55" y="193">technical task.</tspan>
+                        </text>
+                    </g>
+                    <g id="1-copy-16" transform="translate(1080.000000, 292.000000)">
+                        <text id="July-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.20703125" y="23">July 2017</tspan>
+                        </text>
+                        <text id="The-idea,-teambuildi" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="55" y="148">The idea, </tspan>
+                            <tspan x="55" y="163">teambuilding, the </tspan>
+                            <tspan x="55" y="178">formation of a </tspan>
+                            <tspan x="55" y="193">technical task.</tspan>
+                        </text>
+                    </g>
+                    <g id="1-copy-17" transform="translate(1130.000000, 562.000000)">
+                        <text id="July-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.20703125" y="23">July 2017</tspan>
+                        </text>
+                        <text id="The-idea,-teambuildi" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="55" y="148">The idea, </tspan>
+                            <tspan x="55" y="163">teambuilding, the </tspan>
+                            <tspan x="55" y="178">formation of a </tspan>
+                            <tspan x="55" y="193">technical task.</tspan>
+                        </text>
+                    </g>
+                    <g id="2" transform="translate(261.000000, 0.000000)">
+                        <text id="August-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="5.2454509" y="187">August 2017</tspan>
+                        </text>
+                        <text id="Design-and-templates" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="73" y="12">Design and templates </tspan>
+                            <tspan x="73" y="27">development, </tspan>
+                            <tspan x="73" y="42">subscription mode, </tspan>
+                            <tspan x="73" y="57">2FA connection.</tspan>
+                        </text>
+                    </g>
+                    <g id="2-copy" transform="translate(801.000000, 273.000000)">
+                        <text id="August-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="5.2454509" y="187">August 2017</tspan>
+                        </text>
+                        <text id="Design-and-templates" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="73" y="12">Design and templates </tspan>
+                            <tspan x="73" y="27">development, </tspan>
+                            <tspan x="73" y="42">subscription mode, </tspan>
+                            <tspan x="73" y="57">2FA connection.</tspan>
+                        </text>
+                    </g>
+                    <g id="2-copy-2" transform="translate(851.000000, 543.000000)">
+                        <text id="August-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="5.2454509" y="187">August 2017</tspan>
+                        </text>
+                        <text id="Design-and-templates" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="73" y="12">Design and templates </tspan>
+                            <tspan x="73" y="27">development, </tspan>
+                            <tspan x="73" y="42">subscription mode, </tspan>
+                            <tspan x="73" y="57">2FA connection.</tspan>
+                        </text>
+                    </g>
+                    <g id="3" transform="translate(520.000000, 22.000000)">
+                        <text id="September-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="6.29818528" y="23">September 2017</tspan>
+                        </text>
+                        <text id="Developing-a-classif" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="95" y="148">Developing a classifier </tspan>
+                            <tspan x="95" y="163">of candles, the </tspan>
+                            <tspan x="95" y="178">Orderbook analyzer.</tspan>
+                        </text>
+                    </g>
+                    <g id="4" transform="translate(807.000000, 28.000000)">
+                        <text id="October-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.68490403" y="159">October 2017</tspan>
+                        </text>
+                        <text id="Create-a-new-logo,-r" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="59.1399822" y="12">Create a new logo, </tspan>
+                            <tspan x="59.1399822" y="27">redesign.</tspan>
+                        </text>
+                    </g>
+                    <g id="4-copy" transform="translate(538.000000, 299.000000)">
+                        <text id="October-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.68490403" y="159">October 2017</tspan>
+                        </text>
+                        <text id="Create-a-new-logo,-r" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="59.1399822" y="12">Create a new logo, </tspan>
+                            <tspan x="59.1399822" y="27">redesign.</tspan>
+                        </text>
+                    </g>
+                    <g id="4-copy-2" transform="translate(588.000000, 569.000000)">
+                        <text id="October-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.68490403" y="159">October 2017</tspan>
+                        </text>
+                        <text id="Create-a-new-logo,-r" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="59.1399822" y="12">Create a new logo, </tspan>
+                            <tspan x="59.1399822" y="27">redesign.</tspan>
+                        </text>
+                    </g>
+                    <g id="4-copy-3" transform="translate(47.000000, 571.000000)">
+                        <text id="October-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.68490403" y="159">October 2017</tspan>
+                        </text>
+                        <text id="Create-a-new-logo,-r" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="59.1399822" y="12">Create a new logo, </tspan>
+                            <tspan x="59.1399822" y="27">redesign.</tspan>
+                        </text>
+                    </g>
+                    <g id="5" transform="translate(1058.000000, 28.000000)">
+                        <text id="November-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.6907634" y="23">November 2017</tspan>
+                        </text>
+                        <text id="Creating-a-blog-coin" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="90" y="148">Creating a blog </tspan>
+                            <tspan x="90" y="163">coinbot.club, algorithms </tspan>
+                            <tspan x="90" y="178">for intelligent trading </tspan>
+                            <tspan x="90" y="193">modules.</tspan>
+                        </text>
+                    </g>
+                    <g id="5-copy-2" transform="translate(249.000000, 292.000000)">
+                        <text id="November-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.6907634" y="23">November 2017</tspan>
+                        </text>
+                        <text id="Creating-a-blog-coin" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="90" y="148">Creating a blog </tspan>
+                            <tspan x="90" y="163">coinbot.club, algorithms </tspan>
+                            <tspan x="90" y="178">for intelligent trading </tspan>
+                            <tspan x="90" y="193">modules.</tspan>
+                        </text>
+                    </g>
+                    <g id="5-copy-3" transform="translate(299.000000, 562.000000)">
+                        <text id="November-2017" font-family=".SFNSDisplay, .SF NS Display" font-size="24" fill-opacity="0.4">
+                            <tspan x="4.6907634" y="23">November 2017</tspan>
+                        </text>
+                        <text id="Creating-a-blog-coin" font-family=".AppleSystemUIFont" font-size="12">
+                            <tspan x="90" y="148">Creating a blog </tspan>
+                            <tspan x="90" y="163">coinbot.club, algorithms </tspan>
+                            <tspan x="90" y="178">for intelligent trading </tspan>
+                            <tspan x="90" y="193">modules.</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="dots" transform="translate(53.000000, 70.000000)" fill-rule="nonzero">
+                    <g id="10" transform="translate(269.000000, 1.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-4" transform="translate(269.000000, 271.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy" transform="translate(539.000000, 1.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-2" transform="translate(809.000000, 1.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-6" transform="translate(809.000000, 271.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-9" transform="translate(859.000000, 541.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-3" transform="translate(1079.000000, 1.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-7" transform="translate(1079.000000, 271.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-10" transform="translate(1129.000000, 541.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-5" transform="translate(539.000000, 271.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-11" transform="translate(589.000000, 541.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-13" transform="translate(49.000000, 541.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="10-copy-8" transform="translate(319.000000, 541.000000)">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#B872FC" opacity="0" cx="39.8431373" cy="39.372549" r="39.2156863"></circle>
+                            <circle id="Oval" fill="#B871FC" opacity="0.02083333" cx="39.8431373" cy="39.372549" r="38.9019608"></circle>
+                            <circle id="Oval" fill="#B770FC" opacity="0.04166667" cx="39.8431373" cy="39.372549" r="38.5882353"></circle>
+                            <circle id="Oval" fill="#B76FFC" opacity="0.0625" cx="39.8431373" cy="39.372549" r="38.2745098"></circle>
+                            <circle id="Oval" fill="#B76EFC" opacity="0.08333334" cx="39.8431373" cy="39.372549" r="38.1176471"></circle>
+                            <circle id="Oval" fill="#B66DFC" opacity="0.1042" cx="39.8431373" cy="39.372549" r="37.8039216"></circle>
+                            <circle id="Oval" fill="#B66CFC" opacity="0.125" cx="39.8431373" cy="39.372549" r="37.4901961"></circle>
+                            <circle id="Oval" fill="#B66BFC" opacity="0.1458" cx="39.8431373" cy="39.372549" r="37.1764706"></circle>
+                            <circle id="Oval" fill="#B56AFC" opacity="0.1667" cx="39.8431373" cy="39.372549" r="36.8627451"></circle>
+                            <circle id="Oval" fill="#B569FC" opacity="0.1875" cx="39.8431373" cy="39.372549" r="36.5490196"></circle>
+                            <circle id="Oval" fill="#B568FC" opacity="0.2083" cx="39.8431373" cy="39.372549" r="36.2352941"></circle>
+                            <circle id="Oval" fill="#B467FC" opacity="0.2292" cx="39.8431373" cy="39.372549" r="35.9215686"></circle>
+                            <circle id="Oval" fill="#B466FC" opacity="0.25" cx="39.8431373" cy="39.372549" r="35.7647059"></circle>
+                            <circle id="Oval" fill="#B465FC" opacity="0.2708" cx="39.8431373" cy="39.372549" r="35.4509804"></circle>
+                            <circle id="Oval" fill="#B364FC" opacity="0.2917" cx="39.8431373" cy="39.372549" r="35.1372549"></circle>
+                            <circle id="Oval" fill="#B363FC" opacity="0.3125" cx="39.8431373" cy="39.372549" r="34.8235294"></circle>
+                            <circle id="Oval" fill="#B362FC" opacity="0.3333" cx="39.8431373" cy="39.372549" r="34.5098039"></circle>
+                            <circle id="Oval" fill="#B261FC" opacity="0.3542" cx="39.8431373" cy="39.372549" r="34.1960784"></circle>
+                            <circle id="Oval" fill="#B260FC" opacity="0.375" cx="39.8431373" cy="39.372549" r="33.8823529"></circle>
+                            <circle id="Oval" fill="#B25FFC" opacity="0.3958" cx="39.8431373" cy="39.372549" r="33.7254902"></circle>
+                            <circle id="Oval" fill="#B15EFC" opacity="0.4167" cx="39.8431373" cy="39.372549" r="33.4117647"></circle>
+                            <circle id="Oval" fill="#B15DFC" opacity="0.4375" cx="39.8431373" cy="39.372549" r="33.0980392"></circle>
+                            <circle id="Oval" fill="#B15CFC" opacity="0.4583" cx="39.8431373" cy="39.372549" r="32.7843137"></circle>
+                            <circle id="Oval" fill="#B05BFC" opacity="0.4792" cx="39.8431373" cy="39.372549" r="32.4705882"></circle>
+                            <circle id="Oval" fill="#B05BFD" opacity="0.5" cx="39.8431373" cy="39.372549" r="32.1568627"></circle>
+                            <circle id="Oval" fill="#B05AFD" opacity="0.5208" cx="39.8431373" cy="39.372549" r="31.8431373"></circle>
+                            <circle id="Oval" fill="#AF59FD" opacity="0.5417" cx="39.8431373" cy="39.372549" r="31.5294118"></circle>
+                            <circle id="Oval" fill="#AF58FD" opacity="0.5625" cx="39.8431373" cy="39.372549" r="31.372549"></circle>
+                            <circle id="Oval" fill="#AF57FD" opacity="0.5833" cx="39.8431373" cy="39.372549" r="31.0588235"></circle>
+                            <circle id="Oval" fill="#AE56FD" opacity="0.6042" cx="39.8431373" cy="39.372549" r="30.745098"></circle>
+                            <circle id="Oval" fill="#AE55FD" opacity="0.625" cx="39.8431373" cy="39.372549" r="30.4313725"></circle>
+                            <circle id="Oval" fill="#AE54FD" opacity="0.6458" cx="39.8431373" cy="39.372549" r="30.1176471"></circle>
+                            <circle id="Oval" fill="#AD53FD" opacity="0.6667" cx="39.8431373" cy="39.372549" r="29.8039216"></circle>
+                            <circle id="Oval" fill="#AD52FD" opacity="0.6875" cx="39.8431373" cy="39.372549" r="29.4901961"></circle>
+                            <circle id="Oval" fill="#AD51FD" opacity="0.7083" cx="39.8431373" cy="39.372549" r="29.3333333"></circle>
+                            <circle id="Oval" fill="#AC50FD" opacity="0.7292" cx="39.8431373" cy="39.372549" r="29.0196078"></circle>
+                            <circle id="Oval" fill="#AC4FFD" opacity="0.75" cx="39.8431373" cy="39.372549" r="28.7058824"></circle>
+                            <circle id="Oval" fill="#AC4EFD" opacity="0.7708" cx="39.8431373" cy="39.372549" r="28.3921569"></circle>
+                            <circle id="Oval" fill="#AB4DFD" opacity="0.7917" cx="39.8431373" cy="39.372549" r="28.0784314"></circle>
+                            <circle id="Oval" fill="#AB4CFD" opacity="0.8125" cx="39.8431373" cy="39.372549" r="27.7647059"></circle>
+                            <circle id="Oval" fill="#AB4BFD" opacity="0.8333" cx="39.8431373" cy="39.372549" r="27.4509804"></circle>
+                            <circle id="Oval" fill="#AA4AFD" opacity="0.8542" cx="39.8431373" cy="39.372549" r="27.2941176"></circle>
+                            <circle id="Oval" fill="#AA49FD" opacity="0.875" cx="39.8431373" cy="39.372549" r="26.9803922"></circle>
+                            <circle id="Oval" fill="#AA48FD" opacity="0.8958" cx="39.8431373" cy="39.372549" r="26.6666667"></circle>
+                            <circle id="Oval" fill="#A947FD" opacity="0.9167" cx="39.8431373" cy="39.372549" r="26.3529412"></circle>
+                            <circle id="Oval" fill="#A946FD" opacity="0.9375" cx="39.8431373" cy="39.372549" r="26.0392157"></circle>
+                            <circle id="Oval" fill="#A945FD" opacity="0.9583" cx="39.8431373" cy="39.372549" r="25.7254902"></circle>
+                            <circle id="Oval" fill="#A844FD" opacity="0.9792" cx="39.8431373" cy="39.372549" r="25.4117647"></circle>
+                            <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="25.0980392"></circle>
+                        </g>
+                        <circle id="Oval" fill="#A843FD" cx="39.8431373" cy="39.372549" r="22.1176471"></circle>
+                    </g>
+                    <g id="9">
+                        <g id="Group" opacity="0.58">
+                            <circle id="Oval" fill="#32DCE0" opacity="0" cx="39.8113676" cy="39.8709357" r="39.7120874"></circle>
+                            <circle id="Oval" fill="#32DBDF" opacity="0.04" cx="39.8113676" cy="39.8709357" r="39.076694"></circle>
+                            <circle id="Oval" fill="#31DADF" opacity="0.08" cx="39.8113676" cy="39.8709357" r="38.6001489"></circle>
+                            <circle id="Oval" fill="#31D9DE" opacity="0.12" cx="39.8113676" cy="39.8709357" r="37.9647555"></circle>
+                            <circle id="Oval" fill="#30D8DD" opacity="0.16" cx="39.8113676" cy="39.8709357" r="37.4882105"></circle>
+                            <circle id="Oval" fill="#30D7DD" opacity="0.2" cx="39.8113676" cy="39.8709357" r="36.8528171"></circle>
+                            <circle id="Oval" fill="#30D6DC" opacity="0.24" cx="39.8113676" cy="39.8709357" r="36.376272"></circle>
+                            <circle id="Oval" fill="#2FD5DC" opacity="0.28" cx="39.8113676" cy="39.8709357" r="35.7408786"></circle>
+                            <circle id="Oval" fill="#2FD4DB" opacity="0.32" cx="39.8113676" cy="39.8709357" r="35.1054852"></circle>
+                            <circle id="Oval" fill="#2ED3DA" opacity="0.36" cx="39.8113676" cy="39.8709357" r="34.6289402"></circle>
+                            <circle id="Oval" fill="#2ED2DA" opacity="0.4" cx="39.8113676" cy="39.8709357" r="33.9935468"></circle>
+                            <circle id="Oval" fill="#2ED1D9" opacity="0.44" cx="39.8113676" cy="39.8709357" r="33.5170017"></circle>
+                            <circle id="Oval" fill="#2DD0D8" opacity="0.48" cx="39.8113676" cy="39.8709357" r="32.8816083"></circle>
+                            <circle id="Oval" fill="#2DD0D8" opacity="0.52" cx="39.8113676" cy="39.8709357" r="32.2462149"></circle>
+                            <circle id="Oval" fill="#2CCFD7" opacity="0.56" cx="39.8113676" cy="39.8709357" r="31.7696699"></circle>
+                            <circle id="Oval" fill="#2CCED6" opacity="0.6" cx="39.8113676" cy="39.8709357" r="31.1342765"></circle>
+                            <circle id="Oval" fill="#2CCDD6" opacity="0.64" cx="39.8113676" cy="39.8709357" r="30.6577314"></circle>
+                            <circle id="Oval" fill="#2BCCD5" opacity="0.68" cx="39.8113676" cy="39.8709357" r="30.022338"></circle>
+                            <circle id="Oval" fill="#2BCBD4" opacity="0.72" cx="39.8113676" cy="39.8709357" r="29.545793"></circle>
+                            <circle id="Oval" fill="#2ACAD4" opacity="0.76" cx="39.8113676" cy="39.8709357" r="28.9103996"></circle>
+                            <circle id="Oval" fill="#2AC9D3" opacity="0.8" cx="39.8113676" cy="39.8709357" r="28.2750062"></circle>
+                            <circle id="Oval" fill="#2AC8D3" opacity="0.84" cx="39.8113676" cy="39.8709357" r="27.7984612"></circle>
+                            <circle id="Oval" fill="#29C7D2" opacity="0.88" cx="39.8113676" cy="39.8709357" r="27.1630678"></circle>
+                            <circle id="Oval" fill="#29C6D1" opacity="0.92" cx="39.8113676" cy="39.8709357" r="26.6865227"></circle>
+                            <circle id="Oval" fill="#28C5D1" opacity="0.96" cx="39.8113676" cy="39.8709357" r="26.0511293"></circle>
+                            <circle id="Oval" fill="#28C4D0" cx="39.8113676" cy="39.8709357" r="25.4157359"></circle>
+                        </g>
+                        <circle id="Oval" fill="#28C4D0" cx="39.8113676" cy="39.8709357" r="22.3976173"></circle>
+                        <g id="checked" transform="translate(29.367089, 31.392405)" fill="#FFFFFF">
+                            <path d="M0.242307692,8.8 C0.0807692308,8.64 0,8.4 0,8.24 C0,8.08 0.0807692308,7.84 0.242307692,7.68 L1.37307692,6.56 C1.69615385,6.24 2.18076923,6.24 2.50384615,6.56 L2.58461538,6.64 L7.02692308,11.36 C7.18846154,11.52 7.43076923,11.52 7.59230769,11.36 L18.4153846,0.24 L18.4961538,0.24 C18.8192308,-0.08 19.3038462,-0.08 19.6269231,0.24 L20.7576923,1.36 C21.0807692,1.68 21.0807692,2.16 20.7576923,2.48 L7.83461538,15.76 C7.67307692,15.92 7.51153846,16 7.26923077,16 C7.02692308,16 6.86538462,15.92 6.70384615,15.76 L0.403846154,9.04 L0.242307692,8.8 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                    <g id="checked-copy" transform="translate(299.000000, 32.000000)" fill="#FFFFFF">
+                        <path d="M0.242307692,8.8 C0.0807692308,8.64 0,8.4 0,8.24 C0,8.08 0.0807692308,7.84 0.242307692,7.68 L1.37307692,6.56 C1.69615385,6.24 2.18076923,6.24 2.50384615,6.56 L2.58461538,6.64 L7.02692308,11.36 C7.18846154,11.52 7.43076923,11.52 7.59230769,11.36 L18.4153846,0.24 L18.4961538,0.24 C18.8192308,-0.08 19.3038462,-0.08 19.6269231,0.24 L20.7576923,1.36 C21.0807692,1.68 21.0807692,2.16 20.7576923,2.48 L7.83461538,15.76 C7.67307692,15.92 7.51153846,16 7.26923077,16 C7.02692308,16 6.86538462,15.92 6.70384615,15.76 L0.403846154,9.04 L0.242307692,8.8 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
