@@ -46,6 +46,8 @@ const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main.
 import {ngExpressEngine} from '@nguniversal/express-engine';
 // Import module map for lazy loading
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
+import * as fs from 'fs';
+import * as https from 'https';
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 let apiUrl = '';
@@ -53,6 +55,10 @@ let prefix = '';
 let prod = false;
 let port = 4200;
 let secretCaptcha = '';
+
+
+var privateKey = fs.readFileSync( 'privatekey.pem' );
+var certificate = fs.readFileSync( 'certificate.pem' );
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
@@ -199,9 +205,17 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 app.get('*', (req, res) => {
     res.render('index', {req});
 });
-
 if (apiUrl) {
-    app.listen(port, () => {
-        console.log(`Node Express server listening on http://localhost:${port}`);
-    });
+    if(prod)
+        https.createServer({
+            key: privateKey,
+            cert: certificate
+        }, app).listen(port,() => {
+            console.log(`Node Express server listening on http://localhost:${port}`);
+        });
+
+    if(!prod)
+        app.listen(port, () => {
+            console.log(`Node Express server listening on http://localhost:${port}`);
+        });
 }
