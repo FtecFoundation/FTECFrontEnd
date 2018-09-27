@@ -77,11 +77,11 @@ const etherscanPrefix = prod ? 'api.' : 'api-ropsten.';
 const contractAddress = prod ? '0x6bec54e4fea5d541fb14de96993b8e11d81159b2' : '0xaC1eC31A5d24d2ac84404E19734Dd34A288450f3';
 
 app.engine('html', ngExpressEngine({
-    bootstrap: AppServerModuleNgFactory,
-    providers: [
-        provideModuleMap(LAZY_MODULE_MAP)
-    ]
-}));
+            bootstrap: AppServerModuleNgFactory,
+            providers: [
+                provideModuleMap(LAZY_MODULE_MAP)
+            ]
+        }));
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
@@ -187,6 +187,10 @@ app.use('/api', proxy(apiUrl, {
         return proxyReqOpts
     }
 }));
+
+app.get('', (req, res) => {
+    res.sendfile('./src/landing.html');
+});
 
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
     maxAge: '1y'

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="83" viewBox="0 0 62 83">
+    <defs>
+        <linearGradient id="a" x1="100%" x2="-24.616%" y1="91.313%" y2="30.487%">
+            <stop offset="0%" stop-color="#A843FD"/>
+            <stop offset="100%" stop-color="#FF008C"/>
+        </linearGradient>
+        <linearGradient id="b" x1="17.607%" x2="81.12%" y1="39.805%" y2="108.335%">
+            <stop offset="0%" stop-color="#A843FD"/>
+            <stop offset="100%" stop-color="#FC0290"/>
+            <stop offset="100%" stop-color="#FF008C"/>
+        </linearGradient>
+        <linearGradient id="c" x1="50%" x2="52.97%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#12A7F6"/>
+            <stop offset="100%" stop-color="#25CBD3"/>
+        </linearGradient>
+        <linearGradient id="d" x1="76.594%" x2="58.763%" y1="111.468%" y2="-11.135%">
+            <stop offset="0%" stop-color="#12A7F6"/>
+            <stop offset="100%" stop-color="#25CBD3"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M12.403 34.88h18.031v44.164l-9.015-7.587-9.016 7.587z" transform="rotate(20 16.747 63.634)"/>
+        <path fill="url(#b)" d="M27.73 34.88h18.03v44.164l-9.015-7.587-9.015 7.587z" transform="rotate(-20 43.416 52.291)"/>
+        <ellipse cx="29" cy="29.058" fill="url(#c)" stroke="url(#d)" stroke-width="3" rx="29" ry="29.058" transform="translate(2 2)"/>
+        <g fill="#FFF" fill-rule="nonzero">
+            <path d="M24.86 36.514a.905.905 0 1 1-1.809 0c0-4.585 3.71-8.302 8.285-8.302 4.576 0 8.286 3.717 8.286 8.302a.905.905 0 1 1-1.808 0c0-3.585-2.9-6.49-6.478-6.49-3.577 0-6.477 2.905-6.477 6.49z"/>
+            <path d="M32.24 44.192a.905.905 0 1 1-1.808 0v-7.885a.905.905 0 1 1 1.808 0v7.885zM43.407 37.439a.924.924 0 0 1 0-1.85h6.027a.924.924 0 0 1 0 1.85h-6.027z"/>
+            <path d="M29.223 39.535a.903.903 0 0 1-1.279 0 .907.907 0 0 1 0-1.281l2.764-2.77a.903.903 0 0 1 1.278 0l2.764 2.77a.907.907 0 0 1 0 1.28.903.903 0 0 1-1.278 0l-2.125-2.128-2.124 2.129zM40.524 28.616a.922.922 0 0 1-1.305 0 .926.926 0 0 1 0-1.309l4.261-4.27a.922.922 0 0 1 1.306 0c.36.361.36.947 0 1.308l-4.262 4.27zM32.26 24.419a.924.924 0 1 1-1.847 0V18.38a.924.924 0 1 1 1.847 0v6.039zM23.454 27.307c.36.362.36.947 0 1.309a.922.922 0 0 1-1.306 0l-4.261-4.27a.926.926 0 0 1 0-1.309.922.922 0 0 1 1.305 0l4.262 4.27zM19.266 35.589a.924.924 0 0 1 0 1.85h-6.027a.924.924 0 0 1 0-1.85h6.027z"/>
+        </g>
+    </g>
+</svg>

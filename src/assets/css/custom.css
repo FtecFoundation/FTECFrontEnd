@@ -1,0 +1,70 @@
+@font-face {
+    font-family: rubik-light;
+    src: url(../assets/fonts/rubik-light.ttf?ver=1.0) format("truetype")
+}
+
+
+.sale-details .sale-item .text-container .left-part .col-label, .sale-details .sale-item .text-container .right-part .col-label{
+    font-family: rubik-light;
+}
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+}
+
+span.select2-selection.select2-selection--single {
+    outline: none;
+}
+
+.side-menu .chats-holder {
+
+    bottom: 15%;
+}
+
+.token-features-container .token-entry {
+    border: 1px solid #25cbd3;
+    border-radius: 10px;
+    background-color: #0d003b;
+    padding: 53px 36px;
+    padding-left: 130px;
+    width: 100%;
+    position: relative;
+    -ms-flex: 1;
+    flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.token-features-container .single-token.col-md-4 .token-entry .token-descr:nth-child(1) {
+    margin-left: 25px;
+}
+
+.token-features-container .single-token.col-md-4 .start {
+    font-family: rubik-light;
+    font-size: 18px;
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.token-features-container .single-token.col-md-4 .date {
+    text-align: left;
+    font-family: rubik;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.token-features-container .single-token.col-md-4 .token-entry .token-descr {
+    max-width: 150px;
+}

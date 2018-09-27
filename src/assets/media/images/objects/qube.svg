@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="114px" height="386px" viewBox="0 0 114 386" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-84.6130435%" y1="49.9776423%" x2="277.707638%" y2="49.9776423%" id="linearGradient-1">
+            <stop stop-color="#27C9D3" offset="0%"></stop>
+            <stop stop-color="#27C9D3" offset="17.12%"></stop>
+            <stop stop-color="#3B4385" offset="76.13%"></stop>
+            <stop stop-color="#430D66" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="147.955634%" y1="8.43242639%" x2="-78.9638498%" y2="104.669735%" id="linearGradient-2">
+            <stop stop-color="#27C9D3" offset="0%"></stop>
+            <stop stop-color="#27C9D3" offset="17.12%"></stop>
+            <stop stop-color="#3B4385" offset="76.13%"></stop>
+            <stop stop-color="#430D66" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-57.7990588%" y1="2.65374581%" x2="128.122353%" y2="84.3002236%" id="linearGradient-3">
+            <stop stop-color="#27C9D3" offset="0%"></stop>
+            <stop stop-color="#27C9D3" offset="17.12%"></stop>
+            <stop stop-color="#3B4385" offset="76.13%"></stop>
+            <stop stop-color="#430D66" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="1-1-1-Сryptoguys-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1464.000000, -10331.000000)">
+        <g id="Token-Info" transform="translate(160.000000, 10074.000000)" fill-rule="nonzero">
+            <g id="image" transform="translate(438.000000, 257.000000)">
+                <g id="3" transform="translate(866.000000, 0.000000)">
+                    <polygon id="Cube_face__x2D__top_107_" fill="url(#linearGradient-1)" points="56.7348837 0.131632653 113.072093 32.5132653 56.7348837 64.894898 0.265116279 32.5132653"></polygon>
+                    <polygon id="Cube_face__x2D__left_107_" fill="url(#linearGradient-2)" points="56.7348837 385.683673 0.265116279 353.302041 0.265116279 32.5132653 56.7348837 64.894898"></polygon>
+                    <polygon id="Cube_face__x2D__right_107_" fill="url(#linearGradient-3)" points="113.072093 353.302041 56.7348837 385.683673 56.7348837 64.894898 113.072093 32.5132653"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
