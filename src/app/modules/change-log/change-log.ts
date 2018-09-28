@@ -1,5 +1,18 @@
 export const changeLog = [
      {
+    'date': '27/09/2018',
+    'changes': [
+            'In the proxy module, we added the function of getting the balance for a certain pair (Yobit).',
+            'In the proxy module, we added the function of closing order for Poloniex.',
+            'We created services for the analyzer work with users.',
+            'We remade the service for analyzing news that can work now both for making sample and in planned mode.',
+            'We implemented the service for the work with news resource CCN that extracts and publishes news.',
+            'We refactored and complemented the services for the work with vocabulary, news resources, and analyzing news.',
+            'We created a training sample for CCN.',
+            'Landing was fully transferred to ftec.network.'
+            ]
+    },
+     {
     'date': '26/09/2018',
     'changes': [
             'In the proxy module, we added the function of getting the balance for a certain pair (HitBTC).',
