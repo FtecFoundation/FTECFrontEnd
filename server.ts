@@ -56,10 +56,6 @@ let prod = false;
 let port = 4200;
 let secretCaptcha = '';
 
-
-var privateKey = fs.readFileSync( 'privatekey.pem' );
-var certificate = fs.readFileSync( 'certificate.pem' );
-
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
         // `!!` casts string to boolean
@@ -207,14 +203,16 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 if (apiUrl) {
-    if(prod)
+    if(prod) {
+        var privateKey = fs.readFileSync('privatekey.pem');
+        var certificate = fs.readFileSync('certificate.pem');
         https.createServer({
             key: privateKey,
             cert: certificate
-        }, app).listen(port,() => {
+        }, app).listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });
-
+    }
     if(!prod)
         app.listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);

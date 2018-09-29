@@ -19,7 +19,7 @@ export class AllTestsComponent implements OnInit {
 
     ngOnInit() {
         this._cryptoacademyService.getTests().subscribe(data => {
-            this.tests = data;
+            this.tests = data.sort((a, b) => a.id - b.id);
 
             this._cryptoacademyService.getTestsHistory().subscribe(data1 => {
                 this.fillLastQuestion(data1);

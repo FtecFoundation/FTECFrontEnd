@@ -4,102 +4,46 @@
 
     <div class="middle__subscription">
       <h5>
-        Subscription days left: 
+        Subscription days left: {{daysLeft}}
       </h5>
 
       <button class="button__outline" (click)="renewSubscription()">Subscribe</button>
     </div>
 
-    <div class="middle__news">
+    <div class="middle__news" *ngIf="results">
       <div class="middle__table-type">
         <h5>Last news</h5>
       </div>
 
-      <div class="middle__table-container">
+      <div class="middle__table-container" *ngFor="let result of results">
 
         <div class="news__container">
           <div class="news__container-main">
 
             <div class="news__container-info">
-              <h4 class="news__container-info-title">Odyssey Lists on UpBit and Bitrex Ahead of OCpay System Launch</h4>
+              <h4 class="news__container-info-title">{{result.title}}</h4>
 
-              <span class="filter__container-button filter__container-button--news">ocn</span>
+              <span class="filter__container-button filter__container-button--news">{{result.tag}}</span>
             </div>
 
             <div class="news__container-date">
-              <span class="news__date-item">29.05.2018</span>
+              <span class="news__date-item">{{result.releaseDate | date: 'dd.MM.YYYY'}}</span>
 
-              <a href="javascript:void(0)" class="news__date-link">the-blockchain.com</a>
+              <a [href]="result.site" class="news__date-link">{{extractRootDomain(result.site)}}</a>
             </div>
 
             <div class="news__container-text">
-              <p>Singapore based Odyssey Protocol, the decentralized sharing economy company, said its OCpay payments system
-                will launch in June and its /OCN token has been listed on the UpBit and Bitrex exchanges. Read more…</p>
+              <p>{{result.content}}</p>
             </div>
           </div>
 
           <div class="news__container-forecast">
             <span class="news__forecast-title">Neural forecast:</span>
 
-            <h4 class="news__forecast-item">+0-5%</h4>
+            <h4 class="news__forecast-item">{{result.forecastBottomBorder | number: '1.0-2'}} - {{result.forecastTopBorder | number: '1.0-2'}}%</h4>
           </div>
         </div>
 
-        <div class="news__container">
-          <div class="news__container-main">
-
-            <div class="news__container-info">
-              <h4 class="news__container-info-title">Odyssey Lists on UpBit and Bitrex Ahead of OCpay System Launch</h4>
-
-              <span class="filter__container-button filter__container-button--news">ocn</span>
-            </div>
-
-            <div class="news__container-date">
-              <span class="news__date-item">29.05.2018</span>
-
-              <a href="javascript:void(0)" class="news__date-link">the-blockchain.com</a>
-            </div>
-
-            <div class="news__container-text">
-              <p>Singapore based Odyssey Protocol, the decentralized sharing economy company, said its OCpay payments system
-                will launch in June and its /OCN token has been listed on the UpBit and Bitrex exchanges. Read more…</p>
-            </div>
-          </div>
-
-          <div class="news__container-forecast">
-            <span class="news__forecast-title">Neural forecast:</span>
-
-            <h4 class="news__forecast-item">+0-5%</h4>
-          </div>
-        </div>
-
-        <div class="news__container">
-          <div class="news__container-main">
-
-            <div class="news__container-info">
-              <h4 class="news__container-info-title">Odyssey Lists on UpBit and Bitrex Ahead of OCpay System Launch</h4>
-
-              <span class="filter__container-button filter__container-button--news">ocn</span>
-            </div>
-
-            <div class="news__container-date">
-              <span class="news__date-item">29.05.2018</span>
-
-              <a href="javascript:void(0)" class="news__date-link">the-blockchain.com</a>
-            </div>
-
-            <div class="news__container-text">
-              <p>Singapore based Odyssey Protocol, the decentralized sharing economy company, said its OCpay payments system
-                will launch in June and its /OCN token has been listed on the UpBit and Bitrex exchanges. Read more…</p>
-            </div>
-          </div>
-
-          <div class="news__container-forecast">
-            <span class="news__forecast-title">Neural forecast:</span>
-
-            <h4 class="news__forecast-item">+0-5%</h4>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -142,15 +86,15 @@
       <div class="filter__container">
 
         <div class="filter__container">
-          <span class="container__name">Exchanges</span>
+          <span class="container__name">Currency</span>
 
           <div class="container__form container__form--select is-active">
-            <app-dropdown [label]="'Exchange'" [items]="exchanges"></app-dropdown>
+            <app-dropdown [label]="'Currency'" [items]="availableCurrencies" (selected)="chosenCurrency = $event"></app-dropdown>
           </div>
 
         </div>
 
-        <button type="submit" id="button-categories" class="filter__container-button">Add currency</button>
+        <button type="submit" id="button-categories" class="filter__container-button" (click)="addCurrency(chosenCurrency)">Add currency</button>
       </div>
 
 
