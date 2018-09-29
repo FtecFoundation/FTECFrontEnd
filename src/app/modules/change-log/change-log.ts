@@ -1,4 +1,573 @@
 export const changeLog = [
+     {
+    'date': '27/09/2018',
+    'changes': [
+            'In the proxy module, we added the function of getting the balance for a certain pair (Yobit).',
+            'In the proxy module, we added the function of closing order for Poloniex.',
+            'We created services for the analyzer work with users.',
+            'We remade the service for analyzing news that can work now both for making sample and in planned mode.',
+            'We implemented the service for the work with news resource CCN that extracts and publishes news.',
+            'We refactored and complemented the services for the work with vocabulary, news resources, and analyzing news.',
+            'We created a training sample for CCN.',
+            'Landing was fully transferred to ftec.network.'
+            ]
+    },
+     {
+    'date': '26/09/2018',
+    'changes': [
+            'In the proxy module, we added the function of getting the balance for a certain pair (HitBTC).',
+            'In the proxy module, we added the function of closing order for HitBTC.',
+            'In the graph class, we implemented the method for getting names of surrounding peaks.',
+            'We implemented the method for getting a K value of correlation between two vocabularies.',
+            'We wrote the method which gets articles and finds correlation on graph at a given time (not tested).',
+            'We fixed the work of encode and decode methods of pairs for Kraken in Global Price Analyzer.',
+            'The service of work with news sources was tested and debugged with Mosk implementation.',
+            'For ccn.com, we froze the method of extracting a page content.'
+            ]
+    },
+     {
+    'date': '25/09/2018',
+    'changes': [
+            'In the proxy module, we added the function of getting the balance for a certain pair (Poloniex).',
+            'In the proxy module, we added the function of getting an active order by ID for Yobit.',
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (Yobit).',
+            'In the proxy module, we fixed bugs of setting buy orders for HitBTC.',
+            'In Module of Price Notification and Exchange Order Management Module, we fixed the bug on checking the current price for Poloniex.',
+            'In the proxy module, we added the function of closing order for Bittrex.',
+            'In the service for working with dictionary, we added methods for serialization/deserializarion is vocabulary. ',
+            'In the graph class, we implemented the method for getting a name of the root.',
+            'We fixed encode and decode methods of pairs for Kraken. '
+            ]
+    },
+     {
+    'date': '24/09/2018',
+    'changes': [
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (Poloniex).',
+            'In the proxy module, we added the function of getting an active order by ID for Poloniex.',
+            'In the proxy module, we added the function of getting the balance for a certain pair (Binance).',
+            'In the proxy module, we added the function of closing order for Binance.',
+            'In Module of Price Notification and Exchange Order Management Module, we fixed the bug on checking the current price for Bittrex.',
+            'In the proxy module, we added the function of getting all active pairs for Yobit.',
+            'In the proxy module, we fixed bugs of setting buy orders for Bittrex.',
+            'In Exchange Order Management Module, we added the function of saving onsite on when it’s necessary to set an order (Yobit).'
+            ]
+    },
+     {
+    'date': '21/09/2018',
+    'changes': [
+            'At frontend in the admin panel, we implemented the possibility to add and delete test questions. ',
+            'At frontend in the admin panel, we implemented the possibility to mark and change the correct answer to the question.',
+            'At frontend in the admin panel, we implemented the possibility to edit questions in tests.',
+            'The user will receive notification about successful balance replenishment every time user replenish it (for BTC).',
+            'We added the function which checks addresses for successful replenishments every 19 minutes (for BTC).',
+            'In Module of Price Notification, we added the display of error when user exceeds the limit of saving conditions.',
+            'In the main module, we added the function of changing old password to a new one.',
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set at order but there are not enough funds on the balance (HitBTC).',
+            'In the proxy module, we added the function of getting an active order by ID for HitBTC.',
+            'In the proxy module, we added the function of getting the balance for a certain pair (Bittrex).'
+       ]
+    },
+     {
+    'date': '20/09/2018',
+    'changes': [
+            'We fixed the method of getting an order book for Huobi.',
+            'In Global Price Analyzer, we processed the case when there are not enough funds on exchange on requested BTC volume.',
+            'We fixed the error in generating documentation.',
+            'We added the logic of currency conversion to the commission system.',
+            'We implemented the possibility of using trading bots by the administration.',
+            'At frontend, we processed form of sending a request on the search for prices in Global Price Analyzer. ',
+            'At frontend, we implemented the display of results of the search for prices in Global Price Analyzer.',
+            'For News Background Analyzer, we created the basic structure and basic class which calculates a number of words repeated. ',
+            'We created the class which keeps the interaction between files and correlation coefficient. ',
+            'For the class which keeps the interaction between files and the correlation coefficient, we implemented and tested custom serialization/deserialization.'
+       ]
+    },
+     {
+    'date': '19/09/2018',
+    'changes': [
+            'We added HitBTC to Anomalous Volume Dynamics Analyzer.',
+            'We fixed the method of returning candlesticks for Huobi in Anomalous Dynamics Colume Analyzer (preciously, it returned them in reverse order).',
+            'For Anomalous Volume Dynamics Analyzer, we fixed the method of returning candles for HitBTC (it returned them with old indicators).',
+            'We fixed the method of getting all available currencies in stocks module for HitBTC (it returned for volume for quote pair).',
+            'We fixed the method of getting all available currencies in stocks module for Poloniex (it returned incomplete result due to catch block behind for block).',
+            'At frontend in Smart Trading Module, we added the possibility to choose the maximum amount of trades for bots.',
+            'At frontend in Smart Trading Module, we added the possibility to change an active bot and disable trades.',
+            'At frontend, we implemented the possibility to change an active exchange in Smart Trading Module configurations.',
+            'At frontend in admin panel, we changed the way of sending image for test.',
+            'At frontend in admin panel, we implemented the possibility to delete tests.'
+       ]
+    },
+     {
+    'date': '18/09/2018',
+    'changes': [
+            'We fixed the method of getting pairs into one type for BitStamp and Huobi.',
+            'We added a limitation on creating trade configurations for exchanges having API keys connected.',
+            'We added the possibility to change trade configurations of the user.',
+            'We added controllers for getting statistics on trade configurations os users for admin.',
+            'We added a limitation on the validity of data while change in trade configurations of the user.',
+            'We added trade history model for the user.',
+            'At frontend, we implemented the possibility to get Smart Trading Module configurations.',
+            'At frontend, we implemented the possibility to change an active exchange in Smart Trading Module configurations.',
+            'We wrote and tested service and controller for Global Price Analyzer on BitTrex, Poloniex, Binance, HitBtc, BitStamp, Huobi.',
+            'We wrote documentation for Global Price Analyzer controller.'
+       ]
+    },
+     {
+    'date': '17/09/2018',
+    'changes': [
+            'We added the possibility to create trade configurations for the user.',
+            'We added saving account balance history while filling.',
+            'We configured and established Telegram and email notifications.We configured and established Telegram and email notifications.',
+            'We fixed the vulnerability which allowed to enable currently inaccessible ways of notifications.',
+            'We changed the answer to requests in Social Assistant, errors are returned in JSON format now.',
+            'We processed the error while using an unsupported pair in Anomalous Volume Dynamics Analyzer.',
+            'In Anomalous Volume Dynamics Analyzer, the logic of work with pairs was improved.',
+            'The method of getting an order book now accepts a parameter, on which a number of returning objects depends. This works for Poloniex, Kraken, Binance, HitBtc.',
+            'We changed the model of client-server communication, which allows using more convenient ways of data transferring.',
+            'We added the processing of previously unclassified errors.'
+       ]
+    },
+     {
+    'date': '14/09/2018',
+    'changes': [
+            'We fixed critical error in Telegram Assistant, which didn\'t allow the work with it.',
+            'We switched to Clouflare to protect the web service.',
+            'We made rules for getting access to the server and filtration of possible DDOS attacks.',
+            'We began the work on Global Price Analyzer.',
+            'We added the command "/unlink" to Telegram for account to unlink from Telegram.',
+            'We added the automatic verification of payments.',
+            'We fixed the error with rounding of payment results.',
+            'We added commands for Social and Arbitrage Assistants to Telegram. ',
+            'Method of getting an order book now returns objects to String, not JSON. We tested this for Bitrex, Poloniex, Kraken, Binance, Bitstamp, HitBtc.',
+            'We created the base for Global Price Analyzer.'
+       ]
+    },
+     {
+    'date': '13/09/2018',
+    'changes': [
+            'At NodeJS server, we implemented the protection against a large number of requests per second.',
+            'We changed the field that returned a list of used exchanges, now it is an exchange for which anomalous volume is found.',
+            'When anomalous dynamics is found, methods are called (credit white-offs, notification, disconnection of Analyzer if there are not enough funds).',
+            'In methods of getting available pairs, we added the possibility to get them by minimum volume (for Poloniex, Bittrex, Binance).',
+            'In Anomalous Volume Dynamics Analyzer, we added the method for checking timeframe availability for chosen exchange.',
+            'We tested and fixed the work of Anomalous Volume Dynamics Analyzer for exchanges (Poloniex, Binance, Kraken, Huobi).',
+            'We added functions to automate the work with Cryptoacademy.',
+            'We implemented checking of the admin role for using relevant functions. ',
+            'We changed the work of logic of filling the balance and generating an address for it.',
+            'We fixed error in sums which were credited while filling. '
+       ]
+    },
+     {
+    'date': '12/09/2018',
+    'changes': [
+            'We changed the logic of saving users\' balances, using non-integer types.',
+            'We fixed the error of linking Telegram with the user.',
+            'We fixed the error of getting FTEC balance using user\'s address.',
+            'We added the possibility of generating addresses for filling balance.',
+            'We implemented verifications of filling balance in some intervals dependent on the address type.',
+            'We implemented the possibility of forced verification of address balance.',
+            'We changed the template of answers to commands on creating and editing Cryptoacademy tests.',
+            'At frontend in Anomalous Volume Dynamics Analyzer, we made a display of anomalous volume behavior found by the analyzer.',
+            'At frontend in Anomalous Volume Dynamics Analyzer, we made a display of message when there are no found anomalies.',
+            'We continue working with Telegram Assistant updates, global functions for distribution of commands and processing of incorrect capture/non-existing commands were implemented.'
+       ]
+    },
+     {
+    'date': '11/09/2018',
+    'changes': [
+            'We fixed the key of the answer to requests in Anomalous Volume Dynamics Analyzer in the method of getting and setting up the configurations for the analyzer.',
+            'In Anomalous Volume Dynamics Analyzer, we changed SettingsDTO (fields botld, userId, isActive were deleted). We also relatively changed methods of implementation.',
+            'We added the field of the condition of Anomalous Volume Dynamics Analyzer, which returns after a request for user\'s model.',
+            'At frontend, we implemented the possibility to generate addresses for payments in BTC, ETH, FTEC.',
+            'At frontend, we added withdrawal of user\'s currently favorable currency and generated an address to fill the balance in this currency.',
+            'We created and configured Angular project of the service for the administrator.',
+            'In the admin panel, we implemented the display of all existing Cryptoacademy tests.',
+            'In the admin panel, we implemented a modal window with a form for creating a new test.',
+            'We made the file for changing field timeframe in the table with settings of  Anomalous Volume Dynamics Analyzer.',
+            'We added the support of proxy requests (to get currencies and candlesticks) for Kraken and Huobi.'
+       ]
+    },
+     {
+    'date': '10/09/2018',
+    'changes': [
+            'We changed the way of choosing exchange for analysis so the user can now choose several exchanges at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added the possibility to save the settings of the analyzer at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We implemented the method of saving and getting the last settings of the analyzer at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We implemented a check of the analyzer condition at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added the possibility to launch and to stop the work of the analyzer at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added a check of all setting fields for validity while attempt to save new analyzer settings at frontend in Anomalous Volume Dynamics Analyzer.',
+            'We added new messages about errors for users.',
+            'We added the method which returns a specific parameter for each exchange with the relevant timeframe.'
+       ]
+    },
+     {
+    'date': '07/09/2018',
+    'changes': [
+            'We fixed the bug with logout.',
+            'We redesigned the payment function. From now the address will go through the admin panel before it is in available mode.',
+            'We fixed the bug of Social Assistant. Tweets won\'t be linked twice anymore.',
+            'We improved the code readability, the processing of user\'s answers in Telegram Assistant was speeded up as well.',
+            'We fixed the bug of placing the image of answers to Cryptoacademy forecasting tets.',
+            'We added the possibility to see desired arbitrage windows by days.',
+            'At frontend, we implemented getting the data for user\'s form on Anomalous Volume Dynamics Analyzer page.',
+            'We redid HTML layout of Anomalous Volume Dynamics Analyzer page.',
+            'We fixed the adaptation of Anomalous Volume Dynamics Analyzer page to all screen sizes.'
+       ]
+    },
+     {
+    'date': '06/09/2018',
+    'changes': [
+            'In Exchange Order Management Module. we added the function of saving the condition when it\'s necessary to set an order (for Poloniex).',
+            'In the proxy module, bugs of setting buy orders were fixed (for Bittrex).',
+            'In the main module, we optimized the referral system which will speed up the work of the main module.',
+            'In the proxy module, we added the function of getting all active pairs (for Poloniex).',
+            'We redid HTML layout of Global Price Analyzer page.',
+            'We fixed the adaptation of Global Price Analyzer page to all screen sizes.',
+            'To Arbitrage Module, we added buttons to display the user\'s last window search.',
+            'We fixed the display of pages in Cryptoacademy tests so the chart is shown entirely.',
+            'We prepared and added new test about divergence to Cryptoacademy.'
+       ]
+    },
+     {
+    'date': '05/09/2018',
+    'changes': [
+            'We added the button on Module of Trader\'s Behavioral Analyzer page to quickly go to My Exchanges page. ',
+            'We fixed the bug with white line on some buttons.',
+            'We fixed the function of filling the balance to the main module (for BTC).',
+            'In the main module, we added the function of getting the current balance for the address (for BTC).',
+            'In the main module, we added the function of generating addresses for replenishment (for BTC).',
+            'We added the function of getting the balance for a specific pair (for Binance).',
+            'We fixed the display of configurations of module notifications on Telegram Assistant page.',
+            'We added messages informing about the absence of active notifications, orders, and disabled Telegram Assistant to the Module of Price Notification and Exchange Order Management Module.',
+            'We fixed the display of currencies on News Background Analyzer page.'
+       ]
+    },
+     {
+    'date': '04/09/2018',
+    'changes': [
+            'In Exchange Order Management Module, we added the function of saving condition when it\'s necessary to set an order (for HitBTC).',
+            'In the proxy module, we added the function of getting all active pairs (for HitBTC).',
+            'In Exchange Order Management Module, we added the function of notifying the user when an order is set successfully (for Bittrex).',
+            'In Exchange Order Management Module, we added the function of notifying the user when it\'s necessary to set an order but there aren\'t enough funds on the balance (for Bittrex).',
+            'We added the function of filling the balance to the main module (for BTC).',
+            'In Cryptoacademy, we fixed the display of correct and chosen answers.',
+            'We deleted the function of cashing Cryptoacademy statistical files at frontend.',
+            'At frontend, we added the possibility to close notifications prematurely by clicking on the relevant button.',
+            'At frontend, we implemented the logic of forecasting test answers and display of the correct answer.',
+            'We optimized the structure of code files.'
+       ]
+    },
+    {
+    'date': '03/09/2018',
+    'changes': [
+            'We fixed the bug with changing the test information in the admin panel.',
+            'We added the function of generating addresses for replenishment (for ETH).',
+            'We added the function of getting the current balance for the address (for ETH).',
+            'We added the function which checks addresses for successful replenishment every minute (for ETH).',
+            'When filling the balance, the user gets a notification about successful replenishment (for ETH).',
+            'At frontend, we added cascade animation when disappearing of notification after pushing the button "hide all".',
+            'On the Cryptoacademy main page, we added navigation through tabs.',
+            'On the Cryptoacademy main page, we added content for the "Forecasting" page with training tests on forecasting.',
+            'We changed the logic of getting test questions at frontend due to optimization and division of a file with tests.',
+            'At frontend, we completed the list of local messages about errors for users.'
+       ]
+    },
+    {
+    'date': '31/08/2018',
+    'changes': [
+            'We added the possibility to save correct answers in a file for Cryptoacademy.',
+            'File with answers was divided into several files (one for each test), which will increase productivity when passing tests.',
+            'In the proxy module, we added the function of getting all active pairs (for Bittrex).',
+            'In the proxy module, we added the function of buying currency (for Yobit).',
+            'In the proxy module, we added the function of selling currency (for Yobit).',
+            'We worked on the structure of new tests for forecasting in Cryptoacademy.',
+            'We implemented the component inheritance to provide different processing of answers in different types of tests in Cryptoacademy.',
+            'We implemented the processing of answers to tests for forecasting in Cryptoacademy.',
+            'In Mobile App for IOS, we added the processing of some errors from the server.',
+            'We added the button, which helps to close each error notification immediately.'
+       ]
+    },
+    {
+    'date': '30/08/2018',
+    'changes': [
+            'In Exchange Order Management Module, we added the function of notifying the user when order is set successfully (for Binance).',
+            'In Exchange Order Management Module, we added the function of notifying the user when it’s necessary to set an order but the aren’t enough funds on the balance (for Binance).',
+            'In Exchange Order Management Module, we added the function of saving logs when order is set.',
+            'In Exchange Order Management Module, we added the function of deleting logs after 7 days.',
+            'In the proxy module, we added the function of getting an active order under orderld (for Binance).',
+            'At frontend, we updated the processing of errors. Now all errors founded are shown in the user interface.',
+            'We fixed the error of cyclical implementation of dependencies while interception of errors.',
+            'We added the animation of appearance and disappearance of the notice of error window.',
+            'We added the “Hide all” button for immediate closing of all notices of error.',
+            'The text in the notice of error was changed for production app (simplified reason of error without status code is shown).'
+       ]
+    },
+    {
+    'date': '29/08/2018',
+    'changes': [
+            'In the proxy module, we fixed bugs of setting buy orders on Binance.',
+            'In the proxy module, we fixed bugs of setting sell orders on Binance.',
+            'In Exchange Order Management Module, we added the function of saving conditions when it\'s necessary to set an order (for Bittrex).',
+            'Social Assistant is now on new Twitter API (v 1.1).',
+            'We fixed the bug of impossibility to finish a test, answering to one of the missed questions in Cryptoacademy tests.',
+            'In Cryptoacademy, we fixed the bug of calculating passed tests on the page with all tests available.',
+            'In Cryptoacademy, we fixed the bug of calculating passed tests if users repass test.',
+            'We fixed the bug of the white screen if the page loads for a long time.',
+            'We began the development of sending notifications from modules to Mobile App.',
+            'On Telegram Assistant page, the bug of displaying the checkboxes was fixed.'
+       ]
+    },
+    {
+    'date': '28/08/2018',
+    'changes': [
+            'We fixed the bag of saving conditions for Module of Price Notification for Bittrex (since baseAsset is left there).',
+            'In Exchange Order Management Module, we added the function of saving condition when it\'s necessary to set an order (for Bittrex).',
+            'In Exchange Order Management Module, we added the function of checking condition when it\'s necessary to set an order (for Binance).',
+            'In Exchange Order Management Module, we added the function of checking condition when it\'s necessary to set an order (for Bittrex).',
+            'We changed the position of preloader on Arbitrage Assistant page.',
+            'We fixed the bag appeared when passing Cryptoacademy tests (incorrect shut-down when missing questions).',
+            'On Telegram Assistant page, we fixed the display of link to the bot and link in QR code.',
+            'We began the work on transferring Mobile App to IOS on FTEC API.',
+            'We implemented the possibility to authorize to the user\'s account in Mobile App.',
+            'In Exchange Order Management Module, we added the function of saving all conditions when it\'s necessary to set an order (for Binance).'
+       ]
+    },
+    {
+    'date': '27/08/2018',
+    'changes': [
+            'We fixed the problem with CORS on requests to API of Binance.',
+            'In Exchange Order Management Module and Module of Price Notification, the price field changes in synchrony with movement of the slider.',
+            'It\'s now impossible to choose inactive ways of notification (SMS and push-notifications) in Module of Price Notification.',
+            'In Module of Price Notification, the error of absence of a chosen way of notification now vanishes when rechoosing one of the ways.',
+            'Dropdown list (which appears when you click on the userpic in header) now is closed when you click beyond it.',
+            'We changed the table on My Exchanges page and corrected display of exchanges\' names there.',
+            'In the proxy module, we added the function of buying currency (for Poloniex).',
+            'In the proxy module, we added the function of selling currency (for Poloniex).',
+            'In Module of Price Notification, we added the function which makes it possible to see all conditions when it\'s necessary to notify the user (for Poloniex).',
+            'In Module of Price Notification, we added the function which makes it possible to check all conditions when it\'s necessary to notify the user (for Poloniex).'
+       ]
+    },
+    {
+    'date': '24/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function of checking conditions when it\'s necessary to notify the user.',
+            'In Module of Price Notification, we added the function which makes it possible to see all conditions when it\'s necessary to notify the user.',
+            'In the proxy module, we added the function of getting all active pairs (for Binance).',
+            'In Module of Price Notification, we added the function which makes it possible to see old messages.',
+            'We optimized the load on the client application net, using caching of frequently used data.',
+            'In Exchange Order Management Module, we added the possibility to see done orders.',
+            'Exchange Order Management Module is in beta testing phase.'
+       ]
+    },
+    {
+    'date': '23/08/2018',
+    'changes': [
+            'In the proxy module, the function of buying currency was added (for HitBTC).',
+            'In the proxy module, the function of selling currency was added (for HitBTC).',
+            'In Module of Price Notification, we added the function of checking the condition when it\'s necessary to notify the user (for HitBTC).',
+            'At frontend, the logic of filtering pop-up list was moved to a separate service to improve the app architecture and an increase in productivity when using in several modules.',
+            'At frontend in Exchange Order Management Module, we implemented the method which allows to set new orders ( for Binance, Bittrex, HitBTC).',
+            'The module of Price Notification was tested and now is available for use.',
+            'At frontend in Exhcnage Order Management Module, we implemented the method which allows to delete orders.',
+            'At frontend in Exhcnage Order Management Module, we added the possibility to look through old done orders.'
+       ]
+    },
+    {
+    'date': '22/08/2018',
+    'changes': [
+            'At frontend, we added the support of new format of generating addresses for payment but currently, the work with FTEC wallets is only available.',
+            'Images for tests and questions in Cryptoacademy were transferred to their own server.',
+            'The code of the page of passing tests was adapted to the work with new structure of files with tests and questions.',
+            'In the proxy module, new function of buying currency (for BitTrex) was added.',
+            'In the proxy module, new function of selling currency (for BitTrex) was added.',
+            'We added the possibility to confirm the request to withdraw referral funds in the admin panel.',
+            'We fixed the error of unsustainable types when adding new questions to test.',
+            'Logic in the component of passing the test was optimized and consume fewer system resources.'
+       ]
+    },
+    {
+    'date': '21/08/2018',
+    'changes': [
+            'In the proxy module, the function of buying currency (for Binance) was added.',
+            'In the proxy module, the function of selling currency (for Binance) was added.',
+            'In Module of Price Notification, we added the function of checking the condition when it\'s necessary to notify the user (for BitTrex).',
+            'Tests and questions for Cryptoacademy were split into different JSON files.',
+            'The model of tests and questions was optimized, we solved the problem of data redundancy.',
+            'The code of the page with all available tests was changed for correct work with the new structure of tests and questions.',
+            'We added the method of getting all questions of a separate test to Cryptoacademy service.'
+       ]
+    },
+    {
+    'date': '20/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the processing of error when the user enters non-existing pair (for Binance).',
+            'In Module of Price Notification, we implemented the function which makes it possible to see all conditions when it\'s necessary to notify the user (for Bittrex).',
+            'In Module of Price Notification, we added the function which deletes log when 7 days pass.',
+            'In Exchange Order Management Module, we added the function which saves the condition when it\'s necessary to set an order(for Binance).',
+            'We developed the architecture of the long-polling system of getting notifications at frontend.',
+            'At frontend, the possibility to disable 2FA was added.',
+            'We implemented the functionality for checking the code of 2FA when logging in the account at frontend.',
+            'At frontend, we added the possibility to delete userpic.',
+            'We began the implementation of the platform localization and necessary architecture.',
+            'We fixed 403 error when sending requests to Binance.'
+       ]
+    },
+    {
+    'date': '17/08/2018',
+    'changes': [
+            'We implemented the possibility to enable 2FA to provide more security at frontend.',
+            'In Module of Price Notification, we added the possibility to chose exchange among those where the pair is presented in a separate list.',
+            'At frontend in Module of Price Notification, the possibility to choose types of user\'s notifications individually for each stop loss/take profit was added.',
+            'We finished the implementation of the page with user\'s referral partners at frontend.',
+            'The sender name was changed in emails from the system.',
+            'In Module of Price Notification, the way of notification when the price reaches a certain level is shown for each stop loss and take profit at frontend.',
+            'We fixed the error of sending proxy requests to exchanges for the app, launched via server-side rendering.'
+       ]
+    },
+    {
+    'date': '16/08/2018',
+    'changes': [
+            'In the main module, we changed the model of referral display in the function of getting all referrals (previously, you could get referral id and balance only, now referrals are divided into levels).',
+            'In Module of Price Notification, we added the processing of error when the user enters non-existing pair (for Poloniex).',
+            'The function of saving the current price of the pair was added in Module of Price Notification (for Poloniex).',
+            'We configured automatic deleting of irrelevant data in the database.',
+            'We optimized the system work with BTC node to carry out difficult payments.',
+            'We added the support of Poloniex in Module of Price Notification at frontend (the possibility to set notifications for pairs from this exchange).',
+            'We implemented the method of loading the pair price from Poloniex at frontend.'
+       ]
+    },
+    {
+    'date': '15/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the opportunity to specify types of notification when it\'s necessary to notify the user when saving the condition (conditions can vary).',
+            'In Module of Price Notification, we added the processing of error when the user enters non-existing cryptocurrency (for Bittrex).',
+            'The new test was added to the Cryptoacademy.',
+            'We added the support of web and SMS notifications at the server.',
+            'Questions of Cryptoacademy tests were divided into separated files to improve the efficiency of their reading.',
+            'There was a common optimization of database, fields which are not necessary anymore were deleted.',
+            'At backend, we added the possibility to add picture and questions to Cryptoacademy through API.',
+            'The endpoint that returned information about all tests and questions now returns only main data about tests to optimize volumes of data obtained.',
+            'At frontend, we implemented the possibility for the user to delete notifications about reaching a specific level.',
+            'We implemented the possibility for the user to add a new notification when the price reaches a specific level at frontend.'
+       ]
+    },
+    {
+    'date': '14/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function which deletes a condition from the database when condition is fulfilled.',
+            'We added the error handling when the user enters a nonexistence pair in Module of Price Notification (for Binance).',
+            'The function of saving the current price of the pair was added in Module of Price Notification (for HitBTC).',
+            'Module of Price Notification was integrated to the main module.',
+            'For all dropdown lists, at frontend we added the possibility to close them by clicking outside this list.',
+            'We began the work on implementing the functionality for the work with his referral partners at frontend.',
+            'We added the possibility to register, using the referral link at frontend.',
+            'Module of Price Notification was integrated with notification service.',
+            'At backend, the possibility to add and change Cryptoacademy tests through API was added.',
+            'We implemented the possibility to get information about all relevant notification about reaching a specific level at frontend.'
+       ]
+    },
+    {
+    'date': '13/08/2018',
+    'changes': [
+            'We added the function of saving the condition when it\'s necessary to notify the user (for Poloniex) in Module of Price Notification.',
+            'The function of calculating the difference between the current price for the pair and the price saved by the user was added in Module of Price Notification (for Binance).',
+            'In Module of Price Notification, we added the function, which sends a notification to the user when the condition is fulfilled.',
+            'We implemented the visual display of all available pairs and exchanges in a component of filtering dropdown.',
+            'The function which saves condition as a file (logging) when the condition is fulfilled was added in Module of Price Notification.',
+            'The functionality for full-fledged work with BTC node for payment was implemented.',
+            'We developed the functionality for automatic adding tests to Cryptoacademy.',
+            'On Module of Price Notification page, loading the relevant price for the pair from Binance, Bittrex, HitBTC was added.',
+            'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.',
+            'We fully implemented a slider for choosing a value from range to be used in Module of Price Notification and other components and modules of the application.'
+       ]
+    },
+    {
+    'date': '10/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function which makes it possible to see all notifications when it\'s necessary to notify the user (for Binance).',
+            'Service of Trader\'s Behavioral Analysis was fully transferred to the proxy server at backend.',
+            'Notification Module was fully integrated to Module of Price Notification, which enables working with this module on the page of all notification configurations.',
+            'We also added the possibility to work with Module of Price Notification on the page of all notification configurations at frontend.',
+            'At frontend, we implemented loading of the information about candlesticks from HitBTC for displaying the chart in Service of Trader\'s Behavioral Analysis.',
+            'In Service of Trader\'s Behavioral Analysis, outdated recommendations are highlighted now.'
+       ]
+    },
+    {
+    'date': '09/08/2018',
+    'changes': [
+            'We added the function of saving the conditions when it\'s necessary to notify the user in Module of Price Notification (for HitBTC).',
+            'We added the function of saving the current currency price in Module of Price Notification (for BitTrex).',
+            'In Service of Trader\'s Behavioral Analysis, the possibility to work with Poloniex was added and tested.',
+            'We improved the effectiveness of Telegram Assistant, using new framework.',
+            'We developed and tested the integration of three methods of payment in the main module.',
+            'Binance, BitTrex, and HitBTC now work correctly with API at frontend.',
+            'We implemented the request for getting all available pairs from Binance, BitTrex, and HitBTC at frontend.',
+            'The proxy server for sending the requests from frontend to API exchanges was configured.'
+       ]
+    },
+    {
+    'date': '08/08/2018',
+    'changes': [
+            'In Service of Trader\'s Behavioral Analysis, we added the function that makes it possible to see the last user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function that makes it possible to see candles for user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function of calculating statistics for user\'s deals from Poloniex API.',
+            'In Service of Trader\'s Behavioral Analysis, we added the function of generating the recommendations for statistics of user\'s deals from Poloniex API.'
+       ]
+    },
+    {
+    'date': '07/08/2018',
+    'changes': [
+            'In Module of Price Notification, we added the function of deleting the condition when it\'s necessary to notify the user.',
+            'We began the connection of new exchange (Poloniex) in Service of Trader\'s Behavioral Analysis.',
+            'Validation of API keys is moved from Service of Trader\'s Behavioral Analysis to Proxy module.',
+            'We made a slider for Module of Price Notification and Exchange Order Management Module.'
+       ]
+    },
+    {
+    'date': '06/08/2018',
+    'changes': [
+            'Tweets amount limit is added in social module.',
+            'Emailing feature is added on Forgot Password page.',
+            'We reviewed database architecture to avoid illogical data storage with the help of implementation of limitations.',
+            'The function of displaying the pop-up was added.',
+            'We changed the interval of candle building for HitBTC, which will improve the speed of the work of Service of Trader\'s Behavioral Analysis.',
+            'In Module of Price Notification, we added the function of maintaining conditions when it\'s necessary to notify the user (for Bittrex only).',
+            'In Module of Price Notification, we added the function of saving current price for the pair (for Binance only).',
+            'We began the work on getting candles from Binance for Service of Trader\'s Behavioral Analysis.',
+            'Interface and models for the work with various exchanges were specified at frontend.',
+            'Module of Price Notification now uses proxy servers for additional security.'
+       ]
+    },
+    {
+    'date': '03/08/2018',
+    'changes': [
+            'Key deleting feature is added on My Exchanges page.',
+            'In Traders Behaviors connection with proxy module is integrated to improve safety while using third party APIs (for HitBTC).',
+            'Development of Price Notification module has started.',
+            'In Price Notification module function of saving circumstances when to notify user is added (only for Binance).',
+            'On dashboard page possibility to connect API keys is added.',
+            'API keys that are already connected are now displayed on the dashboard.',
+            'On payment page, a choice of which currency to pay with for services is added.',
+            'Integration works between database and general project structure were conducted for cooperation with BTC node.',
+            'Ability of connecting Ether, BTC, FTEC was added.',
+            'A new test mechanism of payment with ETH, BTC, FTEC was developed.'
+       ]
+    },
+    {
+    'date': '02/08/2018',
+    'changes': [
+            'When the request for withdrawal is sent, the amount of gas needed is calculated automatically and the user receives a notification if there`s no enough credits.',
+            'Proxy server was set up to work with private requests with HitBTC,Binance, and BitTrex.',
+            'A table with last logins from devices is added to a dashboard page.',
+            'Caching is added for increasing effectiveness of work with exchanges.',
+            'A feature that allows users to remove all notifications of a certain type on the page with all notifications is enabled.',
+            'Preloader added to the table when request is being sent.',
+            'Bug, that banned users connected to one system (router) was fixed.',
+            'Connection with proxy module in Traders behavior was integrated, that will improve the security of cooperation with third-party APIs (only for Binance).',
+            'Twitter API filtering was changed that will speed up the work of social module.',
+            'Cache clearing after logout was added.'
+       ]
+    },
     {
     'date': '01/08/2018',
     'changes': [

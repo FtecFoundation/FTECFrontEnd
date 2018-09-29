@@ -56,6 +56,9 @@ let prod = false;
 let port = 4200;
 let secretCaptcha = '';
 
+var privateKey = fs.readFileSync( '/SSL/pk.pem' );
+var certificate = fs.readFileSync( '/SSL/cert.pem' );
+
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
         // `!!` casts string to boolean
@@ -191,7 +194,6 @@ app.use('/api', proxy(apiUrl, {
 }));
 
 app.get('', (req, res) => {
-    console.log();
     res.sendfile('dist/browser/landing.html');
 });
 

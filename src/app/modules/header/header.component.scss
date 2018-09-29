@@ -32,6 +32,10 @@
   height: 60%;
   position: relative;
   bottom: .313rem;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .header__logo-item img {
