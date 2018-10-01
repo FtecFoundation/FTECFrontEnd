@@ -1,5 +1,31 @@
 export const changeLog = [
      {
+    'date': '01/10/2018',
+    'changes': [
+            'At frontend, we implemented the possibility to add to the currency list new currencies, news on which are followed by the user.',
+            'At frontend, we implemented the possibility to delete form the currency list currencies, news on which are followed by the user.',
+            'At frontend, we implemented the possibility to prolong the subscription to News Background Analyzer.',
+            'At frontend, we implemented the display of remaining subscription days.',
+            'At frontend, we implemented the display of News Background Analyzer\'s predictions and results.',
+            'At frontend we added the Poloniex exchange support to Smart Trading Module.',
+            'We debugged and fixed the process of News Background Analyzer.',
+            'News Background Analyzer was finnaly tested.'
+            ]
+    },
+     {
+    'date': '28/09/2018',
+    'changes': [
+            'The platform services are also available now on ftec.io and ftec.ai.',
+            'At frontend in admin panel, we implemented the possibility to add and change the picture of a question.',
+            'At frontend, we established the display of tests in Cryptoacademy in ascending order of test ID.',
+            'We added the saving of analyzed result for each user who has an active subscription and same tags.',
+            'We wrote the controller which returns the last analyzer results.',
+            'We fixed deficiencies in parser for news resource CCN.',
+            'At frontend we added the Binance exchange support to Smart Trading Module.',
+            'We added the documentation for the work with News Background Analyzer.'
+            ]
+    },
+     {
     'date': '27/09/2018',
     'changes': [
             'In the proxy module, we added the function of getting the balance for a certain pair (Yobit).',
