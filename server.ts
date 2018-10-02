@@ -110,6 +110,22 @@ app.use('/hitbtc', proxy('https://api.hitbtc.com', {
     }
 }));
 
+app.get('/bittrex/market/GetTicks', function (req, res) {
+    const path = require('url').parse(req.url).path;
+    const url = 'https://bittrex.com/Api/v2.0/pub/market/GetTicks' + path.substring(path.indexOf('?'));
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
+
+app.get('/binance/klines', function (req, res) {
+    const path = require('url').parse(req.url).path;
+    const url = 'https://www.binance.com/api/v1/klines' + path.substring(path.indexOf('?'));
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
+
 app.use('/bittrex', proxy('https://bittrex.com', {
     proxyReqPathResolver: function (req) {
         return '/api/v1.1/public' + require('url').parse(req.url).path;

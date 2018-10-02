@@ -43,4 +43,9 @@ export class BinanceService implements ExchangeService {
             return Number.parseFloat(resp['price']);
         }));
     }
+
+    getPriceData(currency: string, interval: string): Observable<any> {
+        const params = new HttpParams().set('symbol', currency + 'BTC').set('interval', interval);
+        return this._http.get('/binance/klines', {params: params});
+    }
 }

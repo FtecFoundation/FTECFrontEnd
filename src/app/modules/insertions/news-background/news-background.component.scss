@@ -95,6 +95,17 @@
   color: $green;
 }
 
+.news__forecast-item--minus {
+  color: $red;
+}
+
 .filter__container-block-item--categories {
   text-transform: uppercase;
+}
+
+/deep/ {
+  .form__select-list {
+    height: 200px;
+    overflow: scroll;
+  }
 }

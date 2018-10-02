@@ -10,7 +10,7 @@ enum NewsBackgroundApiUrls {
     setCoins = 'cabinet/newsAnalyzer/setupCoins',
     subscribe = 'cabinet/newsAnalyzer/subscribe',
     settings = 'cabinet/newsAnalyzer/settings',
-    results = 'cabinet/newsAnalyzer/results'
+    results = 'cabinet/newsAnalyzer/result'
 }
 
 @Injectable()
@@ -33,7 +33,7 @@ export class NewsBackgroundService extends RestService {
     }
 
     getResults(): Observable<NewsBackgroundResults[]> {
-        return this.get(NewsBackgroundApiUrls.results).pipe(map(resp => resp.response.latest));
+        return this.get(NewsBackgroundApiUrls.results).pipe(map(resp => resp.response.latest.content));
     }
 
 }

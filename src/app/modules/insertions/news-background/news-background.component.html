@@ -27,7 +27,7 @@
             </div>
 
             <div class="news__container-date">
-              <span class="news__date-item">{{result.releaseDate | date: 'dd.MM.YYYY'}}</span>
+              <span class="news__date-item">{{result.releaseDate | date: 'dd.MM.yyyy'}}</span>
 
               <a [href]="result.site" class="news__date-link">{{extractRootDomain(result.site)}}</a>
             </div>
@@ -40,7 +40,8 @@
           <div class="news__container-forecast">
             <span class="news__forecast-title">Neural forecast:</span>
 
-            <h4 class="news__forecast-item">{{result.forecastBottomBorder | number: '1.0-2'}} - {{result.forecastTopBorder | number: '1.0-2'}}%</h4>
+            <h4 class="news__forecast-item" [ngClass]="{'news__forecast-item--minus': result.forecastTopBorder <= 0}">
+              {{result.forecastBottomBorder | number: '1.0-1'}}-{{result.forecastTopBorder | number: '1.0-1'}}%</h4>
           </div>
         </div>
 
