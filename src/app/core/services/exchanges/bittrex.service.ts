@@ -16,6 +16,8 @@ export class BittrexService implements ExchangeService {
         getPrice: 'getticker'
     };
 
+    cash: any;
+
     constructor(private _http: HttpClient) {
     }
 
@@ -39,7 +41,12 @@ export class BittrexService implements ExchangeService {
     }
 
     getPriceData(currency: string, interval: string): Observable<any> {
+        if (this.cash[currency]) return Observable.of(this.cash[currency]);
+
         const params = new HttpParams().set('marketName', 'BTC-' + currency).set('tickInterval', interval);
-        return this._http.get('/bittrex/market/GetTicks', {params: params}).pipe(map(resp => resp['result']));
+        return this._http.get('/bittrex/market/GetTicks', {params: params}).pipe(map(resp => {
+            this.cash[currency] = resp['result'];
+            return resp['result'];
+        }));
     }
 }
