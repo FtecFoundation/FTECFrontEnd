@@ -219,8 +219,8 @@ app.get('*', (req, res) => {
 });
 if (apiUrl) {
     if(prod) {
-        var privateKey = fs.readFileSync('privatekey.pem');
-        var certificate = fs.readFileSync('certificate.pem');
+        var privateKey = fs.readFileSync('/SSL/pk.pem');
+        var certificate = fs.readFileSync('/SSL/cert.pem');
         https.createServer({
             key: privateKey,
             cert: certificate
