@@ -207,7 +207,7 @@ app.use('/api', proxy(apiUrl, {
 }));
 
 app.get('', (req, res) => {
-    res.sendfile('dist/browser/landing.html');
+    res.sendfile(join(DIST_FOLDER, 'browser/landing.html'));
 });
 
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {

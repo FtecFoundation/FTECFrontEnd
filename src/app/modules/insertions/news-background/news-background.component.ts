@@ -82,10 +82,12 @@ export class NewsBackgroundComponent implements OnInit {
     }
 
     addCurrency(currency: string) {
-        this.currencies.push(currency.toLocaleLowerCase());
-        this._newsBackService.setCurrencies(this.currencies).subscribe(data => {
-            this.currencies = data;
-        });
+        if (this.daysLeft) {
+            this.currencies.push(currency.toLocaleLowerCase());
+            this._newsBackService.setCurrencies(this.currencies).subscribe(data => {
+                this.currencies = data;
+            });
+        }
     }
 
 }
