@@ -6,6 +6,7 @@ import {Pair} from "../../models/pair";
 import {tap} from 'rxjs/operators/tap';
 import {map} from "rxjs/operators";
 import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
+import {CurrencyTop} from "../../../modules/insertions/portfolio-manager/currency-top";
 
 @Injectable()
 export class BittrexService implements ExchangeService {
@@ -35,5 +36,10 @@ export class BittrexService implements ExchangeService {
         return this._http.get(this.baseUrl + this.apiUrls.getPrice, {params: param}).pipe(map(resp => {
             return Number.parseFloat(resp['result']['Last']);
         }));
+    }
+
+    getPriceData(currency: string, interval: string): Observable<any> {
+        const params = new HttpParams().set('marketName', 'BTC-' + currency).set('tickInterval', interval);
+        return this._http.get('/bittrex/market/GetTicks', {params: params}).pipe(map(resp => resp['result']));
     }
 }

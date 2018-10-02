@@ -29,6 +29,7 @@ import {PairsFilterService} from "./services/pairs-filter/pairs-filter.service";
 import {NotifyService} from "./notify/notify.service";
 import {NotifyComponent} from "./notify/notify.component";
 import {PaymentService} from "./services/payment.service";
+import {PoloniexService} from "./services/exchanges/poloniex.service";
 
 @NgModule({
     imports: [
@@ -62,6 +63,7 @@ import {PaymentService} from "./services/payment.service";
         PairsFilterService,
         NotifyService,
         PaymentService,
+        PoloniexService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AvailableExchanges } from '../arbitrage/available-exchanges';
 import {Pair} from "../../../core/models/pair";
+import {CryptocurrenciesService} from "../../../core/services/cryptocurrencies.service";
 
 
 @Component({
@@ -14,10 +15,11 @@ export class PortfolioManagerComponent implements OnInit {
 
   exchanges = AvailableExchanges;
 
-  constructor() {
+  constructor(private crService: CryptocurrenciesService) {
   }
 
   ngOnInit() {
+    this.crService.getCryptocurrenciesTop(3);
   }
 
     getProfitPercent(value: number) {

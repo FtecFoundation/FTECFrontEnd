@@ -56,10 +56,6 @@ let prod = false;
 let port = 4200;
 let secretCaptcha = '';
 
-
-var privateKey = fs.readFileSync( '/SSL/pk.pem' );
-var certificate = fs.readFileSync( '/SSL/cert.pem' );
-
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
         // `!!` casts string to boolean
@@ -113,6 +109,22 @@ app.use('/hitbtc', proxy('https://api.hitbtc.com', {
         return '/api/2/public' + require('url').parse(req.url).path;
     }
 }));
+
+app.get('/bittrex/market/GetTicks', function (req, res) {
+    const path = require('url').parse(req.url).path;
+    const url = 'https://bittrex.com/Api/v2.0/pub/market/GetTicks' + path.substring(path.indexOf('?'));
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
+
+app.get('/binance/klines', function (req, res) {
+    const path = require('url').parse(req.url).path;
+    const url = 'https://www.binance.com/api/v1/klines' + path.substring(path.indexOf('?'));
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
 
 app.use('/bittrex', proxy('https://bittrex.com', {
     proxyReqPathResolver: function (req) {
@@ -195,7 +207,7 @@ app.use('/api', proxy(apiUrl, {
 }));
 
 app.get('', (req, res) => {
-    res.sendfile('/FTECFrontEnd/src/landing.html');
+    res.sendfile('dist/browser/landing.html');
 });
 
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
@@ -206,14 +218,16 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 if (apiUrl) {
-    if(prod)
+    if(prod) {
+        var privateKey = fs.readFileSync('privatekey.pem');
+        var certificate = fs.readFileSync('certificate.pem');
         https.createServer({
             key: privateKey,
             cert: certificate
-        }, app).listen(port,() => {
+        }, app).listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });
-
+    }
     if(!prod)
         app.listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);
