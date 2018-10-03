@@ -1,5 +1,18 @@
 export const changeLog = [
      {
+    'date': '02/10/2018',
+    'changes': [
+            'The percentage change from Coinmarketcap (for 1 day, for 10 days) has been implemented.',
+            'We implemented counting of the number of coins for the following types of portfolios: Aggressive, Balanced, Conservative.',
+            'We implemented, but not tested, receiving percent change for a large period (month, half year, year).',
+            'Portfolio Manager has been tested for long investment terms.',
+            'We added controller for Portfolio Manager and documentation.',
+            'We changed return logic for News Background Analyzer.',
+            'News Background Analyzer now returns old results (which were before subscription).',
+            'At frontend, top 100 currencies were received by capitalization with Coinmarketcap, as well as the search for their current prices on the Bittrex and Binance exchanges.'
+            ]
+    },
+     {
     'date': '01/10/2018',
     'changes': [
             'At frontend, we implemented the possibility to add to the currency list new currencies, news on which are followed by the user.',
