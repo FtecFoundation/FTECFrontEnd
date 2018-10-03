@@ -90,4 +90,8 @@ export class NewsBackgroundComponent implements OnInit {
         }
     }
 
+    absolute(n: number): number {
+        return Math.abs(n);
+    }
+
 }

@@ -9,7 +9,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 export class SliderComponent implements OnInit {
     @Output() valueToSend: EventEmitter<number> = new EventEmitter<number>();
-    @Input() value: string = ''+0;
+    @Input() value: string = '' + 0;
     @Input() postfix: string = '%';
     @Input() max: number = 100;
     @Input() min: number = -100;

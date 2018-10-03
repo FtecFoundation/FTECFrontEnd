@@ -16,6 +16,10 @@ export class AvailableExchanges {
         {symbol: 'tenMinutes', name: '10 minutes'}, {symbol: 'thirtyMinutes', name: '30 minutes'}, {symbol: 'oneHour', name: '1 hour'},
         {symbol: 'fourHours', name: '4 hours'}, {symbol: 'oneDay', name: '1 day'}];
 
+    public static availablePortfolioTerms: PortfolioTerm[] = [{nameToSend: 'Day', name: '1 day'},
+        {nameToSend: 'TenDays', name: '10 days'}, {nameToSend: 'Month', name: '1 month'},
+        {nameToSend: 'HalfYear', name: '6 months'}, {nameToSend: 'Year', name: '1 year'}];
+
     static ofName(name: string): Stock {
         for (const stock of AvailableExchanges.availableStocks) {
             if (name === stock.nameToSend) { return stock; }
@@ -35,5 +39,10 @@ export interface Stock {
 
 export class Timeframe {
     symbol: string;
+    name: string;
+}
+
+export class PortfolioTerm {
+    nameToSend: string;
     name: string;
 }
