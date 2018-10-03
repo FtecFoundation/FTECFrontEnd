@@ -16,7 +16,7 @@ export class BittrexService implements ExchangeService {
         getPrice: 'getticker'
     };
 
-    cash: any;
+    cash: any = {};
 
     constructor(private _http: HttpClient) {
     }

@@ -15,6 +15,8 @@ export class BinanceService implements ExchangeService {
         getPrice: 'ticker/price'
     };
 
+    cash: any = {};
+
     constructor(private _http: HttpClient) {
     }
 
@@ -45,7 +47,12 @@ export class BinanceService implements ExchangeService {
     }
 
     getPriceData(currency: string, interval: string): Observable<any> {
+        if (this.cash[currency]) return Observable.of(this.cash[currency]);
+
         const params = new HttpParams().set('symbol', currency + 'BTC').set('interval', interval);
-        return this._http.get('/binance/klines', {params: params});
+        return this._http.get('/binance/klines', {params: params}).pipe(map(resp => {
+            this.cash[currency] = resp;
+            return resp;
+        }));
     }
 }

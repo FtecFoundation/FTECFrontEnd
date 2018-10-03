@@ -4,11 +4,59 @@
   flex-wrap: wrap;
 }
 
+.title--red {
+  color: $red
+}
+
+.title--neutral {
+  color: $light-grey
+}
+
 .portfolio__graph {
   padding: .625em;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   background-color: rgba(13, 0, 59, 0.5);
+}
+
+.middle__table-container-item::after {
+  opacity: 0.2 !important;
+}
+
+.middle__table-container {
+  padding: 0 !important;
+}
+
+.middle__table-container-item {
+  padding: .938em 1.25em;
+}
+
+.container__name--coins {
+  margin-bottom: .938em;
+}
+
+.form__label--currency {
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
+}
+
+.form__label {
+  padding: 1.125em;
+  padding-left: 1.125em;
+  position: absolute;
+  opacity: .35;
+  font-size: .938em;
+  color: #b6b2c4;
+}
+
+.filter__container {
+  position: relative
+}
+
+.top10 {
+  background-color: rgba(182, 178, 196, .2);
 }
 
 .portfolio__graph-item {
@@ -64,7 +112,7 @@
 
 .graph__bottom-text {
   opacity: .5;
-  text-align: center; 
+  text-align: center;
   font-size: .938em;
 }
 
@@ -122,7 +170,7 @@
 }
 
 .tab-controls--portfolio,
-.button__outline--portfolio{
+.button__outline--portfolio {
   width: 100%;
 }
 
@@ -134,15 +182,25 @@
   padding-bottom: 0;
 }
 
+ngx-charts-pie-chart {
+  width: 100%;
+}
+
 .portfolio__graph-info {
-  width: 35%;
+  width: 100%;
+  display: flex;
 }
 
 .graph__stats {
-  margin-bottom: .625em;
+  width: 50%;
+  margin-right: .938em;
 }
 
-.graph__stats:last-child {
+.graph__stats--prefs {
+  height: 100%;
+}
+
+.graph__stats:first-child {
   border-radius: .625rem;
   overflow: hidden;
 }
@@ -150,6 +208,8 @@
 .graph__stats-line-container {
   padding: .625em;
   background: linear-gradient(to left, #3d0957, #0d0130);
+  border-bottom-left-radius: .625rem;
+  border-bottom-right-radius: .625rem;
 }
 
 .graph__stats-line {
@@ -161,8 +221,6 @@
 
 .graph__stats:first-child {
   overflow: hidden;
-  border-bottom-left-radius: .625rem;
-  border-bottom-right-radius: .625rem;
 }
 
 .graph__stats-line span:first-child {
@@ -172,4 +230,23 @@
 .portfolio__graph-img {
   width: 65%;
   object-fit: none;
+}
+
+.error-field {
+  margin-bottom: .938em;
+  display: block;
+}
+
+.filter__container-block{
+  width: 100%;
+}
+
+/deep/
+{
+  text {
+    fill: $light-grey;
+  }
+
+  .pie-label {
+  }
 }

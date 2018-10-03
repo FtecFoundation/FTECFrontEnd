@@ -6,6 +6,7 @@ import {DropdownComponent } from './dropdown/dropdown.component';
 import {SliderComponent} from "../modules/slider/slider.component";
 import {FilterDropdownComponent} from "./filter-dropdown/filter-dropdown.component";
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { NumberSuffixPipe } from './pipes/number-suffix.pipe';
 
 @NgModule({
     imports: [
@@ -21,14 +22,16 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
         DropdownComponent,
         SliderComponent,
         FilterDropdownComponent,
-        ClickOutsideDirective
+        ClickOutsideDirective,
+        NumberSuffixPipe
     ],
     declarations: [
         PreloaderComponent,
         DropdownComponent,
         SliderComponent,
         FilterDropdownComponent,
-        ClickOutsideDirective
+        ClickOutsideDirective,
+        NumberSuffixPipe
     ]
 })
 export class SharedModule {
