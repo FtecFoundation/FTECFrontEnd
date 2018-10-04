@@ -36,17 +36,15 @@
             <div class="middle__table-container middle__table-container--dashboard middle__table-container--global"
             *ngFor="let data of history">
                 <div class="middle__table-container-item middle__table-container-item--dashboard">
-                    <h4 class="table-container-item--name">
+                    <div class="item-inner item-inner--notifications item-inner--exchanges">
                         <span>{{data.creationDate | date: 'dd MMM HH:mm'}}</span>
-                    </h4>
-                    <h4 class="table-container-item--name title--blue">
+                    </div>
+                    <div class="item-inner item-inner--notifications item-inner--exchanges title--blue">
                         <span>{{data.pair}}</span>
                         ({{getTimeframeName(data.timeframe)}})
-                    </h4>
+                    </div>
                     <div class="item-inner item-inner--notifications item-inner--exchanges">
-                        <span *ngFor="let s of data.stocks">
-                            {{ s }}
-                        </span>
+                        {{data.stock}}
                     </div>
                     <div class="item-inner item-inner--notifications item-inner--exchanges">
                         {{data.price | number: '1.0-8'}}
