@@ -83,9 +83,7 @@ span.select2-selection.select2-selection--single {
 .banner-hero{
     overflow: visible;
 }
-.banner-hero .lottie{
-    max-width: 450px;
-}
+
 .banner-hero .lottie canvas{
     max-width: 100%;
     max-height: 100%;
