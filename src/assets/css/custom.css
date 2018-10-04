@@ -68,3 +68,14 @@ span.select2-selection.select2-selection--single {
 .token-features-container .single-token.col-md-4 .token-entry .token-descr {
     max-width: 150px;
 }
+
+.menu{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+}
+.menu li+li{
+    margin-left: 15px !important;
+}
