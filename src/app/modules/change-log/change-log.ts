@@ -1,5 +1,18 @@
 export const changeLog = [
      {
+    'date': '03/10/2018',
+    'changes': [
+            'At frontend, we implemented the display of currency rating on the percentage of growth for 3, 7, 30, and 90 days.',
+            'We implemented drafting of the rating and sorting of top 100 coins on capitalization on the percentage of growth for the period chosen by the user.',
+            'Module of Cryptocurrency Portfolio Management is configured to run in a parallel thread, which hastened the return of the result by more than 20 seconds.',
+            'Module of Cryptocurrency Portfolio Management changed the order of exchanges call for large investment periods (more than a month), which also accelerated the return of the result by more than 20 seconds.',
+            'We added and tested advanced response that contains recommendations for eliminating errors during the formation of the portfolio.',
+            'We implemented basic structure for Trading Recommendation Platform.',
+            'We fixed a bug with jumping values in the table on the Module of Cryptocurrency Portfolio Management page when trying to sort the same values.',
+            'On the News Background Analyzer page, a color change has been added for predictions for the fall and minus signs have been removed to correctly display the range.'
+            ]
+    },
+     {
     'date': '02/10/2018',
     'changes': [
             'We implemented getting of the percentage of change from Coinmarketcap (per 1 day, per 10 days).',
