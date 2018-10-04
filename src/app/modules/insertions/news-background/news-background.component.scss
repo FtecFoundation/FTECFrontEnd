@@ -15,6 +15,28 @@
   border: solid 1px $light-violete;
 }
 
+.item-inner-line-error-block {
+  padding: 1.250rem !important;
+  margin-top: .938em;
+
+  span {
+    margin-left: 0;
+  }
+}
+
+.closed::after{
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: $dark-blue;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: .625rem;
+  z-index: 5;
+}
+
 .news__container-main {
   padding-right: .625em;
   flex: 1;
@@ -55,6 +77,10 @@
 .news__date-link {
   font-size: 0.750em;
   color: $accent;
+}
+
+.closed {
+  position: relative;
 }
 
 .news__container-text  p {

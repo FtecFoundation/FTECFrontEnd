@@ -28,8 +28,10 @@ export class NewsBackgroundComponent implements OnInit {
 
     ngOnInit() {
         this._newsBackService.getSettings().subscribe(data => {
-            this.getDaysLeft(data.expirationDate);
-            this.currencies = data.coins;
+            if (data.expirationDate) this.getDaysLeft(data.expirationDate);
+            else this.daysLeft = 0;
+
+            if (data.coins) this.currencies = data.coins;
 
             if (this.daysLeft) this._newsBackService.getResults().subscribe(data => this.results = data);
         });
@@ -75,6 +77,15 @@ export class NewsBackgroundComponent implements OnInit {
         }
     }
 
+    deleteCurrency(currency: string) {
+        this.currencies = this.currencies.filter(c => c !== currency);
+        this._newsBackService.setCurrencies(this.currencies).subscribe(data => {
+            this.currencies = data;
+
+            this._newsBackService.getResults().subscribe(res => this.results = res);
+        });
+    }
+
     renewSubscription() {
         this._newsBackService.subscribe().subscribe(data => {
             this.getDaysLeft(data);
@@ -86,6 +97,8 @@ export class NewsBackgroundComponent implements OnInit {
             this.currencies.push(currency.toLocaleLowerCase());
             this._newsBackService.setCurrencies(this.currencies).subscribe(data => {
                 this.currencies = data;
+
+                this._newsBackService.getResults().subscribe(res => this.results = res);
             });
         }
     }

@@ -30,6 +30,9 @@ export class PortfolioManagerComponent implements OnInit {
     today: Date = new Date();
     preloader: boolean = false;
 
+    sorted: boolean = false;
+    currenciesTopData: CurrencyTop[];
+
     portfolioForm: FormGroup;
     submitted: boolean = false;
 
@@ -44,7 +47,7 @@ export class PortfolioManagerComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
-        if (!this.crService.btcPrice) this.crService.getCryptocurrencies().subscribe();
+        if (!this.crService.btcPrice) this.crService.getCryptocurrenciesTop();
     }
 
     getTermName(): string {
@@ -101,7 +104,7 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     getTopData(days: number) {
-        this.crService.getCryptocurrenciesTop(days);
+        this.crService.getPriceForPairs(days);
         this.started = true;
     }
 
@@ -110,7 +113,13 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     get data(): CurrencyTop[] {
-        return this.crService.currenciesTopData.sort((a, b) => b.percentIncrease - a.percentIncrease);
+        if (!this.crService.running || !this.sorted) {
+            this.currenciesTopData = this.crService.currenciesTopData;
+            this.currenciesTopData.sort((a, b) => b.percentIncrease - a.percentIncrease);
+            this.sorted = true;
+        }
+        if (this.sorted) return this.currenciesTopData;
+        return null;
     }
 
     get nature() {

@@ -70,9 +70,8 @@ export class ArbitrageComponent implements OnInit {
     }
 
     chooseExchange(exhange: any) {
-        if (!this.allChosen) {
-            exhange.arbitrageChosen = !exhange.arbitrageChosen;
-        }
+        if (this.allChosen) this.allChosen = false;
+        exhange.arbitrageChosen = !exhange.arbitrageChosen;
         this.fillChosenExchanges();
     }
 
