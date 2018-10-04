@@ -1,15 +1,28 @@
 export const changeLog = [
      {
+    'date': '04/10/2018',
+    'changes': [
+            'On News Background Analyzer page, the window of adding a currency to user\'s list becomes inactive if the subscription expired.',
+            'On News Background Analyzer page, we added the message if there are no forecasts.',
+            'At frontend on News Background Analyzer page, we added the call for request on getting forecasts after every editing of currency list followed by the user.',
+            'On landing, we updated the percentage of readiness of the ecosystem\'s modules.',
+            'In the admin panel, we implemented requests on getting all pairs and the last currency price from Yobit.',
+            'In the admin panel, we fixed the error arose when trying to filter pairs in the enter field.',
+            'On Module of Cryptocurrency Portfolio Management page, we implemented the possibility to generate a portfolio.',
+            'On Module of Cryptocurrency Portfolio Management page, we added the possibility to specify the desired size of a portfolio in USD (the system automatically converts this amount to BTC).'
+            ]
+    },
+     {
     'date': '03/10/2018',
     'changes': [
             'At frontend, we implemented the display of currency rating on the percentage of growth for 3, 7, 30, and 90 days.',
             'We implemented drafting of the rating and sorting of top 100 coins on capitalization on the percentage of growth for the period chosen by the user.',
-            'Module of Cryptocurrency Portfolio Management is configured to run in a parallel thread, which hastened the return of the result by more than 20 seconds.',
-            'Module of Cryptocurrency Portfolio Management changed the order of exchanges call for large investment periods (more than a month), which also accelerated the return of the result by more than 20 seconds.',
-            'We added and tested advanced response that contains recommendations for eliminating errors during the formation of the portfolio.',
-            'We implemented basic structure for Trading Recommendation Platform.',
-            'We fixed a bug with jumping values in the table on the Module of Cryptocurrency Portfolio Management page when trying to sort the same values.',
-            'On the News Background Analyzer page, a color change has been added for predictions for the fall and minus signs have been removed to correctly display the range.'
+            'In Module of Cryptocurrency Portfolio Management, we configured the performance in parallel flow, which speeded up the returning of the result on more than 20 seconds.',
+            'In Module of Cryptocurrency Portfolio Management, we changed the course of calling for exchanges for long investment periods (more than for a month), which also speeded up the returning of the result on more than 20 seconds.',
+            'We added and tested the expanded answer which contains recommendations on the elimination of errors while building a portfolio.',
+            'We implemented the basic structure for Trading Recommendation Platform.',
+            'We fixed the error of variable values in the table on Module of Cryptocurrency Portfolio Management page when trying to sort the same values.',
+            'On News Background Analyzer page, we added the change of color for forecasts on falling and deleted the minus signs for correct display of range.'
             ]
     },
      {
