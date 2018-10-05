@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {RestService} from "../../../core/services/rest.service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {NewsBackgroundResults} from "../../../core/models/news-background";
+import {Pagination} from "../../../core/models/pagination";
 
 enum NewsBackgroundApiUrls {
     setCoins = 'cabinet/newsAnalyzer/setupCoins',
@@ -15,6 +16,7 @@ enum NewsBackgroundApiUrls {
 
 @Injectable()
 export class NewsBackgroundService extends RestService {
+    pagination: Pagination;
 
     constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
@@ -32,8 +34,12 @@ export class NewsBackgroundService extends RestService {
         return this.post(NewsBackgroundApiUrls.setCoins, {"coins": currencies}).pipe(map(resp => resp.response.coins.coins));
     }
 
-    getResults(): Observable<NewsBackgroundResults[]> {
-        return this.get(NewsBackgroundApiUrls.results).pipe(map(resp => resp.response.latest.content));
+    getResults(page?: number): Observable<NewsBackgroundResults[]> {
+        return this.get(NewsBackgroundApiUrls.results + '?page=' + page).pipe(map(resp => {
+            this.pagination = new Pagination(resp.response.latest['totalPages'], resp.response.latest['totalElements'],
+                resp.response.latest['size'], resp.response.latest['number']);
+            return resp.response.latest.content;
+        }));
     }
 
 }

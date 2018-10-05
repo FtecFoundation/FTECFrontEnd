@@ -10,11 +10,11 @@
       <button class="button__outline" (click)="renewSubscription()">Subscribe</button>
     </div>
 
-    <div *ngIf="!results.length" class="item-inner-line-error-block item-inner-line-error-block--empty">
+    <div *ngIf="results && !results.length" class="item-inner-line-error-block item-inner-line-error-block--empty">
       <span>You have no predictions yet</span>
     </div>
 
-    <div class="middle__news" *ngIf="results.length">
+    <div class="middle__news" *ngIf="results && results.length">
       <div class="middle__table-type">
         <h5>Last news</h5>
       </div>
@@ -43,6 +43,7 @@
 
           <div class="news__container-forecast">
             <span class="news__forecast-title">Neural forecast:</span>
+            <span class="news__forecast-subtitle">(for 1 hour)</span>
 
             <h4 class="news__forecast-item" [ngClass]="{'news__forecast-item--minus': result.forecastTopBorder <= 0}">
               {{absolute(result.forecastBottomBorder) | number: '1.0-1'}}-{{absolute(result.forecastTopBorder) | number: '1.0-1'}}%</h4>
@@ -50,6 +51,20 @@
         </div>
 
 
+      </div>
+      <div class="news__container--pages">
+        <ng-container *ngFor="let page of pages">
+          <div class="news__container--page" *ngIf="page !== 0 && (page <= _newsBackService.pagination.currentPage + 3
+           && page >= _newsBackService.pagination.currentPage - 3) && page !== pages.length - 1"
+               [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
+               (click)="goToPage(page)">{{page + 1}}</div>
+          <div class="news__container--page" *ngIf="page === 0"
+               [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
+               (click)="goToPage(page)">First</div>
+          <div class="news__container--page" *ngIf="page === pages.length - 1"
+               [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
+               (click)="goToPage(page)">Last</div>
+        </ng-container>
       </div>
     </div>
 
