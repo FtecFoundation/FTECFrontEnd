@@ -5,6 +5,9 @@
     display: flex;
 
 }
+.menu li{
+    margin: 0 !important;
+}
 .menu li+li{
     margin-left: 15px !important;
 }
