@@ -1,0 +1,38 @@
+.menu{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+}
+.menu li+li{
+    margin-left: 15px !important;
+}
+
+.banner-hero{
+    height: 100vh;
+    min-height: 500px;
+    padding: 45px 0;
+    overflow: visible;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.banner-hero .lottie canvas{
+    max-width: 100%;
+    max-height: 100%;
+}
+.pull-right{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+}
+
+.pull-right .log-in-btn{
+    margin-right: 15px;
+}
