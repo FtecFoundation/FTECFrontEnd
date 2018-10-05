@@ -1,4 +1,4 @@
-.menu{
+.header .right-container .menus-holder .nav-menu ul.menu{
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -49,4 +49,41 @@
 
 .pull-right .log-in-btn{
     margin-right: 15px;
+}
+
+.banner-hero #subscribe_bottom .inputs-holder{
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.banner-hero #subscribe_bottom{
+    position: relative;
+    margin-top: 75px;
+}
+
+.banner-hero #subscribe_bottom .field{
+    width: 100%;
+}
+.banner-hero #subscribe_bottom .btn{
+
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+}
+
+@media screen and (max-width: 991px) {
+    .banner-hero{
+        padding-top: 0;
+    }
+    .banner-hero .container > .row{
+        height: auto;
+        padding-top: 100px;
+        min-height: unset;
+    }
+    .services .service-item.offer .service-item-entry a{
+        height: auto !important;
+    }
 }
