@@ -1,5 +1,18 @@
 export const changeLog = [
      {
+    'date': '05/10/2018',
+    'changes': [
+            'On Arbitrage Assistant page, we implemented the possibility to cancel exchanges if the user pushed the button "All exchanges".',
+            'On Module of Cryptocurrency Portfolio Management page, we implemented the graphics display of generated portfolio and its characteristics. ',
+            'On  Module of Cryptocurrency Portfolio Management page, we fixed the error of getting only 5 currencies of TOP 100.',
+            'On Anomalous Volume Dynamics Analyzer page, we fixed the display of exchanges and columns of the table.',
+            'In the admin panel, we fixed the error arose when trying to filter pairs in the enter field.',
+            'We fixed ticker receiving method for the Binance exchange.',
+            'We implemented ticker receiving method for Huobi and Kraken exchanges.',
+            'For all exchanges (Poloniex, BitTrex, Binance, Kraken, BitStamp, HuobiCom, YObitNet, Hitbtc, Bitfinex) a method for obtaining the current price of a currency has been implemented.'
+            ]
+    },
+     {
     'date': '04/10/2018',
     'changes': [
             'On News Background Analyzer page, the window of adding a currency to user\'s list becomes inactive if the subscription expired.',
@@ -7,7 +20,7 @@ export const changeLog = [
             'At frontend on News Background Analyzer page, we added the call for request on getting forecasts after every editing of currency list followed by the user.',
             'On landing, we updated the percentage of readiness of the ecosystem\'s modules.',
             'In the admin panel, we implemented requests on getting all pairs and the last currency price from Yobit.',
-            'In the admin panel, we fixed the error arose when trying to filter pairs in the enter field.',
+            'We began HTML layout of the design of Trading Recommendation Platform.',
             'On Module of Cryptocurrency Portfolio Management page, we implemented the possibility to generate a portfolio.',
             'On Module of Cryptocurrency Portfolio Management page, we added the possibility to specify the desired size of a portfolio in USD (the system automatically converts this amount to BTC).'
             ]
