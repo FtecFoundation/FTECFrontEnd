@@ -74,6 +74,9 @@
     flex: none;
 }
 
+.header a.log-in-btn{
+    margin-bottom: 0;
+}
 @media screen and (max-width: 991px) {
     .banner-hero{
         padding-top: 0;
@@ -87,3 +90,41 @@
         height: auto !important;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .simple-section.features .btn-block .store-btn{
+        display: block;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 479px){
+    .roadmap-slider .slide{
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+    .roadmap-slider .owl-item:nth-child(odd) .date{
+        margin-top: 15px;
+        position: relative;
+    }
+    .roadmap-slider .owl-item:nth-child(odd) .text-container{
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        position: relative;
+        margin-top: 10px;
+    }
+    .owl-next, .owl-prev{
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .roadmap-slider:before{
+        top: 8px;
+    }
+}
+
