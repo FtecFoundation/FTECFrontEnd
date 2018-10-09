@@ -1,5 +1,17 @@
 export const changeLog = [
       {
+    'date': '09/10/2018',
+    'changes': [
+            'We fixed minor errors in the Trading Recommendation Platform services.',
+            'Documentation has been written for the News Background Analyzer controllers.',
+            'We added a method for manually running once an hour for each user, a news analyzer.',
+            'At frontend, the countdown of the activity of the trading recommendation was implemented and a timer display was added for each recommendation.',
+            'At frontend we implemented display of all user\'s recommendations.',
+            'At frontend, field validation has been added when creating a new trading recommendation.',
+            'At frontend, the functionality of creating a new trading recommendation is implemented.'
+            ]
+    },
+      {
     'date': '08/10/2018',
     'changes': [
             'We implemented the method of getting a ticker for Huobi.',
