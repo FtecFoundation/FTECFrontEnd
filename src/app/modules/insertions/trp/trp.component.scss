@@ -418,6 +418,13 @@
   cursor: pointer;
 }
 
+.recommendation-form__input {
+  position: relative;
+}
+
+.recommendation-form__input {
+  width: 100%;
+}
 
 .recommendation-form{
   &__row{
@@ -561,10 +568,80 @@
 
 }
 
+.recommendation-form__input-wrap {
+  margin-bottom: .938em;
+}
 
+.recommendation-form__input-wrap-price{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
 
+  .form__info{
+    width: 30%;
+    margin-left: 1.938em;
+    margin-top: -.938em;
+  }
+}
 
+.recommendation-form__input-stub.disabled{
+  width: 70%;
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  background: #0d003b;
+  opacity: .5;
+}
 
+.middle--arbitrage {
+  width: 100%;
+}
 
+.middle__container {
+  text-align: center;
+  background: $violet-gradient-linear;
+  border-radius: .313rem;
+  font-weight: 100;
+  padding: 50px;
+}
 
+.middle__container h5 {
+  font-size: 1.500rem;
+  font-weight: 100;
+}
 
+.middle__container p {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: 100;
+  margin-bottom: 2.5rem;
+}
+
+.middle__container button {
+  width: 50%;
+  margin-top: 50px;
+}
+
+.middle__container h3 {
+  padding: 2.500rem;
+}
+
+.aside-right__head--arbitrage h5 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.filter__container-button--arbitrage {
+  display: block;
+  font-size: 0.9rem;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+.link__accent {
+  color: $accent;
+  text-decoration: underline;
+}

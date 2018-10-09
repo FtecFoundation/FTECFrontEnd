@@ -1,0 +1,134 @@
+<div class="custom-tab-item">
+    <div class="middle middle--arbitrage" *ngIf="response">
+        <div class="middle__container">
+            <h5>Success!</h5>
+            <p>Your trading recommendation was successfully created</p>
+
+            <a class="link__accent" [routerLink]="response['forecastId']">Go to new recommendation</a>
+
+            <a (click)="response = null; signalForm.reset()" class="filter__container-button filter__container-button--arbitrage">
+                Create another one
+            </a>
+        </div>
+    </div>
+
+    <form class="recommendation-form form" [formGroup]="signalForm" *ngIf="!response">
+        <div class="recommendation-form__row">
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Title</p>
+                    </div>
+                    <input formControlName="title" type="text" class="form__input" placeholder="Title">
+                </div>
+                <span *ngIf="title.invalid && (title.dirty || title.touched || submitted)">
+                    <span class="error-field" *ngIf="title.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col recommendation-form__col--full">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Description</p>
+                    </div>
+                    <textarea formControlName="content" class="form__input" placeholder="Description"></textarea>
+                </div>
+                <span *ngIf="content.invalid && (content.dirty || content.touched || submitted)">
+                    <span class="error-field" *ngIf="content.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Pair</p>
+                    </div>
+                    <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)"
+                                         (selected)="pairsFilterService.onPairTyping($event)"
+                                         [items]="pairsFilterService.resultPairs"
+                                         [keyName]="'pair'"></app-filter-dropdown>
+                </div>
+                <span *ngIf="pair.invalid && (pair.dirty || pair.touched || submitted)">
+                    <span class="error-field" *ngIf="pair.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Exchange</p>
+                    </div>
+                    <app-dropdown [label]="'Exchange'" [value]="pairExchange" [keyName]="'name'"
+                                  [items]="pairsFilterService.exchangesList"
+                                  (selected)="chooseStock($event)"></app-dropdown>
+                </div>
+                <span *ngIf="stock.invalid && (stock.dirty || stock.touched || submitted)">
+                    <span class="error-field" *ngIf="stock.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Price</p>
+                    </div>
+                    <div class="recommendation-form__input-wrap-price">
+                        <span class="recommendation-form__input-stub" [ngClass]="{'disabled': free}"></span>
+                       <div class="recommendation-form__input">
+                           <input formControlName="price" type="number" class="form__input" placeholder="Price">
+                           <span class="form__label form__label--currency">FTEC</span>
+                       </div>
+                        <div class="form__info form__info--arbitrage" (click)="free = !free; price.setValue(0)">
+                            <label class="form__info-label-container" [ngClass]="{'is-active': free}">Free
+                                <span class="form__info-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <span *ngIf="price.invalid && (price.dirty || price.touched || submitted)">
+                    <span class="error-field" *ngIf="price.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Type</p>
+                    </div>
+                    <app-dropdown [label]="'Type'"
+                                  [items]="typesList"
+                                  (selected)="type.setValue(types[$event])"></app-dropdown>
+                </div>
+                <span *ngIf="type.invalid && (type.dirty || type.touched || submitted)">
+                    <span class="error-field" *ngIf="type.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Forecast Period</p>
+                    </div>
+                    <app-dropdown [label]="'Period'"
+                                  [items]="periodsList"
+                                  (selected)="period.setValue(periods[$event])"></app-dropdown>
+                </div>
+                <span *ngIf="period.invalid && (period.dirty || period.touched || submitted)">
+                    <span class="error-field" *ngIf="period.errors.required">This field is required</span>
+                </span>
+            </div>
+            <div class="recommendation-form__col">
+                <div class="recommendation-form__input-wrap">
+                    <div class="recommendation-form__input-title">
+                        <p>Percent of Price Change</p>
+                    </div>
+                    <div class="recommendation-form__input">
+                        <input formControlName="predictChange" type="number" class="form__input" placeholder="Price Change">
+                        <span class="form__label form__label--currency">%</span>
+                    </div>
+                </div>
+                <span *ngIf="predictChange.invalid && (predictChange.dirty || predictChange.touched || submitted)">
+                    <span class="error-field" *ngIf="predictChange.errors.required">This field is required</span>
+                </span>
+            </div>
+        </div>
+        <div class="recommendation-form__btn">
+            <button class="custom-btn" (click)="submitForm()">create recommendation</button>
+        </div>
+    </form>
+
+</div>

@@ -15,7 +15,7 @@ export const config = {
     'tooltipDisabled': true,
 
     'lineChartColorScheme': {
-        'domain': ['#3F8AFD',  '#3F8AFD',  '#3F8AFD', '#9C0D66', '#9C0D66', '#9C0D66']
+        'domain': ['#3F8AFD',  '#3F8AFD',  '#3F8AFD', '#9C0D66', '#9C0D66']
     },
 
     'lineChartAutoScale': true,

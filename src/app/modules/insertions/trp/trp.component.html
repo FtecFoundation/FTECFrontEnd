@@ -1,13 +1,17 @@
 <div class="main-info main-info--behavioral">
     <div class="middle middle--trp">
 
-        <div class="middle__head middle__head--trp">
-            <ul class="tab-controls tab-controls--trp">
-                <li class="tab-controls-item tab-controls-item--trp is-active">Trading recommendations</li>
-                <li class="tab-controls-item tab-controls-item--trp">My recommendations</li>
-                <li class="tab-controls-item tab-controls-item--trp">Create recommendations</li>
-            </ul>
-        </div>
+        <ul class="tab-controls tab-controls--trp">
+            <li class="tab-controls-item tab-controls-item--trp" [ngClass]="{'is-active': !activeTab}"
+                (click)="activeTab = 0">Trading recommendations
+            </li>
+            <li class="tab-controls-item tab-controls-item--trp" [ngClass]="{'is-active': activeTab === 1}"
+                (click)="activeTab = 1">My recommendations
+            </li>
+            <li class="tab-controls-item tab-controls-item--trp" [ngClass]="{'is-active': activeTab === 2}"
+                (click)="activeTab = 2">Create recommendations
+            </li>
+        </ul>
 
         <div class="middle__block">
 
@@ -15,7 +19,7 @@
             <!-- BEGIN custom-tab-content -->
             <div class="custom-tab-content">
                 <ul class="custom-tab-content__list">
-                    <li class="custom-tab-content__one" style="display: block;">
+                    <li class="custom-tab-content__one" *ngIf="!activeTab">
 
 
                         <div class="custom-tab-item">
@@ -75,8 +79,21 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="user-graphic">
-                                        <img src="../../../../assets/images/graphic.svg" alt="">
+                                    <div class="user-graphic" *ngIf="data[0]['series'].length">
+                                        <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data"
+                                                               [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                                                               [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2"
+                                                               [schemeType]="schemeType"
+                                                               [showXAxisLabel]="lineChartShowXAxisLabel"
+                                                               [showYAxisLabel]="lineChartShowYAxisLabel"
+                                                               [showGridLines]="showGridLines"
+                                                               [autoScale]="lineChartAutoScale"
+                                                               [curve]="lineChartLineInterpolation"
+                                                               [tooltipDisabled]="tooltipDisabled"
+                                                               [showRefLines]="showRefLines"
+                                                               [showRefLabels]="showRefLabels"
+                                                               >
+                                        </ngx-charts-line-chart>
                                     </div>
                                 </div>
                                 <div class="user-top-info__text">
@@ -224,7 +241,7 @@
 
 
                     </li>
-                    <li class="custom-tab-content__one" style="display: none;">
+                    <li class="custom-tab-content__one" *ngIf="activeTab === 1">
 
 
                         <div class="custom-tab-item">
@@ -533,173 +550,74 @@
                                     </div>
                                 </li>
                                 <li class="users-list__one">
-                                <div class="user-card">
-                                    <div class="user-card__top">
-                                        <div class="user-info">
-                                            <a href="" class="user-avatar">
-                                                <span style="background-image: url(../../../../assets/images/happy-user.jpg)"></span>
-                                            </a>
-                                            <div class="user-info__box">
-                                                <a href="#" class="user-info__name">
-                                                    satoshinakamoto
+                                    <div class="user-card">
+                                        <div class="user-card__top">
+                                            <div class="user-info">
+                                                <a href="" class="user-avatar">
+                                                    <span style="background-image: url(../../../../assets/images/happy-user.jpg)"></span>
                                                 </a>
-                                                <div class="user-info__rating ">
-                                                    <p>Rating <span class="positive">1</span></p>
+                                                <div class="user-info__box">
+                                                    <a href="#" class="user-info__name">
+                                                        satoshinakamoto
+                                                    </a>
+                                                    <div class="user-info__rating ">
+                                                        <p>Rating <span class="positive">1</span></p>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="timer">
+                                                <p>1d : 5h </p>
+                                            </div>
                                         </div>
-                                        <div class="timer">
-                                            <p>1d : 5h </p>
+                                        <ul class="user-card__char-list">
+                                            <li>
+                                                <p>FORECAST</p>
+                                                <p>Active</p>
+                                            </li>
+                                            <li>
+                                                <p>Pair:</p>
+                                                <p>BTC/ETH</p>
+                                            </li>
+                                            <li>
+                                                <p>Stock:</p>
+                                                <p>HitBTC</p>
+                                            </li>
+                                            <li>
+                                                <p>Type:</p>
+                                                <p>Long</p>
+                                            </li>
+                                            <li>
+                                                <p>Price:</p>
+                                                <p>Free</p>
+                                            </li>
+                                            <li>
+                                                <p>Forecasting period:</p>
+                                                <p>3d</p>
+                                            </li>
+                                            <li>
+                                                <p>Increase</p>
+                                                <p class="increase">
+                                                    <span class="increase__value positive">+100</span>
+                                                    <span class="increase__value negative">-80</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <div class="user-card__btn-wrap">
+                                            <a href="#" class="user-card__btn custom-btn">Buy</a>
+                                        </div>
+                                        <div class="user-card__link">
+                                            <a href="#">Full information</a>
                                         </div>
                                     </div>
-                                    <ul class="user-card__char-list">
-                                        <li>
-                                            <p>FORECAST</p>
-                                            <p>Active</p>
-                                        </li>
-                                        <li>
-                                            <p>Pair:</p>
-                                            <p>BTC/ETH</p>
-                                        </li>
-                                        <li>
-                                            <p>Stock:</p>
-                                            <p>HitBTC</p>
-                                        </li>
-                                        <li>
-                                            <p>Type:</p>
-                                            <p>Long</p>
-                                        </li>
-                                        <li>
-                                            <p>Price:</p>
-                                            <p>Free</p>
-                                        </li>
-                                        <li>
-                                            <p>Forecasting period:</p>
-                                            <p>3d</p>
-                                        </li>
-                                        <li>
-                                            <p>Increase</p>
-                                            <p class="increase">
-                                                <span class="increase__value positive">+100</span>
-                                                <span class="increase__value negative">-80</span>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <div class="user-card__btn-wrap">
-                                        <a href="#" class="user-card__btn custom-btn">Buy</a>
-                                    </div>
-                                    <div class="user-card__link">
-                                        <a href="#">Full information</a>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
                             </ul>
 
                         </div>
 
 
                     </li>
-                    <li class="custom-tab-content__one" style="display: none;">
-
-
-                        <div class="custom-tab-item">
-
-                            <div class="recommendation-form form">
-                                <div class="recommendation-form__row">
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__link">
-                                            <a href="#">Download chart</a>
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col recommendation-form__col--full">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Аdd description</p>
-                                            </div>
-                                            <textarea class="form__input"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                    <div class="recommendation-form__col">
-                                        <div class="recommendation-form__input-wrap">
-                                            <div class="recommendation-form__input-title">
-                                                <p>Create the title</p>
-                                            </div>
-                                            <input type="text" class="form__input" placeholder="Create the title">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recommendation-form__btn">
-                                    <button class="custom-btn">create recommendation</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-
+                    <li class="custom-tab-content__one" *ngIf="activeTab === 2">
+                        <app-create-recommendation></app-create-recommendation>
                     </li>
                 </ul>
             </div>

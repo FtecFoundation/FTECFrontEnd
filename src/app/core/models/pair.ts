@@ -12,6 +12,7 @@ export class Pair {
         pair.exchange = exchange;
         return pair;
     }
+
 }
 
 export class Candle {

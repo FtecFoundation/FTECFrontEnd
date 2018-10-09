@@ -36,9 +36,9 @@ export class NewsBackgroundService extends RestService {
 
     getResults(page?: number): Observable<NewsBackgroundResults[]> {
         return this.get(NewsBackgroundApiUrls.results + '?page=' + page).pipe(map(resp => {
-            this.pagination = new Pagination(resp.response.latest['totalPages'], resp.response.latest['totalElements'],
-                resp.response.latest['size'], resp.response.latest['number']);
-            return resp.response.latest.content;
+            this.pagination = new Pagination(resp.response.result['totalPages'], resp.response.result['totalElements'],
+                resp.response.result['size'], resp.response.result['number']);
+            return resp.response.result.content;
         }));
     }
 
