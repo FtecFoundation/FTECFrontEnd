@@ -1,4 +1,16 @@
 export const changeLog = [
+      {
+    'date': '08/10/2018',
+    'changes': [
+            'We implemented the method of getting a ticker for Huobi.',
+            'We implemented most of the methods for Trading Recommendation Platform.',
+            'We created tables for Trading Recommendation Platform entities in the database.',
+            'We fixed the main methods in the services.',
+            'We wrote controllers for Trading Recommendation Platform.',
+            'In the admin panel, we fixed the error arose when trying to filter pairs in the enter field.',
+            'For some exchanges (Kraken, BitStamp, HuobiCom, YObitNet) we implemented the method of getting the current price for a currency.'
+            ]
+    },
      {
     'date': '05/10/2018',
     'changes': [
@@ -6,10 +18,10 @@ export const changeLog = [
             'On Module of Cryptocurrency Portfolio Management page, we implemented the graphics display of generated portfolio and its characteristics. ',
             'On  Module of Cryptocurrency Portfolio Management page, we fixed the error of getting only 5 currencies of TOP 100.',
             'On Anomalous Volume Dynamics Analyzer page, we fixed the display of exchanges and columns of the table.',
-            'In the admin panel, we fixed the error arose when trying to filter pairs in the enter field.',
-            'We fixed ticker receiving method for the Binance exchange.',
-            'We implemented ticker receiving method for Huobi and Kraken exchanges.',
-            'For all exchanges (Poloniex, BitTrex, Binance, Kraken, BitStamp, HuobiCom, YObitNet, Hitbtc, Bitfinex) a method for obtaining the current price of a currency has been implemented.'
+            'We added the main methods in the services.',
+            'We fixed the method of getting a ticker for Binance.',
+            'We implemented the method of getting a ticker Kraken.',
+            'For some exchanges (Poloniex, BitTrex, Binance, Hitbtc, Bitfinex) we implemented the method of getting the current price for a currency.'
             ]
     },
      {
