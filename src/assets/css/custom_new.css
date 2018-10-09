@@ -77,6 +77,54 @@
 .header a.log-in-btn{
     margin-bottom: 0;
 }
+
+
+
+
+.menu li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    cursor: url(../media/images/svg/cursor.svg) 15 15, auto
+}
+
+.menu li a:after, .menu li a:before {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    font-weight: 600
+}
+
+.menu li a:before {
+    z-index: -1;
+    color: #f0f
+}
+
+.menu li a:after {
+    color: #25cbd3;
+    z-index: -2
+}
+
+.menu li a:hover:before,
+.menu li a:hover:after{
+    opacity: 1;
+    animation: j .3s ease infinite
+}
+
+.anchor{
+    position: relative;
+    top: -100px;
+    display: inline-block;
+}
+
 @media screen and (max-width: 991px) {
     .banner-hero{
         padding-top: 0;
@@ -88,6 +136,10 @@
     }
     .services .service-item.offer .service-item-entry a{
         height: auto !important;
+    }
+    .menu li+li {
+        margin-left: 0px !important;
+        margin-top: 10px !important;
     }
 }
 

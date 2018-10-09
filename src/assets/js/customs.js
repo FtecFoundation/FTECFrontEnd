@@ -419,3 +419,4 @@ $('a#open-kyc').click(function (e) {
 
     }
 });
+

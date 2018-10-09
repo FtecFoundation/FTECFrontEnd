@@ -8,7 +8,6 @@ $(document).ready(function(){
 	accordion();
 	headerAnimation();
 	menu();
-	menuNav();
 	countdown();
 	chartInit();
 	initHomeAnim();
@@ -119,7 +118,7 @@ function menuNav(){
 }
 
 function scrollAnchor(){
-	$("section").each(function () {
+	$(".anchor").each(function () {
 			var scroll = $(window).scrollTop();
 			var top = $(this).offset().top-1;
 		if ($(this).is(':in-viewport')){
