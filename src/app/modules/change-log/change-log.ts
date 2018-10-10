@@ -1,14 +1,26 @@
 export const changeLog = [
       {
+    'date': '10/10/2018',
+    'changes': [
+            'At frontend, we implemented the calculation of a percentage of change in a currency price for each trading recommendation.',
+            'At frontend, we added the notification about successful creation of recommendation with the possibility to see its details and go to creation of the next recommendation.',
+            'At frontend, we implemented the method of getting and display of author’s rating for each trading recommendation.',
+            'At frontend in Trading Recommendations Platform, we added the display of price levels on the chart.',
+            'At frontend in Trading Recommendations Platform, we added the display of stop loss and take profit of trading recommendation on the chart.',
+            'We updated and filled the documentation for Trading Recommendations Platform.',
+            'In Trading Recommendations Platform, we fixed the method which calculates the success of forecast on trading recommendation.'
+            ]
+    },
+      {
     'date': '09/10/2018',
     'changes': [
-            'We fixed minor errors in the Trading Recommendation Platform services.',
-            'Documentation has been written for the News Background Analyzer controllers.',
-            'We added a method for manually running once an hour for each user, a news analyzer.',
-            'At frontend, the countdown of the activity of the trading recommendation was implemented and a timer display was added for each recommendation.',
-            'At frontend we implemented display of all user\'s recommendations.',
-            'At frontend, field validation has been added when creating a new trading recommendation.',
-            'At frontend, the functionality of creating a new trading recommendation is implemented.'
+            'We fixed small errors in Trading Recommendations Platform.',
+            'We wrote the documentation for News Background Analyzer controllers.',
+            'We added the method for the manual running of news analyzer once per hour for every user.',
+            'At frontend, we implemented countdown of trading recommendation activity. ',
+            'We also added the display of the timer for each recommendation.',
+            'At frontend, we implemented the display of all the user\'s recommendations.',
+            'At frontend, we added validation of fields while creating a new trading recommendation.'
             ]
     },
       {
