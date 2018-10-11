@@ -1,5 +1,17 @@
 export const changeLog = [
       {
+    'date': '11/10/2018',
+    'changes': [
+            'The project Behavioral Analyzer has been moved to the main FTEC module.',
+            'For the Trading Recommendation Platform, the method has been redesigned to get the author’s rating recommendations.',
+            'In the Trading Recommendation Platform, a field has been added to the method for obtaining the author’s rating that indicates whether there has been an increase in the last 24 hours.',
+            'Endpoint has been added to the Trading Recommendation Platform to receive recommendations purchased by the user.',
+            'The Trading Recommendation Platform fixed a small bug when subscribing.',
+            'At frontend, on the News Background Analyzer page, the ability to manually start the analyzer once an hour is implemented.,
+            'Fixed a bug in the layout, because of which the table with arbitration windows did not scroll.'
+            ]
+    },
+      {
     'date': '10/10/2018',
     'changes': [
             'At frontend, we implemented the calculation of a percentage of change in a currency price for each trading recommendation.',
