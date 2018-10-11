@@ -7,7 +7,7 @@ export const changeLog = [
             'In the Trading Recommendation Platform, a field has been added to the method for obtaining the author’s rating that indicates whether there has been an increase in the last 24 hours.',
             'Endpoint has been added to the Trading Recommendation Platform to receive recommendations purchased by the user.',
             'The Trading Recommendation Platform fixed a small bug when subscribing.',
-            'At frontend, on the News Background Analyzer page, the ability to manually start the analyzer once an hour is implemented.,
+            'At frontend, on the News Background Analyzer page, the ability to manually start the analyzer once an hour is implemented.',
             'Fixed a bug in the layout, because of which the table with arbitration windows did not scroll.'
             ]
     },
