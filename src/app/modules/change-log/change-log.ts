@@ -1,5 +1,18 @@
 export const changeLog = [
       {
+            
+    'date': '12/10/2018',
+    'changes': [
+            'Fixed an issue on the Social Assistant page that prevented tweets from loading.',
+            'We fixed some error messages on the Portfolio Manager page.',
+            'On the Trading Recommendation Platform page, a method is implemented to find out whether the user is the author of the recommendation.',
+            'A service for getting user avatars is implemented at frontend.',
+            'For the Bahavioral Analyzer changed the corrected response.',
+            'We created endpoint for getting avatars and nicknames of other users.',
+            'We improved services and repositories for getting Forecast Entity.'
+            ]
+    },
+      {
     'date': '11/10/2018',
     'changes': [
             'The project Behavioral Analyzer has been moved to the main FTEC module.',
