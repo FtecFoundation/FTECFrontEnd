@@ -498,6 +498,10 @@
     display: initial !important;
     padding-top: initial !important;
   }
+   .ngx-charts {
+      transform: scale(.58) !important;
+      margin-top: 1.250em;
+  }
 
   .middle__table-container--left,
   .middle__table-container--right,
@@ -561,6 +565,10 @@
 }
 
 @media only screen and (max-width: 425px) {
+  .ngx-charts {
+    transform: scale(.54) !important;
+    margin-top: 1.250em;
+  }
 
   .item-inner-line {
     font-size: .625em;
