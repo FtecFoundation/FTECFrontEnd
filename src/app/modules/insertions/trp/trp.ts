@@ -1,86 +1,55 @@
-export const trpItems = [
-  {
-    'pair': 'ETH/BTC',
-    'exchange': 'BittRex',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'BittRex',
-    'date': '15 May 22:42:37',
-    'type': 'BUY',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'YoBit',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'BTC/USD',
-    'exchange': 'BittRex',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'YoBit',
-    'date': '15 May 22:42:37',
-    'type': 'BUY',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'BTC/USD',
-    'exchange': 'BittRex',
-    'date': '15 May 22:42:37',
-    'type': 'BUY',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'Poloniex',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'YoBit',
-    'date': '15 May 22:42:37',
-    'type': 'BUY',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'YoBit',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ETH/BTC',
-    'exchange': 'BittRex',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'Poloniex',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  },
-  {
-    'pair': 'ADA/BTC',
-    'exchange': 'Poloniex',
-    'date': '15 May 22:42:37',
-    'type': 'SELL',
-    'description': 'You have closed order too early. 12% of profit has been lost.'
-  }
-];
+export class CreateRecommendationData {
+    pair: string;
+    stock: string;
+    price: number;
+    type: string;
+    period: string;
+    title: string;
+    content: string;
+    predictChange: number;
+}
+
+export class AuthorRating {
+    rating: number;
+    increased: boolean;
+}
+
+export class TradingRecommendation {
+    id: number;
+    userId: number;
+    userName: string;
+    image: string;
+    pair: string;
+    stock: string;
+    price: number;
+    type: string;
+    period: string;
+    title: string;
+    content: string;
+    creationDate: Date;
+    endDate: Date;
+    predictChange: number;
+    creationPrice: number;
+    status: string;
+    priceIncrease?: number;
+    rating?: AuthorRating;
+    subscribed: boolean;
+}
+
+export class TrpComment {
+    userId: number;
+    userName: string;
+    userImage: string;
+    userRating: AuthorRating;
+    creationDate: Date;
+    message: string;
+}
+
+export class TrpFilter {
+    startDate?: Date;
+    overdue?: boolean;
+    minLikes?: number;
+    price?: number;
+    stock?: string;
+    pair?: string;
+}

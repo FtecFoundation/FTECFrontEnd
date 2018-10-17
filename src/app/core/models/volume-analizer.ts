@@ -22,7 +22,7 @@ export class VolumeAnalyzerPreferences {
 
 export class VolumeAnalyzerData {
     rate: number;
-    stocks: string[];
+    stock: string;
     volumePre: number;
     volumeAfter: number;
     price: number;

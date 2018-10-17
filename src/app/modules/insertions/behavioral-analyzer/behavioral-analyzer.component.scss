@@ -23,23 +23,38 @@
   flex-wrap: wrap;
 }
 /deep/ {
-  .ngx-charts {
-    left: 0;
-    top: 0;
-    height: 1px;
-    width: 1px;
-    margin-left: -20px;
-    transform: scale(.5);
-  }
+  //.ngx-charts {
+  //  transform: scale(1.1);
+  //}
 
   ngx-charts-line-chart ngx-charts-chart .ng-trigger-animationState {
     width: 100%;
-    height: 210px;
     position: relative;
   }
 
   .tick{
+    //display: none !important;
+
+    text {
+      fill: white;
+      opacity: 0.3;
+    }
+  }
+  //
+  //.y.axis {
+  //  transform: translateX(10%) !important;
+  //}
+
+  .line-chart {
+    transform: translateX(22%) !important;
+  }
+
+  .tooltip-anchor, .tooltip-bar {
     display: none !important;
+  }
+
+  .small-container__line-link--red {
+    color: #9C0D66;
   }
 
   .ngx-charts .refline-path{

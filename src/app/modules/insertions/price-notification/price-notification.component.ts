@@ -48,7 +48,7 @@ export class PriceNotificationComponent implements OnInit {
     onPairSelected(pair: Pair) {
         this.pairsFilterService.selectPair(pair);
 
-        this.exchangesService.exchanges[pair.exchange.name].getPrice(pair).subscribe(data => {
+        this.exchangesService.exchanges[pair.exchange.nameToSend].getPrice(pair).subscribe(data => {
             this.pairPrice = data;
         });
         this.pairExchange = pair.exchange;
@@ -56,7 +56,7 @@ export class PriceNotificationComponent implements OnInit {
 
     chooseStock(stock: Stock) {
         this.pairExchange = stock;
-        this.exchangesService.exchanges[stock.name].getPrice(this.pairsFilterService.selectedPair).subscribe(data => {
+        this.exchangesService.exchanges[stock.nameToSend].getPrice(this.pairsFilterService.selectedPair).subscribe(data => {
             this.pairPrice = data;
         })
     }

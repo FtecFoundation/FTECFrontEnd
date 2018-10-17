@@ -8,6 +8,7 @@ import {TrpComponent} from './trp.component';
     imports: [
         RouterModule.forChild([
             {path: '', component: TrpComponent, data: {title: 'Trading Recommendation Platform'}},
+            {path: ':id', component: TrpComponent, data: {title: 'Trading Recommendation Platform'}}
         ])
     ],
     exports: [RouterModule]

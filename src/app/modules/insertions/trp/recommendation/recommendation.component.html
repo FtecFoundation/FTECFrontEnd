@@ -1,0 +1,71 @@
+
+    <div class="user-card">
+        <div class="user-card__top">
+            <div class="user-info">
+                <a href="" class="user-avatar">
+                    <span *ngIf="owner" [style.background-image]="'url(api/images/' + currentUserService.user.imageName + ')'"></span>
+                    <span *ngIf="!owner" [style.background-image]="'url(api/images/' + recommendation.image + ')'"></span>
+                </a>
+                <div class="user-info__box">
+                    <a *ngIf="owner" href="#" class="user-info__name">
+                        {{currentUserService.user.username}}
+                    </a>
+                    <a *ngIf="!owner" href="#" class="user-info__name">
+                        {{recommendation.userName}}
+                    </a>
+                    <div class="user-info__rating ">
+                        <p>Rating <span *ngIf="recommendation.rating" [ngClass]="{'positive': recommendation.rating.increased,
+                        'negative': !recommendation.rating.increased}">
+                            {{recommendation.rating.rating}}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="countdown(recommendation.endDate)" class="timer"
+                 [ngClass]="{'timer--expiring': countdown(recommendation.endDate).expiring}">
+                <p>{{countdown(recommendation.endDate).left}}</p>
+            </div>
+        </div>
+        <ul class="user-card__char-list">
+            <li>
+                <p>{{recommendation.title | uppercase}}</p>
+                <p>{{recommendation.status}}</p>
+            </li>
+            <li>
+                <p>Pair:</p>
+                <p>{{recommendation.pair}}</p>
+            </li>
+            <li>
+                <p>Stock:</p>
+                <p>{{recommendation.stock}}</p>
+            </li>
+            <li *ngIf="owner || recommendation.subscribed">
+                <p>Type:</p>
+                <p>{{types[recommendation.type]}}</p>
+            </li>
+            <li>
+                <p>Price:</p>
+                <p>{{recommendation.price ? recommendation.price + ' FTEC' : 'Free'}}</p>
+            </li>
+            <li *ngIf="owner || recommendation.subscribed">
+                <p>Forecasting period:</p>
+                <p>{{periods[recommendation.period]}}</p>
+            </li>
+            <li *ngIf="owner || recommendation.subscribed">
+                <p>Forecasting price:</p>
+                <p>{{recommendation.predictChange}}%</p>
+            </li>
+            <li *ngIf="owner || recommendation.subscribed">
+                <p>Increase</p>
+                <p class="increase">
+                            <span class="increase__value positive" [ngClass]="{'positive': recommendation.priceIncrease > 0,
+                            'negative': recommendation.priceIncrease < 0}">{{recommendation.priceIncrease | number: '1.0-2'}}</span>
+                </p>
+            </li>
+        </ul>
+        <div class="user-card__btn-wrap">
+            <a (click)="buyRecommendation(recommendation.id)" *ngIf="!owner && !recommendation.subscribed" class="user-card__btn custom-btn">Buy</a>
+        </div>
+        <div class="user-card__link">
+            <a (click)="goToRecommendation(recommendation.id)" *ngIf="!view && (owner || recommendation.subscribed)">Full information</a>
+        </div>
+    </div>

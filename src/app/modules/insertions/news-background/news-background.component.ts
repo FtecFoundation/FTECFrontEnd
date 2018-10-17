@@ -20,18 +20,32 @@ export class NewsBackgroundComponent implements OnInit {
     availableCurrencies: string[] = ['BTC', 'ETH', 'XRP', 'BCC', 'EOS', 'XLM', 'LTC', 'ADA', 'IOTA', 'TRX', 'NEO', 'ETC', 'BNB', 'VET'];
     results: NewsBackgroundResults[];
 
+    pages: number[] = [];
 
-    constructor(private _newsBackService: NewsBackgroundService,
+    constructor(public _newsBackService: NewsBackgroundService,
                 private router: Router) {
     }
 
 
     ngOnInit() {
         this._newsBackService.getSettings().subscribe(data => {
-            this.getDaysLeft(data.expirationDate);
-            this.currencies = data.coins;
+            if (data.expirationDate) this.getDaysLeft(data.expirationDate);
+            else this.daysLeft = 0;
 
-            if (this.daysLeft) this._newsBackService.getResults().subscribe(data => this.results = data);
+            if (data.coins) this.currencies = data.coins;
+
+            if (this.daysLeft) this._newsBackService.getResults(0).subscribe(data => {
+                for (let i = 0; i < this._newsBackService.pagination.totalPages; i++) {
+                    this.pages.push(i);
+                }
+                this.results = data;
+            });
+        });
+    }
+
+    goToPage(page: number) {
+        this._newsBackService.getResults(page).subscribe(data => {
+            this.results = data;
         });
     }
 
@@ -75,6 +89,13 @@ export class NewsBackgroundComponent implements OnInit {
         }
     }
 
+    deleteCurrency(currency: string) {
+        this.currencies = this.currencies.filter(c => c !== currency);
+        this._newsBackService.setCurrencies(this.currencies).subscribe(data => {
+            this._newsBackService.getResults().subscribe(res => this.results = res);
+        });
+    }
+
     renewSubscription() {
         this._newsBackService.subscribe().subscribe(data => {
             this.getDaysLeft(data);
@@ -82,16 +103,22 @@ export class NewsBackgroundComponent implements OnInit {
     }
 
     addCurrency(currency: string) {
-        if (this.daysLeft) {
-            this.currencies.push(currency.toLocaleLowerCase());
+        if (this.daysLeft && this.currencies.indexOf(currency.toLowerCase()) === -1) {
+            this.currencies.push(currency.toLowerCase());
             this._newsBackService.setCurrencies(this.currencies).subscribe(data => {
-                this.currencies = data;
+                this._newsBackService.getResults().subscribe(res => this.results = res);
             });
         }
     }
 
     absolute(n: number): number {
         return Math.abs(n);
+    }
+
+    updateNews() {
+        this._newsBackService.getUpdatedResults().subscribe(data => {
+            this.results = data;
+        })
     }
 
 }

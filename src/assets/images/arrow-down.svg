@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="12px" viewBox="0 0 6 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FTEC-Platform_Module_Trading-Recommendation-Platform_full-information" transform="translate(-441.000000, -217.000000)" fill="#ff3030" fill-rule="nonzero">
+            <path d="M443.994947,229 C444.224031,229 444.409321,228.828035 444.409321,228.615425 L444.409321,218.306931 L446.292532,220.054716 C446.373386,220.129755 446.477821,220.167275 446.585626,220.167275 C446.693431,220.167275 446.797866,220.129755 446.87872,220.054716 C447.040427,219.904638 447.040427,219.663887 446.87872,219.513809 L444.291409,217.112559 C444.129702,216.96248 443.870298,216.96248 443.708591,217.112559 L441.12128,219.513809 C440.959573,219.663887 440.959573,219.904638 441.12128,220.054716 C441.282987,220.204794 441.542392,220.204794 441.704099,220.054716 L443.58731,218.306931 L443.58731,228.615425 C443.583942,228.828035 443.765862,229 443.994947,229 Z" id="Shape" transform="translate(444.000000, 223.000000) scale(1, -1) translate(-444.000000, -223.000000) "></path>
+        </g>
+    </g>
+</svg>

@@ -7,7 +7,7 @@ export class NumberSuffixPipe implements PipeTransform {
 
     transform(input: any, args?: any): any {
         let exp, rounded,
-            suffixes = ['k', 'M', 'G', 'T', 'P', 'E'];
+            suffixes = ['k', 'M', 'B', 'T', 'P', 'E'];
 
         if (Number.isNaN(input)) {
             return null;

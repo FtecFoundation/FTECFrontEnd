@@ -64,8 +64,9 @@
                                              [items]="pairsFilterService.resultPairs"
                                              [keyName]="'pair'"></app-filter-dropdown>
                     </div>
-
                 </div>
+                <span class="error-field" *ngIf="submitted && !pairsFilterService.selectedPair">Choose the pair</span>
+
             </div>
 
             <div class="filter__container">
@@ -98,8 +99,9 @@
                     <input type="number" class="form__input" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}"
                            placeholder="Amount to {{orderType.toLowerCase()}}">
                     <span class="form__label form__label--currency" *ngIf="pairsFilterService.selectedPair">{{pairsFilterService.selectedPair.symbol}}</span>
-                    <span class="error-field" *ngIf="amountNotSet">Set the amount to {{orderType.toLowerCase()}}</span>
                 </div>
+
+                <span class="error-field" *ngIf="amountNotSet">Set the amount to {{orderType.toLowerCase()}}</span>
 
             </div>
 

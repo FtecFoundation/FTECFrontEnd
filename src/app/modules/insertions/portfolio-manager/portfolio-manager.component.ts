@@ -29,6 +29,10 @@ export class PortfolioManagerComponent implements OnInit {
     showGraph = false;
     today: Date = new Date();
     preloader: boolean = false;
+    recommendation: string;
+
+    sorted: boolean = false;
+    currenciesTopData: CurrencyTop[];
 
     portfolioForm: FormGroup;
     submitted: boolean = false;
@@ -44,7 +48,7 @@ export class PortfolioManagerComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
-        if (!this.crService.btcPrice) this.crService.getCryptocurrencies().subscribe();
+        if (!this.crService.btcPrice) this.crService.getCryptocurrenciesTop();
     }
 
     getTermName(): string {
@@ -69,6 +73,7 @@ export class PortfolioManagerComponent implements OnInit {
             this.portfolioChart = [];
             this.preloader = true;
             this.portManagerService.generatePortfolio(this.portfolioForm.value).subscribe(data => {
+                this.recommendation = null;
                 this.preloader = false;
                 this.portfolio = data;
                 for (const coin of Object.keys(data)) {
@@ -77,7 +82,10 @@ export class PortfolioManagerComponent implements OnInit {
                 this.showGraph = true;
                 this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
                     'Your new portfolio was successfully generated', 'success'));
-            })
+            }, error1 => {
+                this.recommendation = error1.error.tips['Recommendation'];
+                this.preloader = false;
+            });
         }
 
     }
@@ -101,7 +109,7 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     getTopData(days: number) {
-        this.crService.getCryptocurrenciesTop(days);
+        this.crService.getPriceForPairs(days);
         this.started = true;
     }
 
@@ -110,7 +118,13 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     get data(): CurrencyTop[] {
-        return this.crService.currenciesTopData.sort((a, b) => b.percentIncrease - a.percentIncrease);
+        if (!this.crService.running || !this.sorted) {
+            this.currenciesTopData = this.crService.currenciesTopData;
+            this.currenciesTopData.sort((a, b) => b.percentIncrease - a.percentIncrease);
+            this.sorted = true;
+        }
+        if (this.sorted) return this.currenciesTopData;
+        return null;
     }
 
     get nature() {

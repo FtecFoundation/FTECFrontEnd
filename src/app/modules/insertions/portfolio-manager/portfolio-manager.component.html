@@ -63,7 +63,7 @@
 
           <div class="graph__stats-line-container">
             <div class="graph__stats-line">
-              <span>Timeframe:</span>
+              <span>Investment Term:</span>
 
               <span>{{getTermName()}}</span>
             </div>
@@ -114,7 +114,7 @@
       </span>
     </div>
 
-    <div class="middle__table-container middle__table-container--arbitrage" *ngIf="activeTab && !crService.running && started">
+    <div class="middle__table-container middle__table-container--arbitrage" *ngIf="activeTab && !crService.running && started && data">
       <div class="middle__table-container-item" *ngFor="let curr of data; let i = index" [ngClass]="{'top10': i < 10}">
 
         <h4>{{curr.currency}}</h4>
@@ -179,7 +179,7 @@
 
       <span *ngIf="btc.invalid && (btc.dirty || btc.touched || submitted)">
           <span class="error-field" *ngIf="btc.errors.required">This field is required</span>
-          <span class="error-field" *ngIf="btc.errors.min">Number of coins should be 0.5 or more</span>
+          <span class="error-field" *ngIf="btc.errors.min">Portfolio size should be 0.5 or more</span>
         </span>
 
       <span class="container__name container__name--coins">Number of coins</span>
@@ -193,7 +193,7 @@
       <span *ngIf="coinsCount.invalid && (coinsCount.dirty || coinsCount.touched || submitted)">
           <span class="error-field" *ngIf="coinsCount.errors.required">This field is required</span>
           <span class="error-field" *ngIf="coinsCount.errors.min">Number of coins should be 4 or more</span>
-          <span class="error-field" *ngIf="coinsCount.errors.max">Number of coinsshould be less than 50</span>
+          <span class="error-field" *ngIf="coinsCount.errors.max">Number of coins should be less than 20</span>
         </span>
 
       <span class="container__name">Portfolio type</span>
@@ -216,6 +216,7 @@
 
 
       <button class="filter__container-button" (click)="submitForm()">Generate portfolio</button>
+      <span class="error-field" *ngIf="recommendation">{{recommendation}}</span>
       <span class="graph__bottom-text">To save changes rebalance your portfolio</span>
     </form>
 

@@ -1,5 +1,5 @@
 export class BehavioralDataTrades {
-    operations: BehavioralDataOperations;
+    operations: BehavioralDataOperations[];
     statistics: BehavioralDataStatistics;
 }
 
@@ -24,6 +24,12 @@ class BehavioralDataStatistics {
 }
 
 export class StockBehavioralData {
+    accuracy: number
+    failedOrders: number;
+    panicBuy: number;
+    panicSell: number;
+    profitLoss: number;
+    successfulOrders: number;
 
     constructor() {
         this.accuracy = 0;
@@ -34,12 +40,6 @@ export class StockBehavioralData {
         this.successfulOrders = 0;
     }
 
-    accuracy: number;
-    failedOrders: number;
-    panicBuy: number;
-    panicSell: number;
-    profitLoss: number;
-    successfulOrders: number;
 }
 
 enum OperationTypes {

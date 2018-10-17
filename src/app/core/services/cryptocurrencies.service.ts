@@ -13,6 +13,7 @@ export class CryptocurrenciesService {
     now = new Date().getTime();
     currenciesTopData: CurrencyTop[] = [];
     btcPrice: number;
+    topPairs: any;
 
     running: number = 0;
 
@@ -21,19 +22,23 @@ export class CryptocurrenciesService {
 
     getCryptocurrencies(): Observable<any> {
         const params = new HttpParams().set('limit', '5').set('sort', 'rank').set('start', '1');
-        return this._http.get(this.getCryptocurrenciesUrl, {params: params}).pipe(tap(resp => {
-            this.btcPrice = resp['data']['1']['quotes']['USD']['price'];
-        }));
+        return this._http.get(this.getCryptocurrenciesUrl, {params: params});
     }
 
-    getCryptocurrenciesTop(days: number) {
-        this.currenciesTopData = [];
-        const params = new HttpParams().set('limit', '101').set('sort', 'rank').set('start', '1');
-        this._http.get(this.getCryptocurrenciesUrl, {params: params}).pipe(map(resp => resp['data'])).subscribe(data => {
-            for (const curr of Object.keys(data)) {
-                this.getPriceDataBittrex(data, curr, days);
-            }
+    getCryptocurrenciesTop() {
+        const param = new HttpParams().set('limit', '101').set('sort', 'rank').set('start', '1');
+        this._http.get(this.getCryptocurrenciesUrl, {params: param}).pipe(map(resp => resp['data'])).subscribe(data => {
+            console.log(data);
+            this.topPairs = data;
+            this.btcPrice = data['1']['quotes']['USD']['price'];
         });
+    }
+
+    getPriceForPairs(days: number) {
+        this.currenciesTopData = [];
+        for (const curr of Object.keys(this.topPairs)) {
+            this.getPriceDataBittrex(this.topPairs, curr, days);
+        }
     }
 
     getPriceDataBittrex(marketcapData: any, curr: string, days: number) {

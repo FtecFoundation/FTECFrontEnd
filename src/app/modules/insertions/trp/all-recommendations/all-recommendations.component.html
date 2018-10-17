@@ -1,0 +1,13 @@
+<div class="custom-tab-item">
+
+    <div *ngIf="recommendations && !recommendations.length" class="item-inner-line-error-block item-inner-line-error-block--empty">
+        <span>There are no trading recommendations yet</span>
+    </div>
+
+    <ul class="users-list" *ngIf="recommendations && recommendations.length">
+        <app-recommendation class="users-list__one" *ngFor="let recommendation of recommendations"
+                            [recommendation]="recommendation" (changeRecommendationId)="goToRecommendation($event)"
+        [owner]="recommendation.userId === currentUserService.user.id"></app-recommendation>
+    </ul>
+
+</div>

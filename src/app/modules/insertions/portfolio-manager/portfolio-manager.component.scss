@@ -182,10 +182,6 @@
   padding-bottom: 0;
 }
 
-ngx-charts-pie-chart {
-  width: 100%;
-}
-
 .portfolio__graph-info {
   width: 100%;
   display: flex;
@@ -243,6 +239,11 @@ ngx-charts-pie-chart {
 
 /deep/
 {
+
+  ngx-charts-pie-chart {
+    width: 100%;
+  }
+
   text {
     fill: $light-grey;
   }
