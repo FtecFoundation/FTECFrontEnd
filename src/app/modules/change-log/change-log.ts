@@ -1,6 +1,40 @@
 export const changeLog = [
-      {
-            
+      {    
+    'date': '17/10/2018',
+    'changes': [
+            'We moved and integrated under FTEC tests for Price Notification.',
+            'At frontend, the display of the name and picture of the authors of trade recommendations, as well as comment authors has been fixed.',
+            'At frontend, the display of the rating, the name and the picture for the newly-left associate is fixed.',
+            'At frontend, a bug was corrected with a request to receive Smart Trading Module settings for various exchanges',
+            'We fixed updating of comments for each trading recommendation at frontend.',
+            'We redesigned the appearance and content of the landing site.'
+            ]
+    },
+      {    
+    'date': '16/10/2018',
+    'changes': [
+            'We moved and integrated under FTEC tests for Order Manger.',
+            'We refactored service for Order Manager.',
+            'We moved backend for Price Notification.',
+            'At frontend, getting and displaying of all comments to the trading recommendation is implemented.',
+            'An opportunity to add a comment to the trading recommendation is implemented at frontend.',
+            'The ability to buy / subscribe to the trading recommendation is implemented at frontend.',
+            'At frontend we fully implemented the transition to the page with a detailed view of trading recommendations.'
+            ]
+    },
+      {    
+    'date': '15/10/2018',
+    'changes': [
+            'We moved and integrated under FTEC tests for Behavioral Analyzer.',
+            'We refactored service for Price Notification.',
+            'We moved backend for Order Manager.',
+            'We added caching of rating and fields (userName, userImage) for Forecast entity.',
+            'We improved code for partial getting of entity fields.',
+            'we system tested and fixed Trading Recommendation Platform.',
+            'We fixed display of the latest payment transactions on the payments page.'
+            ]
+    },
+      {    
     'date': '12/10/2018',
     'changes': [
             'Fixed an issue on the Social Assistant page that prevented tweets from loading.',
