@@ -96,12 +96,9 @@ export class BehavioralAnalyzerComponent implements OnInit {
         this._behavioralAnalyzerService.getHistory().subscribe(value => {
 
             this.responseData = value;
-            console.log(value)
 
-            this.recountGlobalStats();
+            if (this.responseData.statistics) this.recountGlobalStats();
 
-            if (this.responseData.operations['All'].length == 0 ) {
-            }
 
             this.globalPreloader = false;
 
@@ -130,7 +127,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
         this.stockSelected = true;
     }
 
-    private recountGlobalStats() {
+    private  recountGlobalStats() {
         const allStats = new StockBehavioralData();
 
         this.availableStocks = Object.keys(this.responseData.statistics);
@@ -150,13 +147,14 @@ export class BehavioralAnalyzerComponent implements OnInit {
 
         const allData = [];
         for (const key of this.availableStocks) {
-            for (const currentOperation of this.responseData.operations[key]) {
+            for (const currentOperation of this.responseData.operations) {
                 allData.push(currentOperation);
             }
         }
         this.responseData.operations['All'] = allData;
         this.availableStocks.unshift('All');
     }
+
     public sendRequest() {
         this.requestPreloader = true;
 

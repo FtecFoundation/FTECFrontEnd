@@ -13,7 +13,7 @@ export class ExchangesService {
                 private hitbtcService: HitBTCService, private poloniexService: PoloniexService) {
         this.exchanges = {
             'Binance': binanceService,
-            'Bittrex': bittrexService,
+            'BitTrex': bittrexService,
             'Hitbtc': hitbtcService,
             'Poloniex': poloniexService
         };

@@ -5,7 +5,11 @@ import {TrpComponent} from './trp.component';
 import {SharedModule} from '../../../shared/shared.module';
 import {NgxChartsModule} from "@swimlane/ngx-charts";
 import {TrpService} from "./trp.service";
-import { CreateRecommendationComponent } from './create-recommendation/create-recommendation.component';
+import {CreateRecommendationComponent} from './create-recommendation/create-recommendation.component';
+import {MyRecommendationsComponent} from './my-recommendations/my-recommendations.component';
+import {RecommendationComponent} from './recommendation/recommendation.component';
+import {AllRecommendationsComponent} from './all-recommendations/all-recommendations.component';
+import { RecommendationViewComponent } from './recommendation-view/recommendation-view.component';
 
 
 @NgModule({
@@ -15,7 +19,7 @@ import { CreateRecommendationComponent } from './create-recommendation/create-re
         TrpRoutingModule,
         NgxChartsModule
     ],
-    declarations: [TrpComponent, CreateRecommendationComponent],
+    declarations: [TrpComponent, CreateRecommendationComponent, MyRecommendationsComponent, RecommendationComponent, AllRecommendationsComponent, RecommendationViewComponent],
     providers: [TrpService]
 })
 export class TrpModule {

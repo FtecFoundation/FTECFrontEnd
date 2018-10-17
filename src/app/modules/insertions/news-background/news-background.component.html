@@ -17,6 +17,7 @@
     <div class="middle__news" *ngIf="results && results.length">
       <div class="middle__table-type">
         <h5>Last news</h5>
+        <button class="button__outline" (click)="updateNews()">Update news</button>
       </div>
 
       <div class="middle__table-container" *ngFor="let result of results">

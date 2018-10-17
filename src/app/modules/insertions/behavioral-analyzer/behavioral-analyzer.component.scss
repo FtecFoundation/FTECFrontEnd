@@ -23,9 +23,9 @@
   flex-wrap: wrap;
 }
 /deep/ {
-  .ngx-charts {
-    transform: scale(1.1);
-  }
+  //.ngx-charts {
+  //  transform: scale(1.1);
+  //}
 
   ngx-charts-line-chart ngx-charts-chart .ng-trigger-animationState {
     width: 100%;
@@ -33,7 +33,28 @@
   }
 
   .tick{
+    //display: none !important;
+
+    text {
+      fill: white;
+      opacity: 0.3;
+    }
+  }
+  //
+  //.y.axis {
+  //  transform: translateX(10%) !important;
+  //}
+
+  .line-chart {
+    transform: translateX(22%) !important;
+  }
+
+  .tooltip-anchor, .tooltip-bar {
     display: none !important;
+  }
+
+  .small-container__line-link--red {
+    color: #9C0D66;
   }
 
   .ngx-charts .refline-path{

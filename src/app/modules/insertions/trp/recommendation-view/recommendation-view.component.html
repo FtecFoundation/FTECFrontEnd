@@ -1,0 +1,89 @@
+<div class="custom-tab-item">
+
+    <div class="user-top-info">
+        <div class="user-top-info__box">
+            <app-recommendation class="user-card--responsive"
+                                [owner]="currentUserService.user.id === recommendation.userId"
+                                [view]="true" [recommendation]="recommendation"></app-recommendation>
+            <div class="user-graphic" *ngIf="data[0]['series'].length">
+                <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data"
+                                       [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                                       [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2"
+                                       [schemeType]="schemeType"
+                                       [showXAxisLabel]="lineChartShowXAxisLabel"
+                                       [showYAxisLabel]="lineChartShowYAxisLabel"
+                                       [showGridLines]="showGridLines"
+                                       [autoScale]="lineChartAutoScale"
+                                       [curve]="lineChartLineInterpolation"
+                                       [tooltipDisabled]="tooltipDisabled"
+                                       [showRefLines]="showRefLines"
+                                       [showRefLabels]="showRefLabels"
+                >
+                </ngx-charts-line-chart>
+            </div>
+        </div>
+        <div class="user-top-info__text">
+            <p>{{recommendation.content}} </p>
+        </div>
+    </div>
+
+    <div class="user-feedback">
+        <div class="my-box-title">
+            <p>Comments</p>
+        </div>
+        <div *ngIf="comments.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
+            <span>There are no comments left for this recommendation</span>
+        </div>
+        <div class="user-feedback__wrap" *ngIf="comments && comments.length">
+            <div class="user-feedback__title-side">
+                <p>Users</p>
+                <p>Comments</p>
+            </div>
+            <ul class="user-feedback__list">
+                <li class="user-feedback__one" *ngFor="let comment of comments">
+
+                    <div class="user-feedback-item">
+                        <div class="user-feedback-item__user-info">
+                            <div class="user-info">
+                                <a href="" class="user-avatar">
+                                    <span [style.background-image]="'url(api/images/' + comment.userImage + ')'"></span>
+                                </a>
+                                <div class="user-info__box">
+                                    <a href="#" class="user-info__name">
+                                        {{comment.userName}}
+                                    </a>
+                                    <div class="user-info__rating ">
+                                        <p>Rating
+                                        <p>Rating <span *ngIf="comment.userRating" [ngClass]="{'positive': comment.userRating.increased,
+                        'negative': !comment.userRating.increased}">
+                            {{comment.userRating.rating}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-feedback-item__comment">
+                            <p>{{comment.message}} </p>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="feedback-form">
+        <div class="my-box-title">
+            <p>Add new comment</p>
+        </div>
+        <form class="feedback-form__form form" #f="ngForm">
+            <div class="feedback-form__input-wrap">
+                <textarea name="message" ngModel class="form__input feedback-form__input"></textarea>
+            </div>
+            <div class="feedback-form__btn-wrap">
+                <button (click)="addComment(f.value)" class="feedback-form__btn">submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>

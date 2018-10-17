@@ -4,10 +4,11 @@ import {config} from "../behavioral-analyzer/ngx-chart.config";
 import {BehavioralDataTrades} from "../../../core/models/behavioral";
 import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {AvailableExchanges, Stock} from "../arbitrage/available-exchanges";
-import {BinanceService} from "../../../core/services/exchanges/binance.service";
-import {PairsFilterService} from "../../../core/services/pairs-filter/pairs-filter.service";
-import {CreateRecommendationData} from "./trp";
+import {ActivatedRoute} from "@angular/router";
+import {TrpService} from "./trp.service";
+import {TradingRecommendation, TrpFilter} from "./trp";
 import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
+import {ImageService} from "../../../core/services/image.service";
 
 
 @Component({
@@ -18,55 +19,58 @@ import {ExchangesService} from "../../../core/services/exchanges/exchanges.servi
 export class TrpComponent implements OnInit {
     activeTab: number = 0;
 
-    fullGraph = false;
     select = false;
-    errorText = '';
-    stockSelected = false;
-    connectedKeys = false;
-    data = [
-        {
-            'name': 'Price changes after recommendation',
-            'series': []
-        }
-    ];
-    refLines = [
-        { value: 2140, name: 'Take profit' }
-    ];
-    lineChartView = config.lineChartView;
-    showRefLines = config.showRefLines;
-    showRefLabels = config.showRefLabels;
-    showGridLines = config.showGridLines;
-    tooltipDisabled = config.tooltipDisabled;
-    lineChartShowXAxis = config.lineChartShowXAxis;
-    lineChartShowYAxis = config.lineChartShowYAxis;
-    lineChartShowLegend = config.lineChartShowLegend;
-    lineChartShowXAxisLabel = config.lineChartShowXAxisLabel;
-    lineChartShowYAxisLabel = config.lineChartShowYAxisLabel;
-    schemeType = config.schemeType;
-    lineChartColorScheme = config.lineChartColorScheme;
-    exchanges = ['New', 'Old'];
-
-    lineChartAutoScale = config.lineChartAutoScale;
-    lineChartLineInterpolation = config.lineChartLineInterpolation;
-
-    public responseData: BehavioralDataTrades;
-    public chosenStatistics = 'All';
     public availableStocks = [];
-    public installedStocks = [];
-    public globalPreloader = true;
-    public requestPreloader = false;
 
-    constructor(private bittrexService: BittrexService) {
+    pairs: Pair[];
+
+    recommendationId: number;
+    recommendations: TradingRecommendation[];
+    recommendation: TradingRecommendation;
+
+    constructor(private trpService: TrpService, private exchangesService: ExchangesService, private imagesService: ImageService,
+                private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.data[0]['series'] = [];
-        this.bittrexService.getCandles(new Pair().of('ETH', 'BTC', AvailableExchanges.availableStocks[0]), 'day').subscribe(data => {
-            for (const item of data) {
-                this.data[0]['series'].push({'value': item['C'], 'name': item['T'], 'min': (item['C'] - ((item['C'] * 99) / 100)), 'max': (item['C'] - ((item['C'] * 15) / 100))});
+        this.recommendationId = Number.parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+
+        this.getRecommendations();
+
+        if (this.recommendationId) {
+            this.getRecommendationForView();
+        }
+    }
+
+    getRecommendations() {
+        this.trpService.getAllRecommendations().subscribe(data => {
+            this.recommendations = data;
+
+            for (const rec of this.recommendations) {
+                this.getIncreasePercent(rec);
             }
-            console.log(this.data)
         });
     }
 
+    getRecommendationForView() {
+        let filter = new TrpFilter();
+        filter.overdue = true;
+
+        this.trpService.getAllRecommendations(filter).subscribe(data => {
+            this.recommendation = data.filter(rec => rec.id === this.recommendationId)[0];
+                this.getIncreasePercent(this.recommendation);
+        });
+    }
+
+    getIncreasePercent(recom: TradingRecommendation) {
+        const pairConverted = new Pair().of(recom.pair.substring(recom.pair.indexOf('-') + 1), recom.pair.substring(0, recom.pair.indexOf('-')));
+        this.exchangesService.exchanges[recom.stock].getPrice(pairConverted).subscribe(data =>
+            recom.priceIncrease = ((data * 100) / recom.creationPrice) - 100);
+    }
+
+    changeRecommendation(id: number) {
+        this.activeTab = 0;
+        this.recommendationId = id;
+        this.getRecommendationForView();
+    }
 }

@@ -115,4 +115,10 @@ export class NewsBackgroundComponent implements OnInit {
         return Math.abs(n);
     }
 
+    updateNews() {
+        this._newsBackService.getUpdatedResults().subscribe(data => {
+            this.results = data;
+        })
+    }
+
 }

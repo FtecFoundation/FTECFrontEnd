@@ -22,6 +22,7 @@ export class OrderManagerComponent implements OnInit {
     pairPrice: number;
     pairExchange: Stock;
     available: number = 100;
+    submitted: boolean = false;
 
     amountNotSet: boolean = false;
 
@@ -53,7 +54,7 @@ export class OrderManagerComponent implements OnInit {
     onPairSelected(pair: Pair) {
         this.pairsFilterService.selectPair(pair);
 
-        this.exchangesService.exchanges[pair.exchange.name].getPrice(pair).subscribe(data => {
+        this.exchangesService.exchanges[pair.exchange.nameToSend].getPrice(pair).subscribe(data => {
             this.pairPrice = data;
         });
         this.pairExchange = pair.exchange;
@@ -69,12 +70,15 @@ export class OrderManagerComponent implements OnInit {
 
     toPercent(price: number, percent: number): number {
         const res: number =  (price * Math.abs(percent)) / 100;
-        if (percent > 0) return price + res;
-        else return price - res;
+        if (percent > 0) return Number.parseFloat('' + price) + res;
+        else return Number.parseFloat('' + price) - res;
     }
 
     addOrder() {
+        this.submitted = true;
+
         if (this.amount) {
+            this.amountNotSet = false;
             this.orderManagerService.addOrder(this.prepareData()).subscribe(data => {
                 this.orders.push(new Order(data.orderId,
                     this.pairsFilterService.selectedPair.symbol + '-' + this.pairsFilterService.selectedPair.base,

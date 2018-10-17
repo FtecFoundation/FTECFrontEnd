@@ -96,7 +96,7 @@ export class VolumeAnalyzerComponent implements OnInit {
         this.submitted = true;
         if (this.analyzerForm.valid) {
             this._volumeAnalyzerService.setPreferences(this.prepareData()).subscribe(data => {
-                this._currentUserService.user.settingsStatus = 'ACTIVATED';
+                this.analyzerActivated = true;
             });
         }
     }

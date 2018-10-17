@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PairsFilterService} from "../../../../core/services/pairs-filter/pairs-filter.service";
 import {Pair} from "../../../../core/models/pair";
 import {Stock} from "../../arbitrage/available-exchanges";
 import {CreateRecommendationData} from "../trp";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TrpService} from "../trp.service";
+import {Router} from "@angular/router";
 
 export const types =
     {
@@ -27,6 +28,7 @@ export const periods =
     styleUrls: ['../trp.component.scss']
 })
 export class CreateRecommendationComponent implements OnInit {
+    @Output() changeRecommendationId: EventEmitter<number> = new EventEmitter<number>();
     newRecommendation: CreateRecommendationData = new CreateRecommendationData();
     pairExchange: Stock;
     free: boolean = false;
@@ -41,7 +43,8 @@ export class CreateRecommendationComponent implements OnInit {
 
     response;
 
-    constructor(public pairsFilterService: PairsFilterService, private formBuilder: FormBuilder, private trpService: TrpService) {
+    constructor(public pairsFilterService: PairsFilterService, private formBuilder: FormBuilder, private trpService: TrpService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -62,6 +65,11 @@ export class CreateRecommendationComponent implements OnInit {
             content: ['', [Validators.required]],
             predictChange: ['', [Validators.required]]
         });
+    }
+
+    goToRecommendation(id: number) {
+        this.router.navigateByUrl('/modules/trp/' + id);
+        this.changeRecommendationId.emit(id);
     }
 
     get pair() {

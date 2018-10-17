@@ -38,6 +38,7 @@ export class SocialComponent implements OnInit {
 
     getTweets() {
         const id = this.tweetIds.pop();
+        console.log(id);
         if (this.leftHeight <= this.rightHeight) {
             this.leftTweets.push(id);
         } else {
@@ -63,6 +64,7 @@ export class SocialComponent implements OnInit {
                 window['twttr'].ready(function (twttr) {
                     window['binded_to_twttr'] = true;
                     twttr.events.bind('rendered', function (event) {
+                        console.log(event);
                         const service = window['social'];
                         if (service.leftTweets.indexOf(event.target.getAttribute('data-tweet-id')) !== -1) {
                             service.leftHeight += event.target.clientHeight;
@@ -99,7 +101,7 @@ export class SocialComponent implements OnInit {
                 this.getRecommendationsWords();
                 this.wordsLeft = 50 - this.dictionary.length;
 
-                this.getTweets();
+                this.renderTweets();
             });
         });
     }

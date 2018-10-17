@@ -16,7 +16,8 @@
                     <div class="small-container__line">
                         <h2>{{item.pair}}</h2>
 
-                        <a href="javascrip:void(0)" class="small-container__line-link">{{item.operationType}}</a>
+                        <a href="javascrip:void(0)" class="small-container__line-link"
+                           [ngClass]="{'small-container__line-link--red': item.operationType === 'Sell'}">{{item.operationType | uppercase}}</a>
                     </div>
 
                     <div class="small-container__line small-container__line--button">

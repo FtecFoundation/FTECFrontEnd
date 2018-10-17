@@ -11,7 +11,8 @@ enum NewsBackgroundApiUrls {
     setCoins = 'cabinet/newsAnalyzer/setupCoins',
     subscribe = 'cabinet/newsAnalyzer/subscribe',
     settings = 'cabinet/newsAnalyzer/settings',
-    results = 'cabinet/newsAnalyzer/result'
+    results = 'cabinet/newsAnalyzer/result',
+    update = 'cabinet/newsAnalyzer/latestResult'
 }
 
 @Injectable()
@@ -39,6 +40,14 @@ export class NewsBackgroundService extends RestService {
             this.pagination = new Pagination(resp.response.result['totalPages'], resp.response.result['totalElements'],
                 resp.response.result['size'], resp.response.result['number']);
             return resp.response.result.content;
+        }));
+    }
+
+    getUpdatedResults(): Observable<NewsBackgroundResults[]>{
+        return this.get(NewsBackgroundApiUrls.update).pipe(map(resp => {
+            this.pagination = new Pagination(resp.response.latest['totalPages'], resp.response.latest['totalElements'],
+                resp.response.latest['size'], resp.response.latest['number']);
+            return resp.response.result.latest.content;
         }));
     }
 

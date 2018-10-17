@@ -29,6 +29,7 @@ export class PortfolioManagerComponent implements OnInit {
     showGraph = false;
     today: Date = new Date();
     preloader: boolean = false;
+    recommendation: string;
 
     sorted: boolean = false;
     currenciesTopData: CurrencyTop[];
@@ -72,6 +73,7 @@ export class PortfolioManagerComponent implements OnInit {
             this.portfolioChart = [];
             this.preloader = true;
             this.portManagerService.generatePortfolio(this.portfolioForm.value).subscribe(data => {
+                this.recommendation = null;
                 this.preloader = false;
                 this.portfolio = data;
                 for (const coin of Object.keys(data)) {
@@ -80,7 +82,10 @@ export class PortfolioManagerComponent implements OnInit {
                 this.showGraph = true;
                 this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
                     'Your new portfolio was successfully generated', 'success'));
-            })
+            }, error1 => {
+                this.recommendation = error1.error.tips['Recommendation'];
+                this.preloader = false;
+            });
         }
 
     }

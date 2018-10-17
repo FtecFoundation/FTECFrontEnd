@@ -4,7 +4,7 @@
             <h5>Success!</h5>
             <p>Your trading recommendation was successfully created</p>
 
-            <a class="link__accent" [routerLink]="response['forecastId']">Go to new recommendation</a>
+            <a class="link__accent" (click)="goToRecommendation(response['forecastId'])">Go to new recommendation</a>
 
             <a (click)="response = null; signalForm.reset()" class="filter__container-button filter__container-button--arbitrage">
                 Create another one
