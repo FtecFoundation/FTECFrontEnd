@@ -1,5 +1,7 @@
 @import "../../../../assets/styles/variables";
 
+
+
 .middle--trp {
   width: 100%;
   padding-right: 25px;
@@ -91,6 +93,8 @@
           &:first-child{
             color: #22c6d8;
             font-weight: 700;
+            padding-right: 10px;
+            word-break: break-all;
           }
           &:last-child{
             color: #66cc33;
