@@ -32,7 +32,6 @@ import {NotifyService} from "../core/notify/notify.service";
     ],
     declarations: [
         LayoutComponent,
-        HeaderComponent,
         FooterComponent,
         NotActiveComponent,
         ConfirmMailComponent,

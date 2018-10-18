@@ -69,8 +69,8 @@
             </div>
 
             <div class="form__info" (click)="toggleCheckbox(terms)">
-                <label class="form__info-label-container form__info-label-container--reg" [ngClass]="{'is-active': terms.value}">I agree to a terms of
-                    service
+                <label class="form__info-label-container form__info-label-container--reg" [ngClass]="{'is-active': terms.value}">I agree to a
+                    <a href="/auth/terms" target="_blank" class="link__accent">terms of service</a>
                     <!--<input type="checkbox">-->
 
                     <span class="form__info-checkmark"></span>

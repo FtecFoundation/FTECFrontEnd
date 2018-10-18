@@ -7,12 +7,15 @@ import {SliderComponent} from "../modules/slider/slider.component";
 import {FilterDropdownComponent} from "./filter-dropdown/filter-dropdown.component";
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { NumberSuffixPipe } from './pipes/number-suffix.pipe';
+import {HeaderComponent} from "../modules/header/header.component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        RouterModule
         ],
     exports: [
         CommonModule,
@@ -23,7 +26,9 @@ import { NumberSuffixPipe } from './pipes/number-suffix.pipe';
         SliderComponent,
         FilterDropdownComponent,
         ClickOutsideDirective,
-        NumberSuffixPipe
+        NumberSuffixPipe,
+        HeaderComponent,
+        RouterModule
     ],
     declarations: [
         PreloaderComponent,
@@ -31,7 +36,8 @@ import { NumberSuffixPipe } from './pipes/number-suffix.pipe';
         SliderComponent,
         FilterDropdownComponent,
         ClickOutsideDirective,
-        NumberSuffixPipe
+        NumberSuffixPipe,
+        HeaderComponent
     ]
 })
 export class SharedModule {
