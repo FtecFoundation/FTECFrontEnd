@@ -620,5 +620,16 @@
       width: 700px;
     }
   }
-
+  footer.footer{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .social-listing{
+    margin:0 auto;
+  }
+  .email-link{
+    margin:0 auto;
+    margin-top: 10px;
+  }
 }
