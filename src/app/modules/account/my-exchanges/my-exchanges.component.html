@@ -11,49 +11,34 @@
           </h5>
         </div>
 
-        <div class="middle__table-type middle__table-type--exchanges">
-          <span class="middle__table-type-name middle__table-type-name--notifications">
-            Public Key
-          </span>
-
-          <span class="middle__table-type-name middle__table-type-name--notifications">
-            Private Key
-          </span>
-
-          <span class="middle__table-type-name middle__table-type-name--notifications middle__table-type-name--exchanges">
-            Exchange
-          </span>
-
-          <span class="middle__table-type-name middle__table-type-name--notifications">
-            Added at
-          </span>
+        <div class="exchange-table">
+          <table cellpadding="0" cellspacing="0">
+            <thead>
+              <tr>
+                <td>Public Key</td>
+                <td>Private Key</td>
+                <td>Exchange</td>
+                <td>Added at</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let key of _currentUserService.apiKeys">
+                <td><span>{{key.publicKey}}***</span></td>
+                <td><span>{{key.privateKey}}***</span></td>
+                <td><span>{{key.stock.name}}</span></td>
+                <td>
+                  <div class="control">
+                    <span>{{key.savingDate | date:'yyyy-MM-dd HH:mm'}}</span>
+                    <button class="button__outline button__outeline--exchanges" (click)="deleteKeys(key)">delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div *ngFor="let key of _currentUserService.apiKeys">
-          <div class="middle__table-container middle__table-container--dashboard">
-            <div class="middle__table-container-item middle__table-container-item--dashboard">
-              <h4 class="table-container-item--name">
-                <span>{{key.publicKey}}***</span>
-              </h4>
-              <h4 class="table-container-item--name">
-                <span>{{key.privateKey}}***</span>
-              </h4>
-              <div class="item-inner item-inner--notifications item-inner--exchanges">
-                {{key.stock.name}}
-              </div>
-
-              <span class="container-item-update item-inner--exchanges">{{key.savingDate | date:'yyyy-MM-dd HH:mm'}}</span>
-
-              <button class="button__outline button__outeline--exchanges" (click)="deleteKeys(key)">delete</button>
-            </div>
-          </div>
-
-          <!--<div class="middle__table-container middle__table-container&#45;&#45;dashboard">-->
-            <!--<div class="middle__table-container-item middle__table-container-item&#45;&#45;dashboard">-->
-              <!--<h4 class="table-container-item&#45;&#45;name">Account 2</h4>-->
 
 
-        </div>
       </div>
 
     </div>

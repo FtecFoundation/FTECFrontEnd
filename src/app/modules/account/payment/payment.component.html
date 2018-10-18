@@ -28,15 +28,15 @@
     <div *ngIf="!_currentUserService.user.confirmedEmail">Confirm your email to generate an address for manual refilling!</div>
 
     <ng-container *ngIf="addresses">
-      <div *ngIf="!addresses[currentCurrency]" class="payment--code">
+      <!--<div *ngIf="!addresses[currentCurrency]" class="payment&#45;&#45;code">
         You have no account wallet addresses for manual refilling. Use the form bellow to generate new addresses
-        <div class="payment--new-address">
+        <div class="payment&#45;&#45;new-address">
           <a class="filter__container-button" (click)="generateWalletAddress()">Generate Address</a>
         </div>
         <br>
         <div class="error-field" *ngIf="errorWalletAsset">Set current wallet asset in the right menu</div>
         <br>
-      </div>
+      </div>-->
 
       <div *ngIf="addresses[currentCurrency]" class="payment--code">Your account wallet addresses for manual refilling:
         <br>
@@ -99,7 +99,7 @@
 
         </div>
 
-        <button class="filter__container-button" (click)="submitCurrentCurrency()">Change currency</button>
+        <button class="filter__container-button" (click)="submitCurrentCurrency()">Change displayed currency</button>
       </div>
 
     </div>

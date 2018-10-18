@@ -723,16 +723,30 @@ p {
 }
 
 
+.main-info{
+  .middle{
+
+  }
+}
+
+[_nghost-c8]{
+  flex-wrap: wrap;
+}
+
 .msg-line{
-  position: absolute;
-  width: calc(100% - 0.625em);
+  position: relative;
+  width: 100%;
   left: 0;
   top: 0;
   z-index: 99999;
-  background: $violet-gradient-linear;
+  padding-right: 0.625em;
+  padding-bottom: 30px;
   &__content{
     padding: 30px 60px;
     padding-left: 30px;
+    padding-right: 80px;
+    background: $violet-gradient-linear;
+    position: relative;
   }
   &__close{
     width: 60px;
@@ -740,26 +754,27 @@ p {
     background: none;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     border:none;
     cursor: pointer;
     outline: none;
-    &:before,
     &:after{
       content: '';
       position: absolute;
-      background: #25cbd3;
-      width: 60%;
-      height: 2px;
-      top: 25px;
-      right: 5px;
+      width: 50px;
+      height: 70px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+
+      background-image:   url("/assets/images/arrow-up.svg") ;
+      background-size:    30px;
+      background-repeat:  no-repeat;
+      background-position:    center;
     }
-    &:after{
-      transform: rotate(-45deg);
-    }
-    &:before{
-      transform: rotate(45deg);
-    }
+
   }
 }
 .msg-item{
