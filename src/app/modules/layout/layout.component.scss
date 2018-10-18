@@ -12,7 +12,7 @@
   float: left;
   display: inline-block;
   position: relative;
-  
+
   -webkit-transition: left .3s ease;
   -o-transition: left .3s ease;
   transition: left .3s ease;
@@ -178,7 +178,7 @@
 
 .middle__subscription {
   padding: .938rem;
-  
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,7 +188,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  
+
   background: $dark-blue;
   border-radius: .313rem;
 }
@@ -421,4 +421,13 @@
 
   font-size: .938em;
 }
+
+.aside__item--in-development {
+  opacity: .5;
+}
+
+.aside__item--in-development:hover,  .aside__item--in-development.is-active{
+  opacity: 1;
+}
+
 

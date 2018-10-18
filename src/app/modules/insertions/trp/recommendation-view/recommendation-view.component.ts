@@ -61,7 +61,14 @@ export class RecommendationViewComponent implements OnInit {
     }
 
     addComment(message: any) {
-        this.trpService.postComment(this.recommendation.id, message).subscribe(data => this.comments.push(data));
+        this.trpService.postComment(this.recommendation.id, message).subscribe(data => {
+
+            this.trpService.getAuthorRating(data.userId).subscribe(rating => {
+                const newComment = new TrpComment(data.userId, this.currentUserService.user.username, this.currentUserService.user.imageName,
+                    rating, data.creationDate, data.message);
+                this.comments.push(newComment)
+            });
+        });
     }
 
 }

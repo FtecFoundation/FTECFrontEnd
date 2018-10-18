@@ -43,6 +43,15 @@ export class TrpComment {
     userRating: AuthorRating;
     creationDate: Date;
     message: string;
+
+    constructor(userId: number, userName: string, userImage: string, userRating: AuthorRating, creationDate: Date, message: string) {
+        this.userId = userId;
+        this.userRating = userRating;
+        this.userImage = userImage;
+        this.userName= userName;
+        this.creationDate = creationDate;
+        this.message = message;
+    }
 }
 
 export class TrpFilter {

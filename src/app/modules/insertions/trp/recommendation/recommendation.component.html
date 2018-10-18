@@ -15,7 +15,7 @@
                     </a>
                     <div class="user-info__rating ">
                         <p>Rating <span *ngIf="recommendation.rating" [ngClass]="{'positive': recommendation.rating.increased,
-                        'negative': !recommendation.rating.increased}">
+                        'negative': recommendation.rating.increased === false}">
                             {{recommendation.rating.rating}}</span></p>
                     </div>
                 </div>

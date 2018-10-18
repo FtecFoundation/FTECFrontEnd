@@ -53,9 +53,8 @@
                                         {{comment.userName}}
                                     </a>
                                     <div class="user-info__rating ">
-                                        <p>Rating
                                         <p>Rating <span *ngIf="comment.userRating" [ngClass]="{'positive': comment.userRating.increased,
-                        'negative': !comment.userRating.increased}">
+                        'negative': comment.userRating.increased === false}">
                             {{comment.userRating.rating}}</span></p>
                                     </div>
                                 </div>

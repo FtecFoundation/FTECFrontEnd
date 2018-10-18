@@ -58,7 +58,14 @@ export class SmartTradingModuleComponent implements OnInit {
 
     chooseExchange(exchange: string) {
         this.preferences.stock = exchange;
-        this._smartTradingService.setPreferences(this.preferences).subscribe(() => {
+        this._smartTradingService.getPreferences(exchange).subscribe(data => {
+            this.preferences = data;
+
+            for (const bot of this.bots) {
+                bot.active = false;
+                if (bot.name === data.bot) bot.active = true;
+            }
+
             localStorage.setItem('exchange', this.preferences.stock);
             this.exchange = this.preferences.stock;
         });

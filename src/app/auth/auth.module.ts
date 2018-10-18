@@ -12,6 +12,7 @@ import {RecaptchaModule} from 'ng-recaptcha';
 import {BannedComponent} from './banned/banned.component';
 import {EmailSentComponent} from './forgot-password/restore-sent.component';
 import {PasswordSentComponent} from './forgot-password/set-new-sent.component';
+import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 
 @NgModule({
     imports: [
@@ -26,11 +27,12 @@ import {PasswordSentComponent} from './forgot-password/set-new-sent.component';
             { path: 'restore', component: ForgotPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'restore/:hash', component: SetNewPasswordComponent, canActivate: [OnlyNotAuthorizedGuard]},
             { path: 'confirm-email/:hash', component: ConfirmEmailComponent},
-            { path: 'banned/:timeLeft', component: BannedComponent }
+            { path: 'banned/:timeLeft', component: BannedComponent },
+            { path: 'terms', component: TermsOfServiceComponent, data: {title: 'Terms of Service'} }
         ])
     ],
     exports: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent, PasswordSentComponent],
-    declarations: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, ConfirmEmailComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent, PasswordSentComponent]
+    declarations: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, ConfirmEmailComponent, SetNewPasswordComponent, BannedComponent, EmailSentComponent, PasswordSentComponent, TermsOfServiceComponent]
 })
 export class AuthModule {
 }
