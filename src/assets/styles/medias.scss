@@ -614,5 +614,22 @@
     width: 35px;
     height: 40px;
   }
-
+  .exchange-status-table{
+    overflow-x: scroll;
+    table{
+      width: 700px;
+    }
+  }
+  footer.footer{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .social-listing{
+    margin:0 auto;
+  }
+  .email-link{
+    margin:0 auto;
+    margin-top: 10px;
+  }
 }

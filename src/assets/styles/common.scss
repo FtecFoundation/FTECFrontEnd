@@ -853,7 +853,90 @@ p {
 }
 
 
+.exchange-status-table{
+  width: 100%;
+  padding: 35px 0;
+  table{
+    width: 100%;
+    text-align: center;
+    td{
+      &:first-child{
+        padding-left: 15px;
+      }
+      &:last-child{
+        padding-right: 15px;
+      }
+    }
+    thead{
+      tr{
+        td{
+          background: #0d003b;
+          font-size: 12px;
+          line-height: 1.2;
+          color: rgba(255, 255, 255, 0.52);
+          padding-top: 12px;
+          padding-bottom: 12px;
+          &:first-child{
+            border-top-left-radius: 10px;
+          }
+          &:last-child{
+            border-top-right-radius: 10px;
+          }
+        }
+      }
+    }
+    tbody{
+      td{
+        &:first-child{
+          text-align: left;
+        }
+        font-weight: 700;
+        font-size: 21px;
+        background: rgba(13, 0, 59, 0.51);
 
+        span{
+          padding-top: 25px;
+          padding-bottom: 25px;
+          border-bottom:1px solid rgba(255, 255, 255, 0.2);
+          display: block;
+        }
+        a{
+          font-size: 14px;
+          font-weight: 100;
+          color: #25cbd3;
+          text-decoration: underline;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+      tr{
+        &:last-child{
+          td{
+            span{
+              border-bottom:none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.social-listing{
+  display: flex;
+  align-items: center;
+  padding:0 15px;
+  li{
+    +li{
+      margin-left: 10px;
+    }
+    list-style: none;
+  }
+}
+.container__name{
+  padding-left:.938em;
+}
 
 
 
