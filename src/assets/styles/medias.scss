@@ -614,5 +614,11 @@
     width: 35px;
     height: 40px;
   }
+  .exchange-status-table{
+    overflow-x: scroll;
+    table{
+      width: 700px;
+    }
+  }
 
 }
