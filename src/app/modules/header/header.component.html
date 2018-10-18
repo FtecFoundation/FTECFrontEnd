@@ -1,4 +1,4 @@
-<header class="header" *ngIf="_currentUserService.user">
+<header class="header">
 
     <div class="header__logo">
         <a href="https://ftec.io" class="header__logo-item">
@@ -12,7 +12,14 @@
             <h2>{{_titlesService.currentTitle}}</h2>
         </div>
 
-        <div class="header__info-user">
+        <div class="header__info-user" *ngIf="terms">
+            <div [routerLink]="cookieService.get('TOKEN-X-AUTH') ? '/account/dashboard' : '/auth/registration'" class="user-balance">
+                TO {{cookieService.get('TOKEN-X-AUTH') ? 'DASHBOARD' : 'REGISTRATION'}}
+            </div>
+        </div>
+
+
+        <div class="header__info-user" *ngIf="!terms">
             <div class="header__info-change-log">
                 <a [routerLink]="'/info/change-log'">Changelog</a>
             </div>
@@ -209,3 +216,4 @@
     </div>
 
 </header>
+
