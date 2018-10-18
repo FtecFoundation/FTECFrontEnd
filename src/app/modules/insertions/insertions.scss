@@ -26,11 +26,11 @@
 
 .middle__subscription {
   padding: .938rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   background: $dark-blue;
   border-radius: .313rem;
 }
@@ -273,7 +273,7 @@
 
   -moz-user-select: none;
   -khtml-user-select: none;
-  user-select: none;  
+  user-select: none;
 }
 
 .categories__item-svg {
@@ -282,11 +282,11 @@
   padding-right: 0.325rem;
   margin-top: 5px;
   position: absolute;
-  
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  
+
   margin-left: 0.625rem;
 
 }
@@ -294,7 +294,7 @@
 .filter__container-block-item--categories {
   position: relative;
   padding-right: 2.188rem;
-  
+
   text-transform: lowercase;
 
   border: 1px solid transparent;
@@ -364,21 +364,21 @@
 
 .item-inner-line-error-block {
   z-index: 1;
-  top: 4.500rem;
+  top: 3rem;
   left: 50%;
   width: 50%;
   position: absolute;
   padding: 1.250rem;
-  padding-left: 2.500rem;
+  padding-left: 1.750rem;
   padding-right: 4.375rem;
-  
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
     -ms-flex-align: center;
         align-items: center;
-  
+
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -403,7 +403,7 @@
 
   padding-top: 5.000em;
   padding-bottom: 5.000em;
-  
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,7 +450,7 @@
   padding: .938rem;
   margin-top: .938em;
   margin-bottom: .938em;
-  
+
   color: #fff;
   cursor: pointer;
   outline: none;
@@ -537,7 +537,7 @@
 .mobile-block {
   position: relative;
   display: inline-block!important;
- 
+
   border: 14px solid #fff;
   border-radius: 50px;
 }

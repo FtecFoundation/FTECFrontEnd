@@ -116,7 +116,13 @@
   width: 100%;
 }
 
-.middle__table-container {
-  max-height: 250px;
-  overflow-y: scroll;
+.middle--dashboard {
+  max-height: 100%;
+}
+
+.item-inner-line-error-block .item-inner-line--error-icon {
+  cursor: pointer;
+  position: absolute;
+
+  transform: translateX(0);
 }
