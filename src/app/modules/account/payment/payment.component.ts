@@ -31,6 +31,7 @@ export class PaymentComponent implements OnInit {
         this.qrUrl = this._currentUserService.user.walletAddress;
         this._paymentService.getAddress().subscribe(data => {
             this.addresses = data;
+            if(!this.addresses[this.currentCurrency]) this.generateWalletAddress();
         });
         this.currentCurrency = this._currentUserService.user.currentPaymentScope;
         this._paymentService.getPaymentHistory().subscribe(data => {
@@ -58,6 +59,7 @@ export class PaymentComponent implements OnInit {
 
     chooseCurrentCurrency(currency: string) {
         this.currentCurrency = currency;
+        if(!this.addresses[this.currentCurrency]) this.generateWalletAddress();
     }
 
     submitCurrentCurrency() {
