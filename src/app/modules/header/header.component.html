@@ -14,7 +14,7 @@
 
         <div class="header__info-user" *ngIf="terms">
             <div [routerLink]="cookieService.get('TOKEN-X-AUTH') ? '/account/dashboard' : '/auth/registration'" class="user-balance">
-                TO {{cookieService.get('TOKEN-X-AUTH') ? 'DASHBOARD' : 'REGISTRATION'}}
+                TO {{cookieService.get('TOKEN-X-AUTH') ? 'DASHBOARD' : 'REGIST'}}
             </div>
         </div>
 

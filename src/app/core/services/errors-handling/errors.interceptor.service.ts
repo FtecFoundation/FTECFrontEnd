@@ -46,7 +46,7 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                             this._errorService.parseResponseMessage(err), notifyTypes.error));
                     } else {
                         this._notifyService.addNotification(new Notify(this._notifyService.lastId,
-                            'Error!', err.error.error, notifyTypes.error));
+                            'Error!', this._errorService.parseResponseMessage(err), notifyTypes.error));
                     }
                 }
                 return Observable.throw(err);
