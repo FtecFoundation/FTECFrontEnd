@@ -204,6 +204,18 @@
 
 .user__block-head-balance {
   color: $accent;
+  text-align: right;
+  padding-top: 10px;
+  ul{
+    list-style: none;
+    padding-top: 5px;
+    li{
+      font-size: 14px;
+      +li{
+        margin-top: 4px;
+      }
+    }
+  }
 }
 
 /* Dropdown */
