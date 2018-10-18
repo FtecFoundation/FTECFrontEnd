@@ -494,6 +494,9 @@
       font-size: 1.5em;
     }
   }
+  .text-box-list__one{
+    width: 100%;
+  }
 
 }
 
@@ -587,6 +590,22 @@
   .msg-item__text{
     p{
       font-size:.6em;
+    }
+  }
+  .terms{
+    padding: 0;
+  }
+  .text-box{
+    padding: 15px;
+    &__date{
+      right: 15px;
+      top: 15px;
+    }
+    &__text{
+      p{
+        font-size: 12px;
+        line-height: 1.3;
+      }
     }
   }
 
