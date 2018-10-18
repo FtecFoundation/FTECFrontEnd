@@ -586,6 +586,7 @@
   }
   .msg-line__content{
     padding-left: 15px;
+    padding-right: 45px;
   }
   .msg-item__text{
     p{
@@ -607,6 +608,11 @@
         line-height: 1.3;
       }
     }
+  }
+  .msg-line__close:after{
+    background-size: contain;
+    width: 35px;
+    height: 40px;
   }
 
 }
