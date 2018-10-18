@@ -146,6 +146,7 @@ p {
 .main-info {
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .main-info.is-active {
@@ -716,9 +717,10 @@ p {
   padding: .313em;
 }
 
+
 .msg-line{
-  position: fixed;
-  width: 100%;
+  position: absolute;
+  width: calc(100% - 0.625em);
   left: 0;
   top: 0;
   z-index: 99999;
@@ -733,8 +735,7 @@ p {
     background: none;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
     border:none;
     cursor: pointer;
     outline: none;
@@ -742,10 +743,11 @@ p {
     &:after{
       content: '';
       position: absolute;
-      left: 0;
       background: #25cbd3;
-      width: 70%;
+      width: 60%;
       height: 2px;
+      top: 25px;
+      right: 5px;
     }
     &:after{
       transform: rotate(-45deg);
