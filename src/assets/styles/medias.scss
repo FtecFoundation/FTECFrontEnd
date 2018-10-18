@@ -489,6 +489,11 @@
   .middle--telegram-enable {
     margin-left: 0 !important;
   }
+  .msg-item__title{
+    h2{
+      font-size: 1.5em;
+    }
+  }
 
 }
 
@@ -570,6 +575,19 @@
   .settings__container,
   .double__container {
     width: 100% !important;
-  } 
+  }
+  .msg-item__title{
+    h2{
+      font-size: 1em;
+    }
+  }
+  .msg-line__content{
+    padding-left: 15px;
+  }
+  .msg-item__text{
+    p{
+      font-size:.6em;
+    }
+  }
 
 }

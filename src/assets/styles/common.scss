@@ -715,3 +715,51 @@ p {
   width: 50%;
   padding: .313em;
 }
+
+.msg-line{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  background: $violet-gradient-linear;
+  &__content{
+    padding: 30px 60px;
+    padding-left: 30px;
+  }
+  &__close{
+    width: 60px;
+    height: 60px;
+    background: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border:none;
+    cursor: pointer;
+    &:before,
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      background: #25cbd3;
+      width: 70%;
+      height: 2px;
+    }
+    &:after{
+      transform: rotate(-45deg);
+    }
+    &:before{
+      transform: rotate(45deg);
+    }
+  }
+}
+.msg-item{
+  p{
+    opacity: 1;
+  }
+  &__text{
+    padding-top: 15px;
+    padding-right: 45px;
+  }
+}
