@@ -737,6 +737,7 @@ p {
     transform: translateY(-50%);
     border:none;
     cursor: pointer;
+    outline: none;
     &:before,
     &:after{
       content: '';
