@@ -94,7 +94,7 @@ export class ArbitrageComponent implements OnInit {
     submitForm() {
         this.fillChosenExchanges();
         this.submitted = true;
-        if (this.arbitrageForm.valid) {
+        if (this.arbitrageForm.valid && this.chosenExchanges.length >= 2) {
             this.preloader = true;
             this._arbitrageService.getArbitrageWindows(this.prepareData()).subscribe(data => {
                 this.arbitrageWindows = data;
