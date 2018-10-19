@@ -5,11 +5,16 @@ export const availableFaqRight = [
             'latest trends in the field of cryptocurrency. In particular, FTEC applies methods of ' +
             'machine learning, construction of ' +
             'neural networks, behavioral analysis.',
-        'chosen': false
+        'id': 2
     },
     {
         'question': 'I still have questions. Where can I find answers?',
         'answer': 'Contact us at info@ftec.io. We will be happy to answer any questions you may have as soon as possible.',
-        'chosen': false
+        'id': 4
+    },
+    {
+        'question': 'Where do I get my API keys?',
+        'answer': 'On the exchange.',
+        'id': 6
     }
 ];

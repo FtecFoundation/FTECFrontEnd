@@ -4,6 +4,7 @@ import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-
 import { MyExchangesService } from './my-exchanges.service';
 import { CurrentUserService } from '../../../core/services/current-user.service';
 import { ExchangeKeys } from '../../../core/models/user';
+import {FaqComponent} from '../../faq/faq.component';
 
 @Component({
   selector: 'app-social',
@@ -16,6 +17,8 @@ export class MyExchangesComponent implements OnInit {
   privateKey: string;
   publicKey: string;
   chosenStock: Stock;
+
+  goToFaq=FaqComponent.goToFaq;
 
   public chosenKeys = [];
 
@@ -52,5 +55,4 @@ export class MyExchangesComponent implements OnInit {
         }
       });
   }
-
 }
