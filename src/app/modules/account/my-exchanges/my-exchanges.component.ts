@@ -5,6 +5,7 @@ import { MyExchangesService } from './my-exchanges.service';
 import { CurrentUserService } from '../../../core/services/current-user.service';
 import { ExchangeKeys } from '../../../core/models/user';
 import {FaqComponent} from '../../faq/faq.component';
+import {FaqService} from '../../faq/faq.service';
 
 @Component({
   selector: 'app-social',
@@ -18,13 +19,12 @@ export class MyExchangesComponent implements OnInit {
   publicKey: string;
   chosenStock: Stock;
 
-  goToFaq=FaqComponent.goToFaq;
-
   public chosenKeys = [];
 
   constructor(public _showModalService: ShowModalService,
               private _myExchangesService: MyExchangesService,
-              public _currentUserService: CurrentUserService) {
+              public _currentUserService: CurrentUserService,
+              public _faqService: FaqService) {
   }
 
   ngOnInit() {

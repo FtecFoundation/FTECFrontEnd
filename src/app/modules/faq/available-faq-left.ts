@@ -17,5 +17,18 @@ export const availableFaqLeft = [
     'cryptocurrency markets. It is also important to form a broad community that will share the ' +
     'values of the project and actively support the developers.',
     'id': 5
+  },
+  {
+      'question': 'What is the aggressive portfolio type?',
+      'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
+          'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+      'id': 7
+  },
+  {
+      'question': 'What is the conservative portfolio type?',
+      'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
+          'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+      'id': 9
   }
+
 ];

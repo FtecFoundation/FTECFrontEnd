@@ -12,11 +12,6 @@ export class FaqComponent implements OnInit {
   show = true;
   faqsLeft = availableFaqLeft;
   faqsRight = availableFaqRight;
-  private static obj;
-
-  constructor(private router: Router){
-    FaqComponent.obj=this;
-  }
 
   public static currentQuestion: number = 0;
 
@@ -30,10 +25,5 @@ export class FaqComponent implements OnInit {
 
   get currentQuestion(){
     return FaqComponent.currentQuestion;
-  }
-
-  public static goToFaq(question:number=0){
-    FaqComponent.currentQuestion=question;
-    FaqComponent.obj.router.navigateByUrl('/info/faq')
   }
 }

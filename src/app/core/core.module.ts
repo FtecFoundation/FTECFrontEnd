@@ -30,6 +30,8 @@ import {NotifyService} from "./notify/notify.service";
 import {NotifyComponent} from "./notify/notify.component";
 import {PaymentService} from "./services/payment.service";
 import {PoloniexService} from "./services/exchanges/poloniex.service";
+import {FaqModule} from '../modules/faq/faq.module';
+import {FaqService} from '../modules/faq/faq.service';
 
 @NgModule({
     imports: [
@@ -64,6 +66,7 @@ import {PoloniexService} from "./services/exchanges/poloniex.service";
         NotifyService,
         PaymentService,
         PoloniexService,
+        FaqService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

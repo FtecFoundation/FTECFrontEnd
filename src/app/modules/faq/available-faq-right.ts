@@ -16,5 +16,17 @@ export const availableFaqRight = [
         'question': 'Where do I get my API keys?',
         'answer': 'On the exchange.',
         'id': 6
+    },
+    {
+        'question': 'What is the balanced portfolio type?',
+        'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
+            'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+        'id': 8
+    },
+    {
+        'question': 'How to connect exchange account to my FTEC account?',
+        'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
+            'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+        'id': 10
     }
 ];
