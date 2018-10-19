@@ -22,10 +22,8 @@ export class NotificationComponent implements OnInit {
     }
 
     changeMode(method: string) {
-        const notification = this._currentUserService.user.notificationSettings[0];
-        notification[method] = !notification[method];
-        notification.notificationType = 0;
-        this._notificationService.updateNotification(notification).subscribe(() => {
+        this._currentUserService.user.notificationSettings[0][method] = !this._currentUserService.user.notificationSettings[0][method];
+        this._notificationService.updateMode(this._currentUserService.user.notificationSettings[0]).subscribe(() => {
         });
     }
 

@@ -1,4 +1,151 @@
 export const changeLog = [
+      {    
+    'date': '17/10/2018',
+    'changes': [
+            'We moved and integrated under FTEC tests for Price Notification.',
+            'At frontend, the display of the name and picture of the authors of trade recommendations, as well as comment authors has been fixed.',
+            'At frontend, the display of the rating, the name and the picture for the newly-left associate is fixed.',
+            'At frontend, a bug was corrected with a request to receive Smart Trading Module settings for various exchanges',
+            'We fixed updating of comments for each trading recommendation at frontend.',
+            'We redesigned the appearance and content of the landing site.'
+            ]
+    },
+      {    
+    'date': '16/10/2018',
+    'changes': [
+            'We moved and integrated under FTEC tests for Order Manger.',
+            'We refactored service for Order Manager.',
+            'We moved backend for Price Notification.',
+            'At frontend, getting and displaying of all comments to the trading recommendation is implemented.',
+            'An opportunity to add a comment to the trading recommendation is implemented at frontend.',
+            'The ability to buy / subscribe to the trading recommendation is implemented at frontend.',
+            'At frontend we fully implemented the transition to the page with a detailed view of trading recommendations.'
+            ]
+    },
+      {    
+    'date': '15/10/2018',
+    'changes': [
+            'We moved and integrated under FTEC tests for Behavioral Analyzer.',
+            'We refactored service for Price Notification.',
+            'We moved backend for Order Manager.',
+            'We added caching of rating and fields (userName, userImage) for Forecast entity.',
+            'We improved code for partial getting of entity fields.',
+            'we system tested and fixed Trading Recommendation Platform.',
+            'We fixed display of the latest payment transactions on the payments page.'
+            ]
+    },
+      {    
+    'date': '12/10/2018',
+    'changes': [
+            'Fixed an issue on the Social Assistant page that prevented tweets from loading.',
+            'We fixed some error messages on the Portfolio Manager page.',
+            'On the Trading Recommendation Platform page, a method is implemented to find out whether the user is the author of the recommendation.',
+            'A service for getting user avatars is implemented at frontend.',
+            'For the Bahavioral Analyzer changed the corrected response.',
+            'We created endpoint for getting avatars and nicknames of other users.',
+            'We improved services and repositories for getting Forecast Entity.'
+            ]
+    },
+      {
+    'date': '11/10/2018',
+    'changes': [
+            'The project Behavioral Analyzer has been moved to the main FTEC module.',
+            'For the Trading Recommendation Platform, the method has been redesigned to get the author’s rating recommendations.',
+            'In the Trading Recommendation Platform, a field has been added to the method for obtaining the author’s rating that indicates whether there has been an increase in the last 24 hours.',
+            'Endpoint has been added to the Trading Recommendation Platform to receive recommendations purchased by the user.',
+            'The Trading Recommendation Platform fixed a small bug when subscribing.',
+            'At frontend, on the News Background Analyzer page, the ability to manually start the analyzer once an hour is implemented.',
+            'Fixed a bug in the layout, because of which the table with arbitration windows did not scroll.'
+            ]
+    },
+      {
+    'date': '10/10/2018',
+    'changes': [
+            'At frontend, we implemented the calculation of a percentage of change in a currency price for each trading recommendation.',
+            'At frontend, we added the notification about successful creation of recommendation with the possibility to see its details and go to creation of the next recommendation.',
+            'At frontend, we implemented the method of getting and display of author’s rating for each trading recommendation.',
+            'At frontend in Trading Recommendations Platform, we added the display of price levels on the chart.',
+            'At frontend in Trading Recommendations Platform, we added the display of stop loss and take profit of trading recommendation on the chart.',
+            'We updated and filled the documentation for Trading Recommendations Platform.',
+            'In Trading Recommendations Platform, we fixed the method which calculates the success of forecast on trading recommendation.'
+            ]
+    },
+      {
+    'date': '09/10/2018',
+    'changes': [
+            'We fixed small errors in Trading Recommendations Platform.',
+            'We wrote the documentation for News Background Analyzer controllers.',
+            'We added the method for the manual running of news analyzer once per hour for every user.',
+            'At frontend, we implemented countdown of trading recommendation activity. ',
+            'We also added the display of the timer for each recommendation.',
+            'At frontend, we implemented the display of all the user\'s recommendations.',
+            'At frontend, we added validation of fields while creating a new trading recommendation.'
+            ]
+    },
+      {
+    'date': '08/10/2018',
+    'changes': [
+            'We implemented the method of getting a ticker for Huobi.',
+            'We implemented most of the methods for Trading Recommendation Platform.',
+            'We created tables for Trading Recommendation Platform entities in the database.',
+            'We fixed the main methods in the services.',
+            'We wrote controllers for Trading Recommendation Platform.',
+            'In the admin panel, we fixed the error arose when trying to filter pairs in the enter field.',
+            'For some exchanges (Kraken, BitStamp, HuobiCom, YObitNet) we implemented the method of getting the current price for a currency.'
+            ]
+    },
+     {
+    'date': '05/10/2018',
+    'changes': [
+            'On Arbitrage Assistant page, we implemented the possibility to cancel exchanges if the user pushed the button "All exchanges".',
+            'On Module of Cryptocurrency Portfolio Management page, we implemented the graphics display of generated portfolio and its characteristics. ',
+            'On  Module of Cryptocurrency Portfolio Management page, we fixed the error of getting only 5 currencies of TOP 100.',
+            'On Anomalous Volume Dynamics Analyzer page, we fixed the display of exchanges and columns of the table.',
+            'We added the main methods in the services.',
+            'We fixed the method of getting a ticker for Binance.',
+            'We implemented the method of getting a ticker Kraken.',
+            'For some exchanges (Poloniex, BitTrex, Binance, Hitbtc, Bitfinex) we implemented the method of getting the current price for a currency.'
+            ]
+    },
+     {
+    'date': '04/10/2018',
+    'changes': [
+            'On News Background Analyzer page, the window of adding a currency to user\'s list becomes inactive if the subscription expired.',
+            'On News Background Analyzer page, we added the message if there are no forecasts.',
+            'At frontend on News Background Analyzer page, we added the call for request on getting forecasts after every editing of currency list followed by the user.',
+            'On landing, we updated the percentage of readiness of the ecosystem\'s modules.',
+            'In the admin panel, we implemented requests on getting all pairs and the last currency price from Yobit.',
+            'We began HTML layout of the design of Trading Recommendation Platform.',
+            'On Module of Cryptocurrency Portfolio Management page, we implemented the possibility to generate a portfolio.',
+            'On Module of Cryptocurrency Portfolio Management page, we added the possibility to specify the desired size of a portfolio in USD (the system automatically converts this amount to BTC).'
+            ]
+    },
+     {
+    'date': '03/10/2018',
+    'changes': [
+            'At frontend, we implemented the display of currency rating on the percentage of growth for 3, 7, 30, and 90 days.',
+            'We implemented drafting of the rating and sorting of top 100 coins on capitalization on the percentage of growth for the period chosen by the user.',
+            'In Module of Cryptocurrency Portfolio Management, we configured the performance in parallel flow, which speeded up the returning of the result on more than 20 seconds.',
+            'In Module of Cryptocurrency Portfolio Management, we changed the course of calling for exchanges for long investment periods (more than for a month), which also speeded up the returning of the result on more than 20 seconds.',
+            'We added and tested the expanded answer which contains recommendations on the elimination of errors while building a portfolio.',
+            'We implemented the basic structure for Trading Recommendation Platform.',
+            'We fixed the error of variable values in the table on Module of Cryptocurrency Portfolio Management page when trying to sort the same values.',
+            'On News Background Analyzer page, we added the change of color for forecasts on falling and deleted the minus signs for correct display of range.'
+            ]
+    },
+     {
+    'date': '02/10/2018',
+    'changes': [
+            'We implemented getting of the percentage of change from Coinmarketcap (per 1 day, per 10 days).',
+            'We implemented the calculation of number of coins for Aggressive, Balanced and Conservative portfolios.',
+            'We implemented but not tested getting the percentage of change for a large period of time (month, 6 months, 12 months).',
+            'We tested the work of Module of Cryptocurrency Portfolio Management for long periods.',
+            'We added the controller for Module of Cryptocurrency Portfolio Management and documentation to it.',
+            'We changed the logic of returned results for News Background Analyzer.',
+            'News Background Analyzer now returns old results (which were before subscription).',
+            'At frontend, we implemented getting of top 100 coins on capitalization from Coinmarketcap and the search for their relevant prices on Bittrex and Binance.'
+            ]
+    },
      {
     'date': '01/10/2018',
     'changes': [

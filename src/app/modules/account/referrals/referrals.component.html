@@ -63,19 +63,19 @@
         <div class="middle__table-container--support">
           <h3 class="title">Available:</h3>
 
-          <h3 class="title title--green">234087 FTEC</h3>
+          <h3 class="title title--green">{{allTime-withdraw}} FTEC</h3>
         </div>
 
         <div class="middle__table-container--support">
-          <span class="support__aside-time">All time:</span>
+          <span class="support__aside-time">Total withdraw:</span>
+
+          <span class="support__aside-time">{{withdraw}} FTEC</span>
+        </div>
+
+        <div class="middle__table-container--support">
+          <span class="support__aside-time">Total earned</span>
 
           <span class="support__aside-time">{{allTime}} FTEC</span>
-        </div>
-
-        <div class="middle__table-container--support">
-          <span class="support__aside-time">Total withdraw</span>
-
-          <span class="support__aside-time">495867 FTEC</span>
         </div>
 
         <button class="filter__container-button" (click)="showPopup()">Withdraw</button>

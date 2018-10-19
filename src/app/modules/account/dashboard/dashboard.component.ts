@@ -10,8 +10,8 @@ import { MyExchangesComponent } from '../my-exchanges/my-exchanges.component';
 import { MyExchangesService } from '../my-exchanges/my-exchanges.service';
 import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-exchanges';
 import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
-import {BinanceService} from "../../../core/services/exchanges/binance.service";
 import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
+import {NotificationService} from '../notification/notification.service';
 
 
 @Component({
@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
         private router: Router,
         public _currentUserService: CurrentUserService,
         private _authLogs: AccountService,
+        private _notificationService: NotificationService,
         private _exchangesKeys: ExchangeKeys) {
     }
 
@@ -62,6 +63,12 @@ export class DashboardComponent implements OnInit {
             this.authLogsContent = true;
         });
 
+    }
+
+    changeMode(method: string) {
+        this._currentUserService.user.notificationSettings[0][method] = !this._currentUserService.user.notificationSettings[0][method];
+        this._notificationService.updateMode(this._currentUserService.user.notificationSettings[0]).subscribe(() => {
+        });
     }
 
 

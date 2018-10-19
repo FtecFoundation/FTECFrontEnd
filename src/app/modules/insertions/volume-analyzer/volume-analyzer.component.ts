@@ -8,6 +8,7 @@ import {VolumeAnalyzerData, VolumeAnalyzerPreferences} from "../../../core/model
 import {VolumeAnalyzerService} from "./volume-analyzer.service";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {CurrentUserService} from "../../../core/services/current-user.service";
+import {NotificationService} from '../../account/notification/notification.service';
 
 
 @Component({
@@ -43,7 +44,8 @@ export class VolumeAnalyzerComponent implements OnInit {
 
     constructor(private _showModalService: ShowModalService, private formBuilder: FormBuilder,
                 private _volumeAnalyzerService: VolumeAnalyzerService, private _notifyService: NotifyService,
-                public _currentUserService: CurrentUserService) {
+                public _currentUserService: CurrentUserService,
+                private _notificationService: NotificationService) {
     }
 
     ngOnInit() {
@@ -54,6 +56,13 @@ export class VolumeAnalyzerComponent implements OnInit {
         });
 
         this.analyzerActivated = this._currentUserService.user.settingsStatus === 'ACTIVATED';
+    }
+
+    public updateNotificationStatus(type: string){
+        this._currentUserService.notificationSettings[7][type] = !this._currentUserService.notificationSettings[7][type];
+        const toChange = this._currentUserService.notificationSettings[7];
+        toChange.notificationType=3;
+        this._notificationService.updateNotification(toChange).subscribe(data => console.log(data));
     }
 
     getTimeframeName(symbol: string): string {

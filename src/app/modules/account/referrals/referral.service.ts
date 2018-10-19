@@ -18,7 +18,7 @@ export class ReferralService extends RestService{
     }
 
     getReferrals(): Observable<ReferralData> {
-      return this.get(ReferralsApiUrls.getTests).pipe(map(resp => resp.response.referrals));
+      return this.get(ReferralsApiUrls.getTests).pipe(map(resp => resp.response));
     }
 
 }
