@@ -350,8 +350,9 @@ p {
 
 .middle--dashboard {
   width: 100% !important;
-  max-height: 375px;
+  max-height: 390px;
   overflow-y: hidden;
+  border-radius: 5px;
 }
 
 .main-info--dashboard {
@@ -462,7 +463,7 @@ p {
 .middle__table--dashboard,
 .middle__table--filter {
   overflow-y: scroll;
-  max-height: 290px;
+  max-height: 280px;
 }
 
 .container-item__price {
