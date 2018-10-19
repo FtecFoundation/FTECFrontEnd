@@ -5,17 +5,17 @@
         <div class="crypto">
             <div class="crypto__tab">
                 <ul class="tab-controls">
-                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'fundamental'}"
-                        (click)="activeTab = 'fundamental'">Fundamental Analysis
-                    </li>
-                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'technical'}"
-                        (click)="activeTab = 'technical'">Technical Analysis
-                    </li>
                     <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'tests'}"
                         (click)="activeTab = 'tests'">Tests
                     </li>
                     <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'forecasting'}"
                         (click)="activeTab = 'forecasting'">Forecasting
+                    </li>
+                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'fundamental'}"
+                        (click)="activeTab = 'fundamental'">Fundamental Analysis
+                    </li>
+                    <li class="tab-controls-item" [ngClass]="{'is-active': activeTab === 'technical'}"
+                        (click)="activeTab = 'technical'">Technical Analysis
                     </li>
                 </ul>
 

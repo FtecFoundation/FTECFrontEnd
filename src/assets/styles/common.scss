@@ -738,7 +738,6 @@ p {
   width: 100%;
   left: 0;
   top: 0;
-  z-index: 99999;
   padding-right: 0.625em;
   padding-bottom: 30px;
   &__content{
@@ -749,11 +748,12 @@ p {
     position: relative;
   }
   &__close{
+    opacity: .3;
     width: 60px;
     height: 60px;
     background: none;
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     border:none;
@@ -769,12 +769,39 @@ p {
       transform: translate(-50%,-50%);
 
 
-      background-image:   url("/assets/images/arrow-up.svg") ;
+      background-image:   url("/assets/images/up-arrow.svg") ;
       background-size:    30px;
       background-repeat:  no-repeat;
       background-position:    center;
     }
+  }
+  &__open{
+    opacity: .3;
+    width: 60px;
+    height: 60px;
+    background: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border:none;
+    cursor: pointer;
+    outline: none;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
 
+
+      background-image:   url("/assets/images/angle-arrow-down.svg") ;
+      background-size:    30px;
+      background-repeat:  no-repeat;
+      background-position:    center;
+    }
   }
 }
 .msg-item{
@@ -782,8 +809,8 @@ p {
     opacity: 1;
   }
   &__text{
-    padding-top: 15px;
-    padding-right: 45px;
+    //padding-top: 15px;
+    //padding-right: 45px;
   }
 }
 
