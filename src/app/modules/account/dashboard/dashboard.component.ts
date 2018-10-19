@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
         });
 
         this._cryptoService.getCryptocurrencies().subscribe(data => {
-            for (const val of Object.values(data['data'])) {
+            for (const val of Object.values(data)) {
                 this.currencies.push(<Cryptocurrency>val);
             }
             this.preloader = false;
