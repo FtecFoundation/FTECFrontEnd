@@ -5,6 +5,8 @@ import {ArbitrageService} from '../../../core/services/arbitrage.service';
 import {ArbitrageWindowRequest, ArbitrageWindows, ArbitrageWindowsLog} from '../../../core/models/arbitrage-window';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Stock} from './available-exchanges';
+import {NotifyService} from "../../../core/notify/notify.service";
+import {Notify} from "../../../core/notify/notifications";
 
 @Component({
     selector: 'app-arbitrage',
@@ -24,10 +26,13 @@ export class ArbitrageComponent implements OnInit {
     timeLogs: number[] = [];
     activeLog: number = 0;
     currentLogs: ArbitrageWindowsLog;
+    forbidNewTabs: boolean = false;
+    newTabs: any = {};
 
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
-                private formBuilder: FormBuilder) {
+                private formBuilder: FormBuilder,
+                private notifyService: NotifyService) {
     }
 
     ngOnInit() {
@@ -40,10 +45,15 @@ export class ArbitrageComponent implements OnInit {
     }
 
     activaleLog(timestamp: number) {
-        this._arbitrageService.getOldWindowsByTime(timestamp).subscribe(data => {
+        if (Object.keys(this.newTabs).indexOf('' + timestamp) === -1) {
+            this._arbitrageService.getOldWindowsByTime(timestamp).subscribe(data => {
+                this.activeLog = timestamp;
+                this.currentLogs = data;
+            })
+        } else {
             this.activeLog = timestamp;
-            this.currentLogs = data;
-        })
+            this.currentLogs.logs = this.newTabs[timestamp];
+        }
     }
 
     createForm() {
@@ -92,19 +102,31 @@ export class ArbitrageComponent implements OnInit {
     }
 
     submitForm() {
+        this.currentLogs = null;
         this.fillChosenExchanges();
         this.submitted = true;
         if (this.arbitrageForm.valid && this.chosenExchanges.length >= 2) {
-            this.preloader = true;
-            this._arbitrageService.getArbitrageWindows(this.prepareData()).subscribe(data => {
-                this.arbitrageWindows = data;
-                this.preloader = false;
+            const cur = new Date().getTime();
+            this.activeLog = cur;
+            this.timeLogs.unshift(cur);
+            this.forbidNewTabs = true;
+                this.preloader = true;
+                this._arbitrageService.getArbitrageWindows(this.prepareData()).subscribe(data => {
+                    this.currentLogs = new ArbitrageWindowsLog();
+                    this.currentLogs.logs = data['windows'];
+                    this.forbidNewTabs = false;
+                    this.preloader = false;
+                    this.newTabs[cur] = data['windows'];
             });
         }
     }
 
     prepareData(): ArbitrageWindowRequest {
         return new ArbitrageWindowRequest().deserialize(this.arbitrageForm.value, this.chosenExchanges);
+    }
+
+    get timeLogsSorted(): number[] {
+        return this.timeLogs.sort((a, b) => b - a);
     }
 
     get isOrderVolume() {

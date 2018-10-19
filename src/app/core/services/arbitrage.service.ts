@@ -8,8 +8,8 @@ import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 
 enum ArbitrageApiUrls {
-    getOldWindows = 'cabinet/getUserLog',
-    getArbitrageWindows = 'cabinet/getWindows'
+    getOldWindows = 'cabinet/arbitrage/getUserLog',
+    getArbitrageWindows = 'cabinet/arbitrage/getWindows'
 }
 
 @Injectable()
