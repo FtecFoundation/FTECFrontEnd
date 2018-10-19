@@ -741,7 +741,8 @@ p {
   padding-right: 0.625em;
   padding-bottom: 30px;
   &__content{
-    padding: 30px 60px;
+    border-radius: .625rem;
+    padding: 20px 60px;
     padding-left: 30px;
     padding-right: 80px;
     background: $violet-gradient-linear;
@@ -766,7 +767,7 @@ p {
       height: 70px;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%) scale(.7);
 
 
       background-image:   url("/assets/images/up-arrow.svg") ;
@@ -794,7 +795,7 @@ p {
       height: 70px;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%) scale(.7);
 
 
       background-image:   url("/assets/images/angle-arrow-down.svg") ;
@@ -953,6 +954,8 @@ p {
 .social-listing{
   display: flex;
   align-items: center;
+  position: absolute;
+  right: 20px;
   padding:0 15px;
   li{
     +li{
