@@ -26,4 +26,8 @@ export class NotificationService extends RestService {
         return this.put(TelegramUrls.changeNotificationSetting, data);
     }
 
+    updateMode(data: NotificationSetting):Observable<any>{
+        return this.put(TelegramUrls.changeModeSetting, data);
+    }
+
 }
