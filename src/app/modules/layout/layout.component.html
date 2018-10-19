@@ -375,7 +375,13 @@
   </aside>
 </main>
 <script>
-
+    function openMenu(){
+        $(this).parent('.sidebar__block-item').each(function () {
+            var $this = $(this);
+            $this.find('.drop-menu').slideToggle('fast');
+            return false;
+        });
+    }
 
 </script>
 <app-footer></app-footer>
