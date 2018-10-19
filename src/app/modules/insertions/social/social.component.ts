@@ -4,6 +4,8 @@ import {SocialService} from '../../../core/services/social.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EmbeddedTweetOptions} from './embedded-tweet-options';
 import {Router} from '@angular/router';
+import {NotificationService} from '../../account/notification/notification.service';
+import {CurrentUserService} from '../../../core/services/current-user.service';
 
 @Component({
     selector: 'app-social',
@@ -33,7 +35,9 @@ export class SocialComponent implements OnInit {
     constructor(private _showModalService: ShowModalService,
                 private _socialService: SocialService,
                 private formBuilder: FormBuilder,
-                private router: Router) {
+                private router: Router,
+                public _currentUserService: CurrentUserService,
+                private _notificationService: NotificationService) {
     }
 
     getTweets() {
@@ -47,11 +51,19 @@ export class SocialComponent implements OnInit {
     }
 
     ngOnInit() {
-
         this.getDaysLeft();
 
         this.createForm();
     }
+
+    public updateNotificationStatus(type: string){
+        this._currentUserService.notificationSettings[3][type] = !this._currentUserService.notificationSettings[3][type];
+        const toChange = this._currentUserService.notificationSettings[3];
+        toChange.notificationType=3;
+        this._notificationService.updateNotification(toChange).subscribe(data => console.log(data));
+    }
+
+
 
     renderTweets() {
         this._socialService.getTweets().subscribe(data => {

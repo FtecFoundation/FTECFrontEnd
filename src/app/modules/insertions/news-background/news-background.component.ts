@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {AvailableExchanges} from '../arbitrage/available-exchanges';
 import {NewsBackgroundService} from "./news-background.service";
 import {NewsBackgroundResults} from "../../../core/models/news-background";
+import {CurrentUserService} from '../../../core/services/current-user.service';
+import {NotificationService} from '../../account/notification/notification.service';
 
 
 @Component({
@@ -23,7 +25,9 @@ export class NewsBackgroundComponent implements OnInit {
     pages: number[] = [];
 
     constructor(public _newsBackService: NewsBackgroundService,
-                private router: Router) {
+                private router: Router,
+                public _currentUserService: CurrentUserService,
+                private _notificationService: NotificationService) {
     }
 
 
@@ -41,6 +45,13 @@ export class NewsBackgroundComponent implements OnInit {
                 this.results = data;
             });
         });
+    }
+
+    public updateNotificationStatus(type: string){
+        this._currentUserService.notificationSettings[9][type] = !this._currentUserService.notificationSettings[9][type];
+        const toChange = this._currentUserService.notificationSettings[9];
+        toChange.notificationType=3;
+        this._notificationService.updateNotification(toChange).subscribe(data => console.log(data));
     }
 
     goToPage(page: number) {

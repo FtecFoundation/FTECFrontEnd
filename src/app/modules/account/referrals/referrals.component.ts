@@ -22,16 +22,19 @@ export class ReferralsComponent implements OnInit {
     referralLink: string = '';
     referrals: ReferralData;
     allTime: number = 0;
+    withdraw: number;
 
     showPopupModal = false;
 
 
     ngOnInit() {
-        this.referralService.getReferrals().subscribe(data => {
-            this.totalReferrals = data.levelOne.length + data.levelTwo.length + data.levelThree.length;
-            this.referrals = data;
+        this.referralService.getReferrals().subscribe(allData => {
+            const referrals = allData['referrals'];
+            this.totalReferrals = referrals.levelOne.length + referrals.levelTwo.length + referrals.levelThree.length;
+            this.referrals = referrals;
+            this.withdraw=allData['withdraw'];
 
-            this.getAllTimeBalance(data);
+            this.getAllTimeBalance(referrals);
         });
 
         this.referralLink = window.location.origin + '/auth/registration/' + this.currentUserService.user.id;
@@ -62,7 +65,6 @@ export class ReferralsComponent implements OnInit {
         this.tabLvl2 = false;
         this.tabLvl3 = true;
     }
-
 
     showPopup() {
         this.showPopupModal = true;
