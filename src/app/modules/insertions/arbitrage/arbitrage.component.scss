@@ -13,11 +13,6 @@
   display: block;
 }
 
-.middle__table-container--arbitrage {
-  overflow-y: scroll;
-  max-height: 285px;
-}
-
 .middle__table-container--empty{
   position: relative;
   margin-top: 20px;
@@ -114,6 +109,14 @@
 
 .tab-controls--arbitrage {
   width: 100%;
+}
+
+.tab-controls-item {
+  background-color: rgba(13,0,59,.5)!important;
+}
+
+.tab-controls-item.is-active {
+  background-color: #0d003b !important;
 }
 
 .middle--dashboard {

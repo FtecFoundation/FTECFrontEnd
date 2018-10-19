@@ -66,7 +66,7 @@
             </label>
           </a>
 
-          <a class="container__link container__link--dashboard" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].telegram}">
+          <a class="container__link container__link--dashboard" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0]['telegram']}">
             <label class="form__info-label-container">
               <input type="checkbox">
 
