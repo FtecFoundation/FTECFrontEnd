@@ -4,7 +4,8 @@ import { BehavioralAnalyzerService } from './behavioral-analyzer.service';
 import { BehavioralDataTrades, StockBehavioralData } from '../../../core/models/behavioral';
 import { CurrentUserService } from '../../../core/services/current-user.service';
 import { AvailableExchanges, Stock } from '../arbitrage/available-exchanges';
-import { RouterPreloader } from '@angular/router';
+import {Router, RouterPreloader} from '@angular/router';
+import {FaqService} from '../../faq/faq.service';
 
 @Component({
     selector: 'app-social',
@@ -87,7 +88,7 @@ export class BehavioralAnalyzerComponent implements OnInit {
     private stockToSend: Stock;
 
     constructor(private _behavioralAnalyzerService: BehavioralAnalyzerService,
-        private _currentUserService: CurrentUserService) {
+        private _currentUserService: CurrentUserService, public router: Router) {
     }
 
     ngOnInit() {

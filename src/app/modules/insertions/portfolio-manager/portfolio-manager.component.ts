@@ -10,6 +10,8 @@ import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {formatLabel} from "@swimlane/ngx-charts";
 import {ShowModalService} from "../../not-active/show-modal.service";
+import {FaqComponent} from '../../faq/faq.component';
+import {FaqService} from '../../faq/faq.service';
 
 
 @Component({
@@ -43,7 +45,8 @@ export class PortfolioManagerComponent implements OnInit {
 
     constructor(public crService: CryptocurrenciesService, private formBuilder: FormBuilder,
                 private portManagerService: PortfolioManagerService, private notifyService: NotifyService,
-                public showModalSevice: ShowModalService) {
+                public showModalSevice: ShowModalService,
+                public _faqService: FaqService) {
     }
 
     ngOnInit() {

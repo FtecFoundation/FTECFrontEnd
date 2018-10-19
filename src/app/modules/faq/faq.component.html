@@ -14,7 +14,7 @@
 
       <div class="middle__table-container">
 
-        <div class="o-accordion" *ngFor="let faq of faqsLeft" (click)="answer(faq)" [ngClass]="{'is-active': faq.chosen}">
+        <div class="o-accordion" *ngFor="let faq of faqsLeft" (click)="answer(faq.id)" [ngClass]="{'is-active': faq.id===currentQuestion}">
           <div class="accordion__visible">
             <span class="accordion__visible-question">{{faq.question}}</span>
 
@@ -46,7 +46,7 @@
       <div class="middle__table-container">
 
 
-        <div class="o-accordion" *ngFor="let faq of faqsRight" (click)="answer(faq)" [ngClass]="{'is-active': faq.chosen}">
+        <div class="o-accordion" *ngFor="let faq of faqsRight" (click)="answer(faq.id)" [ngClass]="{'is-active': faq.id===currentQuestion}">
           <div class="accordion__visible">
             <span class="accordion__visible-question">{{faq.question}}</span>
 

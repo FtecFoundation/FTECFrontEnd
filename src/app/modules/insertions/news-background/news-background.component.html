@@ -7,7 +7,7 @@
         Subscription days left: {{daysLeft}}
       </h5>
 
-      <button class="button__outline" (click)="renewSubscription()">Subscribe</button>
+      <button class="button__outline" (click)="renewSubscription()">{{daysLeft ? 'Subscribe' : 'Renew subscription'}}</button>
     </div>
 
     <div *ngIf="results && !results.length" class="item-inner-line-error-block item-inner-line-error-block--empty">
