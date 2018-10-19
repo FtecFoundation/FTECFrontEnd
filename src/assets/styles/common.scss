@@ -968,7 +968,9 @@ p {
 .container__name{
   padding-left: .738em;
 }
-
+.form__info-label-container.is-active .form__info-checkmark:after {
+  display: block;
+}
 
 
 
