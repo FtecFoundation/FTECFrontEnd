@@ -16,18 +16,6 @@
 
     <qrcode colordark="#250643" [qrdata]="'tg://resolve?domain=FTEC_Telegram_bot&start=-' + _currentUserService.tgSettings.accessCode" [size]="200" [level]="'L'"></qrcode>
 
-    <button class="filter__container-button" (click)="enable()">Enable Assistant</button>
-  </div>
-
-  <div class="aside-right" *ngIf="showAccessCode && _currentUserService.tgSettings.accessCode">
-    <div class="aside-right__filter">
-      <h5>
-        Your access code
-      </h5>
-      <p>Use it to activate bot in Telegram</p>
-      <div class="telegram__access-code">{{_currentUserService.tgSettings.accessCode}}</div>
-
-      <button class="filter__container-button" (click)="checkIfConnected()">Check if telegram linked</button>
-    </div>
+    <button class="filter__container-button" (click)="checkIfConnected()">Check if telegram linked</button>
   </div>
 </div>

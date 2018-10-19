@@ -104,3 +104,16 @@
 .filter__container--volume-double {
   padding: .625em;
 }
+
+.l-order__type-container{
+  width: 100%;
+}
+.order__type-item{
+  width: 50%;
+  text-align: center;
+}
+.order__type-container{
+  &:before{
+    background-color: #25cbd3;
+  }
+}

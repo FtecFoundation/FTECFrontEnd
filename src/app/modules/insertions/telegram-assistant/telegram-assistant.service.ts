@@ -51,4 +51,8 @@ export class TelegramAssistantService extends RestService {
             catchError(e => this.handleError(e)));
     }
 
+    isConnected(): Observable<any>{
+        return this.get('/modules/telegram/isConnected').pipe(map(response=> response.response));
+    }
+
 }

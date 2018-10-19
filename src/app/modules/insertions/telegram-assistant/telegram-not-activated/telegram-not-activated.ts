@@ -30,8 +30,8 @@ export class TelegramNotActivatedComponent implements OnInit {
     }
 
     checkIfConnected() {
-        this._currentUserService.getTelegramSettingsObs(true).subscribe(data => {
-            if (data.chatId) { this.router.navigateByUrl('/modules/telegram-assistant/settings'); }
+        this._telegramService.isConnected().subscribe(connected => {
+            if(connected) this.router.navigateByUrl('/modules/telegram-assistant/settings');
         });
     }
 }
