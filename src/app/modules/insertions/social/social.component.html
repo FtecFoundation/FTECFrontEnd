@@ -5,7 +5,7 @@
         Subscription days left: {{daysLeft}}
       </h5>
 
-      <button class="button__outline" (click)="renewSubscription()">Subscribe</button>
+      <button class="button__outline" (click)="renewSubscription()">{{daysLeft ? 'Subscribe' : 'Renew subscription'}}</button>
     </div>
 
     <div class="middle__table-container--empty" *ngIf="!daysLeft">

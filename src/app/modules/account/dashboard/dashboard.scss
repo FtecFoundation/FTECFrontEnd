@@ -87,7 +87,7 @@
     background: linear-gradient(to right, rgba(225, 128, 128, .8) 0%, rgba(225, 128, 128, 0.6) 50%, rgba(225, 128, 128, .8) 100%);
     border-radius: 20px;
 
-} 
+}
 
 .price--positive, .percent--positive {
   background: linear-gradient(to right, rgba(102, 204, 51, .8).80%, rgba(102, 204, 51, .6) 50%, rgba(102, 204, 51, .8));
@@ -154,4 +154,9 @@
   width: 45%;
   display: flex;
   flex-direction: column;
+}
+
+.filter__container-aside--exchanges {
+  padding: 0 .625em;
+  margin-top: 0;
 }

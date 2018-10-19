@@ -381,9 +381,9 @@
         </div>
 
 
-        
+
         <div class="middle__table-container middle__table-container--dashboard">
-          
+
           <div class="middle__table--dashboard" *ngFor="let log of logs">
             <app-preloader *ngIf="!authLogsContent"></app-preloader>
 
@@ -405,11 +405,17 @@
       </div>
     </div>
 
-    <div class="filter__container-aside">
+    <div class="filter__container-aside filter__container-aside--exchanges">
+      <div class="middle__head">
+        <h5>
+          Connected Exchanges
+        </h5>
+      </div>
+
 
       <div class="middle__table-type">
         <span class="middle__table-type-name--dashboard">
-          Connected Exchanges
+          Exchanges
         </span>
       </div>
       <div class="container__wrapper container__wrapper--dashboard">

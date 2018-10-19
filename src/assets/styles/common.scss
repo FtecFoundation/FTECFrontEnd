@@ -21,6 +21,11 @@ a {
   text-decoration: none;
 }
 
+.link__accent {
+  color: $accent;
+  text-decoration: underline;
+}
+
 li {
   list-style: none;
 }
@@ -30,9 +35,9 @@ li {
   min-height: 100vh;
   margin-bottom: -4px;
   position: relative;
-  
+
   display: inline-block;
-  
+
   overflow: hidden;
   background-image: $violet-gradient;
   background-position: right top;
@@ -81,7 +86,7 @@ p {
 .text-small {
   display: block;
   margin-bottom: .313em;
-  
+
   opacity: .5;
   font-size: 0.688rem;
 }
@@ -120,7 +125,7 @@ p {
 
   display: flex;
   flex-direction: column;
-  
+
   cursor: pointer;
   border-radius: .313rem;
   border: 1px solid $light-violete;
@@ -161,11 +166,11 @@ p {
 
 .middle__subscription {
   padding: .938rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   background: $dark-blue;
   border-radius: .313rem;
 }
@@ -335,7 +340,7 @@ p {
 .wrapper__main {
   width: 100%;
   height: 90%;
-  
+
   display: flex;
 }
 
@@ -362,13 +367,13 @@ p {
   display: flex;
   justify-content: space-between;
 }
-            
+
 .main-info__head-item {
   padding: .625rem;
 
   display: flex;
   align-items: center;
-  
+
   border-radius: .313rem;
   background: $violet-gradient-aside;
 }
@@ -406,7 +411,7 @@ p {
 
 .head-item__icon-item {
   padding: 1rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -468,7 +473,7 @@ p {
 .middle__table-type-name--dashboard {
   font-weight: 100 !important;
 }
- 
+
 .item-inner--notifications,
 .table-container-item--name,
 .middle__table-type-name--notifications:nth-child(2),
@@ -576,7 +581,7 @@ p {
   padding-left: .5rem;
   padding-right: .5rem;
   display: none;
- 
+
   background: $green;
   border-radius: 1rem;
   font-size: .738rem;
@@ -718,16 +723,30 @@ p {
 }
 
 
+.main-info{
+  .middle{
+
+  }
+}
+
+[_nghost-c8]{
+  flex-wrap: wrap;
+}
+
 .msg-line{
-  position: absolute;
-  width: calc(100% - 0.625em);
+  position: relative;
+  width: 100%;
   left: 0;
   top: 0;
   z-index: 99999;
-  background: $violet-gradient-linear;
+  padding-right: 0.625em;
+  padding-bottom: 30px;
   &__content{
     padding: 30px 60px;
     padding-left: 30px;
+    padding-right: 80px;
+    background: $violet-gradient-linear;
+    position: relative;
   }
   &__close{
     width: 60px;
@@ -735,26 +754,27 @@ p {
     background: none;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     border:none;
     cursor: pointer;
     outline: none;
-    &:before,
     &:after{
       content: '';
       position: absolute;
-      background: #25cbd3;
-      width: 60%;
-      height: 2px;
-      top: 25px;
-      right: 5px;
+      width: 50px;
+      height: 70px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+
+      background-image:   url("/assets/images/arrow-up.svg") ;
+      background-size:    30px;
+      background-repeat:  no-repeat;
+      background-position:    center;
     }
-    &:after{
-      transform: rotate(-45deg);
-    }
-    &:before{
-      transform: rotate(45deg);
-    }
+
   }
 }
 .msg-item{
@@ -833,7 +853,90 @@ p {
 }
 
 
+.exchange-status-table{
+  width: 100%;
+  padding: 35px 0;
+  table{
+    width: 100%;
+    text-align: center;
+    td{
+      &:first-child{
+        padding-left: 15px;
+      }
+      &:last-child{
+        padding-right: 15px;
+      }
+    }
+    thead{
+      tr{
+        td{
+          background: #0d003b;
+          font-size: 12px;
+          line-height: 1.2;
+          color: rgba(255, 255, 255, 0.52);
+          padding-top: 12px;
+          padding-bottom: 12px;
+          &:first-child{
+            border-top-left-radius: 10px;
+          }
+          &:last-child{
+            border-top-right-radius: 10px;
+          }
+        }
+      }
+    }
+    tbody{
+      td{
+        &:first-child{
+          text-align: left;
+        }
+        font-weight: 700;
+        font-size: 21px;
+        background: rgba(13, 0, 59, 0.51);
 
+        span{
+          padding-top: 25px;
+          padding-bottom: 25px;
+          border-bottom:1px solid rgba(255, 255, 255, 0.2);
+          display: block;
+        }
+        a{
+          font-size: 14px;
+          font-weight: 100;
+          color: #25cbd3;
+          text-decoration: underline;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+      tr{
+        &:last-child{
+          td{
+            span{
+              border-bottom:none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.social-listing{
+  display: flex;
+  align-items: center;
+  padding:0 15px;
+  li{
+    +li{
+      margin-left: 10px;
+    }
+    list-style: none;
+  }
+}
+.container__name{
+  padding-left:.938em;
+}
 
 
 

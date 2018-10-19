@@ -113,7 +113,7 @@
   z-index: 995;
   top: 3.125em;
   right: -3.125em;
-  width: 12.125em;
+  //width: 12.125em;
   display: none;
   position: absolute;
 
@@ -135,7 +135,8 @@
 .user-account-block-triangle {
   width: 0;
   height: 0;
-  left: 7.563em;
+  right: 4em;
+  float: right;
   bottom: 0.313em;
   position: relative;
 
@@ -204,6 +205,18 @@
 
 .user__block-head-balance {
   color: $accent;
+  text-align: right;
+  padding-top: 10px;
+  ul{
+    list-style: none;
+    padding-top: 5px;
+    li{
+      font-size: 14px;
+      +li{
+        margin-top: 4px;
+      }
+    }
+  }
 }
 
 /* Dropdown */

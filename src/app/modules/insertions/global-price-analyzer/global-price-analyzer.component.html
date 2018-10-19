@@ -27,7 +27,7 @@
                     </span>
 
                     <span class="middle__table-type-name">
-                    % of savings
+                    Savings
                     </span>
                 </div>
 
@@ -35,14 +35,14 @@
                     <ng-container *ngFor="let item of results[pair].array">
                     <div class="middle__table-container-item middle__table-container-item--dashboard"
                          *ngIf="item.price">
-                        <h4 class="table-container-item--name">
+                        <h4 class="table-container-item--name"-ac
                             <span>{{pair}}</span>
                         </h4>
                         <h4 class="table-container-item--name title--blue">
                             <span>{{item.stock}}</span>
                         </h4>
                         <div class="item-inner item-inner--notifications item-inner--exchanges">
-                            {{item.price | number: '1.0-8'}}
+                            {{item.price | number: '1.0-8'}} %
                         </div>
                         <span class="container-item-update item-inner--exchanges title--green">{{item.percentOfSaving | number: '1.0-2'}}</span>
                     </div>

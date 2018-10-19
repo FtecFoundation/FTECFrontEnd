@@ -586,6 +586,7 @@
   }
   .msg-line__content{
     padding-left: 15px;
+    padding-right: 45px;
   }
   .msg-item__text{
     p{
@@ -608,5 +609,27 @@
       }
     }
   }
-
+  .msg-line__close:after{
+    background-size: contain;
+    width: 35px;
+    height: 40px;
+  }
+  .exchange-status-table{
+    overflow-x: scroll;
+    table{
+      width: 700px;
+    }
+  }
+  footer.footer{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .social-listing{
+    margin:0 auto;
+  }
+  .email-link{
+    margin:0 auto;
+    margin-top: 10px;
+  }
 }
