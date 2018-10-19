@@ -43,6 +43,7 @@ export class ForecastingQuestionComponent extends QuestionComponent{
                 this._testStatusService.history.tests[this.test.id + '_' + this.questionId].selectedAnstwer = this.selected;
 
                 this.answerImg = '/api/crypto/images/' + this.test.id + '/' + this.response.correctAnswer.image;
+                console.log(this.response.correctAnswer.image)
             });
         }
     }
