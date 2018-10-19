@@ -99,8 +99,8 @@
 
 .sidebar {
   top: 0;
-  width: 25%;
-  right: -25%;
+  width: 18%;
+  right: -18%;
   height: 100%;
   position: absolute;
   opacity: .95;
@@ -113,7 +113,7 @@
 }
 
 .sidebar.is-active {
-  z-index: 1 !important;
+  z-index: 100 !important;
   right: 0 !important;
   visibility: initial;
 }

@@ -37,7 +37,7 @@
                 </svg>
             </div>
             <div (click)="goToPaymentPage()" *ngIf="_currentUserService.user.balances && _currentUserService.user.currentPaymentScope" class="user-balance">
-                {{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}+
+                {{getAssetBalance(_currentUserService.user.currentPaymentScope) | number: '1.0-8'}} {{_currentUserService.user.currentPaymentScope}}+
             </div>
 
             <div (click)="goToPaymentPage()" *ngIf="!_currentUserService.user.currentPaymentScope" class="user-balance">

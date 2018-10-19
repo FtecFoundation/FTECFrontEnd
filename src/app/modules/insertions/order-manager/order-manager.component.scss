@@ -32,7 +32,7 @@
   align-self: center;
   justify-content: center;
   position: relative;
-  
+
   border-radius: 28px;
   background-color: $white;
 }
@@ -85,7 +85,9 @@
 
 .item-inner-line-error-block.item-inner-line-error-block--empty {
   text-align: center;
-  margin-top: 1.538em;
+  margin: 0;
+  margin-bottom: .938em;
+  margin-top: .538em;
 }
 
 .item-inner-line-error-block.item-inner-line-error-block--empty span {

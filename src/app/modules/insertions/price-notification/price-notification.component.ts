@@ -63,8 +63,8 @@ export class PriceNotificationComponent implements OnInit {
 
     toPercent(price: number, percent: number): number {
         const res: number =  (price * Math.abs(percent)) / 100;
-        if (percent > 0) return price + res;
-        else return price - res;
+        if (percent > 0) return Number.parseFloat('' + price) + res;
+        else return Number.parseFloat('' + price) - res;
     }
 
     deleteNotification(id: number) {

@@ -47,7 +47,8 @@ export const routes = [
     {path: 'info', component: LayoutComponent, canActivate: [OnlyAuthorizedGuard], children: [
             {path: 'change-log', loadChildren: './change-log/change-log.module#ChangeLogModule'},
             {path: 'faq', loadChildren: './faq/faq.module#FaqModule'},
-            {path: 'support', loadChildren: './account/support/support.module#SupportModule'}
+            {path: 'support', loadChildren: './account/support/support.module#SupportModule'},
+            {path: 'exchanges-support', loadChildren: './working-exchanges/working-exchanges.module#WorkingExchangesModule'}
         ]
     }
 ];
