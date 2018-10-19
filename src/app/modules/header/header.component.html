@@ -38,12 +38,6 @@
             </div>
             <div (click)="goToPaymentPage()" *ngIf="_currentUserService.user.balances && _currentUserService.user.currentPaymentScope" class="user-balance">
                 {{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}+
-                <ul class="user-balance--dropdown">
-                    <li class="user-balance--dropdown-item" *ngFor="let cur of otherCurrencies()">
-                        <span class="user-balance--dropdown-balance">{{getAssetBalance(cur) | number: '1.1-8'}}</span>
-                        <span class="user-balance--dropdown-currency">{{cur}}</span>
-                    </li>
-                </ul>
             </div>
 
             <div (click)="goToPaymentPage()" *ngIf="!_currentUserService.user.currentPaymentScope" class="user-balance">
@@ -64,9 +58,8 @@
                         <div class="user__block-head-balance">
                             Balance:
                             <ul>
-                                <li> <span *ngIf="_currentUserService.user.balances" class="user__block-head-value">
-                                {{getAssetBalance(_currentUserService.user.currentPaymentScope)}}</span>
-                                    {{_currentUserService.user.currentPaymentScope}}</li>
+                                <li *ngFor="let cur of currencies"> <span *ngIf="_currentUserService.user.balances" class="user__block-head-value">
+                                {{getAssetBalance(cur) | number: '1.0-8'}}</span> {{cur}}</li>
                             </ul>
 
                         </div>
