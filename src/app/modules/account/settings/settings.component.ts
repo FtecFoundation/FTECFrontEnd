@@ -3,6 +3,8 @@ import {ImageService} from '../../../core/services/image.service';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {CurrentUserService} from '../../../core/services/current-user.service';
 import {AccountService} from "../../../core/services/account.service";
+import {SettingsService} from './settings.service';
+import {RegistrationValidators} from '../../../auth/registration/registration.validators';
 
 @Component({
     selector: 'app-social',
@@ -15,9 +17,10 @@ export class SettingsComponent implements OnInit {
     private imageSrc = '';
     private imageType: string;
     preloader = false;
+    public availibleLanguages = ['English', 'Spanish', 'French', 'German', 'Italian', 'Korean', 'Chinese', 'Japanese', 'Swedish', 'Portuguese', 'Russian'];
 
     constructor(private _imageService: ImageService, private _showModal: ShowModalService, public _currentUserService: CurrentUserService,
-                private _accountService: AccountService) {
+                private _accountService: AccountService, private _settingsService: SettingsService) {
     }
 
     enabled: boolean = false;
@@ -27,6 +30,19 @@ export class SettingsComponent implements OnInit {
         if (this._currentUserService.user.twoStepVerification) this.enable2FA();
     }
 
+    changeEmail(data: any){
+        console.log(data);
+        this._settingsService.changeEmail(data.email).subscribe((resp)=>{
+            console.log("email was changed", resp)
+            this._currentUserService.user.email=data.email;
+        });
+    }
+
+    changePassword(data: any){
+        if(data.newPassword===data.newPasswordConfirm){
+            this._settingsService.changePassword(data.currentPassword, data.newPassword).subscribe((resp)=>console.log("password was changed", resp));
+        }
+    }
     showModal() {
         this._showModal.showModal = true;
     }

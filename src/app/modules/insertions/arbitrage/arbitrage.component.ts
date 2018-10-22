@@ -7,6 +7,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {Stock} from './available-exchanges';
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
+import {FaqService} from '../../faq/faq.service';
 
 @Component({
     selector: 'app-arbitrage',
@@ -32,7 +33,8 @@ export class ArbitrageComponent implements OnInit {
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
                 private formBuilder: FormBuilder,
-                private notifyService: NotifyService) {
+                private notifyService: NotifyService,
+                public _faqService: FaqService) {
     }
 
     ngOnInit() {

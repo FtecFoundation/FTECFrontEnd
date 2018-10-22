@@ -1,6 +1,8 @@
 <app-preloader class="behavioral--preloader-main" *ngIf="globalPreloader"></app-preloader>
+<div class="wrapper" *ngIf="!globalPreloader">
+<app-info-popup collapsedText="How doest the TRP module work?" openedText="TRP module works just fine"></app-info-popup>
+<div class="main-info main-info--behavioral">
 
-<div class="main-info main-info--behavioral" *ngIf="!globalPreloader">
     <div class="middle middle--behavioral">
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
@@ -122,4 +124,5 @@
         </div> -->
 </div>
 
+</div>
 </div>

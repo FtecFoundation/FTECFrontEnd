@@ -9,6 +9,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { NumberSuffixPipe } from './pipes/number-suffix.pipe';
 import {HeaderComponent} from "../modules/header/header.component";
 import {RouterModule} from "@angular/router";
+import { InfoPopupComponent } from './info-popup/info-popup.component';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import {RouterModule} from "@angular/router";
         RouterModule
         ],
     exports: [
+        InfoPopupComponent,
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
@@ -31,13 +33,15 @@ import {RouterModule} from "@angular/router";
         RouterModule
     ],
     declarations: [
+        InfoPopupComponent,
         PreloaderComponent,
         DropdownComponent,
         SliderComponent,
         FilterDropdownComponent,
         ClickOutsideDirective,
         NumberSuffixPipe,
-        HeaderComponent
+        HeaderComponent,
+        InfoPopupComponent
     ]
 })
 export class SharedModule {

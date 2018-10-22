@@ -29,6 +29,12 @@ export const availableFaqLeft = [
       'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
           'exchanges and also allow traders to efficiently manage their time and coming information flows.',
       'id': 9
-  }
+  },
+    {
+        'question': 'How doest arbitrage assistant works?',
+        'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
+            'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+        'id': 11
+    }
 
 ];
