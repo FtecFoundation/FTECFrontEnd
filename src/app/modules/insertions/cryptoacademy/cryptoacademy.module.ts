@@ -11,11 +11,13 @@ import { TestCompletedComponent } from './tests/question-layout/test-completed/t
 import {CryptoacademyService} from "./cryptoacademy.service";
 import { OrdinaryQuestionComponent } from './tests/question-layout/question/ordinary-question/ordinary-question.component';
 import { ForecastingQuestionComponent } from './tests/question-layout/question/forecasting-question/forecasting-question.component';
+import {SharedModule} from '../../../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        CryptoacademyRoutingModule
+        CryptoacademyRoutingModule,
+        SharedModule
     ],
     declarations: [
         CryptoacademyComponent,

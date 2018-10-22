@@ -4,6 +4,7 @@ import { SettingsComponent} from './settings.component';
 import { SettingsComponentRoutingModule } from './settings-routing.module';
 import {SharedModule} from '../../../shared/shared.module';
 import {QRCodeModule} from "angularx-qrcode";
+import {SettingsService} from './settings.service';
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import {QRCodeModule} from "angularx-qrcode";
         SettingsComponentRoutingModule,
         QRCodeModule
     ],
+    providers: [SettingsService],
     declarations: [SettingsComponent]
 })
 export class SettingsModule { }
