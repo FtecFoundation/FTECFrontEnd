@@ -140,7 +140,7 @@
 
                 <div class="container__form container__form--select is-active">
 
-                    <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)"
+                    <app-filter-dropdown [clearOnSelect]="true" [label]="'Pair'" (selectedPair)="onPairSelected($event)"
                                          (selected)="pairsFilterService.onPairTyping($event)"
                                          [items]="pairsFilterService.resultPairs"
                                          [keyName]="'pair'"></app-filter-dropdown>

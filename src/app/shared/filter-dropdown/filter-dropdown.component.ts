@@ -1,4 +1,14 @@
-import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+    Component, ElementRef,
+    EventEmitter,
+    forwardRef,
+    Input,
+    OnChanges,
+    OnInit,
+    Output, Renderer,
+    SimpleChanges,
+    ViewChild
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { routerAnimation } from '../dropdown/dropdown.animation';
 import { transition, trigger, useAnimation } from '@angular/animations';
@@ -24,7 +34,10 @@ import {Pair} from "../../core/models/pair";
     ]
 })
 export class FilterDropdownComponent<T> implements OnInit, OnChanges {
+    @ViewChild("myInput") myInput: ElementRef;
+    @Input() showExchange: boolean = true;
     @Input() items: T[];
+    @Input() clearOnSelect: boolean;
 
     @Input() label: string;
 
@@ -36,6 +49,7 @@ export class FilterDropdownComponent<T> implements OnInit, OnChanges {
 
     currentPair: Pair;
 
+    actualValue: string = '';
     _active: T;
 
     opened: boolean;
@@ -52,7 +66,7 @@ export class FilterDropdownComponent<T> implements OnInit, OnChanges {
         this.propagateChange(this.active);
     }
 
-    constructor() { }
+    constructor(private renderer: Renderer) { }
 
     ngOnInit(): void {
     }
@@ -88,8 +102,13 @@ export class FilterDropdownComponent<T> implements OnInit, OnChanges {
 
     selectPair(value: Pair): void {
         this.currentPair = value;
+        this.actualValue = this.currentPair ? (this.currentPair.symbol + '/' + this.currentPair.base) : '';
         this.selectedPair.emit(value);
         this.opened = false;
+        if (this.clearOnSelect) {
+            this.myInput.nativeElement.focus();
+            this.actualValue = null;
+        }
     }
 
     closeDropdown() {
