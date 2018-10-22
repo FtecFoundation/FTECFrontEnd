@@ -76,7 +76,7 @@
     transform: translateY(-3px);
     fill: #3F8AFD;
   }
-  
+
   .ngx-charts:first-child text:first-child {
     fill: #9C0D66;
   }
@@ -197,7 +197,7 @@
 .behavioral__stats {
   width: 50%;
   margin-bottom: 1em;
-  
+
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -237,5 +237,7 @@
 
 .item-inner-line-error-block.item-inner-line-error-block--empty {
   width: 95%;
-  margin-top: 1.538em;
+  margin: 0;
+  margin-bottom: .938em;
+  margin-top: .538em;
 }

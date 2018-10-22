@@ -32,7 +32,7 @@ export class OrderManagerComponent implements OnInit {
 
     ngOnInit() {
         this.pairsFilterService.selectedPair = null;
-        if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
+        this.pairsFilterService.fillAllPairs(true);
 
         this.orderManagerService.getActiveOrders().subscribe(data => {
             this.orders = data;

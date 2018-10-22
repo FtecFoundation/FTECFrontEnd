@@ -1,7 +1,7 @@
 @import "../../../../assets/styles/variables";
 
 .middle__block--price {
-  margin-top: -0.563em;
+  margin-top: .563em;
 }
 
 .price__small-container {
@@ -103,7 +103,8 @@
 
 .item-inner-line-error-block.item-inner-line-error-block--empty {
   text-align: center;
-  margin-top: 1.538em;
+  margin: 0;
+  margin-bottom: .938em;
 }
 
 .item-inner-line-error-block.item-inner-line-error-block--empty span {

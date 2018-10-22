@@ -1,0 +1,18 @@
+<div class="exchange-status-table">
+  <table cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <td></td>
+      <td *ngFor="let module of getKeys(exchangesSupport)">{{module}}</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let exchange of getKeys(exchangesSupport['TRP'])">
+        <td><span><a href="#" >{{exchange}}</a></span></td>
+      <ng-container *ngFor="let module of getKeys(exchangesSupport)">
+        <td><span>{{exchangesSupport[module][exchange] ? '+' : '-'}}</span></td>
+      </ng-container>
+    </tr>
+    </tbody>
+  </table>
+</div>

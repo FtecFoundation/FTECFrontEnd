@@ -73,7 +73,7 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
 
     submitForm(){
         this.submitted = true;
-        if (this.selectedPairs.length && this.selectedPairs.length < 10 && this.chosenExchanges.length && this.volume > 0.05 && this.volume < 50 && this.volume) {
+        if (this.selectedPairs.length && this.selectedPairs.length <= 10 && this.chosenExchanges.length && this.volume >= 0.05 && this.volume < 50 && this.volume) {
             this.preloader = true;
            this._globalPriceService.searchPrices(this.prepareData()).subscribe(data => {
                this.results = data;

@@ -99,8 +99,8 @@
 
 .sidebar {
   top: 0;
-  width: 25%;
-  right: -25%;
+  width: 18%;
+  right: -18%;
   height: 100%;
   position: absolute;
   opacity: .95;
@@ -113,7 +113,7 @@
 }
 
 .sidebar.is-active {
-  z-index: 1 !important;
+  z-index: 100 !important;
   right: 0 !important;
   visibility: initial;
 }
@@ -122,15 +122,28 @@
   padding: .938em;
   padding-left: 2.500em;
   position: relative;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-
   cursor: pointer;
+  list-style: none;
+}
+.sidebar__block-item{
+  transition: margin-top 0.2s;
+  +.sidebar__block-item{
+    margin-top: 15px;
+  }
+}
+.drop-menu{
+  display: none;
+  padding-left: 20px;
+  li{
+
+    a{
+      color: #ffffff;
+      font-size: 12px;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
 }
 
 .sidebar__block:first-child {
@@ -154,7 +167,7 @@
   margin-left: .938em;
 
   color: $white;
-  font-size: 0.625em;
+  font-size: .938em;
 }
 
 /* Middle Part (middle) */
