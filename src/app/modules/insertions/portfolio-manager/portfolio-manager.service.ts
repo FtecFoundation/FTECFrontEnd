@@ -7,7 +7,8 @@ import {Portfolio, PortfolioPreferences} from "./portfolio";
 import {map} from "rxjs/operators";
 
 const PortfolioManagerApiUrls = {
-  generate: 'cabinet/portfolio/capitalization'
+  generate: 'cabinet/portfolio/capitalization',
+    getOld: 'cabinet/portfolio/previousCapitalization'
 };
 
 @Injectable()
@@ -18,5 +19,9 @@ export class PortfolioManagerService extends RestService {
 
     generatePortfolio(data: PortfolioPreferences): Observable<Portfolio> {
       return this.post(PortfolioManagerApiUrls.generate, data).pipe(map(resp => resp.response.capitalization));
+    }
+
+    getOldPortfolios(){
+        return this.get(PortfolioManagerApiUrls.getOld).pipe(map(resp => resp.response))
     }
 }
