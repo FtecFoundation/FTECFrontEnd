@@ -48,7 +48,7 @@ export class TrpComment {
         this.userId = userId;
         this.userRating = userRating;
         this.userImage = userImage;
-        this.userName= userName;
+        this.userName = userName;
         this.creationDate = creationDate;
         this.message = message;
     }
@@ -58,7 +58,7 @@ export class TrpFilter {
     startDate?: Date;
     overdue?: boolean;
     minLikes?: number;
-    price?: number;
     stock?: string;
     pair?: string;
+    price?: string;
 }

@@ -1,0 +1,66 @@
+<form action="" class="aside-right__filter">
+
+    <div class="filter__container-double">
+        <div class="filter__container filter__container--analyzer">
+            <span class="container__name">Pair</span>
+
+            <div class="container__form container__form--select is-active">
+
+                <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)" (selected)="pairsFilterService.onPairTyping($event)" [items]="pairsFilterService.resultPairs" [keyName]="'pair'"></app-filter-dropdown>
+
+            </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+            <span class="container__name">Exchange</span>
+
+            <div class="container__form container__form--select is-active">
+
+                <app-dropdown [label]="'Exchange'" [value]="exchange" [keyName]="'name'" [items]="exchanges" (selected)="exchange = $event"></app-dropdown>
+
+            </div>
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+            <span class="container__name">Price</span>
+
+            <div class="container__form container__form--select is-active">
+
+                <app-dropdown [label]="'Exchange'" [items]="priceList" (selected)="price = $event"></app-dropdown>
+
+            </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer">
+            <span class="container__name">Likes</span>
+
+            <div class="container__form">
+                <label for="" class="form__label"></label>
+                <input type="number" [(ngModel)]="likes" [ngModelOptions]="{standalone: true}" class="form__input" placeholder="Minimal likes">
+            </div>
+        </div>
+
+        <div style="width: 100%" class="filter__container">
+            <span class="container__name">From Date</span>
+
+            <div class="container__form container__form--select is-active">
+
+                <ng-datepicker [(ngModel)]="date" [ngModelOptions]="{standalone: true}"></ng-datepicker>
+
+            </div>
+
+        </div>
+
+        <div class="filter__container filter__container--analyzer filter__container--analyzer-active">
+            <label class="form__info-label-container" (click)="overdue = !overdue" [ngClass]="{'is-active': !overdue}">Only active
+                <span class="form__info-checkmark"></span>
+            </label>
+        </div>
+
+    </div>
+
+
+    <button class="filter__container-button" (click)="filterPairs()">Search</button>
+</form>

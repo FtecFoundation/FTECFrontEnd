@@ -37,6 +37,7 @@ export class TrpService extends RestService {
             if (filter.overdue) params = params.set('overdue', '' + filter.overdue);
             if (filter.minLikes) params = params.set('minLikes', '' + filter.minLikes);
             if (filter.pair) params = params.set('pair', filter.pair);
+            if (filter.price) params = params.set('price', filter.price);
             if (filter.stock) params = params.set('stock', filter.stock);
         }
 

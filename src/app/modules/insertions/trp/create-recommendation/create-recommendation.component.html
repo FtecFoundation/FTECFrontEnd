@@ -6,7 +6,7 @@
 
             <a class="link__accent" (click)="goToRecommendation(response['forecastId'])">Go to new recommendation</a>
 
-            <a (click)="response = null; signalForm.reset()" class="filter__container-button filter__container-button--arbitrage">
+            <a (click)="response = null; signalForm.reset(); submitted = false" class="filter__container-button filter__container-button--arbitrage">
                 Create another one
             </a>
         </div>
