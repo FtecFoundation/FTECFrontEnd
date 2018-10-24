@@ -120,15 +120,39 @@
 
 .sidebar__block {
   padding: .938em;
-  padding-left: 2.500em;
+  padding-left: 0;
   position: relative;
   cursor: pointer;
   list-style: none;
+
 }
 .sidebar__block-item{
   transition: margin-top 0.2s;
+  padding:20px 0;
+  padding-left:2.500em;
+  position: relative;
   +.sidebar__block-item{
-    margin-top: 15px;
+    margin-top: 0px;
+  }
+  a{
+    margin: 0;
+  }
+  &:before{
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0.125rem;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: $accent;
+    opacity: 0;
+    transition: all .2s ease;
+  }
+  &:hover{
+    &:before{
+      opacity: 1;
+    }
   }
 }
 .drop-menu{
@@ -150,16 +174,8 @@
   margin-top: 2.500em;
 }
 
-.sidebar__block:hover::before {
-  content: '';
-  left: 0;
-  top: 0;
-  width: 0.125rem;
-  height: 100%;
-  display: block;
-  position: absolute;
+.sidebar__block-item:hover::before {
 
-  background-color: $accent;
 }
 
 .sidebar__block-link {
@@ -167,7 +183,11 @@
   margin-left: .938em;
 
   color: $white;
-  font-size: .938em;
+  font-size: 14px;
+  span{
+    font-size: 18px;
+    margin-right: 12px;
+  }
 }
 
 /* Middle Part (middle) */
