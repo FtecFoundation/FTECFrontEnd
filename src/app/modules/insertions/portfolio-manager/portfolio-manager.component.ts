@@ -50,6 +50,7 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.portManagerService.getOldPortfolios().subscribe(data => {console.log("Got portfolios", data)})
         this.createForm();
         if (!this.crService.btcPrice) this.crService.getCryptocurrenciesTop();
     }
