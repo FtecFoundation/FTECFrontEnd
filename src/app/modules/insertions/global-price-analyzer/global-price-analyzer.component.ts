@@ -69,11 +69,12 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
     onPairSelected(pair: Pair) {
         this.pairsFilterService.selectPair(pair);
         this.selectedPairs.push((pair.base + '-' + pair.symbol).toUpperCase());
+        this.pairsFilterService.selectedPair = null;
     }
 
     submitForm(){
         this.submitted = true;
-        if (this.selectedPairs.length && this.selectedPairs.length < 10 && this.chosenExchanges.length && this.volume > 0.05 && this.volume < 50 && this.volume) {
+        if (this.selectedPairs.length && this.selectedPairs.length <= 10 && this.chosenExchanges.length && this.volume >= 0.05 && this.volume <= 50 && this.volume) {
             this.preloader = true;
            this._globalPriceService.searchPrices(this.prepareData()).subscribe(data => {
                this.results = data;

@@ -4,7 +4,7 @@ import {config} from "../behavioral-analyzer/ngx-chart.config";
 import {BehavioralDataTrades} from "../../../core/models/behavioral";
 import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {AvailableExchanges, Stock} from "../arbitrage/available-exchanges";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {TrpService} from "./trp.service";
 import {TradingRecommendation, TrpFilter} from "./trp";
 import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
@@ -29,7 +29,7 @@ export class TrpComponent implements OnInit {
     recommendation: TradingRecommendation;
 
     constructor(private trpService: TrpService, private exchangesService: ExchangesService, private imagesService: ImageService,
-                private activatedRoute: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute, private router: Router) {
     }
 
     ngOnInit() {
@@ -43,7 +43,9 @@ export class TrpComponent implements OnInit {
     }
 
     getRecommendations() {
-        this.trpService.getAllRecommendations().subscribe(data => {
+        let filter = new TrpFilter();
+        filter.overdue = true;
+        this.trpService.getAllRecommendations(filter).subscribe(data => {
             this.recommendations = data;
 
             for (const rec of this.recommendations) {
@@ -72,5 +74,10 @@ export class TrpComponent implements OnInit {
         this.activeTab = 0;
         this.recommendationId = id;
         this.getRecommendationForView();
+    }
+
+    toAllRecommendations() {
+        this.getRecommendations();
+        this.router.navigateByUrl('/modules/trp');
     }
 }

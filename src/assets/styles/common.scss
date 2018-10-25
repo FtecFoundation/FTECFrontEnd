@@ -51,7 +51,7 @@ li {
   position: absolute;
 }
 
-.wrapper {
+.wrapperr {
   height: 100vh;
 }
 
@@ -350,8 +350,9 @@ p {
 
 .middle--dashboard {
   width: 100% !important;
-  max-height: 375px;
+  max-height: 390px;
   overflow-y: hidden;
+  border-radius: 5px;
 }
 
 .main-info--dashboard {
@@ -462,7 +463,7 @@ p {
 .middle__table--dashboard,
 .middle__table--filter {
   overflow-y: scroll;
-  max-height: 290px;
+  max-height: 280px;
 }
 
 .container-item__price {
@@ -739,10 +740,10 @@ p {
   left: 0;
   top: 0;
   padding-right: 0.625em;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
   &__content{
     border-radius: .625rem;
-    padding: 20px 60px;
+    padding: 12px 60px;
     padding-left: 30px;
     padding-right: 80px;
     background: $violet-gradient-linear;
@@ -967,7 +968,9 @@ p {
 .container__name{
   padding-left: .738em;
 }
-
+.form__info-label-container.is-active .form__info-checkmark:after {
+  display: block;
+}
 
 
 

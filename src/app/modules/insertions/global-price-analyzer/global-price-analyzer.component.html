@@ -1,3 +1,5 @@
+<div class="wrapper">
+    <app-info-popup collapsedText="How does the Global Price Analyzer module work?" openedText="This section is in development"></app-info-popup>
 <div class="main-info main-info--price">
 
     <div class="middle middle--global">
@@ -133,13 +135,14 @@
                 <span class="error-field error-field--arbitrage" *ngIf="submitted && selectedPairs.length > 10">You can't choose more than 10 pairs</span>
 
             </div>
+            <p style="margin-bottom: .938em" *ngIf="!selectedPairs.length">You can choose up to 10 pairs</p>
 
             <div class="filter__container">
                 <span class="container__name">Pair</span>
 
                 <div class="container__form container__form--select is-active">
 
-                    <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)"
+                    <app-filter-dropdown [clearOnSelect]="true" [label]="'Pair'" (selectedPair)="onPairSelected($event)"
                                          (selected)="pairsFilterService.onPairTyping($event)"
                                          [items]="pairsFilterService.resultPairs"
                                          [keyName]="'pair'"></app-filter-dropdown>
@@ -183,5 +186,6 @@
         <button class="filter__container-button" (click)="submitForm()">Search</button>
     </form>
 
+</div>
 </div>
 </div>

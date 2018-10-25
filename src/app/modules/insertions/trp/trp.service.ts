@@ -10,7 +10,7 @@ const TrpApiUrls = {
     create: 'cabinet/tradeRecommendation/forecasts/create',
     myRecommendations: 'cabinet/tradeRecommendation/forecasts/owner',
     authorRating: 'cabinet/tradeRecommendation/forecasts/authorRating',
-    recommendations: 'cabinet/tradeRecommendation/forecasts/',
+    recommendations: 'cabinet/tradeRecommendation/forecasts',
     comments: '/comment/',
     subscribe: 'cabinet/tradeRecommendation/forecasts/subscribe'
 };
@@ -36,11 +36,12 @@ export class TrpService extends RestService {
             if (filter.startDate) params = params.set('startDate', '' + filter.startDate.getTime());
             if (filter.overdue) params = params.set('overdue', '' + filter.overdue);
             if (filter.minLikes) params = params.set('minLikes', '' + filter.minLikes);
-            if (filter.pair) params = params.set('pair', filter.pair);
+            if (filter.pair) params = params.set('pair',  filter.pair);
+            if (filter.price) params = params.set('price', filter.price);
             if (filter.stock) params = params.set('stock', filter.stock);
         }
 
-        return this.get(TrpApiUrls.recommendations, params).pipe(map(resp => resp.response));
+        return this.get(TrpApiUrls.recommendations, params, true).pipe(map(resp => resp.response));
     }
 
     getAuthorRating(id: number): Observable<AuthorRating> {

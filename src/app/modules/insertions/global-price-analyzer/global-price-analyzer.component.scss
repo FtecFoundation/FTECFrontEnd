@@ -32,6 +32,10 @@
   text-align: center;
 }
 
+.aside-right__head--arbitrage {
+  padding: 0;
+}
+
 .middle__table-container--global {
   width: 100%;
 }
@@ -46,4 +50,14 @@
 
 .item-inner-line-error-block--empty--pair {
   cursor: pointer;
+}
+.wrapper {
+  display: block;
+  width: 100%;
+}
+.item-inner-line-error-block.item-inner-line-error-block--empty {
+  margin: 0;
+  width: 100%;
+  margin-bottom: .938em;
+  margin-top: .938em;
 }

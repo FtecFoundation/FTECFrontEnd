@@ -6,7 +6,7 @@
       <div class="head-item__text" *ngIf="_currentUserService.user.currentPaymentScope && _currentUserService.user.balances">
         <span>Your balance</span>
 
-        <h5 class="head-item__text-price">{{getAssetBalance(_currentUserService.user.currentPaymentScope)}} {{_currentUserService.user.currentPaymentScope}}</h5>
+        <h5 class="head-item__text-price">{{getAssetBalance(_currentUserService.user.currentPaymentScope) | number: '1.0-8'}} {{_currentUserService.user.currentPaymentScope}}</h5>
       </div>
 
       <div class="head-item__text" *ngIf="!_currentUserService.user.currentPaymentScope">
@@ -227,7 +227,8 @@
           </span>
         </div>
 
-        <div class="middle__table--dashboard">
+        <div class="middle__table--dashboard-container">
+          <!--<div class="middle__table--dashboard">
           <div class="middle__table-container middle__table-container--dashboard">
             <div class="middle__table-container-item middle__table-container-item--dashboard">
               <h4 class="table-container-item--name">Volume analyzer</h4>
@@ -346,6 +347,10 @@
 
               <span class="container-item-update middle__table-text-middle">Poloniex Volume on Bittrex shows</span>
             </div>
+          </div>
+        </div> -->
+          <div class="mask-title">
+            <p>In development</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 <app-preloader class="behavioral--preloader-main" *ngIf="globalPreloader"></app-preloader>
+<div class="wrapper" *ngIf="!globalPreloader">
+<app-info-popup collapsedText="How does the Trader's Behavioral Analyzer module work?" openedText="This section is in development"></app-info-popup>
+<div class="main-info main-info--behavioral">
 
-<div class="main-info main-info--behavioral" *ngIf="!globalPreloader">
     <div class="middle middle--behavioral">
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
@@ -103,7 +105,7 @@
             <app-preloader *ngIf="requestPreloader"></app-preloader>
             <span>{{errorText}}</span>
 
-            <div class="container__form--behavioral-select" *ngIf="!requestPreloader">
+            <div class="container__form--behavioral-select" *ngIf="!requestPreloader && installedStocks.length>0">
                 <h4 *ngIf="!stockToSend" class="container__form-warning">To request new analysis please choose the stock!</h4>
                 <div class="container__form container__form--select container__form--behavioral-select">
                     <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
@@ -111,17 +113,16 @@
 
                 <button class="filter__container-button" (click)="sendRequest()" [disabled]="!stockSelected">Get stats</button>
             </div>
+            <div class="container__form--behavioral-select" *ngIf="!requestPreloader && installedStocks.length===0">
+                You have no exchanges currently connected. You need to <a (click)="router.navigateByUrl('/acoount/my-exchanges')" class="filter__container-link">connect stock</a> to use this module.
+            </div>
         </div>
 
         <!-- <div class="aside-right__filter aside-right__filter--behavioral aside-right__filter--bottom" *ngIf="responseData && responseData.statistics">
             <p class="behavioral--text--red">You are a very nervous trader. In 85% of cases, you get out of trades too early. Try to set your Take-Profit
                 level 2% higher than usual.</p>
         </div> -->
-
-        <div class="filter__container filter__container--notifications filter__container--behavioral" *ngIf="!responseData || this.responseData.operations['All'].length == 0">
-            <p>To get started you need to connect the API keys on the 'my-exchanges' page. You can proceed </p><a href="/account/my-exchanges"> here</a>
-        </div>
-
 </div>
 
+</div>
 </div>

@@ -1,4 +1,6 @@
-<div class="main-info main-info--portfolio">
+<div class="wrapper">
+  <app-info-popup collapsedText="How does the Portfolio Manager module work?" openedText="This section is in development"></app-info-popup>
+  <div class="main-info main-info--portfolio">
 
   <div class="middle middle--portfolio">
 
@@ -212,6 +214,7 @@
             </svg>
           </li>
         </ul>
+        <a class="filter__container-link" (click)="_faqService.goToFaq(7)">What is the difference?</a>
       </div>
 
 
@@ -223,4 +226,5 @@
   </div>
 
 
+</div>
 </div>

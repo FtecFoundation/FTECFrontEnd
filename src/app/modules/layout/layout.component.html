@@ -316,57 +316,76 @@
 
 
   <aside class="sidebar">
-    <ul class="sidebar__block">
+    <ul class="sidebar__block accordion">
       <li class="sidebar__block-item">
-        FTEC
-        <a href="javascript:void(0)" class="sidebar__block-link">
+
+        <a href="javascript:void(0)" onclick="openMenu()" class="sidebar__block-link">
+          <span>FTEC</span>
           &#9660;
         </a>
-
-        <ul>
+        <ul class="drop-menu">
           <li>
+            <a href="#">test</a>
+          </li>
+          <li>
+            <a href="#">test</a>
+          </li>
+          <li>
+            <a href="#">test</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar__block-item">
 
-            <!-- CONTENT -->
+        <a href="javascript:void(0)" onclick="openMenu()" class="sidebar__block-link">
+          <span>Info</span>
+          &#9660;
+        </a>
+        <ul class="drop-menu">
+          <li>
+            <a href="#">test</a>
+          </li>
+          <li>
+            <a href="#">test</a>
+          </li>
+          <li>
+            <a href="#">test</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar__block-item">
 
+        <a href="javascript:void(0)" onclick="openMenu()" class="sidebar__block-link">
+          <span>Support</span>
+          &#9660;
+        </a>
+        <ul class="drop-menu">
+          <li>
+            <a href="#">test</a>
+          </li>
+          <li>
+            <a href="#">test</a>
+          </li>
+          <li>
+            <a href="#">test</a>
           </li>
         </ul>
       </li>
     </ul>
-    <ul class="sidebar__block">
-      <li class="sidebar__block-item">
-        Info
-        <a href="javascript:void(0)" class="sidebar__block-link">
-          &#9660;
-        </a>
-
-        <ul>
-          <li>
-
-            <!-- CONTENT -->
-
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="sidebar__block">
-      <li class="sidebar__block-item">
-        Support
-        <a href="javascript:void(0)" class="sidebar__block-link">
-          &#9660;
-        </a>
-
-        <ul>
-          <li>
-
-            <!-- CONTENT -->
-          </li>
-        </ul>
-      </li>
-    </ul>
-
   </aside>
 </main>
+<script>
+    function openMenu(){
+        $(this).parent('.sidebar__block-item').each(function () {
+            var $this = $(this);
+            $this.find('.drop-menu').slideToggle('fast');
+            return false;
+        });
+    }
+
+</script>
 <app-footer></app-footer>
+
 
 <app-stub [opened]="_showStubService.opened" [title]="_showStubService.title" [text]="_showStubService.text"></app-stub>
 <app-popup [show]="_showModalService.showModal"></app-popup>

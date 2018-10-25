@@ -11,7 +11,7 @@
 
         <div class="middle__table-container middle__table-container--settings">
 
-          <div class="filter__container-inner">
+          <form #fEmail="ngForm" class="filter__container-inner">
             <div class="settings__account">
               <img *ngIf="_currentUserService.user && !preloader" [src]="'api/images/' + _currentUserService.user.imageName" alt="" class="settings__container-image">
               <app-preloader *ngIf="preloader"></app-preloader>
@@ -24,31 +24,23 @@
 
             <div class="filter__container-inner">
               <div class="filter__container">
-                <span class="container__name">First Name</span>
+                <span class="container__name">Email address</span>
 
                 <div class="container__form">
                   <label class="form__label" for="text"></label>
-                  <input class="form__input" id="input-first-name" min="20" placeholder="David" type="text">
+                  <input class="form__input" id="input-first-name" min="20" name="email" [placeholder]="_currentUserService.user.email" type="email" ngModel>
                 </div>
               </div>
             </div>
+            <app-dropdown [items]="availibleLanguages" [label]="'English'"></app-dropdown>
+          </form>
 
-            <div class="filter__container">
-              <span class="container__name">Last Name</span>
-
-              <div class="container__form">
-                <label class="form__label" for="text"></label>
-                <input class="form__input" id="input-last-name" min="20" placeholder="Harleystorf" type="text">
-              </div>
-            </div>
-          </div>
-
-          <button class="filter__container-button filter__container-button--settings" (click)="showModal()">Change</button>
+          <button class="filter__container-button filter__container-button--settings" (click)="changeEmail(fEmail.value)">Change</button>
         </div>
       </div>
     </div>
 
-    <div class="settings__container">
+    <form #f="ngForm" class="settings__container">
       <div class="middle__table-type">
         <h5>Password</h5>
       </div>
@@ -64,7 +56,7 @@
 
               <div class="container__form">
                 <label class="form__label" for="text"></label>
-                <input class="form__input" id="input-current-password" type="password">
+                <input class="form__input" id="input-current-password" type="password" name="currentPassword" ngModel>
               </div>
             </div>
             <div class="filter__container">
@@ -72,7 +64,7 @@
 
               <div class="container__form">
                 <label class="form__label" for="text"></label>
-                <input class="form__input" id="input-new-password" type="password">
+                <input class="form__input" id="input-new-password" type="password" name="newPassword" ngModel>
               </div>
             </div>
           </div>
@@ -82,14 +74,14 @@
 
             <div class="container__form">
               <label class="form__label" for="text"></label>
-              <input class="form__input" id="input-confirm-password" type="password">
+              <input class="form__input" id="input-confirm-password" type="password" name="newPasswordConfirm" ngModel>
             </div>
           </div>
 
-          <button class="filter__container-button filter__container-button--settings" (click)="showModal()">Change password</button>
+          <button class="filter__container-button filter__container-button--settings" (click)="changePassword(f.value)">Change password</button>
         </div>
       </div>
-    </div>
+    </form>
 
     <div class="settings__container">
       <div class="middle__table-type">
@@ -117,108 +109,6 @@
           </div>
 
           <button class="filter__container-button filter__container-button--settings" (click)="disable2FA()">Disable</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="settings__container">
-      <div class="middle__table-type">
-        <h5>Language</h5>
-      </div>
-
-      <div class="middle__table">
-
-        <div class="middle__table-container middle__table-container--settings-radio">
-
-          <div class="inputs__radio">
-            <label class="form__info-label-container">English
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label for="">
-              <label class="form__info-label-container">English
-                <input type="radio" name="language">
-
-                <span class="form__info-checkmark form__info-checkmark--settings"></span>
-              </label>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Chinese
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Korean
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Espaniol
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">German
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Русский
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Portuguese
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">French
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Vietnamese
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Norwegian
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-          <div class="inputs__radio">
-            <label class="form__info-label-container">Vietnamese
-              <input type="radio" name="language">
-
-              <span class="form__info-checkmark form__info-checkmark--settings"></span>
-            </label>
-          </div>
-
-          <button class="filter__container-button" (click)="showModal()">Submit</button>
-
         </div>
       </div>
     </div>

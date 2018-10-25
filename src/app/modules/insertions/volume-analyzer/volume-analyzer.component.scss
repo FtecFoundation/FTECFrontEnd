@@ -3,10 +3,15 @@
 :host {
   width: initial !important;
   padding: initial !important;
+  margin-top: 10px;
+}
+
+.middle {
+  margin-top: .938em;
 }
 
 .middle__block--volume {
-  margin-top: -0.563em;
+  margin-top: 0.938em;
 }
 
 .volume__container {

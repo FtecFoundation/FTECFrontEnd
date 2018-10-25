@@ -63,7 +63,9 @@
             </li>
         </ul>
         <div class="user-card__btn-wrap">
-            <a (click)="buyRecommendation(recommendation.id)" *ngIf="!owner && !recommendation.subscribed" class="user-card__btn custom-btn">Buy</a>
+            <a (click)="buyRecommendation(recommendation.id)" *ngIf="!owner && !recommendation.subscribed" class="user-card__btn custom-btn">
+                {{recommendation.price === 0 ? 'View' : 'Buy'}}
+            </a>
         </div>
         <div class="user-card__link">
             <a (click)="goToRecommendation(recommendation.id)" *ngIf="!view && (owner || recommendation.subscribed)">Full information</a>

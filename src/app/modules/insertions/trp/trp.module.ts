@@ -10,6 +10,8 @@ import {MyRecommendationsComponent} from './my-recommendations/my-recommendation
 import {RecommendationComponent} from './recommendation/recommendation.component';
 import {AllRecommendationsComponent} from './all-recommendations/all-recommendations.component';
 import { RecommendationViewComponent } from './recommendation-view/recommendation-view.component';
+import { FilterRecommendationsComponent } from './filter-recommendations/filter-recommendations.component';
+import {NgDatepickerModule} from "ng2-datepicker";
 
 
 @NgModule({
@@ -17,9 +19,10 @@ import { RecommendationViewComponent } from './recommendation-view/recommendatio
         CommonModule,
         SharedModule,
         TrpRoutingModule,
-        NgxChartsModule
+        NgxChartsModule,
+        NgDatepickerModule
     ],
-    declarations: [TrpComponent, CreateRecommendationComponent, MyRecommendationsComponent, RecommendationComponent, AllRecommendationsComponent, RecommendationViewComponent],
+    declarations: [TrpComponent, CreateRecommendationComponent, MyRecommendationsComponent, RecommendationComponent, AllRecommendationsComponent, RecommendationViewComponent, FilterRecommendationsComponent],
     providers: [TrpService]
 })
 export class TrpModule {

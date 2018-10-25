@@ -47,7 +47,7 @@ export const errorMessages = {
     '42': 'You ran out of notifications limit',
     '43': 'Volume Analyzer is already activated',
     '44': 'Volume Analyzer is already deactivated',
-    '45': 'Volume Analyzer is not configures. Please, select and save preferences to continue',
+    '45': 'Volume Analyzer is not configured. Please, select and save preferences to continue',
     '46': 'Exchange is not connected'
 };
 

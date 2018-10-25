@@ -32,7 +32,7 @@
   align-self: center;
   justify-content: center;
   position: relative;
-  
+
   border-radius: 28px;
   background-color: $white;
 }
@@ -85,7 +85,9 @@
 
 .item-inner-line-error-block.item-inner-line-error-block--empty {
   text-align: center;
-  margin-top: 1.538em;
+  margin: 0;
+  margin-bottom: .938em;
+  margin-top: .538em;
 }
 
 .item-inner-line-error-block.item-inner-line-error-block--empty span {
@@ -103,4 +105,21 @@
 
 .filter__container--volume-double {
   padding: .625em;
+}
+
+.l-order__type-container{
+  width: 100%;
+}
+.order__type-item{
+  width: 50%;
+  text-align: center;
+}
+.order__type-container{
+  &:before{
+    background-color: #25cbd3;
+  }
+}
+.wrapper {
+  display: block;
+  width: 100%;
 }

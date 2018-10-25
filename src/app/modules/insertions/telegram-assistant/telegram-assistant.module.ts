@@ -6,12 +6,14 @@ import {QRCodeModule} from 'angularx-qrcode';
 import {TelegramAssistantService} from './telegram-assistant.service';
 import { TelegramActivatedComponent } from './telegram-activated/telegram-activated.component';
 import {TelegramEnabledGuard} from '../../../core/guards/telegram-enabled.guard';
+import {SharedModule} from '../../../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
         TelegramAssistantRoutingModule,
-        QRCodeModule
+        QRCodeModule,
+        SharedModule
     ],
     declarations: [TelegramNotActivatedComponent, TelegramActivatedComponent],
     providers: [TelegramAssistantService, TelegramEnabledGuard]

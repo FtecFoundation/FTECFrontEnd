@@ -15,6 +15,13 @@
 
 }
 
+.aside-right__filter {
+  padding: 1.250em;
+  border-radius: .625rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(#3d0957), to(#0d0130));
+  background-image: linear-gradient(to left, #3d0957, #0d0130);
+}
+
 .tab-controls-item--trp{
   width: 100%;
   flex: 1;
@@ -423,10 +430,10 @@
 
 .recommendation-form__input {
   position: relative;
-}
-
-.recommendation-form__input {
   width: 100%;
+}
+.recommendation-form__input-title{
+  padding-left: 12px !important;
 }
 
 .recommendation-form{
@@ -673,4 +680,29 @@
 
 .wrapper {
   display: block;
+}
+
+/deep/ {
+  .ngx-datepicker-container {
+
+    input {
+      width: 100% !important;
+      border-radius: 28px !important;
+      color: white !important;
+      border: solid 1px #594498 !important;
+      background-color: #0d003b !important;
+      padding: .938em !important;
+      font-size: 0.7rem !important;
+      outline: none !important;
+    }
+  }
+
+  .ngx-datepicker-calendar-container {
+    z-index: 100 !important;
+  }
+}
+
+.filter__container--analyzer-active {
+  position: relative;
+  width: 100%;
 }

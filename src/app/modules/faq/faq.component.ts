@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { availableFaqLeft } from './available-faq-left';
 import { availableFaqRight } from './available-faq-right';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-faq',
@@ -12,20 +13,17 @@ export class FaqComponent implements OnInit {
   faqsLeft = availableFaqLeft;
   faqsRight = availableFaqRight;
 
+  public static currentQuestion: number = 0;
+
   ngOnInit() {
   }
 
   answer(faq: any) {
-    for (const a of this.faqsLeft) {
-      if (a !== faq) { a.chosen = false; }
-    }
-
-    for (const a of this.faqsRight) {
-      if (a !== faq) { a.chosen = false; }
-    }
-
-    faq.chosen = !faq.chosen;
+    if(FaqComponent.currentQuestion==faq) FaqComponent.currentQuestion=0;
+    else FaqComponent.currentQuestion=faq;
   }
 
-
+  get currentQuestion(){
+    return FaqComponent.currentQuestion;
+  }
 }

@@ -1,25 +1,11 @@
 <div class="wrapper">
-    <div class="msg-line">
-        <div class="msg-line__content">
-            <div class="msg-item">
-                <!--<div class="msg-item__title">-->
-                    <!--<h2>Trading Recommendations Platform</h2>-->
-                <!--</div>-->
-                <div class="msg-item__text">
-                    <p>The FTEC Trading Recommendations Platform with adaptive ratings is a platform for content
-                        publishing (mainly articles and trading recommendations) from experienced traders and analysts.</p>
-                </div>
-            </div>
-            <button type="button" class="msg-line__open"></button>
-        </div>
-    </div>
-
+    <app-info-popup collapsedText="How does the Trading Recommendation Platform module work?" openedText="This section is in development"></app-info-popup>
     <div class="main-info main-info--behavioral">
         <div class="middle middle--trp">
 
             <ul class="tab-controls tab-controls--trp">
                 <li class="tab-controls-item tab-controls-item--trp" [ngClass]="{'is-active': !activeTab}"
-                    (click)="activeTab = 0">Trading recommendations
+                    (click)="activeTab = 0; toAllRecommendations()">Trading recommendations
                 </li>
                 <li class="tab-controls-item tab-controls-item--trp" [ngClass]="{'is-active': activeTab === 1}"
                     (click)="activeTab = 1">My recommendations
@@ -59,103 +45,12 @@
         <div class="aside-right">
             <div class="aside-right__head aside-right__head--volume">
                 <h5>
-                    Find windows
+                    Filter Recommendations
                 </h5>
 
             </div>
 
-
-            <form action="" class="aside-right__filter">
-
-                <div class="filter__container-double">
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Exchange</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Timeframe</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Exchange</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Timeframe</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Exchange</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Timeframe</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Exchange</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-
-                    </div>
-
-                    <div class="filter__container filter__container--analyzer">
-                        <span class="container__name">Timeframe</span>
-
-                        <div class="container__form container__form--select is-active">
-
-                            <app-dropdown [label]="'Exchange'" [items]="pairs"></app-dropdown>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <button class="filter__container-button">Search</button>
-            </form>
+            <app-filter-recommendations></app-filter-recommendations>
 
 
         </div>

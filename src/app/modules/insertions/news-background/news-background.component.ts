@@ -21,6 +21,7 @@ export class NewsBackgroundComponent implements OnInit {
     currencies: string[] = [];
     availableCurrencies: string[] = ['BTC', 'ETH', 'XRP', 'BCC', 'EOS', 'XLM', 'LTC', 'ADA', 'IOTA', 'TRX', 'NEO', 'ETC', 'BNB', 'VET'];
     results: NewsBackgroundResults[];
+    preloader: boolean = false;
 
     pages: number[] = [];
 
@@ -48,10 +49,14 @@ export class NewsBackgroundComponent implements OnInit {
     }
 
     public updateNotificationStatus(type: string){
+        this.preloader = true;
         this._currentUserService.notificationSettings[9][type] = !this._currentUserService.notificationSettings[9][type];
         const toChange = this._currentUserService.notificationSettings[9];
         toChange.notificationType=3;
-        this._notificationService.updateNotification(toChange).subscribe(data => console.log(data));
+        this._notificationService.updateNotification(toChange).subscribe(data => {
+            this.preloader = false;
+            this.results = data;
+        });
     }
 
     goToPage(page: number) {

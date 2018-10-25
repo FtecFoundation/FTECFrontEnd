@@ -15,6 +15,7 @@ import { StubComponent } from './stub/stub.component';
 import { ShowStubService } from './stub/stub-modal.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {NotifyService} from "../core/notify/notify.service";
+import {FaqModule} from './faq/faq.module';
 
 
 @NgModule({
