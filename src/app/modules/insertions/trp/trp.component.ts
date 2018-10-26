@@ -3,7 +3,6 @@ import {Pair} from "../../../core/models/pair";
 import {config} from "../behavioral-analyzer/ngx-chart.config";
 import {BehavioralDataTrades} from "../../../core/models/behavioral";
 import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
-import {AvailableExchanges, Stock} from "../arbitrage/available-exchanges";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TrpService} from "./trp.service";
 import {TradingRecommendation, TrpFilter} from "./trp";
@@ -49,7 +48,8 @@ export class TrpComponent implements OnInit {
             this.recommendations = data;
 
             for (const rec of this.recommendations) {
-                this.getIncreasePercent(rec);
+                rec.priceIncrease = ((1 * 100) / rec.creationPrice) - 100;
+                // this.getIncreasePercent(rec);
             }
         });
     }
