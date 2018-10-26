@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <app-info-popup collapsedText="How doest the TRP module work?" openedText="TRP module works just fine"></app-info-popup>
+    <app-info-popup collapsedText="How does the Volume Analyzer module work?" openedText="This section is in development"></app-info-popup>
     <div class="main-info main-info--price">
 
     <div class="middle middle--price" *ngIf="history">
@@ -220,10 +220,10 @@
 
             <button class="filter__container-button" (click)="submitForm()">Save preferences</button>
             </div>
-            <button class="filter__container-button" *ngIf="analyzerActivated" (click)="stopAnalyzing()">Stop
+            <button class="filter__container-button" *ngIf="analyzerActivated && !notConfigured" (click)="stopAnalyzing()">Stop
                 analyzing
             </button>
-            <button class="filter__container-button" *ngIf="!analyzerActivated" (click)="startAnalyzing()">Start
+            <button class="filter__container-button" *ngIf="!analyzerActivated && !notConfigured" (click)="startAnalyzing()">Start
                 analyzing
             </button>
         </form>

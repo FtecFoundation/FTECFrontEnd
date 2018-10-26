@@ -40,6 +40,7 @@ export class VolumeAnalyzerComponent implements OnInit {
     allChosen = false;
     submitted: boolean = false;
     analyzerActivated: boolean;
+    notConfigured: boolean = true;
     history: VolumeAnalyzerData[];
 
     constructor(private _showModalService: ShowModalService, private formBuilder: FormBuilder,
@@ -52,7 +53,10 @@ export class VolumeAnalyzerComponent implements OnInit {
         this.createForm();
         this._volumeAnalyzerService.getHistory().subscribe(data => this.history = data);
         this._volumeAnalyzerService.getLastPreferences().subscribe(data => {
-            if (data.status !== 45) this.fillLastPreferences(data.response.settings);
+            if (data.status !== 45) {
+                this.notConfigured = false;
+                this.fillLastPreferences(data.response.settings);
+            }
         });
 
         this.analyzerActivated = this._currentUserService.user.settingsStatus === 'ACTIVATED';

@@ -36,11 +36,12 @@ export abstract class RestService {
     //     return Observable.of(xmlHttp.response);
     // }
 
-    protected get(relativeUrl: string, queryParam?: HttpParams): Observable<any> {
-        return this._http.get(this.baseUrl + relativeUrl, { headers: this.headers(), params: queryParam});
+    protected get(relativeUrl: string, queryParam?: HttpParams, forceRefresh: boolean = false): Observable<any> {
+        return this._http.get(this.baseUrl + relativeUrl + (forceRefresh ? '?_=' + new Date().getTime() : ''), { headers: this.headers(), params: queryParam});
     }
-    protected getBlob(relativeUrl: string, queryParam?: HttpParams): Observable<Blob> {
-        return this._http.get(this.baseUrl + relativeUrl, {headers: this.headers(), params: queryParam, responseType: 'blob'});
+
+    protected getNoParams(relativeUrl: string, forceRefresh: boolean = false): Observable<any> {
+        return this._http.get(this.baseUrl + relativeUrl + (forceRefresh ? '?_=' + new Date().getTime() : ''), { headers: this.headers()});
     }
 
     protected post(relativeUrl: string, data: any): Observable<any>  {
