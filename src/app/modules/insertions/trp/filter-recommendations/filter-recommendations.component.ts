@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PairsFilterService} from "../../../../core/services/pairs-filter/pairs-filter.service";
 import {AvailableExchanges, Stock} from "../../arbitrage/available-exchanges";
 import {Pair} from "../../../../core/models/pair";
 import {TrpService} from "../trp.service";
-import {TrpFilter} from "../trp";
+import {TradingRecommendation, TrpFilter} from "../trp";
 
 @Component({
     selector: 'app-filter-recommendations',
@@ -18,6 +18,7 @@ export class FilterRecommendationsComponent implements OnInit {
     likes: number;
     priceList: string[] = ['Free', 'Paid', 'All'];
     price: string;
+    @Output() onFilter: EventEmitter<TradingRecommendation[]> = new EventEmitter<TradingRecommendation[]>();
 
     constructor(public pairsFilterService: PairsFilterService, private trpService: TrpService) {
     }
@@ -38,6 +39,8 @@ export class FilterRecommendationsComponent implements OnInit {
         filter.price = this.price;
         if (this.pairsFilterService.selectedPair) filter.pair = `${this.pairsFilterService.selectedPair.base}-${this.pairsFilterService.selectedPair.symbol}`;
         filter.startDate = this.date;
-        this.trpService.getAllRecommendations(filter).subscribe(data => console.log(data));
+        this.trpService.getAllRecommendations(filter).subscribe(data => {
+            this.onFilter.emit(data);
+        });
     }
 }

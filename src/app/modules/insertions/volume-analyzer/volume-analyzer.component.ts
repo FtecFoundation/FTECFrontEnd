@@ -43,6 +43,13 @@ export class VolumeAnalyzerComponent implements OnInit {
     notConfigured: boolean = true;
     history: VolumeAnalyzerData[];
 
+    howTo: string[] = ['The user selects cryptocurrency exchanges and coins, whose abnormal ' +
+    ' behaviour is of interest to him. Or chooses the "no parameters" mode, ' +
+    'in this case, the assistant tracks the entire available market’s segment.',
+    'The assistant sends a notification each time he notices abnormal ' +
+    'volumes increase in certain markets.',
+    'The trader analyses the situation formed and takes the trade decision regarding to this asset.'];
+
     constructor(private _showModalService: ShowModalService, private formBuilder: FormBuilder,
                 private _volumeAnalyzerService: VolumeAnalyzerService, private _notifyService: NotifyService,
                 public _currentUserService: CurrentUserService,

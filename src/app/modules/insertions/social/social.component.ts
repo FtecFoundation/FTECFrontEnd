@@ -29,6 +29,11 @@ export class SocialComponent implements OnInit {
     daysLeft: any = 0;
     wordsLeft = 50;
     recWordClicked = false;
+    howTo: string[] = ['User chooses group of accounts to follow (i.e. exchanges, project pages, pages of field leaders, crypto enthusiasts` pages).',
+    'User chooses one of the vocabularies available of creates his own vocabulary (i.e. listing, delisting, hardfork…).',
+    'User chooses notifications frequency.',
+    'User chooses level of dynamics of signals increase for a certain keyword (at what rate the amount of keyword appearing in the search result increases).',
+    'User receive notifications about new publications and makes trading decisions on fundamental basis.'];
 
 
 

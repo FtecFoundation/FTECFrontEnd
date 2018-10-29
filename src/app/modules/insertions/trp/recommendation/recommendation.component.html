@@ -1,5 +1,5 @@
 
-    <div class="user-card">
+    <div class="user-card" [ngClass]="{'recommendation--old': (recommendation.status !== 'Waiting') && !view}">
         <div class="user-card__top">
             <div class="user-info">
                 <a href="" class="user-avatar">
@@ -28,7 +28,7 @@
         <ul class="user-card__char-list">
             <li>
                 <p>{{recommendation.title | uppercase}}</p>
-                <p>{{recommendation.status}}</p>
+                <p [ngClass]="{'recommendation--failed': recommendation.status === 'Failure'}">{{recommendation.status}}</p>
             </li>
             <li>
                 <p>Pair:</p>

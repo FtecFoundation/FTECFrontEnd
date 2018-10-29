@@ -9,7 +9,7 @@ export const config = {
     'lineChartShowLegend': false,
     'showGridLines': false,
     'lineChartShowXAxisLabel': false,
-    'lineChartShowYAxisLabel': true,
+    'lineChartShowYAxisLabel': false,
     'showRefLines': true,
     'showRefLabels': true,
     'tooltipDisabled': true,

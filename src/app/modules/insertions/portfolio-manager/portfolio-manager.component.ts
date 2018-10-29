@@ -5,7 +5,7 @@ import {CryptocurrenciesService} from "../../../core/services/cryptocurrencies.s
 import {CurrencyTop} from "./currency-top";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PortfolioManagerService} from "./portfolio-manager.service";
-import {Portfolio, PortfolioChart, PortfolioPreferences} from "./portfolio";
+import {Portfolio, PortfolioChart, PortfolioLogs, PortfolioPreferences} from "./portfolio";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {formatLabel} from "@swimlane/ngx-charts";
@@ -40,8 +40,19 @@ export class PortfolioManagerComponent implements OnInit {
     submitted: boolean = false;
 
     portfolioTerms = AvailableExchanges.availablePortfolioTerms;
+    timeLogs: PortfolioLogs;
+    activeLog: string;
+    showInfo = false;
 
     color = {domain: ['#990D64', '#7A3A9C', '#4780F1', '#23C8D6']};
+    howTo: string[] = ['The generator is based on the main market indicators and takes into account wishes of users for formation individual investment portfolio.',
+    'Separately you can define a pool of currencies and exchanges that may be included in the future crypto-portfolio.',
+    'The function of rebalancing the embedded crypto-currency portfolio is available in ' +
+    'case if it is outdated and lost relevance in relation to the current one market situation.',
+    'It is possibility to trace statistics and analytical report on ' +
+    'assets that are part of the current portfolio.',
+    ' Separately, the user can use the integration function of his own ' +
+    'portfolio, if it is formed out of the module, for example, by a trader on his own.'];
 
     constructor(public crService: CryptocurrenciesService, private formBuilder: FormBuilder,
                 private portManagerService: PortfolioManagerService, private notifyService: NotifyService,
@@ -50,9 +61,29 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.portManagerService.getOldPortfolios().subscribe(data => {console.log("Got portfolios", data)})
+        this.portManagerService.getOldPortfolios().subscribe(data => {
+            if (data !== {}) {
+                this.timeLogs = data;
+                this.activeLog = this.getKeys(data)[0];
+                this.fillPortfolioChart(this.activeLog);
+            }
+        });
         this.createForm();
         if (!this.crService.btcPrice) this.crService.getCryptocurrenciesTop();
+    }
+
+    fillPortfolioChart(log: string) {
+        this.showInfo = false;
+        this.showGraph = false;
+        this.portfolioChart = [];
+        for (const item of Object.keys(this.timeLogs[log].capitalization)) {
+            this.portfolioChart.push(new PortfolioChart(item, this.timeLogs[log].capitalization[item]));
+        }
+        this.showGraph = true;
+    }
+
+    getKeys(obj: any): string[] {
+        return Object.keys(obj);
     }
 
     getTermName(): string {
@@ -83,6 +114,7 @@ export class PortfolioManagerComponent implements OnInit {
                 for (const coin of Object.keys(data)) {
                     this.portfolioChart.push(new PortfolioChart(coin, data[coin]));
                 }
+                this.showInfo = true;
                 this.showGraph = true;
                 this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
                     'Your new portfolio was successfully generated', 'success'));

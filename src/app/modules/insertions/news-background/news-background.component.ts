@@ -6,6 +6,8 @@ import {NewsBackgroundService} from "./news-background.service";
 import {NewsBackgroundResults} from "../../../core/models/news-background";
 import {CurrentUserService} from '../../../core/services/current-user.service';
 import {NotificationService} from '../../account/notification/notification.service';
+import {NotifyService} from "../../../core/notify/notify.service";
+import {Notify} from "../../../core/notify/notifications";
 
 
 @Component({
@@ -24,11 +26,17 @@ export class NewsBackgroundComponent implements OnInit {
     preloader: boolean = false;
 
     pages: number[] = [];
+    howTo: string[] = ['Procedure is forming  a dataset including meaningful information from the news of the profile media and the subsequent dynamics of the market.',
+    'The collected dataset is randomly divided into training and test samples. There are  to be training and efficiency check-up processes of LSTM-neural network.',
+    'The cycle repeats until the optimal set of parameters is found, including the number of training epochs, deep neurons and the value of the training coefficient.',
+    'The trained neural network with the chosen effective architecture expecting real-time pending new information messages from a separate "web spider" who follows the ribbons of selected authoritative media. After evaluating the news, the algorithm makes a forecast regarding the future situation on the market, a probabilistic estimate of the forecast and sends it to the trader.',
+    'The user is guided by the projection of the neural network trading solution for the market.'];
 
     constructor(public _newsBackService: NewsBackgroundService,
                 private router: Router,
                 public _currentUserService: CurrentUserService,
-                private _notificationService: NotificationService) {
+                private _notificationService: NotificationService,
+                private notifyService: NotifyService) {
     }
 
 
@@ -54,6 +62,8 @@ export class NewsBackgroundComponent implements OnInit {
         const toChange = this._currentUserService.notificationSettings[9];
         toChange.notificationType=3;
         this._notificationService.updateNotification(toChange).subscribe(data => {
+            this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
+                'The results of analyzer was updated', 'success'));
             this.preloader = false;
             this.results = data;
         });

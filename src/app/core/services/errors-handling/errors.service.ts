@@ -48,7 +48,14 @@ export const errorMessages = {
     '43': 'Volume Analyzer is already activated',
     '44': 'Volume Analyzer is already deactivated',
     '45': 'Volume Analyzer is not configured. Please, select and save preferences to continue',
-    '46': 'Exchange is not connected'
+    '46': 'Exchange is not connected',
+    '47': 'News Background Analyzer settings not found',
+    '48': 'Current portfolio settings don\'t allow to generate profitable portfolio. Follow the given recommendations to get result',
+    '49': 'Trading recommendation is not found!',
+    '50': 'This pair is not supported',
+    '51': 'You are not subscribed on this trading recommendation',
+    '52': 'Price notification is not found',
+    '53': 'You can send only one request per 30 minutes'
 };
 
 @Injectable()

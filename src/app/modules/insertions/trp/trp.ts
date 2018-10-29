@@ -28,6 +28,7 @@ export class TradingRecommendation {
     content: string;
     creationDate: Date;
     endDate: Date;
+    endPrice: number;
     predictChange: number;
     creationPrice: number;
     status: string;

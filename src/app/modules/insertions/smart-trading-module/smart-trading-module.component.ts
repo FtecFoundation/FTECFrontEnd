@@ -24,6 +24,10 @@ export class SmartTradingModuleComponent implements OnInit {
     history: SmartTradingData[];
     page: number = 1;
 
+    howTo: string[] = ['User chooses intelligent trading module.',
+    'User chooses exchange and sets trading limits.', 'User connects his API keys.',
+    'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
+
     constructor(private _showModal: ShowModalService, private _smartTradingService: SmartTradingModuleService,
                 public _currentUserService: CurrentUserService, private notifyService: NotifyService) {
     }

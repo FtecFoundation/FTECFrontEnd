@@ -23,8 +23,12 @@ import {animate, style, transition, trigger} from '@angular/animations';
               <div class="msg-item">
                   <div class="msg-item__text">
                       <p>{{collapsedText}}</p>
-                      <div style="overflow-y: hidden; transition: max-height ease 500ms;" [ngStyle]="{'max-height':opened?'400px':'0px'}">
-                        <p *ngIf="opened" [@enterAnimation]>{{openedText}}</p>
+                      <div style=" overflow-y: hidden; transition: max-height ease 500ms;" [ngStyle]="{'max-height':opened?'400px':'0px'}">
+                        <div style="margin-top: .938em;" *ngIf="opened" [@enterAnimation]>
+                            <ul>
+                                <li *ngFor="let i of openedText">{{i}}</li>
+                            </ul>
+                        </div>
                       </div>
                   </div>
               </div>
@@ -32,14 +36,14 @@ import {animate, style, transition, trigger} from '@angular/animations';
           </div>
       </div>
   `,
-  styles: []
+  styleUrls: ['./info-popup.component.scss']
 })
 export class InfoPopupComponent implements OnInit {
 
   @Input()
   collapsedText: string;
   @Input()
-  openedText: string;
+  openedText: string[];
 
   opened: boolean
   constructor() { }

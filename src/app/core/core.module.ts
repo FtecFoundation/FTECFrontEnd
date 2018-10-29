@@ -32,6 +32,7 @@ import {PaymentService} from "./services/payment.service";
 import {PoloniexService} from "./services/exchanges/poloniex.service";
 import {FaqModule} from '../modules/faq/faq.module';
 import {FaqService} from '../modules/faq/faq.service';
+import {InfoService} from "./services/info.service";
 
 @NgModule({
     imports: [
@@ -67,6 +68,7 @@ import {FaqService} from '../modules/faq/faq.service';
         PaymentService,
         PoloniexService,
         FaqService,
+        InfoService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,

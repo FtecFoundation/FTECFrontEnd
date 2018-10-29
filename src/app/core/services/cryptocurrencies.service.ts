@@ -20,16 +20,16 @@ export class CryptocurrenciesService {
     constructor(private _http: HttpClient, private binanceService: BinanceService, private bittrexService: BittrexService) {
     }
 
-    getCryptocurrencies(): Observable<any> {
+    getCryptocurrencies(amount: number): Observable<any> {
         const params = new HttpParams().set('limit', '100').set('sort', 'rank').set('start', '1');
         return this._http.get(this.getCryptocurrenciesUrl, {params: params}).pipe(map(resp => {
-            let topFive: any = {};
+            let top: any = {};
             let counter = 0;
             for (const key of Object.keys(resp['data'])) {
-                if (counter++ === 5) break;
-                topFive[key] = resp['data'][key];
+                if (counter++ === amount) break;
+                top[key] = resp['data'][key];
             }
-            return topFive;
+            return top;
         }));
     }
 

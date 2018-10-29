@@ -13,6 +13,20 @@ export class Pair {
         return pair;
     }
 
+    encodeForExchange(exchange: string): string {
+        switch (exchange) {
+            case 'Poloniex':
+                return `${this.base}_${this.symbol}`;
+            case 'YObitNet':
+                return `${this.symbol.toLowerCase()}_${this.base.toLowerCase()}`;
+            case 'Hitbtc':
+                return this.symbol + this.base;
+            case 'Binance':
+                return this.symbol + this.base;
+            case 'BitTrex':
+                return `${this.base}-${this.symbol}`;
+        }
+    }
 }
 
 export class Candle {

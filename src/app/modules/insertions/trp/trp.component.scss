@@ -302,7 +302,11 @@
     justify-content: space-between;
   }
   &__text{
-    padding-top: 15px;
+    margin-top: 1.250em;
+    padding: 1.250em;
+    border-radius: .625rem;
+    background-image: -webkit-gradient(linear, right top, left top, from(#3d0957), to(#0d0130));
+    background-image: linear-gradient(to left, #3d0957, #0d0130);
     p{
       opacity: 1;
       font-size: 11px;
@@ -682,6 +686,10 @@
   display: block;
 }
 
+.user-graphic {
+  height: 310px;
+}
+
 /deep/ {
   .ngx-datepicker-container {
 
@@ -700,9 +708,21 @@
   .ngx-datepicker-calendar-container {
     z-index: 100 !important;
   }
+
+  .line-chart {
+    transform: translateX(25%) scale(1.1) !important;
+  }
 }
 
 .filter__container--analyzer-active {
   position: relative;
   width: 100%;
+}
+
+.recommendation--old {
+  opacity: .5;
+}
+
+.recommendation--failed {
+  color: $red !important;
 }

@@ -6,6 +6,7 @@ import {AvailableExchanges, Stock} from "../arbitrage/available-exchanges";
 import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
 import {GlobalPriceRequest, GlobalPriceResult} from "../../../core/models/global-price";
 import {GlobalPriceAnalyzerService} from "./global-price-analyzer.service";
+import {CryptocurrenciesService} from "../../../core/services/cryptocurrencies.service";
 
 
 @Component({
@@ -25,16 +26,37 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
     volume: number;
     selectedPairs: string[] = [];
     submitted: boolean = false;
+    recommendedCurrs: string[] = [];
+    allRecommendedCurrs: string[] = [];
 
     results: GlobalPriceResult;
+    howTo: string[] = ['The user logs in and goes to the corresponding module ' +
+    'to work with the stock segment.', 'The user selects a cryptocurrency pair for analysis.',
+    'The user selects the exchanges on which he wants to analyse. ' +
+    'Depending on the number of selected exchanges, the cost of the service is calculated.',
+    'The results are obtained instantly in the form of a table which ' +
+    'can be sorted by user\'s request. The table is relevant only at the time of ordering the service.'];
 
     constructor(public pairsFilterService: PairsFilterService, private exchangesService: ExchangesService,
-                private _globalPriceService: GlobalPriceAnalyzerService) {
+                private _globalPriceService: GlobalPriceAnalyzerService, private cryptocurrenciesService: CryptocurrenciesService) {
     }
 
     ngOnInit() {
         this.exchanges = this.exchanges.filter(ex => ex.nameToSend != 'YObitNet');
         if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
+
+        this.cryptocurrenciesService.getCryptocurrencies(22).subscribe(data => {
+            for (const curr of Object.keys(data)) {
+                if (data[curr].symbol === 'BTC' || data[curr].symbol === 'USDT') continue;
+                this.recommendedCurrs.push(data[curr].symbol);
+                this.allRecommendedCurrs.push(data[curr].symbol);
+            }
+        })
+    }
+
+    addRecommendedCurr(curr: string) {
+        this.selectedPairs.push('BTC-' + curr);
+        this.recommendedCurrs = this.recommendedCurrs.filter(c => c != curr);
     }
 
     chooseExchange(exhange: any) {
@@ -94,6 +116,8 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
     }
 
     deletePair(pair: string) {
+        const symbol = pair.substring(4);
+        if (this.allRecommendedCurrs.indexOf(symbol) !== -1) this.recommendedCurrs.push(symbol);
         this.selectedPairs = this.selectedPairs.filter(p => p != pair);
     }
 

@@ -14,7 +14,10 @@ import {FaqService} from '../../faq/faq.service';
 })
 
 export class BehavioralAnalyzerComponent implements OnInit {
-
+    howTo: string[] = ['Assistant examines user`s orders on chosen exchanges and analyzes situation that follows them.',
+    'Based on collected data, algorithm conducts a thorough analysis of trader`s behavioral factor.',
+    'Assistant generates interim summary with advice on how to improve quality of trading decisions that trader will make in the future.nterim summary tes factor.orithm conducts a thorough analysis of rading psychology to make trades more profitable.',
+    'There is a separate summary on potentially lost profit due to wrong and impulsive decisions of the trader.'];
     fullGraph = false;
     select = false;
     errorText = '';

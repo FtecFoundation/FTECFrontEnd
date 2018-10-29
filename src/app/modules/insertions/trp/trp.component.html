@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <app-info-popup collapsedText="How does the Trading Recommendation Platform module work?" openedText="This section is in development"></app-info-popup>
+    <app-info-popup collapsedText="How does the Trading Recommendation Platform module work?" [openedText]="howTo"></app-info-popup>
     <div class="main-info main-info--behavioral">
         <div class="middle middle--trp">
 
@@ -50,7 +50,7 @@
 
             </div>
 
-            <app-filter-recommendations></app-filter-recommendations>
+            <app-filter-recommendations (onFilter)="onFilteredRecommendations($event)"></app-filter-recommendations>
 
 
         </div>

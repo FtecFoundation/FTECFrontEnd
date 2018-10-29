@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <app-info-popup collapsedText="How does the Global Price Analyzer module work?" openedText="This section is in development"></app-info-popup>
+    <app-info-popup collapsedText="How does the Global Price Analyzer module work?" [openedText]="howTo"></app-info-popup>
 <div class="main-info main-info--price">
 
     <div class="middle middle--global">
@@ -12,7 +12,10 @@
         <ng-container *ngIf="results && !preloader">
         <ng-container *ngFor="let pair of getKeys(results)">
             <div class="item-inner-line-error-block item-inner-line-error-block--empty item-inner-line-error-block--empty--pair" *ngIf="!results[pair].opened"
-            (click)="results[pair].opened = true">{{pair}}</div>
+            (click)="results[pair].opened = true">
+                {{pair}}
+                <button type="button" class="msg-line__open"></button>
+            </div>
             <div class="middle__block middle__block--price" *ngIf="results[pair].opened">
 
                 <div class="middle__table-type middle__table-type--exchanges">
@@ -44,9 +47,9 @@
                             <span>{{item.stock}}</span>
                         </h4>
                         <div class="item-inner item-inner--notifications item-inner--exchanges">
-                            {{item.price | number: '1.0-8'}} %
+                            {{item.price | number: '1.0-8'}}
                         </div>
-                        <span class="container-item-update item-inner--exchanges title--green">{{item.percentOfSaving | number: '1.0-2'}}</span>
+                        <span class="container-item-update item-inner--exchanges title--green">{{item.percentOfSaving | number: '1.0-2'}} %</span>
                     </div>
                     </ng-container>
                 </div>
@@ -131,11 +134,39 @@
                     </li>
                 </ul>
 
-                <span class="error-field error-field--arbitrage" *ngIf="submitted && selectedPairs.length < 1">Choose at least 1 pair</span>
+                <span class="error-field error-field--arbitrage" *ngIf="submitted && !selectedPairs.length">Choose at least 1 pair</span>
                 <span class="error-field error-field--arbitrage" *ngIf="submitted && selectedPairs.length > 10">You can't choose more than 10 pairs</span>
 
             </div>
             <p style="margin-bottom: .938em" *ngIf="!selectedPairs.length">You can choose up to 10 pairs</p>
+
+            <div class="filter__container" *ngIf="recommendedCurrs.length > 0">
+                <span class="container__name container__name--recommended">Popular Currencies</span>
+                <ul id="filter__container-block2" class="filter__container-block">
+                    <li *ngFor="let curr of recommendedCurrs" class="filter__container-block-item--categories" (click)="addRecommendedCurr(curr)">{{curr}}
+                        <div class="categories__item-svg">
+                            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>Group 8</title>
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="FTEC-Platform_Module-2" transform="translate(-1286.000000, -130.000000)">
+                                        <g id="Group-5" transform="translate(1180.000000, 104.000000)">
+                                            <g id="Group" transform="translate(16.000000, 24.000000)">
+                                                <g id="Group-8" transform="translate(90.000000, 2.000000)">
+                                                    <circle id="Oval" fill-opacity="0.7" fill="#FFFFFF" cx="10" cy="10" r="10"></circle>
+                                                    <path d="M10.90625,10.03125 L14.875,14.015625 C15.0000006,14.1302089 15.0625,14.2734366 15.0625,14.4453125 C15.0625,14.6171884 15.0026048,14.7630202 14.8828125,14.8828125 C14.7630202,15.0026048 14.6171884,15.0625 14.4453125,15.0625 C14.2734366,15.0625 14.1302089,15.0000006 14.015625,14.875 L10.03125,10.890625 L6.046875,14.875 C5.93229109,15.0000006 5.78906336,15.0625 5.6171875,15.0625 C5.44531164,15.0625 5.29947977,15.0026048 5.1796875,14.8828125 C5.05989523,14.7630202 5,14.6171884 5,14.4453125 C5,14.2734366 5.06249937,14.1302089 5.1875,14.015625 L9.15625,10.03125 L5.1875,6.046875 C5.06249937,5.93229109 5,5.78906336 5,5.6171875 C5,5.44531164 5.05989523,5.29947977 5.1796875,5.1796875 C5.29947977,5.05989523 5.44531164,5 5.6171875,5 C5.78906336,5 5.93229109,5.06249938 6.046875,5.1875 L10.03125,9.15625 L14.015625,5.1875 C14.1302089,5.06249938 14.2734366,5 14.4453125,5 C14.6171884,5 14.7630202,5.05989523 14.8828125,5.1796875 C15.0026048,5.29947977 15.0625,5.44531164 15.0625,5.6171875 C15.0625,5.78906336 15.0000006,5.93229109 14.875,6.046875 L10.90625,10.03125 Z"
+                                                          id="" fill="#7A5D8E"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
             <div class="filter__container">
                 <span class="container__name">Pair</span>
@@ -147,9 +178,6 @@
                                          [items]="pairsFilterService.resultPairs"
                                          [keyName]="'pair'"></app-filter-dropdown>
                 </div>
-                <span class="error-field"
-                      *ngIf="submitted && !pairsFilterService.selectedPair">Select pair</span>
-
 
             </div>
 

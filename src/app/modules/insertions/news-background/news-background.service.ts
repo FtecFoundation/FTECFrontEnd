@@ -44,7 +44,7 @@ export class NewsBackgroundService extends RestService {
     }
 
     getUpdatedResults(): Observable<NewsBackgroundResults[]>{
-        return this.get(NewsBackgroundApiUrls.update).pipe(map(resp => {
+        return this.getNoParams(NewsBackgroundApiUrls.update,true).pipe(map(resp => {
             this.pagination = new Pagination(resp.response.latest['totalPages'], resp.response.latest['totalElements'],
                 resp.response.latest['size'], resp.response.latest['number']);
             return resp.response.result.latest.content;

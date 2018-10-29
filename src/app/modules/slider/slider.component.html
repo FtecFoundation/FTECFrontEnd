@@ -2,7 +2,7 @@
 
   <div class="container__form container__form--range" [attr.data-before-content]="min + postfix"
        [attr.data-after-content]="max + postfix">
-    <span [style.left.%]="normalizeValue(value)">{{value}}{{postfix}}</span>
+    <span [style.left.%]="normalizeValue(value)">{{value | number: "1.0-2"}}{{postfix}}</span>
 
     <input type="range" name="range" [min]="min" [max]="max" [(ngModel)]="value" (ngModelChange)="emitValue()">
   </div>
