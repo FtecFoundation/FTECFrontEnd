@@ -1,11 +1,83 @@
 export const changeLog = [
       {    
+    'date': '25/10/2018',
+    'changes': [
+            'On the Price Notification page, when the price changes in the field, the target price also changes the slider with a percentage.',
+            'Buttons (-10%, -5%, -3%, 3%, 5%, 10%) have been added to the Price Notification page, allowing you to quickly select the desired target percentage.',
+            'We fixed a bug with displaying price alerts.',
+            'The following information has been added to the Price Notification on the created alert card: the price at the time the alert was created, the date it was created, the date the goal was reached.',
+            'A link to the alert settings page has been added to the Price Notification page.',
+            'On the Order Manager page switch is made for the entire width of the block.',
+            'A warning has been added to the Order Manager that prohibits the selection of a pair that is not on the user-connected exchanges.'
+            ]
+    },
+      {    
+    'date': '24/10/2018',
+    'changes': [
+            'We fixed bugs in the work of Social Assistant.',
+            'On the cryptoacademy page, tabs with a large amount of content are placed in the first places.',
+            'On the cryptoacademy page we tested the work of tests for the forecast.',
+            'On the cryptoacademy page we checked the availability of pictures in all tests.',
+            'On the Telegram Assistant page, the QR code is moved to the right side of the screen.',
+            'We fixed a bug with caching requests, not allowing to check whether the Telegram bot is connected to the account.',
+            'The Behavioral Analyzer now displays a message stating that no exchanges are connected to the account and a link to the page with the exchanges settings has been added.'
+            ]
+    },
+      {    
+    'date': '23/10/2018',
+    'changes': [
+            'Also we added modal windows on the development of unsupported ways to send alerts.',
+            'We changed error status for endpoints with a limited number of requests for a certain time. Now the user will be displayed a message.',
+            'A Terms of Service document has been written and a page has been added where the user can read it.',
+            'The link in the confirmation email redirects to the main page of the ecosystem.',
+            'We fixed a table layout bug on the Dashboard page.',
+            'On the Dashboard page, a header is added above the table with connected exchanges.',
+            'On the My Exchanges page, a link has been added to the section in the FAQ about connecting exchange key APIs. In the Social Assistant, the user\'s dictionary is maintained even after his subscription expires.'
+            ]
+    },
+      {    
+    'date': '22/10/2018',
+    'changes': [
+            'At the frontend, on the user information settings page, the ability to change your current email has been added.',
+            'We updated a list of questions for the FAQ.',
+            'At the frontend, the ability to send support requests has been added.',
+            'The logic of choosing the current currency on the payments page has been slightly changed.',
+            'We changed tabs design.',
+            'We fixed a bug with the choice of how to send notifications.',
+            'Modal windows have been added to the Desktop App page to inform the user about the current development of this module.'
+            ]
+    },
+      {    
+    'date': '19/10/2018',
+    'changes': [
+            'We fixed a layout bug with circumcision of long email addresses in the top user menu.',
+            'In the top user menu now displays user balances for all currencies.',
+            'Social network icons have been added to the site’s footer with links to the project’s official pages.',
+            'On the dashboard page, the contents of the table with the action history for the modules are replaced by the inscription "in development".',
+            'On the My Exchanges page we fixed the layout bug in the table.',
+            'We fully tested the work of the referral program.',
+            'At the frontend, on the user information settings page, the ability to change your current password has been added.'
+            ]
+    },
+      {    
+    'date': '18/10/2018',
+    'changes': [
+            'We fixed label placement over all input fields.',
+            'A table of support for exchanges with modules was compiled and placed on a separate page (the link is located in the menu on the right).',
+            'A table of prices for the use of modules was compiled and placed on a separate page (the link is located in the menu on the right).',
+            'A collapsible block with brief information about the use of the module has been added to the pages of all modules.',
+            'We changed the appearance and content of the right information menu.',
+            'We tested sending notifications for all modules.',
+            'Alert icons via email and telegrams are moved to the top of the list with available alert methods.'
+            ]
+    },
+      {    
     'date': '17/10/2018',
     'changes': [
             'We moved and integrated under FTEC tests for Price Notification.',
             'At frontend, the display of the name and picture of the authors of trade recommendations, as well as comment authors has been fixed.',
             'At frontend, the display of the rating, the name and the picture for the newly-left associate is fixed.',
-            'At frontend, a bug was corrected with a request to receive Smart Trading Module settings for various exchanges',
+            'At frontend, a bug was corrected with a request to receive Smart Trading Module settings for various exchanges.',
             'We fixed updating of comments for each trading recommendation at frontend.',
             'We redesigned the appearance and content of the landing site.'
             ]
