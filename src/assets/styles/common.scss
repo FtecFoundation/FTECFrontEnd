@@ -612,7 +612,7 @@ p {
   background-image: none !important;
 }
 
-.form__info-label-container input:checked ~ .form__info-checkmark svg .item__svg-el--dark,
+//.form__info-label-container input:checked ~ .form__info-checkmark svg .item__svg-el--dark,
 .form__info-label-container input:hover ~ .form__info-checkmark svg .item__svg-el--dark {
   fill: $accent;
 }
