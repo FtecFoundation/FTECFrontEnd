@@ -1,5 +1,17 @@
 export const changeLog = [
       {    
+    'date': '26/10/2018',
+    'changes': [
+            'On the Order Manager page we added checking the availability of the necessary amount of coins on the balance of the exchange for placing orders.',
+            'On the Order Manager page, when the price changes in the field, the target price also changes the slider with a percentage.',
+            'Buttons (-10%, -5%, -3%, 3%, 5%, 10%) were added to the Order Manager page, allowing you to quickly select the desired target percentage.',
+            'On the Global Price Analyzer page we added buttons with top 20 currencies (by capitalization) for quick selection.',
+            'On the Global Price Analyzer, the appearance of the blocks with the search results for currency prices has been changed.',
+            'On the Global Price Analyzer page we fixed a bug with the inability to select the minimums / maximums for each field.',
+            'On the Global Price Analyzer page, the percentage of savings is now a percentage, not a coefficient.'
+            ]
+    },
+      {    
     'date': '25/10/2018',
     'changes': [
             'On the Price Notification page, when the price changes in the field, the target price also changes the slider with a percentage.',
