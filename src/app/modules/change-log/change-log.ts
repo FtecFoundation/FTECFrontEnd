@@ -1,5 +1,18 @@
 export const changeLog = [
       {    
+    'date': '29/10/2018',
+    'changes': [
+            'An inscription has been added to the Global Price Analyzer informing that the user can select several currencies to search at once.',
+            'Global Price Analyzer has added clearing the input field of the pair and automatic focus on it for the convenient introduction of several pairs at once.',
+            'In the Trading Recommendation Platform, on the recommendation creation page, the labels are aligned and the fields bond angles radius is reduced.',
+            'In the Trading Recommendation Platform, the price chart is aligned vertically and horizontally.',
+            'In the Trading Recommendation Platform, the name\'s derivation and recommendation\'s descriptions are  added.',
+            'In the Trading Recommendation Platform, the old recommendations are no longer deleted, but are displayed in semi-transparent blocks.',
+            'The Trading Recommendation Platform adds the ability of transition to the page of all recommendations, the field of adding a new recommendation.'
+            ]
+    },
+      
+      {    
     'date': '26/10/2018',
     'changes': [
             'On the Order Manager page we added checking the availability of the necessary amount of coins on the balance of the exchange for placing orders.',
