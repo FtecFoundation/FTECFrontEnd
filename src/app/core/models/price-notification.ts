@@ -22,6 +22,9 @@ export class PriceNotification {
     telegramNotification: boolean;
     emailNotification: boolean;
     webNotification: boolean;
+    creationDate: Date;
+    triggerDate: Date;
+    triggeredPrice: number;
 }
 
 export class PriceNotificationResponse {

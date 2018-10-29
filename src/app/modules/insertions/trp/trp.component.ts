@@ -28,6 +28,16 @@ export class TrpComponent implements OnInit {
     recommendations: TradingRecommendation[];
     recommendation: TradingRecommendation;
 
+    howTo: string[] = ['.For the downstream users there is a general strip of all trading ' +
+    'recommendations with the authors mentioning, their reputation and specific ' +
+    'recommendations pricing set by the author. In addition, it is possibility ' +
+    'of a paid subscription on all recommendations of the author for a certain ' +
+    'period.',
+    'Traders-authors publish their own trading recommendations.',
+    'Moderators track the success of the author\'s recommendations, on ' +
+    'the basis of which is determined by the author\'s reputation rating.',
+    'Users take into account the rating of the trader\'s author during the recommendations purchasing.'];
+
     constructor(private trpService: TrpService, private exchangesService: ExchangesService, private imagesService: ImageService,
                 private activatedRoute: ActivatedRoute, private router: Router) {
     }
@@ -46,12 +56,23 @@ export class TrpComponent implements OnInit {
         let filter = new TrpFilter();
         filter.overdue = true;
         this.trpService.getAllRecommendations(filter).subscribe(data => {
-            this.recommendations = data;
+            this.filterRecommendations(data);
 
             for (const rec of this.recommendations) {
                 this.getIncreasePercent(rec);
             }
         });
+    }
+
+    filterRecommendations(data: TradingRecommendation[]) {
+        let old: TradingRecommendation[] = [], latest: TradingRecommendation[] = [];
+
+        for (const rec of data) {
+            if (rec.status !== 'Waiting') old.push(rec);
+            else latest.push(rec);
+        }
+
+        this.recommendations = latest.concat(old);
     }
 
     getRecommendationForView() {
@@ -66,8 +87,12 @@ export class TrpComponent implements OnInit {
 
     getIncreasePercent(recom: TradingRecommendation) {
         const pairConverted = new Pair().of(recom.pair.substring(recom.pair.indexOf('-') + 1), recom.pair.substring(0, recom.pair.indexOf('-')));
-        this.exchangesService.exchanges[recom.stock].getPrice(pairConverted).subscribe(data =>
-            recom.priceIncrease = ((data * 100) / recom.creationPrice) - 100);
+        if (recom.status === 'Waiting') {
+            this.exchangesService.exchanges[recom.stock].getPrice(pairConverted).subscribe(data =>
+                recom.priceIncrease = ((data * 100) / recom.creationPrice) - 100);
+        } else {
+            recom.priceIncrease = ((recom.endPrice * 100) / recom.creationPrice) - 100;
+        }
     }
 
     changeRecommendation(id: number) {
@@ -78,6 +103,11 @@ export class TrpComponent implements OnInit {
 
     toAllRecommendations() {
         this.getRecommendations();
+        this.router.navigateByUrl('/modules/trp');
+    }
+
+    onFilteredRecommendations(data: TradingRecommendation[]) {
+        this.filterRecommendations(data);
         this.router.navigateByUrl('/modules/trp');
     }
 }

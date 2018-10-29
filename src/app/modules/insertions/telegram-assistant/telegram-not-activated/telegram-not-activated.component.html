@@ -1,30 +1,38 @@
 <div class="wrapper">
-  <app-info-popup collapsedText="How does the Telegram Assistant module work?" openedText="This section is in development"></app-info-popup>
-  <div class="main-info main-info--telegram">
-    <div class="middle middle--telegram-enable">
+    <app-info-popup collapsedText="How does the Telegram Assistant module work?"
+                    [openedText]="howTo"></app-info-popup>
+    <div class="main-info main-info--telegram">
+        <div class="middle middle--telegram-enable">
 
-    <h3 class="telegram-enable__title">To enable telegram assistant use one of the following methods:</h3>
+            <h3 class="telegram-enable__title">To enable telegram assistant use one of the following methods:</h3>
 
-    <p>1. Go to an application and find a bot. You can use @{{botDomain}} to find it. In chat window with bot send /start
-      as first message.</p>
+            <p>1. Go to an application and find a bot. You can use @{{botDomain}} to find it. In chat window with bot
+                send /start
+                as first message.</p>
 
-    <p>2. Follow the link and press 'Start'.<br> Link: <a target="_blank" class="link__accent" [href]="'http://t.me/' + _preferencesService.preferences.botDomain + '?start=-' + _currentUserService.tgSettings.accessCode">
-      http://t.me/{{_preferencesService.preferences.botDomain}}?start=-{{_currentUserService.tgSettings.accessCode}}</a></p>
+            <p>2. Follow the link and press 'Start'.<br> Link: <a target="_blank" class="link__accent"
+                                                                  [href]="'http://t.me/' + _preferencesService.preferences.botDomain + '?start=-' + _currentUserService.tgSettings.accessCode">
+                http://t.me/{{_preferencesService.preferences.botDomain}}?start=-{{_currentUserService.tgSettings.accessCode}}</a>
+            </p>
 
-    <p>3. Scan the following QR code. It will redirect you to the chat with bot where you need to press 'Start'</p>
+            <p>3. Scan the following QR code. It will redirect you to the chat with bot where you need to press
+                'Start'</p>
 
-    <p>4. After the previous steps are completed, press the button 'Enable Assistant' to get your access code.</p>
+            <p>4. After the previous steps are completed, press the button 'Enable Assistant' to get your access
+                code.</p>
 
 
-    <button class="filter__container-button" (click)="checkIfConnected()">Check if telegram linked</button>
-  </div>
-    <div class="aside-right">
-      <div class="aside-right__head">
-        <div class="qr-wrapper">
-          <qrcode colordark="#250643" [qrdata]="'tg://resolve?domain=FTEC_Telegram_bot&start=-' + _currentUserService.tgSettings.accessCode"  [level]="'L'"></qrcode>
+            <button class="filter__container-button" (click)="checkIfConnected()">Check if telegram linked</button>
         </div>
-      </div>
+        <div class="aside-right">
+            <div class="aside-right__head">
+                <div class="qr-wrapper">
+                    <qrcode colordark="#250643"
+                            [qrdata]="'tg://resolve?domain=FTEC_Telegram_bot&start=-' + _currentUserService.tgSettings.accessCode"
+                            [level]="'L'"></qrcode>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
 </div>

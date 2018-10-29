@@ -1,0 +1,15 @@
+:host {
+  padding: 0 .938em 0 0;
+  display:flex;
+  margin-top: -1.538em;
+}
+
+@media only screen and (max-width: 425px) {
+  :host {
+    padding: 0 .938em 0;
+  }
+}
+
+table {
+  margin-bottom: .938em;
+}

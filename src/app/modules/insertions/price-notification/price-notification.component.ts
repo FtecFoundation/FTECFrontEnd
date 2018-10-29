@@ -28,6 +28,15 @@ export class PriceNotificationComponent implements OnInit {
     telegramDisabled: boolean;
 
     typeNotChosen: boolean = false;
+    focusOnField: boolean = false;
+
+    percentButtons: number[] = [-10, -5, -3, 3, 5, 10];
+    howTo: string[] = ['The user logs in and goes to the corresponding module ' +
+    'to work with price notifications.', 'The user forms the list of exchanges he wants to receive ' +
+    'Notification from.', 'The user selects the pairs that interest him.',
+    'For each pair, flexible settings are provided for price analysis - lists of TP, SL coefficients, permissible ' +
+    'deviation percentage.',
+    'Then the user chooses all available ways of  information - notifications to mail, phone, mobile / desktop  application. You can choose several options at a time.'];
 
     constructor(private currentUser: CurrentUserService, public pairsFilterService: PairsFilterService,
                 private pNotificationService: PriceNotificationService, private exchangesService: ExchangesService) {
@@ -43,6 +52,11 @@ export class PriceNotificationComponent implements OnInit {
         console.log(this.currentUser.notificationSettings['4']['telegram']);
 
         if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
+    }
+
+    fromPercent(newPrice: string, price: number) {
+        const res: number =  (Number.parseFloat(newPrice) * 100) / Number.parseFloat('' + price);
+        this.profitPercent = res - 100;
     }
 
     onPairSelected(pair: Pair) {

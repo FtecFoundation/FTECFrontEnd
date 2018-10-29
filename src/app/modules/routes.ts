@@ -48,7 +48,8 @@ export const routes = [
             {path: 'change-log', loadChildren: './change-log/change-log.module#ChangeLogModule'},
             {path: 'faq', loadChildren: './faq/faq.module#FaqModule'},
             {path: 'support', loadChildren: './account/support/support.module#SupportModule'},
-            {path: 'exchanges-support', loadChildren: './working-exchanges/working-exchanges.module#WorkingExchangesModule'}
+            {path: 'prices', loadChildren: './prices/prices.module#PricesModule'},
+            {path: 'exchanges-support', loadChildren: './working-exchanges/working-exchanges.module#PricesModule'}
         ]
     }
 ];

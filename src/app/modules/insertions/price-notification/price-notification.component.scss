@@ -251,6 +251,22 @@
   }
 }
 
+.link__accent {
+  color: $accent;
+  text-decoration: underline;
+}
 
 
+.filter__container-slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -2.8em;
+  margin-bottom: 2.25em;
+
+  .filter__container-button {
+    padding: .8em;
+    margin-right: .353em;
+  }
+}
 

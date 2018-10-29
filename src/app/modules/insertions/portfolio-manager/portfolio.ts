@@ -18,3 +18,15 @@ export class PortfolioChart {
         this.value = value;
     }
 }
+
+export class PortfolioLogs {
+    [time: number]: PortfolioLog;
+}
+
+export class PortfolioLog {
+    capitalization: OldPortfolio;
+}
+
+export class OldPortfolio {
+    [asset: string]: number;
+}

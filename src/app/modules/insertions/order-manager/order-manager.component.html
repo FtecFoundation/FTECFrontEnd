@@ -1,130 +1,149 @@
 <div class="wrapper">
-    <app-info-popup collapsedText="How does the Order Manager module work?" openedText="This section is in development"></app-info-popup>
+    <app-info-popup collapsedText="How does the Order Manager module work?"
+                    [openedText]="howTo"></app-info-popup>
     <div class="main-info main-info--price">
 
-    <div class="middle middle--price">
+        <div class="middle middle--price">
 
-        <div class="aside-right__head aside-right__head--arbitrage">Active orders ({{available}} left)</div>
+            <div class="aside-right__head aside-right__head--arbitrage">Active orders ({{available}} left)</div>
 
-        <div class="middle__block middle__block--price" *ngIf="orders">
-            <div *ngIf="orders.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
-                <span>There are no active orders</span>
-            </div>
-
-            <div class="behavioral__small-container-inner" *ngFor="let order of orders">
-                <div class="order__small-container">
-                    <div class="small-container__line small-container__line--price">
-                        <h2>{{order.pair}}</h2>
-
-                        <span class="text-small">{{order.stock}}</span>
-                    </div>
-
-                    <div class="price__small-container-value order__small-container-value">
-                        <span class="small-container__line-link small-container__line-link--order"
-                          [ngClass]="{'small-container__line-link--order--sell': order.type === 'Sell'}"
-                          [ngClass]="{'small-container__line-link--order--buy': order.type === 'Buy'}">{{order.type}}</span>
-
-                        <span>{{order.divergence}}%</span>
-                    </div>
-
-                    <button class="filter__container-button filter__container-button--behavioral" (click)="deleteOrder(order.id)">Cancel</button>
+            <div class="middle__block middle__block--price" *ngIf="orders">
+                <div *ngIf="orders.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
+                    <span>There are no active orders</span>
                 </div>
+
+                <div class="behavioral__small-container-inner" *ngFor="let order of orders">
+                    <div class="order__small-container">
+                        <div class="small-container__line small-container__line--price">
+                            <h2>{{order.pair}}</h2>
+
+                            <span class="text-small">{{order.stock}}</span>
+                        </div>
+
+                        <div class="price__small-container-value order__small-container-value">
+                        <span class="small-container__line-link small-container__line-link--order"
+                              [ngClass]="{'small-container__line-link--order--sell': order.type === 'Sell'}"
+                              [ngClass]="{'small-container__line-link--order--buy': order.type === 'Buy'}">{{order.type}}</span>
+
+                            <span>{{order.divergence}}%</span>
+                        </div>
+
+                        <button class="filter__container-button filter__container-button--behavioral"
+                                (click)="deleteOrder(order.id)">Cancel
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <div class="aside-right">
+            <div class="aside-right__head aside-right__head--arbitrage">
+                <h5>
+                    Set new notifications
+                </h5>
+            </div>
 
-    <div class="aside-right">
-        <div class="aside-right__head aside-right__head--arbitrage">
-            <h5>
-                Set new notifications
-            </h5>
-        </div>
+            <form action="" class="aside-right__filter">
 
-        <form action="" class="aside-right__filter">
+                <div class="filter__container">
 
-            <div class="filter__container">
-
-                <div class="l-order__type-container">
-                    <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Buy'}" (click)="orderType = 'Buy'">Buy
+                    <div class="l-order__type-container">
+                    <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Buy'}"
+                          (click)="orderType = 'Buy'">Buy
                         <div class="order__type-container"></div>
                     </span>
-                    <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Sell'}"
-                          (click)="orderType = 'Sell'">Sell
+                        <span class="order__type-item" [ngClass]="{'is-active': orderType === 'Sell'}"
+                              (click)="orderType = 'Sell'">Sell
                           <div class="order__type-container"></div>
                     </span>
-                </div>
-            </div>
-
-            <div class="filter__container">
-                <span class="container__name">Currency Pair</span>
-                <div class="filter__container--price">
-
-                    <div class="container__form container__form--select is-active">
-                        <app-filter-dropdown [label]="'Pair'" (selectedPair)="onPairSelected($event)"
-                                             (selected)="pairsFilterService.onPairTyping($event)"
-                                             [items]="pairsFilterService.resultPairs"
-                                             [keyName]="'pair'"></app-filter-dropdown>
                     </div>
                 </div>
-                <span class="error-field" *ngIf="submitted && !pairsFilterService.selectedPair">Choose the pair</span>
 
-            </div>
+                <div class="filter__container">
+                    <span class="container__name">Currency Pair</span>
+                    <div class="filter__container--price">
 
-            <div class="filter__container">
-                <span class="container__name">Exchanges</span>
+                        <div class="container__form container__form--select is-active">
+                            <app-filter-dropdown (mouseover)="focusOnField=false" [label]="'Pair'"
+                                                 (selectedPair)="onPairSelected($event)"
+                                                 (selected)="pairsFilterService.onPairTyping($event)"
+                                                 [items]="pairsFilterService.resultPairs"
+                                                 [keyName]="'pair'"></app-filter-dropdown>
+                        </div>
+                    </div>
+                    <span class="error-field"
+                          *ngIf="submitted && !pairsFilterService.selectedPair">Choose the pair</span>
 
-                <div class="container__form">
-                    <app-dropdown [label]="'Exchange'" [value]="pairExchange" [keyName]="'name'"
-                                  [items]="pairsFilterService.exchangesList"
-                                  (selected)="chooseStock($event)"></app-dropdown>
                 </div>
 
-            </div>
+                <div class="filter__container">
+                    <span class="container__name">Exchanges</span>
 
+                    <div class="container__form">
+                        <app-dropdown (mouseover)="focusOnField=false" [label]="'Exchange'" [value]="pairExchange" [keyName]="'name'"
+                                      [items]="pairsFilterService.exchangesList"
+                                      (selected)="chooseStock($event)"></app-dropdown>
+                    </div>
 
-            <div class="filter__container">
-                <span class="container__name">Current price</span>
+                    <span class="error-field"
+                          *ngIf="pairExchange && connectedExchanges.indexOf(pairExchange.nameToSend) === -1">
+                        You have no API keys for this exchange. Connect it on the <a class="link__accent" routerLink="/account/my-exchanges">My Exchanges page</a>
+                        to be able to use it with all our modules</span>
 
-                <div class="container__form">
-                    <span class="form__input form__input-locked"> {{pairPrice ? pairPrice : 0 | number:'1.2-8'}}</span>
                 </div>
 
-            </div>
+                <div class="filter__container">
+                    <span class="container__name">Current price</span>
 
+                    <div class="container__form">
+                        <span class="form__input form__input-locked"> {{pairPrice ? pairPrice : 0 | number:'1.2-8'}}</span>
+                    </div>
 
-            <div class="filter__container">
-                <span class="container__name">Amount to {{orderType.toLowerCase()}}</span>
-
-                <div class="container__form">
-                    <label for="" class="form__label"></label>
-                    <input type="number" class="form__input" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}"
-                           placeholder="Amount to {{orderType.toLowerCase()}}">
-                    <span class="form__label form__label--currency" *ngIf="pairsFilterService.selectedPair">{{pairsFilterService.selectedPair.symbol}}</span>
                 </div>
 
-                <span class="error-field" *ngIf="amountNotSet">Set the amount to {{orderType.toLowerCase()}}</span>
 
-            </div>
+                <div class="filter__container">
+                    <span class="container__name">Amount to {{orderType.toLowerCase()}}</span>
 
-            <div class="filter__container">
-                <span class="container__name">Price</span>
+                    <div class="container__form">
+                        <label for="" class="form__label"></label>
+                        <input type="number" class="form__input" [(ngModel)]="amount"
+                               [ngModelOptions]="{standalone: true}"
+                               placeholder="Amount to {{orderType.toLowerCase()}}">
+                        <span class="form__label form__label--currency" *ngIf="pairsFilterService.selectedPair">{{pairsFilterService.selectedPair.symbol}}</span>
+                    </div>
 
-                <div class="container__form">
-                    <label for="" class="form__label"></label>
-                    <input type="number" class="form__input" placeholder="Price"
-                           value="{{toPercent(pairPrice, profitPercent) | number:'1.2-8'}}" readonly>
+                    <span class="error-field" *ngIf="amountNotSet">Set the amount to {{orderType.toLowerCase()}}</span>
+                    <span class="error-field" *ngIf="balanceError">Not enough tokens on the chosen exchange!</span>
+
                 </div>
 
-            </div>
+                <div class="filter__container">
+                    <span class="container__name">Price</span>
 
-            <app-slider (valueToSend)="getProfitPercent($event)"></app-slider>
+                    <div class="container__form">
+                        <label for="" class="form__label"></label>
+                        <input (focus)="focusOnField=true" type="number" #price class="form__input" placeholder="Price"
+                               value="{{focusOnField?price.value:(toPercent(pairPrice, profitPercent) | number:'1.2-8')}}"
+                               (keyup)="fromPercent(price.value, pairPrice)">
+                    </div>
 
-            <button class="filter__container-button" (click)="addOrder()">Add order</button>
-        </form>
+                </div>
+
+                <app-slider (mouseover)="focusOnField=false" (valueToSend)="getProfitPercent($event)"
+                            [value]="profitPercent"></app-slider>
+                <div class="filter__container-slider-buttons">
+                    <button class="filter__container-button" *ngFor="let percent of percentButtons"
+                            (click)="profitPercent = percent">{{percent}}%
+                    </button>
+                </div>
+
+                <button class="filter__container-button" (click)="addOrder()">Add order</button>
+            </form>
+
+        </div>
 
     </div>
-
-</div>
 </div>

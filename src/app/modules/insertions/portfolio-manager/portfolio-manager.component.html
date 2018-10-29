@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <app-info-popup collapsedText="How does the Portfolio Manager module work?" openedText="This section is in development"></app-info-popup>
+  <app-info-popup collapsedText="How does the Portfolio Manager module work?" [openedText]="howTo"></app-info-popup>
   <div class="main-info main-info--portfolio">
 
   <div class="middle middle--portfolio">
@@ -40,7 +40,7 @@
               [tooltipText]="pieTooltipText">
       </ngx-charts-pie-chart>
 
-      <div class="portfolio__graph-info" *ngIf="portfolioChart.length">
+      <div class="portfolio__graph-info" *ngIf="portfolioChart.length && showInfo">
         <form action="" class="graph__stats">
 
           <div class="graph__stats-line-container">
@@ -133,6 +133,21 @@
           {{curr.percentIncrease | number: '1.0-2'}}%</span>
       </div>
     </div>
+
+    <ng-container *ngIf="timeLogs">
+      <p class="block-title">See your last portfolios</p>
+      <div class="middle__head middle__head--arbitrage middle__head--arbitrage-tabs">
+        <ul class="tab-controls tab-controls--arbitrage">
+          <ng-container *ngFor="let time of getKeys(timeLogs); let i = index">
+            <li [ngClass]="{'is-active': time == activeLog}"
+                (click)="fillPortfolioChart(time); activeLog = time"
+                class="tab-controls-item tab-controls-item--arbitrage"
+                *ngIf="i < 5">{{time | date: 'dd MMM HH:mm'}}</li>
+          </ng-container>
+
+        </ul>
+      </div>
+    </ng-container>
 
   </div>
 

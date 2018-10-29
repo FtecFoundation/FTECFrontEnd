@@ -50,14 +50,23 @@
 
 .item-inner-line-error-block--empty--pair {
   cursor: pointer;
+  position: relative;
 }
 .wrapper {
   display: block;
   width: 100%;
 }
 .item-inner-line-error-block.item-inner-line-error-block--empty {
+  text-align: left !important;
   margin: 0;
   width: 100%;
   margin-bottom: .938em;
   margin-top: .938em;
+}
+
+.item-inner-line-error-block {
+  justify-content: left;
+  top: 0;
+  left: 0;
+  text-align: left !important;
 }

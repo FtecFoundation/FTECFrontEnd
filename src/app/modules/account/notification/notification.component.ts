@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {CurrentUserService} from '../../../core/services/current-user.service';
 import {NotificationSetting, NotificationSettings} from '../../../core/models/user';
 import {notificationMapper} from '../../../constants';
+import {ShowModalService} from "../../not-active/show-modal.service";
 
 
 @Component({
@@ -15,7 +16,8 @@ export class NotificationComponent implements OnInit {
     titles = notificationMapper;
 
     constructor(private _notificationService: NotificationService,
-                public _currentUserService: CurrentUserService) {
+                public _currentUserService: CurrentUserService,
+                public showModalService: ShowModalService) {
     }
 
     ngOnInit() {

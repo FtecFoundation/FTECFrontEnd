@@ -237,6 +237,9 @@
   width: 100%;
 }
 
+.portfolio__graph {
+  height: 300px;
+}
 /deep/
 {
 
@@ -257,4 +260,12 @@
   font-size: .938rem;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.tab-controls {
+  width: 100%;
+}
+
+.block-title{
+  margin-top: .938em;
 }

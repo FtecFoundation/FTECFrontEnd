@@ -1,6 +1,6 @@
 <div class="wrapper">
     <app-info-popup collapsedText="How does the News Background Analyzer module work?"
-                    openedText="This section is in development"></app-info-popup>
+                    [openedText]="howTo"></app-info-popup>
     <div class="main-info">
 
         <div class="middle">
@@ -10,8 +10,7 @@
                     Subscription days left: {{daysLeft}}
                 </h5>
 
-                <button class="button__outline" (click)="renewSubscription()">{{daysLeft ? 'Subscribe' : 'Renew
-                    subscription'}}
+                <button class="button__outline" (click)="renewSubscription()">{{!daysLeft ? 'Subscribe' : 'Renew subscription'}}
                 </button>
             </div>
 

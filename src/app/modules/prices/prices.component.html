@@ -1,0 +1,38 @@
+<div class="exchange-status-table" *ngIf="prices">
+  <table cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <td></td>
+      <td *ngFor="let module of getKeys(modules); let i = index">
+        <ng-container *ngIf="i < 5">
+          {{modules[module]}}
+        </ng-container>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><p>Price</p></td>
+        <td *ngFor="let module of getKeys(modules); let i = index"><span *ngIf="i < 5"><p>{{prices[module]}} FTEC</p></span></td>
+    </tr>
+    </tbody>
+  </table>
+  <table cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <td></td>
+      <td *ngFor="let module of getKeys(modules); let i = index">
+        <ng-container *ngIf="i >= 5">
+          {{modules[module]}}
+        </ng-container>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><p>Price</p></td>
+      <td *ngFor="let module of getKeys(modules); let i = index"><span *ngIf="i >= 5"><p>{{prices[module]}} FTEC</p></span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

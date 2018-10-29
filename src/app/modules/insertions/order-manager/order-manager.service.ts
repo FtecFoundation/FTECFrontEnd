@@ -7,7 +7,8 @@ import {map} from "rxjs/operators";
 import {Order, OrderManagerResponse} from "../../../core/models/order-manager";
 
 enum OrderManagerApiUrls {
-    order = 'cabinet/orderManager/order'
+    order = 'cabinet/orderManager/order',
+    balance = 'cabinet/balances/stock'
 }
 
 @Injectable()
@@ -15,6 +16,12 @@ export class OrderManagerService extends RestService{
 
     constructor(_http: HttpClient, _cookieService: CookieService) {
         super(_http, _cookieService);
+    }
+
+    checkBalance(stock: string, asset: string): Observable<any> {
+        const params = new HttpParams().set('stock', stock).set('asset', asset);
+        return this.get(OrderManagerApiUrls.balance, params, true).pipe(
+            map(resp => resp.response[asset]));
     }
 
     addOrder(data: any): Observable<OrderManagerResponse> {

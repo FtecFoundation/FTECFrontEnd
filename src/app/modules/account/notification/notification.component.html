@@ -12,12 +12,12 @@
         <figure class="button__change" (click)="changeMode('telegram')" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].telegram}"></figure>
       </div>
 
-      <div class="notification__checker">
+      <div class="notification__checker" (click)="showModalService.showModal = true">
         <span class="text">SMS Enabled</span>
         <figure class="button__change" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].sms}"></figure>
       </div>
 
-      <div class="notification__checker">
+      <div class="notification__checker" (click)="showModalService.showModal = true">
         <span class="text">Mobile app Enabled</span>
         <figure class="button__change" [ngClass]="{'is-active' : this._currentUserService.user.notificationSettings[0].mobileApplication}"></figure>
       </div>

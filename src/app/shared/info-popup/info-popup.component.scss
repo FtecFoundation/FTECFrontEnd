@@ -1,0 +1,19 @@
+li:before {
+    content: "•";
+    color: #25cbd3;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -15px;
+    margin-top: -3px;
+    font-size: 1.3em;
+  position: absolute;
+    margin-right: 10px;
+  }
+
+li {
+  font-size: .938rem;
+}
+
+ul {
+  margin-left: .938em;
+}

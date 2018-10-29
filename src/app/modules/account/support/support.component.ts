@@ -25,8 +25,8 @@ export class SupportComponent implements OnInit {
 
     submitForm(form: any) {
         this.submitted = true;
-        console.log(form);
         if (form.valid) this.supportService.sendSimpleRequest(form.value).subscribe(data => {
+            this.data.message = null;
             this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
                 'Your request has been sent', 'success'))
         });

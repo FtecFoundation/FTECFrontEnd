@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <app-info-popup collapsedText="How does the Volume Analyzer module work?" openedText="This section is in development"></app-info-popup>
+    <app-info-popup collapsedText="How does the Volume Analyzer module work?" [openedText]="howTo"></app-info-popup>
     <div class="main-info main-info--price">
 
     <div class="middle middle--price" *ngIf="history">

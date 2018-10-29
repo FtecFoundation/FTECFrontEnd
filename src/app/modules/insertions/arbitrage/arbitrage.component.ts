@@ -29,6 +29,11 @@ export class ArbitrageComponent implements OnInit {
     currentLogs: ArbitrageWindowsLog;
     forbidNewTabs: boolean = false;
     newTabs: any = {};
+    howTo: string[] = ['The user selects exchanges and currencies, arbitrage windows which they are interested in.',
+    'Additionally trader can point out minimum arbitration window’s trade volume and the minimum percentage of potential profit.',
+    'Assistant displays information (entry and exit exchanges, trading pair , volume and percentage)on arbitrage windows availability filling the parameters entered.\n' +
+    'The user buys altcoins on the inbound exchange and sells at the outbound, ' +
+    'fixing the profit.'];
 
     constructor(private _showModalService: ShowModalService,
                 private _arbitrageService: ArbitrageService,
