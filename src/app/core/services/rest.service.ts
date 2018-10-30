@@ -37,7 +37,8 @@ export abstract class RestService {
     // }
 
     protected get(relativeUrl: string, queryParam?: HttpParams, forceRefresh: boolean = false): Observable<any> {
-        return this._http.get(this.baseUrl + relativeUrl + (forceRefresh ? '?_=' + new Date().getTime() : ''), { headers: this.headers(), params: queryParam});
+        return this._http.get(this.baseUrl + relativeUrl + (forceRefresh ? '?_=' + new Date().getTime() : ''),
+            { headers: this.headers(), params: queryParam});
     }
 
     protected getNoParams(relativeUrl: string, forceRefresh: boolean = false): Observable<any> {

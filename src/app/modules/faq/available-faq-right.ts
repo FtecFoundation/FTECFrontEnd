@@ -28,5 +28,17 @@ export const availableFaqRight = [
         'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
             'exchanges and also allow traders to efficiently manage their time and coming information flows.',
         'id': 10
+    },
+    {
+        'question': 'What is balanced bot?',
+        'answer': 'Balanced bot checks 24 conditions but depends on previous results can skip some false conditions. Because of ' +
+            'this bot trades more often and gives more profit that \'Conservative bot\'. But it has lower precision.',
+        'id': 13
+    },
+    {
+        'question': 'What is conservative bot?',
+        'answer': 'Conservative bot checks 24 conditions and trades only when every single condition is true. Because of this, bot can skip ' +
+            'some profitable situations but each trade is profitable with the highest probability.',
+        'id': 14
     }
 ];

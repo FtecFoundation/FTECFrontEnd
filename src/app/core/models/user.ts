@@ -18,6 +18,13 @@ export class User {
     currentPaymentScope: string;
 }
 
+export class ModuleLog {
+    date: Date;
+    description: string;
+    module: string;
+    changeBalance: number;
+}
+
 export class NotificationSettings{
     [type: number]: NotificationSetting;
 }

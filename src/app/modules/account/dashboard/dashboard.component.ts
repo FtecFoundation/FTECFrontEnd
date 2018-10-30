@@ -5,7 +5,7 @@ import { ShowModalService } from '../../not-active/show-modal.service';
 import { CurrentUserService } from '../../../core/services/current-user.service';
 import { Router } from '@angular/router';
 import { AccountService } from '../../../core/services/account.service';
-import { DashboardAuthLogs, ExchangeKeys } from '../../../core/models/user';
+import {DashboardAuthLogs, ExchangeKeys, ModuleLog} from '../../../core/models/user';
 import { MyExchangesComponent } from '../my-exchanges/my-exchanges.component';
 import { MyExchangesService } from '../my-exchanges/my-exchanges.service';
 import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-exchanges';
@@ -30,13 +30,16 @@ export class DashboardComponent implements OnInit {
     currencies: Cryptocurrency[] = [];
     logs: DashboardAuthLogs[] = [];
 
+    moduleLogs: ModuleLog[];
+
     constructor(private _cryptoService: CryptocurrenciesService,
         private _showModalService: ShowModalService,
         private router: Router,
         public _currentUserService: CurrentUserService,
         private _authLogs: AccountService,
         private _notificationService: NotificationService,
-        private _exchangesKeys: ExchangeKeys) {
+        private _exchangesKeys: ExchangeKeys,
+                private _accountService: AccountService) {
     }
 
     ngOnInit() {
@@ -62,6 +65,8 @@ export class DashboardComponent implements OnInit {
 
             this.authLogsContent = true;
         });
+
+        this._accountService.getModulesLogs().subscribe(data => this.moduleLogs = data);
 
     }
 

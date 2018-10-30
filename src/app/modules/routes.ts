@@ -49,7 +49,7 @@ export const routes = [
             {path: 'faq', loadChildren: './faq/faq.module#FaqModule'},
             {path: 'support', loadChildren: './account/support/support.module#SupportModule'},
             {path: 'prices', loadChildren: './prices/prices.module#PricesModule'},
-            {path: 'exchanges-support', loadChildren: './working-exchanges/working-exchanges.module#PricesModule'}
+            {path: 'exchanges-support', loadChildren: './working-exchanges/working-exchanges.module#WorkingExchangesModule'}
         ]
     }
 ];

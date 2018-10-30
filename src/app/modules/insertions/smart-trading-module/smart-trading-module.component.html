@@ -3,17 +3,20 @@
   <div class="main-info main-info--smart">
 
   <div class="middle middle--smart">
+    <div style="margin: 12px" *ngIf="!keys.length" class="item-inner-line-error-block item-inner-line-error-block--empty">
+      <span>Connect exchanges' API keys to stark working with this module</span>
+    </div>
 
     <div class="smart__item" *ngFor="let bot of bots">
       <div class="smart__container" [ngClass]="{'is-active': bot.active}">
 
         <div class="smart__item-bot">
-          <img src="../../../../assets/images/bot2.png" alt="">
+          <img src="../../../../assets/images/{{bot.image}}" alt="">
 
           <div class="smart__item-bot-text">
             <span class="smart__bot-title">{{bot.name}} Bot</span>
 
-            <span class="smart__bot-subtitle">Strategy description</span>
+            <span (click)="_faqService.goToFaq(bot.questionId)" class="smart__bot-subtitle">Strategy description</span>
           </div>
         </div>
 
@@ -83,9 +86,12 @@
       </div>
     </div>
 
-    <div class="smart__table" *ngIf="history && history.length">
+    <div class="smart__table" *ngIf="history">
+      <div *ngIf="!history.length" class="item-inner-line-error-block item-inner-line-error-block--empty">
+        <span>There is no trading history yet</span>
+      </div>
 
-      <div class="middle__table-type">
+      <div class="middle__table-type" *ngIf="history.length">
         <span class="middle__table-type-name">
           Pair
         </span>
@@ -105,7 +111,7 @@
         </span>
       </div>
 
-      <div class="middle__table--dashboard">
+      <div class="middle__table--dashboard" *ngIf="history.length">
 
         <div class="middle__table-container middle__table-container--dashboard" *ngFor="let item of history">
           <div class="middle__table-container-item middle__table-container-item--dashboard">
@@ -182,8 +188,7 @@
       </div>
 
     </div>
-
-    <div class="smart__table">
+    <div class="smart__table" *ngIf="keys.length">
 
       <div class="middle__table-type">
         <span class="middle__table-type-name--smart">

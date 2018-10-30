@@ -134,7 +134,7 @@
       </div>
     </div>
 
-    <ng-container *ngIf="timeLogs">
+    <ng-container *ngIf="!activeTab && timeLogs && timeLogs !== {}">
       <p class="block-title">See your last portfolios</p>
       <div class="middle__head middle__head--arbitrage middle__head--arbitrage-tabs">
         <ul class="tab-controls tab-controls--arbitrage">

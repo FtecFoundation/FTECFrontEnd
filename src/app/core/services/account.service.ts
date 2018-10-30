@@ -5,7 +5,7 @@ import {catchError} from 'rxjs/operators/catchError';
 
 import {RestService} from './rest.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {ExchangeKeys, DashboardAuthLogs, NotificationSettings, User} from '../models/user';
+import {ExchangeKeys, DashboardAuthLogs, NotificationSettings, User, ModuleLog} from '../models/user';
 import {map} from 'rxjs/operators/map';
 import {CookieService} from 'ngx-cookie-service';
 import {ErrorsService} from './errors-handling/errors.service';
@@ -29,7 +29,8 @@ enum AccountApiUrls {
     getKeys = 'cabinet/apiKeys',
     getAuthLogs = 'cabinet/getLogs',
     disable2FA = 'cabinet/disable2FA',
-    enable2FA = 'cabinet/enable2FA'
+    enable2FA = 'cabinet/enable2FA',
+    modulesLogs = 'cabinet/requests'
 }
 
 @Injectable()
@@ -41,6 +42,10 @@ export class AccountService extends RestService {
 
     isAuthorized(): Observable<any> {
         return this.get(AccountApiUrls.getUser);
+    }
+
+    getModulesLogs(): Observable<ModuleLog[]> {
+        return this.get(AccountApiUrls.modulesLogs).pipe(map(resp => resp.response));
     }
 
     enable2FA(): Observable<string> {
