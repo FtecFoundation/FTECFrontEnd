@@ -1,5 +1,17 @@
 export const changeLog = [
       {    
+    'date': '30/10/2018',
+    'changes': [
+            'The Trading Recommendation Platform now has a filter by recommendations.',
+            'In the Trading Recommendation Platform, a bug with caching was fixed that did not allow the filter to be applied to recommendations several times.',
+            'In the Trading Recommendation Platform, a bug was fixed with displaying errors to the fields after several recommendations were created in a row.',
+            'In the Trading Recommendation Platform, a more frequent interval of updating and checking the price of the currency is recommended.',
+            'In the Trading Recommendation Platform, the inscription has been changed to subscribe to a free recommendation.',
+            'In the Trading Recommendation Platform, the writing off and charging of FTECs for trading recommendations is adjusted.',
+            'In the Trading Recommendation Platform, the color of the unfinished trading recommendations is changed.'
+            ]
+    },
+      {    
     'date': '29/10/2018',
     'changes': [
             'An inscription has been added to the Global Price Analyzer informing that the user can select several currencies to search at once.',
@@ -11,7 +23,6 @@ export const changeLog = [
             'The Trading Recommendation Platform adds the ability of transition to the page of all recommendations, the field of adding a new recommendation.'
             ]
     },
-      
       {    
     'date': '26/10/2018',
     'changes': [
