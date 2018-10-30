@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {InfoService} from "../../core/services/info.service";
 
-const Modules = {
+export const Modules = {
     "Arbitrage": 'Arbitrage Assistant',
     "Behavioral": 'Behavioral Analyzer',
     "Cryptoacademy": 'Cryptoacademy',

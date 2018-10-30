@@ -12,6 +12,7 @@ import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-
 import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
 import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {NotificationService} from '../notification/notification.service';
+import {Modules} from "../../prices/prices.component";
 
 
 @Component({
@@ -21,6 +22,7 @@ import {NotificationService} from '../notification/notification.service';
 })
 export class DashboardComponent implements OnInit {
 
+    modules = Modules;
     preloader = true;
     keys: ExchangeKeys[] = [];
     unusedExchanges: Stock[] = [];
