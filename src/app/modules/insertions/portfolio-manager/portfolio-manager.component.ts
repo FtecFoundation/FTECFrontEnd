@@ -40,7 +40,7 @@ export class PortfolioManagerComponent implements OnInit {
     submitted: boolean = false;
 
     portfolioTerms = AvailableExchanges.availablePortfolioTerms;
-    timeLogs: PortfolioLogs;
+    timeLogs: PortfolioLogs = new PortfolioLogs();
     activeLog: string;
     showInfo = false;
 
@@ -63,8 +63,13 @@ export class PortfolioManagerComponent implements OnInit {
     ngOnInit() {
         this.portManagerService.getOldPortfolios().subscribe(data => {
             if (data !== {}) {
-                this.timeLogs = data;
-                this.activeLog = this.getKeys(data)[0];
+                const sortedTimestamps = Object.keys(data).sort().reverse();
+                console.log(sortedTimestamps);
+                for (const t of sortedTimestamps) {
+                    this.timeLogs[t] = data[t];
+                }
+                console.log(this, this.timeLogs);
+                this.activeLog = this.getKeys(sortedTimestamps)[0];
                 this.fillPortfolioChart(this.activeLog);
             }
         });

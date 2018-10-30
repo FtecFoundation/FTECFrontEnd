@@ -19,7 +19,7 @@
                 <span>You have no predictions yet</span>
             </div>
 
-            <div class="middle__news">
+            <div class="middle__news" *ngIf="daysLeft">
                 <div class="middle__table-type">
                     <h5>Last news</h5>
                     <button class="button__outline" (click)="updateNews()">Update news</button>

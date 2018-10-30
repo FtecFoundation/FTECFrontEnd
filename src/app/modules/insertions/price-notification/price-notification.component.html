@@ -366,9 +366,10 @@
                 <span class="container__name">Receive notifications by</span>
 
                 <div class="container__wrapper">
-                    <a href="javascript:void(0)" class="container__link container__link--dashboard">
+                    <a href="javascript:void(0)" class="container__link container__link--dashboard"
+                       [ngClass]="{'is-active': emailNot}">
                         <label class="form__info-label-container">
-                            <input type="checkbox" [(ngModel)]="emailNot" [ngModelOptions]="{standalone: true}">
+                            <input type="checkbox" (click)="emailNot = !emailNot">
 
                             <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg width="46px" height="44px" viewBox="0 0 46 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -397,9 +398,10 @@
                         </label>
                     </a>
 
-                    <a href="javascript:void(0)" class="container__link container__link--dashboard">
+                    <a href="javascript:void(0)" class="container__link container__link--dashboard"
+                       [ngClass]="{'is-active': telegramNot}">
                         <label class="form__info-label-container">
-                            <input type="checkbox" [(ngModel)]="telegramNot" [ngModelOptions]="{standalone: true}">
+                            <input type="checkbox" (click)="telegramNot = !telegramNot ">
 
                             <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg"

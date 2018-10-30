@@ -245,20 +245,27 @@
                     <div class="middle__table--dashboard">
                         <div class="middle__table--dashboard">
                             <div class="middle__table-container middle__table-container--dashboard">
-                                <div class="middle__table-container-item middle__table-container-item--dashboard" *ngFor="let log of moduleLogs">
-                                    <h4 class="table-container-item--name">{{modules[log.module]}}</h4>
+                                <div class="middle__table--dashboard" *ngFor="let log of moduleLogs">
 
-                                    <div class="item-inner item-inner--dashboard middle__table-text-middle">
-                                        {{log.date | date: 'dd MMM yyyy HH:mm'}}
+                                    <div
+                                         class="middle__table-container-item middle__table-container-item--dashboard">
+                                        <h4>{{modules[log.module]}}</h4>
+
+                                        <div class="item-inner item-inner--dashboard">
+                                            <div class="item-inner-line">
+                                                <span class="item-inner-line--dashboard middle__table-text-small">{{log.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                                                <span class=""></span>
+                                            </div>
+
+                                        </div>
+                                        <span class="container-item-balance middle__table-type-inner--dashboard">{{log.description}}</span>
                                     </div>
-
-                                    <span class="container-item-update middle__table-text-middle">{{log.description}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mask-title" *ngIf="!moduleLogs.length">
-                        <p>In development</p>
+                        <p>No actions were found</p>
                     </div>
                 </div>
             </div>
