@@ -246,7 +246,7 @@
                         <div class="middle__table--dashboard">
                             <div class="middle__table-container middle__table-container--dashboard">
                                 <div class="middle__table-container-item middle__table-container-item--dashboard" *ngFor="let log of moduleLogs">
-                                    <h4 class="table-container-item--name">{{log.module}}</h4>
+                                    <h4 class="table-container-item--name">{{modules[log.module]}}</h4>
 
                                     <div class="item-inner item-inner--dashboard middle__table-text-middle">
                                         {{log.date | date: 'dd MMM yyyy HH:mm'}}
