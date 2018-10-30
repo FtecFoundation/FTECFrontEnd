@@ -55,6 +55,7 @@ let prefix = '';
 let prod = false;
 let port = 4200;
 let secretCaptcha = '';
+let serverProxy = '';
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
@@ -72,6 +73,9 @@ process.argv.forEach(function (val, index, array) {
     }
     if (val.startsWith('--secret_captcha')) {
         secretCaptcha = val.substring(val.indexOf('=') + 1);
+    }
+    if (val.startsWith('--proxy')) {
+        serverProxy = val.substring(val.indexOf('=') + 1);
     }
 });
 const botDomain = prod ? 'FTEC_Telegram_bot' : 'FTEC_test_bot';
@@ -126,9 +130,9 @@ app.get('/binance/klines', function (req, res) {
     });
 });
 
-app.use('/bittrex', proxy('http://bittrex.com', {
+app.use('/bittrex', proxy('http://' + serverProxy, {
     proxyReqPathResolver: function (req) {
-        return '/api/v1.1/public' + require('url').parse(req.url).path;
+        return '/bittrex/api/v1.1/public' + require('url').parse(req.url).path;
     }
 }));
 
