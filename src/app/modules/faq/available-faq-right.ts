@@ -14,13 +14,14 @@ export const availableFaqRight = [
     },
     {
         'question': 'Where do I get my API keys?',
-        'answer': 'On the exchange.',
+        'answer': 'Typically, in order to obtain API keys to any stock exchanges, you need to use the following sequence of actions: ' +
+            'SETTINGS -> API Keys -> Add new key.',
         'id': 6
     },
     {
         'question': 'What is the balanced portfolio type?',
-        'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
-            'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+        'answer': 'Balanced portfolio - is a portfolio that contains different types of coins and tokens: high-risk,' +
+            ' stable, low-volatile, high-volatile. Its main goal is to combine high profitability with low risk.',
         'id': 8
     },
     {

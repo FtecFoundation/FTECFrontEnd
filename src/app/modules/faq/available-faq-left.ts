@@ -20,14 +20,13 @@ export const availableFaqLeft = [
     },
     {
         'question': 'What is the aggressive portfolio type?',
-        'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
-            'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+        'answer': 'The aggressive portfolio consists of most of the highly profitable coins. However, its disadvantage is a' +
+            ' high level of risk.',
         'id': 7
     },
     {
         'question': 'What is the conservative portfolio type?',
-        'answer': 'The FTEC software products increase the profitability of investors trading on cryptocurrency ' +
-            'exchanges and also allow traders to efficiently manage their time and coming information flows.',
+        'answer': 'The conservative portfolio contains the most stable tokens and coins that can be selected on the market.',
         'id': 9
     },
     {
