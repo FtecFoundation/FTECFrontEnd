@@ -8,6 +8,7 @@ import {CurrentUserService} from "../../../core/services/current-user.service";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {Bot, Bots} from "./bots";
+import {FaqService} from "../../faq/faq.service";
 
 
 @Component({
@@ -29,7 +30,8 @@ export class SmartTradingModuleComponent implements OnInit {
     'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
 
     constructor(private _showModal: ShowModalService, private _smartTradingService: SmartTradingModuleService,
-                public _currentUserService: CurrentUserService, private notifyService: NotifyService) {
+                public _currentUserService: CurrentUserService, private notifyService: NotifyService,
+                public _faqService: FaqService) {
     }
 
     ngOnInit() {

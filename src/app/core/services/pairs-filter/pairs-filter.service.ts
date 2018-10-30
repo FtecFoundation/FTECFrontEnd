@@ -15,9 +15,12 @@ export class PairsFilterService {
   fillAllPairs(onlyConnectedExchanges?: boolean) {
       this.allPairs = [];
       for (const exchange of Object.keys(this.exchangesService.exchanges)) {
-          this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
-              for (const pair of data) this.allPairs.push(pair);
-          });
+          console.log(exchange)
+          if (exchange !== 'BitTrex') {
+              this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
+                  for (const pair of data) this.allPairs.push(pair);
+              });
+          }
       }
   }
 

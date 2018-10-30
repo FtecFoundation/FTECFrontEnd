@@ -15,7 +15,7 @@
 
 .middle__table-container--empty{
   position: relative;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .item-inner-line-error-block--empty {
@@ -137,4 +137,8 @@
 
 .middle__head--arbitrage-tabs {
   padding-top: 0;
+}
+
+.middle__table-container--arbitrage--empty {
+  padding: 0;
 }

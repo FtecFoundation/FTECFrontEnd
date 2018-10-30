@@ -126,7 +126,7 @@ app.get('/binance/klines', function (req, res) {
     });
 });
 
-app.use('/bittrex', proxy('https://bittrex.com', {
+app.use('/bittrex', proxy('http://bittrex.com', {
     proxyReqPathResolver: function (req) {
         return '/api/v1.1/public' + require('url').parse(req.url).path;
     }

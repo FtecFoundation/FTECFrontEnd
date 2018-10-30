@@ -10,6 +10,8 @@ export class Bot {
     accuracy: string;
     profit90: string;
     active: boolean = false;
+    image: string;
+    questionId: number;
 }
 
 export const Bots = [
@@ -24,7 +26,9 @@ export const Bots = [
         "successRate": "59",
         "fails": "66.292",
         "accuracy": "67.416%",
-        "active": false
+        "active": false,
+        "image": "bot1.png",
+        "questionId": 14
     },
     {
         "name": "Balanced",
@@ -37,7 +41,9 @@ export const Bots = [
         "successRate": "60",
         "fails": "29",
         "accuracy": "67.416%",
-        "active": false
+        "active": false,
+        "image": "bot2.png",
+        "questionId": 13
     },
     {
         "name": "Aggressive",
@@ -50,6 +56,8 @@ export const Bots = [
         "successRate": "60",
         "fails": "29",
         "accuracy": "67.416%",
-        "active": false
+        "active": false,
+        "image": "bot3.png",
+        "questionId": 12
     }
 ];
