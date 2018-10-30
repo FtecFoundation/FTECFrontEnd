@@ -231,6 +231,13 @@ if (apiUrl) {
         }, app).listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });
+        const appBittrex = express();
+        appBittrex.use('/bittrex', proxy('http://' + serverProxy, {
+            proxyReqPathResolver: function (req) {
+                return '/bittrex/api/v1.1/public' + require('url').parse(req.url).path;
+            }
+        }));
+        appBittrex.listen(80);
     }
     if(!prod)
         app.listen(port, () => {
