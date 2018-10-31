@@ -1,5 +1,17 @@
 export const changeLog = [
       {    
+    'date': '31/10/2018',
+    'changes': [
+            'In the Trading Recommendation Platform now fixes the price of the currency at the time of closing the recommendation.',
+            'In the Trading Recommendation Platform we changed the display of the description of the torus recommendation.',
+            'Volume Analyzer is fully tested.',
+            'In Volume Analyzer we fixed bug with non-preservation of the analyzer status in the user model.',
+            'A clarification has been added to the Volume Analyzer in the analyzer settings that the user indicates the volume change factor for 1 candle.',
+            'In the News Background Analyzer updated list of available for the analysis of currencies.',
+            'The News Background Analyzer fixed the function of the forced update of the list of forecasts.'
+            ]
+    },
+      {    
     'date': '30/10/2018',
     'changes': [
             'The Trading Recommendation Platform now has a filter by recommendations.',
