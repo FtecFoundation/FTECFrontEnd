@@ -21,4 +21,7 @@ export class GlobalPriceAnalyzerService extends RestService{
       return this.post(GlobalPriceApiUrls.searchPrices, data).pipe(map(resp => resp.response.result));
     }
 
+    getHistory(): Observable<any> {
+        return this.get(GlobalPriceApiUrls.searchPrices).pipe(map(resp => resp.response));
+    }
 }

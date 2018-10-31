@@ -52,6 +52,8 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
                 this.allRecommendedCurrs.push(data[curr].symbol);
             }
         })
+
+        this._globalPriceService.getHistory().subscribe();
     }
 
     addRecommendedCurr(curr: string) {
