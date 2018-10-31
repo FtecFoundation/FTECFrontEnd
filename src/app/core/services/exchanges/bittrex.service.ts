@@ -10,7 +10,7 @@ import {CurrencyTop} from "../../../modules/insertions/portfolio-manager/currenc
 
 @Injectable()
 export class BittrexService implements ExchangeService {
-    baseUrl: string = 'http://www.ftec.network/bittrex/';
+    baseUrl: string = '/bittrex/';
     apiUrls = {
         getPairs: 'getmarkets',
         getPrice: 'getticker'

@@ -83,11 +83,11 @@ const etherscanPrefix = prod ? 'api.' : 'api-ropsten.';
 const contractAddress = prod ? '0x6bec54e4fea5d541fb14de96993b8e11d81159b2' : '0xaC1eC31A5d24d2ac84404E19734Dd34A288450f3';
 
 app.engine('html', ngExpressEngine({
-            bootstrap: AppServerModuleNgFactory,
-            providers: [
-                provideModuleMap(LAZY_MODULE_MAP)
-            ]
-        }));
+    bootstrap: AppServerModuleNgFactory,
+    providers: [
+        provideModuleMap(LAZY_MODULE_MAP)
+    ]
+}));
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
@@ -130,11 +130,22 @@ app.get('/binance/klines', function (req, res) {
     });
 });
 
-app.use('/bittrex', proxy('http://' + serverProxy, {
-    proxyReqPathResolver: function (req) {
-        return '/bittrex/api/v1.1/public' + require('url').parse(req.url).path;
-    }
-}));
+app.use('/bittrex', function (req, res) {
+    const url = 'https://www.ftec.network' + req.originalUrl;
+    console.log(req.originalUrl);
+    console.log(req.body);
+    console.log('------------------------');
+    request(url, function (error, response, body) {
+        console.log(body);
+        res.send(body);
+    });
+});
+
+// app.use('/bittrex', proxy('http://' + serverProxy, {
+//     proxyReqPathResolver: function (req) {
+//         return '/bittrex/api/v1.1/public' + require('url').parse(req.url).path;
+//     }
+// }));
 
 // app.use('/binance', proxy('http://api.binance.com', {
 //     proxyReqPathResolver: function (req) {
@@ -149,7 +160,7 @@ app.get('/api/properties/getPreferences', function (req, res) {
 
 app.post('/api/submitRecatpcha', function (req, res) {
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' ||
-        req.body['g-recaptcha-response' ] === null) {
+        req.body['g-recaptcha-response'] === null) {
         return res.json({'responseCode': 1, 'responseDesc': 'Please select captcha'});
     }
     const usersResponse = req.body['g-recaptcha-response'];
@@ -222,7 +233,7 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 if (apiUrl) {
-    if(prod) {
+    if (prod) {
         var privateKey = fs.readFileSync('/SSL/pk.pem');
         var certificate = fs.readFileSync('/SSL/cert.pem');
         https.createServer({
@@ -232,14 +243,17 @@ if (apiUrl) {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });
         const appBittrex = express();
-        appBittrex.use('/bittrex', proxy('http://' + serverProxy, {
-            proxyReqPathResolver: function (req) {
-                return '/bittrex/api/v1.1/public' + require('url').parse(req.url).path;
-            }
-        }));
+        appBittrex.use('/bittrex', function (req, res) {
+            console.log(req)
+            // const url = 'https://www.binance.com/api/v1/ticker/price';
+            // const param = req.query.symbol;
+            // request(url + '?symbol=' + param, function (error, response, body) {
+            //     res.send(body);
+            // });
+        });
         appBittrex.listen(80);
     }
-    if(!prod)
+    if (!prod)
         app.listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });

@@ -6,13 +6,9 @@ import { CurrentUserService } from '../../../core/services/current-user.service'
 import { Router } from '@angular/router';
 import { AccountService } from '../../../core/services/account.service';
 import {DashboardAuthLogs, ExchangeKeys, ModuleLog} from '../../../core/models/user';
-import { MyExchangesComponent } from '../my-exchanges/my-exchanges.component';
-import { MyExchangesService } from '../my-exchanges/my-exchanges.service';
 import { AvailableExchanges, Stock } from '../../insertions/arbitrage/available-exchanges';
-import {HitBTCService} from "../../../core/services/exchanges/hitbtc.service";
-import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {NotificationService} from '../notification/notification.service';
-import {Modules} from "../../prices/prices.component";
+import {AllModules} from "../../../constants";
 
 
 @Component({
@@ -22,7 +18,7 @@ import {Modules} from "../../prices/prices.component";
 })
 export class DashboardComponent implements OnInit {
 
-    modules = Modules;
+    modules = AllModules;
     preloader = true;
     keys: ExchangeKeys[] = [];
     unusedExchanges: Stock[] = [];

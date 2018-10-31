@@ -40,14 +40,14 @@
               [tooltipText]="pieTooltipText">
       </ngx-charts-pie-chart>
 
-      <div class="portfolio__graph-info" *ngIf="portfolioChart.length && showInfo">
+      <div class="portfolio__graph-info" *ngIf="portfolioChart.length && info">
         <form action="" class="graph__stats">
 
           <div class="graph__stats-line-container">
 
             <span>Your last generated portfolio</span>
 
-            <h3>{{today | date: 'dd MMM yyyy'}}</h3>
+            <h3>{{info.date | date: 'dd MMM yyyy'}}</h3>
 
             <button class="filter__container-button" (click)="showModalSevice.showModal = true">Rebalance</button>
 
@@ -59,7 +59,7 @@
 
           <div class="middle__table-type">
             <span class="">
-              Connected Exchanges
+              Portfolio Settings
             </span>
           </div>
 
@@ -67,25 +67,25 @@
             <div class="graph__stats-line">
               <span>Investment Term:</span>
 
-              <span>{{getTermName()}}</span>
+              <span>{{info.period}}</span>
             </div>
 
             <div class="graph__stats-line">
               <span>Portfolio Size:</span>
 
-              <span>{{btc.value}} BTC</span>
+              <span>{{info.btc}} BTC</span>
             </div>
 
             <div class="graph__stats-line">
               <span>Number of coins:</span>
 
-              <span>{{coinsCount.value}}</span>
+              <span>{{info.coinsCount}}</span>
             </div>
 
             <div class="graph__stats-line">
               <span>Portfolio type:</span>
 
-              <span>{{nature.value}}</span>
+              <span>{{info.nature}}</span>
             </div>
           </div>
 

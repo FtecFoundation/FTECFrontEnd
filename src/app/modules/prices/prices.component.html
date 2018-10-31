@@ -3,17 +3,19 @@
     <thead>
     <tr>
       <td></td>
-      <td *ngFor="let module of getKeys(modules); let i = index">
-        <ng-container *ngIf="i < 5">
+      <ng-container *ngFor="let module of getKeys(modules); let i = index">
+        <td *ngIf="i < 5">
           {{modules[module]}}
-        </ng-container>
-      </td>
+        </td>
+      </ng-container>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td><p>Price</p></td>
-        <td *ngFor="let module of getKeys(modules); let i = index"><span *ngIf="i < 5"><p>{{prices[module]}} FTEC</p></span></td>
+      <ng-container *ngFor="let module of getKeys(modules); let i = index">
+        <td *ngIf="i < 5"><span><p>{{prices[module]}} FTEC</p></span></td>
+      </ng-container>
     </tr>
     </tbody>
   </table>
@@ -21,17 +23,19 @@
     <thead>
     <tr>
       <td></td>
-      <td *ngFor="let module of getKeys(modules); let i = index">
-        <ng-container *ngIf="i >= 5">
+        <ng-container *ngFor="let module of getKeys(modules); let i = index">
+          <td *ngIf="i >= 5">
           {{modules[module]}}
+          </td>
         </ng-container>
-      </td>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td><p>Price</p></td>
-      <td *ngFor="let module of getKeys(modules); let i = index"><span *ngIf="i >= 5"><p>{{prices[module]}} FTEC</p></span></td>
+      <ng-container *ngFor="let module of getKeys(modules); let i = index">
+        <td *ngIf="i >= 5"><span><p>{{prices[module]}} FTEC</p></span></td>
+      </ng-container>
     </tr>
     </tbody>
   </table>

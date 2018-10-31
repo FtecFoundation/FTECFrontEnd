@@ -57,16 +57,10 @@ export class NewsBackgroundComponent implements OnInit {
     }
 
     public updateNotificationStatus(type: string){
-        this.preloader = true;
         this._currentUserService.notificationSettings[9][type] = !this._currentUserService.notificationSettings[9][type];
         const toChange = this._currentUserService.notificationSettings[9];
         toChange.notificationType=3;
-        this._notificationService.updateNotification(toChange).subscribe(data => {
-            this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
-                'The results of analyzer was updated', 'success'));
-            this.preloader = false;
-            this.results = data;
-        });
+        this._notificationService.updateNotification(toChange).subscribe();
     }
 
     goToPage(page: number) {
@@ -124,6 +118,7 @@ export class NewsBackgroundComponent implements OnInit {
 
     renewSubscription() {
         this._newsBackService.subscribe().subscribe(data => {
+            this._newsBackService.getResults(0).subscribe(res => this.results = res);
             this.getDaysLeft(data);
         });
     }
@@ -142,9 +137,14 @@ export class NewsBackgroundComponent implements OnInit {
     }
 
     updateNews() {
+        this.preloader = true;
         this._newsBackService.getUpdatedResults().subscribe(data => {
+
+            this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
+                'The results of analyzer was updated', 'success'));
+            this.preloader = false;
             this.results = data;
-        })
+        }, error1 => this.preloader = false);
     }
 
 }
