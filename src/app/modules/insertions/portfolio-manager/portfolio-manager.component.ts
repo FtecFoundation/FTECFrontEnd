@@ -5,7 +5,7 @@ import {CryptocurrenciesService} from "../../../core/services/cryptocurrencies.s
 import {CurrencyTop} from "./currency-top";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PortfolioManagerService} from "./portfolio-manager.service";
-import {Portfolio, PortfolioChart, PortfolioLogs, PortfolioPreferences} from "./portfolio";
+import {Portfolio, PortfolioChart, PortfolioInfo, PortfolioLogs, PortfolioPreferences} from "./portfolio";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {formatLabel} from "@swimlane/ngx-charts";
@@ -42,7 +42,7 @@ export class PortfolioManagerComponent implements OnInit {
     portfolioTerms = AvailableExchanges.availablePortfolioTerms;
     timeLogs: PortfolioLogs = new PortfolioLogs();
     activeLog: string;
-    showInfo = false;
+    info: PortfolioInfo;
 
     color = {domain: ['#990D64', '#7A3A9C', '#4780F1', '#23C8D6']};
     howTo: string[] = ['The generator is based on the main market indicators and takes into account wishes of users for formation individual investment portfolio.',
@@ -64,12 +64,10 @@ export class PortfolioManagerComponent implements OnInit {
         this.portManagerService.getOldPortfolios().subscribe(data => {
             if (data !== {}) {
                 const sortedTimestamps = Object.keys(data).sort().reverse();
-                console.log(sortedTimestamps);
                 for (const t of sortedTimestamps) {
                     this.timeLogs[t] = data[t];
                 }
-                console.log(this, this.timeLogs);
-                this.activeLog = this.getKeys(sortedTimestamps)[0];
+                this.activeLog = sortedTimestamps[0];
                 this.fillPortfolioChart(this.activeLog);
             }
         });
@@ -78,21 +76,22 @@ export class PortfolioManagerComponent implements OnInit {
     }
 
     fillPortfolioChart(log: string) {
-        this.showInfo = false;
         this.showGraph = false;
         this.portfolioChart = [];
         for (const item of Object.keys(this.timeLogs[log].capitalization)) {
             this.portfolioChart.push(new PortfolioChart(item, this.timeLogs[log].capitalization[item]));
         }
         this.showGraph = true;
+        this.info = new PortfolioInfo(log, this.timeLogs[log].btc, this.timeLogs[log].nature,
+            this.timeLogs[log].period, this.timeLogs[log].coinsCount);
     }
 
     getKeys(obj: any): string[] {
         return Object.keys(obj);
     }
 
-    getTermName(): string {
-        return this.portfolioTerms.filter(t => t.nameToSend === this.period.value)[0].name;
+    getTermName(term: string): string {
+        return this.portfolioTerms.filter(t => t.nameToSend === term)[0].name;
     }
 
     createForm() {
@@ -115,12 +114,12 @@ export class PortfolioManagerComponent implements OnInit {
             this.portManagerService.generatePortfolio(this.portfolioForm.value).subscribe(data => {
                 this.recommendation = null;
                 this.preloader = false;
-                this.portfolio = data;
-                for (const coin of Object.keys(data)) {
-                    this.portfolioChart.push(new PortfolioChart(coin, data[coin]));
+                this.portfolio = data.capitalization;
+                for (const coin of Object.keys(data.capitalization)) {
+                    this.portfolioChart.push(new PortfolioChart(coin, data.capitalization[coin]));
                 }
-                this.showInfo = true;
                 this.showGraph = true;
+                this.info = new PortfolioInfo(''+this.today, data.btc, ''+data.nature, ''+data.period, data.coinsCount);
                 this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
                     'Your new portfolio was successfully generated', 'success'));
             }, error1 => {

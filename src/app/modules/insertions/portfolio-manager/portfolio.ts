@@ -25,6 +25,26 @@ export class PortfolioLogs {
 
 export class PortfolioLog {
     capitalization: OldPortfolio;
+    btc: number;
+    nature: string;
+    period: string;
+    coinsCount: number;
+}
+
+export class PortfolioInfo {
+    btc: number;
+    nature: string;
+    period: string;
+    coinsCount: number;
+    date: string;
+
+    constructor(date: string, btc: number, nature: string, period: string, coinsCount: number) {
+        this.btc = btc;
+        this.date = date;
+        this.nature = nature;
+        this.period = period;
+        this.coinsCount = coinsCount;
+    }
 }
 
 export class OldPortfolio {

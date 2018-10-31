@@ -13,3 +13,19 @@ export const notificationMapper = {
     '8': 'Portfolio manager',
     '9': 'News Background Analyzer'
 };
+
+export const AllModules = {
+    "Arbitrage": 'Arbitrage Assistant',
+    "Social": 'Social Assistant',
+    "Telegram": 'Telegram Assistant',
+    "Behavioral": 'Behavioral Analyzer',
+    "Academy": 'Cryptoacademy',
+    "NewsAnalyzer": 'News Background Analyzer',
+    "GlobalPriceAnalyzer": 'Global Price Analyzer',
+    "OrderManager": 'Order Manager',
+    "PortfolioManager": 'Portfolio Manager',
+    "PriceNotification": 'Price Notification',
+    "TradeRecommendation": 'TRP',
+    "Trading": 'Smart Trading Modules',
+    "VolumeAnalyzer": 'Volume Analyzer'
+};

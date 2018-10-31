@@ -17,8 +17,8 @@ export class PortfolioManagerService extends RestService {
         super(_http, _cookieService);
     }
 
-    generatePortfolio(data: PortfolioPreferences): Observable<Portfolio> {
-      return this.post(PortfolioManagerApiUrls.generate, data).pipe(map(resp => resp.response.capitalization));
+    generatePortfolio(data: PortfolioPreferences): Observable<any> {
+      return this.post(PortfolioManagerApiUrls.generate, data).pipe(map(resp => resp.response));
     }
 
     getOldPortfolios(){
