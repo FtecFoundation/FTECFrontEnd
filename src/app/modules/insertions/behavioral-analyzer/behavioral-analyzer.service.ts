@@ -10,10 +10,9 @@ import {Stock} from '../arbitrage/available-exchanges';
 
 const BehavioralApiUrls = {
 
-    getTrades: 'cabinet/behavior/getTrades',
-    getHistory: 'cabinet/behavior/getTradesHistory',
+    getTrades: 'cabinet/behavioral/getTrades',
+    getHistory: 'cabinet/behavioral/getTradesHistory',
     saveKeys: 'apiKeys'
-
 };
 
 @Injectable()
@@ -24,7 +23,7 @@ export class BehavioralAnalyzerService extends RestService {
 
 
     getHistory(): Observable<BehavioralDataTrades> {
-        return this.get('cabinet/behavior/getTradesHistory').pipe(
+        return this.get(BehavioralApiUrls.getHistory).pipe(
             map(value => value.response)
         );
     }

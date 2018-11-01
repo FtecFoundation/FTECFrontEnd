@@ -132,11 +132,7 @@ app.get('/binance/klines', function (req, res) {
 
 app.use('/bittrex', function (req, res) {
     const url = 'http://188.166.22.122/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
-    console.log( req.originalUrl.substr(9));
-    console.log(req.body);
-    console.log('------------------------');
     request(url, function (error, response, body) {
-        console.log(body);
         res.send(body);
     });
 });

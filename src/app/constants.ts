@@ -21,7 +21,7 @@ export const AllModules = {
     "Behavioral": 'Behavioral Analyzer',
     "Academy": 'Cryptoacademy',
     "NewsAnalyzer": 'News Background Analyzer',
-    "GlobalPriceAnalyzer": 'Global Price Analyzer',
+    "PriceAnalyzer": 'Global Price Analyzer',
     "OrderManager": 'Order Manager',
     "PortfolioManager": 'Portfolio Manager',
     "PriceNotification": 'Price Notification',

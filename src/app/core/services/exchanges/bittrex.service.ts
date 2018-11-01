@@ -56,4 +56,8 @@ export class BittrexService implements ExchangeService {
             return resp['result'];
         }));
     }
+
+    decodePair(pair: string): string {
+        return `https://bittrex.com/Market/Index?MarketName=${pair}`;
+    }
 }

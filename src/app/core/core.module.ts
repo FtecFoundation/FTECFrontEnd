@@ -33,6 +33,10 @@ import {PoloniexService} from "./services/exchanges/poloniex.service";
 import {FaqModule} from '../modules/faq/faq.module';
 import {FaqService} from '../modules/faq/faq.service';
 import {InfoService} from "./services/info.service";
+import {HuobiService} from "./services/exchanges/huobi.service";
+import {YobitService} from "./services/exchanges/yobit.service";
+import {KrakenService} from "./services/exchanges/kraken.service";
+import {BitstampService} from "./services/exchanges/bitstamp.service";
 
 @NgModule({
     imports: [
@@ -69,6 +73,10 @@ import {InfoService} from "./services/info.service";
         PoloniexService,
         FaqService,
         InfoService,
+        HuobiService,
+        YobitService,
+        KrakenService,
+        BitstampService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ServerErrorsInterceptor,
