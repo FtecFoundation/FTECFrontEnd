@@ -42,4 +42,10 @@ export class PoloniexService implements ExchangeService {
         const param = new HttpParams().set('command', this.apiUrls.getPairs);
         return this._http.get(this.baseUrl, {params: param}).pipe(map(resp => resp[pair.base + '_' + pair.symbol].last));
     }
+
+    decodePair(pair: string): string {
+        const base = pair.substring(0, pair.indexOf('-'));
+        const symbol = pair.substring(pair.indexOf('-') + 1);
+        return `https://poloniex.com/exchange#${base.toLowerCase()}_${symbol.toLowerCase()}`;
+    }
 }

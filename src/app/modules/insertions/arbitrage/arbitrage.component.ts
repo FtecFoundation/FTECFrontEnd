@@ -8,6 +8,7 @@ import {Stock} from './available-exchanges';
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {FaqService} from '../../faq/faq.service';
+import {ExchangesService} from "../../../core/services/exchanges/exchanges.service";
 
 @Component({
     selector: 'app-arbitrage',
@@ -39,7 +40,8 @@ export class ArbitrageComponent implements OnInit {
                 private _arbitrageService: ArbitrageService,
                 private formBuilder: FormBuilder,
                 private notifyService: NotifyService,
-                public _faqService: FaqService) {
+                public _faqService: FaqService,
+                private _exchangesService: ExchangesService) {
     }
 
     ngOnInit() {
@@ -130,6 +132,10 @@ export class ArbitrageComponent implements OnInit {
 
     prepareData(): ArbitrageWindowRequest {
         return new ArbitrageWindowRequest().deserialize(this.arbitrageForm.value, this.chosenExchanges);
+    }
+
+    decodePair(pair: string, exchange: string): string {
+        return this._exchangesService.arbitrageExchanges[exchange].decodePair(pair);
     }
 
     get timeLogsSorted(): number[] {

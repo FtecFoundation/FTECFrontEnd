@@ -1,19 +1,21 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {ExchangeService} from "./exchange.service";
 import {Observable} from "rxjs/Observable";
-import {Candle, Pair} from "../../models/pair";
+import {Pair} from "../../models/pair";
 import {tap} from 'rxjs/operators/tap';
 import {map} from "rxjs/operators";
 import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
 
 @Injectable()
-export class HitBTCService implements ExchangeService {
-    baseUrl: string = '/hitbtc/';
+export class HuobiService implements ExchangeService {
+    baseUrl: string = '/binance/';
     apiUrls = {
-        getPairs: 'ticker',
-        getCandles: ''
+        getPairs: 'ticker/allPrices',
+        getPrice: 'ticker/price'
     };
+
+    cash: any = {};
 
     constructor(private _http: HttpClient) {
     }
@@ -23,18 +25,7 @@ export class HitBTCService implements ExchangeService {
             let pairs = [];
             for (const pair of Object.keys(resp)) {
                 if (resp[pair].symbol.indexOf('USD') === -1)
-                    pairs.push(new Pair().of(this.getMarketCurrency(resp[pair].symbol), this.getBaseCurrency(resp[pair].symbol), AvailableExchanges.Hitbtc))
-            }
-            return pairs;
-        }));
-    }
-
-    getCandles(): Observable<Candle[]> {
-        return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(map(resp => {
-            let pairs = [];
-            for (const pair of Object.keys(resp)) {
-                if (resp[pair].symbol.indexOf('USD') === -1)
-                    pairs.push(new Pair().of(this.getMarketCurrency(resp[pair].symbol), this.getBaseCurrency(resp[pair].symbol), AvailableExchanges.Hitbtc))
+                    pairs.push(new Pair().of(this.getMarketCurrency(resp[pair].symbol), this.getBaseCurrency(resp[pair].symbol), AvailableExchanges.Binance))
             }
             return pairs;
         }));
@@ -49,14 +40,25 @@ export class HitBTCService implements ExchangeService {
     }
 
     getPrice(pair: Pair): Observable<number> {
-        return this._http.get(this.baseUrl + this.apiUrls.getPairs + '/' + pair.symbol + pair.base).pipe(map(resp => {
-            return Number.parseFloat(resp['last']);
+        let param = new HttpParams().set('symbol', pair.symbol + pair.base);
+        return this._http.get(this.baseUrl + this.apiUrls.getPrice, {params: param}).pipe(map(resp => {
+            return Number.parseFloat(resp['price']);
+        }));
+    }
+
+    getPriceData(currency: string, interval: string): Observable<any> {
+        if (this.cash[currency]) return Observable.of(this.cash[currency]);
+
+        const params = new HttpParams().set('symbol', currency + 'BTC').set('interval', interval);
+        return this._http.get('/binance/klines', {params: params}).pipe(map(resp => {
+            this.cash[currency] = resp;
+            return resp;
         }));
     }
 
     decodePair(pair: string): string {
         const base = pair.substring(0, pair.indexOf('-'));
         const symbol = pair.substring(pair.indexOf('-') + 1);
-        return `https://hitbtc.com/${symbol}-to-${base}`;
+        return `https://www.huobi.com/en-us/${symbol}_${base}/exchange/`;
     }
 }

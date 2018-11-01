@@ -8,7 +8,7 @@ import {map} from "rxjs/operators";
 import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
 
 @Injectable()
-export class BinanceService implements ExchangeService {
+export class KrakenService implements ExchangeService {
     baseUrl: string = '/binance/';
     apiUrls = {
         getPairs: 'ticker/allPrices',
@@ -59,6 +59,6 @@ export class BinanceService implements ExchangeService {
     decodePair(pair: string): string {
         const base = pair.substring(0, pair.indexOf('-'));
         const symbol = pair.substring(pair.indexOf('-') + 1);
-        return `https://www.binance.com/en/trade/${symbol}_${base}`;
+        return `https://trade.kraken.com/markets/kraken/${base.toLowerCase()}/${symbol.toLowerCase()}`;
     }
 }

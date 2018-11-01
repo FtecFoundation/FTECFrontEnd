@@ -7,6 +7,7 @@ import {ExchangesService} from "../../../core/services/exchanges/exchanges.servi
 import {GlobalPriceRequest, GlobalPriceResult} from "../../../core/models/global-price";
 import {GlobalPriceAnalyzerService} from "./global-price-analyzer.service";
 import {CryptocurrenciesService} from "../../../core/services/cryptocurrencies.service";
+import {PortfolioLogs} from "../portfolio-manager/portfolio";
 
 
 @Component({
@@ -28,6 +29,9 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
     submitted: boolean = false;
     recommendedCurrs: string[] = [];
     allRecommendedCurrs: string[] = [];
+
+    timeLogs: any = {};
+    activeLog: string;
 
     results: GlobalPriceResult;
     howTo: string[] = ['The user logs in and goes to the corresponding module ' +
@@ -53,7 +57,32 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
             }
         })
 
-        this._globalPriceService.getHistory().subscribe();
+        this._globalPriceService.getHistory().subscribe(data => {
+            if (data !== {}) {
+                const sortedTimestamps = Object.keys(data).sort().reverse();
+                for (const t of sortedTimestamps) {
+                    this.timeLogs[t] = data[t];
+                }
+                this.activeLog = sortedTimestamps[0];
+                this.results = data[this.activeLog];
+                for (const p of Object.keys(data[this.activeLog])) {
+                    this.results[p].array = data[this.activeLog][p];
+                    this.results[p].opened = false;
+                    this.results[p].array.sort((a, b) => b.percentOfSaving - a.percentOfSaving);
+                }
+                console.log(this.results)
+            }
+        });
+    }
+
+    seeLogs(timestamp: string) {
+        this.activeLog = timestamp;
+        this.results = {};
+        for (const p of Object.keys(this.timeLogs[timestamp])) {
+            this.results[p] = {array: this.timeLogs[timestamp][p], opened: false};
+            this.results[p].array.sort((a, b) => b.percentOfSaving - a.percentOfSaving);
+        }
+        console.log(this.results)
     }
 
     addRecommendedCurr(curr: string) {

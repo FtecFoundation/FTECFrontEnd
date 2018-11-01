@@ -9,6 +9,8 @@ export interface ExchangeService {
 
     getPrice(pair: Pair): Observable<number>;
 
+    decodePair(pair: string): string;
+
     // getCandles(): Observable<Candle[]>;
 }
 
