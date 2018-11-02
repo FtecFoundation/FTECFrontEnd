@@ -21,8 +21,11 @@ enableProdMode();
 const app = express();
 const proxy = require('express-http-proxy');
 const request = require('request');
+const fileSystem = require('fs');
 const rateLimit = require("express-rate-limit");
 let bannedIPs = [];
+const jsonfile = require('jsonfile');
+const faqFile = '/faq/faq.json';
 
 app.enable("trust proxy");
 
@@ -108,6 +111,29 @@ app.use('/api', (req, res, next) => {
     next();
 });
 
+app.get('/api/faq', function (req, res) {
+    if (!fileSystem.existsSync(faqFile)) {
+        fileSystem.appendFile(faqFile, '[]', function (err) {
+            if (err) throw err;
+            console.log('Saved!');
+        });
+    }
+    jsonfile.readFile(faqFile, function (err, obj) {
+        if (err) return res.status(500).send({ error: err });
+        return res.json(obj);
+    })
+});
+
+app.post('/api/faq', function (req, res) {
+    if (!fileSystem.existsSync(faqFile)) {
+        fileSystem.openSync(faqFile, 'w');
+    }
+    jsonfile.writeFile(faqFile, req.body, function (err) {
+        if (err) return res.status(500).send({ error: err});
+        return res.json({status: 0, response: {added: true}});
+    })
+});
+
 app.use('/hitbtc', proxy('https://api.hitbtc.com', {
     proxyReqPathResolver: function (req) {
         return '/api/2/public' + require('url').parse(req.url).path;
@@ -125,13 +151,6 @@ app.get('/bittrex/market/GetTicks', function (req, res) {
 app.get('/binance/klines', function (req, res) {
     const path = require('url').parse(req.url).path;
     const url = 'https://www.binance.com/api/v1/klines' + path.substring(path.indexOf('?'));
-    request(url, function (error, response, body) {
-        res.send(body);
-    });
-});
-
-app.use('/bittrex', function (req, res) {
-    const url = 'http://188.166.22.122/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
     request(url, function (error, response, body) {
         res.send(body);
     });
@@ -240,12 +259,10 @@ if (apiUrl) {
         });
         const appBittrex = express();
         appBittrex.use('/bittrex', function (req, res) {
-            console.log(req)
-            // const url = 'https://www.binance.com/api/v1/ticker/price';
-            // const param = req.query.symbol;
-            // request(url + '?symbol=' + param, function (error, response, body) {
-            //     res.send(body);
-            // });
+            const url = 'http://' + serverProxy + '/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
+            request(url, function (error, response, body) {
+                res.send(body);
+            });
         });
         appBittrex.listen(80);
     }
