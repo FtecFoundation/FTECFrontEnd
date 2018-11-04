@@ -1,5 +1,26 @@
 export const changeLog = [
       {    
+    'date': '02/11/2018',
+    'changes': [
+            'Added the removal of the message in the Smart Trading Module in case the user has not connected the API keys of any exchange.',
+            'Smart Trading Module updated images of bots.',
+            'Added removal of messages to the Smart Trading Module if the user does not have a trading history.',
+            'In Portfolio Manager with the latest generated user portfolios are not displayed on the tabs with ratings.',
+            'Behavior analyzer is moved to the section of developed modules.'
+            ]
+    },
+      {    
+    'date': '01/11/2018',
+    'changes': [
+            'The News Background Analyzer now displays 10 news per page.',
+            'The portfolio manager fixed a bug with caching, due to which only 4 currencies were displayed in all ratings.',
+            'The portfolio manager added a link to the FAQ to the question of algorithms for different types of portfolios.',
+            'Portfolio Manager implemented saving the last 5 user-generated portfolios.',
+            'In the Smart Trading Module added removal of the user\'s trading history.',
+            'The Smart Trading Module also improved the trading bots.'
+            ]
+    },
+      {    
     'date': '31/10/2018',
     'changes': [
             'In the Trading Recommendation Platform now fixes the price of the currency at the time of closing the recommendation.',
