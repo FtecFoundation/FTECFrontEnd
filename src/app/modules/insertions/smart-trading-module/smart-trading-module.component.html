@@ -46,22 +46,22 @@
           <div class="smart__info-block">
             <div class="smart__info-block-line">
               <span>Profit(week): </span>
-              <span class="smart__line-dark">{{bot.profitWeek}}</span>
+              <span class="smart__line-dark">{{bot.profitWeek}}%</span>
             </div>
 
             <div class="smart__info-block-line">
               <span>Profit(month): </span>
-              <span class="smart__line-dark">{{bot.profitMonth}}</span>
+              <span class="smart__line-dark">{{bot.profitMonth}}%</span>
             </div>
 
             <div class="smart__info-block-line">
               <span>Profit(90days): </span>
-              <span class="smart__line-dark">{{bot.profit90}}</span>
+              <span class="smart__line-dark">{{bot.profit90}}%</span>
             </div>
 
             <div class="smart__info-block-line">
               <span>Accuracy: </span>
-              <span class="smart__line-dark">{{bot.accuracy}}</span>
+              <span class="smart__line-dark">{{bot.accuracy}}%</span>
             </div>
           </div>
 
@@ -182,7 +182,7 @@
               </div>
             </div>
 
-            <button class="button__outline button__outline--dashboard" (click)="route()">Install API keys</button>
+            <button class="button__outline button__outline--dashboard" [routerLink]="'/account/my-exchanges'">Install API keys</button>
           </div>
         </div>
       </div>

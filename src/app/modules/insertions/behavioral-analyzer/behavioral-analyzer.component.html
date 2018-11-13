@@ -7,112 +7,151 @@
 
         <div class="middle__head middle__head--behavioral">Trading reports</div>
 
-        <div *ngIf="!responseData || this.responseData.operations['All'].length == 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
+        <div *ngIf="!responseData && !getKeys(responseData).length" class="item-inner-line-error-block item-inner-line-error-block--empty">
             You have no analyses results yet. Please, use form to start some analise.
         </div>
 
-        <div class="middle__block middle__block--behavioral" *ngIf="responseData && responseData.operations[chosenStatistics]">
-
-            <div class="behavioral__small-container-inner" *ngFor="let item of responseData.operations[chosenStatistics]">
-                <div class="behavioral__small-container">
-                    <div class="small-container__line">
-                        <h2>{{item.pair}}</h2>
-
-                        <a href="javascrip:void(0)" class="small-container__line-link"
-                           [ngClass]="{'small-container__line-link--red': item.operationType === 'Sell'}">{{item.operationType | uppercase}}</a>
-                    </div>
-
-                    <div class="small-container__line small-container__line--button">
-                        <div class="small-container__subtext">
-                            <span class="text-small">{{item.stock}}</span>
-                            <span class="text-small">{{item.closingDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
-                        </div>
-
-                        <div class="small-container__graph" [ngClass]="{'is-active' : item.chosen}">
-                            <span>Charts will be available in next update!</span>
-                            <!-- CHARTS -->
-
-                            <!-- <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
-                            [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2" [schemeType]="schemeType" [showXAxisLabel]="lineChartShowXAxisLabel"
-                            [showYAxisLabel]="lineChartShowYAxisLabel" [showGridLines]="showGridLines" [autoScale]="lineChartAutoScale"
-                            [curve]="lineChartLineInterpolation" [tooltipDisabled]="tooltipDisabled" [showRefLines]="showRefLines"
-                            [showRefLabels]="showRefLabels" [referenceLines]="refLines" (select)="onSelect($event)">
-                            </ngx-charts-line-chart> -->
-
-                            <!--<div class="small-container__graph-controls">-->
-                            <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
-                            <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
-                            <!--</div>-->
-                        </div>
-
-                        <button class="filter__container-button filter__container-button--behavioral is-active" (click)="showFull(item)">Full report
-                        </button>
-                    </div>
+        <div class="middle__block middle__block--behavioral" *ngIf="responseData && getKeys(responseData).length">
+            <ng-container *ngFor="let time of getKeys(responseData)">
+                <div class="item-inner-line-error-block item-inner-line-error-block--empty">
+                    {{time | date: 'dd MMM yyyy HH:mm'}}
                 </div>
-            </div>
+
+                <ul class="notification-list">
+                    <li class="notification-list__one" *ngFor="let item of responseData[time].results">
+                        <div class="notification-item">
+                            <div class="graph-controls__item-container">
+                                <span *ngIf="!item.buy" class="graph-controls__item graph-controls__item--red">SELL</span>
+                                <span *ngIf="item.buy" class="graph-controls__item graph-controls__item--blue">BUY</span>
+                                <p>{{item.success ? 'SUCCEEDED' : 'FAILED'}}</p>
+                            </div>
+                            <div class="notification-item__name">
+                                <p>{{item.symbol}}</p>
+                                <span>{{responseData[time].stock}}</span>
+                            </div>
+                            <ul class="notification-item__info">
+                                <li>
+                                    <p>Operation:</p>
+                                    <p>
+                                        <span>#{{item.operationId}}</span>
+                                        <span>{{item.operationDate | date: 'dd MMM yyyy'}}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul class="notification-item__info">
+                                <li>
+                                    <p>Price:</p>
+                                    <p>
+                                        <span>{{item.price}}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul class="notification-item__info">
+                                <li>
+                                    <p>Base volume:</p>
+                                    <p>
+                                        <span>{{item.baseVolume}}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </ng-container>
         </div>
-        <!--<div class="small-container__graph-controls">-->
-        <!--<span class="graph-controls__item graph-controls__item&#45;&#45;red">You</span>-->
-        <!--<span class="graph-controls__item graph-controls__item&#45;&#45;blue">Recommended</span>-->
-        <!--</div>-->
     </div>
 
 
     <div class="aside-right aside-right--behavioral">
-        <div class="aside-right__head aside-right__head--behavioral">Statistics & charts shown for stock:
-
-            <div class="container__form container__form--select container__form--behavioral">
-                <app-dropdown [label]="'Choose stock'" [active]="'All'" [items]="availableStocks" (selected)="onSelect($event)"></app-dropdown>
-            </div>
+        <div class="aside-right__head aside-right__head--behavioral">Statistics:
         </div>
 
-        <div class="aside-right__filter aside-right__filter--behavioral" *ngIf="responseData && responseData.statistics">
+        <div class="aside-right__filter aside-right__filter--behavioral" *ngIf="responseData">
 
             <div class="behavioral__block" *ngIf="!requestPreloader">
                 <div class="behavioral__stats">
                     <span class="text-small">Forecasts accuracy</span>
 
-                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].accuracy | number:'1.2-4'}}</span>
+                    <span class="behavioral__stats-num">{{statistics.accuracy}}%</span>
                 </div>
-                <div class="behavioral__stats">
-                    <span class="text-small">Potential loss of profit</span>
-
-                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].profitLoss | number:'1.2-4'}}</span>
-                </div>
-                <div class="behavioral__stats">
-                    <span class="text-small">Panic buy</span>
-
-                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].panicBuy}}</span>
-                </div>
-                <div class="behavioral__stats">
-                    <span class="text-small">Panic sell</span>
-
-                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].panicSell}}</span>
-                </div>
-
                 <div class="behavioral__stats">
                     <span class="text-small">Successful orders</span>
 
-                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].successfulOrders}}</span>
+                    <span class="behavioral__stats-num">{{statistics.succeeded}}</span>
                 </div>
                 <div class="behavioral__stats">
                     <span class="text-small">Failed orders</span>
 
-                    <span class="behavioral__stats-num">{{responseData.statistics[chosenStatistics].failedOrders}}</span>
+                    <span class="behavioral__stats-num">{{statistics.failed}}</span>
                 </div>
-                <p>{{responseData.statistics[chosenStatistics].recommendation}}</p>
             </div>
 
             <app-preloader *ngIf="requestPreloader"></app-preloader>
-            <span>{{errorText}}</span>
+            <ng-container *ngIf="!requestPreloader && installedStocks.length>0">
+                <div class="filter__container filter__container-order">
 
-            <div class="container__form--behavioral-select" *ngIf="!requestPreloader && installedStocks.length>0">
-                <h4 *ngIf="!stockToSend" class="container__form-warning">To request new analysis please choose the stock!</h4>
-                <div class="container__form container__form--select container__form--behavioral-select">
-                    <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
+                    <div class="l-order__type-container">
+                    <span class="order__type-item" [ngClass]="{'is-active': buy === 'Buy'}"
+                          (click)="buy = 'Buy'">Buy
+                        <div class="order__type-container"></div>
+                    </span>
+                        <span class="order__type-item" [ngClass]="{'is-active': buy === 'Sell'}"
+                              (click)="buy = 'Sell'">Sell
+                          <div class="order__type-container"></div>
+                    </span>
+                    </div>
+                </div>
+                <div style="width: 100%">
+
+                    <div class="container__form container__form--select container__form--behavioral-select">
+                        <app-dropdown [label]="'Choose exchange to search'" [items]="installedStocks" (selected)="setStockToSend($event)" [keyName]="'name'"></app-dropdown>
+                    </div>
+                    <span class="error-field"
+                           *ngIf="submitted && !stockSelected">Choose the exchange</span>
                 </div>
 
-                <button class="filter__container-button" (click)="sendRequest()" [disabled]="!stockSelected">Get stats</button>
+                <div class="filter__container filter__container--analyzer filter__container--analyzerr">
+
+                    <div class="container__form container__form--select is-active">
+
+                        <input type="number" [(ngModel)]="min" [ngModelOptions]="{standalone: true}" class="form__input" placeholder="Minimal volume">
+
+                    </div>
+                    <span class="error-field"
+                          *ngIf="submitted && !min">Choose the minimal volume</span>
+
+                </div>
+
+                <div class="filter__container filter__container--analyzer">
+
+                    <div class="container__form">
+                        <label for="" class="form__label"></label>
+                        <input type="number" [(ngModel)]="max" [ngModelOptions]="{standalone: true}" class="form__input" placeholder="Maximal volume">
+                    </div>
+                    <span class="error-field"
+                          *ngIf="submitted && !max">Choose the maximal volume</span>
+                </div>
+
+                <div class="filter__container filter__container--portfolio">
+                    <ul class="filter__container-block">
+                        <li class="filter__container-block-item" *ngFor="let type of types" [ngClass]="{'is-active': depth === type}"
+                            (click)="depth = type">
+                            {{type}}
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="check">
+                                    <rect id="Rectangle-Copy" fill="#FFFFFF" x="0" y="0" width="24" height="24" rx="12"></rect>
+                                    <path d="M10.6128594,18.9999092 C10.2087451,18.9999092 9.8265451,18.8108521 9.5808451,18.4865949 L6.26250224,14.1042949 C5.83090224,13.5343378 5.94325938,12.7227664 6.51321653,12.2909807 C7.08410224,11.8590092 7.89511653,11.9721092 8.32690224,12.5416949 L10.5094165,15.4236092 L15.9985737,6.60998066 C16.3765022,6.00362352 17.1745165,5.81809495 17.7821737,6.19546637 C18.389088,6.57320923 18.5744308,7.37178066 18.1963165,7.97869495 L11.7119165,18.3898378 C11.4866451,18.7517949 11.0977594,18.9794807 10.6719165,18.9987949 C10.6520451,18.9995378 10.6325451,18.9999092 10.6128594,18.9999092 Z"
+                                          id="Shape" fill="#25CBD3" fill-rule="nonzero"></path>
+                                </g>
+                            </svg>
+                        </li>
+                        <span class="error-field"
+                              *ngIf="submitted && !depth">Choose your trading behavior</span>
+                    </ul>
+                </div>
+            </ng-container>
+            <div class="container__form--behavioral-select" *ngIf="!requestPreloader && installedStocks.length>0">
+                <button class="filter__container-button" (click)="sendRequest()">New request</button>
             </div>
             <div class="container__form--behavioral-select" *ngIf="!requestPreloader && installedStocks.length===0">
                 You have no exchanges currently connected. You need to <a (click)="router.navigateByUrl('/acoount/my-exchanges')" class="filter__container-link">connect stock</a> to use this module.

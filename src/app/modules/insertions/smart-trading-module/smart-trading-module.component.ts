@@ -58,6 +58,18 @@ export class SmartTradingModuleComponent implements OnInit {
             })
         });
 
+        this._smartTradingService.getStats().subscribe(data => {
+            for (const bot of this.bots) {
+                bot.profit90 = data[bot.name].profitAll;
+                bot.profitMonth = data[bot.name].profitMonth;
+                bot.profitWeek = data[bot.name].profitWeek;
+                bot.successRate = data[bot.name].successes;
+                bot.fails = data[bot.name].fails;
+                if ((data[bot.name].fails + data[bot.name].successes) === 0) bot.accuracy = 0;
+                else bot.accuracy = (data[bot.name].successes * 100) / (data[bot.name].fails + data[bot.name].successes);
+            }
+        });
+
         this._smartTradingService.getHistory(this.page).subscribe(data => this.history = data);
 
     }

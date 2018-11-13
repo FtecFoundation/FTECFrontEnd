@@ -8,7 +8,8 @@ import {map} from "rxjs/operators";
 
 enum SmartTradingApiUrls {
     preferences = 'modules/trade/preferences',
-    history = 'modules/trade/history'
+    history = 'modules/trade/history',
+    stats = 'modules/trade/botStats'
 }
 
 @Injectable()
@@ -30,6 +31,10 @@ export class SmartTradingModuleService extends RestService {
     getHistory(page?: number): Observable<SmartTradingData[]> {
         const param = new HttpParams().set('page', '' + page);
         return this.get(SmartTradingApiUrls.history, param).pipe(map(resp => resp.response));
+    }
+
+    getStats(): Observable<any> {
+        return this.get(SmartTradingApiUrls.stats).pipe(map(resp => resp.response));
     }
 
 }

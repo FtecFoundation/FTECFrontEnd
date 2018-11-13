@@ -1,48 +1,36 @@
-export class BehavioralDataTrades {
-    operations: BehavioralDataOperations[];
-    statistics: BehavioralDataStatistics;
+export class BehavioralData {
+    [id: string]: BehavioralDataTrade;
 }
 
-class BehavioralDataInfo {
-    [stock: string]: BehavioralDataOperations[];
-}
-
-export class BehavioralDataOperations {
-    id: string;
-    userId: number;
-    stock: string;
-    pair: string;
-    operationType: OperationTypes;
-    closingDate: Date;
+class BehavioralDataTradeResult {
+    analyzeDepth: string;
+    symbol: string;
     price: number;
-    bestPrice: number;
-    divergence: number;
+    baseVolume: number;
+    operationDate: Date;
+    buy: boolean;
+    success: boolean;
+    hash: string;
+    operationId: string;
 }
 
-class BehavioralDataStatistics {
-    [stock: string]: StockBehavioralData;
+export class BehavioralDataTrade {
+    results: BehavioralDataTradeResult[];
+    stock: string;
 }
 
-export class StockBehavioralData {
-    accuracy: number
-    failedOrders: number;
-    panicBuy: number;
-    panicSell: number;
-    profitLoss: number;
-    successfulOrders: number;
+export class BehavioralRequest {
+    depth: string;
+    minVolume: number;
+    maxVolume: number;
+    stock: string;
+    operationType: string;
 
-    constructor() {
-        this.accuracy = 0;
-        this.failedOrders = 0;
-        this.panicBuy = 0;
-        this.panicSell = 0;
-        this.profitLoss = 0;
-        this.successfulOrders = 0;
+    constructor(depth: string, minVolume: number, maxVolume: number, stock: string, operationType: string) {
+        this.depth = depth;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+        this.stock = stock;
+        this.operationType = operationType;
     }
-
-}
-
-enum OperationTypes {
-    Buy, Sell
-
 }
