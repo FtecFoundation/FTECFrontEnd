@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Pair} from "../../../core/models/pair";
-import {config} from "../behavioral-analyzer/ngx-chart.config";
-import {BehavioralDataTrades} from "../../../core/models/behavioral";
-import {BittrexService} from "../../../core/services/exchanges/bittrex.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TrpService} from "./trp.service";
 import {TradingRecommendation, TrpFilter} from "./trp";

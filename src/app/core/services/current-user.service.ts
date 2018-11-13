@@ -9,9 +9,9 @@ import {catchError} from 'rxjs/operators/catchError';
 import {ErrorsService} from './errors-handling/errors.service';
 import {CustomException} from '../models/exceptions';
 import { TestHistory } from '../models/test-cryptoacademy';
-import { BehavioralDataTrades } from '../models/behavioral';
 import { ArbitrageWindow } from '../models/arbitrage-window';
 import {PaymentService} from "./payment.service";
+import {BehavioralData} from "../models/behavioral";
 
 @Injectable()
 export class CurrentUserService {
@@ -22,7 +22,6 @@ export class CurrentUserService {
     private registrationData: RegistrationData;
     private notificationsData: NotificationSetting;
     private testsData: TestHistory;
-    private behavioralData: BehavioralDataTrades;
     private arbitrageData: ArbitrageWindow;
 
     constructor(private _accountService: AccountService, private _paymentService: PaymentService, private errorService: ErrorsService) {
@@ -36,7 +35,6 @@ export class CurrentUserService {
         this.registrationData = null;
         this.notificationsData = null;
         this.testsData = null;
-        this.behavioralData = null;
         this.arbitrageData = null;
     }
 

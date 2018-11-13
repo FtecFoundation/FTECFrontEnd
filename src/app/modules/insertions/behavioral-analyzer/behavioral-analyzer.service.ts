@@ -3,15 +3,15 @@ import {RestService} from '../../../core/services/rest.service';
 import {catchError} from 'rxjs/operators/catchError';
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/operators/map';
-import {BehavioralDataTrades} from '../../../core/models/behavioral';
+import {BehavioralData, BehavioralDataTrade, BehavioralRequest} from '../../../core/models/behavioral';
 import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {Stock} from '../arbitrage/available-exchanges';
 
 const BehavioralApiUrls = {
 
-    getTrades: 'cabinet/behavioral/getTrades',
-    getHistory: 'cabinet/behavioral/getTradesHistory',
+    getTrades: 'cabinet/behavioral_new/getTrades',
+    getHistory: 'cabinet/behavioral_new/getPrevTrades',
     saveKeys: 'apiKeys'
 };
 
@@ -22,14 +22,14 @@ export class BehavioralAnalyzerService extends RestService {
     }
 
 
-    getHistory(): Observable<BehavioralDataTrades> {
+    getHistory(): Observable<BehavioralData> {
         return this.get(BehavioralApiUrls.getHistory).pipe(
             map(value => value.response)
         );
     }
 
-    getTrades(stock: Stock): Observable<BehavioralDataTrades> {
-        return this.post(BehavioralApiUrls.getTrades, {'stocks' : [stock.nameToSend]}).pipe(
+    getTrades(request: BehavioralRequest): Observable<BehavioralDataTrade> {
+        return this.post(BehavioralApiUrls.getTrades, request).pipe(
             map(resp => resp.response));
     }
 
