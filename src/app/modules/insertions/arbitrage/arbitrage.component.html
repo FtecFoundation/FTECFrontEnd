@@ -14,8 +14,7 @@
                 <p>Choose exchange, set parameters and hit Get Result.
                     Or learn how Arbitrage Assistant works.</p>
 
-                <a href="https://ftec.network/#modal-6" target="_blank"
-                   class="filter__container-button filter__container-button--arbitrage" (click)="_faqService.goToFaq(11)">How it works?</a>
+                <a class="filter__container-button filter__container-button--arbitrage" (click)="_faqService.goToFaq(11)">How it works?</a>
             </div>
         </div>
 
@@ -88,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="middle__table-container middle__table-container--arbitrage" *ngIf="currentLogs">
+            <div style="margin-bottom:37px" class="middle__table-container middle__table-container--arbitrage" *ngIf="currentLogs">
                 <div class="middle__table-container-item" *ngFor="let log of currentLogs.logs">
                     <div class="item-inner-line--error-icon" *ngIf="log.lockedOnBuy || log.lockedOnSell">
                         <svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
