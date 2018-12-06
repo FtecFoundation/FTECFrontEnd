@@ -52,7 +52,7 @@ export class TelegramAssistantService extends RestService {
     }
 
     isConnected(): Observable<any>{
-        return this.post('/modules/telegram/isConnected', {}).pipe(map(response=> response.response));
+        return this.get('/modules/telegram/isConnected', null, true).pipe(map(response=> response.response));
     }
 
 }
