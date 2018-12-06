@@ -168,7 +168,7 @@
                                         <span>{{item.creationDate | date: 'dd MMM yyyy'}}</span>
                                     </p>
                                     <p>{{toPercent(item.currentPrice, item.divergence) | number:'1.2-8'}}
-                                        <span>{{item.divergence}}%</span>
+                                        <span>{{round(item.divergence)}}%</span>
                                     </p>
                                 </li>
                                 <li *ngIf="item.triggerDate">
@@ -176,7 +176,7 @@
                                         <span>{{item.triggerDate | date: 'dd MMM yyyy'}}</span>
                                     </p>
                                     <p>{{toPercent(item.triggeredPrice, item.divergence) | number:'1.2-8'}}
-                                        <span>{{item.divergence}}%</span>
+                                        <span>{{round(item.divergence)}}%</span>
                                     </p>
                                 </li>
                             </ul>
@@ -357,7 +357,7 @@
                     <div class="container__form">
                         <label for="" class="form__label"></label>
                         <input type="number" (focus)="focusOnField=true" #pr class="form__input" placeholder="Price"
-                               value="{{focusOnField ? pr.value : (toPercent(pairPrice, profitPercent) | number:'1.2-8')}}"
+                               value="{{focusOnField ? pr.value : (toPercent(pairPrice, profitPercent) | number:'1.8')}}"
                                (keyup)="fromPercent(pr.value, pairPrice)">
                     </div>
 

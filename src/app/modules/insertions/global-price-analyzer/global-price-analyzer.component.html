@@ -21,7 +21,7 @@
                 <div class="middle__table-type middle__table-type--exchanges">
                     <span class="middle__table-type-name">
                      Pair
-                    </span>
+              </span>
 
                     <span class="middle__table-type-name">
                       Stock
@@ -33,6 +33,11 @@
 
                     <span class="middle__table-type-name">
                     Savings
+                    </span>
+
+                    <span *ngIf="results[pair].opened"
+                         (click)="results[pair].opened = false">
+                        <button type="button" class="msg-line__close middle__table-type-name"></button>
                     </span>
                 </div>
 
@@ -47,7 +52,7 @@
                             <span>{{item.stock}}</span>
                         </h4>
                         <div class="item-inner item-inner--notifications item-inner--exchanges">
-                            {{item.price | number: '1.0-8'}}
+                            <span>{{item.price | number: '1.0-8'}}</span>
                         </div>
                         <span class="container-item-update item-inner--exchanges title--green">{{item.percentOfSaving | number: '1.0-2'}} %</span>
                     </div>

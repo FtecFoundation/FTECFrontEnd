@@ -187,11 +187,13 @@
         </span>
             </div>
 
+                <div class="filter_container_automatic_trades">
             <div class="filter__container filter__container--switcher">
                 <figure  class="button__change" [ngClass]="{'is-active': autoTrades}"
                         (click)="autoTrades = !autoTrades"></figure>
                 <span>Switch off automatic trades</span>
             </div>
+                </div>
 
             <div class="data-trades" @dataForTrades *ngIf="autoTrades">
                 <div class="middle__table-container--empty">
