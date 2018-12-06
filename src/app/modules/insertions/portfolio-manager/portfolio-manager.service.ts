@@ -22,6 +22,6 @@ export class PortfolioManagerService extends RestService {
     }
 
     getOldPortfolios(){
-        return this.get(PortfolioManagerApiUrls.getOld).pipe(map(resp => resp.response))
+        return this.get(PortfolioManagerApiUrls.getOld, null, true).pipe(map(resp => resp.response))
     }
 }

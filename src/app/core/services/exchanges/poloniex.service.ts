@@ -17,18 +17,19 @@ export class PoloniexService implements ExchangeService {
     constructor(private _http: HttpClient) {
     }
 
-    getPairs(): Observable<Pair[]> {
+    getPairs(all ?: boolean): Observable<Pair[]> {
         const param = new HttpParams().set('command', this.apiUrls.getPairs);
         return this._http.get(this.baseUrl, {params: param}).pipe(map(resp => {
             let pairs = [];
             for (const pair of Object.keys(resp)) {
-                if (pair.indexOf('USD') === -1)
+                if (all || pair.indexOf('USD') === -1)
                     pairs.push(new Pair().of(this.getMarketCurrency(pair), this.getBaseCurrency(pair), AvailableExchanges.Poloniex))
             }
             console.log(pairs);
             return pairs;
         }));
     }
+
 
     getBaseCurrency(symbol: string): string {
         return symbol.substring(0, symbol.indexOf('_'));

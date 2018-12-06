@@ -99,8 +99,7 @@ export class OrderManagerComponent implements OnInit {
 
     addOrder() {
         this.submitted = true;
-
-        if (this.amount && this.pairExchange && this.connectedExchanges.indexOf(this.pairExchange.nameToSend) === -1) {
+        if (this.amount && this.pairExchange && this.connectedExchanges.indexOf(this.pairExchange.nameToSend) === 1) {
             this.amountNotSet = false;
             this.orderManagerService.checkBalance(this.pairExchange.nameToSend,
                 this.pairsFilterService.selectedPair.symbol).subscribe(data => {

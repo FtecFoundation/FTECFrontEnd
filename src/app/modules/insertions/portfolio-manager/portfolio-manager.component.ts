@@ -5,7 +5,7 @@ import {CryptocurrenciesService} from "../../../core/services/cryptocurrencies.s
 import {CurrencyTop} from "./currency-top";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PortfolioManagerService} from "./portfolio-manager.service";
-import {Portfolio, PortfolioChart, PortfolioInfo, PortfolioLogs, PortfolioPreferences} from "./portfolio";
+import {Portfolio, PortfolioChart, PortfolioInfo, PortfolioLog, PortfolioLogs, PortfolioPreferences} from "./portfolio";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {formatLabel} from "@swimlane/ngx-charts";
@@ -44,7 +44,7 @@ export class PortfolioManagerComponent implements OnInit {
     activeLog: string;
     info: PortfolioInfo;
 
-    color = {domain: ['#990D64', '#7A3A9C', '#4780F1', '#23C8D6']};
+    color = {domain: ['#990D64', '#7A3A9C', '#4780F1', '#23C8D6', '#a03571', '#7A3A9C', '#4780F1', '#23C8D6', '#4780F1', '#a5477c', '#7A3A9C', '#4780F1', '#23C8D6', '#a03571', '#7A3A9C', '#4780F1', '#23C8D6', '#a03571', '#7A3A9C', '#4780F1', '#23C8D6']};
     howTo: string[] = ['The generator is based on the main market indicators and takes into account wishes of users for formation individual investment portfolio.',
     'Separately you can define a pool of currencies and exchanges that may be included in the future crypto-portfolio.',
     'The function of rebalancing the embedded crypto-currency portfolio is available in ' +
@@ -67,6 +67,7 @@ export class PortfolioManagerComponent implements OnInit {
                 for (const t of sortedTimestamps) {
                     this.timeLogs[t] = data[t];
                 }
+
                 this.activeLog = sortedTimestamps[0];
                 this.fillPortfolioChart(this.activeLog);
             }
@@ -84,6 +85,7 @@ export class PortfolioManagerComponent implements OnInit {
         this.showGraph = true;
         this.info = new PortfolioInfo(log, this.timeLogs[log].btc, this.timeLogs[log].nature,
             this.timeLogs[log].period, this.timeLogs[log].coinsCount);
+
     }
 
     getKeys(obj: any): string[] {
@@ -115,11 +117,23 @@ export class PortfolioManagerComponent implements OnInit {
                 this.recommendation = null;
                 this.preloader = false;
                 this.portfolio = data.capitalization;
+
                 for (const coin of Object.keys(data.capitalization)) {
                     this.portfolioChart.push(new PortfolioChart(coin, data.capitalization[coin]));
                 }
                 this.showGraph = true;
                 this.info = new PortfolioInfo(''+this.today, data.btc, ''+data.nature, ''+data.period, data.coinsCount);
+
+                //todo
+                //just need push on start of timeLogs.time. ReDO in good way
+                const temp = this.timeLogs;
+                this.timeLogs = {};
+                this.timeLogs[Date.now()] = data;
+                const timestamps = Object.keys(temp);
+                for (const t of timestamps) {
+                    this.timeLogs[t] = temp[t];
+                }
+
                 this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Success!',
                     'Your new portfolio was successfully generated', 'success'));
             }, error1 => {
@@ -129,6 +143,7 @@ export class PortfolioManagerComponent implements OnInit {
         }
 
     }
+
 
     prepareData(): PortfolioPreferences {
         if (this.currency === 'USD') {

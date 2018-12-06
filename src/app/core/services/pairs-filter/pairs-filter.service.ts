@@ -12,11 +12,11 @@ export class PairsFilterService {
 
   constructor(private exchangesService: ExchangesService) { }
 
-  fillAllPairs(onlyConnectedExchanges?: boolean) {
+  fillAllPairs(onlyConnectedExchanges?: boolean, usdt?: boolean) {
       this.allPairs = [];
       for (const exchange of Object.keys(this.exchangesService.exchanges)) {
 
-              this.exchangesService.exchanges[exchange].getPairs().subscribe(data => {
+              this.exchangesService.exchanges[exchange].getPairs(usdt).subscribe(data => {
                   for (const pair of data) this.allPairs.push(pair);
               });
 

@@ -5,7 +5,7 @@ import {Candle, Pair} from "../../models/pair";
 
 export interface ExchangeService {
 
-    getPairs(): Observable<Pair[]>;
+    getPairs(all ?: boolean): Observable<Pair[]>;
 
     getPrice(pair: Pair): Observable<number>;
 

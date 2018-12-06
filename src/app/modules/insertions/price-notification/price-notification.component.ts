@@ -51,7 +51,7 @@ export class PriceNotificationComponent implements OnInit {
         this.telegramDisabled = !this.currentUser.notificationSettings['4']['telegram'];
         console.log(this.currentUser.notificationSettings['4']['telegram']);
 
-        if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs();
+        if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs(false, true);
     }
 
     fromPercent(newPrice: string, price: number) {
@@ -116,6 +116,10 @@ export class PriceNotificationComponent implements OnInit {
         } else {
             this.typeNotChosen = true;
         }
+    }
+
+    round(value : number){
+        return Math.round(value * 100) / 100;
     }
 
 }

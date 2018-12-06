@@ -13,7 +13,7 @@ export class AvailableExchanges {
         AvailableExchanges.YObitNet];
 
     public static availableTimeframes: Timeframe[] = [{symbol: 'oneMinute', name: '1 minute'}, {symbol: 'fiveMinutes', name: '5 minutes'},
-        {symbol: 'tenMinutes', name: '10 minutes'}, {symbol: 'thirtyMinutes', name: '30 minutes'}, {symbol: 'oneHour', name: '1 hour'},
+        {symbol: 'thirtyMinutes', name: '30 minutes'}, {symbol: 'oneHour', name: '1 hour'},
         {symbol: 'fourHours', name: '4 hours'}, {symbol: 'oneDay', name: '1 day'}];
 
     public static availablePortfolioTerms: PortfolioTerm[] = [{nameToSend: 'Day', name: '1 day'},

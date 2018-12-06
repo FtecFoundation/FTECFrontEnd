@@ -21,12 +21,12 @@ export class BittrexService implements ExchangeService {
     constructor(private _http: HttpClient) {
     }
 
-    getPairs(): Observable<Pair[]> {
+    getPairs(all ?: boolean): Observable<Pair[]> {
         return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(map(resp => {
             let pairs = [];
             console.log(resp);
             for (const pair of resp['result']) {
-                if (pair['BaseCurrency'].indexOf('USD') === -1)
+                if (all || pair['BaseCurrency'].indexOf('USD') === -1)
                     pairs.push(new Pair().of(pair['MarketCurrency'], pair['BaseCurrency'], AvailableExchanges.BitTrex))
             }
             return pairs;

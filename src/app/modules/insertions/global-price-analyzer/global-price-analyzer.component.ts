@@ -55,7 +55,7 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
                 this.recommendedCurrs.push(data[curr].symbol);
                 this.allRecommendedCurrs.push(data[curr].symbol);
             }
-        })
+        });
 
         this._globalPriceService.getHistory().subscribe(data => {
             if (data !== {}) {
@@ -63,6 +63,7 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
                 for (const t of sortedTimestamps) {
                     this.timeLogs[t] = data[t];
                 }
+
                 this.activeLog = sortedTimestamps[0];
                 this.results = data[this.activeLog];
                 for (const p of Object.keys(data[this.activeLog])) {
@@ -132,12 +133,25 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
            this._globalPriceService.searchPrices(this.prepareData()).subscribe(data => {
                this.results = data;
                this.preloader = false;
-
                for (const p of Object.keys(data)) {
                    this.results[p].array = data[p];
                    this.results[p].opened = false;
                    this.results[p].array.sort((a, b) => b.percentOfSaving - a.percentOfSaving);
                }
+               let now = Date.now().toString();
+               let tempTimeLogs = this.timeLogs;
+               //todo reDo in good way. Just put obj on start of timeLogs.
+               this.timeLogs = {};
+               this.timeLogs[now] = data;
+
+               const timestamps = Object.keys(tempTimeLogs);
+               for (const t of timestamps) {
+                   this.timeLogs[t] = tempTimeLogs[t];
+               }
+               tempTimeLogs = {};
+
+
+               this.activeLog = now;
            });
         }
     }

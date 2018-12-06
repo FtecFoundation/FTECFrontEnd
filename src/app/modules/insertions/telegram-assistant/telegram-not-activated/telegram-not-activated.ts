@@ -3,6 +3,8 @@ import {TelegramAssistantService} from '../telegram-assistant.service';
 import {CurrentUserService} from '../../../../core/services/current-user.service';
 import {Router} from '@angular/router';
 import {PreferencesService} from "../../../../core/services/preferences.service";
+import {NotifyService} from "../../../../core/notify/notify.service";
+import {Notify} from "../../../../core/notify/notifications";
 
 @Component({
     selector: 'app-social',
@@ -23,7 +25,8 @@ export class TelegramNotActivatedComponent implements OnInit {
     constructor(private _telegramService: TelegramAssistantService,
                 public _preferencesService: PreferencesService,
                 public _currentUserService: CurrentUserService,
-                private router: Router) {
+                private router: Router,
+                private notifyService : NotifyService) {
     }
 
     ngOnInit() {
@@ -38,7 +41,9 @@ export class TelegramNotActivatedComponent implements OnInit {
 
     checkIfConnected() {
         this._telegramService.isConnected().subscribe(connected => {
-            if(connected) this.router.navigateByUrl('/modules/telegram-assistant/settings');
+            if(connected) return this.router.navigateByUrl('/modules/telegram-assistant/settings');
+            this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Telegram',
+                'Your account still does not connected. \n Follow to provided link and press the start button in your telegram.', 'warning'));
         });
     }
 }

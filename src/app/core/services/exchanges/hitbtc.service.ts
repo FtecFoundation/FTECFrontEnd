@@ -18,11 +18,11 @@ export class HitBTCService implements ExchangeService {
     constructor(private _http: HttpClient) {
     }
 
-    getPairs(): Observable<Pair[]> {
+    getPairs(all ?: boolean): Observable<Pair[]> {
         return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(map(resp => {
             let pairs = [];
             for (const pair of Object.keys(resp)) {
-                if (resp[pair].symbol.indexOf('USD') === -1)
+                if (all || resp[pair].symbol.indexOf('USD') === -1)
                     pairs.push(new Pair().of(this.getMarketCurrency(resp[pair].symbol), this.getBaseCurrency(resp[pair].symbol), AvailableExchanges.Hitbtc))
             }
             return pairs;
