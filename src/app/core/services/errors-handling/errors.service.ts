@@ -55,7 +55,8 @@ export const errorMessages = {
     '50': 'This pair is not supported',
     '51': 'You are not subscribed on this trading recommendation',
     '52': 'Price notification is not found',
-    '53': 'You can send only one request per 30 minutes'
+    '53': 'You can send only one request per 30 minutes',
+    '54': 'Please choose at least 2 stocks'
 };
 
 @Injectable()

@@ -119,7 +119,7 @@
                         </svg>
                     </li>
                 </ul>
-                <span class="error-field error-field--arbitrage" *ngIf="submitted && chosenExchanges.length < 1">Choose at least 1 exchange</span>
+                <span class="error-field error-field--arbitrage" *ngIf="submitted && chosenExchanges.length < 1">Choose at least 2 exchange</span>
 
             </div>
 
@@ -153,12 +153,11 @@
                     </li>
                 </ul>
 
-                <span class="error-field error-field--arbitrage" *ngIf="submitted && !selectedPairs.length">Choose at least 1 pair</span>
+
                 <span class="error-field error-field--arbitrage" *ngIf="submitted && selectedPairs.length > 10">You can't choose more than 10 pairs</span>
 
             </div>
             <p style="margin-bottom: .938em" *ngIf="!selectedPairs.length">You can choose up to 10 pairs</p>
-
             <div class="filter__container" *ngIf="recommendedCurrs.length > 0">
                 <span class="container__name container__name--recommended">Popular Currencies</span>
                 <ul id="filter__container-block2" class="filter__container-block">
@@ -185,6 +184,7 @@
                         </div>
                     </li>
                 </ul>
+                <span class="error-field error-field--arbitrage" *ngIf="submitted && !selectedPairs.length">Choose at least 1 pair</span>
             </div>
 
             <div class="filter__container">

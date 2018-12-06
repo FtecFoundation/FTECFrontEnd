@@ -152,6 +152,8 @@ export class GlobalPriceAnalyzerComponent implements OnInit {
 
 
                this.activeLog = now;
+           }, error=>{
+               this.preloader = false;
            });
         }
     }
