@@ -6,6 +6,7 @@ import {Pair} from "../../models/pair";
 import {tap} from 'rxjs/operators/tap';
 import {map} from "rxjs/operators";
 import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
+import {errorHandler} from "@angular/platform-browser/src/browser";
 
 @Injectable()
 export class BinanceService implements ExchangeService {
@@ -28,8 +29,9 @@ export class BinanceService implements ExchangeService {
                     pairs.push(new Pair().of(this.getMarketCurrency(resp[pair].symbol), this.getBaseCurrency(resp[pair].symbol), AvailableExchanges.Binance))
             }
             return pairs;
-        }));
+        })).catch((e : Pair[]) => Observable.of([]));
     }
+
 
     getBaseCurrency(symbol: string): string {
         return symbol.substring(symbol.length - 3);

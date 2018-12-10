@@ -36,6 +36,7 @@ export class SmartTradingModuleComponent implements OnInit {
 
     ngOnInit() {
         this._currentUserService.getStockKeys(false).subscribe(data => {
+
             this.keys = data;
             main: for (const stock of AvailableExchanges.availableStocks) {
                 for (const key of this.keys) {

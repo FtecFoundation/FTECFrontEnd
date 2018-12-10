@@ -26,6 +26,7 @@ const rateLimit = require("express-rate-limit");
 let bannedIPs = [];
 const jsonfile = require('jsonfile');
 const faqFile = '/faq/faq.json';
+const cors = require('cors');
 
 app.enable("trust proxy");
 
@@ -58,7 +59,7 @@ let prefix = '';
 let prod = false;
 let port = 4200;
 let secretCaptcha = '';
-let serverProxy = '';
+let serverProxy = '188.166.22.122';
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
@@ -156,6 +157,8 @@ app.get('/binance/klines', function (req, res) {
     });
 });
 
+
+
 // app.use('/bittrex', proxy('http://' + serverProxy, {
 //     proxyReqPathResolver: function (req) {
 //         return '/bittrex/api/v1.1/public' + require('url').parse(req.url).path;
@@ -247,6 +250,8 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 app.get('*', (req, res) => {
     res.render('index', {req});
 });
+
+
 if (apiUrl) {
     if (prod) {
         var privateKey = fs.readFileSync('/SSL/pk.pem');
@@ -258,6 +263,8 @@ if (apiUrl) {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });
         const appBittrex = express();
+        appBittrex.use(cors());
+        appBittrex.options('*', cors());
         appBittrex.use('/bittrex', function (req, res) {
             const url = 'http://' + serverProxy + '/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
             request(url, function (error, response, body) {
@@ -266,8 +273,9 @@ if (apiUrl) {
         });
         appBittrex.listen(80);
     }
-    if (!prod)
+    if (!prod) {
         app.listen(port, () => {
-            console.log(`Node Express server listening on http://localhost:${port}`);
+            console.log(`No prod: Node Express server listening on http://localhost:${port}`);
         });
+    }
 }

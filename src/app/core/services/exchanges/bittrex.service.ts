@@ -7,10 +7,11 @@ import {tap} from 'rxjs/operators/tap';
 import {map} from "rxjs/operators";
 import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
 import {CurrencyTop} from "../../../modules/insertions/portfolio-manager/currency-top";
+import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class BittrexService implements ExchangeService {
-    baseUrl: string = '/bittrex/';
+    baseUrl: string = 'http://localhost:80/bittrex/';
     apiUrls = {
         getPairs: 'getmarkets',
         getPrice: 'getticker'
@@ -24,7 +25,7 @@ export class BittrexService implements ExchangeService {
     getPairs(all ?: boolean): Observable<Pair[]> {
         return this._http.get(this.baseUrl + this.apiUrls.getPairs).pipe(map(resp => {
             let pairs = [];
-            console.log(resp);
+            console.log("bittrex", resp);
             for (const pair of resp['result']) {
                 if (all || pair['BaseCurrency'].indexOf('USD') === -1)
                     pairs.push(new Pair().of(pair['MarketCurrency'], pair['BaseCurrency'], AvailableExchanges.BitTrex))

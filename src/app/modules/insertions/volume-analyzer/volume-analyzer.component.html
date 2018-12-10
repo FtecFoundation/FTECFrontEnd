@@ -219,13 +219,12 @@
                 </div>
             </div>
 
-
             <button class="filter__container-button" (click)="submitForm()">Save preferences</button>
             </div>
             <button class="filter__container-button" *ngIf="analyzerActivated && !notConfigured" (click)="stopAnalyzing()">Stop
                 analyzing
             </button>
-            <button class="filter__container-button" *ngIf="!analyzerActivated && !notConfigured" (click)="startAnalyzing()">Start
+            <button class="filter__container-button" *ngIf="!analyzerActivated && !notConfigured" (click)="startAnalyzing()"> SStart
                 analyzing
             </button>
         </form>

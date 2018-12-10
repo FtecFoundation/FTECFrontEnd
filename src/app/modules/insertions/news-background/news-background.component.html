@@ -10,7 +10,8 @@
                     Subscription days left: {{daysLeft}}
                 </h5>
 
-                <button class="button__outline" (click)="renewSubscription()">{{!daysLeft ? 'Subscribe' : 'Renew subscription'}}
+                <button class="button__outline" (click)="renewSubscription()">{{!daysLeft ? 'Subscribe' : 'Renew
+                    subscription'}}
                 </button>
             </div>
 
@@ -59,93 +60,94 @@
                                     '1.0-1'}}-{{absolute(result.forecastTopBorder) | number: '1.0-1'}}%</h4>
                             </div>
                         </div>
-            </div>
+                    </div>
                 </ng-container>
-            <div class="news__container--pages">
-                <ng-container *ngFor="let page of pages">
-                    <div class="news__container--page" *ngIf="page !== 0 && (page <= _newsBackService.pagination.currentPage + 3
+                <div class="news__container--pages">
+                    <ng-container *ngFor="let page of pages">
+                        <div class="news__container--page" *ngIf="page !== 0 && (page <= _newsBackService.pagination.currentPage + 3
            && page >= _newsBackService.pagination.currentPage - 3) && page !== pages.length - 1"
-                         [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
-                         (click)="goToPage(page)">{{page + 1}}
-                    </div>
-                    <div class="news__container--page" *ngIf="page === 0"
-                         [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
-                         (click)="goToPage(page)">First
-                    </div>
-                    <div class="news__container--page" *ngIf="page === pages.length - 1"
-                         [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
-                         (click)="goToPage(page)">Last
-                    </div>
-                </ng-container>
+                             [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
+                             (click)="goToPage(page)">{{page + 1}}
+                        </div>
+                        <div class="news__container--page" *ngIf="page === 0"
+                             [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
+                             (click)="goToPage(page)">First
+                        </div>
+                        <div class="news__container--page" *ngIf="page === pages.length - 1"
+                             [ngClass]="{'is-active': page === _newsBackService.pagination.currentPage}"
+                             (click)="goToPage(page)">Last
+                        </div>
+                    </ng-container>
+                </div>
             </div>
+
         </div>
 
-    </div>
 
+        <div class="aside-right">
+            <form class="aside-right__filter" [ngClass]="{'closed': !daysLeft}">
 
-    <div class="aside-right">
-        <form class="aside-right__filter" [ngClass]="{'closed': !daysLeft}">
-
-            <div class="filter__container">
-                <ul id="filter__container-block" class="filter__container-block">
-                    <li class="filter__container-block-item--categories is-active" *ngFor="let cur of currencies">
-                        {{cur}}
-                        <div class="categories__item-svg" (click)="deleteCurrency(cur)">
-                            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1"
-                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>Group 8</title>
-                                <desc>Created with Sketch.</desc>
-                                <defs></defs>
-                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="FTEC-Platform_Module-2" transform="translate(-1286.000000, -130.000000)">
-                                        <g id="Group-5" transform="translate(1180.000000, 104.000000)">
-                                            <g id="Group" transform="translate(16.000000, 24.000000)">
-                                                <g id="Group-8" transform="translate(90.000000, 2.000000)">
-                                                    <circle id="Oval" fill-opacity="0.7" fill="#FFFFFF" cx="10" cy="10"
-                                                            r="10"></circle>
-                                                    <path d="M10.90625,10.03125 L14.875,14.015625 C15.0000006,14.1302089 15.0625,14.2734366 15.0625,14.4453125 C15.0625,14.6171884 15.0026048,14.7630202 14.8828125,14.8828125 C14.7630202,15.0026048 14.6171884,15.0625 14.4453125,15.0625 C14.2734366,15.0625 14.1302089,15.0000006 14.015625,14.875 L10.03125,10.890625 L6.046875,14.875 C5.93229109,15.0000006 5.78906336,15.0625 5.6171875,15.0625 C5.44531164,15.0625 5.29947977,15.0026048 5.1796875,14.8828125 C5.05989523,14.7630202 5,14.6171884 5,14.4453125 C5,14.2734366 5.06249937,14.1302089 5.1875,14.015625 L9.15625,10.03125 L5.1875,6.046875 C5.06249937,5.93229109 5,5.78906336 5,5.6171875 C5,5.44531164 5.05989523,5.29947977 5.1796875,5.1796875 C5.29947977,5.05989523 5.44531164,5 5.6171875,5 C5.78906336,5 5.93229109,5.06249938 6.046875,5.1875 L10.03125,9.15625 L14.015625,5.1875 C14.1302089,5.06249938 14.2734366,5 14.4453125,5 C14.6171884,5 14.7630202,5.05989523 14.8828125,5.1796875 C15.0026048,5.29947977 15.0625,5.44531164 15.0625,5.6171875 C15.0625,5.78906336 15.0000006,5.93229109 14.875,6.046875 L10.90625,10.03125 Z"
-                                                          id="" fill="#7A5D8E"></path>
+                <div class="filter__container">
+                    <ul id="filter__container-block" class="filter__container-block">
+                        <li class="filter__container-block-item--categories is-active" *ngFor="let cur of currencies">
+                            {{cur}}
+                            <div class="categories__item-svg" (click)="deleteCurrency(cur)">
+                                <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>Group 8</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="FTEC-Platform_Module-2" transform="translate(-1286.000000, -130.000000)">
+                                            <g id="Group-5" transform="translate(1180.000000, 104.000000)">
+                                                <g id="Group" transform="translate(16.000000, 24.000000)">
+                                                    <g id="Group-8" transform="translate(90.000000, 2.000000)">
+                                                        <circle id="Oval" fill-opacity="0.7" fill="#FFFFFF" cx="10"
+                                                                cy="10"
+                                                                r="10"></circle>
+                                                        <path d="M10.90625,10.03125 L14.875,14.015625 C15.0000006,14.1302089 15.0625,14.2734366 15.0625,14.4453125 C15.0625,14.6171884 15.0026048,14.7630202 14.8828125,14.8828125 C14.7630202,15.0026048 14.6171884,15.0625 14.4453125,15.0625 C14.2734366,15.0625 14.1302089,15.0000006 14.015625,14.875 L10.03125,10.890625 L6.046875,14.875 C5.93229109,15.0000006 5.78906336,15.0625 5.6171875,15.0625 C5.44531164,15.0625 5.29947977,15.0026048 5.1796875,14.8828125 C5.05989523,14.7630202 5,14.6171884 5,14.4453125 C5,14.2734366 5.06249937,14.1302089 5.1875,14.015625 L9.15625,10.03125 L5.1875,6.046875 C5.06249937,5.93229109 5,5.78906336 5,5.6171875 C5,5.44531164 5.05989523,5.29947977 5.1796875,5.1796875 C5.29947977,5.05989523 5.44531164,5 5.6171875,5 C5.78906336,5 5.93229109,5.06249938 6.046875,5.1875 L10.03125,9.15625 L14.015625,5.1875 C14.1302089,5.06249938 14.2734366,5 14.4453125,5 C14.6171884,5 14.7630202,5.05989523 14.8828125,5.1796875 C15.0026048,5.29947977 15.0625,5.44531164 15.0625,5.6171875 C15.0625,5.78906336 15.0000006,5.93229109 14.875,6.046875 L10.90625,10.03125 Z"
+                                                              id="" fill="#7A5D8E"></path>
+                                                    </g>
                                                 </g>
                                             </g>
                                         </g>
                                     </g>
-                                </g>
-                            </svg>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="filter__container">
-
-                <div class="filter__container">
-                    <span class="container__name">Currency</span>
-
-                    <div class="container__form container__form--select is-active">
-                        <app-dropdown [label]="'Currency'" [items]="availableCurrencies"
-                                      (selected)="chosenCurrency = $event"></app-dropdown>
-                    </div>
-
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <button type="submit" id="button-categories" class="filter__container-button"
-                        (click)="addCurrency(chosenCurrency)">Add currency
-                </button>
-            </div>
+                <div class="filter__container">
+
+                    <div class="filter__container">
+                        <span class="container__name">Currency</span>
+
+                        <div class="container__form container__form--select is-active">
+                            <app-dropdown [label]="'Currency'" [items]="availableCurrencies"
+                                          (selected)="chosenCurrency = $event"></app-dropdown>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" id="button-categories" class="filter__container-button"
+                            (click)="addCurrency(chosenCurrency)">Add currency
+                    </button>
+                </div>
 
 
-        </form>
+            </form>
 
-        <div class="filter__container filter__container--notifications">
-            <span class="container__name">Receive notifications by</span>
+            <div class="filter__container filter__container--notifications">
+                <span class="container__name">Receive notifications by</span>
 
-            <div class="container__wrapper">
-                <a class="container__link container__link--dashboard"
-                   [ngClass]="{'is-active': _currentUserService.user.notificationSettings[9].email, 'not-active' : !_currentUserService.user.notificationSettings[0].email}">
-                    <label class="form__info-label-container">
-                        <input type="checkbox">
+                <div class="container__wrapper">
+                    <a class="container__link container__link--dashboard"
+                       [ngClass]="{'is-active': _currentUserService.user.notificationSettings[9].email, 'not-active' : !_currentUserService.user.notificationSettings[0].email}">
+                        <label class="form__info-label-container">
+                            <input type="checkbox">
 
-                        <span class="form__info-checkmark form__info-checkmark--dashboard">
+                            <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg (click)="updateNotificationStatus('email')" width="46px" height="44px" viewBox="0 0 46 44"
                    version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>2F7A4EE1-925E-4492-AA52-BF75ED4B694B</title>
@@ -169,15 +171,16 @@
                 </g>
               </svg>
             </span>
-                    </label>
-                </a>
+                        </label>
+                    </a>
 
-                <a class="container__link container__link--dashboard"
-                   [ngClass]="{'is-active': _currentUserService.user.notificationSettings[9].telegram, 'not-active' : !_currentUserService.user.notificationSettings[0].telegram}">
-                    <label class="form__info-label-container">
-                        <input type="checkbox">
 
-                        <span class="form__info-checkmark form__info-checkmark--dashboard">
+                    <a class="container__link container__link--dashboard"
+                       [ngClass]="{'is-active': _currentUserService.user.notificationSettings[9].telegram, 'not-active' : !_currentUserService.user.notificationSettings[0].telegram}">
+                        <label class="form__info-label-container">
+                            <input type="checkbox">
+
+                            <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg (click)="updateNotificationStatus('telegram')" width="43px" height="38px" viewBox="0 0 43 38"
                    version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>D43FAC68-EF4D-4E72-B242-F218194FF32E</title>
@@ -197,14 +200,14 @@
                 </g>
               </svg>
             </span>
-                    </label>
-                </a>
+                        </label>
+                    </a>
 
-                <a href="javascript:void(0)" class="container__link container__link--dashboard not-active">
-                    <label class="form__info-label-container">
-                        <input type="checkbox">
+                    <a href="javascript:void(0)" class="container__link container__link--dashboard not-active">
+                        <label class="form__info-label-container">
+                            <input type="checkbox">
 
-                        <span class="form__info-checkmark form__info-checkmark--dashboard">
+                            <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg width="46px" height="41px" viewBox="0 0 46 41" version="1.1" xmlns="http://www.w3.org/2000/svg"
                    xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>54657EC0-BB91-42DC-B11E-3E8123A7A2C5</title>
@@ -225,14 +228,14 @@
                 </g>
               </svg>
             </span>
-                    </label>
-                </a>
+                        </label>
+                    </a>
 
-                <a href="javascript:void(0)" class="container__link container__link--dashboard not-active">
-                    <label class="form__info-label-container">
-                        <input type="checkbox">
+                    <a href="javascript:void(0)" class="container__link container__link--dashboard not-active">
+                        <label class="form__info-label-container">
+                            <input type="checkbox">
 
-                        <span class="form__info-checkmark form__info-checkmark--dashboard">
+                            <span class="form__info-checkmark form__info-checkmark--dashboard">
               <svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg"
                    xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>2CDEAC1E-8B04-4633-912A-C385216F4057</title>
@@ -253,11 +256,11 @@
                 </g>
               </svg>
             </span>
-                    </label>
-                </a>
+                        </label>
+                    </a>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

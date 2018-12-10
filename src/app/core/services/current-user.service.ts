@@ -69,7 +69,9 @@ export class CurrentUserService {
     getNotificationSettings(forceRefresh: boolean): Observable<NotificationSettings> {
         if (!forceRefresh && !this.currentUser && !this.currentUser.notificationSettings) { return Observable.of(this.currentUser.notificationSettings); }
         this._accountService.getNotificationSettings().pipe(
-            map(value => this.user.notificationSettings = value),
+            map(value => {
+                this.user.notificationSettings = value
+            }),
             catchError(err => {
                 if (err instanceof CustomException) { if (!this.errorService.handleCustomException(err)) { return; } }
                 console.error('Can\'t get notifications settings, got exception:', err);
