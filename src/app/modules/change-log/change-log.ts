@@ -1,14 +1,5 @@
 export const changeLog = [
     {
-        'date': '10/12/2018',
-        'changes': [
-            'Button performance of Telegram assistant that checks whether the Telegram account was connected is corrected.',
-            'Pairs with USD/USDT currencies were added to Price analyzer.',
-            'Ability to hide the result from Global Price Analyzer makes user experience better.',
-            'Error that prevented user from adding new orders in Order Manager was corrected.'
-        ]
-    },
-    {
         'date': '06/12/2018',
         'changes': [
             'Button performance of Telegram assistant that checks whether the Telegram account was connected is corrected.',
