@@ -11,7 +11,7 @@ import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class BittrexService implements ExchangeService {
-    baseUrl: string = 'http://localhost:80/bittrex/';
+    baseUrl: string = 'http://api.ftec.network:80/bittrex/';
     apiUrls = {
         getPairs: 'getmarkets',
         getPrice: 'getticker'

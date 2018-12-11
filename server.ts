@@ -253,17 +253,19 @@ app.get('*', (req, res) => {
 
 
 if (apiUrl) {
-    const appBittrex = express();
-    appBittrex.use(cors());
-    appBittrex.options('*', cors());
-    appBittrex.use('/bittrex', function (req, res) {
-        const url = 'http://' + serverProxy + '/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
-        request(url, function (error, response, body) {
-            res.send(body);
-        });
-    });
-    appBittrex.listen(80);
+
     if (prod) {
+        const appBittrex = express();
+        appBittrex.use(cors());
+        appBittrex.options('*', cors());
+        appBittrex.use('/bittrex', function (req, res) {
+            const url = 'http://' + serverProxy + '/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
+            request(url, function (error, response, body) {
+                res.send(body);
+            });
+        });
+        appBittrex.listen(80);
+        
         var privateKey = fs.readFileSync('/SSL/pk.pem');
         var certificate = fs.readFileSync('/SSL/cert.pem');
         https.createServer({
