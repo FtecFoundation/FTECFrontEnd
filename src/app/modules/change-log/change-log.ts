@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+        'date': '10/12/2018',
+        'changes': [
+            'The work of Order Manager & Price Notification with BitTrex exchange was corrected.',
+            'The color palette of the diagram that is generated as a result of Portfolio Manager performance was improved.',
+            'The display of locked pairs was corrected for Arbitrage Module.',
+            'After the result is generated for Portfolio Manager and Global Price Analyzer there is now a link that takes you to the last result without reloading the page.'
+        ]
+    },
+    {
         'date': '06/12/2018',
         'changes': [
             'Button performance of Telegram assistant that checks whether the Telegram account was connected is corrected.',

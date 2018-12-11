@@ -59,7 +59,7 @@ let prefix = '';
 let prod = false;
 let port = 4200;
 let secretCaptcha = '';
-let serverProxy = '188.166.22.122';
+let serverProxy = '';
 
 process.argv.forEach(function (val, index, array) {
     if (val.startsWith('--prod_enabled')) {
