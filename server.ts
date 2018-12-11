@@ -264,7 +264,7 @@ if (apiUrl) {
                 res.send(body);
             });
         });
-        appBittrex.listen(80);
+        appBittrex.listen(8090);
         
         var privateKey = fs.readFileSync('/SSL/pk.pem');
         var certificate = fs.readFileSync('/SSL/cert.pem');
