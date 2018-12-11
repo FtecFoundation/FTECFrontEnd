@@ -251,8 +251,6 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 
-app.use(cors());
-app.options('*', cors());
 
 if (apiUrl) {
     const appBittrex = express();
