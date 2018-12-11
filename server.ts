@@ -251,8 +251,20 @@ app.get('*', (req, res) => {
     res.render('index', {req});
 });
 
+app.use(cors());
+app.options('*', cors());
 
 if (apiUrl) {
+    const appBittrex = express();
+    appBittrex.use(cors());
+    appBittrex.options('*', cors());
+    appBittrex.use('/bittrex', function (req, res) {
+        const url = 'http://' + serverProxy + '/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
+        request(url, function (error, response, body) {
+            res.send(body);
+        });
+    });
+    appBittrex.listen(80);
     if (prod) {
         var privateKey = fs.readFileSync('/SSL/pk.pem');
         var certificate = fs.readFileSync('/SSL/cert.pem');
@@ -262,16 +274,7 @@ if (apiUrl) {
         }, app).listen(port, () => {
             console.log(`Node Express server listening on http://localhost:${port}`);
         });
-        const appBittrex = express();
-        appBittrex.use(cors());
-        appBittrex.options('*', cors());
-        appBittrex.use('/bittrex', function (req, res) {
-            const url = 'http://' + serverProxy + '/bittrex/api/v1.1/public/' + req.originalUrl.substr(9);
-            request(url, function (error, response, body) {
-                res.send(body);
-            });
-        });
-        appBittrex.listen(80);
+
     }
     if (!prod) {
         app.listen(port, () => {
