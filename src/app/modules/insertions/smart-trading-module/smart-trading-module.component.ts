@@ -23,7 +23,7 @@ export class SmartTradingModuleComponent implements OnInit {
     unusedExchanges: Stock[] = [];
     bots: Bot[] = Bots;
     history: SmartTradingData[];
-    page: number = 1;
+    page: number = 0;
 
     howTo: string[] = ['User chooses intelligent trading module.',
     'User chooses exchange and sets trading limits.', 'User connects his API keys.',
@@ -71,7 +71,9 @@ export class SmartTradingModuleComponent implements OnInit {
             }
         });
 
-        this._smartTradingService.getHistory(this.page).subscribe(data => this.history = data);
+        this._smartTradingService.getHistory(this.page).subscribe(data => {
+            this.history = data;
+        });
 
     }
 

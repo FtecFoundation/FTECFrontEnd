@@ -149,6 +149,15 @@ app.get('/bittrex/market/GetTicks', function (req, res) {
     });
 });
 
+
+app.get('/bittrex/\*', function (req, res) {
+    const url = 'https://' + 'bittrex.com' + '/api/v1.1/public/' + req.originalUrl.substr(9);
+    request(url, function (error, response, body) {
+        res.send(body);
+    });
+});
+
+
 app.get('/binance/klines', function (req, res) {
     const path = require('url').parse(req.url).path;
     const url = 'https://www.binance.com/api/v1/klines' + path.substring(path.indexOf('?'));
@@ -253,7 +262,6 @@ app.get('*', (req, res) => {
 
 
 if (apiUrl) {
-
     if (prod) {
         const appBittrex = express();
         appBittrex.use(cors());
@@ -264,8 +272,8 @@ if (apiUrl) {
                 res.send(body);
             });
         });
-        appBittrex.listen(8090);
-        
+        appBittrex.listen(80);
+
         var privateKey = fs.readFileSync('/SSL/pk.pem');
         var certificate = fs.readFileSync('/SSL/cert.pem');
         https.createServer({
