@@ -38,6 +38,7 @@ export class BittrexService implements ExchangeService {
     }
 
     getCandles(pair: Pair, interval: string): Observable<any> {
+        let param = new HttpParams().set('marketName', pair.base + '-' + pair.symbol).set('tickInterval', interval);
         return this._http.get('/bittrex/market/GetTicks', {params: param}).pipe(map(resp => {
             return resp['result'].slice(resp['result'].length - 100);
         }));
