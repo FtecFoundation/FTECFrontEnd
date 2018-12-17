@@ -50,11 +50,11 @@ export class TrpService extends RestService {
     }
 
     getComments(forecastId: number): Observable<TrpComment[]> {
-        return this.get(TrpApiUrls.recommendations + forecastId + TrpApiUrls.comments).pipe(map(resp => resp.response.comments));
+        return this.get(TrpApiUrls.recommendations + '/' +forecastId + TrpApiUrls.comments).pipe(map(resp => resp.response.comments));
     }
 
     postComment(forecastId: number, message: any): Observable<TrpComment> {
-        return this.post(TrpApiUrls.recommendations + forecastId + TrpApiUrls.comments,
+        return this.post(TrpApiUrls.recommendations + '/' + forecastId + TrpApiUrls.comments,
             message).pipe(map(resp => resp.response));
     }
 

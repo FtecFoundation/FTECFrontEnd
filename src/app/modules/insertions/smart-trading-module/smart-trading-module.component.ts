@@ -9,6 +9,7 @@ import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {Bot, Bots} from "./bots";
 import {FaqService} from "../../faq/faq.service";
+import {config} from "../behavioral-analyzer/ngx-chart.config";
 
 
 @Component({
@@ -29,12 +30,33 @@ export class SmartTradingModuleComponent implements OnInit {
     'User chooses exchange and sets trading limits.', 'User connects his API keys.',
     'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
 
+
+
+    data = [{'name': 'Profit', 'series': []}];
+    showRefLines = config.showRefLines;
+    showRefLabels = config.showRefLabels;
+    showGridLines = config.showGridLines;
+    tooltipDisabled = config.tooltipDisabled;
+    lineChartShowXAxis = config.lineChartShowXAxis;
+    lineChartShowYAxis = config.lineChartShowYAxis;
+    lineChartShowLegend = config.lineChartShowLegend;
+    lineChartShowXAxisLabel = config.lineChartShowXAxisLabel;
+    lineChartShowYAxisLabel = config.lineChartShowYAxisLabel;
+    schemeType = config.schemeType;
+    lineChartColorScheme = config.lineChartColorScheme;
+    lineChartAutoScale = config.lineChartAutoScale;
+    lineChartLineInterpolation = config.lineChartLineInterpolation;
+    gradient = true;
+    yScaleMin = -50;
+    view: any[] = [];
+
     constructor(private _showModal: ShowModalService, private _smartTradingService: SmartTradingModuleService,
                 public _currentUserService: CurrentUserService, private notifyService: NotifyService,
                 public _faqService: FaqService) {
     }
 
     ngOnInit() {
+        this.view = [innerWidth / 1.92, 400];
         this._currentUserService.getStockKeys(false).subscribe(data => {
 
             this.keys = data;
@@ -71,8 +93,19 @@ export class SmartTradingModuleComponent implements OnInit {
             }
         });
 
+        this.data[0]['series'] = [];
         this._smartTradingService.getHistory(this.page).subscribe(data => {
             this.history = data;
+            console.log('data', data);
+            for (const item of data) {
+                if (item.tradeType === 'Sell')
+                this.data[0]['series'].push({
+                    'value': item['profit'],
+                    'name': item['date'],
+                    'min': item['profit'] > 0 ? item.profit - (-1*this.yScaleMin+item.profit) : item.profit*0.99,
+                    'max': item['profit'] > 0 ? item.profit*0.85 : item.profit*1.15
+                });
+            }
         });
 
     }
@@ -117,5 +150,7 @@ export class SmartTradingModuleComponent implements OnInit {
         });
     }
 
-
+    onResize(event) {
+        this.view = [event.target.innerWidth / 1.92, 400];
+    }
 }

@@ -1,5 +1,15 @@
 export const changeLog = [
     {
+        'date': '17/12/2018',
+        'changes': [
+            'Performance of bots on Smart Trading Module with Binance exchange was corrected.',
+            'The display of bots statistics was improved.',
+            'The display of new comments for TRP was corrected.',
+            'Performance through BitTrex API was improved.',
+            'The fees for all modules were temporarily removed.'
+        ]
+    },
+    {
         'date': '10/12/2018',
         'changes': [
             'The work of Order Manager & Price Notification with BitTrex exchange was corrected.',

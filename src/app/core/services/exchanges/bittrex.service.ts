@@ -2,12 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {ExchangeService} from "./exchange.service";
 import {Observable} from "rxjs/Observable";
-import {Candle, Pair} from "../../models/pair";
-import {tap} from 'rxjs/operators/tap';
+import {Pair} from "../../models/pair";
 import {map} from "rxjs/operators";
 import {AvailableExchanges} from "../../../modules/insertions/arbitrage/available-exchanges";
-import {CurrencyTop} from "../../../modules/insertions/portfolio-manager/currency-top";
-import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class BittrexService implements ExchangeService {
@@ -41,7 +38,6 @@ export class BittrexService implements ExchangeService {
     }
 
     getCandles(pair: Pair, interval: string): Observable<any> {
-        let param = new HttpParams().set('marketName', pair.base + '-' + pair.symbol).set('tickInterval', interval);
         return this._http.get('/bittrex/market/GetTicks', {params: param}).pipe(map(resp => {
             return resp['result'].slice(resp['result'].length - 100);
         }));

@@ -1,5 +1,6 @@
 import * as shape from 'd3-shape';
 
+
 export const config = {
     'lineChartView': undefined,
     'schemeType': 'linear',
@@ -17,6 +18,7 @@ export const config = {
     'lineChartColorScheme': {
         'domain': ['#3F8AFD',  '#3F8AFD',  '#3F8AFD', '#9C0D66', '#9C0D66']
     },
+
 
     'lineChartAutoScale': true,
     'lineChartLineInterpolation': shape.curveBasis,

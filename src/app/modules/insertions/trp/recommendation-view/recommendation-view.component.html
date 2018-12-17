@@ -1,14 +1,15 @@
 <div class="custom-tab-item">
-
     <div class="user-top-info">
         <div class="user-top-info__box">
             <app-recommendation class="user-card--responsive"
                                 [owner]="currentUserService.user.id === recommendation.userId"
                                 [view]="true" [recommendation]="recommendation"></app-recommendation>
             <div class="user-graphic" *ngIf="data[0]['series'].length">
-                <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="data"
+                <ngx-charts-line-chart
+                                       [scheme]="lineChartColorScheme"
+                                       [results]="data"
                                        [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
-                                       [legend]="lineChartShowLegend" [rangeFillOpacity]="0.2"
+                                       [legend]="lineChartShowLegend" [rangeFillOpacity]="0.1"
                                        [schemeType]="schemeType"
                                        [showXAxisLabel]="lineChartShowXAxisLabel"
                                        [showYAxisLabel]="lineChartShowYAxisLabel"
@@ -19,7 +20,7 @@
                                        [showRefLines]="showRefLines"
                                        [showRefLabels]="showRefLabels"
                 >
-                </ngx-charts-line-chart>
+                </ngx-charts-line-chart >
             </div>
         </div>
         <div class="user-top-info__text">

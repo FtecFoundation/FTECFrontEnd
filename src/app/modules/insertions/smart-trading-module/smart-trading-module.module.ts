@@ -4,12 +4,14 @@ import {SmartTradingModuleRoutingModule} from './smart-trading-module-routing.mo
 import {SmartTradingModuleComponent} from './smart-trading-module.component';
 import {SmartTradingModuleService} from "./smart-trading-module.service";
 import {SharedModule} from "../../../shared/shared.module";
+import {NgxChartsModule} from "@swimlane/ngx-charts";
 
 @NgModule({
   imports: [
     CommonModule,
       SharedModule,
-      SmartTradingModuleRoutingModule
+      SmartTradingModuleRoutingModule,
+      NgxChartsModule
   ],
   declarations: [SmartTradingModuleComponent],
     providers: [SmartTradingModuleService]

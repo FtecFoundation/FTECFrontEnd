@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+.item-inner-line span{
+  margin-left:10px;
+}
+
 .middle--smart {
   width: 100%;
   display: flex;
@@ -107,6 +111,11 @@
 .graph img {
   width: 100%;
   height: 100%;
+}
+
+.graph__container{
+  margin-top:1.250em;
+  margin-bottom: 1.250em;
 }
 
 .filter__container-aside--smart {
