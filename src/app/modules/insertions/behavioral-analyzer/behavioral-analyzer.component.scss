@@ -32,7 +32,7 @@
   //  transform: scale(1.1);
   //}
 
-  ngx-charts-line-chart ngx-charts-chart .ng-trigger-animationState {
+  .user-top-info__box .user-graphic ngx-charts-line-chart ngx-charts-chart .ng-trigger-animationState {
     width: 100%;
     position: relative;
   }
@@ -50,19 +50,19 @@
   //  transform: translateX(10%) !important;
   //}
 
-  .line-chart {
+/*  .line-chart {
     transform: translateX(22%) !important;
   }
 
   .tooltip-anchor, .tooltip-bar {
     display: none !important;
-  }
+  }*/
 
-  .small-container__line-link--red {
+  .user-top-info__box .user-graphic .small-container__line-link--red {
     color: #9C0D66;
   }
 
-  .ngx-charts .refline-path{
+ /* .ngx-charts .refline-path{
     opacity: 0.4;
     stroke: white !important;
     stroke-width: 0.3 !important;
@@ -79,7 +79,7 @@
 
   .ngx-charts:first-child text:first-child {
     fill: #9C0D66;
-  }
+  }*/
 
 
 

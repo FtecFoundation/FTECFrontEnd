@@ -139,6 +139,39 @@
   font-weight: 100%;
 }
 
+.graph_main_title{
+  position:relative;
+  left:88px;
+  top:25px;
+  font-size:25px;
+}
+
+.graph_profit_title{
+  position:relative;
+  float:right;
+  top:25px;
+  right:40px;
+  font-size:25px;
+}
+
+
+
+
+::ng-deep .ngx-charts {
+  text{
+    fill: #fff!important;
+  }
+}
+
+::ng-deep .tick {
+  //display: none !important;
+  text {
+    fill: white;
+    opacity: 0.35;
+  }
+}
+
+
 .smart__signals {
   border-bottom-left-radius: .625rem;
   border-bottom-right-radius: .625rem;

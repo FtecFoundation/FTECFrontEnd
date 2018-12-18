@@ -75,36 +75,38 @@
   </div>
 
   <div class="middle">
-      <div class="graph__container" *ngIf="data[0]['series'].length && data[0]['series'].length > 1">
-          <ngx-charts-line-chart
-                  [scheme]="lineChartColorScheme"
-                  [gradient]="gradient"
-                  [results]="data"
-                  [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
-                  [legend]="lineChartShowLegend" [rangeFillOpacity]="0.15"
-                  [schemeType]="schemeType"
-                  [showXAxisLabel]="lineChartShowXAxisLabel"
-                  [showYAxisLabel]="lineChartShowYAxisLabel"
-                  [showGridLines]="showGridLines"
-                  [autoScale]="lineChartAutoScale"
-                  [curve]="lineChartLineInterpolation"
-                  [tooltipDisabled]="tooltipDisabled"
-                  [showRefLines]="showRefLines"
-                  [showRefLabels]="showRefLabels"
-                  [yScaleMin]="-50"
-                  [yScaleMax]="100"
-                  [view]="view"
-                 >
-          </ngx-charts-line-chart >
 
-          <!-- <div class="graph__container-line">
-            <span>My profit</span>
-
-            <span>+30%</span>
-          </div> -->
-      </div>
     <div class="graph">
+      <div class="graph__container" *ngIf="data[0]['series'].length && data[0]['series'].length > 1">
+        <span class="graph_main_title">My Profit</span>
+        <span class="graph_profit_title">{{totalProfit |number: '1.0'}}%</span>
+        <ngx-charts-line-chart
+                [scheme]="lineChartColorScheme"
+                [gradient]="gradient"
+                [results]="data"
+                [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                [legend]="lineChartShowLegend" [rangeFillOpacity]="0.15"
+                [schemeType]="schemeType"
+                [showXAxisLabel]="lineChartShowXAxisLabel"
+                [showYAxisLabel]="lineChartShowYAxisLabel"
+                [showGridLines]="showGridLines"
+                [autoScale]="lineChartAutoScale"
 
+                [tooltipDisabled]="tooltipDisabled"
+                [showRefLines]="showRefLines"
+                [showRefLabels]="showRefLabels"
+                [yScaleMin]="yScaleMin"
+                [yScaleMax]="yScaleMax"
+                [view]="view"
+        >
+        </ngx-charts-line-chart >
+
+        <!-- <div class="graph__container-line">
+          <span>My profit</span>
+
+          <span>+30%</span>
+        </div> -->
+      </div>
     </div>
 
     <div class="smart__table" *ngIf="history">

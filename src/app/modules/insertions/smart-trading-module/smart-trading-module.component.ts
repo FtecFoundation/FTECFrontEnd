@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {SmartTradingModuleService} from "./smart-trading-module.service";
 import {SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
@@ -15,7 +15,7 @@ import {config} from "../behavioral-analyzer/ngx-chart.config";
 @Component({
     selector: 'app-social',
     templateUrl: './smart-trading-module.component.html',
-    styleUrls: ['../insertions.scss', './smart-trading.component.scss']
+    styleUrls: ['../insertions.scss', './smart-trading.component.scss',]
 })
 export class SmartTradingModuleComponent implements OnInit {
     preferences: SmartTradingPreferences;
@@ -29,8 +29,6 @@ export class SmartTradingModuleComponent implements OnInit {
     howTo: string[] = ['User chooses intelligent trading module.',
     'User chooses exchange and sets trading limits.', 'User connects his API keys.',
     'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
-
-
 
     data = [{'name': 'Profit', 'series': []}];
     showRefLines = config.showRefLines;
@@ -47,16 +45,19 @@ export class SmartTradingModuleComponent implements OnInit {
     lineChartAutoScale = config.lineChartAutoScale;
     lineChartLineInterpolation = config.lineChartLineInterpolation;
     gradient = true;
-    yScaleMin = -50;
+    yScaleMin = -100;
+    yScaleMax = 100;
     view: any[] = [];
 
+    depth: string[] = ['Day', 'Week', 'Month', 'Year', 'All'];
+    totalProfit = 0;
     constructor(private _showModal: ShowModalService, private _smartTradingService: SmartTradingModuleService,
                 public _currentUserService: CurrentUserService, private notifyService: NotifyService,
                 public _faqService: FaqService) {
     }
 
     ngOnInit() {
-        this.view = [innerWidth / 1.92, 400];
+        this.view = [innerWidth / 2, 400];
         this._currentUserService.getStockKeys(false).subscribe(data => {
 
             this.keys = data;
@@ -96,17 +97,29 @@ export class SmartTradingModuleComponent implements OnInit {
         this.data[0]['series'] = [];
         this._smartTradingService.getHistory(this.page).subscribe(data => {
             this.history = data;
-            console.log('data', data);
+        });
+        this._smartTradingService.getHistoryProfits('All').subscribe(data => {
+            let min = 0;
+            let max = 0;
             for (const item of data) {
-                if (item.tradeType === 'Sell')
+                let profit = item['profit'];
+                if (min > profit) min = profit;
+                if (max < profit) max = profit;
+                this.totalProfit += profit;
                 this.data[0]['series'].push({
-                    'value': item['profit'],
+                    'value': profit,
                     'name': item['date'],
-                    'min': item['profit'] > 0 ? item.profit - (-1*this.yScaleMin+item.profit) : item.profit*0.99,
-                    'max': item['profit'] > 0 ? item.profit*0.85 : item.profit*1.15
+                    'min': this.yScaleMin,
+                    'max': profit > 0 ? item.profit*0.9-1 : item.profit*1.1-1
                 });
             }
-        });
+
+            if (min < 0) this.yScaleMin = -1 *(Math.ceil(-1*min / 10) * 10);
+            else this.yScaleMin = 0;
+
+            if (max > 0) this.yScaleMax = Math.ceil(max / 10) * 10;
+            else this.yScaleMax = 10;
+        })
 
     }
 
@@ -151,6 +164,6 @@ export class SmartTradingModuleComponent implements OnInit {
     }
 
     onResize(event) {
-        this.view = [event.target.innerWidth / 1.92, 400];
+        this.view = [event.target.innerWidth / 2, 400];
     }
 }
