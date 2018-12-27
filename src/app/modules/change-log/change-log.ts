@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+        'date': '27/12/2018',
+        'changes': [
+            'NeuralNetwork in News Analyzer works faster now.',
+            'Display of personal statistics for Smart Trading Module was improved.',
+            'Bug which rarely happened during generation of ETH wallet was corrected.',
+            'Display of tips for Portfolio Manager was improved.'
+        ]
+    },
+    {
         'date': '17/12/2018',
         'changes': [
             'Performance of bots on Smart Trading Module with Binance exchange was corrected.',
