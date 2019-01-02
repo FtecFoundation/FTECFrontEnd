@@ -3,14 +3,15 @@ import {RestService} from "../../../core/services/rest.service";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {Observable} from "rxjs";
-import {SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
+import {DisableBotPayload, SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
 import {map} from "rxjs/operators";
 
 enum SmartTradingApiUrls {
     preferences = 'modules/trade/preferences',
     history = 'modules/trade/history',
     stats = 'modules/trade/botStats',
-    historyProfits = 'modules/trade/history/profits'
+    historyProfits = 'modules/trade/history/profits',
+    disableBot = 'modules/trade/disableBot'
 }
 
 @Injectable()
@@ -41,6 +42,10 @@ export class SmartTradingModuleService extends RestService {
 
     getStats(): Observable<any> {
         return this.get(SmartTradingApiUrls.stats).pipe(map(resp => resp.response));
+    }
+
+    disableBot(payload: DisableBotPayload): Observable<any>{
+        return this.post(SmartTradingApiUrls.disableBot, payload);
     }
 
 }

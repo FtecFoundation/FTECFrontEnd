@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {SmartTradingModuleService} from "./smart-trading-module.service";
-import {SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
+import {DisableBotPayload, SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
 import {ExchangeKeys} from "../../../core/models/user";
 import {AvailableExchanges, Stock} from "../arbitrage/available-exchanges";
 import {CurrentUserService} from "../../../core/services/current-user.service";
@@ -85,11 +85,10 @@ export class SmartTradingModuleComponent implements OnInit {
 
             this._smartTradingService.getPreferences(this.exchange).subscribe(data => {
                 delete data['user_id'];
-                delete data.state;
                 this.preferences = data;
-                console.log("exchange:", this.exchange);
                 for (const bot of this.bots) {
-                    if (bot.name === this.preferences.bot) bot.active = true;
+                    console.log(bot.name === this.preferences.bot, '&', this.preferences.state);
+                    if (bot.name === this.preferences.bot && this.preferences.state) bot.active = true;
                 }
             })
         });
@@ -164,16 +163,21 @@ export class SmartTradingModuleComponent implements OnInit {
 
     stopTrading() {
         this.preferences.state = false;
-        this._smartTradingService.setPreferences(this.preferences).subscribe(() => {
+        console.log("hello!!!!");
+        console.log(this.preferences.stock);
+        this._smartTradingService.disableBot(new DisableBotPayload(this.preferences.stock)).subscribe(()=>{
             for (let bot of this.bots) bot.active = false;
         });
     }
 
     changeBot(bot: Bot) {
         this.preferences.bot = bot.name;
-        this._smartTradingService.setPreferences(this.preferences).subscribe(() => {
+        this._smartTradingService.setPreferences(this.preferences).subscribe((resp) => {
             for (let bot of this.bots) bot.active = false;
-            bot.active = true;
+
+            let botStatus = resp['response']['botStatus'];
+            if (botStatus === 'enabled') bot.active = true;
+            else this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Bot', resp['response']['botStatus'], 'Warning'));
         });
     }
 
