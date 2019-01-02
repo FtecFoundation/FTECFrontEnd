@@ -22,7 +22,7 @@ export class SmartTradingModuleService extends RestService {
 
     getPreferences(exchange: string): Observable<SmartTradingPreferences> {
         const param = new HttpParams().set('stock', exchange);
-        return this.get(SmartTradingApiUrls.preferences, param).pipe(map(resp => resp.response.preferences));
+        return this.get(SmartTradingApiUrls.preferences, param, true).pipe(map(resp => resp.response.preferences));
     }
 
     setPreferences(data: SmartTradingPreferences): Observable<SmartTradingPreferences> {

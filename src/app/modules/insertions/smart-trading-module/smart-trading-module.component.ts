@@ -27,8 +27,8 @@ export class SmartTradingModuleComponent implements OnInit {
     page: number = 0;
 
     howTo: string[] = ['User chooses intelligent trading module.',
-    'User chooses exchange and sets trading limits.', 'User connects his API keys.',
-    'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
+        'User chooses exchange and sets trading limits.', 'User connects his API keys.',
+        'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
 
     data = [{'name': 'Profit', 'series': []}];
     showRefLines = config.showRefLines;
@@ -51,6 +51,7 @@ export class SmartTradingModuleComponent implements OnInit {
 
     depth: string[] = ['Day', 'Week', 'Month', 'Year', 'All'];
     totalProfit = 0;
+
     constructor(private _showModal: ShowModalService, private _smartTradingService: SmartTradingModuleService,
                 public _currentUserService: CurrentUserService, private notifyService: NotifyService,
                 public _faqService: FaqService) {
@@ -69,19 +70,24 @@ export class SmartTradingModuleComponent implements OnInit {
             }
 
             if (!localStorage.getItem('exchange')) {
-                console.log("this.keys", this.keys);
                 this.exchange = this.keys[0].stock.nameToSend;
             }
             else {
-                console.log("else")
-                this.exchange = localStorage.getItem('exchange');
+                let stock = localStorage.getItem('exchange');
+
+                let result = this.keys.find(obj => {
+                    return obj.stock.nameToSend === stock
+                });
+                if (result) this.exchange = localStorage.getItem('exchange');
+                else this.exchange = this.keys[0].stock.nameToSend;
             }
+
 
             this._smartTradingService.getPreferences(this.exchange).subscribe(data => {
                 delete data['user_id'];
                 delete data.state;
                 this.preferences = data;
-
+                console.log("exchange:", this.exchange);
                 for (const bot of this.bots) {
                     if (bot.name === this.preferences.bot) bot.active = true;
                 }
@@ -116,11 +122,11 @@ export class SmartTradingModuleComponent implements OnInit {
                     'value': profit,
                     'name': item['date'],
                     'min': this.yScaleMin,
-                    'max': profit > 0 ? item.profit*0.9-1 : item.profit*1.1-1
+                    'max': profit > 0 ? item.profit * 0.9 - 1 : item.profit * 1.1 - 1
                 });
             }
 
-            if (min < 0) this.yScaleMin = -1 *(Math.ceil(-1*min / 10) * 10);
+            if (min < 0) this.yScaleMin = -1 * (Math.ceil(-1 * min / 10) * 10);
             else this.yScaleMin = 0;
 
             if (max > 0) this.yScaleMax = Math.ceil(max / 10) * 10;
@@ -131,7 +137,9 @@ export class SmartTradingModuleComponent implements OnInit {
 
     chooseExchange(exchange: string) {
         this.preferences.stock = exchange;
+        console.log(exchange);
         this._smartTradingService.getPreferences(exchange).subscribe(data => {
+            console.log(data);
             this.preferences = data;
 
             for (const bot of this.bots) {
