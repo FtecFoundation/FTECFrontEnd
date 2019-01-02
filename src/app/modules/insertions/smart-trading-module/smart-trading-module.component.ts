@@ -136,14 +136,14 @@ export class SmartTradingModuleComponent implements OnInit {
 
     chooseExchange(exchange: string) {
         this.preferences.stock = exchange;
-        console.log(exchange);
+
         this._smartTradingService.getPreferences(exchange).subscribe(data => {
             console.log(data);
             this.preferences = data;
 
             for (const bot of this.bots) {
                 bot.active = false;
-                if (bot.name === data.bot) bot.active = true;
+                if (bot.name === data.bot && data.state) bot.active = true;
             }
 
             localStorage.setItem('exchange', this.preferences.stock);
@@ -163,7 +163,6 @@ export class SmartTradingModuleComponent implements OnInit {
 
     stopTrading() {
         this.preferences.state = false;
-        console.log("hello!!!!");
         console.log(this.preferences.stock);
         this._smartTradingService.disableBot(new DisableBotPayload(this.preferences.stock)).subscribe(()=>{
             for (let bot of this.bots) bot.active = false;
