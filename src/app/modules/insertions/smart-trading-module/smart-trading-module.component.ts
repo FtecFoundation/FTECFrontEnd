@@ -68,8 +68,14 @@ export class SmartTradingModuleComponent implements OnInit {
                 this.unusedExchanges.push(stock)
             }
 
-            if (!localStorage.getItem('exchange')) this.exchange = this.keys[0].stock.nameToSend;
-            else this.exchange = localStorage.getItem('exchange');
+            if (!localStorage.getItem('exchange')) {
+                console.log("this.keys", this.keys);
+                this.exchange = this.keys[0].stock.nameToSend;
+            }
+            else {
+                console.log("else")
+                this.exchange = localStorage.getItem('exchange');
+            }
 
             this._smartTradingService.getPreferences(this.exchange).subscribe(data => {
                 delete data['user_id'];
