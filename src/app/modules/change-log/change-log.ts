@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+        'date': '08/01/2019',
+        'changes': [
+            'Switching bots in Smart Trading Module was fixed on front end.',
+            'After changing bots the notification about success or fail is fixed.',
+            'The situation, when the hot cannot trade due to low balance was fixed. It can now take such accounts into consideration.',
+            'Conservative Bot performance is optimized.'
+        ]
+    },
+    {
         'date': '27/12/2018',
         'changes': [
             'NeuralNetwork in News Analyzer works faster now.',
