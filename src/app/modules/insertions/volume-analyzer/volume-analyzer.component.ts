@@ -122,6 +122,8 @@ export class VolumeAnalyzerComponent implements OnInit {
         if (this.analyzerForm.valid) {
             this._volumeAnalyzerService.setPreferences(this.prepareData()).subscribe(data => {
                 this.analyzerActivated = true;
+                this._currentUserService.user.settingsStatus = 'ACTIVATED';
+                console.log('status',this._currentUserService.user.settingsStatus);
             }, error1 => {
                 this.notAvailableStocks = error1.error.tips.NotAvailableStocks;
             });
@@ -158,10 +160,16 @@ export class VolumeAnalyzerComponent implements OnInit {
 
     startAnalyzing(){
         if (this.valueHasBeenChanged) {
-            if (this.warnedAboutStart) this._volumeAnalyzerService.startBot().subscribe(() =>this.analyzerActivated = true);
+            if (this.warnedAboutStart) this._volumeAnalyzerService.startBot().subscribe(() =>{
+                this.analyzerActivated = true;
+                this._currentUserService.user.settingsStatus = 'ACTIVATED';
+            });
             this.warnedAboutStart = true;
         }
-        else this._volumeAnalyzerService.startBot().subscribe(() =>this.analyzerActivated = true);
+        else this._volumeAnalyzerService.startBot().subscribe(() =>{
+            this.analyzerActivated = true;
+            this._currentUserService.user.settingsStatus = 'ACTIVATED';
+        });
     }
 
     stopAnalyzing(){
