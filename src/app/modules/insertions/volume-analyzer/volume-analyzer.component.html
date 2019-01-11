@@ -5,11 +5,11 @@
     <div class="middle middle--price" *ngIf="history">
 
         <div class="aside-right__head aside-right__head--arbitrage">Results</div>
-        <div *ngIf="history.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
+        <div *ngIf="history && history.length === 0" class="item-inner-line-error-block item-inner-line-error-block--empty">
             <span>There were no anomalous volume changes detected</span>
         </div>
 
-        <div class="middle__block middle__block--volume" *ngIf="history.length">
+        <div class="middle__block middle__block--volume" *ngIf="history && history.length">
 
             <div class="middle__table-type middle__table-type--exchanges">
                 <span class="middle__table-type-name">
@@ -104,7 +104,7 @@
                         </li>
                         <li class="filter__container-block-item" *ngFor="let exchange of exchanges"
                             [ngClass]="{'is-active': exchange.volumeAnalyzerChosen}"
-                            (click)="exchange.volumeAnalyzerChosen = !exchange.volumeAnalyzerChosen">
+                            (click)="exchange.volumeAnalyzerChosen = !exchange.volumeAnalyzerChosen; valueHasBeenChanged = true">
                             {{exchange.name}}
                             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -117,7 +117,8 @@
                             </svg>
                         </li>
                     </ul>
-                    <span class="error-field error-field--analyzer" *ngIf="submitted && chosenExchanges.length === 0">Choose at least one exchange</span>
+                    <span class="error-field" *ngIf="notAvailableStocks">{{notAvailableStocks}} exchanges not available for chosen timeframe.</span>
+                    <span class="error-field error-field--analyzer" *ngIf="submitted && (chosenExchanges && chosenExchanges.length === 0)">Choose at least one exchange</span>
                 </div>
 
                 <div class="filter__container filter__container--analyzer-time">
@@ -224,9 +225,10 @@
             <button class="filter__container-button" *ngIf="analyzerActivated && !notConfigured" (click)="stopAnalyzing()">Stop
                 analyzing
             </button>
-            <button class="filter__container-button" *ngIf="!analyzerActivated && !notConfigured" (click)="startAnalyzing()"> SStart
+            <button class="filter__container-button" *ngIf="!analyzerActivated && !notConfigured" (click)="startAnalyzing()"> Start
                 analyzing
             </button>
+            <span class="error-field" *ngIf="warnedAboutStart">Settings has been changed, if you want start on new settings press the save preferences button. Or if you want start on old settings press the start analyzing button once again.</span>
         </form>
 
 
