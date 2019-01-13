@@ -13,6 +13,7 @@ import {CurrentUserService} from '../../../core/services/current-user.service';
     styleUrls: ['../insertions.scss', './social.component.scss']
 })
 export class SocialComponent implements OnInit {
+    requestSent = false;
 
     @Input() tweetIds: string[] = [];
     @Input() options: EmbeddedTweetOptions = new EmbeddedTweetOptions();
@@ -197,9 +198,11 @@ export class SocialComponent implements OnInit {
     }
 
     renewSubscription() {
+        this.requestSent=true;
         this._socialService.renewSubscription().subscribe(() => {
             this.getDaysLeft();
             this.router.navigate(['/modules/social']);
+            this.requestSent=false;
         });
     }
 
