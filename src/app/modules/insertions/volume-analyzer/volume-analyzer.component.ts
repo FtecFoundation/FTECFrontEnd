@@ -9,6 +9,7 @@ import {VolumeAnalyzerService} from "./volume-analyzer.service";
 import {NotifyService} from "../../../core/notify/notify.service";
 import {CurrentUserService} from "../../../core/services/current-user.service";
 import {NotificationService} from '../../account/notification/notification.service';
+import {Notify} from "../../../core/notify/notifications";
 
 
 @Component({
@@ -42,6 +43,9 @@ export class VolumeAnalyzerComponent implements OnInit {
     analyzerActivated: boolean;
     notConfigured: boolean = true;
     history: VolumeAnalyzerData[];
+    notAvailableStocks: string;
+    valueHasBeenChanged: boolean = false;
+    warnedAboutStart: boolean = false;
 
     howTo: string[] = ['The user selects cryptocurrency exchanges and coins, whose abnormal ' +
     ' behaviour is of interest to him. Or chooses the "no parameters" mode, ' +
@@ -53,7 +57,8 @@ export class VolumeAnalyzerComponent implements OnInit {
     constructor(private _showModalService: ShowModalService, private formBuilder: FormBuilder,
                 private _volumeAnalyzerService: VolumeAnalyzerService, private _notifyService: NotifyService,
                 public _currentUserService: CurrentUserService,
-                private _notificationService: NotificationService) {
+                private _notificationService: NotificationService,
+                private notifyService: NotifyService) {
     }
 
     ngOnInit() {
@@ -111,12 +116,16 @@ export class VolumeAnalyzerComponent implements OnInit {
 
     submitForm() {
         this.fillChosenExchanges();
-        console.log(this.chosenExchanges);
-        console.log(this.analyzerForm)
+        this.notAvailableStocks = null;
         this.submitted = true;
+        this.warnedAboutStart = false;
         if (this.analyzerForm.valid) {
             this._volumeAnalyzerService.setPreferences(this.prepareData()).subscribe(data => {
                 this.analyzerActivated = true;
+                this._currentUserService.user.settingsStatus = 'ACTIVATED';
+                console.log('status',this._currentUserService.user.settingsStatus);
+            }, error1 => {
+                this.notAvailableStocks = error1.error.tips.NotAvailableStocks;
             });
         }
     }
@@ -135,19 +144,32 @@ export class VolumeAnalyzerComponent implements OnInit {
     }
 
     chooseRate(rate: string) {
+        this.valueHasBeenChanged = true;
         this.rate.setValue(rate);
     }
 
     getProfitPercent(value: number) {
+        this.valueHasBeenChanged = true;
         this.minVolume.setValue(value);
     }
 
     selectTimeframe(timeframe: Timeframe) {
+        this.valueHasBeenChanged = true;
         this.timeframe.setValue(timeframe.symbol);
     }
 
     startAnalyzing(){
-        this._volumeAnalyzerService.startBot().subscribe(() =>this.analyzerActivated = true);
+        if (this.valueHasBeenChanged) {
+            if (this.warnedAboutStart) this._volumeAnalyzerService.startBot().subscribe(() =>{
+                this.analyzerActivated = true;
+                this._currentUserService.user.settingsStatus = 'ACTIVATED';
+            });
+            this.warnedAboutStart = true;
+        }
+        else this._volumeAnalyzerService.startBot().subscribe(() =>{
+            this.analyzerActivated = true;
+            this._currentUserService.user.settingsStatus = 'ACTIVATED';
+        });
     }
 
     stopAnalyzing(){

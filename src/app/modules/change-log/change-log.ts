@@ -1,5 +1,33 @@
 export const changeLog = [
     {
+        'date': '08/01/2019',
+        'changes': [
+            'Switching bots in Smart Trading Module was fixed on front end.',
+            'After changing bots the notification about success or fail is fixed.',
+            'The situation, when the hot cannot trade due to low balance was fixed. It can now take such accounts into consideration.',
+            'Conservative Bot performance is optimized.'
+        ]
+    },
+    {
+        'date': '27/12/2018',
+        'changes': [
+            'NeuralNetwork in News Analyzer works faster now.',
+            'Display of personal statistics for Smart Trading Module was improved.',
+            'Bug which rarely happened during generation of ETH wallet was corrected.',
+            'Display of tips for Portfolio Manager was improved.'
+        ]
+    },
+    {
+        'date': '17/12/2018',
+        'changes': [
+            'Performance of bots on Smart Trading Module with Binance exchange was corrected.',
+            'The display of bots statistics was improved.',
+            'The display of new comments for TRP was corrected.',
+            'Performance through BitTrex API was improved.',
+            'The fees for all modules were temporarily removed.'
+        ]
+    },
+    {
         'date': '10/12/2018',
         'changes': [
             'The work of Order Manager & Price Notification with BitTrex exchange was corrected.',

@@ -3,7 +3,6 @@ import {RestService} from "./rest.service";
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {Observable} from "rxjs";
-import {reduceTicks} from "@swimlane/ngx-charts";
 import {map} from "rxjs/operators";
 
 enum InfoApiUrls {

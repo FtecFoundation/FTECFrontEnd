@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+.item-inner-line span{
+  margin-left:10px;
+}
+
 .middle--smart {
   width: 100%;
   display: flex;
@@ -109,6 +113,11 @@
   height: 100%;
 }
 
+.graph__container{
+  margin-top:1.250em;
+  margin-bottom: 1.250em;
+}
+
 .filter__container-aside--smart {
   padding-top: 1.250em;
   margin-top: 0;
@@ -129,6 +138,39 @@
 .middle__table-type-name--smart {
   font-weight: 100%;
 }
+
+.graph_main_title{
+  position:relative;
+  left:88px;
+  top:25px;
+  font-size:25px;
+}
+
+.graph_profit_title{
+  position:relative;
+  float:right;
+  top:25px;
+  right:40px;
+  font-size:25px;
+}
+
+
+
+
+::ng-deep .ngx-charts {
+  text{
+    fill: #fff!important;
+  }
+}
+
+::ng-deep .tick {
+  //display: none !important;
+  text {
+    fill: white;
+    opacity: 0.35;
+  }
+}
+
 
 .smart__signals {
   border-bottom-left-radius: .625rem;

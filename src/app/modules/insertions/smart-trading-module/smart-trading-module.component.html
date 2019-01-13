@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div (window:resize)="onResize($event)" class="wrapper">
   <app-info-popup collapsedText="How does the Smart Trading Module work?" [openedText]="howTo"></app-info-popup>
   <div class="main-info main-info--smart">
 
@@ -46,22 +46,22 @@
           <div class="smart__info-block">
             <div class="smart__info-block-line">
               <span>Profit(week): </span>
-              <span class="smart__line-dark">{{bot.profitWeek}}%</span>
+              <span class="smart__line-dark">{{bot.profitWeek | number: '1.0-2'}}%</span>
             </div>
 
             <div class="smart__info-block-line">
               <span>Profit(month): </span>
-              <span class="smart__line-dark">{{bot.profitMonth}}%</span>
+              <span class="smart__line-dark">{{bot.profitMonth | number: '1.0-2'}}%</span>
             </div>
 
             <div class="smart__info-block-line">
               <span>Profit(90days): </span>
-              <span class="smart__line-dark">{{bot.profit90}}%</span>
+              <span class="smart__line-dark">{{bot.profit90 | number: '1.0-2'}}%</span>
             </div>
 
             <div class="smart__info-block-line">
               <span>Accuracy: </span>
-              <span class="smart__line-dark">{{bot.accuracy}}%</span>
+              <span class="smart__line-dark">{{bot.accuracy |number: '1.0-2'}}%</span>
             </div>
           </div>
 
@@ -75,9 +75,32 @@
   </div>
 
   <div class="middle">
+
     <div class="graph">
-      <div class="graph__container">
-        <img src="../../../../assets/images/group-3.png" alt="">
+      <div class="graph__container" *ngIf="data[0]['series'].length && data[0]['series'].length > 1">
+        <span class="graph_main_title">My Profit</span>
+        <span class="graph_profit_title">{{totalProfit |number: '1.0'}}%</span>
+        <ngx-charts-line-chart
+                [scheme]="lineChartColorScheme"
+                [gradient]="gradient"
+                [results]="data"
+                [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis"
+                [legend]="lineChartShowLegend" [rangeFillOpacity]="0.15"
+                [schemeType]="schemeType"
+                [showXAxisLabel]="lineChartShowXAxisLabel"
+                [showYAxisLabel]="lineChartShowYAxisLabel"
+                [showGridLines]="showGridLines"
+                [autoScale]="lineChartAutoScale"
+
+                [tooltipDisabled]="tooltipDisabled"
+                [showRefLines]="showRefLines"
+                [showRefLabels]="showRefLabels"
+                [yScaleMin]="yScaleMin"
+                [yScaleMax]="yScaleMax"
+                [view]="view"
+        >
+        </ngx-charts-line-chart >
+
         <!-- <div class="graph__container-line">
           <span>My profit</span>
 
@@ -97,6 +120,9 @@
         </span>
 
         <div class="middle__table-type-inner">
+          <span class="middle__table-type-name middle__table-type-name--dashboard">
+            Type
+          </span>
           <span class="middle__table-type-name middle__table-type-name--dashboard">
             Profit
           </span>
@@ -119,7 +145,8 @@
 
             <div class="item-inner">
               <div class="item-inner-line">
-                <span class="item-inner-line--dashboard item-inner-line__balance--positive">{{item.profit}}</span>
+                <span class="">{{item.tradeType}}</span>
+                <span class="item-inner-line--dashboard item-inner-line__balance--positive">{{item.profit | number: '1.0-2'}}</span>
                 <span class="">{{item.stock}}</span>
               </div>
 

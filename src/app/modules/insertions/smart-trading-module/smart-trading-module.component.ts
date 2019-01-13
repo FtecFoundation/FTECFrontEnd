@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {SmartTradingModuleService} from "./smart-trading-module.service";
-import {SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
+import {DisableBotPayload, SmartTradingData, SmartTradingPreferences} from "../../../core/models/smart-trading";
 import {ExchangeKeys} from "../../../core/models/user";
 import {AvailableExchanges, Stock} from "../arbitrage/available-exchanges";
 import {CurrentUserService} from "../../../core/services/current-user.service";
@@ -9,12 +9,13 @@ import {NotifyService} from "../../../core/notify/notify.service";
 import {Notify} from "../../../core/notify/notifications";
 import {Bot, Bots} from "./bots";
 import {FaqService} from "../../faq/faq.service";
+import {config} from "../behavioral-analyzer/ngx-chart.config";
 
 
 @Component({
     selector: 'app-social',
     templateUrl: './smart-trading-module.component.html',
-    styleUrls: ['../insertions.scss', './smart-trading.component.scss']
+    styleUrls: ['../insertions.scss', './smart-trading.component.scss',]
 })
 export class SmartTradingModuleComponent implements OnInit {
     preferences: SmartTradingPreferences;
@@ -23,11 +24,33 @@ export class SmartTradingModuleComponent implements OnInit {
     unusedExchanges: Stock[] = [];
     bots: Bot[] = Bots;
     history: SmartTradingData[];
-    page: number = 1;
+    page: number = 0;
 
     howTo: string[] = ['User chooses intelligent trading module.',
-    'User chooses exchange and sets trading limits.', 'User connects his API keys.',
-    'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
+        'User chooses exchange and sets trading limits.', 'User connects his API keys.',
+        'Trading module trades according to the chosen algorithm and accumulates profit in user`s account.'];
+
+    data = [{'name': 'Profit', 'series': []}];
+    showRefLines = config.showRefLines;
+    showRefLabels = config.showRefLabels;
+    showGridLines = config.showGridLines;
+    tooltipDisabled = config.tooltipDisabled;
+    lineChartShowXAxis = config.lineChartShowXAxis;
+    lineChartShowYAxis = config.lineChartShowYAxis;
+    lineChartShowLegend = config.lineChartShowLegend;
+    lineChartShowXAxisLabel = config.lineChartShowXAxisLabel;
+    lineChartShowYAxisLabel = config.lineChartShowYAxisLabel;
+    schemeType = config.schemeType;
+    lineChartColorScheme = config.lineChartColorScheme;
+    lineChartAutoScale = config.lineChartAutoScale;
+    lineChartLineInterpolation = config.lineChartLineInterpolation;
+    gradient = true;
+    yScaleMin = -100;
+    yScaleMax = 100;
+    view: any[] = [];
+
+    depth: string[] = ['Day', 'Week', 'Month', 'Year', 'All'];
+    totalProfit = 0;
 
     constructor(private _showModal: ShowModalService, private _smartTradingService: SmartTradingModuleService,
                 public _currentUserService: CurrentUserService, private notifyService: NotifyService,
@@ -35,6 +58,7 @@ export class SmartTradingModuleComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.view = [innerWidth / 2, 400];
         this._currentUserService.getStockKeys(false).subscribe(data => {
 
             this.keys = data;
@@ -45,16 +69,26 @@ export class SmartTradingModuleComponent implements OnInit {
                 this.unusedExchanges.push(stock)
             }
 
-            if (!localStorage.getItem('exchange')) this.exchange = this.keys[0].stock.nameToSend;
-            else this.exchange = localStorage.getItem('exchange');
+            if (!localStorage.getItem('exchange')) {
+                this.exchange = this.keys[0].stock.nameToSend;
+            }
+            else {
+                let stock = localStorage.getItem('exchange');
+
+                let result = this.keys.find(obj => {
+                    return obj.stock.nameToSend === stock
+                });
+                if (result) this.exchange = localStorage.getItem('exchange');
+                else this.exchange = this.keys[0].stock.nameToSend;
+            }
+
 
             this._smartTradingService.getPreferences(this.exchange).subscribe(data => {
                 delete data['user_id'];
-                delete data.state;
                 this.preferences = data;
-
                 for (const bot of this.bots) {
-                    if (bot.name === this.preferences.bot) bot.active = true;
+                    console.log(bot.name === this.preferences.bot, '&', this.preferences.state);
+                    if (bot.name === this.preferences.bot && this.preferences.state) bot.active = true;
                 }
             })
         });
@@ -71,18 +105,45 @@ export class SmartTradingModuleComponent implements OnInit {
             }
         });
 
-        this._smartTradingService.getHistory(this.page).subscribe(data => this.history = data);
+        this.data[0]['series'] = [];
+        this._smartTradingService.getHistory(this.page).subscribe(data => {
+            this.history = data;
+        });
+        this._smartTradingService.getHistoryProfits('All').subscribe(data => {
+            let min = 0;
+            let max = 0;
+            for (const item of data) {
+                let profit = item['profit'];
+                if (min > profit) min = profit;
+                if (max < profit) max = profit;
+                this.totalProfit += profit;
+                this.data[0]['series'].push({
+                    'value': profit,
+                    'name': item['date'],
+                    'min': this.yScaleMin,
+                    'max': profit > 0 ? item.profit * 0.9 - 1 : item.profit * 1.1 - 1
+                });
+            }
+
+            if (min < 0) this.yScaleMin = -1 * (Math.ceil(-1 * min / 10) * 10);
+            else this.yScaleMin = 0;
+
+            if (max > 0) this.yScaleMax = Math.ceil(max / 10) * 10;
+            else this.yScaleMax = 10;
+        })
 
     }
 
     chooseExchange(exchange: string) {
         this.preferences.stock = exchange;
+
         this._smartTradingService.getPreferences(exchange).subscribe(data => {
+            console.log(data);
             this.preferences = data;
 
             for (const bot of this.bots) {
                 bot.active = false;
-                if (bot.name === data.bot) bot.active = true;
+                if (bot.name === data.bot && data.state) bot.active = true;
             }
 
             localStorage.setItem('exchange', this.preferences.stock);
@@ -102,18 +163,24 @@ export class SmartTradingModuleComponent implements OnInit {
 
     stopTrading() {
         this.preferences.state = false;
-        this._smartTradingService.setPreferences(this.preferences).subscribe(() => {
+        console.log(this.preferences.stock);
+        this._smartTradingService.disableBot(new DisableBotPayload(this.preferences.stock)).subscribe(()=>{
             for (let bot of this.bots) bot.active = false;
         });
     }
 
     changeBot(bot: Bot) {
         this.preferences.bot = bot.name;
-        this._smartTradingService.setPreferences(this.preferences).subscribe(() => {
+        this._smartTradingService.setPreferences(this.preferences).subscribe((resp) => {
             for (let bot of this.bots) bot.active = false;
-            bot.active = true;
+
+            let botStatus = resp['response']['botStatus'];
+            if (botStatus === 'enabled') bot.active = true;
+            else this.notifyService.addNotification(new Notify(this.notifyService.lastId, 'Bot', resp['response']['botStatus'], 'Warning'));
         });
     }
 
-
+    onResize(event) {
+        this.view = [event.target.innerWidth / 2, 400];
+    }
 }

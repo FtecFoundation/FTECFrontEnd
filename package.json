@@ -39,7 +39,7 @@
     "@nguniversal/common": "^5.0.0-beta.5",
     "@nguniversal/express-engine": "^5.0.0-beta.5",
     "@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.5",
-    "@swimlane/ngx-charts": "~9.0.0",
+    "@swimlane/ngx-charts": "~9.1.1",
     "angularx-qrcode": "^1.1.7",
     "core-js": "^2.4.1",
     "domino": "^2.0.2",
@@ -58,14 +58,15 @@
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/node": "^8.0.30",
+    "body-parser": "^1.18.3",
+    "codelyzer": "^4.3.0",
+    "cors": "^2.8.5",
     "cpy-cli": "^1.0.1",
+    "d3-shape": "^1.2.2",
     "express": "^4.15.2",
     "http-server": "^0.10.0",
     "reflect-metadata": "^0.1.10",
     "ts-loader": "^2.3.7",
-    "codelyzer": "^4.3.0",
-    "typescript": "~2.4.2",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5"
+    "typescript": "~2.4.2"
   }
 }
