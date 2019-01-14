@@ -257,12 +257,13 @@ $('#subscribe_middle').validate({
 $('#subscribe_bottom').validate({
     rules: {
         email: {
-            required: true,
-            email: true,
+            email: true
         },
     },
     submitHandler: function (form) {
         var $form = $(form);
+        console.log('form to send', $form);
+        if(!$form.email) return;
         $.ajax({
             type: $form.attr('method'),
             url: '/en/subscribes',
