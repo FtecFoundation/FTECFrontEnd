@@ -49,11 +49,11 @@ export class AccountService extends RestService {
     }
 
     enable2FA(): Observable<string> {
-        return this.patch(AccountApiUrls.enable2FA, {}).pipe(map(resp => resp.response.qr));
+        return this.post(AccountApiUrls.enable2FA, {}).pipe(map(resp => resp.response.qr));
     }
 
     disable2FA(): Observable<boolean> {
-        return this.patch(AccountApiUrls.disable2FA, {}).pipe(map(resp => resp.response.disabled));
+        return this.post(AccountApiUrls.disable2FA, {}).pipe(map(resp => resp.response.disabled));
     }
 
     resendEmail(): Observable<any> {
