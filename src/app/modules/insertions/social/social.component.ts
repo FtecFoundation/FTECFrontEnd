@@ -202,7 +202,7 @@ export class SocialComponent implements OnInit {
         this._socialService.renewSubscription().subscribe(() => {
             this.getDaysLeft();
             this.router.navigate(['/modules/social']);
-            this.requestSent=false;
+            setTimeout(() => this.requestSent=false, 3000);
         });
     }
 
