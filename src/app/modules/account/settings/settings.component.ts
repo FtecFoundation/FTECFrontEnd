@@ -5,6 +5,8 @@ import {CurrentUserService} from '../../../core/services/current-user.service';
 import {AccountService} from "../../../core/services/account.service";
 import {SettingsService} from './settings.service';
 import {RegistrationValidators} from '../../../auth/registration/registration.validators';
+import {NotifyService} from '../../../core/notify/notify.service';
+import {Notify} from '../../../core/notify/notifications';
 
 @Component({
     selector: 'app-social',
@@ -20,7 +22,7 @@ export class SettingsComponent implements OnInit {
     public availibleLanguages = ['English', 'Spanish', 'French', 'German', 'Italian', 'Korean', 'Chinese', 'Japanese', 'Swedish', 'Portuguese', 'Russian'];
 
     constructor(private _imageService: ImageService, private _showModal: ShowModalService, public _currentUserService: CurrentUserService,
-                private _accountService: AccountService, private _settingsService: SettingsService) {
+                private _accountService: AccountService, private _settingsService: SettingsService, private _notifyService: NotifyService) {
     }
 
     enabled: boolean = false;
@@ -35,6 +37,7 @@ export class SettingsComponent implements OnInit {
         this._settingsService.changeEmail(data.email).subscribe((resp)=>{
             console.log("email was changed", resp);
             this._currentUserService.user.email=data.email;
+            this._notifyService.addNotification(new Notify(this._notifyService.lastId, 'Success', 'Email was successfully changed', 'success'))
         });
     }
 
