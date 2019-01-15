@@ -254,54 +254,6 @@ $('#subscribe_middle').validate({
 
     }
 });
-$('#subscribe_bottom').validate({
-    rules: {
-        email: {
-            email: true
-        },
-    },
-    submitHandler: function (form) {
-        var $form = $(form);
-        console.log('form to send', $form);
-        if(!$form.email) return;
-        $.ajax({
-            type: $form.attr('method'),
-            url: '/en/subscribes',
-            data: $form.serialize(),
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function (data, textStatus, jqXHR) {
-                $('.subscribe-container').addClass("active");
-                setTimeout(function () {
-                    $('.subscribe-container').removeClass('active');
-                }, 4500);
-                $.fancybox.open([
-                    {
-                        src: '#subscr-thx'
-                    }
-                ]);
-                dataLayer.push({'event': 'send_form', 'eventAction': 'sent_form', 'event_category': 'subscribe_form'});
-            },
-            error: function (data) {
-                var errors = data.responseJSON;
-                $('.subscribe-container input').addClass('error');
-                $('.subscribe-container .field').append('<label id="email-error" class="error" for="email">Please enter a unique email address.</label>');
-                dataLayer.push({
-                    'event': 'send_form',
-                    'eventAction': 'mistake_form',
-                    'event_category': 'subscribe_form'
-                });
-            }
-        })
-        return false;
-    },
-    invalidHandler: function (form, validator) {
-
-        dataLayer.push({'event': 'send_form', 'eventAction': 'mistake_form', 'event_category': 'subscribe_form'});
-
-    }
-});
 
 var now = new Date();
 $('.item#roadmap-event').each(function () {
