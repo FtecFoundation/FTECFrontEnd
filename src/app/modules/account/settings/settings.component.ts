@@ -33,7 +33,7 @@ export class SettingsComponent implements OnInit {
     changeEmail(data: any){
         console.log(data);
         this._settingsService.changeEmail(data.email).subscribe((resp)=>{
-            console.log("email was changed", resp)
+            console.log("email was changed", resp);
             this._currentUserService.user.email=data.email;
         });
     }
