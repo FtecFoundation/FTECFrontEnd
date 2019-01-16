@@ -19,7 +19,7 @@ import {Preferences} from "../../models/preferences";
 
 @Injectable()
 export class ServerErrorsInterceptor implements HttpInterceptor {
-    protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)|(\\/login)|(\\/registration)');
+    protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)');
     constructor(private router: Router, private _notifyService: NotifyService, private _errorService: ErrorsService) {
     }
 
@@ -30,9 +30,11 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                     return resp;
                 }
             }).catch(err => {
+                console.log('Got error', err);
                 if (err instanceof HttpErrorResponse) {
                     switch (err.status) {
                         case 423:
+                            console.log('forwarding to banned');
                             this.router.navigate(['/banned', err.error.error], {skipLocationChange: true});
                             break;
                         case 403:
