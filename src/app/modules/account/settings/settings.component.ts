@@ -43,7 +43,10 @@ export class SettingsComponent implements OnInit {
 
     changePassword(data: any){
         if(data.newPassword===data.newPasswordConfirm){
-            this._settingsService.changePassword(data.currentPassword, data.newPassword).subscribe((resp)=>console.log("password was changed", resp));
+            this._settingsService.changePassword(data.currentPassword, data.newPassword).subscribe((resp)=>{
+                console.log("password was changed", resp);
+                this._notifyService.addNotification(new Notify(this._notifyService.lastId, 'Success', 'Password was successfully changed', 'success'))
+            });
         }
     }
     showModal() {
