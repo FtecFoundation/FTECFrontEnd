@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+        'date': '16/01/2019',
+        'changes': [
+            'Warning messages that occurred when the Volume Analyzer was configured incorrectly were fixed.',
+            'Tips added while starting Volume Analyzer.',
+            'Bots in Smart Trading Module are now selling orders by bids.',
+            'Has been improved notification about ban in the system.'
+        ]
+    },
+    {
         'date': '08/01/2019',
         'changes': [
             'Switching bots in Smart Trading Module was fixed on front end.',
