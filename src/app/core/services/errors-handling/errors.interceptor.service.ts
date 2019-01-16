@@ -30,13 +30,10 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                     return resp;
                 }
             }).catch(err => {
-                console.log('Got error', err);
                 if (err instanceof HttpErrorResponse) {
                     switch (err.status) {
                         case 423:
-                            console.log('forwarding to banned');
                             this.router.navigate(['/banned', err.error.tips.time_left], {skipLocationChange: true});
-                            console.log('forwarded to banned');
                             break;
                         case 403:
                             const isProtected = this.protectedAuth.exec(this.router.url);

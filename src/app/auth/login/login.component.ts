@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['/account']);
                 this._errorsService.currentError = null;
             }, error1 => {
-                console.log("Can't login, got exception", error1);
                 if (error1.error.status === 2 && !this.enabled2FA) this.enabled2FA = true;
                 else {
                     this._errorsService.currentError = null;

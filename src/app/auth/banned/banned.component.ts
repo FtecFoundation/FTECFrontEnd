@@ -20,16 +20,15 @@ export class BannedComponent implements OnInit {
   }
 
   private timeToString(timeLeft: number): string{
-    let ret = '';
     //Remove milliseconds
-    timeLeft/=1000;
-    ret += timeLeft%60+' seconds';
-    timeLeft/=60;
+    timeLeft/=1000; timeLeft|=0;
+    let ret= timeLeft%60+' seconds';
+    timeLeft/=60; timeLeft|=0;
     if(timeLeft<=0) return ret;
-    ret+=timeLeft%60+' minutes, ';
-    timeLeft/=24;
+    ret=timeLeft%60+' minutes, '+ret;
+    timeLeft/=24; timeLeft|=0;
     if(timeLeft<=0) return ret;
-    ret+=timeLeft+' hours, ';
+    ret=timeLeft+' hours, '+ret;
     return ret;
   }
 }
