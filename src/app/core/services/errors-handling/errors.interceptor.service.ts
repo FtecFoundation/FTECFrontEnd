@@ -19,7 +19,7 @@ import {Preferences} from "../../models/preferences";
 
 @Injectable()
 export class ServerErrorsInterceptor implements HttpInterceptor {
-    protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)');
+    protectedAuth: RegExp = new RegExp('(\\/modules)|(\\/account)|(\\/login)|(\\/registration)');
     constructor(private router: Router, private _notifyService: NotifyService, private _errorService: ErrorsService) {
     }
 
