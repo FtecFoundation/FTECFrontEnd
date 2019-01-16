@@ -35,7 +35,7 @@ export class ServerErrorsInterceptor implements HttpInterceptor {
                     switch (err.status) {
                         case 423:
                             console.log('forwarding to banned');
-                            this.router.navigate(['/banned', err.error.response], {skipLocationChange: true});
+                            this.router.navigate(['/banned', err.error.tips.time_left], {skipLocationChange: true});
                             console.log('forwarded to banned');
                             break;
                         case 403:
