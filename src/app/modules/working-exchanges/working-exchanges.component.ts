@@ -8,8 +8,17 @@ import {ExchangesSupport} from "./exchanges-support";
 })
 export class WorkingExchangesComponent implements OnInit {
   exchangesSupport = ExchangesSupport;
-
-    constructor() { }
+  exchanges_url = {
+    'Binance': 'https://binance.com/',
+    'Bittrex': 'https://international.bittrex.com/',
+    'Bitstamp': 'https://www.bitstamp.net/',
+    'HitBTC': 'https://hitbtc.com/',
+    'Poloniex': 'https://poloniex.com/',
+    'YoBit': 'https://yobit.net/en/',
+    'Kraken': 'https://www.kraken.com/',
+    'Huobi': 'https://www.huobi.co/en-us/'
+  }
+  constructor() { }
 
   ngOnInit() {
   }

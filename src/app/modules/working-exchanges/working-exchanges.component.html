@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     <tr  *ngFor="let exchange of getKeys(exchangesSupport['TRP'])">
-        <td><span><a href="#" >{{exchange}}</a></span></td>
+        <td><span><a [href]="exchanges_url[exchange]" target="_blank">{{exchange}}</a></span></td>
       <ng-container *ngFor="let module of getKeys(exchangesSupport)">
         <td><span>{{exchangesSupport[module][exchange] ? '+' : '-'}}</span></td>
       </ng-container>
