@@ -64,7 +64,7 @@ export class RecommendationViewComponent implements OnInit {
     }
 
     addComment(message: any) {
-        if(message.trim().length<=2){
+        if(message.message.trim().length<=2){
             this._notificationService.addNotification(new Notify(this._notificationService.lastId, 'Invalid comment', 'Comment can\'t be less then 2 characters length', 'error'))
             return;
         }
