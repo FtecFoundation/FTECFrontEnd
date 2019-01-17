@@ -88,12 +88,6 @@ export class CurrentUserService {
         return this.user.notificationSettings;
     }
 
-    checkAddressExistence() {
-        if (!this.user.walletAddress) {
-            this._accountService.getUserAddress().subscribe(value => this.user.walletAddress = value );
-        }
-    }
-
     getStockKeys(forceRefresh: boolean): Observable<ExchangeKeys[]> {
         if (!forceRefresh && this.installedKeys) { return Observable.of(this.installedKeys); }
         return this._accountService.getInstalledKeys().pipe(
