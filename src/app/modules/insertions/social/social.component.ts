@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ShowModalService} from '../../not-active/show-modal.service';
 import {SocialService} from '../../../core/services/social.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {EmbeddedTweetOptions} from './embedded-tweet-options';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../account/notification/notification.service';
@@ -141,8 +141,14 @@ export class SocialComponent implements OnInit {
 
     createForm() {
         this.socialForm = this.formBuilder.group({
-            word: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]]
+            word: ['', [Validators.required, SocialComponent.noWhitespaceValidator]]
         });
+    }
+
+    public static noWhitespaceValidator(control: FormControl) {
+        const isWhitespace = (control.value || '').trim().length === 0;
+        const isValid = !isWhitespace;
+        return isValid ? null : { 'length': true };
     }
 
     showModal() {

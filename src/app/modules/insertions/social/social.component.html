@@ -131,8 +131,7 @@
 
           <span *ngIf="word.invalid && (word.dirty || word.touched || submitted)">
             <span class="error-field" *ngIf="word.errors.required && submitted">This field is required</span>
-            <span class="error-field" *ngIf="word.errors.minlength">Word should be at least 3 characters long</span>
-            <span class="error-field" *ngIf="word.errors.maxlength">Word should be less than 30 characters long</span>
+            <span class="error-field" *ngIf="word.errors.length">Word should be at least 3 characters and not more than 30 characters long</span>
           </span>
 
           <span *ngIf="(wordsLeft === 0) && submitted">
