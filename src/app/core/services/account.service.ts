@@ -24,7 +24,6 @@ enum AccountApiUrls {
     resendEmail = 'cabinet/resendConfirmation',
     tgSettings = 'modules/telegram/getTelegramData',
     tgHash = 'modules/telegram/getHash',
-    getAddress = 'cabinet/payment/getAddress/FTEC',
     getNotificationSettings = 'cabinet/notifications/getNotificationSettings',
     getKeys = 'cabinet/apiKeys',
     getAuthLogs = 'cabinet/getLogs',
@@ -116,12 +115,6 @@ export class AccountService extends RestService {
         return this.get(AccountApiUrls.tgHash).pipe(
             map(resp => resp.response.hash),
             catchError(e => this.handleError(e)));
-    }
-
-    getUserAddress(): Observable<string> {
-        return this.get(AccountApiUrls.getAddress).pipe(
-            map(resp => resp.response.address)
-        );
     }
 
     getNotificationSettings(): Observable<NotificationSettings> {

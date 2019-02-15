@@ -6,6 +6,9 @@ import {TradingRecommendation, TrpComment} from "../trp";
 import {TrpService} from "../trp.service";
 import {BittrexService} from "../../../../core/services/exchanges/bittrex.service";
 import {CurrentUserService} from "../../../../core/services/current-user.service";
+import {NotificationService} from "../../../account/notification/notification.service";
+import {NotifyService} from "../../../../core/notify/notify.service";
+import {Notify} from "../../../../core/notify/notifications";
 
 @Component({
     selector: 'app-recommendation-view',
@@ -40,7 +43,7 @@ export class RecommendationViewComponent implements OnInit {
     lineChartAutoScale = config.lineChartAutoScale;
     lineChartLineInterpolation = config.lineChartLineInterpolation;
 
-    constructor(private bittrexService: BittrexService, private trpService: TrpService, public currentUserService: CurrentUserService) {
+    constructor(private bittrexService: BittrexService, private trpService: TrpService, public currentUserService: CurrentUserService, private _notificationService: NotifyService) {
     }
 
     ngOnInit() {
@@ -61,6 +64,10 @@ export class RecommendationViewComponent implements OnInit {
     }
 
     addComment(message: any) {
+        if(message.message.trim().length<=2){
+            this._notificationService.addNotification(new Notify(this._notificationService.lastId, 'Invalid comment', 'Comment can\'t be less then 2 characters length', 'error'))
+            return;
+        }
         this.trpService.postComment(this.recommendation.id, message).subscribe(data => {
 
             this.trpService.getAuthorRating(data.userId).subscribe(rating => {

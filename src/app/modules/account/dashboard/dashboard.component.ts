@@ -86,7 +86,6 @@ export class DashboardComponent implements OnInit {
     }
 
     goToPaymentPage() {
-        this._currentUserService.checkAddressExistence();
         this.router.navigateByUrl('/account/payment');
     }
 
