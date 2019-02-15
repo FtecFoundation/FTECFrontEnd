@@ -691,7 +691,7 @@
 }
 
 /deep/ {
-  .user-top-info__box .user-graphic .ngx-datepicker-container {
+  .user-top-info__box, .user-graphic, .ngx-datepicker-container {
 
     input {
       width: 100% !important;
@@ -705,11 +705,11 @@
     }
   }
 
-  .user-top-info__box .user-graphic .ngx-datepicker-calendar-container {
+  .user-top-info__box, .user-graphic, .ngx-datepicker-calendar-container {
     z-index: 100 !important;
   }
 
-  .user-top-info__box .user-graphic .line-chart {
+  .user-top-info__box .user-graphic, .line-chart {
     transform: translateX(25%) scale(1.1) !important;
   }
 }
