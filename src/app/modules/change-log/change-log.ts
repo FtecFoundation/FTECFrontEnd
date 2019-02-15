@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+        'date': '15/02/2019',
+        'changes': [
+            'Date filter performance for TRP was improved.',
+            'Portfolio selection system was improved in Portfolio Manager.',
+            'Balanced Bot productivity was upgraded in Smart Trading Module.',
+            'Corrected bug that prevented some users from using Cryptoacademy, and another test was added.'
+        ]
+    },
+    {
         'date': '16/01/2019',
         'changes': [
             'Warning messages that occurred when the Volume Analyzer was configured incorrectly were fixed.',
