@@ -10,6 +10,7 @@ import {BittrexService} from "./exchanges/bittrex.service";
 export class CryptocurrenciesService {
 
     getCryptocurrenciesUrl = 'https://api.coinmarketcap.com/v2/ticker/';
+    tickerCoinmarketCupUrl = '/coinmarketcap/ticker';
     now = new Date().getTime();
     currenciesTopData: CurrencyTop[] = [];
     btcPrice: number;
@@ -21,8 +22,8 @@ export class CryptocurrenciesService {
     }
 
     getCryptocurrencies(amount: number): Observable<any> {
-        const params = new HttpParams().set('limit', '100').set('sort', 'rank').set('start', '1');
-        return this._http.get(this.getCryptocurrenciesUrl, {params: params}).pipe(map(resp => {
+
+        return this._http.get(this.tickerCoinmarketCupUrl).pipe(map(resp => {
             let top: any = {};
             let counter = 0;
             for (const key of Object.keys(resp['data'])) {
@@ -34,9 +35,7 @@ export class CryptocurrenciesService {
     }
 
     getCryptocurrenciesTop() {
-        const param = new HttpParams().set('limit', '101').set('sort', 'rank').set('start', '1');
-        this._http.get(this.getCryptocurrenciesUrl, {params: param}).pipe(map(resp => resp['data'])).subscribe(data => {
-            console.log(data);
+        this._http.get(this.tickerCoinmarketCupUrl).pipe(map(resp => resp['data'])).subscribe(data => {
             this.topPairs = data;
             this.btcPrice = data['1']['quotes']['USD']['price'];
         });

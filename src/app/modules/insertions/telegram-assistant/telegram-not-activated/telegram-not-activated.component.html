@@ -3,7 +3,7 @@
                     [openedText]="howTo"></app-info-popup>
     <div class="main-info main-info--telegram">
         <div class="middle middle--telegram-enable">
-
+            <div *ngIf="_preferencesService.preferences">
             <h3 class="telegram-enable__title">To enable telegram assistant:</h3>
 
             <p>Follow the link and press 'Start'.<br> Link: <a target="_blank" class="link__accent"
@@ -17,7 +17,7 @@
 
             <p>After the previous steps are completed, press the button 'Check if telegram linked' or reload the page to see
                 bot's preferences.</p>
-
+            </div>
 
             <button class="filter__container-button" (click)="checkIfConnected()">Check if telegram linked</button>
         </div>

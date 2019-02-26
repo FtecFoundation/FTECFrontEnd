@@ -13,7 +13,7 @@ export class PreferencesService {
             this._http.get('/api/properties/getPreferences').subscribe(
                 value => {
                     this.preferencesObj = value as Preferences;
-                    if (this.preferencesObj.botDomain !== 'FTEC_test_bot') Preferences.prototype.prod = true;
+                    if (this.preferencesObj.botDomain && this.preferencesObj.botDomain !== 'FTEC_test_bot') Preferences.prototype.prod = true;
                 }, (e) => {
                     this.preferencesObj = new Preferences();
                     catchError(e);

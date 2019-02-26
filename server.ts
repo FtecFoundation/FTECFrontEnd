@@ -52,6 +52,7 @@ import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 import * as fs from 'fs';
 import * as https from 'https';
+import {HttpParams} from "@angular/common/http";
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 let apiUrl = '';
@@ -214,6 +215,14 @@ app.get('/binance/ticker/price', function (req, res) {
     const url = 'https://www.binance.com/api/v1/ticker/price';
     const param = req.query.symbol;
     request(url + '?symbol=' + param, function (error, response, body) {
+        res.send(body);
+    });
+});
+
+app.get('/coinmarketcap/ticker', function (req, res) {
+    const url = 'https://api.coinmarketcap.com/v2/ticker?limit=100&sort=rank&start=1';
+
+    request(url, function (error, response, body) {
         res.send(body);
     });
 });
