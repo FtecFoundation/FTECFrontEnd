@@ -115,8 +115,8 @@
                         <span class="form__label form__label--currency" *ngIf="pairsFilterService.selectedPair">{{pairsFilterService.selectedPair.symbol}}</span>
                     </div>
 
-                    <span class="error-field" *ngIf="amountNotSet">Set the amount to {{orderType.toLowerCase()}}</span>
-                    <span class="error-field" *ngIf="balanceError">Not enough tokens on the chosen exchange!</span>
+                    <span class="error-field" *ngIf="amountNotSet">Set an amount to {{orderType.toLowerCase()}}</span>
+
 
                 </div>
 
@@ -139,7 +139,7 @@
                             (click)="profitPercent = percent">{{percent}}%
                     </button>
                 </div>
-
+                <span style="margin-left:50px;" class="error-field" *ngIf="balanceError">Not enough tokens on the chosen exchange!</span>
                 <button class="filter__container-button" (click)="addOrder()">Add order</button>
             </form>
 

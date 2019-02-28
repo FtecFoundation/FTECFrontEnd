@@ -1,5 +1,14 @@
 export const changeLog = [
     {
+        'date': '28/02/2019',
+        'changes': [
+            'Bug that prevented some of the users from receiving notifications on Telegram was fixed.',
+            'Performance of Order Manager and Price Notification when working with Poloniex exchange was corrected.',
+            'When incorrect data is input in Order Manager when creating an order, there are now new tips.',
+            'The display of popular cryptocurrencies on the Dashboard was corrected.'
+        ]
+    },
+    {
         'date': '15/02/2019',
         'changes': [
             'Date filter performance for TRP was improved.',

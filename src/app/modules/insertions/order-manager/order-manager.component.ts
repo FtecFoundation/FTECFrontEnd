@@ -99,13 +99,14 @@ export class OrderManagerComponent implements OnInit {
 
     addOrder() {
         this.submitted = true;
-        if (this.amount && this.pairExchange && this.connectedExchanges.indexOf(this.pairExchange.nameToSend) === 1) {
-            this.amountNotSet = false;
+
+        if (!this.amount) this.amountNotSet = true;
+        else this.amountNotSet = false;
+        if (this.amount && this.pairExchange && this.connectedExchanges.includes(this.pairExchange.nameToSend)) {
+
             this.orderManagerService.checkBalance(this.pairExchange.nameToSend,
                 this.pairsFilterService.selectedPair.symbol).subscribe(data => {
                     if (!data || data < this.amount) {
-                        this.balanceError = true;
-                    } else {
                         this.balanceError = false;
                         this.orderManagerService.addOrder(this.prepareData()).subscribe(data => {
                             this.orders.push(new Order(data.orderId,
@@ -113,10 +114,10 @@ export class OrderManagerComponent implements OnInit {
                                 this.pairExchange.nameToSend, this.profitPercent, this.amount, this.pairPrice, this.orderType));
                             this.available = data.available;
                         })
+                    } else {
+
                     }
             });
-        } else {
-            this.amountNotSet = true;
         }
     }
 
