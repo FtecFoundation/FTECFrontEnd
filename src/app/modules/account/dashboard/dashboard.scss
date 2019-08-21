@@ -182,3 +182,10 @@
 .middle__table-container-item--dashboard {
   padding: .938em !important;
 }
+
+
+@media (max-width: 800px){
+  .filter__container-aside--exchanges{
+    padding: 20px 0px;
+  }
+}
