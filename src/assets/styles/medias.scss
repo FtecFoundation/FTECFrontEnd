@@ -9,11 +9,11 @@
   .smart__info-block {
     width: 100% !important;
   }
-  
+
 }
 
 @media only screen and (max-width: 1100px) {
-  
+
   .aside {
     z-index: 1;
     left: -100%;
@@ -52,7 +52,7 @@
   [_nghost-c9],
   [_nghost-c10],
   [_nghost-c11],
-  [_nghost-c12],  
+  [_nghost-c12],
   [_nghost-c13],
   [_nghost-c14],
   [_nghost-c15],
@@ -88,7 +88,7 @@
     margin-left: .625em;
     width: 58%;
   }
-  
+
   .header__left-bar {
     display: block !important;
   }
@@ -103,14 +103,14 @@
 
   .middle__empty-buttons {
     width: 100% !important;
-  
+
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center !important;
   }
-  
+
   .button--empty {
     width: 60% !important;
   }
@@ -300,7 +300,7 @@
     order: -1;
     padding: 0 !important;
   }
-  
+
   .item-inner-line-error-block {
     top: 5rem !important;
 
@@ -324,15 +324,15 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  
+
   .content__login {
     width: 100% !important;
   }
-  
+
   .main-info {
     width: 100% !important;
     padding: 0.938em;
-    
+
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
@@ -343,7 +343,7 @@
     flex-wrap: wrap;
   }
 
-  
+
   .middle__table-container-stocs {
     flex-wrap: wrap;
     justify-content: center !important;
@@ -573,7 +573,7 @@
     align-items: center;
     justify-content: space-evenly;
   }
-  
+
 }
 
 @media only screen and (max-width: 425px) {
@@ -599,6 +599,7 @@
   .msg-line__content{
     padding-left: 15px;
     padding-right: 45px;
+    margin-left: 15px;
   }
   .msg-item__text{
     p{
