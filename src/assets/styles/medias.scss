@@ -637,12 +637,14 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
   }
   .social-listing{
     margin:0 auto;
+    position: unset !important;
   }
   .email-link{
-    margin:0 auto;
+    //margin:0 auto;
     margin-top: 10px;
   }
 }
