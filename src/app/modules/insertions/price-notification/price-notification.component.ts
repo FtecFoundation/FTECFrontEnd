@@ -49,7 +49,7 @@ export class PriceNotificationComponent implements OnInit {
         });
 
         this.telegramDisabled = !this.currentUser.notificationSettings['4']['telegram'];
-        console.log(this.currentUser.notificationSettings['4']['telegram']);
+        //console.log(this.currentUser.notificationSettings['4']['telegram']);
 
         if (!this.pairsFilterService.allPairs) this.pairsFilterService.fillAllPairs(false, true);
     }
