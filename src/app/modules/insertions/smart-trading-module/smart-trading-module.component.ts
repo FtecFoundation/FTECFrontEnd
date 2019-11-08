@@ -163,7 +163,7 @@ export class SmartTradingModuleComponent implements OnInit {
 
     stopTrading() {
         this.preferences.state = false;
-        console.log(this.preferences.stock);
+        //console.log(this.preferences.stock);
         this._smartTradingService.disableBot(new DisableBotPayload(this.preferences.stock)).subscribe(()=>{
             for (let bot of this.bots) bot.active = false;
         });
