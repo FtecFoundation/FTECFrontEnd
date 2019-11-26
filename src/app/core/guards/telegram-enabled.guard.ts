@@ -25,7 +25,7 @@ export class TelegramEnabledGuard implements CanActivate {
                 return redirectToIfEnabled == null;
             }),
             catchError(err => {
-                console.log(err);
+                //console.log(err);
                 if (redirectToIfNotEnabled) { this.router.navigateByUrl(redirectToIfNotEnabled); }
                 return Observable.of(redirectToIfNotEnabled == null);
             })

@@ -117,7 +117,7 @@ app.get('/api/faq', function (req, res) {
     if (!fileSystem.existsSync(faqFile)) {
         fileSystem.appendFile(faqFile, '[]', function (err) {
             if (err) throw err;
-            console.log('Saved!');
+            //console.log('Saved!');
         });
     }
     jsonfile.readFile(faqFile, function (err, obj) {
