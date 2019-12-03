@@ -15,7 +15,7 @@ export class OrdinaryQuestionComponent extends QuestionComponent{
               router: Router,
               _testStatusService: TestStatusService) {
     super(_cryptoacademyService, router,_testStatusService);
-    console.log(this.response);
+    //console.log(this.response);
   }
 
     chooseAnswer(answerId: number) {
