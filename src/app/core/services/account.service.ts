@@ -127,7 +127,7 @@ export class AccountService extends RestService {
         return this.get(AccountApiUrls.getKeys).pipe(
             map(value => value.response.ApiKeys),
             catchError(err => {
-                console.log(err);
+                //console.log(err);
                 this._errorsService.handleCustomException(new StatusCodeError(err.status));
                 return Observable.throw(err);
             })
