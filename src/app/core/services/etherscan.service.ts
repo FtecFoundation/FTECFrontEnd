@@ -23,7 +23,7 @@ export class EtherscanService extends ExternalService {
         return this.get('https://' + this.preferences.preferences.etherscanPrefix + 'etherscan.io/api', params).pipe(
             map(result => result.result),
             catchError(response => {
-                console.log(response);
+                //console.log(response);
                 return null;
             })
         );
