@@ -40,7 +40,7 @@ export class NotificationComponent implements OnInit {
         notification[method] = !notification[method];
         notification.notificationType = Number.parseInt(type);
         this._notificationService.updateNotification(notification).subscribe(() => {
-            console.log(this._currentUserService.user.notificationSettings[type]);
+            //console.log(this._currentUserService.user.notificationSettings[type]);
             this._currentUserService.user.notificationSettings[type] = notification;
         });
     }
